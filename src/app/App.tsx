@@ -1,4 +1,4 @@
-import { useMemo, useState } from "react";
+import { useEffect, useMemo, useState } from "react";
 import type { View } from "../types/analysis";
 import { regions, candidates, demoRisks } from "../data/demo";
 import { rankCandidates } from "../features/ranking/ranking";
@@ -11,11 +11,25 @@ const navigation: { id: View; name: string; icon: string }[] = [
   { id: "risks", name: "Riesgos", icon: "risks" },
   { id: "economy", name: "Economía", icon: "economy" },
 ];
-export default function App() {
-  const [view, setView] = useState<View>("explore"),
-    [regionId, setRegionId] = useState("gale"),
+interface AppProps {
+  /** Vista y región con las que abre; la portada las elige según por dónde se entra. */
+  initialView?: View;
+  initialRegionId?: string;
+  onViewChange?: (view: View) => void;
+  onRegionChange?: (regionId: string) => void;
+}
+export default function App({
+  initialView = "explore",
+  initialRegionId = "gale",
+  onViewChange,
+  onRegionChange,
+}: AppProps) {
+  const [view, setView] = useState<View>(initialView),
+    [regionId, setRegionId] = useState(initialRegionId),
     [selectedId, setSelectedId] = useState("atacama"),
     [search, setSearch] = useState("");
+  useEffect(() => onViewChange?.(view), [view, onViewChange]);
+  useEffect(() => onRegionChange?.(regionId), [regionId, onRegionChange]);
   const region = regions.find((r) => r.id === regionId)!;
   const ranked = useMemo(() => rankCandidates(region, candidates), [region]);
   const selected = ranked.find((row) => row.site.id === selectedId)!;
@@ -52,7 +66,11 @@ export default function App() {
         Saltar al contenido
       </a>
       <aside className="sidebar">
-        <a className="brand" href="#" onClick={() => setView("explore")}>
+        <a
+          className="brand"
+          href="#inicio"
+          aria-label="PROMETHEUS by VELKARIS, volver a la portada"
+        >
           <span className="brand-symbol">
             P<span>◦</span>
           </span>
@@ -134,7 +152,7 @@ export default function App() {
               </h1>
               <p>
                 {view === "explore"
-                  ? "Del relieve marciano a los paisajes de la Tierra. Un espacio para explorar análogos."
+                  ? "Del relieve de la Luna y de Marte a los paisajes de la Tierra. Un espacio para explorar análogos."
                   : view === "ranking"
                     ? "Una distancia transparente entre descriptores, para comenzar la exploración."
                     : view === "risks"
@@ -165,10 +183,16 @@ export default function App() {
                 value={regionId}
                 onChange={(e) => setRegionId(e.target.value)}
               >
-                {regions.map((r) => (
-                  <option key={r.id} value={r.id}>
-                    {r.name} · Marte
-                  </option>
+                {(["Luna", "Marte"] as const).map((world) => (
+                  <optgroup key={world} label={world}>
+                    {regions
+                      .filter((r) => r.world === world)
+                      .map((r) => (
+                        <option key={r.id} value={r.id}>
+                          {r.name}
+                        </option>
+                      ))}
+                  </optgroup>
                 ))}
               </select>
               <div className="region-feature">

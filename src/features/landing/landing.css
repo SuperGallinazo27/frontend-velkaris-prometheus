@@ -1,0 +1,833 @@
+/* Portada de PROMETHEUS: versión nocturna de la paleta del explorador
+   (verde bosque profundo, terracota de Marte, gris de la Luna y un verde agua para la Tierra).
+   Capas: fondo estático → escena 3D → etiquetas → contenido → cabecera e indicadores. */
+
+html.portada-activa {
+  background: #070f0d;
+  color-scheme: dark;
+}
+
+.landing {
+  --lp-bg: #070f0d;
+  --lp-superficie: rgba(13, 27, 24, 0.78);
+  --lp-texto: #eef0e6;
+  --lp-texto-2: #b9c8be;
+  --lp-texto-3: #8c9f94;
+  --lp-acento: #ec9b72;
+  --lp-acento-claro: #f6b592;
+  --lp-sobre-acento: #1b0f09;
+  --lp-tierra: #7fd6c4;
+  --lp-linea: rgba(220, 230, 223, 0.16);
+  --lp-linea-fuerte: rgba(220, 230, 223, 0.34);
+  --lp-velo: 7, 15, 13;
+  --lp-serif: Georgia, "Times New Roman", serif;
+  --lp-mono: ui-monospace, "Cascadia Mono", "SF Mono", Menlo, Consolas, monospace;
+  --lp-margen: clamp(16px, 4vw, 44px);
+  --viaje: 0;
+  position: relative;
+  min-height: 100vh;
+  background: var(--lp-bg);
+  color: var(--lp-texto);
+  font-size: 15px;
+  line-height: 1.65;
+}
+
+/* ---------- Fondo estático: se ve mientras carga la escena y si no hay WebGL ---------- */
+.lp-fondo,
+.lp-escena,
+.lp-etiquetas {
+  position: fixed;
+  inset: 0;
+  overflow: hidden;
+}
+.lp-fondo {
+  z-index: 0;
+  /* Banda diagonal tipo Vía Láctea y dos nubes tenues, como en el cielo de la escena 3D. */
+  background:
+    linear-gradient(
+      118deg,
+      transparent 26%,
+      rgba(79, 183, 164, 0.09) 42%,
+      rgba(236, 200, 160, 0.07) 50%,
+      rgba(220, 128, 86, 0.08) 58%,
+      transparent 74%
+    ),
+    radial-gradient(60vw 60vh at 82% 22%, rgba(220, 128, 86, 0.1), transparent 70%),
+    radial-gradient(55vw 55vh at 8% 92%, rgba(79, 183, 164, 0.08), transparent 70%),
+    var(--lp-bg);
+}
+.lp-fondo::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  opacity: 0.8;
+  background-image:
+    radial-gradient(1.2px 1.2px at 12% 18%, #fff6e8 50%, transparent 51%),
+    radial-gradient(1px 1px at 34% 62%, #ffd9bd 50%, transparent 51%),
+    radial-gradient(1.4px 1.4px at 58% 28%, #ffffff 50%, transparent 51%),
+    radial-gradient(1px 1px at 72% 78%, #c9f1e6 50%, transparent 51%),
+    radial-gradient(1.2px 1.2px at 88% 44%, #fff6e8 50%, transparent 51%),
+    radial-gradient(1px 1px at 46% 90%, #ffffff 50%, transparent 51%),
+    radial-gradient(1px 1px at 22% 84%, #c9f1e6 50%, transparent 51%),
+    radial-gradient(1.3px 1.3px at 94% 8%, #ffd9bd 50%, transparent 51%);
+  background-size:
+    310px 290px, 370px 330px, 430px 390px, 290px 350px,
+    510px 470px, 350px 410px, 450px 310px, 390px 530px;
+}
+.lp-disco {
+  position: absolute;
+  top: 46%;
+  width: min(58vh, 62vw);
+  aspect-ratio: 1;
+  border-radius: 50%;
+  translate: 0 -50%;
+  opacity: 0;
+  transition:
+    opacity 0.7s ease,
+    left 0.9s ease,
+    scale 0.9s ease;
+}
+.lp-disco.tierra {
+  left: 56%;
+  background: radial-gradient(circle at 32% 30%, #c4ece2 0%, #3f9d8e 24%, #135a66 54%, #072a36 80%, #030f14 100%);
+  box-shadow: 0 0 90px rgba(111, 214, 207, 0.2);
+}
+.lp-disco.luna {
+  left: 8%;
+  background: radial-gradient(circle at 32% 30%, #e6e4dc 0%, #a9aaa6 28%, #6f7170 58%, #2c2f2e 84%, #0c0e0d 100%);
+  box-shadow: 0 0 90px rgba(200, 210, 207, 0.12);
+}
+.lp-disco.marte {
+  left: 56%;
+  background: radial-gradient(circle at 32% 30%, #efbd92 0%, #d47c4e 26%, #9c4526 56%, #3a1a13 82%, #120806 100%);
+  box-shadow: 0 0 90px rgba(255, 149, 102, 0.16);
+}
+/* Los discos solo se muestran en la versión sin escena 3D: uno por capítulo. */
+.landing.estatica[data-cap="0"] .lp-disco.tierra,
+.landing.estatica[data-cap="1"] .lp-disco.luna,
+.landing.estatica[data-cap="2"] .lp-disco.marte,
+.landing.estatica[data-cap="3"] .lp-disco.tierra,
+.landing.estatica[data-cap="4"] .lp-disco.tierra,
+.landing.estatica[data-cap="5"] .lp-disco.tierra {
+  opacity: 1;
+}
+.landing[data-cap="3"] .lp-disco.tierra {
+  left: 68%;
+  scale: 0.22;
+}
+.landing[data-cap="4"] .lp-disco.tierra {
+  left: 8%;
+}
+.landing[data-cap="5"] .lp-disco.tierra {
+  left: calc(50% - min(29vh, 31vw));
+  top: 30%;
+  scale: 0.6;
+}
+
+.lp-escena {
+  z-index: 1;
+}
+.lp-escena canvas {
+  display: block;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  transition: opacity 0.9s ease;
+}
+.lp-escena canvas.lista {
+  opacity: 1;
+}
+
+.lp-etiquetas {
+  z-index: 2;
+  pointer-events: none;
+}
+.lp-etiqueta {
+  position: absolute;
+  left: 0;
+  top: 0;
+  translate: 18px -50%;
+  padding: 3px 8px;
+  border: 1px solid var(--lp-linea);
+  border-radius: 4px;
+  background: rgba(var(--lp-velo), 0.6);
+  color: var(--lp-texto-2);
+  font-family: var(--lp-mono);
+  font-size: 11px;
+  letter-spacing: 0.04em;
+  white-space: nowrap;
+  opacity: 0;
+  will-change: transform;
+}
+.lp-etiqueta.izquierda {
+  translate: calc(-100% - 18px) -50%;
+}
+.lp-etiqueta.activa {
+  border-color: var(--lp-acento);
+  color: #fff;
+}
+
+/* ---------- Cabecera ---------- */
+.lp-header {
+  position: fixed;
+  inset: 0 0 auto;
+  z-index: 6;
+  height: 68px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+  padding: 0 var(--lp-margen);
+  border-bottom: 1px solid var(--lp-linea);
+  background: rgba(var(--lp-velo), 0.72);
+  backdrop-filter: blur(12px);
+}
+.lp-header .brand {
+  padding: 0;
+  color: var(--lp-texto);
+}
+.lp-header .brand-symbol {
+  font-size: 34px;
+}
+.lp-header .brand-symbol > span {
+  font-size: 20px;
+  top: -8px;
+  right: -7px;
+}
+.lp-nav {
+  display: flex;
+  gap: clamp(16px, 2.4vw, 32px);
+  margin-left: auto;
+  font-size: 13px;
+}
+.lp-nav a {
+  padding: 8px 0;
+  color: var(--lp-texto-2);
+}
+.lp-nav a:hover {
+  color: var(--lp-texto);
+}
+
+/* ---------- Botones y enlaces ---------- */
+.lp-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 13px 20px;
+  border: 1px solid transparent;
+  border-radius: 6px;
+  font-size: 14px;
+  font-weight: 600;
+  white-space: nowrap;
+}
+.lp-btn.compacto {
+  padding: 9px 14px;
+  font-size: 13px;
+}
+.lp-btn.primario {
+  background: var(--lp-acento);
+  color: var(--lp-sobre-acento);
+}
+.lp-btn.primario:hover {
+  background: var(--lp-acento-claro);
+}
+.lp-btn.secundario {
+  border-color: var(--lp-linea-fuerte);
+  background: rgba(var(--lp-velo), 0.45);
+  color: var(--lp-texto);
+}
+.lp-btn.secundario:hover {
+  background: rgba(220, 230, 223, 0.1);
+}
+.lp-enlace {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  margin-top: 22px;
+  padding: 4px 0;
+  border-bottom: 1px solid var(--lp-acento);
+  color: var(--lp-acento-claro);
+  font-size: 14px;
+  font-weight: 600;
+}
+.lp-enlace:hover {
+  color: #fff;
+}
+
+/* ---------- Capítulos ---------- */
+/* El explorador da estilo a los elementos main y footer; aquí se anula lo que no aplica a la portada. */
+.landing .lp-contenido {
+  position: relative;
+  z-index: 3;
+  max-width: none;
+  margin: 0;
+  padding: 0;
+}
+.lp-cap {
+  display: flex;
+  align-items: center;
+  min-height: 100vh;
+  min-height: 100svh;
+  padding: 104px var(--lp-margen) 116px;
+}
+.lp-ancho {
+  display: flex;
+  width: min(1180px, 100%);
+  margin: 0 auto;
+}
+.lp-cap.der .lp-ancho {
+  justify-content: flex-end;
+}
+.lp-cap.centro {
+  position: relative;
+  align-items: flex-end;
+  padding-bottom: 176px;
+}
+.lp-cap.centro .lp-ancho {
+  justify-content: center;
+  text-align: center;
+}
+.lp-panel {
+  position: relative;
+  width: min(470px, 100%);
+  min-width: 0;
+}
+.lp-panel.ancho {
+  width: min(620px, 100%);
+}
+.lp-panel.ancho > p,
+.lp-panel.ancho > .lp-demo {
+  max-width: 470px;
+}
+.lp-cap.centro .lp-panel {
+  width: min(900px, 100%);
+}
+.lp-panel::before {
+  content: "";
+  position: absolute;
+  inset: -70px -90px;
+  z-index: -1;
+  background: radial-gradient(
+    ellipse closest-side,
+    rgba(var(--lp-velo), 0.88),
+    rgba(var(--lp-velo), 0.6) 62%,
+    rgba(var(--lp-velo), 0)
+  );
+  pointer-events: none;
+}
+.landing.con-movimiento .lp-panel {
+  transition:
+    opacity 0.7s ease,
+    transform 0.7s ease;
+}
+.landing.con-movimiento .lp-cap:not(.vista) .lp-panel {
+  opacity: 0;
+  transform: translateY(20px);
+}
+
+.lp-eyebrow {
+  display: block;
+  margin-bottom: 18px;
+  color: var(--lp-acento);
+  font-family: var(--lp-mono);
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+}
+.landing h1,
+.landing h2 {
+  font-family: var(--lp-serif);
+  font-weight: 400;
+  text-wrap: balance;
+}
+.landing h1 {
+  font-size: clamp(40px, 4.9vw, 70px);
+  line-height: 1.03;
+  letter-spacing: -0.02em;
+}
+.landing h1 span {
+  display: block;
+  color: var(--lp-acento-claro);
+}
+.landing h2 {
+  font-size: clamp(30px, 3.4vw, 46px);
+  line-height: 1.1;
+  letter-spacing: -0.015em;
+}
+.lp-panel p {
+  margin-top: 16px;
+  color: var(--lp-texto-2);
+}
+.lp-panel p strong {
+  color: var(--lp-texto);
+  font-weight: 600;
+}
+.lp-panel .lp-lead {
+  margin-top: 22px;
+  font-size: clamp(16px, 1.3vw, 18px);
+  line-height: 1.6;
+}
+.lp-panel .lp-nota {
+  margin-top: 14px;
+  color: var(--lp-texto-3);
+  font-size: 12.5px;
+  line-height: 1.6;
+}
+.lp-acciones {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-top: 30px;
+}
+.lp-panel .lp-demo {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  margin-top: 30px;
+  color: var(--lp-texto-3);
+  font-size: 12.5px;
+  line-height: 1.55;
+}
+.lp-demo b {
+  flex-shrink: 0;
+  margin-top: 1px;
+  padding: 1px 6px;
+  border: 1px solid var(--lp-acento);
+  border-radius: 3px;
+  color: var(--lp-acento);
+  font-family: var(--lp-mono);
+  font-size: 10px;
+  letter-spacing: 0.12em;
+}
+.lp-desliza {
+  display: inline-flex;
+  gap: 8px;
+  margin-top: 34px;
+  padding: 4px 0;
+  color: var(--lp-texto-2);
+  font-family: var(--lp-mono);
+  font-size: 11px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+.lp-desliza:hover {
+  color: var(--lp-texto);
+}
+.landing.con-movimiento .lp-desliza span {
+  animation: lp-bajar 1.8s ease-in-out infinite;
+}
+@keyframes lp-bajar {
+  50% {
+    transform: translateY(5px);
+  }
+}
+
+/* Selector de escenario marciano */
+.lp-regiones {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 24px;
+}
+.lp-regiones button {
+  padding: 9px 14px;
+  border: 1px solid var(--lp-linea-fuerte);
+  border-radius: 6px;
+  background: rgba(var(--lp-velo), 0.45);
+  color: var(--lp-texto-2);
+  font-size: 13px;
+}
+.lp-regiones button:hover {
+  color: var(--lp-texto);
+  border-color: var(--lp-texto-2);
+}
+.lp-regiones button[aria-pressed="true"] {
+  border-color: var(--lp-acento);
+  background: var(--lp-acento);
+  color: var(--lp-sobre-acento);
+  font-weight: 600;
+}
+
+/* Cifras de la región */
+.lp-cifras {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 16px;
+  margin: 26px 0 0;
+  padding-top: 18px;
+  border-top: 1px solid var(--lp-linea);
+}
+.lp-cifras dt {
+  color: var(--lp-texto-3);
+  font-family: var(--lp-mono);
+  font-size: 10.5px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+.lp-cifras dd {
+  margin: 6px 0 0;
+  font-family: var(--lp-serif);
+  font-size: clamp(28px, 7vw, 42px);
+  line-height: 1.1;
+  font-variant-numeric: tabular-nums;
+  white-space: nowrap;
+}
+.lp-cifras small {
+  color: var(--lp-texto-2);
+  font-family: var(--lp-mono);
+  font-size: 14px;
+}
+
+/* Fórmula de la distancia */
+.lp-formula {
+  margin: 24px 0 0;
+  padding: 0;
+  list-style: none;
+  border-top: 1px solid var(--lp-linea);
+}
+.lp-formula li {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 16px;
+  padding: 12px 0;
+  border-bottom: 1px solid var(--lp-linea);
+}
+.lp-formula code {
+  color: var(--lp-acento-claro);
+  font-family: var(--lp-mono);
+  font-size: 13px;
+}
+
+/* Ranking */
+.lp-ranking {
+  margin: 22px 0 0;
+  padding: 0;
+  list-style: none;
+  border-top: 1px solid var(--lp-linea);
+}
+.lp-ranking li {
+  display: grid;
+  grid-template-columns: 30px minmax(0, 1fr) auto;
+  align-items: center;
+  gap: 12px;
+  padding: 13px 0;
+  border-bottom: 1px solid var(--lp-linea);
+}
+.lp-pos {
+  color: var(--lp-texto-3);
+  font-family: var(--lp-mono);
+  font-size: 12px;
+}
+.lp-ranking strong {
+  display: block;
+  font-size: 16px;
+  font-weight: 600;
+  line-height: 1.3;
+}
+.lp-ranking small {
+  display: block;
+  color: var(--lp-texto-3);
+  font-size: 12px;
+}
+.lp-dist {
+  font-family: var(--lp-mono);
+  font-size: 15px;
+  font-variant-numeric: tabular-nums;
+  text-align: right;
+}
+.lp-dist small {
+  font-family: inherit;
+  font-size: 10px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+.lp-ranking .primero .lp-pos,
+.lp-ranking .primero .lp-dist,
+.lp-ranking .primero .lp-dist small {
+  color: var(--lp-acento-claro);
+}
+
+/* Módulos del explorador */
+.lp-modulos {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 12px;
+  margin-top: 30px;
+  text-align: left;
+}
+.lp-modulos a {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  min-width: 0;
+  padding: 18px;
+  border: 1px solid var(--lp-linea);
+  border-radius: 8px;
+  background: var(--lp-superficie);
+  backdrop-filter: blur(8px);
+}
+.lp-modulos a:hover {
+  border-color: var(--lp-acento);
+}
+.lp-modulos svg {
+  margin-bottom: 6px;
+  color: var(--lp-acento);
+}
+.lp-modulos strong {
+  font-size: 15px;
+  font-weight: 600;
+}
+.lp-modulos span {
+  color: var(--lp-texto-2);
+  font-size: 12.5px;
+  line-height: 1.5;
+}
+
+/* ---------- Pie ---------- */
+.landing .lp-pie {
+  position: absolute;
+  inset: auto 0 0;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-items: baseline;
+  margin: 0;
+  justify-content: space-between;
+  gap: 4px 24px;
+  padding: 16px var(--lp-margen) 68px;
+  border-top: 1px solid var(--lp-linea);
+  color: var(--lp-texto-3);
+  font-size: 12px;
+  line-height: 1.6;
+}
+.lp-pie a {
+  color: var(--lp-texto-2);
+}
+.lp-pie a:hover {
+  color: var(--lp-texto);
+}
+
+/* ---------- Puntos de capítulo (escritorio) ---------- */
+.lp-puntos {
+  position: fixed;
+  top: 50%;
+  right: 18px;
+  z-index: 6;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  translate: 0 -50%;
+}
+.lp-puntos a {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 10px;
+  padding: 5px 4px;
+  color: var(--lp-texto-2);
+  font-family: var(--lp-mono);
+  font-size: 10px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+.lp-puntos span {
+  opacity: 0;
+}
+.lp-puntos a:hover span,
+.lp-puntos a:focus-visible span {
+  opacity: 1;
+}
+.lp-puntos i {
+  width: 8px;
+  height: 8px;
+  border: 1px solid var(--lp-linea-fuerte);
+  border-radius: 50%;
+}
+.lp-puntos a[aria-current] i {
+  border-color: var(--lp-acento);
+  background: var(--lp-acento);
+}
+
+/* ---------- Barra inferior: trayecto Marte → Tierra y pausa ---------- */
+.lp-barra {
+  position: fixed;
+  inset: auto 0 0;
+  z-index: 6;
+  display: grid;
+  grid-template-columns: 1fr minmax(0, 460px) 1fr;
+  align-items: end;
+  gap: 16px;
+  padding: 30px var(--lp-margen) 20px;
+  background: linear-gradient(rgba(var(--lp-velo), 0), rgba(var(--lp-velo), 0.92) 55%);
+  pointer-events: none;
+}
+.lp-hud {
+  grid-column: 2;
+  padding: 22px 0 10px;
+  color: var(--lp-texto-3);
+  font-family: var(--lp-mono);
+  font-size: 10px;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+}
+.lp-via {
+  position: relative;
+  height: 1px;
+  background: var(--lp-linea-fuerte);
+}
+/* Paradas del viaje: Tierra, Luna, Marte y de vuelta a la Tierra. */
+.lp-parada {
+  position: absolute;
+  bottom: 9px;
+  translate: -50% 0;
+  white-space: nowrap;
+}
+.lp-parada::after {
+  content: "";
+  position: absolute;
+  top: calc(100% + 5px);
+  left: 50%;
+  width: 1px;
+  height: 7px;
+  background: var(--lp-linea-fuerte);
+}
+.lp-parada:first-of-type {
+  translate: 0 0;
+}
+.lp-parada:first-of-type::after {
+  left: 0;
+}
+.lp-parada:last-of-type {
+  translate: -100% 0;
+}
+.lp-parada:last-of-type::after {
+  left: 100%;
+}
+.lp-recorrido {
+  position: absolute;
+  inset: 0 auto 0 0;
+  width: calc(var(--viaje) * 100%);
+  background: var(--lp-acento);
+}
+.lp-sonda {
+  position: absolute;
+  top: 50%;
+  left: calc(var(--viaje) * 100%);
+  width: 9px;
+  height: 9px;
+  translate: -50% -50%;
+  rotate: 45deg;
+  background: var(--lp-acento);
+  box-shadow: 0 0 12px rgba(236, 155, 114, 0.7);
+}
+.lp-pausa {
+  grid-column: 3;
+  justify-self: end;
+  align-self: center;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 7px 11px;
+  border: 1px solid var(--lp-linea);
+  border-radius: 6px;
+  background: rgba(var(--lp-velo), 0.6);
+  color: var(--lp-texto-2);
+  font-size: 12px;
+  pointer-events: auto;
+}
+.lp-pausa:hover {
+  color: var(--lp-texto);
+  border-color: var(--lp-linea-fuerte);
+}
+.lp-pausa > span:first-child {
+  font-size: 9px;
+}
+
+/* ---------- Pantallas medianas y móviles ---------- */
+@media (max-width: 1100px) {
+  .lp-puntos {
+    display: none;
+  }
+  .lp-modulos {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+@media (max-width: 859px) {
+  .lp-nav {
+    display: none;
+  }
+  .lp-header .brand small {
+    display: none;
+  }
+  .lp-cap {
+    align-items: flex-end;
+    padding: 96px var(--lp-margen) 92px;
+  }
+  .lp-panel,
+  .lp-panel.ancho,
+  .lp-cap.centro .lp-panel {
+    width: 100%;
+  }
+  .lp-cap.centro .lp-ancho {
+    text-align: left;
+  }
+  .lp-panel::before {
+    inset: -90px calc(var(--lp-margen) * -1) -92px;
+    background: linear-gradient(rgba(var(--lp-velo), 0), rgba(var(--lp-velo), 0.86) 90px);
+  }
+  .lp-disco {
+    top: 26%;
+    width: 62vw;
+  }
+  .landing .lp-disco {
+    left: 19vw;
+    top: 26%;
+    scale: 1;
+  }
+  .lp-barra {
+    grid-template-columns: minmax(0, 1fr) auto;
+  }
+  .lp-hud {
+    grid-column: 1;
+  }
+  .lp-pausa {
+    grid-column: 2;
+  }
+  .lp-pausa-texto {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+  }
+  .lp-etiqueta {
+    font-size: 10px;
+  }
+}
+@media (max-width: 520px) {
+  .lp-modulos a {
+    padding: 14px;
+  }
+  .lp-modulos span {
+    display: none;
+  }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  html.portada-activa {
+    scroll-behavior: smooth;
+  }
+  .lp-puntos span {
+    transition: opacity 0.15s ease;
+  }
+  .lp-modulos a,
+  .lp-regiones button {
+    transition:
+      border-color 0.15s ease,
+      background-color 0.15s ease,
+      color 0.15s ease;
+  }
+}

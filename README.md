@@ -194,7 +194,8 @@ Si necesitas ayuda, comparte el comando que ejecutaste, el mensaje de error y tu
 
 ## Funciones
 
-- Tres escenarios marcianos y tres candidatos terrestres sintéticos.
+- Portada con una escena 3D que sigue el scroll: de la Tierra a la Luna, después a Marte y de regreso, en seis capítulos, con el escenario elegido y su ranking.
+- Tres escenarios lunares, tres escenarios marcianos y tres candidatos terrestres sintéticos.
 - Mapa vectorial esquemático con selección de candidato y ficha de descriptores.
 - Ranking recalculado al cambiar de región, búsqueda y exportación CSV etiquetada como demo.
 - Matriz de riesgos ficticia, explícitamente sin evaluación real.
@@ -209,6 +210,7 @@ src/
   components/           # Elementos compartidos
   data/                 # Datos sintéticos con comentarios de procedencia
   features/
+    landing/            # Portada: contenido, estilos y escena 3D
     explore/            # Mapa y selección
     ranking/            # Distancia entre descriptores
     economy/            # Calculadora y reglas
@@ -221,6 +223,19 @@ public/                 # Recursos públicos
 ```
 
 Los archivos fuente se pueden editar directamente en GitHub o localmente. `node_modules` y `dist` están excluidos. El build genera un sitio estático; publicar el repositorio no equivale a desplegar el sitio. Para alojarlo bajo una subcarpeta, configura `base` en `vite.config.ts`.
+
+## Portada
+
+Al abrir la aplicación se muestra la portada; el explorador vive en `#explorador`, `#ranking`, `#riesgos` y `#economia`, y su logotipo regresa a la portada. La Tierra es el eje del recorrido: la Luna es el primer alcance y Marte el siguiente. El escenario de referencia elegido en la portada (lunar o marciano) se conserva al entrar al explorador.
+
+La escena usa [Three.js](https://threejs.org/), que se descarga en un archivo aparte solo cuando se muestra la portada. La Tierra, la Luna, Marte y el cielo de galaxia se dibujan por código con ruido procedural y contornos continentales esquemáticos: **no son imágenes ni datos de NASA**. Los marcadores usan las coordenadas aproximadas de `src/data/demo.ts`.
+
+- `src/features/landing/Landing.tsx`: textos y capítulos.
+- `src/features/landing/journey.ts`: encuadres de cámara por capítulo y la matemática del recorrido, con pruebas en `tests/journey.test.ts`.
+- `src/features/landing/scene.ts`: planetas, sonda y animación.
+- `src/features/landing/landing.css`: estilos de la portada.
+
+Si el navegador no dispone de WebGL, la portada muestra un fondo estático con el mismo contenido; se puede probar añadiendo `?estatico` a la dirección. Con la preferencia del sistema de reducir el movimiento, o con el botón «Pausar movimiento», la escena queda quieta y la cámara salta de capítulo en capítulo.
 
 ## Método y límites
 
