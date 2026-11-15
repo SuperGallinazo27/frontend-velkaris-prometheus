@@ -7,6 +7,7 @@
  * - Solo se envían datos del lugar y del plan. No viajan el correo ni el nombre de quien pregunta.
  * - La IA explica y redacta; no calcula. Los números salen siempre de los datos.
  */
+import { getLanguage } from "../i18n/language";
 import { TOKEN_KEY } from "./authHttp";
 
 export type AssistantKind = "explicar" | "pregunta" | "plan";
@@ -69,7 +70,12 @@ export async function askAssistant(
     response = await (options.fetcher ?? fetch)(`${base.replace(/\/+$/, "")}/api/v1/assistant/ask`, {
       method: "POST",
       headers: { "Content-Type": "application/json", Authorization: `Bearer ${token}` },
-      body: JSON.stringify({ kind, question: question?.trim() || null, context }),
+      // Con la interfaz en inglés, el copiloto responde en inglés (el servidor lo lee del contexto).
+      body: JSON.stringify({
+        kind,
+        question: question?.trim() || null,
+        context: getLanguage() === "en" ? { ...context, idioma_de_respuesta: "inglés" } : context,
+      }),
     });
   } catch {
     throw new AssistantError("servidor", "No se pudo conectar con el servidor. Revisa que esté encendido e inténtalo de nuevo.");

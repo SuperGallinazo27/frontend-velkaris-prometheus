@@ -279,3 +279,36 @@ html.modo-nocturno {
       color 0.15s ease;
   }
 }
+
+/* ---------- Interruptor de idioma (ES / EN) ---------- */
+.idioma {
+  display: inline-flex;
+  flex: none;
+  padding: 2px;
+  border: 1px solid var(--nc-linea-fuerte);
+  border-radius: 999px;
+}
+.idioma button {
+  min-width: 34px;
+  padding: 4px 9px;
+  border: 0;
+  border-radius: 999px;
+  background: transparent;
+  color: var(--nc-texto-2);
+  font: inherit;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  cursor: pointer;
+}
+.idioma button:hover {
+  color: var(--nc-texto);
+}
+.idioma button[aria-pressed="true"] {
+  background: var(--nc-acento);
+  color: var(--nc-sobre-acento);
+}
+.idioma button:focus-visible {
+  outline: 2px solid var(--nc-acento);
+  outline-offset: 2px;
+}

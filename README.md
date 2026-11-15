@@ -204,6 +204,19 @@ Si necesitas ayuda, comparte el comando que ejecutaste, el mensaje de error y tu
 - Marte es todavía una demostración con valores sintéticos, y cada pantalla lo dice.
 - Navegación por teclado, etiquetas accesibles y diseño adaptable a móvil.
 
+- Interruptor de idioma **ES / EN** en la portada, en el ingreso y en la barra de cada pantalla. Cambia toda la interfaz al momento, sin recargar, y recuerda la elección.
+
+## Idioma (español e inglés)
+
+La aplicación está escrita en español. El modo inglés traduce lo que ya se ve, sin tocar la lógica:
+
+- `src/i18n/en.json` es el diccionario: textos fijos (`exact`), textos con valores (`templates`, como `"Se atascó a los {0} m"`) y trozos de textos que llegan armados del servidor (`phrases`, como «categoría UICN»).
+- `src/i18n/translator.ts` busca cada texto en el diccionario; `src/i18n/dom.ts` lo aplica a la página y lo mantiene al día mientras React la actualiza; al volver a español, cada texto recupera su original.
+- Los nombres de países salen del navegador (`Intl.DisplayNames`). Los nombres propios de lugares se quedan como están.
+- El diccionario solo se descarga si alguien elige inglés, y la elección vale para todas las pestañas.
+- El copiloto responde en inglés cuando la interfaz está en inglés (el servidor lo lee del contexto).
+- Lo que no esté en el diccionario se queda en español: para traducir un texto nuevo, añádelo a `en.json`. Las pruebas están en `tests/idioma.test.ts`.
+
 ## Estructura editable
 
 ```text

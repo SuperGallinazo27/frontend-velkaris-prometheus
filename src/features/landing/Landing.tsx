@@ -1,6 +1,7 @@
 import { useEffect, useMemo, useRef, useState } from "react";
 import type { RefObject } from "react";
 import { Brand } from "../../components/Brand";
+import { LanguageSwitch } from "../../components/LanguageSwitch";
 import { Icon } from "../../components/Icon";
 import type { Terrain } from "../../types/analysis";
 import { matchPercent } from "../world/hierarchy";
@@ -313,6 +314,7 @@ export function Landing() {
           <a href="#metodo">Método</a>
           <a href="#candidatos">Lugares</a>
         </nav>
+        <LanguageSwitch />
         {/* El ingreso se abre en otra pestaña: la portada queda abierta detrás. */}
         <a className="lp-ingresar" href="#ingresar" target="_blank" rel="noopener" aria-label="Ingresar (se abre en otra pestaña)">
           Ingresar
@@ -340,9 +342,9 @@ export function Landing() {
                 De otros mundos. <span>A nuestro planeta.</span>
               </h1>
               <p className="lp-lead">
-                PROMETHEUS encuentra en la Tierra lugares con terreno parecido al de la Luna, te deja probar allí tu
-                robot en un simulador 3D con el suelo y el clima del lugar, y reservar tu turno. Primero la Luna;
-                después, Marte.
+                PROMETHEUS busca en la Tierra paisajes con características similares a los de otros mundos: comenzando
+                por la Luna y próximamente: Marte. Un punto de partida para explorar similitudes y formular mejores
+                preguntas.
               </p>
               <div className="lp-acciones">
                 <a className="nc-btn primario" href="#mundo">

@@ -1,6 +1,7 @@
 import type { User } from "../services/auth";
 import { auth } from "../services/session";
 import { Brand } from "./Brand";
+import { LanguageSwitch } from "./LanguageSwitch";
 
 /** Barra superior de las pantallas con sesión: marca, secciones según el rol y salida. */
 export function AccountBar({ user, current }: { user: User; current: "admin" | "mundo" | "registro" | "turnos" }) {
@@ -28,6 +29,7 @@ export function AccountBar({ user, current }: { user: User; current: "admin" | "
         </nav>
       )}
       <div className="nc-cuenta">
+        <LanguageSwitch />
         <span>{user.email}</span>
         <span className={`nc-insignia ${user.role === "admin" ? "acento" : "tierra"}`}>
           {user.role === "admin" ? "Administrador" : "Agencia"}

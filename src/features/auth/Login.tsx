@@ -1,6 +1,7 @@
 import { useState } from "react";
 import type { FormEvent } from "react";
 import { Brand } from "../../components/Brand";
+import { LanguageSwitch } from "../../components/LanguageSwitch";
 import { Icon } from "../../components/Icon";
 import { AuthError } from "../../services/auth";
 import { auth } from "../../services/session";
@@ -36,6 +37,7 @@ export function Login({ notice }: { notice: LoginNotice | null }) {
       <a className="acceso-volver" href="#inicio">
         <span aria-hidden="true">←</span> Volver a la portada
       </a>
+      <LanguageSwitch />
       <main className="acceso-caja nc-tarjeta">
         <Brand surface="claro" label="PROMETHEUS by VELKARIS, volver a la portada" />
         <div>
