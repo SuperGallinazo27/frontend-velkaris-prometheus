@@ -1,5 +1,14 @@
 # PROMETHEUS · Frontend VELKARIS
 
+**Repositorios del proyecto** (se necesitan los dos):
+
+| Parte | Repositorio |
+|---|---|
+| Frontend (esta web: React + TypeScript + Vite) | https://github.com/SuperGallinazo27/frontend-velkaris-prometheus |
+| Backend (API: FastAPI + PostgreSQL; cuentas, turnos, copiloto IA, El Niño) | https://github.com/SuperGallinazo27/velkaris-prometheus |
+
+Sin el backend, la web funciona en modo demostración: las cuentas y los turnos se guardan solo en el navegador y el copiloto de IA no responde. Para conectarlo, pon la dirección del backend en `VITE_API_BASE_URL` (ver `.env.example`).
+
 Aplicación web para encontrar en la Tierra lugares con terreno parecido al de la Luna, probar allí un robot en un simulador 3D con el suelo y el clima del lugar, y reservar un turno. React + TypeScript + Vite, gestionado con Bun.
 
 > **Qué es real y qué no.** Con la Luna, la comparación usa mediciones: la elevación del láser LOLA de NASA en la Luna y el modelo Copernicus en la Tierra. Solo compara la forma del terreno; no es una validación científica. El clima, el suelo, las áreas protegidas, las fotos y los turnos también salen de datos reales, cada uno con su fuente y sus límites en pantalla. **Marte es todavía una demostración** con valores sintéticos. El inicio de sesión usa el backend cuando está configurado y, si no, una simulación en el navegador.
