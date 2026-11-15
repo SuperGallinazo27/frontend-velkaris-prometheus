@@ -53,3 +53,35 @@
 .mundo-ficha .accesos .sin-dato dd {
   color: var(--nc-texto-3);
 }
+
+/* «Por qué es un sitio análogo», al principio de la pestaña Terreno. */
+.analogo-fuente {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  padding-bottom: 14px;
+  border-bottom: 1px solid var(--nc-linea);
+}
+.analogo-fuente > header {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 6px 12px;
+}
+.analogo-fuente h3 {
+  color: var(--nc-texto-3);
+  font-family: var(--nc-mono);
+  font-size: 10.5px;
+  font-weight: 400;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+.analogo-fuente p {
+  margin: 0;
+}
+.analogo-fuente a {
+  color: var(--nc-acento);
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}

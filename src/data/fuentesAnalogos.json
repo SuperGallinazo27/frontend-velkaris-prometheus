@@ -1,0 +1,378 @@
+{
+ "description": "Fuente publicada que documenta cada lugar como sitio análogo de la Luna o de Marte. Cada enlace se abrió y se comprobó.",
+ "checked": "2026-11-15",
+ "places": {
+  "valle-de-la-luna": {
+   "analog_of": null,
+   "why_es": "No se encontró una fuente creíble que documente este sitio concreto como análogo planetario.",
+   "source": null,
+   "note": null
+  },
+  "salar-de-atacama": {
+   "analog_of": "Marte",
+   "why_es": "Los salares chilenos, incluido el Salar de Atacama, se estudian como análogo de depósitos evaporíticos marcianos.",
+   "source": {
+    "title": "Remote sensing and in situ mineralogic survey of the Chilean salars: An analog to Mars evaporate deposits?",
+    "publisher": "Icarus 282, 152-173; Flahaut, Martinot, Bishop, Davies, Potts",
+    "year": 2017,
+    "url": "https://sshade.eu/data/publication/PUBLI_Flahaut_2017"
+   },
+   "note": "DOI 10.1016/j.icarus.2016.09.041."
+  },
+  "yungay": {
+   "analog_of": "Marte",
+   "why_es": "Núcleo hiperárido del Atacama propuesto como buen modelo análogo de Marte.",
+   "source": {
+    "title": "The Atacama Desert in Northern Chile as an Analog Model of Mars",
+    "publisher": "Frontiers in Astronomy and Space Sciences 8; Azua-Bustos, Gonzalez-Silva, Fairen",
+    "year": 2022,
+    "url": "https://www.frontiersin.org/articles/10.3389/fspas.2021.810426/full"
+   },
+   "note": null
+  },
+  "laguna-verde": {
+   "analog_of": "Marte",
+   "why_es": "La región de la Puna de Atacama (con Laguna Verde y Ojos del Salado) se caracteriza como posible análogo de Marte temprano.",
+   "source": {
+    "title": "Characterization of the Potential of the Puna de Atacama region in terms of Planetary Analogs: Preliminary results for the Salar de Maricunga, Tres Cruces, Laguna Verde and Ojos del Salado Areas",
+    "publisher": "EPSC2021 (EPSC Abstracts 15, EPSC2021-452); Tavernier et al. (U. Atacama / EuroMoonMars)",
+    "year": 2021,
+    "url": "https://meetingorganizer.copernicus.org/EPSC2021/EPSC2021-452.html"
+   },
+   "note": "Resumen de congreso con resultados preliminares; estudia la Puna de Atacama, que incluye Laguna Verde."
+  },
+  "ischigualasto": {
+   "analog_of": null,
+   "why_es": "No se encontró una fuente creíble que lo documente como análogo planetario; solo es conocido por su paleontologia triásica.",
+   "source": null,
+   "note": null
+  },
+  "campo-de-piedra-pomez": {
+   "analog_of": "Marte",
+   "why_es": "Sus megarizaduras, yardangs y ventifactos se estudian como análogo eólico de Marte.",
+   "source": {
+    "title": "Wind regime, sediment transport, and landscape dynamics at a Mars analogue site in the Andes Mountains of Northwestern Argentina",
+    "publisher": "Favaro, Hugenholtz, Barchyn y otros, Icarus 346",
+    "year": 2020,
+    "url": "https://doi.org/10.1016/j.icarus.2020.113765"
+   },
+   "note": null
+  },
+  "salar-de-uyuni": {
+   "analog_of": "Marte",
+   "why_es": "Sus salmueras y arcillas son comparables a las marcianas; NASA lo describe como laboratorio natural para estudiar Marte.",
+   "source": {
+    "title": "Bolivian Salt Flats",
+    "publisher": "NASA Earth Observatory (Image of the Day)",
+    "year": 2023,
+    "url": "https://science.nasa.gov/earth/earth-observatory/bolivian-salt-flats-151813"
+   },
+   "note": null
+  },
+  "pampa-de-la-joya": {
+   "analog_of": "Marte",
+   "why_es": "Desierto hiperárido propuesto como nuevo análogo de suelos marcianos (zona 'Mar de Cuarzo').",
+   "source": {
+    "title": "Multidisciplinary approach of the hyperarid desert of Pampas de La Joya in southern Peru as a new Mars-like soil analog",
+    "publisher": "Geochimica et Cosmochimica Acta 75(7), 1975-1991; Valdivia-Silva, Navarro-Gonzalez, ..., McKay",
+    "year": 2011,
+    "url": "https://cris.utec.edu.pe/en/publications/multidisciplinary-approach-of-the-hyperarid-desert-of-pampas-de-l/"
+   },
+   "note": "DOI 10.1016/j.gca.2011.01.017."
+  },
+  "sierra-negra": {
+   "analog_of": null,
+   "why_es": "No se encontró fuente científica que lo use como análogo planetario.",
+   "source": null,
+   "note": null
+  },
+  "arenal-del-chimborazo": {
+   "analog_of": null,
+   "why_es": "No se encontró fuente creíble que lo documente como análogo planetario.",
+   "source": null,
+   "note": null
+  },
+  "paramo-del-cotopaxi": {
+   "analog_of": null,
+   "why_es": "No se encontró fuente creíble que lo documente como análogo planetario.",
+   "source": null,
+   "note": null
+  },
+  "crater-barringer": {
+   "analog_of": "Luna",
+   "why_es": "Sitio análogo terrestre donde Eugene Shoemaker entrenó astronautas NASA para las misiones Apolo a la Luna.",
+   "source": {
+    "title": "Meteor Crater Sample Collection",
+    "publisher": "U.S. Geological Survey, Astrogeology Science Center",
+    "year": null,
+    "url": "https://www.usgs.gov/centers/astrogeology-science-center/science/meteor-crater-sample-collection"
+   },
+   "note": "El USGS lo describe como sitio análogo terrestre donde se entrenaron los astronautas del Apolo."
+  },
+  "hanksville": {
+   "analog_of": "Marte",
+   "why_es": "La Mars Desert Research Station (Utah) se usa como hábitat análogo de Marte para misiones simuladas.",
+   "source": {
+    "title": "Observations of Crew Dynamics during Mars Analog Simulations",
+    "publisher": "NASA Technical Reports Server; Stacy L. Cusack (NASA JSC)",
+    "year": 2010,
+    "url": "https://ntrs.nasa.gov/citations/20100003040"
+   },
+   "note": "Trata de la estación MDRS, junto a Hanksville."
+  },
+  "mauna-loa": {
+   "analog_of": "Luna y Marte",
+   "why_es": "La estación HI-SEAS en Mauna Loa se usa para simular vivir y trabajar en la Luna o Marte, en terreno parecido al marciano.",
+   "source": {
+    "title": "Living the Lava Life on Mauna Loa",
+    "publisher": "NASA Earth Observatory (NASA Science)",
+    "year": 2022,
+    "url": "https://science.nasa.gov/earth/earth-observatory/living-the-lava-life-on-mauna-loa-150697/"
+   },
+   "note": "Trata de la estación HI-SEAS, en la ladera de Mauna Loa."
+  },
+  "craters-of-the-moon": {
+   "analog_of": "Luna y Marte",
+   "why_es": "Sus campos de lava son terreno de entrenamiento para la exploración planetaria y tienen rasgos comunes con la Luna y con Marte.",
+   "source": {
+    "title": "Moonscapes of Idaho",
+    "publisher": "NASA Earth Observatory (NASA Science)",
+    "year": 2025,
+    "url": "https://science.nasa.gov/earth/earth-observatory/moonscapes-of-idaho-154207"
+   },
+   "note": null
+  },
+  "valle-de-la-muerte": {
+   "analog_of": "Marte",
+   "why_es": "El parque se describe como un sitio análogo planetario ideal que imita condiciones de lugares como Marte y la NASA lo estudia desde hace décadas.",
+   "source": {
+    "title": "Death Valley National Park and NASA Host Mars and the Mojave Festival",
+    "publisher": "U.S. National Park Service",
+    "year": 2012,
+    "url": "https://www.nps.gov/deva/learn/news/mars-and-mojave.htm"
+   },
+   "note": null
+  },
+  "crater-haughton": {
+   "analog_of": "Marte",
+   "why_es": "El Haughton Mars Project, liderado por NASA Ames, es un análogo de misión en el cráter de impacto Haughton, en la isla Devon.",
+   "source": {
+    "title": "10 Things to Know About Planetary Analogs",
+    "publisher": "NASA Science",
+    "year": null,
+    "url": "https://science.nasa.gov/solar-system/planetary-analogs/10-things-to-know-about-planetary-analogs/"
+   },
+   "note": null
+  },
+  "el-pinacate": {
+   "analog_of": "Luna",
+   "why_es": "La región volcánica de Pinacate está repleta de análogos lunares y allí se entrenó a astronautas Apolo en geología lunar.",
+   "source": {
+    "title": "Exploring a Desert Portal to Other Worlds",
+    "publisher": "University of Arizona News",
+    "year": 2019,
+    "url": "https://news.arizona.edu/news/exploring-desert-portal-other-worlds"
+   },
+   "note": null
+  },
+  "pico-de-orizaba": {
+   "analog_of": "Marte",
+   "why_es": "Sus condiciones ambientales de alta montaña tropical podrían haber ocurrido en el Marte antiguo, y se estudia el límite del bosque como análogo.",
+   "source": {
+    "title": "Tropical Alpine Environments: A Plausible Analog for Ancient and Future Life on Mars",
+    "publisher": "Perez-Chavez, Navarro-Gonzalez, McKay & Cruz-Kuri, en 'Astrobiology' (Springer), pp. 297-302. DOI 10.1007/978-94-011-4313-4_32",
+    "year": 2000,
+    "url": "https://rd.springer.com/chapter/10.1007/978-94-011-4313-4_32"
+   },
+   "note": null
+  },
+  "askja": {
+   "analog_of": "Marte",
+   "why_es": "El flujo de lava de 1961 en Askja tiene una de las composiciones más cercanas a los basaltos marcianos y el entorno glaciovolcánico es análogo al de Marte.",
+   "source": {
+    "title": "Vikrahraun: the 1961 basaltic lava flow eruption at Askja, Iceland: morphology, geochemistry, and planetary analogs",
+    "publisher": "Blasizzo et al., Earth, Planets and Space 74, 168. DOI 10.1186/s40623-022-01711-5",
+    "year": 2022,
+    "url": "https://link.springer.com/article/10.1186/s40623-022-01711-5"
+   },
+   "note": null
+  },
+  "landmannalaugar": {
+   "analog_of": null,
+   "why_es": "No se encontró una fuente creíble que nombre Landmannalaugar como análogo planetario.",
+   "source": null,
+   "note": null
+  },
+  "timanfaya": {
+   "analog_of": "Luna y Marte",
+   "why_es": "ESA realiza entrenamiento geológico de astronautas en Lanzarote, descrito como entorno análogo de la Luna y Marte.",
+   "source": {
+    "title": "Geological training in terrestrial Moon and Mars analogue environments",
+    "publisher": "ESA",
+    "year": 2021,
+    "url": "https://www.esa.int/ESA_Multimedia/Images/2021/03/Geological_training_in_terrestrial_Moon_and_Mars_analogue_environments"
+   },
+   "note": "La fuente trata de Lanzarote, donde está Timanfaya."
+  },
+  "rio-tinto": {
+   "analog_of": "Marte",
+   "why_es": "El área de Río Tinto es un análogo importante para buscar vida en agua líquida bajo la superficie de Marte (proyecto MARTE de NASA).",
+   "source": {
+    "title": "Red River Drills for Mars",
+    "publisher": "NASA Astrobiology",
+    "year": 2003,
+    "url": "https://astrobiology.nasa.gov/news/red-river-drills-for-mars/"
+   },
+   "note": null
+  },
+  "bockfjorden": {
+   "analog_of": "Marte",
+   "why_es": "Los carbonatos del complejo volcánico de Bockfjord son análogos de los del meteorito marciano ALH84001 y de los de Gusev.",
+   "source": {
+    "title": "Cryogenic Origin for Mars Analog Carbonates in the Bockfjord Volcanic Complex, Svalbard (Norway)",
+    "publisher": "NASA Technical Reports Server; Amundsen, Benning, Blake, Fogel, Ming, Skidmore, Steele (LPSC 42)",
+    "year": 2011,
+    "url": "https://ntrs.nasa.gov/api/citations/20110008112"
+   },
+   "note": "La fuente lo nombra «Bockfjord Volcanic Complex»."
+  },
+  "monte-etna": {
+   "analog_of": "Luna",
+   "why_es": "Etna acoge la demostración ARCHES/Analog-1 de ESA y DLR para probar una misión lunar de retorno de muestras con un rover.",
+   "source": {
+    "title": "Lunar science stirring on Mount Etna",
+    "publisher": "ESA",
+    "year": 2022,
+    "url": "https://esa.int/ESA_Multimedia/Images/2022/06/Lunar_science_stirring_on_Mount_Etna"
+   },
+   "note": null
+  },
+  "erfoud": {
+   "analog_of": "Marte",
+   "why_es": "Simulación de campo análoga a Marte (MARS2013, Österreichisches Weltraum Forum) realizada cerca de la ciudad de Erfoud, en el Sahara marroquí.",
+   "source": {
+    "title": "MARS2013 Mars Analog Field Simulation",
+    "publisher": "ESA Exploration (Mars analog field simulations listing), organizer: Austrian Space Forum (OeWF)",
+    "year": 2013,
+    "url": "https://exploration.esa.int/web/mars/-/50537-mars2013-mars-analog-field-simulation"
+   },
+   "note": null
+  },
+  "desierto-del-namib": {
+   "analog_of": "Marte",
+   "why_es": "El resumen describe el Namib, el desierto más antiguo del mundo, como análogo viable de las condiciones secas de los desiertos de Marte para detectar sistemas biológicos crípticos (hipolitos).",
+   "source": {
+    "title": "Cryptic desert biotopes as Martian analogues",
+    "publisher": "Makhalanyane T., Stomeo F., Pointing S., Tuffin M., Cowan D., Lacap-Bugler D. - IAC-11 (International Astronautical Congress) abstract, iafastro.directory",
+    "year": 2011,
+    "url": "https://iafastro.directory/iac/archive/browse/IAC-11/A1/5/11667/"
+   },
+   "note": "Resumen de congreso; trata del desierto del Namib en conjunto."
+  },
+  "dallol": {
+   "analog_of": "Marte",
+   "why_es": "Su volcanismo activo, hidrotermalismo difuso y vastos depósitos sulfatados ácidos se asemejan a la actividad hidrotermal pasada de Marte.",
+   "source": {
+    "title": "The Dallol Geothermal Area, Northern Afar (Ethiopia): An Exceptional Planetary Field Analog on Earth",
+    "publisher": "Cavalazzi y otros, Astrobiology 19(4)",
+    "year": 2019,
+    "url": "https://doi.org/10.1089/ast.2018.1926"
+   },
+   "note": null
+  },
+  "marmul": {
+   "analog_of": "Marte",
+   "why_es": "La expedición AMADEE-18 simuló una misión a Marte en la región de Dhofar (Omán), cuyo terreno se asemeja a rasgos de la superficie marciana.",
+   "source": {
+    "title": "The AMADEE-18 Mars Analog Expedition in the Dhofar Region of Oman",
+    "publisher": "Groemer G. et al., Astrobiology 20(11):1276-1286, doi:10.1089/ast.2019.2031",
+    "year": 2020,
+    "url": "https://doi.org/10.1089/ast.2019.2031"
+   },
+   "note": "La misión AMADEE-18 se hizo en Dhofar, la región de Marmul."
+  },
+  "crater-ramon": {
+   "analog_of": "Marte",
+   "why_es": "El cráter Ramon se eligió por su geología similar a la marciana y su clima hiperárido; alberga la estación análoga D-MARS (también con motivación lunar).",
+   "source": {
+    "title": "The 2019 analog Mars mission season at the Desert Mars analog Ramon Station",
+    "publisher": "Rubinstein H. et al. (Tel Aviv University, Weizmann Institute), 70th International Astronautical Congress, IAC-19_A5_2_13_x54411",
+    "year": 2019,
+    "url": "https://cris.iucc.ac.il/en/publications/the-2019-analog-mars-mission-season-at-the-desert-mars-analog-ram/"
+   },
+   "note": "Ramon es un cráter de erosión, no de impacto."
+  },
+  "cuenca-de-qaidam": {
+   "analog_of": "Marte",
+   "why_es": "La playa salina de Dalangtan, en la cuenca de Qaidam, es un análogo marciano en mineralogía y geoquímica (sulfatos de Mg, cloruros y percloratos).",
+   "source": {
+    "title": "Dalangtan Saline Playa in a Hyperarid Region on Tibet Plateau: I. Evolution and Environments",
+    "publisher": "Kong F., Zheng M., Hu B., Wang A., Ma N., Sobron P., Astrobiology 18(10):1243-1253, doi:10.1089/ast.2018.1830",
+    "year": 2018,
+    "url": "https://doi.org/10.1089/ast.2018.1830"
+   },
+   "note": "Estudia la playa de Dalangtan, dentro de la cuenca."
+  },
+  "tso-kar": {
+   "analog_of": "Marte",
+   "why_es": "ISRO eligió el valle de Tso Kar por sus paralelismos ambientales con el Marte temprano (UV alta, baja presión, frío, permafrost salino) para su misión análoga HOPE.",
+   "source": {
+    "title": "ISRO organizes Space Analog Mission in Tso Kar Valley, Ladakh",
+    "publisher": "ISRO (Indian Space Research Organisation)",
+    "year": 2025,
+    "url": "https://www.isro.gov.in/ISRO_EN/Space_Analog_Mission.html"
+   },
+   "note": null
+  },
+  "tolbachik": {
+   "analog_of": "Marte",
+   "why_es": "La erupción de 2012-2013 del Tolbachik produjo un campo de lava probablemente el más parecido a los de la región marciana de Tharsis, usado como sitio análogo terrestre.",
+   "source": {
+    "title": "Placing Terrestrial Constraints on Past Mars Lava Flow Eruption Conditions",
+    "publisher": "Planetary Science Institute (NASA-funded project page)",
+    "year": 2019,
+    "url": "https://www.psi.edu/blog/project/placing-terrestrial-constraints-on-past-mars-lava-flow-eruption-conditions"
+   },
+   "note": "Estudia las coladas de lava de la erupción de 2012-2013."
+  },
+  "arkaroola": {
+   "analog_of": "Marte",
+   "why_es": "Mars Society Australia seleccionó la zona de Arkaroola como región análoga de Marte por su geología marciana, extremófilos en Paralana y sistemas hidrotermales fósiles.",
+   "source": {
+    "title": "Analogue Research Site Selection",
+    "publisher": "Mars Society Australia",
+    "year": null,
+    "url": "https://marssociety.org.au/node/537"
+   },
+   "note": "Fuente de la Mars Society Australia, no de una agencia espacial."
+  },
+  "pilbara": {
+   "analog_of": "Marte",
+   "why_es": "Los estromatolitos de 3.4 Ga de la Formación Strelley Pool son un análogo importante para buscar vida fósil en sedimentos noaquianos de Marte.",
+   "source": {
+    "title": "Searching for Life on Early Mars: Lessons from the Pilbara",
+    "publisher": "Clarke J.D.A. (Mars Society Australia) and Stoker C.R. (NASA Ames Research Center), NASA NTRS / BioSignature Preservation and Detection in Mars Analog Environments conference",
+    "year": 2016,
+    "url": "https://ntrs.nasa.gov/citations/20160006681"
+   },
+   "note": "Trata de la zona de Strelley Pool, en el Pilbara."
+  },
+  "desierto-de-rangipo": {
+   "analog_of": null,
+   "why_es": "No se encontró ninguna fuente creíble (agencia o artículo revisado) que nombre el desierto de Rangipo como sitio análogo lunar o marciano.",
+   "source": null,
+   "note": null
+  },
+  "valles-secos-de-mcmurdo": {
+   "analog_of": "Marte",
+   "why_es": "Los Valles Secos de McMurdo son el mejor análogo terrestre conocido de las llanuras del norte de Marte donde aterrizó Phoenix.",
+   "source": {
+    "title": "McMurdo Dry Valleys, Antarctica - A Mars Phoenix Mission Analog",
+    "publisher": "Tamppari L.K. et al., NASA NTRS / Lunar and Planetary Science Conference",
+    "year": 2010,
+    "url": "https://ntrs.nasa.gov/citations/20100003844"
+   },
+   "note": null
+  }
+ }
+}

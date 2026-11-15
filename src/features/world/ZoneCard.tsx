@@ -7,6 +7,7 @@ import { TurnoPanel } from "../turnos/TurnoPanel";
 import { usePlaceStatuses } from "../turnos/usePlaceStatuses";
 import { ClimateTab } from "./ClimateTab";
 import { AccessPanel } from "./AccessPanel";
+import { AnalogSourcePanel } from "./AnalogSourcePanel";
 import { coordinates, decimal, percent } from "./format";
 import { HIGH_MATCH, MID_MATCH, similarity } from "./hierarchy";
 import type { Match } from "./hierarchy";
@@ -111,6 +112,7 @@ export function ZoneCard({ match, region, institution }: Props) {
       <div className="ficha-panel" role="tabpanel" id={`ficha-panel-${tab}`} aria-labelledby={`ficha-pestana-${tab}`}>
         {tab === "terreno" && (
           <>
+            <AnalogSourcePanel placeId={zone.id} />
             <dl className="mundo-distancia">
               <div>
                 <dt>{region ? "Se compara con" : "Se parece más a"}</dt>
