@@ -1,54 +1,73 @@
-import { useEffect, useState } from "react";
-import type { View } from "../types/analysis";
+import { Suspense, lazy, useEffect, useState } from "react";
+import { Admin } from "../features/admin/Admin";
+import { Login } from "../features/auth/Login";
+import type { LoginNotice } from "../features/auth/Login";
+import { Registro } from "../features/auth/Registro";
 import { Landing } from "../features/landing/Landing";
-import App from "./App";
+import { MisTurnos } from "../features/turnos/MisTurnos";
+import { useSession, useSessionPending } from "../services/session";
+import { guard, hashOf, parseHash } from "./routes";
 
-/** Cada vista del explorador tiene su dirección; cualquier otra muestra la portada. */
-const hashByView: Record<View, string> = {
-  explore: "#explorador",
-  ranking: "#ranking",
-  risks: "#riesgos",
-  economy: "#economia",
-};
-
-function viewFromHash(): View | null {
-  const entry = Object.entries(hashByView).find(([, hash]) => hash === window.location.hash);
-  return entry ? (entry[0] as View) : null;
-}
-
-/** Mantiene la dirección al día al navegar dentro del explorador, sin añadir pasos al historial. */
-function rememberView(view: View) {
-  if (window.location.hash !== hashByView[view]) {
-    window.history.replaceState(null, "", hashByView[view]);
-  }
-}
+// El mundo interactivo trae Three.js y el mapa de países: se descarga solo al abrirlo.
+const World = lazy(() => import("../features/world/World"));
 
 export default function Root() {
-  const [view, setView] = useState<View | null>(viewFromHash);
-  // La Luna es el primer alcance: la portada abre con un escenario lunar como referencia.
-  const [regionId, setRegionId] = useState("tranquillitatis");
-  const inApp = view !== null;
+  const [requested, setRequested] = useState(() => parseHash(window.location.hash));
+  const [notice, setNotice] = useState<LoginNotice | null>(null);
+  const user = useSession();
+  // Con una sesión guardada, hasta que el servidor responde no se sabe si hay que pedir el ingreso.
+  const restoring = useSessionPending();
+  // La pantalla que corresponde a la dirección pedida y a la sesión: sin permiso, se redirige.
+  const route = restoring ? requested : guard(requested, user);
+  const hash = hashOf(route);
+  const screen = route.screen;
 
   useEffect(() => {
-    const onHashChange = () => setView(viewFromHash());
+    const onHashChange = () => setRequested(parseHash(window.location.hash));
     window.addEventListener("hashchange", onHashChange);
     return () => window.removeEventListener("hashchange", onHashChange);
   }, []);
 
+  // La dirección refleja la pantalla que de verdad se muestra.
   useEffect(() => {
-    if (inApp) window.scrollTo(0, 0);
-  }, [inApp]);
+    if (route !== requested) window.location.replace(hash);
+  }, [route, requested, hash]);
 
-  if (view === null) {
-    return <Landing regionId={regionId} onRegionChange={setRegionId} />;
+  useEffect(() => {
+    // Las pantallas de cuentas y de turnos usan el tema claro; la portada y el mundo, el nocturno (el espacio).
+    const light = screen === "login" || screen === "registro" || screen === "admin" || screen === "turnos";
+    document.documentElement.classList.toggle("modo-claro", light);
+    document.documentElement.classList.toggle("modo-nocturno", !light);
+    if (screen !== "landing") window.scrollTo(0, 0);
+  }, [screen]);
+
+  if (restoring && screen !== "landing" && screen !== "login") {
+    return <div className="nocturno pantalla-carga">Recuperando tu sesión…</div>;
   }
-  return (
-    <App
-      key={view}
-      initialView={view}
-      initialRegionId={regionId}
-      onViewChange={rememberView}
-      onRegionChange={setRegionId}
-    />
-  );
+
+  switch (route.screen) {
+    case "landing":
+      return <Landing />;
+    case "login":
+      return <Login key={notice?.email ?? "ingreso"} notice={notice} />;
+    case "registro":
+      return (
+        <Registro
+          user={user!}
+          onDone={(email) =>
+            setNotice({ email, message: "Registro completo. Ingresa con tu nueva clave para abrir el mundo interactivo." })
+          }
+        />
+      );
+    case "admin":
+      return <Admin user={user!} />;
+    case "turnos":
+      return <MisTurnos user={user!} />;
+    case "mundo":
+      return (
+        <Suspense fallback={<div className="nocturno pantalla-carga">Cargando el mundo interactivo…</div>}>
+          <World user={user!} />
+        </Suspense>
+      );
+  }
 }

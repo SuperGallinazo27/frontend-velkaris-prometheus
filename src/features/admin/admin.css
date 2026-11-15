@@ -1,0 +1,350 @@
+/* Panel del administrador. */
+.admin {
+  min-height: 100vh;
+  min-height: 100svh;
+}
+.admin-caja {
+  display: flex;
+  flex-direction: column;
+  gap: 28px;
+  width: min(1180px, 100%);
+  margin: 0 auto;
+  padding: clamp(28px, 5vw, 52px) var(--nc-margen) 72px;
+}
+.admin-caja > .nc-titulo {
+  margin-top: -16px;
+}
+.admin-intro {
+  max-width: 68ch;
+  margin-top: -14px;
+}
+.admin h2 {
+  font-size: 17px;
+  font-weight: 600;
+  letter-spacing: 0;
+}
+.admin strong {
+  color: var(--nc-texto);
+  font-weight: 600;
+}
+
+/* Alta */
+.admin-alta {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  padding: clamp(16px, 3vw, 24px);
+}
+.admin-alta form {
+  display: grid;
+  grid-template-columns: minmax(0, 1.4fr) minmax(0, 1fr) auto auto;
+  align-items: end;
+  gap: 12px;
+}
+.admin-alta input#admin-clave,
+.admin-emitida code {
+  font-family: var(--nc-mono);
+  letter-spacing: 0.06em;
+}
+.admin-emitida {
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+.admin-emitida code {
+  display: block;
+  margin-top: 6px;
+  color: var(--nc-acento-claro);
+  font-size: 18px;
+  user-select: all;
+}
+
+/* Lista */
+.admin-cabecera {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 4px 16px;
+  margin-bottom: 12px;
+}
+.admin-tabla {
+  overflow-x: auto;
+}
+.admin-tabla table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 13px;
+}
+.admin-tabla th,
+.admin-tabla td {
+  padding: 13px 12px;
+  border-bottom: 1px solid var(--nc-linea);
+  color: var(--nc-texto-2);
+  font-size: inherit;
+  font-weight: 400;
+  text-align: left;
+  white-space: nowrap;
+  background: none;
+}
+.admin-tabla thead th {
+  color: var(--nc-texto-3);
+  font-family: var(--nc-mono);
+  font-size: 10.5px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+.admin-tabla tbody th {
+  color: var(--nc-texto);
+  font-weight: 600;
+}
+.admin-tabla tbody tr:last-child > * {
+  border-bottom: 0;
+}
+.admin-tabla small {
+  display: inline;
+  color: var(--nc-texto-3);
+  font-size: 12px;
+}
+.admin-reemitir {
+  display: block;
+  margin-top: 4px;
+  padding: 2px 0;
+  border: 0;
+  background: none;
+  color: var(--nc-texto-2);
+  font-size: 12px;
+  text-decoration: underline;
+  text-decoration-color: var(--nc-linea-fuerte);
+  text-underline-offset: 3px;
+}
+.admin-reemitir:hover {
+  color: var(--nc-texto);
+}
+.admin-estado {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+}
+.admin-estado::before {
+  content: "";
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: var(--nc-activo-punto, var(--nc-tierra));
+}
+.admin-estado.pendiente {
+  color: var(--nc-pendiente, var(--nc-acento-claro));
+}
+.admin-estado.pendiente::before {
+  background: var(--nc-pendiente-punto, var(--nc-acento));
+}
+.admin-vacio {
+  padding: 18px 16px;
+  color: var(--nc-texto-3);
+}
+
+/* Demo */
+.admin-demo {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 12px;
+}
+.admin-confirmar {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 10px;
+  color: var(--nc-texto-2);
+  font-size: 13px;
+}
+
+@media (max-width: 860px) {
+  .admin-alta form {
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+  }
+  .admin-alta form .nc-campo {
+    grid-column: 1 / -1;
+  }
+}
+
+/* Acciones de cada cuenta */
+.admin-tabla td.admin-acciones {
+  white-space: normal;
+}
+.admin-acciones > span {
+  display: block;
+  max-width: 190px;
+  margin-bottom: 2px;
+  color: var(--nc-texto);
+  font-size: 12px;
+  line-height: 1.4;
+}
+.admin-accion {
+  display: block;
+  padding: 2px 0;
+  border: 0;
+  background: none;
+  color: var(--nc-texto-2);
+  font-size: 12.5px;
+  text-align: left;
+  text-decoration: underline;
+  text-decoration-color: var(--nc-linea-fuerte);
+  text-underline-offset: 3px;
+  white-space: nowrap;
+}
+.admin-accion:hover:not(:disabled) {
+  color: var(--nc-texto);
+}
+.admin-accion.peligro {
+  color: var(--nc-error);
+}
+.admin-accion:disabled {
+  opacity: 0.5;
+}
+.admin-tabla small.admin-detalle {
+  display: block;
+  margin-top: 3px;
+}
+
+/* Edición de una cuenta */
+.admin-edicion {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  padding: clamp(16px, 3vw, 24px);
+  border-color: var(--nc-linea-fuerte);
+}
+.admin-edicion form {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 12px;
+}
+.admin-edicion .ancho {
+  grid-column: 1 / -1;
+}
+.admin-edicion-botones {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+.admin-servidor {
+  max-width: 72ch;
+}
+@media (max-width: 860px) {
+  .admin-edicion form {
+    grid-template-columns: minmax(0, 1fr);
+  }
+}
+
+/* Los nombres largos de agencia y responsable se reparten en dos líneas para que la tabla quepa. */
+.admin-tabla td:nth-child(4),
+.admin-tabla td:nth-child(5) {
+  min-width: 120px;
+  white-space: normal;
+}
+
+/* ---------- Pestañas: Cuentas, Turnos, Lugares ---------- */
+.admin-pestanas {
+  display: flex;
+  gap: 4px;
+  margin-top: -10px;
+  border-bottom: 1px solid var(--nc-linea-fuerte);
+}
+.admin-pestanas button {
+  margin-bottom: -1px;
+  padding: 10px 18px;
+  border: 0;
+  border-bottom: 2px solid transparent;
+  background: none;
+  color: var(--nc-texto-2);
+  font-size: 14.5px;
+  font-weight: 600;
+}
+.admin-pestanas button:hover {
+  color: var(--nc-texto);
+}
+.admin-pestanas button[aria-selected="true"] {
+  border-bottom-color: var(--nc-acento);
+  color: var(--nc-texto);
+}
+.admin-panel {
+  display: flex;
+  flex-direction: column;
+  gap: 28px;
+}
+.admin-panel > .admin-intro {
+  margin-top: 0;
+}
+
+/* Cifras de resumen */
+.admin-cifras {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  gap: 12px;
+  margin: -8px 0 0;
+}
+.admin-cifras > div {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  padding: 14px 16px;
+}
+.admin-cifras dt {
+  color: var(--nc-texto-3);
+  font-family: var(--nc-mono);
+  font-size: 10.5px;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+.admin-cifras dd {
+  margin: 0;
+  color: var(--nc-texto);
+  font-size: 26px;
+  font-weight: 600;
+  line-height: 1.2;
+  font-variant-numeric: tabular-nums;
+}
+
+/* Filtros sobre una tabla */
+.admin-filtros {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-bottom: 12px;
+}
+.admin-filtros .nc-campo {
+  flex: 0 1 240px;
+}
+
+/* Celdas con texto largo, motivo de una acción y código de un turno */
+.admin-tabla td.admin-ancha {
+  min-width: 130px;
+  max-width: 280px;
+  white-space: normal;
+}
+.admin-tabla .turnos-insignia {
+  margin-top: 0;
+}
+.admin-motivo {
+  min-width: 210px;
+  margin-bottom: 6px;
+}
+.admin-motivo > span {
+  font-size: 12px;
+  font-weight: 400;
+}
+.admin-motivo input {
+  padding: 7px 9px;
+  font-size: 13px;
+}
+.admin-tabla .turno-codigo {
+  color: var(--nc-acento-claro);
+  font-size: 13px;
+}
+.admin .nc-nota a {
+  color: var(--nc-acento-claro);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}

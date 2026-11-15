@@ -1,0 +1,2729 @@
+{
+  "generatedAt": "2026-11-14",
+  "method": {
+    "definition": "prometheus_topography_plane_v1",
+    "windowM": 3000.0,
+    "pixelM": 30.0,
+    "minValid": 0.9,
+    "minWindows": 9,
+    "earthWindowsPerSide": 6,
+    "statistic": "median"
+  },
+  "sources": {
+    "moon": {
+      "name": "LOLA South Pole DEM, 30 m/px (NASA GSFC PGDA)",
+      "product": "LDEM_75S_30MPP_ADJ.TIF",
+      "url": "https://pgda.gsfc.nasa.gov/products/90",
+      "citation": "Barker et al. (2023), Planetary Science Journal 4, 183. doi:10.3847/PSJ/acf3e1"
+    },
+    "moonNorth": {
+      "name": "LOLA Gridded Data Record, polo norte, 30 m/px (NASA PDS Geosciences)",
+      "product": "lola_gdr/polar/img/ldem_75n_30m.img",
+      "url": "https://pds-geosciences.wustl.edu/missions/lro/lola.htm",
+      "citation": "Smith et al. (2010), LRO LOLA Gridded Data Record, NASA Planetary Data System."
+    },
+    "moonCentral": {
+      "name": "SLDEM2015, LOLA + cámara de Kaguya, 512 píxeles por grado (NASA PDS Geosciences)",
+      "product": "sldem2015/tiles/float_img/",
+      "url": "https://pds-geosciences.wustl.edu/missions/lro/lola.htm",
+      "citation": "Barker et al. (2016), Icarus 273, 346-355. doi:10.1016/j.icarus.2015.07.039"
+    },
+    "names": {
+      "name": "Gazetteer of Planetary Nomenclature (IAU / USGS)",
+      "url": "https://planetarynames.wr.usgs.gov/"
+    },
+    "earth": {
+      "name": "Copernicus DEM GLO-30 / GLO-90",
+      "url": "https://registry.opendata.aws/copernicus-dem/",
+      "citation": "© DLR e.V. 2010-2014 y © Airbus Defence and Space GmbH 2014-2018, provisto bajo COPERNICUS por la Unión Europea y la ESA; todos los derechos reservados."
+    },
+    "regions": {
+      "name": "Regiones candidatas de Artemis III (NASA, 28 de octubre de 2024)",
+      "url": "https://www.nasa.gov/news-release/nasa-provides-update-on-artemis-iii-moon-landing-regions/",
+      "note": "Ubicación aproximada, medida sobre el mapa publicado; la NASA no publicó coordenadas."
+    }
+  },
+  "maps": {
+    "sur": {
+      "xMin": -204000,
+      "xMax": 184000,
+      "yMin": -78000,
+      "yMax": 192000,
+      "width": 776,
+      "height": 540,
+      "pole": {
+        "x": 0,
+        "y": 0
+      },
+      "scale": {
+        "km": 50,
+        "units": 50000
+      }
+    },
+    "norte": {
+      "xMin": -232000,
+      "xMax": 232000,
+      "yMin": -168000,
+      "yMax": 155000,
+      "width": 776,
+      "height": 540,
+      "pole": {
+        "x": 0,
+        "y": 0
+      },
+      "scale": {
+        "km": 50,
+        "units": 50000
+      }
+    },
+    "central": {
+      "xMin": -75.0,
+      "xMax": 45.0,
+      "yMin": -12.0,
+      "yMax": 58.0,
+      "width": 776,
+      "height": 453,
+      "pole": null,
+      "scale": {
+        "km": 500,
+        "units": 16.489
+      }
+    }
+  },
+  "regions": [
+    {
+      "id": "peak-near-cabeus-b",
+      "name": "Peak near Cabeus B",
+      "zone": "sur",
+      "resolutionM": 30,
+      "latitude": -83.644,
+      "longitude": -68.655,
+      "box": {
+        "xMin": -189609,
+        "xMax": -169777,
+        "yMin": 60168,
+        "yMax": 80279
+      },
+      "sizeKm": [
+        19.8,
+        20.1
+      ],
+      "windows": 36,
+      "windowsTotal": 36,
+      "relief": {
+        "median": 1237.0,
+        "q1": 1011.0,
+        "q3": 1586.0
+      },
+      "slope": {
+        "median": 18.8,
+        "q1": 15.4,
+        "q3": 22.4
+      },
+      "roughness": {
+        "median": 42.7,
+        "q1": 31.7,
+        "q3": 57.6
+      },
+      "elevation": 3090,
+      "measured": 0.549,
+      "slopeCheck": {
+        "own": 18.88,
+        "pgda": 18.81
+      }
+    },
+    {
+      "id": "haworth",
+      "name": "Haworth",
+      "zone": "sur",
+      "resolutionM": 30,
+      "latitude": -86.755,
+      "longitude": -22.54,
+      "box": {
+        "xMin": -52737,
+        "xMax": -22709,
+        "yMin": 75950,
+        "yMax": 105838
+      },
+      "sizeKm": [
+        30.0,
+        29.9
+      ],
+      "windows": 90,
+      "windowsTotal": 90,
+      "relief": {
+        "median": 583.0,
+        "q1": 423.0,
+        "q3": 858.0
+      },
+      "slope": {
+        "median": 9.8,
+        "q1": 7.4,
+        "q3": 13.2
+      },
+      "roughness": {
+        "median": 34.8,
+        "q1": 26.3,
+        "q3": 46.3
+      },
+      "elevation": 1100,
+      "measured": 0.948,
+      "slopeCheck": {
+        "own": 10.59,
+        "pgda": 10.53
+      }
+    },
+    {
+      "id": "malapert-massif",
+      "name": "Malapert Massif",
+      "zone": "sur",
+      "resolutionM": 30,
+      "latitude": -85.986,
+      "longitude": -0.072,
+      "box": {
+        "xMin": -10559,
+        "xMax": 10251,
+        "yMin": 111285,
+        "yMax": 132235
+      },
+      "sizeKm": [
+        20.8,
+        20.9
+      ],
+      "windows": 36,
+      "windowsTotal": 36,
+      "relief": {
+        "median": 1046.0,
+        "q1": 729.0,
+        "q3": 1375.0
+      },
+      "slope": {
+        "median": 17.3,
+        "q1": 13.4,
+        "q3": 21.2
+      },
+      "roughness": {
+        "median": 38.3,
+        "q1": 26.2,
+        "q3": 45.8
+      },
+      "elevation": 3789,
+      "measured": 0.92,
+      "slopeCheck": {
+        "own": 17.65,
+        "pgda": 17.6
+      }
+    },
+    {
+      "id": "mons-mouton-plateau",
+      "name": "Mons Mouton Plateau",
+      "zone": "sur",
+      "resolutionM": 30,
+      "latitude": -84.325,
+      "longitude": 30.61,
+      "box": {
+        "xMin": 49218,
+        "xMax": 126173,
+        "yMin": 119246,
+        "yMax": 177207
+      },
+      "sizeKm": [
+        77.0,
+        58.0
+      ],
+      "windows": 475,
+      "windowsTotal": 475,
+      "relief": {
+        "median": 606.0,
+        "q1": 397.0,
+        "q3": 962.0
+      },
+      "slope": {
+        "median": 10.4,
+        "q1": 7.8,
+        "q3": 15.4
+      },
+      "roughness": {
+        "median": 41.0,
+        "q1": 30.1,
+        "q3": 59.0
+      },
+      "elevation": 4658,
+      "measured": 0.741,
+      "slopeCheck": {
+        "own": 11.93,
+        "pgda": 11.87
+      }
+    },
+    {
+      "id": "mons-mouton",
+      "name": "Mons Mouton",
+      "zone": "sur",
+      "resolutionM": 30,
+      "latitude": -85.415,
+      "longitude": 31.769,
+      "box": {
+        "xMin": 65279,
+        "xMax": 81201,
+        "yMin": 110307,
+        "yMax": 126229
+      },
+      "sizeKm": [
+        15.9,
+        15.9
+      ],
+      "windows": 25,
+      "windowsTotal": 25,
+      "relief": {
+        "median": 549.0,
+        "q1": 449.0,
+        "q3": 910.0
+      },
+      "slope": {
+        "median": 10.4,
+        "q1": 8.7,
+        "q3": 13.6
+      },
+      "roughness": {
+        "median": 46.4,
+        "q1": 36.7,
+        "q3": 60.9
+      },
+      "elevation": 5831,
+      "measured": 0.865,
+      "slopeCheck": {
+        "own": 12.38,
+        "pgda": 12.33
+      }
+    },
+    {
+      "id": "nobile-rim-1",
+      "name": "Nobile Rim 1",
+      "zone": "sur",
+      "resolutionM": 30,
+      "latitude": -85.428,
+      "longitude": 37.374,
+      "box": {
+        "xMin": 74218,
+        "xMax": 94190,
+        "yMin": 100112,
+        "yMax": 120363
+      },
+      "sizeKm": [
+        20.0,
+        20.3
+      ],
+      "windows": 36,
+      "windowsTotal": 36,
+      "relief": {
+        "median": 1166.0,
+        "q1": 721.0,
+        "q3": 1743.0
+      },
+      "slope": {
+        "median": 17.2,
+        "q1": 11.4,
+        "q3": 23.3
+      },
+      "roughness": {
+        "median": 39.5,
+        "q1": 23.0,
+        "q3": 61.1
+      },
+      "elevation": 5568,
+      "measured": 0.8,
+      "slopeCheck": {
+        "own": 17.11,
+        "pgda": 17.07
+      }
+    },
+    {
+      "id": "nobile-rim-2",
+      "name": "Nobile Rim 2",
+      "zone": "sur",
+      "resolutionM": 30,
+      "latitude": -83.942,
+      "longitude": 58.832,
+      "box": {
+        "xMin": 147263,
+        "xMax": 167374,
+        "yMin": 85168,
+        "yMax": 105140
+      },
+      "sizeKm": [
+        20.1,
+        20.0
+      ],
+      "windows": 36,
+      "windowsTotal": 36,
+      "relief": {
+        "median": 673.0,
+        "q1": 467.0,
+        "q3": 956.0
+      },
+      "slope": {
+        "median": 11.1,
+        "q1": 8.1,
+        "q3": 14.5
+      },
+      "roughness": {
+        "median": 46.8,
+        "q1": 32.4,
+        "q3": 66.9
+      },
+      "elevation": 940,
+      "measured": 0.562,
+      "slopeCheck": {
+        "own": 11.67,
+        "pgda": 11.62
+      }
+    },
+    {
+      "id": "de-gerlache-rim-2",
+      "name": "de Gerlache Rim 2",
+      "zone": "sur",
+      "resolutionM": 30,
+      "latitude": -88.236,
+      "longitude": -64.271,
+      "box": {
+        "xMin": -58184,
+        "xMax": -38212,
+        "yMin": 13240,
+        "yMax": 33212
+      },
+      "sizeKm": [
+        20.0,
+        20.0
+      ],
+      "windows": 36,
+      "windowsTotal": 36,
+      "relief": {
+        "median": 785.0,
+        "q1": 606.0,
+        "q3": 987.0
+      },
+      "slope": {
+        "median": 12.3,
+        "q1": 10.1,
+        "q3": 15.2
+      },
+      "roughness": {
+        "median": 43.0,
+        "q1": 30.8,
+        "q3": 55.3
+      },
+      "elevation": -52,
+      "measured": 0.906,
+      "slopeCheck": {
+        "own": 12.51,
+        "pgda": 12.48
+      }
+    },
+    {
+      "id": "slater-plain",
+      "name": "Slater Plain",
+      "zone": "sur",
+      "resolutionM": 30,
+      "latitude": -87.16,
+      "longitude": 125.283,
+      "box": {
+        "xMin": 60251,
+        "xMax": 80363,
+        "yMin": -59665,
+        "yMax": -39832
+      },
+      "sizeKm": [
+        20.1,
+        19.8
+      ],
+      "windows": 36,
+      "windowsTotal": 36,
+      "relief": {
+        "median": 487.0,
+        "q1": 349.0,
+        "q3": 653.0
+      },
+      "slope": {
+        "median": 8.3,
+        "q1": 6.4,
+        "q3": 11.3
+      },
+      "roughness": {
+        "median": 42.7,
+        "q1": 32.6,
+        "q3": 56.0
+      },
+      "elevation": -9,
+      "measured": 0.867,
+      "slopeCheck": {
+        "own": 8.84,
+        "pgda": 8.8
+      }
+    },
+    {
+      "id": "peary",
+      "name": "Peary",
+      "zone": "norte",
+      "resolutionM": 30,
+      "latitude": 88.625,
+      "longitude": 24.402,
+      "box": {
+        "xMin": 6726,
+        "xMax": 27726,
+        "yMin": -48472,
+        "yMax": -27472
+      },
+      "sizeKm": [
+        21,
+        21
+      ],
+      "windows": 49,
+      "windowsTotal": 49,
+      "relief": {
+        "median": 126.0,
+        "q1": 96.0,
+        "q3": 266.0
+      },
+      "slope": {
+        "median": 3.9,
+        "q1": 3.3,
+        "q3": 6.0
+      },
+      "roughness": {
+        "median": 16.1,
+        "q1": 11.7,
+        "q3": 34.2
+      },
+      "elevation": -1531,
+      "measured": null,
+      "slopeCheck": null
+    },
+    {
+      "id": "whipple",
+      "name": "Whipple",
+      "zone": "norte",
+      "resolutionM": 30,
+      "latitude": 89.137,
+      "longitude": 120.019,
+      "box": {
+        "xMin": 12159,
+        "xMax": 33159,
+        "yMin": 2592,
+        "yMax": 23592
+      },
+      "sizeKm": [
+        21,
+        21
+      ],
+      "windows": 49,
+      "windowsTotal": 49,
+      "relief": {
+        "median": 868.0,
+        "q1": 586.0,
+        "q3": 1422.0
+      },
+      "slope": {
+        "median": 13.5,
+        "q1": 9.9,
+        "q3": 22.3
+      },
+      "roughness": {
+        "median": 55.8,
+        "q1": 34.8,
+        "q3": 98.2
+      },
+      "elevation": -716,
+      "measured": null,
+      "slopeCheck": null
+    },
+    {
+      "id": "byrd",
+      "name": "Byrd",
+      "zone": "norte",
+      "resolutionM": 30,
+      "latitude": 85.428,
+      "longitude": 10.07,
+      "box": {
+        "xMin": 13754,
+        "xMax": 34754,
+        "yMin": -147075,
+        "yMax": -126075
+      },
+      "sizeKm": [
+        21,
+        21
+      ],
+      "windows": 49,
+      "windowsTotal": 49,
+      "relief": {
+        "median": 126.0,
+        "q1": 97.0,
+        "q3": 159.0
+      },
+      "slope": {
+        "median": 4.1,
+        "q1": 3.5,
+        "q3": 4.6
+      },
+      "roughness": {
+        "median": 17.2,
+        "q1": 13.4,
+        "q3": 21.9
+      },
+      "elevation": -1337,
+      "measured": null,
+      "slopeCheck": null
+    },
+    {
+      "id": "hermite",
+      "name": "Hermite",
+      "zone": "norte",
+      "resolutionM": 30,
+      "latitude": 86.166,
+      "longitude": -93.315,
+      "box": {
+        "xMin": -126609,
+        "xMax": -105609,
+        "yMin": -3775,
+        "yMax": 17225
+      },
+      "sizeKm": [
+        21,
+        21
+      ],
+      "windows": 49,
+      "windowsTotal": 49,
+      "relief": {
+        "median": 197.0,
+        "q1": 147.0,
+        "q3": 319.0
+      },
+      "slope": {
+        "median": 5.7,
+        "q1": 4.6,
+        "q3": 7.1
+      },
+      "roughness": {
+        "median": 34.2,
+        "q1": 21.1,
+        "q3": 48.0
+      },
+      "elevation": -2232,
+      "measured": null,
+      "slopeCheck": null
+    },
+    {
+      "id": "rozhdestvenskiy",
+      "name": "Rozhdestvenskiy",
+      "zone": "norte",
+      "resolutionM": 30,
+      "latitude": 84.994,
+      "longitude": -157.892,
+      "box": {
+        "xMin": -67666,
+        "xMax": -46666,
+        "yMin": 130227,
+        "yMax": 151227
+      },
+      "sizeKm": [
+        21,
+        21
+      ],
+      "windows": 49,
+      "windowsTotal": 49,
+      "relief": {
+        "median": 232.0,
+        "q1": 167.0,
+        "q3": 356.0
+      },
+      "slope": {
+        "median": 6.0,
+        "q1": 4.9,
+        "q3": 7.2
+      },
+      "roughness": {
+        "median": 30.6,
+        "q1": 23.8,
+        "q3": 41.6
+      },
+      "elevation": -2741,
+      "measured": null,
+      "slopeCheck": null
+    },
+    {
+      "id": "statio-tranquillitatis",
+      "name": "Statio Tranquillitatis",
+      "zone": "central",
+      "resolutionM": 60,
+      "latitude": 0.674,
+      "longitude": 23.473,
+      "box": {
+        "xMin": 23.127,
+        "xMax": 23.819,
+        "yMin": 0.328,
+        "yMax": 1.02
+      },
+      "sizeKm": [
+        21,
+        21
+      ],
+      "windows": 49,
+      "windowsTotal": 49,
+      "relief": {
+        "median": 74.0,
+        "q1": 58.0,
+        "q3": 92.0
+      },
+      "slope": {
+        "median": 2.2,
+        "q1": 2.0,
+        "q3": 2.5
+      },
+      "roughness": {
+        "median": 4.8,
+        "q1": 4.2,
+        "q3": 6.8
+      },
+      "elevation": -1929,
+      "measured": null,
+      "slopeCheck": null
+    },
+    {
+      "id": "mons-hadley",
+      "name": "Mons Hadley",
+      "zone": "central",
+      "resolutionM": 60,
+      "latitude": 26.695,
+      "longitude": 4.118,
+      "box": {
+        "xMin": 3.73,
+        "xMax": 4.506,
+        "yMin": 26.349,
+        "yMax": 27.041
+      },
+      "sizeKm": [
+        21,
+        21
+      ],
+      "windows": 49,
+      "windowsTotal": 49,
+      "relief": {
+        "median": 1210.0,
+        "q1": 872.0,
+        "q3": 1821.0
+      },
+      "slope": {
+        "median": 20.0,
+        "q1": 14.2,
+        "q3": 26.1
+      },
+      "roughness": {
+        "median": 73.3,
+        "q1": 32.6,
+        "q3": 102.1
+      },
+      "elevation": -188,
+      "measured": null,
+      "slopeCheck": null
+    },
+    {
+      "id": "copernicus",
+      "name": "Copernicus",
+      "zone": "central",
+      "resolutionM": 60,
+      "latitude": 9.621,
+      "longitude": -20.079,
+      "box": {
+        "xMin": -20.43,
+        "xMax": -19.728,
+        "yMin": 9.275,
+        "yMax": 9.967
+      },
+      "sizeKm": [
+        21,
+        21
+      ],
+      "windows": 49,
+      "windowsTotal": 49,
+      "relief": {
+        "median": 347.0,
+        "q1": 168.0,
+        "q3": 665.0
+      },
+      "slope": {
+        "median": 7.3,
+        "q1": 4.9,
+        "q3": 15.4
+      },
+      "roughness": {
+        "median": 41.5,
+        "q1": 19.4,
+        "q3": 98.2
+      },
+      "elevation": -3466,
+      "measured": null,
+      "slopeCheck": null
+    },
+    {
+      "id": "marius",
+      "name": "Marius",
+      "zone": "central",
+      "resolutionM": 60,
+      "latitude": 11.897,
+      "longitude": -50.835,
+      "box": {
+        "xMin": -51.189,
+        "xMax": -50.481,
+        "yMin": 11.551,
+        "yMax": 12.243
+      },
+      "sizeKm": [
+        21,
+        21
+      ],
+      "windows": 49,
+      "windowsTotal": 49,
+      "relief": {
+        "median": 57.0,
+        "q1": 39.0,
+        "q3": 98.0
+      },
+      "slope": {
+        "median": 2.1,
+        "q1": 1.8,
+        "q3": 2.4
+      },
+      "roughness": {
+        "median": 4.2,
+        "q1": 3.2,
+        "q3": 7.0
+      },
+      "elevation": -2337,
+      "measured": null,
+      "slopeCheck": null
+    },
+    {
+      "id": "aristarchus",
+      "name": "Aristarchus",
+      "zone": "central",
+      "resolutionM": 60,
+      "latitude": 23.73,
+      "longitude": -47.49,
+      "box": {
+        "xMin": -47.868,
+        "xMax": -47.112,
+        "yMin": 23.384,
+        "yMax": 24.076
+      },
+      "sizeKm": [
+        21,
+        21
+      ],
+      "windows": 49,
+      "windowsTotal": 49,
+      "relief": {
+        "median": 425.0,
+        "q1": 167.0,
+        "q3": 697.0
+      },
+      "slope": {
+        "median": 8.2,
+        "q1": 5.2,
+        "q3": 14.4
+      },
+      "roughness": {
+        "median": 44.1,
+        "q1": 21.4,
+        "q3": 57.8
+      },
+      "elevation": -3132,
+      "measured": null,
+      "slopeCheck": null
+    },
+    {
+      "id": "mons-pico",
+      "name": "Mons Pico",
+      "zone": "central",
+      "resolutionM": 60,
+      "latitude": 45.82,
+      "longitude": -8.87,
+      "box": {
+        "xMin": -9.367,
+        "xMax": -8.373,
+        "yMin": 45.474,
+        "yMax": 46.166
+      },
+      "sizeKm": [
+        21,
+        21
+      ],
+      "windows": 49,
+      "windowsTotal": 49,
+      "relief": {
+        "median": 1047.0,
+        "q1": 163.0,
+        "q3": 1367.0
+      },
+      "slope": {
+        "median": 14.1,
+        "q1": 3.7,
+        "q3": 22.0
+      },
+      "roughness": {
+        "median": 64.2,
+        "q1": 17.9,
+        "q3": 97.6
+      },
+      "elevation": -2569,
+      "measured": null,
+      "slopeCheck": null
+    }
+  ],
+  "sites": [
+    {
+      "id": "valle-de-la-luna",
+      "latitude": -22.92,
+      "longitude": -68.29,
+      "dem": "GLO-30",
+      "resolutionM": 30,
+      "tiles": [
+        "Copernicus_DSM_COG_10_S24_00_W069_00_DEM",
+        "Copernicus_DSM_COG_10_S23_00_W069_00_DEM"
+      ],
+      "windows": 36,
+      "windowsTotal": 36,
+      "water": 0.0,
+      "relief": {
+        "median": 164.0,
+        "q1": 105.0,
+        "q3": 201.0
+      },
+      "slope": {
+        "median": 4.3,
+        "q1": 1.7,
+        "q3": 7.3
+      },
+      "roughness": {
+        "median": 16.3,
+        "q1": 7.3,
+        "q3": 24.6
+      },
+      "elevation": 2471,
+      "coarse": {
+        "resolutionM": 60,
+        "windows": 36,
+        "windowsTotal": 36,
+        "relief": {
+          "median": 161.0,
+          "q1": 102.0,
+          "q3": 197.0
+        },
+        "slope": {
+          "median": 4.0,
+          "q1": 1.6,
+          "q3": 6.2
+        },
+        "roughness": {
+          "median": 16.2,
+          "q1": 7.2,
+          "q3": 24.3
+        },
+        "elevation": 2471
+      }
+    },
+    {
+      "id": "salar-de-atacama",
+      "latitude": -23.5,
+      "longitude": -68.25,
+      "dem": "GLO-30",
+      "resolutionM": 30,
+      "tiles": [
+        "Copernicus_DSM_COG_10_S24_00_W069_00_DEM"
+      ],
+      "windows": 34,
+      "windowsTotal": 36,
+      "water": 0.017,
+      "relief": {
+        "median": 1.0,
+        "q1": 1.0,
+        "q3": 1.0
+      },
+      "slope": {
+        "median": 0.1,
+        "q1": 0.1,
+        "q3": 0.1
+      },
+      "roughness": {
+        "median": 0.1,
+        "q1": 0.1,
+        "q3": 0.1
+      },
+      "elevation": 2301,
+      "coarse": {
+        "resolutionM": 60,
+        "windows": 34,
+        "windowsTotal": 36,
+        "relief": {
+          "median": 0.0,
+          "q1": 0.0,
+          "q3": 0.0
+        },
+        "slope": {
+          "median": 0.0,
+          "q1": 0.0,
+          "q3": 0.0
+        },
+        "roughness": {
+          "median": 0.1,
+          "q1": 0.0,
+          "q3": 0.1
+        },
+        "elevation": 2301
+      }
+    },
+    {
+      "id": "yungay",
+      "latitude": -24.08,
+      "longitude": -69.92,
+      "dem": "GLO-30",
+      "resolutionM": 30,
+      "tiles": [
+        "Copernicus_DSM_COG_10_S25_00_W071_00_DEM",
+        "Copernicus_DSM_COG_10_S25_00_W070_00_DEM",
+        "Copernicus_DSM_COG_10_S24_00_W071_00_DEM",
+        "Copernicus_DSM_COG_10_S24_00_W070_00_DEM"
+      ],
+      "windows": 36,
+      "windowsTotal": 36,
+      "water": 0.0,
+      "relief": {
+        "median": 262.0,
+        "q1": 153.0,
+        "q3": 316.0
+      },
+      "slope": {
+        "median": 5.3,
+        "q1": 3.1,
+        "q3": 9.0
+      },
+      "roughness": {
+        "median": 24.0,
+        "q1": 14.3,
+        "q3": 42.7
+      },
+      "elevation": 1075,
+      "coarse": {
+        "resolutionM": 60,
+        "windows": 36,
+        "windowsTotal": 36,
+        "relief": {
+          "median": 259.0,
+          "q1": 151.0,
+          "q3": 310.0
+        },
+        "slope": {
+          "median": 4.9,
+          "q1": 2.9,
+          "q3": 8.5
+        },
+        "roughness": {
+          "median": 23.9,
+          "q1": 14.3,
+          "q3": 42.6
+        },
+        "elevation": 1075
+      }
+    },
+    {
+      "id": "laguna-verde",
+      "latitude": -26.89,
+      "longitude": -68.47,
+      "dem": "GLO-30",
+      "resolutionM": 30,
+      "tiles": [
+        "Copernicus_DSM_COG_10_S27_00_W069_00_DEM"
+      ],
+      "windows": 33,
+      "windowsTotal": 36,
+      "water": 0.047,
+      "relief": {
+        "median": 395.0,
+        "q1": 244.0,
+        "q3": 792.0
+      },
+      "slope": {
+        "median": 7.6,
+        "q1": 5.8,
+        "q3": 13.6
+      },
+      "roughness": {
+        "median": 42.1,
+        "q1": 27.0,
+        "q3": 58.9
+      },
+      "elevation": 4622,
+      "coarse": {
+        "resolutionM": 60,
+        "windows": 33,
+        "windowsTotal": 36,
+        "relief": {
+          "median": 393.0,
+          "q1": 239.0,
+          "q3": 788.0
+        },
+        "slope": {
+          "median": 7.4,
+          "q1": 5.4,
+          "q3": 13.4
+        },
+        "roughness": {
+          "median": 42.0,
+          "q1": 26.9,
+          "q3": 58.8
+        },
+        "elevation": 4622
+      }
+    },
+    {
+      "id": "ischigualasto",
+      "latitude": -30.16,
+      "longitude": -67.84,
+      "dem": "GLO-30",
+      "resolutionM": 30,
+      "tiles": [
+        "Copernicus_DSM_COG_10_S31_00_W068_00_DEM"
+      ],
+      "windows": 36,
+      "windowsTotal": 36,
+      "water": 0.0,
+      "relief": {
+        "median": 166.0,
+        "q1": 111.0,
+        "q3": 262.0
+      },
+      "slope": {
+        "median": 5.4,
+        "q1": 3.1,
+        "q3": 7.1
+      },
+      "roughness": {
+        "median": 19.8,
+        "q1": 9.0,
+        "q3": 37.1
+      },
+      "elevation": 1390,
+      "coarse": {
+        "resolutionM": 60,
+        "windows": 36,
+        "windowsTotal": 36,
+        "relief": {
+          "median": 162.0,
+          "q1": 109.0,
+          "q3": 256.0
+        },
+        "slope": {
+          "median": 4.3,
+          "q1": 2.5,
+          "q3": 5.8
+        },
+        "roughness": {
+          "median": 19.7,
+          "q1": 8.9,
+          "q3": 36.9
+        },
+        "elevation": 1390
+      }
+    },
+    {
+      "id": "campo-de-piedra-pomez",
+      "latitude": -26.58,
+      "longitude": -67.5,
+      "dem": "GLO-30",
+      "resolutionM": 30,
+      "tiles": [
+        "Copernicus_DSM_COG_10_S27_00_W068_00_DEM"
+      ],
+      "windows": 36,
+      "windowsTotal": 36,
+      "water": 0.0,
+      "relief": {
+        "median": 145.0,
+        "q1": 119.0,
+        "q3": 182.0
+      },
+      "slope": {
+        "median": 2.4,
+        "q1": 2.0,
+        "q3": 3.8
+      },
+      "roughness": {
+        "median": 5.0,
+        "q1": 4.2,
+        "q3": 10.3
+      },
+      "elevation": 3146,
+      "coarse": {
+        "resolutionM": 60,
+        "windows": 36,
+        "windowsTotal": 36,
+        "relief": {
+          "median": 143.0,
+          "q1": 117.0,
+          "q3": 180.0
+        },
+        "slope": {
+          "median": 2.3,
+          "q1": 1.9,
+          "q3": 3.7
+        },
+        "roughness": {
+          "median": 5.0,
+          "q1": 4.2,
+          "q3": 10.2
+        },
+        "elevation": 3146
+      }
+    },
+    {
+      "id": "salar-de-uyuni",
+      "latitude": -20.13,
+      "longitude": -67.49,
+      "dem": "GLO-30",
+      "resolutionM": 30,
+      "tiles": [
+        "Copernicus_DSM_COG_10_S21_00_W068_00_DEM"
+      ],
+      "windows": 0,
+      "windowsTotal": 36,
+      "water": 1.0,
+      "relief": null,
+      "slope": null,
+      "roughness": null,
+      "elevation": null,
+      "coarse": {
+        "resolutionM": 60,
+        "windows": 0,
+        "windowsTotal": 36,
+        "relief": null,
+        "slope": null,
+        "roughness": null,
+        "elevation": null
+      }
+    },
+    {
+      "id": "pampa-de-la-joya",
+      "latitude": -16.7,
+      "longitude": -71.9,
+      "dem": "GLO-30",
+      "resolutionM": 30,
+      "tiles": [
+        "Copernicus_DSM_COG_10_S17_00_W072_00_DEM"
+      ],
+      "windows": 36,
+      "windowsTotal": 36,
+      "water": 0.004,
+      "relief": {
+        "median": 66.0,
+        "q1": 40.0,
+        "q3": 91.0
+      },
+      "slope": {
+        "median": 1.2,
+        "q1": 1.0,
+        "q3": 1.4
+      },
+      "roughness": {
+        "median": 2.1,
+        "q1": 1.3,
+        "q3": 5.0
+      },
+      "elevation": 1212,
+      "coarse": {
+        "resolutionM": 60,
+        "windows": 36,
+        "windowsTotal": 36,
+        "relief": {
+          "median": 65.0,
+          "q1": 40.0,
+          "q3": 90.0
+        },
+        "slope": {
+          "median": 1.1,
+          "q1": 0.9,
+          "q3": 1.3
+        },
+        "roughness": {
+          "median": 2.1,
+          "q1": 1.3,
+          "q3": 5.0
+        },
+        "elevation": 1212
+      }
+    },
+    {
+      "id": "sierra-negra",
+      "latitude": -0.83,
+      "longitude": -91.17,
+      "dem": "GLO-30",
+      "resolutionM": 30,
+      "tiles": [
+        "Copernicus_DSM_COG_10_S01_00_W092_00_DEM"
+      ],
+      "windows": 36,
+      "windowsTotal": 36,
+      "water": 0.0,
+      "relief": {
+        "median": 329.0,
+        "q1": 202.0,
+        "q3": 411.0
+      },
+      "slope": {
+        "median": 6.5,
+        "q1": 4.3,
+        "q3": 7.5
+      },
+      "roughness": {
+        "median": 13.4,
+        "q1": 9.5,
+        "q3": 21.6
+      },
+      "elevation": 618,
+      "coarse": {
+        "resolutionM": 60,
+        "windows": 36,
+        "windowsTotal": 36,
+        "relief": {
+          "median": 324.0,
+          "q1": 198.0,
+          "q3": 407.0
+        },
+        "slope": {
+          "median": 6.3,
+          "q1": 4.2,
+          "q3": 7.2
+        },
+        "roughness": {
+          "median": 13.3,
+          "q1": 9.4,
+          "q3": 21.6
+        },
+        "elevation": 618
+      }
+    },
+    {
+      "id": "arenal-del-chimborazo",
+      "latitude": -1.47,
+      "longitude": -78.87,
+      "dem": "GLO-30",
+      "resolutionM": 30,
+      "tiles": [
+        "Copernicus_DSM_COG_10_S02_00_W079_00_DEM"
+      ],
+      "windows": 36,
+      "windowsTotal": 36,
+      "water": 0.0,
+      "relief": {
+        "median": 548.0,
+        "q1": 389.0,
+        "q3": 815.0
+      },
+      "slope": {
+        "median": 13.9,
+        "q1": 11.0,
+        "q3": 21.3
+      },
+      "roughness": {
+        "median": 53.0,
+        "q1": 42.9,
+        "q3": 93.1
+      },
+      "elevation": 4217,
+      "coarse": {
+        "resolutionM": 60,
+        "windows": 36,
+        "windowsTotal": 36,
+        "relief": {
+          "median": 540.0,
+          "q1": 383.0,
+          "q3": 805.0
+        },
+        "slope": {
+          "median": 13.2,
+          "q1": 10.5,
+          "q3": 20.0
+        },
+        "roughness": {
+          "median": 52.9,
+          "q1": 42.8,
+          "q3": 92.9
+        },
+        "elevation": 4217
+      }
+    },
+    {
+      "id": "paramo-del-cotopaxi",
+      "latitude": -0.68,
+      "longitude": -78.44,
+      "dem": "GLO-30",
+      "resolutionM": 30,
+      "tiles": [
+        "Copernicus_DSM_COG_10_S01_00_W079_00_DEM"
+      ],
+      "windows": 36,
+      "windowsTotal": 36,
+      "water": 0.0,
+      "relief": {
+        "median": 513.0,
+        "q1": 354.0,
+        "q3": 698.0
+      },
+      "slope": {
+        "median": 13.2,
+        "q1": 10.5,
+        "q3": 16.7
+      },
+      "roughness": {
+        "median": 43.8,
+        "q1": 34.6,
+        "q3": 67.2
+      },
+      "elevation": 4027,
+      "coarse": {
+        "resolutionM": 60,
+        "windows": 36,
+        "windowsTotal": 36,
+        "relief": {
+          "median": 504.0,
+          "q1": 349.0,
+          "q3": 688.0
+        },
+        "slope": {
+          "median": 12.1,
+          "q1": 9.4,
+          "q3": 16.0
+        },
+        "roughness": {
+          "median": 43.7,
+          "q1": 34.4,
+          "q3": 67.0
+        },
+        "elevation": 4027
+      }
+    },
+    {
+      "id": "crater-barringer",
+      "latitude": 35.03,
+      "longitude": -111.02,
+      "dem": "GLO-30",
+      "resolutionM": 30,
+      "tiles": [
+        "Copernicus_DSM_COG_10_N34_00_W112_00_DEM",
+        "Copernicus_DSM_COG_10_N34_00_W111_00_DEM",
+        "Copernicus_DSM_COG_10_N35_00_W112_00_DEM",
+        "Copernicus_DSM_COG_10_N35_00_W111_00_DEM"
+      ],
+      "windows": 36,
+      "windowsTotal": 36,
+      "water": 0.0,
+      "relief": {
+        "median": 53.0,
+        "q1": 47.0,
+        "q3": 70.0
+      },
+      "slope": {
+        "median": 1.5,
+        "q1": 1.2,
+        "q3": 1.8
+      },
+      "roughness": {
+        "median": 3.7,
+        "q1": 3.4,
+        "q3": 4.6
+      },
+      "elevation": 1670,
+      "coarse": {
+        "resolutionM": 60,
+        "windows": 36,
+        "windowsTotal": 36,
+        "relief": {
+          "median": 53.0,
+          "q1": 46.0,
+          "q3": 69.0
+        },
+        "slope": {
+          "median": 1.3,
+          "q1": 1.1,
+          "q3": 1.5
+        },
+        "roughness": {
+          "median": 3.6,
+          "q1": 3.3,
+          "q3": 4.6
+        },
+        "elevation": 1670
+      }
+    },
+    {
+      "id": "hanksville",
+      "latitude": 38.41,
+      "longitude": -110.79,
+      "dem": "GLO-30",
+      "resolutionM": 30,
+      "tiles": [
+        "Copernicus_DSM_COG_10_N38_00_W111_00_DEM"
+      ],
+      "windows": 36,
+      "windowsTotal": 36,
+      "water": 0.001,
+      "relief": {
+        "median": 119.0,
+        "q1": 95.0,
+        "q3": 141.0
+      },
+      "slope": {
+        "median": 5.6,
+        "q1": 3.9,
+        "q3": 6.5
+      },
+      "roughness": {
+        "median": 18.3,
+        "q1": 13.3,
+        "q3": 23.9
+      },
+      "elevation": 1378,
+      "coarse": {
+        "resolutionM": 60,
+        "windows": 36,
+        "windowsTotal": 36,
+        "relief": {
+          "median": 117.0,
+          "q1": 91.0,
+          "q3": 138.0
+        },
+        "slope": {
+          "median": 4.6,
+          "q1": 3.2,
+          "q3": 5.5
+        },
+        "roughness": {
+          "median": 18.1,
+          "q1": 13.1,
+          "q3": 23.7
+        },
+        "elevation": 1378
+      }
+    },
+    {
+      "id": "mauna-loa",
+      "latitude": 19.6,
+      "longitude": -155.49,
+      "dem": "GLO-30",
+      "resolutionM": 30,
+      "tiles": [
+        "Copernicus_DSM_COG_10_N19_00_W156_00_DEM"
+      ],
+      "windows": 36,
+      "windowsTotal": 36,
+      "water": 0.0,
+      "relief": {
+        "median": 333.0,
+        "q1": 185.0,
+        "q3": 382.0
+      },
+      "slope": {
+        "median": 5.9,
+        "q1": 3.4,
+        "q3": 6.3
+      },
+      "roughness": {
+        "median": 7.6,
+        "q1": 6.0,
+        "q3": 10.1
+      },
+      "elevation": 2384,
+      "coarse": {
+        "resolutionM": 60,
+        "windows": 36,
+        "windowsTotal": 36,
+        "relief": {
+          "median": 328.0,
+          "q1": 182.0,
+          "q3": 378.0
+        },
+        "slope": {
+          "median": 5.7,
+          "q1": 3.2,
+          "q3": 6.1
+        },
+        "roughness": {
+          "median": 7.6,
+          "q1": 5.9,
+          "q3": 10.0
+        },
+        "elevation": 2384
+      }
+    },
+    {
+      "id": "craters-of-the-moon",
+      "latitude": 43.42,
+      "longitude": -113.52,
+      "dem": "GLO-30",
+      "resolutionM": 30,
+      "tiles": [
+        "Copernicus_DSM_COG_10_N43_00_W114_00_DEM"
+      ],
+      "windows": 36,
+      "windowsTotal": 36,
+      "water": 0.0,
+      "relief": {
+        "median": 76.0,
+        "q1": 41.0,
+        "q3": 139.0
+      },
+      "slope": {
+        "median": 2.0,
+        "q1": 1.5,
+        "q3": 3.6
+      },
+      "roughness": {
+        "median": 6.2,
+        "q1": 4.1,
+        "q3": 14.3
+      },
+      "elevation": 1719,
+      "coarse": {
+        "resolutionM": 60,
+        "windows": 36,
+        "windowsTotal": 36,
+        "relief": {
+          "median": 72.0,
+          "q1": 41.0,
+          "q3": 133.0
+        },
+        "slope": {
+          "median": 1.6,
+          "q1": 1.1,
+          "q3": 3.1
+        },
+        "roughness": {
+          "median": 6.2,
+          "q1": 4.1,
+          "q3": 14.2
+        },
+        "elevation": 1719
+      }
+    },
+    {
+      "id": "valle-de-la-muerte",
+      "latitude": 36.46,
+      "longitude": -116.87,
+      "dem": "GLO-30",
+      "resolutionM": 30,
+      "tiles": [
+        "Copernicus_DSM_COG_10_N36_00_W117_00_DEM"
+      ],
+      "windows": 36,
+      "windowsTotal": 36,
+      "water": 0.0,
+      "relief": {
+        "median": 237.0,
+        "q1": 41.0,
+        "q3": 387.0
+      },
+      "slope": {
+        "median": 5.6,
+        "q1": 0.9,
+        "q3": 7.4
+      },
+      "roughness": {
+        "median": 13.3,
+        "q1": 3.9,
+        "q3": 29.6
+      },
+      "elevation": -2,
+      "coarse": {
+        "resolutionM": 60,
+        "windows": 36,
+        "windowsTotal": 36,
+        "relief": {
+          "median": 233.0,
+          "q1": 38.0,
+          "q3": 381.0
+        },
+        "slope": {
+          "median": 4.9,
+          "q1": 0.7,
+          "q3": 6.7
+        },
+        "roughness": {
+          "median": 13.2,
+          "q1": 3.8,
+          "q3": 29.5
+        },
+        "elevation": -2
+      }
+    },
+    {
+      "id": "crater-haughton",
+      "latitude": 75.38,
+      "longitude": -89.67,
+      "dem": "GLO-30",
+      "resolutionM": 30,
+      "tiles": [
+        "Copernicus_DSM_COG_10_N75_00_W090_00_DEM"
+      ],
+      "windows": 36,
+      "windowsTotal": 36,
+      "water": 0.0,
+      "relief": {
+        "median": 140.0,
+        "q1": 116.0,
+        "q3": 186.0
+      },
+      "slope": {
+        "median": 6.7,
+        "q1": 5.0,
+        "q3": 9.3
+      },
+      "roughness": {
+        "median": 22.7,
+        "q1": 16.3,
+        "q3": 34.1
+      },
+      "elevation": 224,
+      "coarse": {
+        "resolutionM": 60,
+        "windows": 36,
+        "windowsTotal": 36,
+        "relief": {
+          "median": 139.0,
+          "q1": 113.0,
+          "q3": 185.0
+        },
+        "slope": {
+          "median": 6.1,
+          "q1": 4.5,
+          "q3": 8.4
+        },
+        "roughness": {
+          "median": 22.6,
+          "q1": 16.2,
+          "q3": 33.9
+        },
+        "elevation": 224
+      }
+    },
+    {
+      "id": "el-pinacate",
+      "latitude": 31.77,
+      "longitude": -113.5,
+      "dem": "GLO-30",
+      "resolutionM": 30,
+      "tiles": [
+        "Copernicus_DSM_COG_10_N31_00_W114_00_DEM"
+      ],
+      "windows": 36,
+      "windowsTotal": 36,
+      "water": 0.0,
+      "relief": {
+        "median": 251.0,
+        "q1": 170.0,
+        "q3": 368.0
+      },
+      "slope": {
+        "median": 5.5,
+        "q1": 4.1,
+        "q3": 7.6
+      },
+      "roughness": {
+        "median": 15.2,
+        "q1": 9.5,
+        "q3": 23.7
+      },
+      "elevation": 384,
+      "coarse": {
+        "resolutionM": 60,
+        "windows": 36,
+        "windowsTotal": 36,
+        "relief": {
+          "median": 248.0,
+          "q1": 162.0,
+          "q3": 363.0
+        },
+        "slope": {
+          "median": 4.9,
+          "q1": 3.7,
+          "q3": 6.8
+        },
+        "roughness": {
+          "median": 15.1,
+          "q1": 9.4,
+          "q3": 23.5
+        },
+        "elevation": 384
+      }
+    },
+    {
+      "id": "pico-de-orizaba",
+      "latitude": 19.03,
+      "longitude": -97.27,
+      "dem": "GLO-30",
+      "resolutionM": 30,
+      "tiles": [
+        "Copernicus_DSM_COG_10_N18_00_W098_00_DEM",
+        "Copernicus_DSM_COG_10_N19_00_W098_00_DEM"
+      ],
+      "windows": 36,
+      "windowsTotal": 36,
+      "water": 0.0,
+      "relief": {
+        "median": 921.0,
+        "q1": 799.0,
+        "q3": 1013.0
+      },
+      "slope": {
+        "median": 21.3,
+        "q1": 17.2,
+        "q3": 23.7
+      },
+      "roughness": {
+        "median": 79.7,
+        "q1": 55.7,
+        "q3": 99.1
+      },
+      "elevation": 3468,
+      "coarse": {
+        "resolutionM": 60,
+        "windows": 36,
+        "windowsTotal": 36,
+        "relief": {
+          "median": 908.0,
+          "q1": 781.0,
+          "q3": 1001.0
+        },
+        "slope": {
+          "median": 19.9,
+          "q1": 15.9,
+          "q3": 22.0
+        },
+        "roughness": {
+          "median": 79.4,
+          "q1": 55.5,
+          "q3": 98.9
+        },
+        "elevation": 3468
+      }
+    },
+    {
+      "id": "askja",
+      "latitude": 65.03,
+      "longitude": -16.75,
+      "dem": "GLO-30",
+      "resolutionM": 30,
+      "tiles": [
+        "Copernicus_DSM_COG_10_N64_00_W017_00_DEM",
+        "Copernicus_DSM_COG_10_N65_00_W017_00_DEM"
+      ],
+      "windows": 32,
+      "windowsTotal": 36,
+      "water": 0.036,
+      "relief": {
+        "median": 276.0,
+        "q1": 198.0,
+        "q3": 440.0
+      },
+      "slope": {
+        "median": 6.4,
+        "q1": 3.9,
+        "q3": 10.0
+      },
+      "roughness": {
+        "median": 31.4,
+        "q1": 16.6,
+        "q3": 46.8
+      },
+      "elevation": 975,
+      "coarse": {
+        "resolutionM": 60,
+        "windows": 32,
+        "windowsTotal": 36,
+        "relief": {
+          "median": 272.0,
+          "q1": 196.0,
+          "q3": 432.0
+        },
+        "slope": {
+          "median": 5.9,
+          "q1": 3.7,
+          "q3": 9.5
+        },
+        "roughness": {
+          "median": 31.4,
+          "q1": 16.5,
+          "q3": 46.7
+        },
+        "elevation": 975
+      }
+    },
+    {
+      "id": "landmannalaugar",
+      "latitude": 63.99,
+      "longitude": -19.06,
+      "dem": "GLO-30",
+      "resolutionM": 30,
+      "tiles": [
+        "Copernicus_DSM_COG_10_N63_00_W020_00_DEM",
+        "Copernicus_DSM_COG_10_N63_00_W019_00_DEM",
+        "Copernicus_DSM_COG_10_N64_00_W020_00_DEM",
+        "Copernicus_DSM_COG_10_N64_00_W019_00_DEM"
+      ],
+      "windows": 36,
+      "windowsTotal": 36,
+      "water": 0.0,
+      "relief": {
+        "median": 326.0,
+        "q1": 249.0,
+        "q3": 405.0
+      },
+      "slope": {
+        "median": 11.3,
+        "q1": 7.7,
+        "q3": 16.3
+      },
+      "roughness": {
+        "median": 45.6,
+        "q1": 35.4,
+        "q3": 68.2
+      },
+      "elevation": 706,
+      "coarse": {
+        "resolutionM": 60,
+        "windows": 36,
+        "windowsTotal": 36,
+        "relief": {
+          "median": 321.0,
+          "q1": 243.0,
+          "q3": 402.0
+        },
+        "slope": {
+          "median": 10.5,
+          "q1": 7.0,
+          "q3": 14.8
+        },
+        "roughness": {
+          "median": 45.4,
+          "q1": 35.3,
+          "q3": 68.0
+        },
+        "elevation": 706
+      }
+    },
+    {
+      "id": "timanfaya",
+      "latitude": 29,
+      "longitude": -13.75,
+      "dem": "GLO-30",
+      "resolutionM": 30,
+      "tiles": [
+        "Copernicus_DSM_COG_10_N28_00_W014_00_DEM",
+        "Copernicus_DSM_COG_10_N29_00_W014_00_DEM"
+      ],
+      "windows": 27,
+      "windowsTotal": 36,
+      "water": 0.148,
+      "relief": {
+        "median": 272.0,
+        "q1": 209.0,
+        "q3": 300.0
+      },
+      "slope": {
+        "median": 5.5,
+        "q1": 4.6,
+        "q3": 6.7
+      },
+      "roughness": {
+        "median": 23.8,
+        "q1": 15.9,
+        "q3": 31.5
+      },
+      "elevation": 239,
+      "coarse": {
+        "resolutionM": 60,
+        "windows": 27,
+        "windowsTotal": 36,
+        "relief": {
+          "median": 261.0,
+          "q1": 204.0,
+          "q3": 294.0
+        },
+        "slope": {
+          "median": 5.1,
+          "q1": 4.1,
+          "q3": 6.2
+        },
+        "roughness": {
+          "median": 23.7,
+          "q1": 15.8,
+          "q3": 31.4
+        },
+        "elevation": 239
+      }
+    },
+    {
+      "id": "rio-tinto",
+      "latitude": 37.7,
+      "longitude": -6.56,
+      "dem": "GLO-30",
+      "resolutionM": 30,
+      "tiles": [
+        "Copernicus_DSM_COG_10_N37_00_W007_00_DEM"
+      ],
+      "windows": 31,
+      "windowsTotal": 36,
+      "water": 0.025,
+      "relief": {
+        "median": 212.0,
+        "q1": 178.0,
+        "q3": 282.0
+      },
+      "slope": {
+        "median": 10.3,
+        "q1": 9.4,
+        "q3": 12.6
+      },
+      "roughness": {
+        "median": 31.1,
+        "q1": 26.4,
+        "q3": 40.2
+      },
+      "elevation": 356,
+      "coarse": {
+        "resolutionM": 60,
+        "windows": 31,
+        "windowsTotal": 36,
+        "relief": {
+          "median": 209.0,
+          "q1": 172.0,
+          "q3": 275.0
+        },
+        "slope": {
+          "median": 9.0,
+          "q1": 8.1,
+          "q3": 10.9
+        },
+        "roughness": {
+          "median": 30.9,
+          "q1": 26.1,
+          "q3": 40.0
+        },
+        "elevation": 356
+      }
+    },
+    {
+      "id": "bockfjorden",
+      "latitude": 79.4,
+      "longitude": 13.4,
+      "dem": "GLO-30",
+      "resolutionM": 30,
+      "tiles": [
+        "Copernicus_DSM_COG_10_N79_00_E012_00_DEM",
+        "Copernicus_DSM_COG_10_N79_00_E013_00_DEM"
+      ],
+      "windows": 27,
+      "windowsTotal": 36,
+      "water": 0.141,
+      "relief": {
+        "median": 767.0,
+        "q1": 705.0,
+        "q3": 926.0
+      },
+      "slope": {
+        "median": 20.3,
+        "q1": 17.2,
+        "q3": 26.0
+      },
+      "roughness": {
+        "median": 114.1,
+        "q1": 96.4,
+        "q3": 148.7
+      },
+      "elevation": 550,
+      "coarse": {
+        "resolutionM": 60,
+        "windows": 26,
+        "windowsTotal": 36,
+        "relief": {
+          "median": 755.0,
+          "q1": 696.0,
+          "q3": 909.0
+        },
+        "slope": {
+          "median": 19.7,
+          "q1": 16.8,
+          "q3": 24.9
+        },
+        "roughness": {
+          "median": 113.4,
+          "q1": 95.9,
+          "q3": 147.2
+        },
+        "elevation": 552
+      }
+    },
+    {
+      "id": "monte-etna",
+      "latitude": 37.75,
+      "longitude": 14.99,
+      "dem": "GLO-30",
+      "resolutionM": 30,
+      "tiles": [
+        "Copernicus_DSM_COG_10_N37_00_E014_00_DEM",
+        "Copernicus_DSM_COG_10_N37_00_E015_00_DEM"
+      ],
+      "windows": 36,
+      "windowsTotal": 36,
+      "water": 0.0,
+      "relief": {
+        "median": 636.0,
+        "q1": 533.0,
+        "q3": 865.0
+      },
+      "slope": {
+        "median": 11.7,
+        "q1": 9.9,
+        "q3": 14.2
+      },
+      "roughness": {
+        "median": 32.4,
+        "q1": 22.3,
+        "q3": 53.2
+      },
+      "elevation": 1582,
+      "coarse": {
+        "resolutionM": 60,
+        "windows": 36,
+        "windowsTotal": 36,
+        "relief": {
+          "median": 626.0,
+          "q1": 528.0,
+          "q3": 856.0
+        },
+        "slope": {
+          "median": 11.1,
+          "q1": 9.3,
+          "q3": 13.6
+        },
+        "roughness": {
+          "median": 32.3,
+          "q1": 22.2,
+          "q3": 53.1
+        },
+        "elevation": 1582
+      }
+    },
+    {
+      "id": "erfoud",
+      "latitude": 31.43,
+      "longitude": -4.23,
+      "dem": "GLO-30",
+      "resolutionM": 30,
+      "tiles": [
+        "Copernicus_DSM_COG_10_N31_00_W005_00_DEM"
+      ],
+      "windows": 36,
+      "windowsTotal": 36,
+      "water": 0.0,
+      "relief": {
+        "median": 30.0,
+        "q1": 19.0,
+        "q3": 59.0
+      },
+      "slope": {
+        "median": 1.0,
+        "q1": 0.7,
+        "q3": 1.5
+      },
+      "roughness": {
+        "median": 2.7,
+        "q1": 1.4,
+        "q3": 5.4
+      },
+      "elevation": 797,
+      "coarse": {
+        "resolutionM": 60,
+        "windows": 36,
+        "windowsTotal": 36,
+        "relief": {
+          "median": 28.0,
+          "q1": 17.0,
+          "q3": 56.0
+        },
+        "slope": {
+          "median": 0.7,
+          "q1": 0.5,
+          "q3": 1.2
+        },
+        "roughness": {
+          "median": 2.7,
+          "q1": 1.4,
+          "q3": 5.4
+        },
+        "elevation": 797
+      }
+    },
+    {
+      "id": "desierto-del-namib",
+      "latitude": -23.56,
+      "longitude": 15.04,
+      "dem": "GLO-30",
+      "resolutionM": 30,
+      "tiles": [
+        "Copernicus_DSM_COG_10_S24_00_E014_00_DEM",
+        "Copernicus_DSM_COG_10_S24_00_E015_00_DEM"
+      ],
+      "windows": 36,
+      "windowsTotal": 36,
+      "water": 0.0,
+      "relief": {
+        "median": 94.0,
+        "q1": 41.0,
+        "q3": 103.0
+      },
+      "slope": {
+        "median": 3.0,
+        "q1": 1.2,
+        "q3": 4.4
+      },
+      "roughness": {
+        "median": 11.5,
+        "q1": 2.6,
+        "q3": 17.7
+      },
+      "elevation": 433,
+      "coarse": {
+        "resolutionM": 60,
+        "windows": 36,
+        "windowsTotal": 36,
+        "relief": {
+          "median": 89.0,
+          "q1": 40.0,
+          "q3": 101.0
+        },
+        "slope": {
+          "median": 2.6,
+          "q1": 1.0,
+          "q3": 3.9
+        },
+        "roughness": {
+          "median": 11.4,
+          "q1": 2.5,
+          "q3": 17.6
+        },
+        "elevation": 433
+      }
+    },
+    {
+      "id": "dallol",
+      "latitude": 14.24,
+      "longitude": 40.3,
+      "dem": "GLO-30",
+      "resolutionM": 30,
+      "tiles": [
+        "Copernicus_DSM_COG_10_N14_00_E040_00_DEM"
+      ],
+      "windows": 36,
+      "windowsTotal": 36,
+      "water": 0.0,
+      "relief": {
+        "median": 5.0,
+        "q1": 2.0,
+        "q3": 14.0
+      },
+      "slope": {
+        "median": 0.3,
+        "q1": 0.2,
+        "q3": 0.4
+      },
+      "roughness": {
+        "median": 0.4,
+        "q1": 0.2,
+        "q3": 0.9
+      },
+      "elevation": -123,
+      "coarse": {
+        "resolutionM": 60,
+        "windows": 36,
+        "windowsTotal": 36,
+        "relief": {
+          "median": 4.0,
+          "q1": 2.0,
+          "q3": 11.0
+        },
+        "slope": {
+          "median": 0.1,
+          "q1": 0.1,
+          "q3": 0.3
+        },
+        "roughness": {
+          "median": 0.4,
+          "q1": 0.2,
+          "q3": 0.9
+        },
+        "elevation": -123
+      }
+    },
+    {
+      "id": "marmul",
+      "latitude": 18.2,
+      "longitude": 55.2,
+      "dem": "GLO-30",
+      "resolutionM": 30,
+      "tiles": [
+        "Copernicus_DSM_COG_10_N18_00_E055_00_DEM"
+      ],
+      "windows": 36,
+      "windowsTotal": 36,
+      "water": 0.0,
+      "relief": {
+        "median": 19.0,
+        "q1": 15.0,
+        "q3": 25.0
+      },
+      "slope": {
+        "median": 0.8,
+        "q1": 0.5,
+        "q3": 0.9
+      },
+      "roughness": {
+        "median": 2.1,
+        "q1": 1.5,
+        "q3": 3.2
+      },
+      "elevation": 267,
+      "coarse": {
+        "resolutionM": 60,
+        "windows": 36,
+        "windowsTotal": 36,
+        "relief": {
+          "median": 18.0,
+          "q1": 14.0,
+          "q3": 24.0
+        },
+        "slope": {
+          "median": 0.6,
+          "q1": 0.4,
+          "q3": 0.8
+        },
+        "roughness": {
+          "median": 2.1,
+          "q1": 1.5,
+          "q3": 3.1
+        },
+        "elevation": 267
+      }
+    },
+    {
+      "id": "crater-ramon",
+      "latitude": 30.6,
+      "longitude": 34.8,
+      "dem": "GLO-30",
+      "resolutionM": 30,
+      "tiles": [
+        "Copernicus_DSM_COG_10_N30_00_E034_00_DEM"
+      ],
+      "windows": 36,
+      "windowsTotal": 36,
+      "water": 0.0,
+      "relief": {
+        "median": 209.0,
+        "q1": 138.0,
+        "q3": 276.0
+      },
+      "slope": {
+        "median": 7.1,
+        "q1": 5.2,
+        "q3": 9.2
+      },
+      "roughness": {
+        "median": 22.9,
+        "q1": 16.9,
+        "q3": 44.7
+      },
+      "elevation": 660,
+      "coarse": {
+        "resolutionM": 60,
+        "windows": 36,
+        "windowsTotal": 36,
+        "relief": {
+          "median": 202.0,
+          "q1": 132.0,
+          "q3": 273.0
+        },
+        "slope": {
+          "median": 6.3,
+          "q1": 4.4,
+          "q3": 8.1
+        },
+        "roughness": {
+          "median": 22.7,
+          "q1": 16.7,
+          "q3": 44.6
+        },
+        "elevation": 660
+      }
+    },
+    {
+      "id": "cuenca-de-qaidam",
+      "latitude": 38,
+      "longitude": 93.5,
+      "dem": "GLO-30",
+      "resolutionM": 30,
+      "tiles": [
+        "Copernicus_DSM_COG_10_N37_00_E093_00_DEM",
+        "Copernicus_DSM_COG_10_N38_00_E093_00_DEM"
+      ],
+      "windows": 36,
+      "windowsTotal": 36,
+      "water": 0.0,
+      "relief": {
+        "median": 62.0,
+        "q1": 50.0,
+        "q3": 90.0
+      },
+      "slope": {
+        "median": 3.1,
+        "q1": 2.5,
+        "q3": 3.4
+      },
+      "roughness": {
+        "median": 4.7,
+        "q1": 3.9,
+        "q3": 7.2
+      },
+      "elevation": 2756,
+      "coarse": {
+        "resolutionM": 60,
+        "windows": 36,
+        "windowsTotal": 36,
+        "relief": {
+          "median": 60.0,
+          "q1": 49.0,
+          "q3": 88.0
+        },
+        "slope": {
+          "median": 2.0,
+          "q1": 1.8,
+          "q3": 2.3
+        },
+        "roughness": {
+          "median": 4.6,
+          "q1": 3.8,
+          "q3": 7.1
+        },
+        "elevation": 2756
+      }
+    },
+    {
+      "id": "tso-kar",
+      "latitude": 33.3,
+      "longitude": 78,
+      "dem": "GLO-30",
+      "resolutionM": 30,
+      "tiles": [
+        "Copernicus_DSM_COG_10_N33_00_E077_00_DEM",
+        "Copernicus_DSM_COG_10_N33_00_E078_00_DEM"
+      ],
+      "windows": 31,
+      "windowsTotal": 36,
+      "water": 0.065,
+      "relief": {
+        "median": 593.0,
+        "q1": 374.0,
+        "q3": 808.0
+      },
+      "slope": {
+        "median": 13.1,
+        "q1": 8.3,
+        "q3": 16.7
+      },
+      "roughness": {
+        "median": 72.1,
+        "q1": 48.1,
+        "q3": 101.2
+      },
+      "elevation": 4765,
+      "coarse": {
+        "resolutionM": 60,
+        "windows": 30,
+        "windowsTotal": 36,
+        "relief": {
+          "median": 588.0,
+          "q1": 359.0,
+          "q3": 801.0
+        },
+        "slope": {
+          "median": 12.6,
+          "q1": 8.0,
+          "q3": 16.4
+        },
+        "roughness": {
+          "median": 72.3,
+          "q1": 47.5,
+          "q3": 101.4
+        },
+        "elevation": 4760
+      }
+    },
+    {
+      "id": "tolbachik",
+      "latitude": 55.83,
+      "longitude": 160.33,
+      "dem": "GLO-30",
+      "resolutionM": 30,
+      "tiles": [
+        "Copernicus_DSM_COG_10_N55_00_E160_00_DEM"
+      ],
+      "windows": 36,
+      "windowsTotal": 36,
+      "water": 0.0,
+      "relief": {
+        "median": 666.0,
+        "q1": 491.0,
+        "q3": 1082.0
+      },
+      "slope": {
+        "median": 15.9,
+        "q1": 10.5,
+        "q3": 22.1
+      },
+      "roughness": {
+        "median": 57.3,
+        "q1": 35.8,
+        "q3": 81.3
+      },
+      "elevation": 1474,
+      "coarse": {
+        "resolutionM": 60,
+        "windows": 36,
+        "windowsTotal": 36,
+        "relief": {
+          "median": 657.0,
+          "q1": 483.0,
+          "q3": 1069.0
+        },
+        "slope": {
+          "median": 15.0,
+          "q1": 9.8,
+          "q3": 21.5
+        },
+        "roughness": {
+          "median": 57.1,
+          "q1": 35.6,
+          "q3": 81.0
+        },
+        "elevation": 1474
+      }
+    },
+    {
+      "id": "arkaroola",
+      "latitude": -30.31,
+      "longitude": 139.34,
+      "dem": "GLO-30",
+      "resolutionM": 30,
+      "tiles": [
+        "Copernicus_DSM_COG_10_S31_00_E139_00_DEM"
+      ],
+      "windows": 36,
+      "windowsTotal": 36,
+      "water": 0.0,
+      "relief": {
+        "median": 275.0,
+        "q1": 193.0,
+        "q3": 311.0
+      },
+      "slope": {
+        "median": 14.8,
+        "q1": 11.8,
+        "q3": 18.5
+      },
+      "roughness": {
+        "median": 40.2,
+        "q1": 28.0,
+        "q3": 52.6
+      },
+      "elevation": 405,
+      "coarse": {
+        "resolutionM": 60,
+        "windows": 36,
+        "windowsTotal": 36,
+        "relief": {
+          "median": 270.0,
+          "q1": 186.0,
+          "q3": 306.0
+        },
+        "slope": {
+          "median": 12.6,
+          "q1": 9.4,
+          "q3": 16.0
+        },
+        "roughness": {
+          "median": 39.9,
+          "q1": 27.7,
+          "q3": 52.3
+        },
+        "elevation": 405
+      }
+    },
+    {
+      "id": "pilbara",
+      "latitude": -21.2,
+      "longitude": 119.4,
+      "dem": "GLO-30",
+      "resolutionM": 30,
+      "tiles": [
+        "Copernicus_DSM_COG_10_S22_00_E119_00_DEM"
+      ],
+      "windows": 36,
+      "windowsTotal": 36,
+      "water": 0.0,
+      "relief": {
+        "median": 119.0,
+        "q1": 100.0,
+        "q3": 144.0
+      },
+      "slope": {
+        "median": 8.6,
+        "q1": 5.9,
+        "q3": 11.0
+      },
+      "roughness": {
+        "median": 16.8,
+        "q1": 11.8,
+        "q3": 21.1
+      },
+      "elevation": 221,
+      "coarse": {
+        "resolutionM": 60,
+        "windows": 36,
+        "windowsTotal": 36,
+        "relief": {
+          "median": 111.0,
+          "q1": 96.0,
+          "q3": 138.0
+        },
+        "slope": {
+          "median": 6.8,
+          "q1": 4.6,
+          "q3": 8.7
+        },
+        "roughness": {
+          "median": 16.4,
+          "q1": 11.5,
+          "q3": 20.8
+        },
+        "elevation": 221
+      }
+    },
+    {
+      "id": "desierto-de-rangipo",
+      "latitude": -39.3,
+      "longitude": 175.7,
+      "dem": "GLO-30",
+      "resolutionM": 30,
+      "tiles": [
+        "Copernicus_DSM_COG_10_S40_00_E175_00_DEM"
+      ],
+      "windows": 36,
+      "windowsTotal": 36,
+      "water": 0.001,
+      "relief": {
+        "median": 276.0,
+        "q1": 167.0,
+        "q3": 385.0
+      },
+      "slope": {
+        "median": 8.2,
+        "q1": 4.2,
+        "q3": 12.9
+      },
+      "roughness": {
+        "median": 29.1,
+        "q1": 9.8,
+        "q3": 47.5
+      },
+      "elevation": 1123,
+      "coarse": {
+        "resolutionM": 60,
+        "windows": 36,
+        "windowsTotal": 36,
+        "relief": {
+          "median": 274.0,
+          "q1": 164.0,
+          "q3": 382.0
+        },
+        "slope": {
+          "median": 7.3,
+          "q1": 3.5,
+          "q3": 11.7
+        },
+        "roughness": {
+          "median": 29.0,
+          "q1": 9.7,
+          "q3": 47.4
+        },
+        "elevation": 1123
+      }
+    },
+    {
+      "id": "valles-secos-de-mcmurdo",
+      "latitude": -77.5,
+      "longitude": 162,
+      "dem": "GLO-30",
+      "resolutionM": 30,
+      "tiles": [
+        "Copernicus_DSM_COG_10_S78_00_E161_00_DEM",
+        "Copernicus_DSM_COG_10_S78_00_E162_00_DEM"
+      ],
+      "windows": 36,
+      "windowsTotal": 36,
+      "water": 0.0,
+      "relief": {
+        "median": 883.0,
+        "q1": 784.0,
+        "q3": 1037.0
+      },
+      "slope": {
+        "median": 16.9,
+        "q1": 14.2,
+        "q3": 21.2
+      },
+      "roughness": {
+        "median": 95.9,
+        "q1": 69.7,
+        "q3": 125.4
+      },
+      "elevation": 1025,
+      "coarse": {
+        "resolutionM": 60,
+        "windows": 36,
+        "windowsTotal": 36,
+        "relief": {
+          "median": 874.0,
+          "q1": 777.0,
+          "q3": 1025.0
+        },
+        "slope": {
+          "median": 16.8,
+          "q1": 14.2,
+          "q3": 20.9
+        },
+        "roughness": {
+          "median": 95.7,
+          "q1": 69.6,
+          "q3": 125.2
+        },
+        "elevation": 1025
+      }
+    }
+  ]
+}

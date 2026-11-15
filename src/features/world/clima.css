@@ -1,0 +1,337 @@
+/* Pestaña «Clima»: el bloque «Ahora» (datos reales) y lo que cambia en «Clima típico». */
+
+.clima {
+  /* Los mismos colores de estado de la temporada, para los bloques que quedan fuera de ella. */
+  --tg-lluvia: #3987e5;
+  --tg-temp: #d95926;
+  --tg-bien: #0ca30c;
+  --tg-medio: #fab219;
+  --tg-mal: #d03b3b;
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+  width: 100%;
+}
+
+/* ---------- Ahora ---------- */
+.ahora {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  width: 100%;
+}
+.ahora > header {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 4px 12px;
+}
+.ahora h3 {
+  color: var(--nc-texto-3);
+  font-family: var(--nc-mono);
+  font-size: 10.5px;
+  font-weight: 400;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+.mundo-ficha .ahora-hora {
+  margin: 0;
+  color: var(--nc-texto-2);
+  font-size: 13px;
+  line-height: 1.45;
+}
+.mundo-ficha .ahora-hora strong {
+  display: inline;
+  color: var(--nc-texto);
+  font-family: var(--nc-mono);
+  font-size: 14px;
+  font-weight: 600;
+}
+/* La valoración de hoy: lo primero que se lee. */
+.ahora-valoracion {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  margin: 0;
+  padding: 11px 13px;
+  border: 1px solid var(--nc-linea-fuerte);
+  border-radius: 10px;
+  background: rgba(var(--nc-velo), 0.5);
+}
+.ahora-valoracion > span:first-child {
+  color: var(--nc-texto-3);
+  font-size: 11.5px;
+}
+.mundo-ficha .ahora-valoracion strong {
+  display: inline;
+  color: var(--nc-texto);
+  font-size: 15.5px;
+  font-weight: 600;
+}
+.mundo-ficha .ahora-valoracion .temporada-estado {
+  font-size: 13px;
+}
+.ahora-motivos {
+  color: var(--nc-texto-2);
+  font-size: 13px;
+  line-height: 1.4;
+}
+
+.ahora-tarjetas {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+.ahora-tarjeta {
+  display: flex;
+  flex-direction: column;
+  gap: 7px;
+  padding: 11px 13px;
+  border: 1px solid var(--nc-linea);
+  border-radius: 10px;
+  background: rgba(var(--nc-velo), 0.35);
+}
+/* Cuando la lluvia real se aparta de la típica. */
+.ahora-tarjeta.distinto {
+  border-color: var(--nc-pendiente-punto, #e0a100);
+  background: rgba(224, 161, 0, 0.08);
+}
+.ahora-tarjeta h4 {
+  margin: 0;
+  color: var(--nc-texto-3);
+  font-size: 11.5px;
+  font-weight: 400;
+}
+.ahora-principal {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 4px 14px;
+  margin: 0;
+}
+.ahora-principal .mono {
+  color: var(--nc-texto);
+  font-size: 24px;
+  font-variant-numeric: tabular-nums;
+  line-height: 1.15;
+}
+.ahora-principal > span:last-child:not(.mono) {
+  display: flex;
+  flex-direction: column;
+  color: var(--nc-texto);
+  font-size: 14px;
+  font-weight: 600;
+  line-height: 1.3;
+}
+.mundo-ficha .ahora-principal small {
+  display: block;
+  overflow: visible;
+  color: var(--nc-texto-3);
+  font-size: 12px;
+  font-weight: 400;
+  white-space: normal;
+}
+.ahora-tarjeta dl {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 8px 10px;
+  margin: 0;
+}
+.ahora-tarjeta dt {
+  color: var(--nc-texto-3);
+  font-size: 11px;
+}
+.ahora-tarjeta dd {
+  margin: 1px 0 0;
+  color: var(--nc-texto);
+  font-family: var(--nc-mono);
+  font-size: 12.5px;
+  font-variant-numeric: tabular-nums;
+}
+.mundo-ficha .ahora-estado strong {
+  display: inline;
+  color: var(--nc-texto);
+  font-size: 15.5px;
+  font-weight: 600;
+}
+.mundo-ficha .ahora-texto,
+.mundo-ficha .ahora-pie {
+  margin: 0;
+  line-height: 1.45;
+}
+.mundo-ficha .ahora-texto {
+  color: var(--nc-texto-2);
+  font-size: 13px;
+}
+.mundo-ficha .ahora-pie {
+  color: var(--nc-texto-3);
+  font-size: 11.5px;
+}
+.ahora .nc-nota a {
+  color: inherit;
+  text-decoration: underline;
+  text-decoration-color: var(--nc-linea-fuerte);
+  text-underline-offset: 3px;
+}
+@media (max-width: 420px) {
+  .ahora-tarjeta dl {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+/* ---------- Clima típico ---------- */
+/* «Mejor época» ya no comparte fila con «Ahora». */
+.temporada-resumen.una {
+  grid-template-columns: minmax(0, 1fr);
+}
+/* El recuadro del mes: lo típico arriba; lo real, separado por una línea. */
+.temporada-lectura .temporada-hoy {
+  margin-top: 4px;
+  padding-top: 7px;
+  border-top: 1px solid var(--nc-linea);
+  color: var(--nc-texto);
+}
+.temporada-tabla .nc-nota {
+  margin: 6px 0 0;
+}
+
+/* ---------- Pronóstico de rodadura (pestaña «Ruedas») ---------- */
+.rodadura {
+  --tg-bien: #0ca30c;
+  --tg-medio: #fab219;
+  --tg-mal: #d03b3b;
+  display: flex;
+  flex-direction: column;
+  gap: 9px;
+  width: 100%;
+  padding: 12px 13px;
+  border: 1px solid var(--nc-linea-fuerte);
+  border-radius: 10px;
+  background: rgba(var(--nc-velo), 0.4);
+}
+.rodadura > header {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 4px 12px;
+}
+.mundo-ficha .rodadura h3 {
+  margin: 0;
+  color: var(--nc-texto);
+  font-size: 14px;
+  font-weight: 600;
+}
+.mundo-lista .rodadura-hoy {
+  margin: 0;
+  color: var(--nc-texto);
+  font-size: 13.5px;
+  line-height: 1.45;
+}
+.mundo-lista .rodadura ol {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+.rodadura li {
+  display: grid;
+  grid-template-columns: 5.6em minmax(0, 1fr) auto;
+  align-items: center;
+  gap: 2px 10px;
+  padding: 7px 0;
+  border-top: 1px solid var(--nc-linea);
+  font-size: 12.5px;
+  line-height: 1.35;
+}
+.rodadura li:first-child {
+  border-top: 0;
+}
+.rodadura-dia {
+  color: var(--nc-texto);
+  font-weight: 600;
+}
+.rodadura-suelo {
+  display: flex;
+  flex-direction: column;
+  color: var(--nc-texto-2);
+}
+.mundo-lista .rodadura-suelo small {
+  display: block;
+  overflow: visible;
+  color: var(--nc-texto-3);
+  font-size: 11.5px;
+  white-space: normal;
+}
+.rodadura-resultado {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 1px;
+}
+.mundo-lista .rodadura-resultado small {
+  display: block;
+  overflow: visible;
+  color: var(--nc-texto-3);
+  font-size: 11.5px;
+  white-space: nowrap;
+}
+.rodadura-veredicto {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  color: var(--nc-texto);
+  white-space: nowrap;
+}
+.rodadura-veredicto i {
+  display: grid;
+  place-items: center;
+  flex-shrink: 0;
+  width: 16px;
+  height: 16px;
+  border-radius: 4px;
+  color: #fff;
+  font-size: 11px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 1;
+}
+.rodadura-veredicto.bien i {
+  background: var(--tg-bien);
+}
+.rodadura-veredicto.cuidado i {
+  background: var(--tg-medio);
+  color: #0b0b0b;
+}
+.rodadura-veredicto.atasca i {
+  background: var(--tg-mal);
+}
+.rodadura .calculando {
+  opacity: 0.55;
+}
+.mundo-lista .rodadura .nc-nota {
+  margin: 0;
+}
+.rodadura .nc-nota a {
+  color: inherit;
+  text-decoration: underline;
+  text-decoration-color: var(--nc-linea-fuerte);
+  text-underline-offset: 3px;
+}
+.rodadura-boton {
+  align-self: flex-start;
+  padding: 2px 0;
+  border: 0;
+  background: none;
+  color: var(--nc-texto-2);
+  font-size: 12.5px;
+  text-decoration: underline;
+  text-decoration-color: var(--nc-linea-fuerte);
+  text-underline-offset: 3px;
+}
+.rodadura-boton:hover {
+  color: var(--nc-texto);
+}

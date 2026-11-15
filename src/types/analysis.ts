@@ -11,7 +11,6 @@ export interface Terrain {
   latitude: number;
   longitude: number;
 }
-export type View = "explore" | "ranking" | "risks" | "economy";
 export interface RankedSite {
   site: Terrain;
   distance: number;

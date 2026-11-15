@@ -1,0 +1,201 @@
+{
+ "source": {
+  "name": "SoilGrids 2.0 (ISRIC), predicción a 250 m",
+  "depth": "0-5cm",
+  "license": "CC BY 4.0",
+  "citation": "Poggio y otros (2021), SOIL 7, 217-240",
+  "url": "https://doi.org/10.5194/soil-7-217-2021",
+  "units": "arena, limo y arcilla en %; densidad aparente en g/cm³",
+  "fetched": "2026-11-15"
+ },
+ "sites": {
+  "valle-de-la-luna": {
+   "sand": 62.8,
+   "silt": 24.0,
+   "clay": 13.2,
+   "bulkDensity": 1.36
+  },
+  "salar-de-atacama": {
+   "sand": 62.7,
+   "silt": 23.7,
+   "clay": 13.6,
+   "bulkDensity": 1.33
+  },
+  "yungay": {
+   "sand": 62.6,
+   "silt": 24.1,
+   "clay": 13.3,
+   "bulkDensity": 1.32
+  },
+  "laguna-verde": null,
+  "ischigualasto": {
+   "sand": 56.1,
+   "silt": 28.8,
+   "clay": 15.1,
+   "bulkDensity": 1.34
+  },
+  "campo-de-piedra-pomez": {
+   "sand": 69.1,
+   "silt": 20.2,
+   "clay": 10.7,
+   "bulkDensity": 1.35
+  },
+  "salar-de-uyuni": {
+   "sand": 59.7,
+   "silt": 20.0,
+   "clay": 20.2,
+   "bulkDensity": 1.0
+  },
+  "pampa-de-la-joya": {
+   "sand": 70.7,
+   "silt": 20.1,
+   "clay": 9.2,
+   "bulkDensity": 1.42
+  },
+  "sierra-negra": {
+   "sand": 54.0,
+   "silt": 20.7,
+   "clay": 25.3,
+   "bulkDensity": 1.3
+  },
+  "arenal-del-chimborazo": {
+   "sand": 46.8,
+   "silt": 32.2,
+   "clay": 20.9,
+   "bulkDensity": 1.12
+  },
+  "paramo-del-cotopaxi": null,
+  "crater-barringer": {
+   "sand": 52.8,
+   "silt": 32.0,
+   "clay": 15.2,
+   "bulkDensity": 1.42
+  },
+  "hanksville": {
+   "sand": 52.4,
+   "silt": 31.2,
+   "clay": 16.4,
+   "bulkDensity": 1.47
+  },
+  "mauna-loa": {
+   "sand": 43.3,
+   "silt": 25.9,
+   "clay": 30.9,
+   "bulkDensity": 1.23
+  },
+  "craters-of-the-moon": {
+   "sand": 39.9,
+   "silt": 43.7,
+   "clay": 16.4,
+   "bulkDensity": 1.21
+  },
+  "valle-de-la-muerte": {
+   "sand": 45.0,
+   "silt": 31.5,
+   "clay": 23.5,
+   "bulkDensity": 1.3
+  },
+  "crater-haughton": {
+   "sand": 35.1,
+   "silt": 39.8,
+   "clay": 25.1,
+   "bulkDensity": 0.86
+  },
+  "el-pinacate": {
+   "sand": 60.5,
+   "silt": 23.9,
+   "clay": 15.6,
+   "bulkDensity": 1.33
+  },
+  "pico-de-orizaba": {
+   "sand": 50.8,
+   "silt": 29.7,
+   "clay": 19.5,
+   "bulkDensity": 0.97
+  },
+  "askja": null,
+  "landmannalaugar": {
+   "sand": 58.4,
+   "silt": 33.7,
+   "clay": 7.9,
+   "bulkDensity": 0.74
+  },
+  "timanfaya": {
+   "sand": 44.2,
+   "silt": 31.9,
+   "clay": 23.9,
+   "bulkDensity": 1.37
+  },
+  "rio-tinto": {
+   "sand": 43.8,
+   "silt": 36.0,
+   "clay": 20.2,
+   "bulkDensity": 1.34
+  },
+  "bockfjorden": {
+   "sand": 42.5,
+   "silt": 41.0,
+   "clay": 16.5,
+   "bulkDensity": 0.7
+  },
+  "monte-etna": null,
+  "erfoud": {
+   "sand": 47.1,
+   "silt": 31.1,
+   "clay": 21.8,
+   "bulkDensity": 1.45
+  },
+  "desierto-del-namib": {
+   "sand": 81.7,
+   "silt": 13.7,
+   "clay": 4.6,
+   "bulkDensity": 1.47
+  },
+  "dallol": {
+   "sand": 39.6,
+   "silt": 33.3,
+   "clay": 27.1,
+   "bulkDensity": 1.39
+  },
+  "marmul": {
+   "sand": 51.0,
+   "silt": 25.8,
+   "clay": 23.2,
+   "bulkDensity": 1.5
+  },
+  "crater-ramon": {
+   "sand": 33.8,
+   "silt": 40.4,
+   "clay": 25.8,
+   "bulkDensity": 1.36
+  },
+  "cuenca-de-qaidam": {
+   "sand": 56.8,
+   "silt": 24.9,
+   "clay": 18.3,
+   "bulkDensity": 1.35
+  },
+  "tso-kar": {
+   "sand": 47.5,
+   "silt": 35.6,
+   "clay": 16.9,
+   "bulkDensity": 1.21
+  },
+  "tolbachik": null,
+  "arkaroola": {
+   "sand": 65.4,
+   "silt": 14.9,
+   "clay": 19.7,
+   "bulkDensity": 1.33
+  },
+  "pilbara": {
+   "sand": 66.3,
+   "silt": 13.2,
+   "clay": 20.5,
+   "bulkDensity": 1.4
+  },
+  "desierto-de-rangipo": null,
+  "valles-secos-de-mcmurdo": null
+ },
+ "failed": []
+}

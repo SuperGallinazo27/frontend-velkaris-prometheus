@@ -1,35 +1,12 @@
 /* Portada de PROMETHEUS: versión nocturna de la paleta del explorador
    (verde bosque profundo, terracota de Marte, gris de la Luna y un verde agua para la Tierra).
-   Capas: fondo estático → escena 3D → etiquetas → contenido → cabecera e indicadores. */
-
-html.portada-activa {
-  background: #070f0d;
-  color-scheme: dark;
-}
+   Capas: fondo estático → escena 3D → etiquetas → contenido → cabecera e indicadores.
+   Los colores y los botones vienen del tema compartido: src/styles/nocturno.css. */
 
 .landing {
-  --lp-bg: #070f0d;
-  --lp-superficie: rgba(13, 27, 24, 0.78);
-  --lp-texto: #eef0e6;
-  --lp-texto-2: #b9c8be;
-  --lp-texto-3: #8c9f94;
-  --lp-acento: #ec9b72;
-  --lp-acento-claro: #f6b592;
-  --lp-sobre-acento: #1b0f09;
-  --lp-tierra: #7fd6c4;
-  --lp-linea: rgba(220, 230, 223, 0.16);
-  --lp-linea-fuerte: rgba(220, 230, 223, 0.34);
-  --lp-velo: 7, 15, 13;
-  --lp-serif: Georgia, "Times New Roman", serif;
-  --lp-mono: ui-monospace, "Cascadia Mono", "SF Mono", Menlo, Consolas, monospace;
-  --lp-margen: clamp(16px, 4vw, 44px);
   --viaje: 0;
   position: relative;
   min-height: 100vh;
-  background: var(--lp-bg);
-  color: var(--lp-texto);
-  font-size: 15px;
-  line-height: 1.65;
 }
 
 /* ---------- Fondo estático: se ve mientras carga la escena y si no hay WebGL ---------- */
@@ -54,7 +31,7 @@ html.portada-activa {
     ),
     radial-gradient(60vw 60vh at 82% 22%, rgba(220, 128, 86, 0.1), transparent 70%),
     radial-gradient(55vw 55vh at 8% 92%, rgba(79, 183, 164, 0.08), transparent 70%),
-    var(--lp-bg);
+    var(--nc-bg);
 }
 .lp-fondo::before {
   content: "";
@@ -148,11 +125,11 @@ html.portada-activa {
   top: 0;
   translate: 18px -50%;
   padding: 3px 8px;
-  border: 1px solid var(--lp-linea);
+  border: 1px solid var(--nc-linea);
   border-radius: 4px;
-  background: rgba(var(--lp-velo), 0.6);
-  color: var(--lp-texto-2);
-  font-family: var(--lp-mono);
+  background: rgba(var(--nc-velo), 0.6);
+  color: var(--nc-texto-2);
+  font-family: var(--nc-mono);
   font-size: 11px;
   letter-spacing: 0.04em;
   white-space: nowrap;
@@ -163,7 +140,7 @@ html.portada-activa {
   translate: calc(-100% - 18px) -50%;
 }
 .lp-etiqueta.activa {
-  border-color: var(--lp-acento);
+  border-color: var(--nc-acento);
   color: #fff;
 }
 
@@ -177,14 +154,14 @@ html.portada-activa {
   align-items: center;
   justify-content: space-between;
   gap: 20px;
-  padding: 0 var(--lp-margen);
-  border-bottom: 1px solid var(--lp-linea);
-  background: rgba(var(--lp-velo), 0.72);
+  padding: 0 var(--nc-margen);
+  border-bottom: 1px solid var(--nc-linea);
+  background: rgba(var(--nc-velo), 0.72);
   backdrop-filter: blur(12px);
 }
 .lp-header .brand {
   padding: 0;
-  color: var(--lp-texto);
+  color: var(--nc-texto);
 }
 .lp-header .brand-symbol {
   font-size: 34px;
@@ -202,51 +179,28 @@ html.portada-activa {
 }
 .lp-nav a {
   padding: 8px 0;
-  color: var(--lp-texto-2);
+  color: var(--nc-texto-2);
 }
-.lp-nav a:hover {
-  color: var(--lp-texto);
+.lp-nav a:hover,
+.lp-ingresar:hover {
+  color: var(--nc-texto);
+}
+.lp-ingresar {
+  padding: 8px 0;
+  color: var(--nc-texto-2);
+  font-size: 13px;
+  font-weight: 600;
 }
 
-/* ---------- Botones y enlaces ---------- */
-.lp-btn {
-  display: inline-flex;
-  align-items: center;
-  gap: 10px;
-  padding: 13px 20px;
-  border: 1px solid transparent;
-  border-radius: 6px;
-  font-size: 14px;
-  font-weight: 600;
-  white-space: nowrap;
-}
-.lp-btn.compacto {
-  padding: 9px 14px;
-  font-size: 13px;
-}
-.lp-btn.primario {
-  background: var(--lp-acento);
-  color: var(--lp-sobre-acento);
-}
-.lp-btn.primario:hover {
-  background: var(--lp-acento-claro);
-}
-.lp-btn.secundario {
-  border-color: var(--lp-linea-fuerte);
-  background: rgba(var(--lp-velo), 0.45);
-  color: var(--lp-texto);
-}
-.lp-btn.secundario:hover {
-  background: rgba(220, 230, 223, 0.1);
-}
+/* ---------- Enlaces ---------- */
 .lp-enlace {
   display: inline-flex;
   align-items: center;
   gap: 8px;
   margin-top: 22px;
   padding: 4px 0;
-  border-bottom: 1px solid var(--lp-acento);
-  color: var(--lp-acento-claro);
+  border-bottom: 1px solid var(--nc-acento);
+  color: var(--nc-acento-claro);
   font-size: 14px;
   font-weight: 600;
 }
@@ -268,7 +222,7 @@ html.portada-activa {
   align-items: center;
   min-height: 100vh;
   min-height: 100svh;
-  padding: 104px var(--lp-margen) 116px;
+  padding: 104px var(--nc-margen) 116px;
 }
 .lp-ancho {
   display: flex;
@@ -309,9 +263,9 @@ html.portada-activa {
   z-index: -1;
   background: radial-gradient(
     ellipse closest-side,
-    rgba(var(--lp-velo), 0.88),
-    rgba(var(--lp-velo), 0.6) 62%,
-    rgba(var(--lp-velo), 0)
+    rgba(var(--nc-velo), 0.88),
+    rgba(var(--nc-velo), 0.6) 62%,
+    rgba(var(--nc-velo), 0)
   );
   pointer-events: none;
 }
@@ -328,8 +282,8 @@ html.portada-activa {
 .lp-eyebrow {
   display: block;
   margin-bottom: 18px;
-  color: var(--lp-acento);
-  font-family: var(--lp-mono);
+  color: var(--nc-acento);
+  font-family: var(--nc-mono);
   font-size: 11px;
   font-weight: 600;
   letter-spacing: 0.16em;
@@ -337,7 +291,7 @@ html.portada-activa {
 }
 .landing h1,
 .landing h2 {
-  font-family: var(--lp-serif);
+  font-family: var(--nc-serif);
   font-weight: 400;
   text-wrap: balance;
 }
@@ -348,7 +302,7 @@ html.portada-activa {
 }
 .landing h1 span {
   display: block;
-  color: var(--lp-acento-claro);
+  color: var(--nc-acento-claro);
 }
 .landing h2 {
   font-size: clamp(30px, 3.4vw, 46px);
@@ -357,10 +311,10 @@ html.portada-activa {
 }
 .lp-panel p {
   margin-top: 16px;
-  color: var(--lp-texto-2);
+  color: var(--nc-texto-2);
 }
 .lp-panel p strong {
-  color: var(--lp-texto);
+  color: var(--nc-texto);
   font-weight: 600;
 }
 .lp-panel .lp-lead {
@@ -370,7 +324,7 @@ html.portada-activa {
 }
 .lp-panel .lp-nota {
   margin-top: 14px;
-  color: var(--lp-texto-3);
+  color: var(--nc-texto-3);
   font-size: 12.5px;
   line-height: 1.6;
 }
@@ -385,7 +339,7 @@ html.portada-activa {
   align-items: flex-start;
   gap: 10px;
   margin-top: 30px;
-  color: var(--lp-texto-3);
+  color: var(--nc-texto-3);
   font-size: 12.5px;
   line-height: 1.55;
 }
@@ -393,10 +347,10 @@ html.portada-activa {
   flex-shrink: 0;
   margin-top: 1px;
   padding: 1px 6px;
-  border: 1px solid var(--lp-acento);
+  border: 1px solid var(--nc-acento);
   border-radius: 3px;
-  color: var(--lp-acento);
-  font-family: var(--lp-mono);
+  color: var(--nc-acento);
+  font-family: var(--nc-mono);
   font-size: 10px;
   letter-spacing: 0.12em;
 }
@@ -405,14 +359,14 @@ html.portada-activa {
   gap: 8px;
   margin-top: 34px;
   padding: 4px 0;
-  color: var(--lp-texto-2);
-  font-family: var(--lp-mono);
+  color: var(--nc-texto-2);
+  font-family: var(--nc-mono);
   font-size: 11px;
   letter-spacing: 0.12em;
   text-transform: uppercase;
 }
 .lp-desliza:hover {
-  color: var(--lp-texto);
+  color: var(--nc-texto);
 }
 .landing.con-movimiento .lp-desliza span {
   animation: lp-bajar 1.8s ease-in-out infinite;
@@ -432,20 +386,20 @@ html.portada-activa {
 }
 .lp-regiones button {
   padding: 9px 14px;
-  border: 1px solid var(--lp-linea-fuerte);
+  border: 1px solid var(--nc-linea-fuerte);
   border-radius: 6px;
-  background: rgba(var(--lp-velo), 0.45);
-  color: var(--lp-texto-2);
+  background: rgba(var(--nc-velo), 0.45);
+  color: var(--nc-texto-2);
   font-size: 13px;
 }
 .lp-regiones button:hover {
-  color: var(--lp-texto);
-  border-color: var(--lp-texto-2);
+  color: var(--nc-texto);
+  border-color: var(--nc-texto-2);
 }
 .lp-regiones button[aria-pressed="true"] {
-  border-color: var(--lp-acento);
-  background: var(--lp-acento);
-  color: var(--lp-sobre-acento);
+  border-color: var(--nc-acento);
+  background: var(--nc-acento);
+  color: var(--nc-sobre-acento);
   font-weight: 600;
 }
 
@@ -456,26 +410,26 @@ html.portada-activa {
   gap: 16px;
   margin: 26px 0 0;
   padding-top: 18px;
-  border-top: 1px solid var(--lp-linea);
+  border-top: 1px solid var(--nc-linea);
 }
 .lp-cifras dt {
-  color: var(--lp-texto-3);
-  font-family: var(--lp-mono);
+  color: var(--nc-texto-3);
+  font-family: var(--nc-mono);
   font-size: 10.5px;
   letter-spacing: 0.12em;
   text-transform: uppercase;
 }
 .lp-cifras dd {
   margin: 6px 0 0;
-  font-family: var(--lp-serif);
+  font-family: var(--nc-serif);
   font-size: clamp(28px, 7vw, 42px);
   line-height: 1.1;
   font-variant-numeric: tabular-nums;
   white-space: nowrap;
 }
 .lp-cifras small {
-  color: var(--lp-texto-2);
-  font-family: var(--lp-mono);
+  color: var(--nc-texto-2);
+  font-family: var(--nc-mono);
   font-size: 14px;
 }
 
@@ -484,7 +438,7 @@ html.portada-activa {
   margin: 24px 0 0;
   padding: 0;
   list-style: none;
-  border-top: 1px solid var(--lp-linea);
+  border-top: 1px solid var(--nc-linea);
 }
 .lp-formula li {
   display: flex;
@@ -492,11 +446,11 @@ html.portada-activa {
   justify-content: space-between;
   gap: 16px;
   padding: 12px 0;
-  border-bottom: 1px solid var(--lp-linea);
+  border-bottom: 1px solid var(--nc-linea);
 }
 .lp-formula code {
-  color: var(--lp-acento-claro);
-  font-family: var(--lp-mono);
+  color: var(--nc-acento-claro);
+  font-family: var(--nc-mono);
   font-size: 13px;
 }
 
@@ -505,7 +459,7 @@ html.portada-activa {
   margin: 22px 0 0;
   padding: 0;
   list-style: none;
-  border-top: 1px solid var(--lp-linea);
+  border-top: 1px solid var(--nc-linea);
 }
 .lp-ranking li {
   display: grid;
@@ -513,11 +467,11 @@ html.portada-activa {
   align-items: center;
   gap: 12px;
   padding: 13px 0;
-  border-bottom: 1px solid var(--lp-linea);
+  border-bottom: 1px solid var(--nc-linea);
 }
 .lp-pos {
-  color: var(--lp-texto-3);
-  font-family: var(--lp-mono);
+  color: var(--nc-texto-3);
+  font-family: var(--nc-mono);
   font-size: 12px;
 }
 .lp-ranking strong {
@@ -528,11 +482,11 @@ html.portada-activa {
 }
 .lp-ranking small {
   display: block;
-  color: var(--lp-texto-3);
+  color: var(--nc-texto-3);
   font-size: 12px;
 }
 .lp-dist {
-  font-family: var(--lp-mono);
+  font-family: var(--nc-mono);
   font-size: 15px;
   font-variant-numeric: tabular-nums;
   text-align: right;
@@ -546,7 +500,7 @@ html.portada-activa {
 .lp-ranking .primero .lp-pos,
 .lp-ranking .primero .lp-dist,
 .lp-ranking .primero .lp-dist small {
-  color: var(--lp-acento-claro);
+  color: var(--nc-acento-claro);
 }
 
 /* Módulos del explorador */
@@ -563,24 +517,24 @@ html.portada-activa {
   gap: 6px;
   min-width: 0;
   padding: 18px;
-  border: 1px solid var(--lp-linea);
+  border: 1px solid var(--nc-linea);
   border-radius: 8px;
-  background: var(--lp-superficie);
+  background: var(--nc-superficie);
   backdrop-filter: blur(8px);
 }
 .lp-modulos a:hover {
-  border-color: var(--lp-acento);
+  border-color: var(--nc-acento);
 }
 .lp-modulos svg {
   margin-bottom: 6px;
-  color: var(--lp-acento);
+  color: var(--nc-acento);
 }
 .lp-modulos strong {
   font-size: 15px;
   font-weight: 600;
 }
 .lp-modulos span {
-  color: var(--lp-texto-2);
+  color: var(--nc-texto-2);
   font-size: 12.5px;
   line-height: 1.5;
 }
@@ -596,17 +550,17 @@ html.portada-activa {
   margin: 0;
   justify-content: space-between;
   gap: 4px 24px;
-  padding: 16px var(--lp-margen) 68px;
-  border-top: 1px solid var(--lp-linea);
-  color: var(--lp-texto-3);
+  padding: 16px var(--nc-margen) 68px;
+  border-top: 1px solid var(--nc-linea);
+  color: var(--nc-texto-3);
   font-size: 12px;
   line-height: 1.6;
 }
 .lp-pie a {
-  color: var(--lp-texto-2);
+  color: var(--nc-texto-2);
 }
 .lp-pie a:hover {
-  color: var(--lp-texto);
+  color: var(--nc-texto);
 }
 
 /* ---------- Puntos de capítulo (escritorio) ---------- */
@@ -626,8 +580,8 @@ html.portada-activa {
   justify-content: flex-end;
   gap: 10px;
   padding: 5px 4px;
-  color: var(--lp-texto-2);
-  font-family: var(--lp-mono);
+  color: var(--nc-texto-2);
+  font-family: var(--nc-mono);
   font-size: 10px;
   letter-spacing: 0.12em;
   text-transform: uppercase;
@@ -642,12 +596,12 @@ html.portada-activa {
 .lp-puntos i {
   width: 8px;
   height: 8px;
-  border: 1px solid var(--lp-linea-fuerte);
+  border: 1px solid var(--nc-linea-fuerte);
   border-radius: 50%;
 }
 .lp-puntos a[aria-current] i {
-  border-color: var(--lp-acento);
-  background: var(--lp-acento);
+  border-color: var(--nc-acento);
+  background: var(--nc-acento);
 }
 
 /* ---------- Barra inferior: trayecto Marte → Tierra y pausa ---------- */
@@ -659,15 +613,15 @@ html.portada-activa {
   grid-template-columns: 1fr minmax(0, 460px) 1fr;
   align-items: end;
   gap: 16px;
-  padding: 30px var(--lp-margen) 20px;
-  background: linear-gradient(rgba(var(--lp-velo), 0), rgba(var(--lp-velo), 0.92) 55%);
+  padding: 30px var(--nc-margen) 20px;
+  background: linear-gradient(rgba(var(--nc-velo), 0), rgba(var(--nc-velo), 0.92) 55%);
   pointer-events: none;
 }
 .lp-hud {
   grid-column: 2;
   padding: 22px 0 10px;
-  color: var(--lp-texto-3);
-  font-family: var(--lp-mono);
+  color: var(--nc-texto-3);
+  font-family: var(--nc-mono);
   font-size: 10px;
   letter-spacing: 0.18em;
   text-transform: uppercase;
@@ -675,7 +629,7 @@ html.portada-activa {
 .lp-via {
   position: relative;
   height: 1px;
-  background: var(--lp-linea-fuerte);
+  background: var(--nc-linea-fuerte);
 }
 /* Paradas del viaje: Tierra, Luna, Marte y de vuelta a la Tierra. */
 .lp-parada {
@@ -691,7 +645,7 @@ html.portada-activa {
   left: 50%;
   width: 1px;
   height: 7px;
-  background: var(--lp-linea-fuerte);
+  background: var(--nc-linea-fuerte);
 }
 .lp-parada:first-of-type {
   translate: 0 0;
@@ -709,7 +663,7 @@ html.portada-activa {
   position: absolute;
   inset: 0 auto 0 0;
   width: calc(var(--viaje) * 100%);
-  background: var(--lp-acento);
+  background: var(--nc-acento);
 }
 .lp-sonda {
   position: absolute;
@@ -719,7 +673,7 @@ html.portada-activa {
   height: 9px;
   translate: -50% -50%;
   rotate: 45deg;
-  background: var(--lp-acento);
+  background: var(--nc-acento);
   box-shadow: 0 0 12px rgba(236, 155, 114, 0.7);
 }
 .lp-pausa {
@@ -730,16 +684,16 @@ html.portada-activa {
   align-items: center;
   gap: 8px;
   padding: 7px 11px;
-  border: 1px solid var(--lp-linea);
+  border: 1px solid var(--nc-linea);
   border-radius: 6px;
-  background: rgba(var(--lp-velo), 0.6);
-  color: var(--lp-texto-2);
+  background: rgba(var(--nc-velo), 0.6);
+  color: var(--nc-texto-2);
   font-size: 12px;
   pointer-events: auto;
 }
 .lp-pausa:hover {
-  color: var(--lp-texto);
-  border-color: var(--lp-linea-fuerte);
+  color: var(--nc-texto);
+  border-color: var(--nc-linea-fuerte);
 }
 .lp-pausa > span:first-child {
   font-size: 9px;
@@ -758,12 +712,20 @@ html.portada-activa {
   .lp-nav {
     display: none;
   }
-  .lp-header .brand small {
+  .lp-header .brand small,
+  .lp-header .lp-abrir {
     display: none;
+  }
+  .lp-ingresar {
+    margin-left: auto;
+    padding: 8px 14px;
+    border: 1px solid var(--nc-linea-fuerte);
+    border-radius: 6px;
+    color: var(--nc-texto);
   }
   .lp-cap {
     align-items: flex-end;
-    padding: 96px var(--lp-margen) 92px;
+    padding: 96px var(--nc-margen) 92px;
   }
   .lp-panel,
   .lp-panel.ancho,
@@ -774,8 +736,8 @@ html.portada-activa {
     text-align: left;
   }
   .lp-panel::before {
-    inset: -90px calc(var(--lp-margen) * -1) -92px;
-    background: linear-gradient(rgba(var(--lp-velo), 0), rgba(var(--lp-velo), 0.86) 90px);
+    inset: -90px calc(var(--nc-margen) * -1) -92px;
+    background: linear-gradient(rgba(var(--nc-velo), 0), rgba(var(--nc-velo), 0.86) 90px);
   }
   .lp-disco {
     top: 26%;
@@ -830,4 +792,10 @@ html.portada-activa {
       background-color 0.15s ease,
       color 0.15s ease;
   }
+}
+
+/* La portada con la Luna usa mediciones: la etiqueta lo dice en el color de «tierra». */
+.lp-demo.real b {
+  border-color: var(--nc-tierra, #7fd1b9);
+  color: var(--nc-tierra, #7fd1b9);
 }

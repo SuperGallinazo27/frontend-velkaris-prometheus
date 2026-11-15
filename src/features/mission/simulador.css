@@ -1,0 +1,989 @@
+/* Simulador de la prueba del robot: el lienzo 3D ocupa todo el panel y los controles van encima. */
+.sim {
+  --sim-fondo: rgba(8, 17, 15, 0.82);
+  --sim-borde: rgba(255, 255, 255, 0.2);
+  --sim-texto: #eef0e6;
+  --sim-texto-2: #c5cdc6;
+  --sim-texto-3: #97a39b;
+  position: absolute;
+  inset: 0;
+  overflow: hidden;
+  background: #b7c9d8;
+  color: var(--sim-texto);
+  font-size: 13px;
+  outline: none;
+}
+.sim-lienzo {
+  position: absolute;
+  inset: 0;
+}
+.sim-lienzo canvas {
+  display: block;
+  width: 100%;
+  height: 100%;
+  cursor: crosshair;
+  touch-action: none;
+}
+.sim button {
+  font: inherit;
+  cursor: pointer;
+}
+.sim button:disabled {
+  cursor: default;
+  opacity: 0.5;
+}
+.sim button:focus-visible,
+.sim select:focus-visible {
+  outline: 2px solid var(--nc-acento-claro, #f2b490);
+  outline-offset: 2px;
+}
+
+/* ---------- Piezas comunes ---------- */
+.sim-grupo {
+  display: inline-flex;
+  flex-shrink: 0;
+  overflow: hidden;
+  border: 1px solid var(--sim-borde);
+  border-radius: 8px;
+  background: var(--sim-fondo);
+}
+.sim-grupo button {
+  padding: 7px 11px;
+  border: 0;
+  background: none;
+  color: var(--sim-texto-2);
+  font-size: 12.5px;
+  white-space: nowrap;
+}
+.sim-grupo button + button {
+  border-left: 1px solid var(--sim-borde);
+}
+.sim-grupo button:hover {
+  color: var(--sim-texto);
+}
+.sim-grupo button[aria-pressed="true"] {
+  background: var(--sim-texto);
+  color: #0e1c19;
+  font-weight: 600;
+}
+.sim-boton,
+.sim-icono {
+  flex-shrink: 0;
+  padding: 7px 11px;
+  border: 1px solid var(--sim-borde);
+  border-radius: 8px;
+  background: var(--sim-fondo);
+  color: var(--sim-texto-2);
+  font-size: 12.5px;
+  white-space: nowrap;
+}
+.sim-boton:hover:not(:disabled),
+.sim-icono:hover {
+  border-color: rgba(255, 255, 255, 0.5);
+  color: var(--sim-texto);
+}
+.sim-boton[aria-pressed="true"] {
+  border-color: var(--nc-acento, #ec9b72);
+  color: var(--nc-acento-claro, #f2b490);
+}
+.sim-icono {
+  width: 34px;
+  padding: 7px 0;
+  font-weight: 600;
+  text-align: center;
+}
+
+/* ---------- Barra superior ---------- */
+.sim-barra {
+  position: absolute;
+  top: 10px;
+  right: 12px;
+  left: 12px;
+  z-index: 2;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  pointer-events: none;
+}
+.sim-barra > * {
+  pointer-events: auto;
+}
+.sim-lugar {
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+  margin-right: auto;
+  padding: 5px 12px;
+  border: 1px solid var(--sim-borde);
+  border-radius: 8px;
+  background: var(--sim-fondo);
+  line-height: 1.25;
+}
+.sim-lugar strong {
+  overflow: hidden;
+  font-family: var(--nc-serif, Georgia, serif);
+  font-size: 16px;
+  font-weight: 400;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.sim-lugar span {
+  overflow: hidden;
+  color: var(--sim-texto-3);
+  font-size: 11.5px;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+/*
+ * Lo de arriba (avisos, botón de ajustes, panel, minimapa y leyenda) va en una columna que acaba
+ * donde empiezan los datos de abajo: si los avisos ocupan dos filas, lo demás baja y nada se pisa.
+ */
+.sim-arriba {
+  position: absolute;
+  top: 62px;
+  right: 12px;
+  bottom: 124px;
+  left: 12px;
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 8px;
+  pointer-events: none;
+}
+/* Tiempo de ahora, luz y avisos de carga. A su derecha queda el minimapa. */
+.sim-ahora {
+  display: flex;
+  flex-shrink: 0;
+  flex-wrap: wrap;
+  gap: 6px;
+  max-width: calc(100% - 200px);
+}
+.sim-medio {
+  display: flex;
+  flex-shrink: 0;
+  align-items: flex-start;
+  gap: 8px;
+}
+.sim-medio-izq {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 6px;
+}
+.sim-chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 5px 10px;
+  border-radius: 999px;
+  background: var(--sim-fondo);
+  color: var(--sim-texto-2);
+  font-size: 12px;
+  pointer-events: auto;
+}
+.sim-chip b {
+  color: var(--sim-texto);
+  font-weight: 600;
+}
+.sim-chip.aviso {
+  color: #ffd9a8;
+}
+.sim-chip button {
+  padding: 0;
+  border: 0;
+  background: none;
+  color: var(--nc-acento-claro, #f2b490);
+  font-size: 12px;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+/* ---------- Panel de lugar, robot y suelo ---------- */
+.sim-ajustes {
+  padding: 6px 11px;
+  border: 1px solid var(--sim-borde);
+  border-radius: 8px;
+  background: var(--sim-fondo);
+  color: var(--sim-texto-2);
+  font-size: 12px;
+  pointer-events: auto;
+}
+.sim-ajustes:hover {
+  color: var(--sim-texto);
+}
+.sim-panel {
+  display: flex;
+  flex: 0 1 auto;
+  flex-direction: column;
+  width: 304px;
+  min-height: 0;
+  overflow-y: auto;
+  border: 1px solid var(--sim-borde);
+  border-radius: 10px;
+  background: var(--sim-fondo);
+  pointer-events: auto;
+  backdrop-filter: blur(6px);
+}
+/* Dentro del panel, las secciones no se encogen: lo que no cabe se alcanza desplazando. */
+.sim-panel section {
+  flex-shrink: 0;
+}
+.sim-panel section + section {
+  border-top: 1px solid var(--sim-borde);
+}
+.sim-panel h3 {
+  margin: 0;
+}
+.sim-panel h3 button {
+  display: flex;
+  align-items: center;
+  gap: 9px;
+  width: 100%;
+  padding: 9px 12px;
+  border: 0;
+  background: none;
+  color: var(--sim-texto);
+  font-size: 13.5px;
+  font-weight: 600;
+  text-align: left;
+}
+.sim-panel h3 b {
+  display: grid;
+  flex-shrink: 0;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.14);
+  font-size: 11.5px;
+  place-items: center;
+}
+.sim-panel .abierta h3 b {
+  background: var(--nc-acento, #ec9b72);
+  color: #0e1c19;
+}
+.sim-panel h3 small {
+  overflow: hidden;
+  margin-left: auto;
+  color: var(--sim-texto-3);
+  font-size: 11.5px;
+  font-weight: 400;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.sim-paso {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  padding: 0 12px 12px;
+}
+.sim-paso p {
+  margin: 0;
+  color: var(--sim-texto-2);
+  font-size: 12.5px;
+  line-height: 1.45;
+}
+.sim-paso .nc-btn,
+.sim-paso .sim-boton {
+  align-self: flex-start;
+}
+.sim-puntos {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+.sim-puntos button {
+  display: grid;
+  gap: 0;
+  width: 100%;
+  padding: 5px 10px;
+  border: 1px solid var(--sim-borde);
+  border-radius: 8px;
+  background: rgba(255, 255, 255, 0.04);
+  color: var(--sim-texto-2);
+  font-size: 12px;
+  text-align: left;
+}
+.sim-puntos button:hover {
+  border-color: rgba(255, 255, 255, 0.45);
+}
+.sim-puntos button[aria-pressed="true"] {
+  border-color: var(--nc-acento, #ec9b72);
+  background: rgba(236, 155, 114, 0.12);
+}
+.sim-puntos strong {
+  display: flex;
+  justify-content: space-between;
+  gap: 8px;
+  color: var(--sim-texto);
+  font-size: 13px;
+}
+.sim-puntos em {
+  color: var(--nc-acento-claro, #f2b490);
+  font-size: 12px;
+  font-style: normal;
+  font-weight: 400;
+}
+.sim-puntos small {
+  color: var(--sim-texto-3);
+  font-family: var(--nc-mono, monospace);
+  font-size: 11px;
+}
+.sim-robot-tipo strong {
+  display: block;
+  color: var(--sim-texto);
+  font-family: var(--nc-serif, Georgia, serif);
+  font-size: 17px;
+  font-weight: 400;
+}
+.sim-robot-datos {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: 2px 12px;
+  margin: 0;
+  font-size: 12.5px;
+}
+.sim-robot-datos div {
+  display: contents;
+}
+.sim-robot-datos dt {
+  color: var(--sim-texto-3);
+}
+.sim-robot-datos dd {
+  margin: 0;
+  color: var(--sim-texto);
+  font-family: var(--nc-mono, monospace);
+  font-size: 12px;
+}
+.sim-paso .sim-credito {
+  color: var(--sim-texto-3);
+  font-size: 11.5px;
+}
+.sim-paso .nc-campo {
+  display: grid;
+  gap: 4px;
+}
+.sim-paso .nc-campo span {
+  color: var(--sim-texto-3);
+  font-size: 11.5px;
+}
+.sim-paso select {
+  width: 100%;
+  padding: 7px 9px;
+  font-size: 13px;
+}
+.sim-casilla {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: var(--sim-texto);
+  font-size: 13px;
+}
+.sim-casilla input {
+  width: 16px;
+  height: 16px;
+  accent-color: var(--nc-acento, #ec9b72);
+}
+
+/* Una opción del panel: su nombre y, a la derecha, sus valores. */
+.sim-opcion {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+  color: var(--sim-texto);
+  font-size: 12.5px;
+}
+.sim-opcion .sim-grupo {
+  background: none;
+}
+.sim-opcion .sim-grupo button {
+  padding: 5px 10px;
+}
+
+/* ---------- Minimapa: arriba a la derecha, sobre el cielo ---------- */
+.sim-mini {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 184px;
+  height: 184px;
+  overflow: hidden;
+  border: 1px solid rgba(255, 255, 255, 0.34);
+  border-radius: 12px;
+  background: #22302b;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.28);
+  pointer-events: auto;
+}
+.sim-mini canvas {
+  display: block;
+  width: 100%;
+  height: 100%;
+  cursor: pointer;
+}
+.sim-mini-pie {
+  position: absolute;
+  top: 5px;
+  left: 8px;
+  color: var(--sim-texto);
+  font-size: 10.5px;
+  font-weight: 600;
+  text-shadow:
+    0 0 3px rgba(6, 14, 12, 0.95),
+    0 0 3px rgba(6, 14, 12, 0.95);
+  pointer-events: none;
+}
+.sim-mini-zoom {
+  position: absolute;
+  top: 5px;
+  right: 5px;
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+}
+.sim-mini-zoom button {
+  width: 22px;
+  height: 22px;
+  padding: 0;
+  border: 1px solid var(--sim-borde);
+  border-radius: 6px;
+  background: rgba(8, 17, 15, 0.82);
+  color: var(--sim-texto);
+  font-size: 14px;
+  font-weight: 600;
+  line-height: 1;
+}
+.sim-mini-zoom button:hover:not(:disabled) {
+  border-color: rgba(255, 255, 255, 0.55);
+}
+
+/* ---------- Leyenda de la capa de pendiente: bajo el minimapa ---------- */
+.sim-leyenda {
+  position: absolute;
+  top: 192px;
+  right: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  margin: 0;
+  padding: 8px 11px;
+  border-radius: 8px;
+  background: var(--sim-fondo);
+  color: var(--sim-texto-2);
+  font-size: 12px;
+  list-style: none;
+}
+.sim-leyenda li {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+.sim-leyenda i {
+  width: 12px;
+  height: 12px;
+  border-radius: 3px;
+}
+
+/* ---------- Resultado ---------- */
+.sim-resultado {
+  position: absolute;
+  top: 62px;
+  left: 50%;
+  z-index: 3;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  width: min(580px, calc(100% - 24px));
+  padding: 12px 14px;
+  border: 1px solid var(--sim-borde);
+  border-left: 4px solid var(--nc-tierra, #8fc7a0);
+  border-radius: 10px;
+  background: rgba(8, 17, 15, 0.93);
+  color: var(--sim-texto-2);
+  font-size: 12.5px;
+  transform: translateX(-50%);
+}
+.sim-resultado.atascado {
+  border-left-color: var(--nc-error, #e2725b);
+}
+.sim-resultado strong {
+  color: var(--sim-texto);
+  font-size: 15px;
+}
+.sim-resultado div {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 4px;
+}
+
+/* ---------- Datos y mandos de abajo ---------- */
+.sim-hud {
+  position: absolute;
+  right: 12px;
+  bottom: 10px;
+  left: 12px;
+  z-index: 2;
+  max-width: 1240px;
+  margin: 0 auto;
+  padding: 9px 14px;
+  border: 1px solid var(--sim-borde);
+  border-radius: 12px;
+  background: var(--sim-fondo);
+  backdrop-filter: blur(6px);
+}
+.sim-hud dl {
+  display: grid;
+  grid-auto-columns: minmax(0, 1fr);
+  grid-auto-flow: column;
+  gap: 4px 14px;
+  margin: 0;
+}
+.sim-hud dl div {
+  min-width: 0;
+}
+.sim-hud dt {
+  overflow: hidden;
+  color: var(--sim-texto-3);
+  font-size: 10.5px;
+  letter-spacing: 0.03em;
+  text-overflow: ellipsis;
+  text-transform: uppercase;
+  white-space: nowrap;
+}
+.sim-hud dd {
+  overflow: hidden;
+  margin: 1px 0 0;
+  color: var(--sim-texto);
+  font-family: var(--nc-mono, monospace);
+  font-size: 14px;
+  font-variant-numeric: tabular-nums;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.sim-hud dd small {
+  color: var(--sim-texto-3);
+  font-size: 11.5px;
+}
+.sim-estado dd {
+  font-family: inherit;
+  font-weight: 600;
+}
+.sim-estado.alerta dd {
+  color: #ffb08f;
+}
+.sim-fila {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-top: 8px;
+  padding-top: 8px;
+  border-top: 1px solid var(--sim-borde);
+}
+.sim-fila .sim-grupo,
+.sim-fila .sim-boton {
+  background: none;
+}
+.sim-pista {
+  flex: 1;
+  overflow: hidden;
+  min-width: 0;
+  margin: 0;
+  color: var(--sim-texto-2);
+  font-size: 12.5px;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+/* Mandos táctiles: solo donde no hay teclado a mano. */
+.sim-mandos {
+  position: absolute;
+  right: 14px;
+  bottom: 132px;
+  left: 14px;
+  z-index: 2;
+  display: none;
+  justify-content: space-between;
+  pointer-events: none;
+}
+.sim-mandos div {
+  display: flex;
+  gap: 10px;
+  pointer-events: auto;
+}
+.sim-mandos div:last-child {
+  flex-direction: column;
+}
+.sim-mandos button {
+  width: 58px;
+  height: 58px;
+  border: 1px solid rgba(255, 255, 255, 0.4);
+  border-radius: 50%;
+  background: rgba(8, 17, 15, 0.62);
+  color: var(--sim-texto);
+  font-size: 18px;
+  touch-action: none;
+  user-select: none;
+}
+.sim-mandos button:active {
+  background: rgba(236, 155, 114, 0.5);
+}
+@media (pointer: coarse) {
+  .sim-mandos {
+    display: flex;
+  }
+}
+
+/* ---------- Catálogo y ayuda ---------- */
+.sim-velo {
+  position: absolute;
+  inset: 0;
+  z-index: 10;
+  display: grid;
+  padding: 8px 14px;
+  background: rgba(3, 8, 7, 0.66);
+  place-items: center;
+}
+.sim-catalogo,
+.sim-ayuda {
+  display: flex;
+  flex-direction: column;
+  width: min(1240px, 100%);
+  max-height: 100%;
+  overflow: hidden;
+  border: 1px solid var(--nc-linea-fuerte, rgba(255, 255, 255, 0.3));
+  border-radius: 14px;
+  background: #0c1916;
+  color: var(--sim-texto);
+  outline: none;
+}
+.sim-ayuda {
+  width: min(900px, 100%);
+}
+.sim-catalogo > header,
+.sim-ayuda > header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 16px;
+  padding: 12px 18px 8px;
+}
+.sim-catalogo h3,
+.sim-ayuda h3 {
+  margin: 0;
+  font-family: var(--nc-serif, Georgia, serif);
+  font-size: 20px;
+  font-weight: 400;
+}
+.sim-catalogo header p {
+  max-width: none;
+  margin: 2px 0 0;
+  color: var(--sim-texto-2);
+  font-size: 12.5px;
+}
+.sim-catalogo-cuerpo {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 12px;
+  padding: 2px 18px 14px;
+  overflow-y: auto;
+}
+.sim-catalogo section {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  min-width: 0;
+}
+.sim-catalogo h4 {
+  margin: 0;
+  color: var(--nc-acento-claro, #f2b490);
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+}
+.sim-catalogo h4 small {
+  display: block;
+  color: var(--sim-texto-3);
+  font-size: 11px;
+  font-weight: 400;
+  letter-spacing: 0;
+  text-transform: none;
+}
+.sim-catalogo ul {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+.sim-catalogo li {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+  padding: 8px 11px 9px;
+  border: 1px solid var(--sim-borde);
+  border-radius: 10px;
+  background: rgba(255, 255, 255, 0.03);
+  font-size: 11.5px;
+}
+.sim-catalogo li.elegido {
+  border-color: var(--nc-acento, #ec9b72);
+  background: rgba(236, 155, 114, 0.08);
+}
+.sim-catalogo li.sin-datos {
+  border-style: dashed;
+}
+.sim-ficha-cabeza {
+  display: flex;
+  flex-direction: column;
+}
+.sim-ficha-cabeza strong {
+  font-family: var(--nc-serif, Georgia, serif);
+  font-size: 17px;
+  font-weight: 400;
+  line-height: 1.2;
+}
+.sim-ficha-cabeza span {
+  color: var(--nc-acento-claro, #f2b490);
+  font-size: 11.5px;
+}
+.sim-catalogo li p {
+  margin: 0;
+  color: var(--sim-texto-2);
+  line-height: 1.35;
+}
+.sim-catalogo li .sim-ficha-estado {
+  color: var(--sim-texto-3);
+  font-size: 11.5px;
+}
+.sim-catalogo dl {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: 0 10px;
+  margin: 1px 0;
+  line-height: 1.35;
+}
+.sim-catalogo dl div {
+  display: contents;
+}
+.sim-catalogo dt {
+  color: var(--sim-texto-3);
+}
+.sim-catalogo dd {
+  margin: 0;
+  color: var(--sim-texto);
+}
+.sim-catalogo li .sim-ficha-modelo {
+  color: var(--sim-texto-3);
+  font-size: 11px;
+}
+.sim-catalogo li .sim-ficha-bloqueo {
+  padding: 4px 8px;
+  border-left: 3px solid var(--nc-error, #e2725b);
+  border-radius: 0 6px 6px 0;
+  background: rgba(226, 114, 91, 0.1);
+  color: #f3c9bf;
+}
+.sim-ficha-pie {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  margin-top: 3px;
+}
+.sim-ficha-pie .nc-btn {
+  padding: 5px 12px;
+  font-size: 12px;
+}
+.sim-catalogo li a {
+  margin-left: auto;
+  color: var(--sim-texto-3);
+  font-size: 11px;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+.sim-ayuda-cuerpo {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 6px 26px;
+  padding: 2px 18px 18px;
+  overflow-y: auto;
+}
+.sim-ayuda h4 {
+  margin: 8px 0 4px;
+  color: var(--nc-acento-claro, #f2b490);
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+}
+.sim-ayuda ul {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  margin: 0;
+  padding-left: 16px;
+  color: var(--sim-texto-2);
+  font-size: 12.5px;
+  line-height: 1.45;
+}
+.sim-ayuda a {
+  color: inherit;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+.sim-ayuda kbd {
+  display: inline-block;
+  min-width: 20px;
+  padding: 0 5px;
+  border: 1px solid var(--sim-borde);
+  border-radius: 4px;
+  background: rgba(255, 255, 255, 0.08);
+  color: var(--sim-texto);
+  font-family: var(--nc-mono, monospace);
+  font-size: 11.5px;
+  text-align: center;
+}
+
+/* ---------- Pantallas medianas: el catálogo en dos columnas ---------- */
+@media (max-width: 1100px) {
+  .sim-catalogo-cuerpo {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+/* ---------- Teléfono ---------- */
+@media (max-width: 760px) {
+  .sim-barra {
+    top: 6px;
+    right: 6px;
+    left: 6px;
+    gap: 6px;
+    overflow-x: auto;
+    scrollbar-width: none;
+  }
+  .sim-lugar {
+    flex-shrink: 0;
+    max-width: 42vw;
+  }
+  .sim-lugar span {
+    display: none;
+  }
+  .sim-arriba {
+    top: 52px;
+    right: 6px;
+    bottom: 240px;
+    left: 6px;
+    gap: 6px;
+  }
+  .sim-ahora {
+    max-width: 100%;
+  }
+  .sim-chip {
+    font-size: 11px;
+  }
+  .sim-ahora .sim-chip:nth-child(2) {
+    display: none;
+  }
+  /* Bajo los avisos: a la izquierda, el botón de ajustes y la leyenda; a la derecha, el minimapa. */
+  .sim-medio {
+    align-self: stretch;
+    justify-content: space-between;
+  }
+  .sim-mini {
+    position: relative;
+    flex-shrink: 0;
+    width: 116px;
+    height: 116px;
+    border-radius: 10px;
+  }
+  /* En el teléfono el alcance se cambia tocando el minimapa. */
+  .sim-mini-zoom {
+    display: none;
+  }
+  .sim-mini-pie {
+    top: 4px;
+    left: 6px;
+    font-size: 10px;
+  }
+  .sim-panel {
+    align-self: stretch;
+    width: auto;
+  }
+  .sim-leyenda {
+    position: static;
+    font-size: 11px;
+  }
+  /* Con el panel de ajustes abierto, el minimapa y la leyenda le dejan el sitio. */
+  .sim:not(.sim-sin-panel) .sim-mini,
+  .sim:not(.sim-sin-panel) .sim-leyenda {
+    display: none;
+  }
+  .sim-resultado {
+    top: 52px;
+  }
+  .sim-hud {
+    right: 6px;
+    bottom: 6px;
+    left: 6px;
+    padding: 8px 10px;
+  }
+  .sim-hud dl {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    grid-auto-flow: row;
+    gap: 5px 10px;
+  }
+  .sim-hud dt {
+    font-size: 10.5px;
+    letter-spacing: 0;
+    text-transform: none;
+  }
+  .sim-hud dd {
+    font-size: 13px;
+  }
+  .sim-hud .sim-recorrido {
+    display: block;
+  }
+  .sim-secundario {
+    display: none;
+  }
+  .sim-fila {
+    flex-wrap: wrap;
+    gap: 6px;
+  }
+  .sim-fila .sim-grupo button {
+    padding: 6px 8px;
+  }
+  .sim-pista {
+    flex-basis: 100%;
+    order: -1;
+  }
+  .sim-mandos {
+    bottom: 246px;
+    display: flex;
+  }
+  /* Con el panel de ajustes abierto, los mandos no estorban. */
+  .sim:not(.sim-sin-panel) .sim-mandos {
+    display: none;
+  }
+  .sim-catalogo-cuerpo,
+  .sim-ayuda-cuerpo {
+    grid-template-columns: minmax(0, 1fr);
+  }
+  .sim-velo {
+    padding: 6px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .sim-panel,
+  .sim-hud {
+    backdrop-filter: none;
+  }
+}

@@ -1,0 +1,755 @@
+/* Ficha de un lugar: pestañas, temporada y fotos. */
+
+/* ---------- Pestañas ---------- */
+.mundo-ficha .ficha-pestanas {
+  display: flex;
+  gap: 4px;
+  width: 100%;
+  margin-top: 4px;
+  border-bottom: 1px solid var(--nc-linea);
+}
+/* Las pestañas quedan fijas arriba al bajar por la ficha: así no se pierden de vista. El borde
+   superior compensa el relleno de la lista y la sombra cubre sus márgenes laterales. */
+.mundo-lista .mundo-ficha .ficha-pestanas {
+  position: sticky;
+  top: -12px;
+  z-index: 2;
+  background: var(--nc-superficie-solida);
+  box-shadow:
+    -20px 0 0 var(--nc-superficie-solida),
+    20px 0 0 var(--nc-superficie-solida);
+}
+@media (max-width: 899px) {
+  .mundo-lista .mundo-ficha .ficha-pestanas {
+    top: -8px;
+    box-shadow:
+      -16px 0 0 var(--nc-superficie-solida),
+      16px 0 0 var(--nc-superficie-solida);
+  }
+}
+.ficha-pestanas button {
+  flex: 1;
+  margin-bottom: -1px;
+  padding: 9px 6px;
+  border: 0;
+  border-bottom: 2px solid transparent;
+  background: none;
+  color: var(--nc-texto-2);
+  font-size: 13.5px;
+  font-weight: 600;
+}
+.ficha-pestanas button:hover {
+  color: var(--nc-texto);
+}
+.ficha-pestanas button[aria-selected="true"] {
+  border-bottom-color: var(--nc-acento);
+  color: var(--nc-texto);
+}
+.mundo-ficha .ficha-panel {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 12px;
+  width: 100%;
+}
+.ficha-panel > .mundo-distancia {
+  margin-top: 0;
+  border-top: 0;
+}
+.ficha-enlaces {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px 18px;
+}
+
+/* ---------- Temporada ---------- */
+.temporada {
+  /* Colores de los gráficos, comprobados sobre el fondo oscuro de la ficha. */
+  --tg-lluvia: #3987e5;
+  --tg-temp: #d95926;
+  --tg-bien: #0ca30c;
+  --tg-medio: #fab219;
+  --tg-mal: #d03b3b;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  width: 100%;
+}
+.temporada > header,
+.fotos > header {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 4px 12px;
+}
+.temporada h3,
+.fotos h3 {
+  color: var(--nc-texto-3);
+  font-family: var(--nc-mono);
+  font-size: 10.5px;
+  font-weight: 400;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+.temporada-resumen {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 8px;
+}
+.temporada-resumen > div {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  padding: 10px 12px;
+  border: 1px solid var(--nc-linea);
+  border-radius: 10px;
+  background: rgba(var(--nc-velo), 0.35);
+}
+.temporada-resumen > div > span:first-child {
+  color: var(--nc-texto-3);
+  font-size: 11.5px;
+}
+.mundo-ficha .temporada-resumen strong {
+  display: block;
+  color: var(--nc-texto);
+  font-size: 15px;
+  font-weight: 600;
+  line-height: 1.25;
+}
+/* Lo que de verdad pasó en los últimos 30 días, bajo la valoración de «Ahora». */
+.temporada-real {
+  color: var(--nc-texto-3);
+  font-size: 12px;
+  line-height: 1.4;
+}
+.temporada-resumen > .temporada-distinto {
+  border-color: var(--nc-pendiente-punto, #e0a100);
+  background: rgba(224, 161, 0, 0.08);
+}
+.temporada-resumen > .temporada-distinto .temporada-real {
+  color: var(--nc-texto-2);
+}
+.temporada-estado {
+  display: inline-flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 2px 6px;
+  color: var(--nc-texto-2);
+  font-size: 12.5px;
+  line-height: 1.35;
+}
+.mundo-ficha .temporada-estado small {
+  display: inline;
+  overflow: visible;
+  color: var(--nc-texto-3);
+  font-size: 12px;
+  white-space: normal;
+}
+.temporada-estado i,
+.temporada-celda {
+  display: grid;
+  place-items: center;
+  border-radius: 4px;
+  color: #fff;
+  font-size: 11px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 1;
+}
+.temporada-estado i {
+  flex-shrink: 0;
+  width: 16px;
+  height: 16px;
+}
+.temporada-estado.favorable i,
+.temporada-celda.favorable {
+  background: var(--tg-bien);
+}
+.temporada-estado.aceptable i,
+.temporada-celda.aceptable {
+  background: var(--tg-medio);
+  color: #0b0b0b;
+}
+.temporada-estado.dificil i,
+.temporada-celda.dificil {
+  background: var(--tg-mal);
+}
+
+.temporada-grafico {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+.temporada-titulo {
+  margin: 8px 0 0;
+  color: var(--nc-texto-3);
+  font-size: 11px;
+}
+.temporada-titulo:first-child {
+  margin-top: 0;
+}
+.temporada-fila,
+.temporada-toque {
+  display: grid;
+  grid-template-columns: repeat(12, minmax(0, 1fr));
+  gap: 2px;
+}
+.temporada-fila {
+  position: relative;
+}
+.temporada-celda {
+  height: 20px;
+}
+.temporada-pista {
+  position: relative;
+}
+/* Cada mes: una barra fina de la mínima a la máxima típicas del día. */
+.temporada-temp {
+  height: 80px;
+}
+.temporada-temp .temporada-pista {
+  margin-block: 15px;
+}
+.temporada-rango {
+  position: absolute;
+  left: 50%;
+  width: 8px;
+  min-height: 4px;
+  margin-left: -4px;
+  border-radius: 4px;
+  background: var(--tg-temp);
+}
+.temporada-cero {
+  position: absolute;
+  right: 0;
+  left: 0;
+  height: 1px;
+  background: var(--nc-linea-fuerte);
+}
+/* Columnas desde la línea de base; el extremo superior, redondeado. */
+.temporada-lluvia {
+  height: 58px;
+  padding-top: 15px;
+  border-bottom: 1px solid var(--nc-linea-fuerte);
+}
+.temporada-lluvia .temporada-pista {
+  height: 100%;
+}
+.temporada-barra {
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  width: 10px;
+  margin-left: -5px;
+  border-radius: 4px 4px 0 0;
+  background: var(--tg-lluvia);
+}
+/* Solo se rotulan los extremos: el mes más cálido, el más frío y el más lluvioso. */
+.temporada-grafico b {
+  position: absolute;
+  left: 50%;
+  translate: -50% 0;
+  color: var(--nc-texto-2);
+  font-family: var(--nc-mono);
+  font-size: 10px;
+  font-weight: 400;
+  line-height: 1;
+  white-space: nowrap;
+}
+.temporada-grafico b.arriba {
+  bottom: calc(100% + 3px);
+}
+.temporada-grafico b.abajo {
+  top: calc(100% + 3px);
+}
+.temporada-meses span {
+  padding-top: 2px;
+  color: var(--nc-texto-3);
+  font-family: var(--nc-mono);
+  font-size: 10.5px;
+  text-align: center;
+}
+.temporada-meses span.actual {
+  color: var(--nc-texto);
+  font-weight: 700;
+}
+/* Una franja por mes sobre todo el gráfico: basta con pasar por el mes. */
+.temporada-toque {
+  position: absolute;
+  inset: 0;
+}
+.temporada-toque button {
+  padding: 0;
+  border: 0;
+  border-radius: 4px;
+  background: none;
+}
+.temporada-toque button.actual {
+  box-shadow: inset 0 0 0 1px var(--nc-linea-fuerte);
+}
+.temporada-toque button:hover,
+.temporada-toque button[aria-pressed="true"] {
+  background: rgba(220, 230, 223, 0.1);
+}
+.temporada-toque button:focus-visible {
+  outline-offset: -2px;
+}
+
+.temporada-lectura {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+  min-height: 74px;
+  margin: 0;
+  padding: 10px 12px;
+  border-radius: 10px;
+  background: rgba(var(--nc-velo), 0.45);
+  color: var(--nc-texto-2);
+  font-size: 12.5px;
+  line-height: 1.4;
+}
+.mundo-ficha .temporada-lectura strong {
+  color: var(--nc-texto);
+  font-size: 13.5px;
+}
+.temporada-leyenda {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px 16px;
+  margin: 0;
+  padding: 0;
+  color: var(--nc-texto-2);
+  font-size: 12px;
+  list-style: none;
+}
+.temporada-leyenda li {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+}
+.temporada-leyenda .temporada-celda {
+  width: 18px;
+  height: 18px;
+}
+.temporada-tabla-boton {
+  align-self: flex-start;
+  padding: 2px 0;
+  border: 0;
+  background: none;
+  color: var(--nc-texto-2);
+  font-size: 12.5px;
+  text-decoration: underline;
+  text-decoration-color: var(--nc-linea-fuerte);
+  text-underline-offset: 3px;
+}
+.temporada-tabla-boton:hover {
+  color: var(--nc-texto);
+}
+.temporada-tabla {
+  width: 100%;
+  overflow-x: auto;
+}
+.mundo-ficha .temporada-tabla table {
+  font-size: 12px;
+}
+.mundo-ficha .temporada-tabla th,
+.mundo-ficha .temporada-tabla td {
+  padding: 5px 0 5px 8px;
+  white-space: nowrap;
+}
+.mundo-ficha .temporada-tabla td:last-child {
+  font-family: inherit;
+}
+.temporada-tabla tr.actual th,
+.temporada-tabla tr.actual td {
+  color: var(--nc-texto);
+  font-weight: 600;
+}
+.mundo-ficha .temporada-aviso {
+  padding: 9px 11px;
+  font-size: 12px;
+}
+.temporada .nc-nota a,
+.fotos .nc-nota a {
+  color: inherit;
+  text-decoration: underline;
+  text-decoration-color: var(--nc-linea-fuerte);
+  text-underline-offset: 3px;
+}
+
+/* ---------- Fotos ---------- */
+.fotos {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  width: 100%;
+}
+.fotos-lista {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 10px 8px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+.fotos-lista a {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  color: inherit;
+  text-decoration: none;
+}
+.fotos-lista img {
+  display: block;
+  width: 100%;
+  height: auto;
+  aspect-ratio: 4 / 3;
+  border: 1px solid var(--nc-linea);
+  border-radius: 8px;
+  background: #0b0d0e;
+  object-fit: cover;
+}
+.fotos-lista a:hover img,
+.fotos-lista a:focus-visible img {
+  border-color: var(--nc-texto-2);
+}
+.mundo-ficha .fotos-lista strong {
+  overflow: hidden;
+  font-size: 12px;
+  line-height: 1.3;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.mundo-ficha .fotos-lista small {
+  font-size: 10.5px;
+}
+
+/* ---------- Ruedas: la rueda sobre el suelo, en la Luna y aquí ----------
+   Colores de serie validados para el fondo de la ficha (#0e1c19): azul y naranja de la paleta de
+   datos, contraste mayor que 3:1 y bien separados también para daltonismo. */
+.ruedas {
+  --serie-luna: #3987e5;
+  --serie-aqui: #d95926;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  width: 100%;
+}
+.ruedas-intro {
+  font-size: 13.5px;
+}
+.ruedas-controles {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 10px;
+  width: 100%;
+}
+.ruedas-controles select {
+  padding: 8px 10px;
+  font-size: 13.5px;
+}
+.ruedas .calculando {
+  opacity: 0.55;
+}
+.ruedas-cifras th[scope="row"] {
+  padding-right: 10px;
+  white-space: normal;
+}
+.ruedas-cifras td {
+  white-space: nowrap;
+}
+.ruedas-cifras td small {
+  display: block;
+  color: var(--nc-texto-3);
+  font-size: 11px;
+}
+.ruedas-veredicto {
+  padding: 10px 12px;
+  border-left: 3px solid var(--nc-acento);
+  border-radius: 0 6px 6px 0;
+  background: rgba(var(--nc-velo), 0.55);
+  color: var(--nc-texto);
+  font-size: 13.5px;
+  line-height: 1.5;
+}
+
+.ruedas-grafica {
+  width: 100%;
+  margin: 0;
+}
+.ruedas-leyenda {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4px 14px;
+  margin-bottom: 6px;
+  color: var(--nc-texto-2);
+  font-size: 12.5px;
+}
+.ruedas-leyenda span {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+}
+.ruedas-leyenda small {
+  color: var(--nc-texto-3);
+  font-size: 12px;
+}
+.ruedas .clave {
+  display: inline-block;
+  flex-shrink: 0;
+  width: 14px;
+  height: 2px;
+  border-radius: 1px;
+}
+.ruedas .clave.serie-luna {
+  background: var(--serie-luna);
+}
+.ruedas .clave.serie-aqui {
+  background: var(--serie-aqui);
+}
+.ruedas-lienzo {
+  position: relative;
+  width: 100%;
+}
+.ruedas-lienzo svg {
+  display: block;
+  width: 100%;
+  height: auto;
+  touch-action: pan-y;
+}
+.ruedas-lienzo .rejilla {
+  stroke: var(--nc-linea);
+  stroke-width: 1;
+}
+.ruedas-lienzo .eje {
+  fill: var(--nc-texto-3);
+  font-family: var(--nc-mono);
+  font-size: 10.5px;
+}
+.ruedas-lienzo .eje.titulo {
+  font-family: inherit;
+  font-size: 11px;
+}
+.ruedas-lienzo .limite {
+  stroke: var(--nc-texto-3);
+  stroke-width: 1;
+}
+.ruedas-lienzo .linea {
+  fill: none;
+  stroke-width: 2;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+.ruedas-lienzo .linea.serie-luna {
+  stroke: var(--serie-luna);
+}
+.ruedas-lienzo .linea.serie-aqui {
+  stroke: var(--serie-aqui);
+}
+.ruedas-lienzo .marca {
+  stroke: var(--nc-superficie-solida);
+  stroke-width: 2;
+}
+.ruedas-lienzo .marca.serie-luna {
+  fill: var(--serie-luna);
+}
+.ruedas-lienzo .marca.serie-aqui {
+  fill: var(--serie-aqui);
+}
+.ruedas-lienzo .guia {
+  stroke: var(--nc-texto-2);
+  stroke-width: 1;
+}
+.ruedas-lienzo .zona {
+  fill: transparent;
+  cursor: crosshair;
+}
+.ruedas-dato {
+  position: absolute;
+  top: 6px;
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+  min-width: 132px;
+  padding: 8px 10px;
+  border: 1px solid var(--nc-linea-fuerte);
+  border-radius: 6px;
+  background: var(--nc-superficie-solida);
+  color: var(--nc-texto-2);
+  font-size: 12px;
+  pointer-events: none;
+  transform: translateX(10px);
+}
+.ruedas-dato.izquierda {
+  transform: translateX(calc(-100% - 10px));
+}
+.ruedas-dato strong {
+  color: var(--nc-texto-2);
+  font-size: 11.5px;
+  font-weight: 600;
+}
+.ruedas-dato span {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+.ruedas-dato b {
+  color: var(--nc-texto);
+  font-family: var(--nc-mono);
+  font-weight: 600;
+}
+.ruedas-tabla,
+.ruedas-supuestos {
+  width: 100%;
+}
+.ruedas-tabla summary,
+.ruedas-supuestos summary {
+  color: var(--nc-texto-2);
+  font-size: 12.5px;
+  cursor: pointer;
+}
+.ruedas-tabla table {
+  margin-top: 6px;
+}
+.ruedas-bloque {
+  width: 100%;
+}
+.ruedas-bloque h3 {
+  margin: 0 0 6px;
+  color: var(--nc-texto);
+  font-size: 13.5px;
+  font-weight: 600;
+}
+.ruedas-bloque p,
+.ruedas-bloque li {
+  color: var(--nc-texto-2);
+  font-size: 12.5px;
+  line-height: 1.55;
+}
+.ruedas-bloque ul,
+.ruedas-supuestos ul {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  margin: 8px 0 0;
+  padding-left: 18px;
+}
+.ruedas-bloque strong {
+  color: var(--nc-texto);
+  font-weight: 600;
+}
+.ruedas-supuestos li {
+  color: var(--nc-texto-3);
+  font-size: 12px;
+  line-height: 1.5;
+}
+.ruedas-fuentes a {
+  color: var(--nc-texto-2);
+  text-decoration: underline;
+  text-decoration-color: var(--nc-linea-fuerte);
+  text-underline-offset: 3px;
+}
+/* La ficha vive dentro de .mundo-lista: sus reglas para los nombres de la lista no aplican aquí. */
+.mundo-lista .ruedas strong {
+  display: inline;
+  font-size: inherit;
+  line-height: inherit;
+}
+.mundo-lista .ruedas small {
+  overflow: visible;
+  white-space: normal;
+}
+.mundo-lista .ruedas-leyenda small {
+  display: inline;
+}
+.mundo-lista .ruedas-cifras td small {
+  white-space: nowrap;
+}
+.mundo-lista .ruedas ul {
+  padding-left: 0;
+  list-style: none;
+}
+
+/* ---------- Temperatura del suelo (MODIS aquí, Diviner en la Luna) ---------- */
+.suelo-temp {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  padding-top: 14px;
+  border-top: 1px solid var(--nc-linea);
+}
+.suelo-temp > header {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 4px 12px;
+}
+.suelo-temp h3 {
+  color: var(--nc-texto-3);
+  font-family: var(--nc-mono);
+  font-size: 10.5px;
+  font-weight: 400;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+.mundo-ficha .suelo-temp-frase,
+.mundo-ficha .suelo-temp-luna {
+  margin: 0;
+  color: var(--nc-texto-2);
+  font-size: 13.5px;
+  line-height: 1.5;
+}
+.mundo-ficha .suelo-temp strong {
+  display: inline;
+  color: var(--nc-texto);
+  font-size: inherit;
+  font-weight: 600;
+}
+.suelo-temp-luna {
+  padding: 10px 12px;
+  border: 1px solid var(--nc-linea);
+  border-radius: 10px;
+  background: rgba(var(--nc-velo), 0.35);
+}
+.suelo-temp-tabla {
+  overflow-x: auto;
+}
+.mundo-ficha .suelo-temp-tabla table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 12.5px;
+  font-variant-numeric: tabular-nums;
+}
+.mundo-ficha .suelo-temp-tabla th,
+.mundo-ficha .suelo-temp-tabla td {
+  padding: 6px 6px;
+  border-bottom: 1px solid var(--nc-linea);
+  text-align: right;
+  white-space: nowrap;
+}
+.mundo-ficha .suelo-temp-tabla thead th {
+  color: var(--nc-texto-3);
+  font-size: 11px;
+  font-weight: 400;
+}
+.mundo-ficha .suelo-temp-tabla tbody th {
+  color: var(--nc-texto-3);
+  font-weight: 400;
+  text-align: left;
+}
+.mundo-ficha .suelo-temp-tabla td {
+  color: var(--nc-texto);
+}
+/* El trimestre de ahora. */
+.mundo-ficha .suelo-temp-tabla .actual {
+  background: rgba(var(--nc-velo), 0.55);
+  color: var(--nc-texto);
+}
+.mundo-ficha .suelo-temp-tabla tbody tr:last-child td,
+.mundo-ficha .suelo-temp-tabla tbody tr:last-child th {
+  border-bottom: 0;
+  color: var(--nc-texto-2);
+}

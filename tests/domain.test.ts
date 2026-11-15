@@ -1,6 +1,5 @@
 import { describe, expect, test } from "bun:test";
 import { rankCandidates } from "../src/features/ranking/ranking";
-import { estimateBudget } from "../src/features/economy/budget";
 import { candidates, regions } from "../src/data/demo";
 describe("ranking", () => {
   test("identical terrain has zero distance", () =>
@@ -26,19 +25,4 @@ describe("ranking", () => {
   });
   test("empty candidates", () =>
     expect(rankCandidates(regions[0], [])).toEqual([]));
-});
-describe("budget", () => {
-  test("baseline includes contingency on subtotal", () =>
-    expect(estimateBudget(7, 6, 120, 1800, 15)).toEqual({
-      fieldwork: 5040,
-      logistics: 1800,
-      reserve: 1026,
-      total: 7866,
-    }));
-  test("zero optional costs", () =>
-    expect(estimateBudget(1, 1, 0, 0, 0).total).toBe(0));
-  test("rejects invalid assumptions", () => {
-    expect(() => estimateBudget(0, 6, 120, 1800, 15)).toThrow();
-    expect(() => estimateBudget(7, 6, NaN, 1800, 15)).toThrow();
-  });
 });

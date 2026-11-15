@@ -1,0 +1,60 @@
+/* Búsqueda amplia: zonas nuevas por explorar, dentro de la tarjeta de la región lunar. */
+.luna-candidatos {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  padding-top: 10px;
+  border-top: 1px solid var(--nc-linea);
+}
+.luna-candidatos > summary {
+  color: var(--nc-acento-claro, var(--nc-acento));
+  font-size: 13px;
+  font-weight: 600;
+  cursor: pointer;
+}
+.luna-candidatos[open] > summary {
+  margin-bottom: 8px;
+}
+.luna-candidatos ol {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  margin: 8px 0;
+  padding: 0;
+  list-style: none;
+  counter-reset: candidato;
+}
+.luna-candidatos li {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  padding: 8px 10px 8px 34px;
+  border: 1px solid var(--nc-linea);
+  border-radius: 8px;
+  counter-increment: candidato;
+}
+.luna-candidatos li::before {
+  content: counter(candidato);
+  position: absolute;
+  top: 8px;
+  left: 10px;
+  color: var(--nc-texto-3);
+  font-family: var(--nc-mono);
+  font-size: 12px;
+}
+.luna-candidatos li strong {
+  color: var(--nc-texto);
+  font-size: 13.5px;
+  font-weight: 600;
+}
+.luna-candidatos li span {
+  color: var(--nc-texto-2);
+  font-size: 12px;
+  line-height: 1.4;
+}
+.luna-candidatos li a {
+  width: fit-content;
+  color: var(--nc-acento-claro, var(--nc-acento));
+  font-size: 12px;
+}

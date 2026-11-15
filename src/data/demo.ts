@@ -1,6 +1,7 @@
 import type { Terrain } from "../types/analysis";
-// Entire dataset is synthetic. Place names are geographical references only.
-// Coordinates are illustrative centers; descriptors are not measurements.
+// Demostración de Marte: todo este conjunto es sintético. Los nombres son referencias geográficas,
+// las coordenadas son centros aproximados y los descriptores no son mediciones. La Luna usa datos
+// reales (src/data/terrenoReal.json); sus tres escenarios de aquí solo quedan para las pruebas.
 export const regions: Terrain[] = [
   {
     id: "gale",
@@ -103,35 +104,5 @@ export const candidates: Terrain[] = [
     roughness: 90,
     latitude: 37,
     longitude: -110,
-  },
-];
-export const demoRisks = [
-  {
-    name: "Acceso al terreno",
-    level: "Medio",
-    value: 2,
-    detail:
-      "Ejemplo de logística de una campaña terrestre. Requiere estudio local.",
-  },
-  {
-    name: "Exposición ambiental",
-    level: "Alto",
-    value: 3,
-    detail:
-      "Categoría ilustrativa; no corresponde a un pronóstico meteorológico.",
-  },
-  {
-    name: "Disponibilidad de datos",
-    level: "Alto",
-    value: 3,
-    detail:
-      "Solo hay datos sintéticos. Falta validación de fuentes y resolución.",
-  },
-  {
-    name: "Complejidad operativa",
-    level: "Bajo",
-    value: 1,
-    detail:
-      "Valor ficticio para probar la interfaz. No es una evaluación real.",
   },
 ];

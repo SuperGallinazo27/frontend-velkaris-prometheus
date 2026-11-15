@@ -1,0 +1,134 @@
+{
+ "generatedAt": "2026-11-15",
+ "source": {
+  "name": "LRO Diviner, productos globales acumulados (GCP): temperatura bolométrica de brillo",
+  "url": "https://pds-geosciences.wustl.edu/lro/urn-nasa-pds-lro_diviner_derived1/data_derived_gcp/",
+  "reference": "Williams et al. (2017), Icarus 283, 300-325",
+  "period": "2009-2015",
+  "binDeg": 0.5,
+  "localTimeH": 0.25
+ },
+ "method": "Celdas de 0,5° dentro de un círculo de la misma área que el recuadro de cada región. De cada celda, la temperatura más alta y la más baja del ciclo día-noche; de la región, la mediana de sus celdas. Solo cuentan las celdas con al menos 48 de las 96 horas locales observadas.",
+ "regions": {
+  "peak-near-cabeus-b": {
+   "maxK": 262.1,
+   "minK": 50.4,
+   "cells": 13,
+   "hours": 0.96
+  },
+  "haworth": {
+   "maxK": 221.5,
+   "minK": 51.1,
+   "cells": 76,
+   "hours": 1.0
+  },
+  "malapert-massif": {
+   "maxK": 273.3,
+   "minK": 60.9,
+   "cells": 34,
+   "hours": 1.0
+  },
+  "mons-mouton-plateau": {
+   "maxK": 255.3,
+   "minK": 65.4,
+   "cells": 202,
+   "hours": 0.95
+  },
+  "mons-mouton": {
+   "maxK": 230.0,
+   "minK": 63.2,
+   "cells": 12,
+   "hours": 1.0
+  },
+  "nobile-rim-1": {
+   "maxK": 252.2,
+   "minK": 62.6,
+   "cells": 26,
+   "hours": 1.0
+  },
+  "nobile-rim-2": {
+   "maxK": 236.3,
+   "minK": 58.9,
+   "cells": 20,
+   "hours": 0.98
+  },
+  "de-gerlache-rim-2": {
+   "maxK": 248.5,
+   "minK": 63.8,
+   "cells": 49,
+   "hours": 1.0
+  },
+  "slater-plain": {
+   "maxK": 210.0,
+   "minK": 43.2,
+   "cells": 29,
+   "hours": 1.0
+  },
+  "peary": {
+   "maxK": 164.5,
+   "minK": 37.4,
+   "cells": 81,
+   "hours": 1.0
+  },
+  "whipple": {
+   "maxK": 215.5,
+   "minK": 55.0,
+   "cells": 120,
+   "hours": 1.0
+  },
+  "byrd": {
+   "maxK": 204.3,
+   "minK": 55.6,
+   "cells": 29,
+   "hours": 1.0
+  },
+  "hermite": {
+   "maxK": 196.9,
+   "minK": 48.8,
+   "cells": 23,
+   "hours": 1.0
+  },
+  "rozhdestvenskiy": {
+   "maxK": 209.2,
+   "minK": 55.7,
+   "cells": 28,
+   "hours": 1.0
+  },
+  "statio-tranquillitatis": {
+   "maxK": 395.6,
+   "minK": 95.2,
+   "cells": 1,
+   "hours": 0.55
+  },
+  "mons-hadley": {
+   "maxK": 375.8,
+   "minK": 90.7,
+   "cells": 2,
+   "hours": 0.57
+  },
+  "copernicus": {
+   "maxK": 386.0,
+   "minK": 104.1,
+   "cells": 2,
+   "hours": 0.55
+  },
+  "marius": {
+   "maxK": 394.4,
+   "minK": 96.6,
+   "cells": 2,
+   "hours": 0.58
+  },
+  "aristarchus": {
+   "maxK": 375.7,
+   "minK": 117.3,
+   "cells": 2,
+   "hours": 0.59
+  },
+  "mons-pico": {
+   "maxK": 354.0,
+   "minK": 87.3,
+   "cells": 2,
+   "hours": 0.66
+  }
+ }
+}

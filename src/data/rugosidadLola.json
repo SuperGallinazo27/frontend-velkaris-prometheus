@@ -1,0 +1,133 @@
+{
+ "generatedAt": "2026-11-15",
+ "source": {
+  "name": "LRO LOLA, LDRM_32_50: rugosidad mediana por píxel, 32 píxeles por grado",
+  "url": "https://pds-geosciences.wustl.edu/lro/lro-l-lola-3-rdr-v1/lrolol_1xxx/data/lola_gdr/cylindrical/float_img/",
+  "baselineM": 25,
+  "noiseM": 0.15
+ },
+ "method": "Círculo de la misma área que el recuadro de cada región; mediana y cuartiles de sus píxeles. Toda la Luna: mediana pesada por el área de cada píxel.",
+ "moonMedian": 0.41,
+ "regions": {
+  "peak-near-cabeus-b": {
+   "median": 0.53,
+   "q1": 0.47,
+   "q3": 0.6,
+   "pixels": 3985
+  },
+  "haworth": {
+   "median": 0.44,
+   "q1": 0.38,
+   "q3": 0.5,
+   "pixels": 17741
+  },
+  "malapert-massif": {
+   "median": 0.46,
+   "q1": 0.41,
+   "q3": 0.52,
+   "pixels": 6948
+  },
+  "mons-mouton-plateau": {
+   "median": 0.43,
+   "q1": 0.36,
+   "q3": 0.51,
+   "pixels": 50580
+  },
+  "mons-mouton": {
+   "median": 0.43,
+   "q1": 0.36,
+   "q3": 0.51,
+   "pixels": 3531
+  },
+  "nobile-rim-1": {
+   "median": 0.51,
+   "q1": 0.43,
+   "q3": 0.61,
+   "pixels": 5679
+  },
+  "nobile-rim-2": {
+   "median": 0.45,
+   "q1": 0.38,
+   "q3": 0.55,
+   "pixels": 4239
+  },
+  "de-gerlache-rim-2": {
+   "median": 0.42,
+   "q1": 0.37,
+   "q3": 0.49,
+   "pixels": 14457
+  },
+  "slater-plain": {
+   "median": 0.41,
+   "q1": 0.35,
+   "q3": 0.49,
+   "pixels": 8996
+  },
+  "peary": {
+   "median": 0.35,
+   "q1": 0.27,
+   "q3": 0.47,
+   "pixels": 18706
+  },
+  "whipple": {
+   "median": 0.57,
+   "q1": 0.44,
+   "q3": 0.74,
+   "pixels": 33589
+  },
+  "byrd": {
+   "median": 0.32,
+   "q1": 0.26,
+   "q3": 0.39,
+   "pixels": 4964
+  },
+  "hermite": {
+   "median": 0.38,
+   "q1": 0.31,
+   "q3": 0.47,
+   "pixels": 6436
+  },
+  "rozhdestvenskiy": {
+   "median": 0.43,
+   "q1": 0.36,
+   "q3": 0.5,
+   "pixels": 2459
+  },
+  "statio-tranquillitatis": {
+   "median": 0.32,
+   "q1": 0.28,
+   "q3": 0.36,
+   "pixels": 440
+  },
+  "mons-hadley": {
+   "median": 0.43,
+   "q1": 0.38,
+   "q3": 0.53,
+   "pixels": 552
+  },
+  "copernicus": {
+   "median": 0.55,
+   "q1": 0.47,
+   "q3": 0.64,
+   "pixels": 447
+  },
+  "marius": {
+   "median": 0.36,
+   "q1": 0.31,
+   "q3": 0.42,
+   "pixels": 488
+  },
+  "aristarchus": {
+   "median": 0.87,
+   "q1": 0.77,
+   "q3": 1.0,
+   "pixels": 505
+  },
+  "mons-pico": {
+   "median": 0.35,
+   "q1": 0.29,
+   "q3": 0.41,
+   "pixels": 694
+  }
+ }
+}

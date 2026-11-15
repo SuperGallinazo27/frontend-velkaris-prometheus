@@ -4,8 +4,10 @@ import { defineConfig } from 'vite'
 // https://vite.dev/config/
 export default defineConfig({
   plugins: [react()],
+  // MapLibre crea su trabajador como módulo; el formato por defecto (iife) no lo admite.
+  worker: { format: 'es' },
   build: {
-    // La escena 3D de la portada (Three.js) va en su propio archivo y se carga bajo demanda.
-    chunkSizeWarningLimit: 600,
+    // La escena 3D (Three.js) y el mapa del lugar (MapLibre) van en archivos propios, bajo demanda.
+    chunkSizeWarningLimit: 1100,
   },
 })

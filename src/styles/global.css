@@ -107,6 +107,12 @@ h3 {
   color: #9cac9f;
   margin-top: 2px;
 }
+/* El emblema del logotipo. */
+.brand-logo {
+  flex-shrink: 0;
+  width: auto;
+  height: 40px;
+}
 .brand-symbol {
   color: #ec9b72;
   font-size: 42px;

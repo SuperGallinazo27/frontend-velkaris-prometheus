@@ -1,0 +1,143 @@
+{
+ "generatedAt": "2026-11-15",
+ "source": {
+  "name": "© colaboradores de OpenStreetMap, vía Overpass API",
+  "url": "https://www.openstreetmap.org/copyright",
+  "license": "ODbL"
+ },
+ "method": "Distancias en línea recta desde el punto del lugar. Aeropuerto: el más cercano con código IATA. Carretera: de autopista a terciaria. Poblado: ciudad, pueblo o aldea con nombre.",
+ "limits": {
+  "airportKm": 600,
+  "roadKm": 60,
+  "trackKm": 15,
+  "townKm": 150,
+  "hospitalKm": 300
+ },
+ "places": {
+  "pampa-de-la-joya": {
+   "airport": {
+    "name": "Aeropuerto Internacional Alfredo Rodríguez Ballón",
+    "iata": "AQP",
+    "distanceKm": 53.0
+   },
+   "town": {
+    "name": "San Camilo Asentamiento 5",
+    "kind": "aldea",
+    "distanceKm": 1.0
+   },
+   "hospital": {
+    "name": "Hosítal II Manuel de Torres Nuñez Mollendo",
+    "distanceKm": 38.0
+   },
+   "road": {
+    "kind": "carretera secundaria",
+    "name": "AR-798",
+    "distanceKm": 0.9
+   },
+   "track": {
+    "kind": "camino",
+    "distanceKm": 0.3
+   }
+  },
+  "sierra-negra": {
+   "airport": {
+    "name": "Aeropuerto General Villamil",
+    "iata": "IBB",
+    "distanceKm": 27.0
+   },
+   "town": {
+    "name": "Santo Tomás",
+    "kind": "aldea",
+    "distanceKm": 16.0
+   },
+   "hospital": {
+    "name": "Policlinico Municipal",
+    "distanceKm": 27.0
+   },
+   "road": {
+    "kind": "carretera secundaria",
+    "name": null,
+    "distanceKm": 8.9
+   },
+   "track": {
+    "kind": "pista",
+    "distanceKm": 4.7
+   }
+  },
+  "monte-etna": {
+   "airport": {
+    "name": "Aeroporto di Catania Fontanarossa",
+    "iata": "CTA",
+    "distanceKm": 32.0
+   },
+   "town": {
+    "name": "Milo",
+    "kind": "aldea",
+    "distanceKm": 11.0
+   },
+   "hospital": {
+    "name": "Ospedale Castiglione-Prestianni",
+    "distanceKm": 14.0
+   },
+   "road": {
+    "kind": "carretera secundaria",
+    "name": "Via Salvatore Magrì",
+    "distanceKm": 5.5
+   },
+   "track": {
+    "kind": "pista",
+    "distanceKm": 0.4
+   }
+  },
+  "valle-de-la-luna": {
+   "airport": {
+    "name": "Aeropuerto Internacional El Loa",
+    "iata": "CJC",
+    "distanceKm": 78.0
+   },
+   "town": {
+    "name": "San Pedro de Atacama",
+    "kind": "pueblo",
+    "distanceKm": 9.3
+   },
+   "hospital": {
+    "name": "Hospital del Cobre Salvador Allende Gossens",
+    "distanceKm": 82.0
+   },
+   "road": {
+    "kind": "carretera troncal",
+    "name": "23",
+    "distanceKm": 2.7
+   },
+   "track": {
+    "kind": "camino",
+    "distanceKm": 2.3
+   }
+  },
+  "salar-de-atacama": {
+   "airport": {
+    "name": "Aeropuerto Internacional El Loa",
+    "iata": "CJC",
+    "distanceKm": 129.0
+   },
+   "town": {
+    "name": "Toconao",
+    "kind": "aldea",
+    "distanceKm": 42.0
+   },
+   "hospital": {
+    "name": "Hospital del Cobre Salvador Allende Gossens",
+    "distanceKm": 134.0
+   },
+   "road": {
+    "kind": "carretera local",
+    "name": "B-39",
+    "distanceKm": 18.0
+   },
+   "track": {
+    "kind": "pista",
+    "distanceKm": 0.9
+   }
+  }
+ }
+}

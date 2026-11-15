@@ -1,0 +1,3416 @@
+{
+  "generatedAt": "2026-11-14",
+  "source": {
+    "name": "NASA POWER, climatología mensual",
+    "detail": "NASA/POWER Source Native Resolution Climatology Climatologies",
+    "url": "https://power.larc.nasa.gov/",
+    "period": "2001-2025",
+    "note": "Promedios de una celda de unos 50 km (MERRA-2). No son mediciones de una estación en el lugar."
+  },
+  "sites": [
+    {
+      "id": "valle-de-la-luna",
+      "latitude": -22.92,
+      "longitude": -68.29,
+      "cellElevation": 2881,
+      "months": [
+        {
+          "temperature": 17.4,
+          "range": 16.8,
+          "precipitation": 7.0,
+          "wind": 4.0,
+          "cloud": 39.0
+        },
+        {
+          "temperature": 17.0,
+          "range": 16.3,
+          "precipitation": 8.0,
+          "wind": 3.9,
+          "cloud": 39.0
+        },
+        {
+          "temperature": 16.3,
+          "range": 16.5,
+          "precipitation": 4.0,
+          "wind": 3.7,
+          "cloud": 27.0
+        },
+        {
+          "temperature": 14.0,
+          "range": 16.8,
+          "precipitation": 1.0,
+          "wind": 3.5,
+          "cloud": 27.0
+        },
+        {
+          "temperature": 10.7,
+          "range": 16.6,
+          "precipitation": 2.0,
+          "wind": 3.7,
+          "cloud": 29.0
+        },
+        {
+          "temperature": 9.3,
+          "range": 16.8,
+          "precipitation": 0.0,
+          "wind": 3.8,
+          "cloud": 31.0
+        },
+        {
+          "temperature": 8.8,
+          "range": 17.0,
+          "precipitation": 1.0,
+          "wind": 4.0,
+          "cloud": 31.0
+        },
+        {
+          "temperature": 10.3,
+          "range": 17.9,
+          "precipitation": 0.0,
+          "wind": 3.9,
+          "cloud": 26.0
+        },
+        {
+          "temperature": 12.2,
+          "range": 18.2,
+          "precipitation": 0.0,
+          "wind": 4.0,
+          "cloud": 23.0
+        },
+        {
+          "temperature": 14.3,
+          "range": 18.4,
+          "precipitation": 1.0,
+          "wind": 3.9,
+          "cloud": 24.0
+        },
+        {
+          "temperature": 15.8,
+          "range": 18.4,
+          "precipitation": 1.0,
+          "wind": 4.0,
+          "cloud": 23.0
+        },
+        {
+          "temperature": 16.9,
+          "range": 17.9,
+          "precipitation": 4.0,
+          "wind": 4.1,
+          "cloud": 27.0
+        }
+      ]
+    },
+    {
+      "id": "salar-de-atacama",
+      "latitude": -23.5,
+      "longitude": -68.25,
+      "cellElevation": 2677,
+      "months": [
+        {
+          "temperature": 18.4,
+          "range": 17.1,
+          "precipitation": 10.0,
+          "wind": 4.0,
+          "cloud": 36.0
+        },
+        {
+          "temperature": 17.9,
+          "range": 16.6,
+          "precipitation": 10.0,
+          "wind": 3.8,
+          "cloud": 36.0
+        },
+        {
+          "temperature": 17.1,
+          "range": 16.8,
+          "precipitation": 6.0,
+          "wind": 3.6,
+          "cloud": 26.0
+        },
+        {
+          "temperature": 14.8,
+          "range": 16.9,
+          "precipitation": 2.0,
+          "wind": 3.3,
+          "cloud": 28.0
+        },
+        {
+          "temperature": 11.6,
+          "range": 16.4,
+          "precipitation": 2.0,
+          "wind": 3.3,
+          "cloud": 31.0
+        },
+        {
+          "temperature": 10.3,
+          "range": 16.4,
+          "precipitation": 0.0,
+          "wind": 3.3,
+          "cloud": 35.0
+        },
+        {
+          "temperature": 9.8,
+          "range": 16.7,
+          "precipitation": 1.0,
+          "wind": 3.5,
+          "cloud": 34.0
+        },
+        {
+          "temperature": 11.3,
+          "range": 17.8,
+          "precipitation": 1.0,
+          "wind": 3.5,
+          "cloud": 31.0
+        },
+        {
+          "temperature": 13.1,
+          "range": 18.4,
+          "precipitation": 0.0,
+          "wind": 3.7,
+          "cloud": 27.0
+        },
+        {
+          "temperature": 15.1,
+          "range": 18.7,
+          "precipitation": 1.0,
+          "wind": 3.7,
+          "cloud": 28.0
+        },
+        {
+          "temperature": 16.7,
+          "range": 18.8,
+          "precipitation": 3.0,
+          "wind": 3.8,
+          "cloud": 27.0
+        },
+        {
+          "temperature": 17.8,
+          "range": 18.2,
+          "precipitation": 7.0,
+          "wind": 4.0,
+          "cloud": 29.0
+        }
+      ]
+    },
+    {
+      "id": "yungay",
+      "latitude": -24.08,
+      "longitude": -69.92,
+      "cellElevation": 1261,
+      "months": [
+        {
+          "temperature": 19.8,
+          "range": 14.8,
+          "precipitation": 1.0,
+          "wind": 3.5,
+          "cloud": 23.0
+        },
+        {
+          "temperature": 20.0,
+          "range": 14.5,
+          "precipitation": 2.0,
+          "wind": 3.4,
+          "cloud": 23.0
+        },
+        {
+          "temperature": 19.3,
+          "range": 14.6,
+          "precipitation": 1.0,
+          "wind": 3.1,
+          "cloud": 16.0
+        },
+        {
+          "temperature": 17.5,
+          "range": 13.9,
+          "precipitation": 0.0,
+          "wind": 2.7,
+          "cloud": 19.0
+        },
+        {
+          "temperature": 15.8,
+          "range": 13.5,
+          "precipitation": 0.0,
+          "wind": 2.7,
+          "cloud": 24.0
+        },
+        {
+          "temperature": 14.5,
+          "range": 13.6,
+          "precipitation": 1.0,
+          "wind": 2.6,
+          "cloud": 26.0
+        },
+        {
+          "temperature": 14.0,
+          "range": 14.2,
+          "precipitation": 1.0,
+          "wind": 2.7,
+          "cloud": 25.0
+        },
+        {
+          "temperature": 15.1,
+          "range": 15.1,
+          "precipitation": 1.0,
+          "wind": 2.9,
+          "cloud": 19.0
+        },
+        {
+          "temperature": 15.8,
+          "range": 15.7,
+          "precipitation": 0.0,
+          "wind": 2.9,
+          "cloud": 17.0
+        },
+        {
+          "temperature": 16.8,
+          "range": 15.9,
+          "precipitation": 0.0,
+          "wind": 3.1,
+          "cloud": 18.0
+        },
+        {
+          "temperature": 17.7,
+          "range": 15.7,
+          "precipitation": 0.0,
+          "wind": 3.3,
+          "cloud": 17.0
+        },
+        {
+          "temperature": 18.7,
+          "range": 15.5,
+          "precipitation": 1.0,
+          "wind": 3.5,
+          "cloud": 20.0
+        }
+      ]
+    },
+    {
+      "id": "laguna-verde",
+      "latitude": -26.89,
+      "longitude": -68.47,
+      "cellElevation": 4810,
+      "months": [
+        {
+          "temperature": 3.5,
+          "range": 16.3,
+          "precipitation": 42.0,
+          "wind": 3.8,
+          "cloud": 44.0
+        },
+        {
+          "temperature": 2.6,
+          "range": 15.7,
+          "precipitation": 39.0,
+          "wind": 3.8,
+          "cloud": 42.0
+        },
+        {
+          "temperature": 0.9,
+          "range": 14.6,
+          "precipitation": 31.0,
+          "wind": 4.0,
+          "cloud": 33.0
+        },
+        {
+          "temperature": -2.5,
+          "range": 13.1,
+          "precipitation": 18.0,
+          "wind": 4.8,
+          "cloud": 38.0
+        },
+        {
+          "temperature": -6.2,
+          "range": 12.2,
+          "precipitation": 8.0,
+          "wind": 5.6,
+          "cloud": 52.0
+        },
+        {
+          "temperature": -8.4,
+          "range": 12.3,
+          "precipitation": 5.0,
+          "wind": 6.2,
+          "cloud": 47.0
+        },
+        {
+          "temperature": -9.2,
+          "range": 12.8,
+          "precipitation": 4.0,
+          "wind": 6.6,
+          "cloud": 42.0
+        },
+        {
+          "temperature": -7.4,
+          "range": 13.5,
+          "precipitation": 3.0,
+          "wind": 6.7,
+          "cloud": 45.0
+        },
+        {
+          "temperature": -5.3,
+          "range": 13.8,
+          "precipitation": 5.0,
+          "wind": 7.0,
+          "cloud": 41.0
+        },
+        {
+          "temperature": -2.7,
+          "range": 14.1,
+          "precipitation": 11.0,
+          "wind": 6.5,
+          "cloud": 34.0
+        },
+        {
+          "temperature": -0.4,
+          "range": 15.2,
+          "precipitation": 21.0,
+          "wind": 5.4,
+          "cloud": 28.0
+        },
+        {
+          "temperature": 1.9,
+          "range": 16.3,
+          "precipitation": 35.0,
+          "wind": 4.6,
+          "cloud": 38.0
+        }
+      ]
+    },
+    {
+      "id": "ischigualasto",
+      "latitude": -30.16,
+      "longitude": -67.84,
+      "cellElevation": 1113,
+      "months": [
+        {
+          "temperature": 26.6,
+          "range": 14.7,
+          "precipitation": 58.0,
+          "wind": 4.1,
+          "cloud": 43.0
+        },
+        {
+          "temperature": 25.1,
+          "range": 14.4,
+          "precipitation": 52.0,
+          "wind": 3.9,
+          "cloud": 45.0
+        },
+        {
+          "temperature": 22.6,
+          "range": 14.7,
+          "precipitation": 37.0,
+          "wind": 3.4,
+          "cloud": 41.0
+        },
+        {
+          "temperature": 18.6,
+          "range": 15.0,
+          "precipitation": 19.0,
+          "wind": 3.0,
+          "cloud": 41.0
+        },
+        {
+          "temperature": 14.0,
+          "range": 14.8,
+          "precipitation": 8.0,
+          "wind": 2.7,
+          "cloud": 45.0
+        },
+        {
+          "temperature": 11.4,
+          "range": 15.5,
+          "precipitation": 3.0,
+          "wind": 2.7,
+          "cloud": 38.0
+        },
+        {
+          "temperature": 10.6,
+          "range": 16.1,
+          "precipitation": 3.0,
+          "wind": 2.8,
+          "cloud": 33.0
+        },
+        {
+          "temperature": 13.0,
+          "range": 17.2,
+          "precipitation": 3.0,
+          "wind": 3.2,
+          "cloud": 28.0
+        },
+        {
+          "temperature": 16.1,
+          "range": 17.5,
+          "precipitation": 11.0,
+          "wind": 3.6,
+          "cloud": 31.0
+        },
+        {
+          "temperature": 20.4,
+          "range": 17.2,
+          "precipitation": 11.0,
+          "wind": 4.1,
+          "cloud": 34.0
+        },
+        {
+          "temperature": 23.8,
+          "range": 16.4,
+          "precipitation": 24.0,
+          "wind": 4.4,
+          "cloud": 34.0
+        },
+        {
+          "temperature": 25.8,
+          "range": 15.6,
+          "precipitation": 44.0,
+          "wind": 4.4,
+          "cloud": 38.0
+        }
+      ]
+    },
+    {
+      "id": "campo-de-piedra-pomez",
+      "latitude": -26.58,
+      "longitude": -67.5,
+      "cellElevation": 3881,
+      "months": [
+        {
+          "temperature": 10.5,
+          "range": 16.2,
+          "precipitation": 122.0,
+          "wind": 3.0,
+          "cloud": 47.0
+        },
+        {
+          "temperature": 9.8,
+          "range": 16.1,
+          "precipitation": 104.0,
+          "wind": 2.8,
+          "cloud": 38.0
+        },
+        {
+          "temperature": 8.1,
+          "range": 17.6,
+          "precipitation": 78.0,
+          "wind": 2.9,
+          "cloud": 28.0
+        },
+        {
+          "temperature": 4.4,
+          "range": 17.8,
+          "precipitation": 44.0,
+          "wind": 3.7,
+          "cloud": 28.0
+        },
+        {
+          "temperature": 1.2,
+          "range": 15.1,
+          "precipitation": 15.0,
+          "wind": 4.7,
+          "cloud": 34.0
+        },
+        {
+          "temperature": -0.2,
+          "range": 14.3,
+          "precipitation": 10.0,
+          "wind": 5.3,
+          "cloud": 39.0
+        },
+        {
+          "temperature": -0.6,
+          "range": 14.7,
+          "precipitation": 3.0,
+          "wind": 5.6,
+          "cloud": 38.0
+        },
+        {
+          "temperature": 1.0,
+          "range": 15.6,
+          "precipitation": 3.0,
+          "wind": 5.6,
+          "cloud": 32.0
+        },
+        {
+          "temperature": 3.0,
+          "range": 18.1,
+          "precipitation": 7.0,
+          "wind": 5.6,
+          "cloud": 29.0
+        },
+        {
+          "temperature": 5.8,
+          "range": 20.4,
+          "precipitation": 25.0,
+          "wind": 5.1,
+          "cloud": 33.0
+        },
+        {
+          "temperature": 8.2,
+          "range": 20.5,
+          "precipitation": 56.0,
+          "wind": 4.1,
+          "cloud": 33.0
+        },
+        {
+          "temperature": 10.2,
+          "range": 18.6,
+          "precipitation": 94.0,
+          "wind": 3.4,
+          "cloud": 35.0
+        }
+      ]
+    },
+    {
+      "id": "salar-de-uyuni",
+      "latitude": -20.13,
+      "longitude": -67.49,
+      "cellElevation": 3692,
+      "months": [
+        {
+          "temperature": 11.7,
+          "range": 15.4,
+          "precipitation": 81.0,
+          "wind": 2.8,
+          "cloud": 58.0
+        },
+        {
+          "temperature": 11.3,
+          "range": 15.2,
+          "precipitation": 74.0,
+          "wind": 2.7,
+          "cloud": 56.0
+        },
+        {
+          "temperature": 10.4,
+          "range": 15.5,
+          "precipitation": 45.0,
+          "wind": 2.5,
+          "cloud": 43.0
+        },
+        {
+          "temperature": 7.6,
+          "range": 16.1,
+          "precipitation": 13.0,
+          "wind": 2.4,
+          "cloud": 40.0
+        },
+        {
+          "temperature": 4.1,
+          "range": 16.5,
+          "precipitation": 3.0,
+          "wind": 2.8,
+          "cloud": 38.0
+        },
+        {
+          "temperature": 2.7,
+          "range": 15.5,
+          "precipitation": 4.0,
+          "wind": 2.8,
+          "cloud": 40.0
+        },
+        {
+          "temperature": 2.4,
+          "range": 15.5,
+          "precipitation": 3.0,
+          "wind": 3.0,
+          "cloud": 43.0
+        },
+        {
+          "temperature": 3.8,
+          "range": 17.0,
+          "precipitation": 3.0,
+          "wind": 3.0,
+          "cloud": 42.0
+        },
+        {
+          "temperature": 6.1,
+          "range": 18.5,
+          "precipitation": 9.0,
+          "wind": 3.2,
+          "cloud": 41.0
+        },
+        {
+          "temperature": 8.3,
+          "range": 18.6,
+          "precipitation": 18.0,
+          "wind": 3.0,
+          "cloud": 44.0
+        },
+        {
+          "temperature": 10.1,
+          "range": 18.6,
+          "precipitation": 19.0,
+          "wind": 2.8,
+          "cloud": 44.0
+        },
+        {
+          "temperature": 11.5,
+          "range": 16.7,
+          "precipitation": 59.0,
+          "wind": 2.8,
+          "cloud": 52.0
+        }
+      ]
+    },
+    {
+      "id": "pampa-de-la-joya",
+      "latitude": -16.7,
+      "longitude": -71.9,
+      "cellElevation": 1941,
+      "months": [
+        {
+          "temperature": 17.2,
+          "range": 9.8,
+          "precipitation": 27.0,
+          "wind": 3.1,
+          "cloud": 63.0
+        },
+        {
+          "temperature": 17.3,
+          "range": 9.4,
+          "precipitation": 40.0,
+          "wind": 3.0,
+          "cloud": 68.0
+        },
+        {
+          "temperature": 17.3,
+          "range": 9.8,
+          "precipitation": 18.0,
+          "wind": 2.8,
+          "cloud": 57.0
+        },
+        {
+          "temperature": 16.7,
+          "range": 10.3,
+          "precipitation": 2.0,
+          "wind": 2.6,
+          "cloud": 41.0
+        },
+        {
+          "temperature": 15.6,
+          "range": 11.3,
+          "precipitation": 1.0,
+          "wind": 2.4,
+          "cloud": 29.0
+        },
+        {
+          "temperature": 14.8,
+          "range": 11.4,
+          "precipitation": 0.0,
+          "wind": 2.3,
+          "cloud": 26.0
+        },
+        {
+          "temperature": 14.4,
+          "range": 11.6,
+          "precipitation": 1.0,
+          "wind": 2.3,
+          "cloud": 27.0
+        },
+        {
+          "temperature": 15.1,
+          "range": 12.0,
+          "precipitation": 0.0,
+          "wind": 2.5,
+          "cloud": 26.0
+        },
+        {
+          "temperature": 15.6,
+          "range": 11.8,
+          "precipitation": 1.0,
+          "wind": 2.6,
+          "cloud": 29.0
+        },
+        {
+          "temperature": 16.0,
+          "range": 11.7,
+          "precipitation": 1.0,
+          "wind": 2.8,
+          "cloud": 36.0
+        },
+        {
+          "temperature": 16.4,
+          "range": 11.3,
+          "precipitation": 1.0,
+          "wind": 2.9,
+          "cloud": 39.0
+        },
+        {
+          "temperature": 16.7,
+          "range": 10.4,
+          "precipitation": 5.0,
+          "wind": 3.0,
+          "cloud": 52.0
+        }
+      ]
+    },
+    {
+      "id": "sierra-negra",
+      "latitude": -0.83,
+      "longitude": -91.17,
+      "cellElevation": 59,
+      "months": [
+        {
+          "temperature": 24.7,
+          "range": 2.5,
+          "precipitation": 33.0,
+          "wind": 4.1,
+          "cloud": 62.0
+        },
+        {
+          "temperature": 26.2,
+          "range": 2.6,
+          "precipitation": 53.0,
+          "wind": 3.1,
+          "cloud": 56.0
+        },
+        {
+          "temperature": 26.8,
+          "range": 2.8,
+          "precipitation": 48.0,
+          "wind": 2.6,
+          "cloud": 45.0
+        },
+        {
+          "temperature": 26.3,
+          "range": 2.6,
+          "precipitation": 48.0,
+          "wind": 3.2,
+          "cloud": 46.0
+        },
+        {
+          "temperature": 25.0,
+          "range": 2.3,
+          "precipitation": 15.0,
+          "wind": 4.3,
+          "cloud": 48.0
+        },
+        {
+          "temperature": 23.5,
+          "range": 2.2,
+          "precipitation": 9.0,
+          "wind": 4.6,
+          "cloud": 51.0
+        },
+        {
+          "temperature": 22.4,
+          "range": 2.1,
+          "precipitation": 8.0,
+          "wind": 4.9,
+          "cloud": 54.0
+        },
+        {
+          "temperature": 21.3,
+          "range": 2.2,
+          "precipitation": 7.0,
+          "wind": 4.8,
+          "cloud": 54.0
+        },
+        {
+          "temperature": 21.1,
+          "range": 2.3,
+          "precipitation": 6.0,
+          "wind": 5.0,
+          "cloud": 54.0
+        },
+        {
+          "temperature": 21.4,
+          "range": 2.4,
+          "precipitation": 7.0,
+          "wind": 4.8,
+          "cloud": 52.0
+        },
+        {
+          "temperature": 22.0,
+          "range": 2.4,
+          "precipitation": 8.0,
+          "wind": 4.8,
+          "cloud": 54.0
+        },
+        {
+          "temperature": 23.1,
+          "range": 2.3,
+          "precipitation": 11.0,
+          "wind": 4.5,
+          "cloud": 64.0
+        }
+      ]
+    },
+    {
+      "id": "arenal-del-chimborazo",
+      "latitude": -1.47,
+      "longitude": -78.87,
+      "cellElevation": 3003,
+      "months": [
+        {
+          "temperature": 11.6,
+          "range": 9.0,
+          "precipitation": 124.0,
+          "wind": 2.2,
+          "cloud": 79.0
+        },
+        {
+          "temperature": 11.6,
+          "range": 8.5,
+          "precipitation": 146.0,
+          "wind": 2.2,
+          "cloud": 85.0
+        },
+        {
+          "temperature": 11.4,
+          "range": 8.5,
+          "precipitation": 162.0,
+          "wind": 2.2,
+          "cloud": 87.0
+        },
+        {
+          "temperature": 11.5,
+          "range": 8.7,
+          "precipitation": 162.0,
+          "wind": 2.4,
+          "cloud": 82.0
+        },
+        {
+          "temperature": 11.3,
+          "range": 9.0,
+          "precipitation": 129.0,
+          "wind": 2.9,
+          "cloud": 77.0
+        },
+        {
+          "temperature": 10.3,
+          "range": 9.4,
+          "precipitation": 111.0,
+          "wind": 4.3,
+          "cloud": 74.0
+        },
+        {
+          "temperature": 10.1,
+          "range": 9.9,
+          "precipitation": 89.0,
+          "wind": 4.5,
+          "cloud": 72.0
+        },
+        {
+          "temperature": 10.2,
+          "range": 10.8,
+          "precipitation": 75.0,
+          "wind": 4.5,
+          "cloud": 72.0
+        },
+        {
+          "temperature": 10.8,
+          "range": 11.2,
+          "precipitation": 66.0,
+          "wind": 3.6,
+          "cloud": 73.0
+        },
+        {
+          "temperature": 11.4,
+          "range": 10.3,
+          "precipitation": 109.0,
+          "wind": 2.5,
+          "cloud": 79.0
+        },
+        {
+          "temperature": 11.5,
+          "range": 9.7,
+          "precipitation": 113.0,
+          "wind": 2.2,
+          "cloud": 79.0
+        },
+        {
+          "temperature": 11.4,
+          "range": 9.3,
+          "precipitation": 112.0,
+          "wind": 2.2,
+          "cloud": 81.0
+        }
+      ]
+    },
+    {
+      "id": "paramo-del-cotopaxi",
+      "latitude": -0.68,
+      "longitude": -78.44,
+      "cellElevation": 2501,
+      "months": [
+        {
+          "temperature": 14.3,
+          "range": 9.6,
+          "precipitation": 132.0,
+          "wind": 2.0,
+          "cloud": 80.0
+        },
+        {
+          "temperature": 14.4,
+          "range": 9.0,
+          "precipitation": 142.0,
+          "wind": 1.9,
+          "cloud": 84.0
+        },
+        {
+          "temperature": 14.4,
+          "range": 8.9,
+          "precipitation": 169.0,
+          "wind": 1.8,
+          "cloud": 88.0
+        },
+        {
+          "temperature": 14.6,
+          "range": 9.2,
+          "precipitation": 168.0,
+          "wind": 1.7,
+          "cloud": 84.0
+        },
+        {
+          "temperature": 14.6,
+          "range": 10.2,
+          "precipitation": 117.0,
+          "wind": 1.6,
+          "cloud": 80.0
+        },
+        {
+          "temperature": 14.0,
+          "range": 11.4,
+          "precipitation": 63.0,
+          "wind": 1.9,
+          "cloud": 74.0
+        },
+        {
+          "temperature": 13.9,
+          "range": 12.1,
+          "precipitation": 43.0,
+          "wind": 2.1,
+          "cloud": 70.0
+        },
+        {
+          "temperature": 14.1,
+          "range": 12.8,
+          "precipitation": 33.0,
+          "wind": 2.3,
+          "cloud": 69.0
+        },
+        {
+          "temperature": 14.4,
+          "range": 12.7,
+          "precipitation": 41.0,
+          "wind": 2.0,
+          "cloud": 72.0
+        },
+        {
+          "temperature": 14.3,
+          "range": 11.0,
+          "precipitation": 80.0,
+          "wind": 2.1,
+          "cloud": 80.0
+        },
+        {
+          "temperature": 14.1,
+          "range": 10.1,
+          "precipitation": 92.0,
+          "wind": 2.3,
+          "cloud": 81.0
+        },
+        {
+          "temperature": 14.2,
+          "range": 9.8,
+          "precipitation": 100.0,
+          "wind": 2.1,
+          "cloud": 80.0
+        }
+      ]
+    },
+    {
+      "id": "crater-barringer",
+      "latitude": 35.03,
+      "longitude": -111.02,
+      "cellElevation": 1915,
+      "months": [
+        {
+          "temperature": 0.2,
+          "range": 11.5,
+          "precipitation": 43.0,
+          "wind": 3.7,
+          "cloud": 46.0
+        },
+        {
+          "temperature": 2.0,
+          "range": 12.8,
+          "precipitation": 42.0,
+          "wind": 4.2,
+          "cloud": 46.0
+        },
+        {
+          "temperature": 6.1,
+          "range": 15.0,
+          "precipitation": 27.0,
+          "wind": 4.4,
+          "cloud": 42.0
+        },
+        {
+          "temperature": 9.8,
+          "range": 16.3,
+          "precipitation": 15.0,
+          "wind": 5.0,
+          "cloud": 38.0
+        },
+        {
+          "temperature": 15.0,
+          "range": 16.9,
+          "precipitation": 14.0,
+          "wind": 4.5,
+          "cloud": 33.0
+        },
+        {
+          "temperature": 21.3,
+          "range": 17.9,
+          "precipitation": 6.0,
+          "wind": 4.4,
+          "cloud": 24.0
+        },
+        {
+          "temperature": 23.3,
+          "range": 14.7,
+          "precipitation": 63.0,
+          "wind": 3.1,
+          "cloud": 54.0
+        },
+        {
+          "temperature": 22.1,
+          "range": 14.3,
+          "precipitation": 65.0,
+          "wind": 2.9,
+          "cloud": 47.0
+        },
+        {
+          "temperature": 18.6,
+          "range": 14.9,
+          "precipitation": 34.0,
+          "wind": 3.4,
+          "cloud": 31.0
+        },
+        {
+          "temperature": 11.8,
+          "range": 15.0,
+          "precipitation": 27.0,
+          "wind": 3.7,
+          "cloud": 30.0
+        },
+        {
+          "temperature": 5.4,
+          "range": 13.6,
+          "precipitation": 30.0,
+          "wind": 3.8,
+          "cloud": 35.0
+        },
+        {
+          "temperature": 0.2,
+          "range": 11.1,
+          "precipitation": 49.0,
+          "wind": 3.8,
+          "cloud": 48.0
+        }
+      ]
+    },
+    {
+      "id": "hanksville",
+      "latitude": 38.41,
+      "longitude": -110.79,
+      "cellElevation": 1660,
+      "months": [
+        {
+          "temperature": -1.1,
+          "range": 10.1,
+          "precipitation": 18.0,
+          "wind": 3.1,
+          "cloud": 55.0
+        },
+        {
+          "temperature": 1.1,
+          "range": 11.3,
+          "precipitation": 17.0,
+          "wind": 3.6,
+          "cloud": 53.0
+        },
+        {
+          "temperature": 5.8,
+          "range": 13.8,
+          "precipitation": 19.0,
+          "wind": 4.0,
+          "cloud": 50.0
+        },
+        {
+          "temperature": 10.1,
+          "range": 15.2,
+          "precipitation": 18.0,
+          "wind": 4.4,
+          "cloud": 49.0
+        },
+        {
+          "temperature": 15.9,
+          "range": 15.7,
+          "precipitation": 18.0,
+          "wind": 4.0,
+          "cloud": 46.0
+        },
+        {
+          "temperature": 22.9,
+          "range": 17.1,
+          "precipitation": 11.0,
+          "wind": 4.1,
+          "cloud": 34.0
+        },
+        {
+          "temperature": 26.7,
+          "range": 15.0,
+          "precipitation": 26.0,
+          "wind": 3.2,
+          "cloud": 46.0
+        },
+        {
+          "temperature": 24.8,
+          "range": 14.5,
+          "precipitation": 24.0,
+          "wind": 3.1,
+          "cloud": 45.0
+        },
+        {
+          "temperature": 19.7,
+          "range": 14.8,
+          "precipitation": 26.0,
+          "wind": 3.4,
+          "cloud": 33.0
+        },
+        {
+          "temperature": 11.4,
+          "range": 14.2,
+          "precipitation": 27.0,
+          "wind": 3.4,
+          "cloud": 37.0
+        },
+        {
+          "temperature": 4.2,
+          "range": 12.2,
+          "precipitation": 17.0,
+          "wind": 3.3,
+          "cloud": 42.0
+        },
+        {
+          "temperature": -1.2,
+          "range": 9.7,
+          "precipitation": 20.0,
+          "wind": 3.2,
+          "cloud": 55.0
+        }
+      ]
+    },
+    {
+      "id": "mauna-loa",
+      "latitude": 19.6,
+      "longitude": -155.49,
+      "cellElevation": 1145,
+      "months": [
+        {
+          "temperature": 16.4,
+          "range": 7.2,
+          "precipitation": 147.0,
+          "wind": 3.0,
+          "cloud": 50.0
+        },
+        {
+          "temperature": 16.3,
+          "range": 7.0,
+          "precipitation": 155.0,
+          "wind": 3.1,
+          "cloud": 56.0
+        },
+        {
+          "temperature": 16.8,
+          "range": 6.9,
+          "precipitation": 224.0,
+          "wind": 3.0,
+          "cloud": 62.0
+        },
+        {
+          "temperature": 17.5,
+          "range": 7.1,
+          "precipitation": 192.0,
+          "wind": 3.1,
+          "cloud": 61.0
+        },
+        {
+          "temperature": 18.4,
+          "range": 7.4,
+          "precipitation": 138.0,
+          "wind": 2.5,
+          "cloud": 57.0
+        },
+        {
+          "temperature": 19.0,
+          "range": 7.7,
+          "precipitation": 106.0,
+          "wind": 2.8,
+          "cloud": 54.0
+        },
+        {
+          "temperature": 19.7,
+          "range": 7.9,
+          "precipitation": 120.0,
+          "wind": 2.8,
+          "cloud": 51.0
+        },
+        {
+          "temperature": 20.1,
+          "range": 7.8,
+          "precipitation": 140.0,
+          "wind": 2.8,
+          "cloud": 50.0
+        },
+        {
+          "temperature": 19.8,
+          "range": 7.3,
+          "precipitation": 119.0,
+          "wind": 2.4,
+          "cloud": 51.0
+        },
+        {
+          "temperature": 19.3,
+          "range": 6.9,
+          "precipitation": 136.0,
+          "wind": 2.7,
+          "cloud": 56.0
+        },
+        {
+          "temperature": 18.1,
+          "range": 6.5,
+          "precipitation": 169.0,
+          "wind": 3.1,
+          "cloud": 56.0
+        },
+        {
+          "temperature": 16.9,
+          "range": 6.5,
+          "precipitation": 171.0,
+          "wind": 3.5,
+          "cloud": 54.0
+        }
+      ]
+    },
+    {
+      "id": "craters-of-the-moon",
+      "latitude": 43.42,
+      "longitude": -113.52,
+      "cellElevation": 1892,
+      "months": [
+        {
+          "temperature": -7.7,
+          "range": 10.1,
+          "precipitation": 44.0,
+          "wind": 2.8,
+          "cloud": 65.0
+        },
+        {
+          "temperature": -6.2,
+          "range": 10.3,
+          "precipitation": 36.0,
+          "wind": 3.2,
+          "cloud": 67.0
+        },
+        {
+          "temperature": -0.7,
+          "range": 10.4,
+          "precipitation": 47.0,
+          "wind": 3.6,
+          "cloud": 66.0
+        },
+        {
+          "temperature": 3.9,
+          "range": 11.8,
+          "precipitation": 39.0,
+          "wind": 3.7,
+          "cloud": 61.0
+        },
+        {
+          "temperature": 9.6,
+          "range": 13.4,
+          "precipitation": 44.0,
+          "wind": 3.7,
+          "cloud": 58.0
+        },
+        {
+          "temperature": 15.2,
+          "range": 14.8,
+          "precipitation": 28.0,
+          "wind": 3.8,
+          "cloud": 45.0
+        },
+        {
+          "temperature": 21.4,
+          "range": 15.9,
+          "precipitation": 13.0,
+          "wind": 3.7,
+          "cloud": 34.0
+        },
+        {
+          "temperature": 20.0,
+          "range": 15.3,
+          "precipitation": 16.0,
+          "wind": 3.5,
+          "cloud": 35.0
+        },
+        {
+          "temperature": 14.3,
+          "range": 14.4,
+          "precipitation": 23.0,
+          "wind": 3.3,
+          "cloud": 36.0
+        },
+        {
+          "temperature": 6.1,
+          "range": 12.4,
+          "precipitation": 34.0,
+          "wind": 3.2,
+          "cloud": 48.0
+        },
+        {
+          "temperature": -1.1,
+          "range": 9.4,
+          "precipitation": 36.0,
+          "wind": 3.0,
+          "cloud": 58.0
+        },
+        {
+          "temperature": -7.4,
+          "range": 9.6,
+          "precipitation": 59.0,
+          "wind": 2.9,
+          "cloud": 68.0
+        }
+      ]
+    },
+    {
+      "id": "valle-de-la-muerte",
+      "latitude": 36.46,
+      "longitude": -116.87,
+      "cellElevation": 846,
+      "months": [
+        {
+          "temperature": 7.5,
+          "range": 12.7,
+          "precipitation": 17.0,
+          "wind": 2.6,
+          "cloud": 44.0
+        },
+        {
+          "temperature": 9.2,
+          "range": 13.6,
+          "precipitation": 20.0,
+          "wind": 2.9,
+          "cloud": 44.0
+        },
+        {
+          "temperature": 13.5,
+          "range": 14.8,
+          "precipitation": 12.0,
+          "wind": 3.1,
+          "cloud": 43.0
+        },
+        {
+          "temperature": 17.4,
+          "range": 15.5,
+          "precipitation": 8.0,
+          "wind": 3.4,
+          "cloud": 37.0
+        },
+        {
+          "temperature": 23.0,
+          "range": 16.0,
+          "precipitation": 5.0,
+          "wind": 3.2,
+          "cloud": 31.0
+        },
+        {
+          "temperature": 29.1,
+          "range": 17.0,
+          "precipitation": 1.0,
+          "wind": 3.3,
+          "cloud": 21.0
+        },
+        {
+          "temperature": 32.5,
+          "range": 15.6,
+          "precipitation": 10.0,
+          "wind": 3.2,
+          "cloud": 30.0
+        },
+        {
+          "temperature": 31.0,
+          "range": 15.5,
+          "precipitation": 8.0,
+          "wind": 3.1,
+          "cloud": 24.0
+        },
+        {
+          "temperature": 26.8,
+          "range": 15.2,
+          "precipitation": 8.0,
+          "wind": 2.8,
+          "cloud": 19.0
+        },
+        {
+          "temperature": 19.4,
+          "range": 14.5,
+          "precipitation": 11.0,
+          "wind": 2.7,
+          "cloud": 28.0
+        },
+        {
+          "temperature": 12.3,
+          "range": 13.5,
+          "precipitation": 8.0,
+          "wind": 2.6,
+          "cloud": 37.0
+        },
+        {
+          "temperature": 6.8,
+          "range": 11.9,
+          "precipitation": 17.0,
+          "wind": 2.6,
+          "cloud": 47.0
+        }
+      ]
+    },
+    {
+      "id": "crater-haughton",
+      "latitude": 75.38,
+      "longitude": -89.67,
+      "cellElevation": 173,
+      "months": [
+        {
+          "temperature": -30.5,
+          "range": 4.3,
+          "precipitation": 12.0,
+          "wind": 3.9,
+          "cloud": 35.0
+        },
+        {
+          "temperature": -31.6,
+          "range": 4.4,
+          "precipitation": 11.0,
+          "wind": 3.8,
+          "cloud": 39.0
+        },
+        {
+          "temperature": -27.9,
+          "range": 5.9,
+          "precipitation": 16.0,
+          "wind": 4.1,
+          "cloud": 56.0
+        },
+        {
+          "temperature": -18.7,
+          "range": 6.7,
+          "precipitation": 16.0,
+          "wind": 4.1,
+          "cloud": 55.0
+        },
+        {
+          "temperature": -7.6,
+          "range": 5.1,
+          "precipitation": 22.0,
+          "wind": 4.0,
+          "cloud": 62.0
+        },
+        {
+          "temperature": 1.6,
+          "range": 3.4,
+          "precipitation": 35.0,
+          "wind": 4.1,
+          "cloud": 77.0
+        },
+        {
+          "temperature": 5.9,
+          "range": 4.4,
+          "precipitation": 51.0,
+          "wind": 4.2,
+          "cloud": 74.0
+        },
+        {
+          "temperature": 2.8,
+          "range": 4.5,
+          "precipitation": 53.0,
+          "wind": 4.2,
+          "cloud": 79.0
+        },
+        {
+          "temperature": -4.6,
+          "range": 3.9,
+          "precipitation": 35.0,
+          "wind": 4.4,
+          "cloud": 84.0
+        },
+        {
+          "temperature": -13.6,
+          "range": 4.1,
+          "precipitation": 28.0,
+          "wind": 4.3,
+          "cloud": 73.0
+        },
+        {
+          "temperature": -22.7,
+          "range": 4.3,
+          "precipitation": 16.0,
+          "wind": 4.2,
+          "cloud": 56.0
+        },
+        {
+          "temperature": -27.1,
+          "range": 4.6,
+          "precipitation": 16.0,
+          "wind": 4.0,
+          "cloud": 43.0
+        }
+      ]
+    },
+    {
+      "id": "el-pinacate",
+      "latitude": 31.77,
+      "longitude": -113.5,
+      "cellElevation": 198,
+      "months": [
+        {
+          "temperature": 12.7,
+          "range": 13.3,
+          "precipitation": 15.0,
+          "wind": 3.6,
+          "cloud": 37.0
+        },
+        {
+          "temperature": 14.3,
+          "range": 13.9,
+          "precipitation": 13.0,
+          "wind": 3.5,
+          "cloud": 40.0
+        },
+        {
+          "temperature": 17.7,
+          "range": 15.4,
+          "precipitation": 9.0,
+          "wind": 3.5,
+          "cloud": 34.0
+        },
+        {
+          "temperature": 20.8,
+          "range": 16.1,
+          "precipitation": 5.0,
+          "wind": 3.8,
+          "cloud": 28.0
+        },
+        {
+          "temperature": 24.9,
+          "range": 16.4,
+          "precipitation": 2.0,
+          "wind": 3.9,
+          "cloud": 25.0
+        },
+        {
+          "temperature": 29.6,
+          "range": 16.6,
+          "precipitation": 2.0,
+          "wind": 4.0,
+          "cloud": 23.0
+        },
+        {
+          "temperature": 32.5,
+          "range": 13.1,
+          "precipitation": 20.0,
+          "wind": 4.3,
+          "cloud": 39.0
+        },
+        {
+          "temperature": 32.4,
+          "range": 12.6,
+          "precipitation": 23.0,
+          "wind": 3.9,
+          "cloud": 35.0
+        },
+        {
+          "temperature": 30.2,
+          "range": 13.4,
+          "precipitation": 16.0,
+          "wind": 3.3,
+          "cloud": 30.0
+        },
+        {
+          "temperature": 24.1,
+          "range": 13.9,
+          "precipitation": 10.0,
+          "wind": 3.3,
+          "cloud": 31.0
+        },
+        {
+          "temperature": 17.9,
+          "range": 13.3,
+          "precipitation": 13.0,
+          "wind": 3.4,
+          "cloud": 36.0
+        },
+        {
+          "temperature": 12.3,
+          "range": 12.6,
+          "precipitation": 14.0,
+          "wind": 3.6,
+          "cloud": 38.0
+        }
+      ]
+    },
+    {
+      "id": "pico-de-orizaba",
+      "latitude": 19.03,
+      "longitude": -97.27,
+      "cellElevation": 2405,
+      "months": [
+        {
+          "temperature": 10.1,
+          "range": 13.1,
+          "precipitation": 16.0,
+          "wind": 3.5,
+          "cloud": 46.0
+        },
+        {
+          "temperature": 11.8,
+          "range": 14.4,
+          "precipitation": 14.0,
+          "wind": 3.6,
+          "cloud": 43.0
+        },
+        {
+          "temperature": 13.8,
+          "range": 15.2,
+          "precipitation": 22.0,
+          "wind": 3.8,
+          "cloud": 43.0
+        },
+        {
+          "temperature": 16.2,
+          "range": 15.3,
+          "precipitation": 36.0,
+          "wind": 3.5,
+          "cloud": 48.0
+        },
+        {
+          "temperature": 16.7,
+          "range": 13.8,
+          "precipitation": 75.0,
+          "wind": 3.3,
+          "cloud": 57.0
+        },
+        {
+          "temperature": 15.7,
+          "range": 11.2,
+          "precipitation": 165.0,
+          "wind": 3.6,
+          "cloud": 69.0
+        },
+        {
+          "temperature": 14.7,
+          "range": 11.3,
+          "precipitation": 154.0,
+          "wind": 4.0,
+          "cloud": 66.0
+        },
+        {
+          "temperature": 14.7,
+          "range": 11.0,
+          "precipitation": 171.0,
+          "wind": 3.9,
+          "cloud": 67.0
+        },
+        {
+          "temperature": 14.6,
+          "range": 9.9,
+          "precipitation": 187.0,
+          "wind": 3.6,
+          "cloud": 73.0
+        },
+        {
+          "temperature": 13.5,
+          "range": 11.2,
+          "precipitation": 91.0,
+          "wind": 3.8,
+          "cloud": 57.0
+        },
+        {
+          "temperature": 11.6,
+          "range": 12.4,
+          "precipitation": 31.0,
+          "wind": 3.7,
+          "cloud": 46.0
+        },
+        {
+          "temperature": 10.8,
+          "range": 13.0,
+          "precipitation": 14.0,
+          "wind": 3.3,
+          "cloud": 43.0
+        }
+      ]
+    },
+    {
+      "id": "askja",
+      "latitude": 65.03,
+      "longitude": -16.75,
+      "cellElevation": 802,
+      "months": [
+        {
+          "temperature": -7.0,
+          "range": 5.1,
+          "precipitation": 71.0,
+          "wind": 8.1,
+          "cloud": 81.0
+        },
+        {
+          "temperature": -7.0,
+          "range": 5.2,
+          "precipitation": 60.0,
+          "wind": 8.2,
+          "cloud": 82.0
+        },
+        {
+          "temperature": -6.6,
+          "range": 5.2,
+          "precipitation": 65.0,
+          "wind": 7.4,
+          "cloud": 82.0
+        },
+        {
+          "temperature": -4.3,
+          "range": 5.4,
+          "precipitation": 58.0,
+          "wind": 6.6,
+          "cloud": 80.0
+        },
+        {
+          "temperature": -1.6,
+          "range": 4.1,
+          "precipitation": 62.0,
+          "wind": 5.4,
+          "cloud": 82.0
+        },
+        {
+          "temperature": 1.6,
+          "range": 2.9,
+          "precipitation": 52.0,
+          "wind": 4.1,
+          "cloud": 80.0
+        },
+        {
+          "temperature": 2.8,
+          "range": 2.3,
+          "precipitation": 76.0,
+          "wind": 3.8,
+          "cloud": 85.0
+        },
+        {
+          "temperature": 2.3,
+          "range": 2.4,
+          "precipitation": 74.0,
+          "wind": 4.1,
+          "cloud": 83.0
+        },
+        {
+          "temperature": 0.6,
+          "range": 3.2,
+          "precipitation": 85.0,
+          "wind": 6.1,
+          "cloud": 82.0
+        },
+        {
+          "temperature": -2.8,
+          "range": 3.9,
+          "precipitation": 86.0,
+          "wind": 6.6,
+          "cloud": 84.0
+        },
+        {
+          "temperature": -5.6,
+          "range": 4.6,
+          "precipitation": 87.0,
+          "wind": 7.4,
+          "cloud": 81.0
+        },
+        {
+          "temperature": -6.9,
+          "range": 5.1,
+          "precipitation": 84.0,
+          "wind": 7.9,
+          "cloud": 80.0
+        }
+      ]
+    },
+    {
+      "id": "landmannalaugar",
+      "latitude": 63.99,
+      "longitude": -19.06,
+      "cellElevation": 480,
+      "months": [
+        {
+          "temperature": -4.3,
+          "range": 4.8,
+          "precipitation": 236.0,
+          "wind": 7.3,
+          "cloud": 78.0
+        },
+        {
+          "temperature": -4.2,
+          "range": 5.2,
+          "precipitation": 219.0,
+          "wind": 7.4,
+          "cloud": 78.0
+        },
+        {
+          "temperature": -3.4,
+          "range": 5.5,
+          "precipitation": 208.0,
+          "wind": 6.9,
+          "cloud": 79.0
+        },
+        {
+          "temperature": -0.9,
+          "range": 5.0,
+          "precipitation": 170.0,
+          "wind": 6.4,
+          "cloud": 79.0
+        },
+        {
+          "temperature": 2.4,
+          "range": 5.3,
+          "precipitation": 123.0,
+          "wind": 5.5,
+          "cloud": 79.0
+        },
+        {
+          "temperature": 6.2,
+          "range": 5.3,
+          "precipitation": 121.0,
+          "wind": 4.7,
+          "cloud": 84.0
+        },
+        {
+          "temperature": 7.7,
+          "range": 5.2,
+          "precipitation": 147.0,
+          "wind": 4.3,
+          "cloud": 85.0
+        },
+        {
+          "temperature": 6.9,
+          "range": 5.1,
+          "precipitation": 159.0,
+          "wind": 4.6,
+          "cloud": 79.0
+        },
+        {
+          "temperature": 4.3,
+          "range": 4.5,
+          "precipitation": 224.0,
+          "wind": 5.7,
+          "cloud": 78.0
+        },
+        {
+          "temperature": 0.5,
+          "range": 4.1,
+          "precipitation": 220.0,
+          "wind": 6.2,
+          "cloud": 76.0
+        },
+        {
+          "temperature": -2.7,
+          "range": 4.4,
+          "precipitation": 210.0,
+          "wind": 6.9,
+          "cloud": 76.0
+        },
+        {
+          "temperature": -4.3,
+          "range": 4.9,
+          "precipitation": 236.0,
+          "wind": 7.1,
+          "cloud": 76.0
+        }
+      ]
+    },
+    {
+      "id": "timanfaya",
+      "latitude": 29,
+      "longitude": -13.75,
+      "cellElevation": 27,
+      "months": [
+        {
+          "temperature": 17.7,
+          "range": 2.2,
+          "precipitation": 13.0,
+          "wind": 6.1,
+          "cloud": 57.0
+        },
+        {
+          "temperature": 17.4,
+          "range": 2.4,
+          "precipitation": 18.0,
+          "wind": 6.5,
+          "cloud": 56.0
+        },
+        {
+          "temperature": 17.8,
+          "range": 2.6,
+          "precipitation": 9.0,
+          "wind": 6.3,
+          "cloud": 55.0
+        },
+        {
+          "temperature": 18.4,
+          "range": 2.5,
+          "precipitation": 6.0,
+          "wind": 6.5,
+          "cloud": 56.0
+        },
+        {
+          "temperature": 19.4,
+          "range": 2.5,
+          "precipitation": 4.0,
+          "wind": 6.8,
+          "cloud": 56.0
+        },
+        {
+          "temperature": 20.8,
+          "range": 2.4,
+          "precipitation": 1.0,
+          "wind": 6.8,
+          "cloud": 52.0
+        },
+        {
+          "temperature": 21.8,
+          "range": 2.3,
+          "precipitation": 1.0,
+          "wind": 8.1,
+          "cloud": 58.0
+        },
+        {
+          "temperature": 22.7,
+          "range": 2.3,
+          "precipitation": 3.0,
+          "wind": 7.3,
+          "cloud": 52.0
+        },
+        {
+          "temperature": 23.1,
+          "range": 2.4,
+          "precipitation": 2.0,
+          "wind": 5.7,
+          "cloud": 42.0
+        },
+        {
+          "temperature": 22.6,
+          "range": 2.4,
+          "precipitation": 16.0,
+          "wind": 5.1,
+          "cloud": 51.0
+        },
+        {
+          "temperature": 20.7,
+          "range": 2.2,
+          "precipitation": 19.0,
+          "wind": 6.0,
+          "cloud": 58.0
+        },
+        {
+          "temperature": 19.0,
+          "range": 2.1,
+          "precipitation": 17.0,
+          "wind": 6.1,
+          "cloud": 58.0
+        }
+      ]
+    },
+    {
+      "id": "rio-tinto",
+      "latitude": 37.7,
+      "longitude": -6.56,
+      "cellElevation": 188,
+      "months": [
+        {
+          "temperature": 9.0,
+          "range": 10.7,
+          "precipitation": 48.0,
+          "wind": 3.8,
+          "cloud": 46.0
+        },
+        {
+          "temperature": 10.0,
+          "range": 11.6,
+          "precipitation": 49.0,
+          "wind": 3.9,
+          "cloud": 45.0
+        },
+        {
+          "temperature": 12.7,
+          "range": 12.3,
+          "precipitation": 58.0,
+          "wind": 4.0,
+          "cloud": 50.0
+        },
+        {
+          "temperature": 15.6,
+          "range": 13.0,
+          "precipitation": 53.0,
+          "wind": 3.8,
+          "cloud": 50.0
+        },
+        {
+          "temperature": 19.9,
+          "range": 14.7,
+          "precipitation": 28.0,
+          "wind": 3.5,
+          "cloud": 42.0
+        },
+        {
+          "temperature": 25.3,
+          "range": 16.4,
+          "precipitation": 5.0,
+          "wind": 3.5,
+          "cloud": 27.0
+        },
+        {
+          "temperature": 28.6,
+          "range": 17.6,
+          "precipitation": 1.0,
+          "wind": 3.5,
+          "cloud": 15.0
+        },
+        {
+          "temperature": 28.6,
+          "range": 17.0,
+          "precipitation": 3.0,
+          "wind": 3.3,
+          "cloud": 19.0
+        },
+        {
+          "temperature": 24.2,
+          "range": 14.2,
+          "precipitation": 24.0,
+          "wind": 3.0,
+          "cloud": 33.0
+        },
+        {
+          "temperature": 19.1,
+          "range": 12.3,
+          "precipitation": 71.0,
+          "wind": 3.4,
+          "cloud": 45.0
+        },
+        {
+          "temperature": 12.8,
+          "range": 10.9,
+          "precipitation": 71.0,
+          "wind": 3.8,
+          "cloud": 45.0
+        },
+        {
+          "temperature": 9.8,
+          "range": 10.5,
+          "precipitation": 57.0,
+          "wind": 3.9,
+          "cloud": 46.0
+        }
+      ]
+    },
+    {
+      "id": "bockfjorden",
+      "latitude": 79.4,
+      "longitude": 13.4,
+      "cellElevation": 343,
+      "months": [
+        {
+          "temperature": -13.3,
+          "range": 4.8,
+          "precipitation": 52.0,
+          "wind": 5.3,
+          "cloud": 84.0
+        },
+        {
+          "temperature": -13.8,
+          "range": 4.6,
+          "precipitation": 50.0,
+          "wind": 5.3,
+          "cloud": 81.0
+        },
+        {
+          "temperature": -15.8,
+          "range": 4.4,
+          "precipitation": 51.0,
+          "wind": 4.8,
+          "cloud": 78.0
+        },
+        {
+          "temperature": -12.2,
+          "range": 4.6,
+          "precipitation": 40.0,
+          "wind": 4.4,
+          "cloud": 72.0
+        },
+        {
+          "temperature": -5.9,
+          "range": 3.5,
+          "precipitation": 40.0,
+          "wind": 3.7,
+          "cloud": 77.0
+        },
+        {
+          "temperature": -0.9,
+          "range": 1.9,
+          "precipitation": 47.0,
+          "wind": 3.5,
+          "cloud": 83.0
+        },
+        {
+          "temperature": 1.9,
+          "range": 1.9,
+          "precipitation": 54.0,
+          "wind": 3.3,
+          "cloud": 80.0
+        },
+        {
+          "temperature": 0.9,
+          "range": 2.2,
+          "precipitation": 61.0,
+          "wind": 3.3,
+          "cloud": 82.0
+        },
+        {
+          "temperature": -2.5,
+          "range": 3.0,
+          "precipitation": 71.0,
+          "wind": 4.1,
+          "cloud": 85.0
+        },
+        {
+          "temperature": -7.3,
+          "range": 3.4,
+          "precipitation": 75.0,
+          "wind": 4.7,
+          "cloud": 87.0
+        },
+        {
+          "temperature": -10.7,
+          "range": 4.2,
+          "precipitation": 61.0,
+          "wind": 5.0,
+          "cloud": 86.0
+        },
+        {
+          "temperature": -12.2,
+          "range": 4.4,
+          "precipitation": 65.0,
+          "wind": 5.5,
+          "cloud": 85.0
+        }
+      ]
+    },
+    {
+      "id": "monte-etna",
+      "latitude": 37.75,
+      "longitude": 14.99,
+      "cellElevation": 461,
+      "months": [
+        {
+          "temperature": 8.9,
+          "range": 4.8,
+          "precipitation": 76.0,
+          "wind": 5.0,
+          "cloud": 65.0
+        },
+        {
+          "temperature": 8.8,
+          "range": 5.5,
+          "precipitation": 68.0,
+          "wind": 5.1,
+          "cloud": 66.0
+        },
+        {
+          "temperature": 10.8,
+          "range": 6.6,
+          "precipitation": 60.0,
+          "wind": 4.8,
+          "cloud": 63.0
+        },
+        {
+          "temperature": 13.4,
+          "range": 7.2,
+          "precipitation": 44.0,
+          "wind": 4.3,
+          "cloud": 59.0
+        },
+        {
+          "temperature": 17.4,
+          "range": 8.0,
+          "precipitation": 21.0,
+          "wind": 4.0,
+          "cloud": 50.0
+        },
+        {
+          "temperature": 22.2,
+          "range": 8.8,
+          "precipitation": 19.0,
+          "wind": 3.2,
+          "cloud": 35.0
+        },
+        {
+          "temperature": 25.4,
+          "range": 9.2,
+          "precipitation": 10.0,
+          "wind": 3.3,
+          "cloud": 23.0
+        },
+        {
+          "temperature": 25.7,
+          "range": 8.8,
+          "precipitation": 15.0,
+          "wind": 3.0,
+          "cloud": 26.0
+        },
+        {
+          "temperature": 22.0,
+          "range": 7.1,
+          "precipitation": 60.0,
+          "wind": 3.4,
+          "cloud": 46.0
+        },
+        {
+          "temperature": 18.4,
+          "range": 6.4,
+          "precipitation": 76.0,
+          "wind": 3.6,
+          "cloud": 53.0
+        },
+        {
+          "temperature": 14.2,
+          "range": 5.2,
+          "precipitation": 89.0,
+          "wind": 4.5,
+          "cloud": 58.0
+        },
+        {
+          "temperature": 10.5,
+          "range": 4.5,
+          "precipitation": 88.0,
+          "wind": 5.1,
+          "cloud": 62.0
+        }
+      ]
+    },
+    {
+      "id": "erfoud",
+      "latitude": 31.43,
+      "longitude": -4.23,
+      "cellElevation": 924,
+      "months": [
+        {
+          "temperature": 9.3,
+          "range": 13.9,
+          "precipitation": 12.0,
+          "wind": 3.0,
+          "cloud": 24.0
+        },
+        {
+          "temperature": 11.1,
+          "range": 14.8,
+          "precipitation": 13.0,
+          "wind": 3.4,
+          "cloud": 26.0
+        },
+        {
+          "temperature": 15.2,
+          "range": 15.8,
+          "precipitation": 17.0,
+          "wind": 3.9,
+          "cloud": 30.0
+        },
+        {
+          "temperature": 19.4,
+          "range": 16.3,
+          "precipitation": 15.0,
+          "wind": 4.4,
+          "cloud": 33.0
+        },
+        {
+          "temperature": 23.9,
+          "range": 16.3,
+          "precipitation": 13.0,
+          "wind": 4.5,
+          "cloud": 34.0
+        },
+        {
+          "temperature": 28.9,
+          "range": 16.6,
+          "precipitation": 7.0,
+          "wind": 4.5,
+          "cloud": 27.0
+        },
+        {
+          "temperature": 33.1,
+          "range": 16.2,
+          "precipitation": 4.0,
+          "wind": 4.4,
+          "cloud": 38.0
+        },
+        {
+          "temperature": 32.0,
+          "range": 15.1,
+          "precipitation": 11.0,
+          "wind": 4.1,
+          "cloud": 40.0
+        },
+        {
+          "temperature": 26.9,
+          "range": 14.1,
+          "precipitation": 23.0,
+          "wind": 3.9,
+          "cloud": 39.0
+        },
+        {
+          "temperature": 21.2,
+          "range": 13.3,
+          "precipitation": 20.0,
+          "wind": 3.5,
+          "cloud": 37.0
+        },
+        {
+          "temperature": 14.1,
+          "range": 13.1,
+          "precipitation": 17.0,
+          "wind": 3.1,
+          "cloud": 31.0
+        },
+        {
+          "temperature": 10.1,
+          "range": 12.9,
+          "precipitation": 9.0,
+          "wind": 2.8,
+          "cloud": 27.0
+        }
+      ]
+    },
+    {
+      "id": "desierto-del-namib",
+      "latitude": -23.56,
+      "longitude": 15.04,
+      "cellElevation": 443,
+      "months": [
+        {
+          "temperature": 23.2,
+          "range": 14.4,
+          "precipitation": 7.0,
+          "wind": 3.8,
+          "cloud": 38.0
+        },
+        {
+          "temperature": 24.4,
+          "range": 14.3,
+          "precipitation": 18.0,
+          "wind": 3.6,
+          "cloud": 47.0
+        },
+        {
+          "temperature": 25.3,
+          "range": 14.5,
+          "precipitation": 15.0,
+          "wind": 3.5,
+          "cloud": 33.0
+        },
+        {
+          "temperature": 24.4,
+          "range": 14.1,
+          "precipitation": 15.0,
+          "wind": 3.7,
+          "cloud": 24.0
+        },
+        {
+          "temperature": 22.3,
+          "range": 14.6,
+          "precipitation": 1.0,
+          "wind": 4.0,
+          "cloud": 17.0
+        },
+        {
+          "temperature": 19.0,
+          "range": 14.8,
+          "precipitation": 1.0,
+          "wind": 4.5,
+          "cloud": 17.0
+        },
+        {
+          "temperature": 18.8,
+          "range": 15.2,
+          "precipitation": 0.0,
+          "wind": 4.7,
+          "cloud": 13.0
+        },
+        {
+          "temperature": 18.1,
+          "range": 16.1,
+          "precipitation": 0.0,
+          "wind": 4.2,
+          "cloud": 14.0
+        },
+        {
+          "temperature": 20.6,
+          "range": 17.0,
+          "precipitation": 1.0,
+          "wind": 4.0,
+          "cloud": 21.0
+        },
+        {
+          "temperature": 22.3,
+          "range": 16.9,
+          "precipitation": 2.0,
+          "wind": 4.0,
+          "cloud": 27.0
+        },
+        {
+          "temperature": 22.6,
+          "range": 16.4,
+          "precipitation": 4.0,
+          "wind": 4.0,
+          "cloud": 26.0
+        },
+        {
+          "temperature": 22.6,
+          "range": 15.4,
+          "precipitation": 4.0,
+          "wind": 3.9,
+          "cloud": 38.0
+        }
+      ]
+    },
+    {
+      "id": "dallol",
+      "latitude": 14.24,
+      "longitude": 40.3,
+      "cellElevation": 1063,
+      "months": [
+        {
+          "temperature": 21.6,
+          "range": 12.3,
+          "precipitation": 8.0,
+          "wind": 3.7,
+          "cloud": 36.0
+        },
+        {
+          "temperature": 23.0,
+          "range": 13.2,
+          "precipitation": 12.0,
+          "wind": 3.9,
+          "cloud": 35.0
+        },
+        {
+          "temperature": 24.9,
+          "range": 13.0,
+          "precipitation": 22.0,
+          "wind": 3.8,
+          "cloud": 40.0
+        },
+        {
+          "temperature": 26.9,
+          "range": 12.4,
+          "precipitation": 61.0,
+          "wind": 3.6,
+          "cloud": 41.0
+        },
+        {
+          "temperature": 28.9,
+          "range": 11.8,
+          "precipitation": 28.0,
+          "wind": 3.1,
+          "cloud": 37.0
+        },
+        {
+          "temperature": 30.2,
+          "range": 12.6,
+          "precipitation": 24.0,
+          "wind": 4.2,
+          "cloud": 51.0
+        },
+        {
+          "temperature": 29.0,
+          "range": 10.9,
+          "precipitation": 103.0,
+          "wind": 4.0,
+          "cloud": 67.0
+        },
+        {
+          "temperature": 27.8,
+          "range": 10.1,
+          "precipitation": 112.0,
+          "wind": 3.2,
+          "cloud": 66.0
+        },
+        {
+          "temperature": 27.6,
+          "range": 10.7,
+          "precipitation": 29.0,
+          "wind": 2.8,
+          "cloud": 51.0
+        },
+        {
+          "temperature": 25.8,
+          "range": 11.6,
+          "precipitation": 23.0,
+          "wind": 2.9,
+          "cloud": 28.0
+        },
+        {
+          "temperature": 23.8,
+          "range": 12.3,
+          "precipitation": 10.0,
+          "wind": 3.5,
+          "cloud": 26.0
+        },
+        {
+          "temperature": 21.9,
+          "range": 12.5,
+          "precipitation": 15.0,
+          "wind": 3.5,
+          "cloud": 21.0
+        }
+      ]
+    },
+    {
+      "id": "marmul",
+      "latitude": 18.2,
+      "longitude": 55.2,
+      "cellElevation": 347,
+      "months": [
+        {
+          "temperature": 18.7,
+          "range": 13.2,
+          "precipitation": 6.0,
+          "wind": 3.9,
+          "cloud": 25.0
+        },
+        {
+          "temperature": 20.6,
+          "range": 14.5,
+          "precipitation": 17.0,
+          "wind": 4.2,
+          "cloud": 23.0
+        },
+        {
+          "temperature": 24.1,
+          "range": 15.1,
+          "precipitation": 65.0,
+          "wind": 4.2,
+          "cloud": 27.0
+        },
+        {
+          "temperature": 28.0,
+          "range": 15.6,
+          "precipitation": 13.0,
+          "wind": 4.2,
+          "cloud": 28.0
+        },
+        {
+          "temperature": 30.9,
+          "range": 15.2,
+          "precipitation": 22.0,
+          "wind": 4.6,
+          "cloud": 23.0
+        },
+        {
+          "temperature": 32.4,
+          "range": 14.9,
+          "precipitation": 4.0,
+          "wind": 5.7,
+          "cloud": 35.0
+        },
+        {
+          "temperature": 31.2,
+          "range": 14.1,
+          "precipitation": 9.0,
+          "wind": 8.0,
+          "cloud": 40.0
+        },
+        {
+          "temperature": 30.7,
+          "range": 14.6,
+          "precipitation": 11.0,
+          "wind": 7.4,
+          "cloud": 33.0
+        },
+        {
+          "temperature": 30.0,
+          "range": 15.5,
+          "precipitation": 6.0,
+          "wind": 4.7,
+          "cloud": 26.0
+        },
+        {
+          "temperature": 26.8,
+          "range": 14.4,
+          "precipitation": 2.0,
+          "wind": 3.8,
+          "cloud": 22.0
+        },
+        {
+          "temperature": 23.7,
+          "range": 12.8,
+          "precipitation": 5.0,
+          "wind": 3.6,
+          "cloud": 22.0
+        },
+        {
+          "temperature": 20.1,
+          "range": 12.8,
+          "precipitation": 2.0,
+          "wind": 3.8,
+          "cloud": 24.0
+        }
+      ]
+    },
+    {
+      "id": "crater-ramon",
+      "latitude": 30.6,
+      "longitude": 34.8,
+      "cellElevation": 367,
+      "months": [
+        {
+          "temperature": 10.8,
+          "range": 11.8,
+          "precipitation": 35.0,
+          "wind": 3.3,
+          "cloud": 39.0
+        },
+        {
+          "temperature": 12.4,
+          "range": 12.9,
+          "precipitation": 28.0,
+          "wind": 3.4,
+          "cloud": 39.0
+        },
+        {
+          "temperature": 15.8,
+          "range": 14.6,
+          "precipitation": 15.0,
+          "wind": 3.6,
+          "cloud": 33.0
+        },
+        {
+          "temperature": 19.7,
+          "range": 15.9,
+          "precipitation": 10.0,
+          "wind": 3.6,
+          "cloud": 33.0
+        },
+        {
+          "temperature": 24.1,
+          "range": 16.9,
+          "precipitation": 3.0,
+          "wind": 3.7,
+          "cloud": 26.0
+        },
+        {
+          "temperature": 26.8,
+          "range": 17.4,
+          "precipitation": 0.0,
+          "wind": 3.8,
+          "cloud": 13.0
+        },
+        {
+          "temperature": 28.6,
+          "range": 17.0,
+          "precipitation": 0.0,
+          "wind": 3.6,
+          "cloud": 11.0
+        },
+        {
+          "temperature": 28.5,
+          "range": 16.1,
+          "precipitation": 0.0,
+          "wind": 3.6,
+          "cloud": 10.0
+        },
+        {
+          "temperature": 26.4,
+          "range": 15.1,
+          "precipitation": 2.0,
+          "wind": 3.7,
+          "cloud": 12.0
+        },
+        {
+          "temperature": 23.2,
+          "range": 13.6,
+          "precipitation": 7.0,
+          "wind": 3.2,
+          "cloud": 20.0
+        },
+        {
+          "temperature": 17.6,
+          "range": 12.3,
+          "precipitation": 14.0,
+          "wind": 3.0,
+          "cloud": 28.0
+        },
+        {
+          "temperature": 12.8,
+          "range": 11.7,
+          "precipitation": 20.0,
+          "wind": 3.1,
+          "cloud": 33.0
+        }
+      ]
+    },
+    {
+      "id": "cuenca-de-qaidam",
+      "latitude": 38,
+      "longitude": 93.5,
+      "cellElevation": 2757,
+      "months": [
+        {
+          "temperature": -9.9,
+          "range": 11.6,
+          "precipitation": 1.0,
+          "wind": 2.8,
+          "cloud": 54.0
+        },
+        {
+          "temperature": -5.4,
+          "range": 12.1,
+          "precipitation": 1.0,
+          "wind": 3.5,
+          "cloud": 62.0
+        },
+        {
+          "temperature": -0.0,
+          "range": 12.9,
+          "precipitation": 1.0,
+          "wind": 4.1,
+          "cloud": 61.0
+        },
+        {
+          "temperature": 5.6,
+          "range": 15.7,
+          "precipitation": 1.0,
+          "wind": 4.5,
+          "cloud": 56.0
+        },
+        {
+          "temperature": 10.8,
+          "range": 15.3,
+          "precipitation": 5.0,
+          "wind": 4.9,
+          "cloud": 58.0
+        },
+        {
+          "temperature": 15.9,
+          "range": 14.5,
+          "precipitation": 10.0,
+          "wind": 5.1,
+          "cloud": 61.0
+        },
+        {
+          "temperature": 18.8,
+          "range": 14.6,
+          "precipitation": 10.0,
+          "wind": 5.2,
+          "cloud": 55.0
+        },
+        {
+          "temperature": 17.8,
+          "range": 14.6,
+          "precipitation": 7.0,
+          "wind": 4.8,
+          "cloud": 52.0
+        },
+        {
+          "temperature": 12.4,
+          "range": 14.3,
+          "precipitation": 5.0,
+          "wind": 4.0,
+          "cloud": 52.0
+        },
+        {
+          "temperature": 4.7,
+          "range": 13.8,
+          "precipitation": 1.0,
+          "wind": 3.5,
+          "cloud": 43.0
+        },
+        {
+          "temperature": -2.2,
+          "range": 10.8,
+          "precipitation": 1.0,
+          "wind": 3.0,
+          "cloud": 59.0
+        },
+        {
+          "temperature": -8.5,
+          "range": 11.0,
+          "precipitation": 1.0,
+          "wind": 2.8,
+          "cloud": 54.0
+        }
+      ]
+    },
+    {
+      "id": "tso-kar",
+      "latitude": 33.3,
+      "longitude": 78,
+      "cellElevation": 5058,
+      "months": [
+        {
+          "temperature": -19.1,
+          "range": 12.5,
+          "precipitation": 19.0,
+          "wind": 3.6,
+          "cloud": 72.0
+        },
+        {
+          "temperature": -17.5,
+          "range": 13.0,
+          "precipitation": 17.0,
+          "wind": 3.9,
+          "cloud": 72.0
+        },
+        {
+          "temperature": -12.9,
+          "range": 13.1,
+          "precipitation": 22.0,
+          "wind": 3.5,
+          "cloud": 73.0
+        },
+        {
+          "temperature": -6.5,
+          "range": 10.8,
+          "precipitation": 14.0,
+          "wind": 3.8,
+          "cloud": 76.0
+        },
+        {
+          "temperature": -1.9,
+          "range": 11.0,
+          "precipitation": 13.0,
+          "wind": 3.7,
+          "cloud": 71.0
+        },
+        {
+          "temperature": 2.9,
+          "range": 14.1,
+          "precipitation": 16.0,
+          "wind": 3.4,
+          "cloud": 65.0
+        },
+        {
+          "temperature": 7.0,
+          "range": 15.4,
+          "precipitation": 38.0,
+          "wind": 3.1,
+          "cloud": 65.0
+        },
+        {
+          "temperature": 6.4,
+          "range": 14.7,
+          "precipitation": 45.0,
+          "wind": 2.8,
+          "cloud": 65.0
+        },
+        {
+          "temperature": 1.5,
+          "range": 13.9,
+          "precipitation": 16.0,
+          "wind": 3.0,
+          "cloud": 56.0
+        },
+        {
+          "temperature": -5.1,
+          "range": 11.1,
+          "precipitation": 5.0,
+          "wind": 3.0,
+          "cloud": 61.0
+        },
+        {
+          "temperature": -11.7,
+          "range": 12.6,
+          "precipitation": 12.0,
+          "wind": 3.2,
+          "cloud": 67.0
+        },
+        {
+          "temperature": -16.7,
+          "range": 12.8,
+          "precipitation": 11.0,
+          "wind": 3.5,
+          "cloud": 70.0
+        }
+      ]
+    },
+    {
+      "id": "tolbachik",
+      "latitude": 55.83,
+      "longitude": 160.33,
+      "cellElevation": 992,
+      "months": [
+        {
+          "temperature": -17.9,
+          "range": 6.9,
+          "precipitation": 157.0,
+          "wind": 3.5,
+          "cloud": 69.0
+        },
+        {
+          "temperature": -17.6,
+          "range": 8.2,
+          "precipitation": 140.0,
+          "wind": 3.9,
+          "cloud": 71.0
+        },
+        {
+          "temperature": -13.3,
+          "range": 8.5,
+          "precipitation": 141.0,
+          "wind": 3.9,
+          "cloud": 71.0
+        },
+        {
+          "temperature": -8.9,
+          "range": 8.2,
+          "precipitation": 133.0,
+          "wind": 3.6,
+          "cloud": 72.0
+        },
+        {
+          "temperature": -2.0,
+          "range": 6.9,
+          "precipitation": 102.0,
+          "wind": 2.7,
+          "cloud": 74.0
+        },
+        {
+          "temperature": 3.6,
+          "range": 4.5,
+          "precipitation": 128.0,
+          "wind": 2.2,
+          "cloud": 77.0
+        },
+        {
+          "temperature": 9.2,
+          "range": 6.6,
+          "precipitation": 122.0,
+          "wind": 2.0,
+          "cloud": 72.0
+        },
+        {
+          "temperature": 9.5,
+          "range": 7.4,
+          "precipitation": 195.0,
+          "wind": 2.6,
+          "cloud": 77.0
+        },
+        {
+          "temperature": 3.7,
+          "range": 6.7,
+          "precipitation": 212.0,
+          "wind": 2.9,
+          "cloud": 74.0
+        },
+        {
+          "temperature": -4.6,
+          "range": 6.4,
+          "precipitation": 213.0,
+          "wind": 3.2,
+          "cloud": 73.0
+        },
+        {
+          "temperature": -11.5,
+          "range": 6.5,
+          "precipitation": 173.0,
+          "wind": 3.6,
+          "cloud": 70.0
+        },
+        {
+          "temperature": -16.6,
+          "range": 6.1,
+          "precipitation": 179.0,
+          "wind": 3.8,
+          "cloud": 67.0
+        }
+      ]
+    },
+    {
+      "id": "arkaroola",
+      "latitude": -30.31,
+      "longitude": 139.34,
+      "cellElevation": 232,
+      "months": [
+        {
+          "temperature": 29.4,
+          "range": 15.7,
+          "precipitation": 19.0,
+          "wind": 4.9,
+          "cloud": 38.0
+        },
+        {
+          "temperature": 27.8,
+          "range": 14.9,
+          "precipitation": 28.0,
+          "wind": 4.7,
+          "cloud": 38.0
+        },
+        {
+          "temperature": 24.1,
+          "range": 14.6,
+          "precipitation": 12.0,
+          "wind": 4.4,
+          "cloud": 35.0
+        },
+        {
+          "temperature": 19.6,
+          "range": 13.8,
+          "precipitation": 13.0,
+          "wind": 3.9,
+          "cloud": 38.0
+        },
+        {
+          "temperature": 14.3,
+          "range": 12.6,
+          "precipitation": 12.0,
+          "wind": 3.8,
+          "cloud": 36.0
+        },
+        {
+          "temperature": 10.7,
+          "range": 11.8,
+          "precipitation": 14.0,
+          "wind": 3.9,
+          "cloud": 34.0
+        },
+        {
+          "temperature": 10.4,
+          "range": 12.7,
+          "precipitation": 11.0,
+          "wind": 4.0,
+          "cloud": 30.0
+        },
+        {
+          "temperature": 12.2,
+          "range": 13.9,
+          "precipitation": 10.0,
+          "wind": 4.5,
+          "cloud": 28.0
+        },
+        {
+          "temperature": 16.5,
+          "range": 15.8,
+          "precipitation": 14.0,
+          "wind": 4.8,
+          "cloud": 29.0
+        },
+        {
+          "temperature": 20.5,
+          "range": 16.3,
+          "precipitation": 13.0,
+          "wind": 4.9,
+          "cloud": 35.0
+        },
+        {
+          "temperature": 24.4,
+          "range": 16.1,
+          "precipitation": 18.0,
+          "wind": 4.8,
+          "cloud": 42.0
+        },
+        {
+          "temperature": 26.8,
+          "range": 16.0,
+          "precipitation": 16.0,
+          "wind": 4.9,
+          "cloud": 42.0
+        }
+      ]
+    },
+    {
+      "id": "pilbara",
+      "latitude": -21.2,
+      "longitude": 119.4,
+      "cellElevation": 175,
+      "months": [
+        {
+          "temperature": 32.7,
+          "range": 13.8,
+          "precipitation": 105.0,
+          "wind": 4.5,
+          "cloud": 56.0
+        },
+        {
+          "temperature": 31.6,
+          "range": 13.3,
+          "precipitation": 97.0,
+          "wind": 4.2,
+          "cloud": 55.0
+        },
+        {
+          "temperature": 30.5,
+          "range": 13.3,
+          "precipitation": 85.0,
+          "wind": 4.2,
+          "cloud": 51.0
+        },
+        {
+          "temperature": 28.5,
+          "range": 14.6,
+          "precipitation": 16.0,
+          "wind": 4.1,
+          "cloud": 39.0
+        },
+        {
+          "temperature": 23.6,
+          "range": 14.8,
+          "precipitation": 16.0,
+          "wind": 4.6,
+          "cloud": 28.0
+        },
+        {
+          "temperature": 19.8,
+          "range": 14.7,
+          "precipitation": 24.0,
+          "wind": 5.0,
+          "cloud": 26.0
+        },
+        {
+          "temperature": 19.6,
+          "range": 15.6,
+          "precipitation": 15.0,
+          "wind": 4.6,
+          "cloud": 21.0
+        },
+        {
+          "temperature": 21.6,
+          "range": 17.3,
+          "precipitation": 1.0,
+          "wind": 4.5,
+          "cloud": 12.0
+        },
+        {
+          "temperature": 25.7,
+          "range": 18.2,
+          "precipitation": 3.0,
+          "wind": 4.4,
+          "cloud": 15.0
+        },
+        {
+          "temperature": 30.5,
+          "range": 18.1,
+          "precipitation": 3.0,
+          "wind": 4.6,
+          "cloud": 25.0
+        },
+        {
+          "temperature": 32.6,
+          "range": 17.6,
+          "precipitation": 7.0,
+          "wind": 4.7,
+          "cloud": 30.0
+        },
+        {
+          "temperature": 33.7,
+          "range": 16.2,
+          "precipitation": 32.0,
+          "wind": 4.8,
+          "cloud": 39.0
+        }
+      ]
+    },
+    {
+      "id": "desierto-de-rangipo",
+      "latitude": -39.3,
+      "longitude": 175.7,
+      "cellElevation": 713,
+      "months": [
+        {
+          "temperature": 14.9,
+          "range": 11.0,
+          "precipitation": 64.0,
+          "wind": 5.0,
+          "cloud": 66.0
+        },
+        {
+          "temperature": 15.5,
+          "range": 11.2,
+          "precipitation": 63.0,
+          "wind": 4.5,
+          "cloud": 67.0
+        },
+        {
+          "temperature": 13.5,
+          "range": 10.7,
+          "precipitation": 60.0,
+          "wind": 4.5,
+          "cloud": 66.0
+        },
+        {
+          "temperature": 10.4,
+          "range": 8.9,
+          "precipitation": 81.0,
+          "wind": 4.5,
+          "cloud": 66.0
+        },
+        {
+          "temperature": 7.9,
+          "range": 6.8,
+          "precipitation": 88.0,
+          "wind": 5.0,
+          "cloud": 66.0
+        },
+        {
+          "temperature": 5.7,
+          "range": 5.6,
+          "precipitation": 103.0,
+          "wind": 5.2,
+          "cloud": 67.0
+        },
+        {
+          "temperature": 4.6,
+          "range": 5.6,
+          "precipitation": 90.0,
+          "wind": 5.2,
+          "cloud": 69.0
+        },
+        {
+          "temperature": 5.3,
+          "range": 6.4,
+          "precipitation": 88.0,
+          "wind": 5.0,
+          "cloud": 70.0
+        },
+        {
+          "temperature": 6.8,
+          "range": 7.3,
+          "precipitation": 89.0,
+          "wind": 5.6,
+          "cloud": 73.0
+        },
+        {
+          "temperature": 8.4,
+          "range": 8.0,
+          "precipitation": 89.0,
+          "wind": 5.7,
+          "cloud": 76.0
+        },
+        {
+          "temperature": 10.4,
+          "range": 9.1,
+          "precipitation": 70.0,
+          "wind": 5.4,
+          "cloud": 73.0
+        },
+        {
+          "temperature": 12.9,
+          "range": 9.1,
+          "precipitation": 89.0,
+          "wind": 5.1,
+          "cloud": 76.0
+        }
+      ]
+    },
+    {
+      "id": "valles-secos-de-mcmurdo",
+      "latitude": -77.5,
+      "longitude": 162,
+      "cellElevation": 1139,
+      "months": [
+        {
+          "temperature": -13.7,
+          "range": 6.0,
+          "precipitation": 8.0,
+          "wind": 3.9,
+          "cloud": 66.0
+        },
+        {
+          "temperature": -20.1,
+          "range": 6.3,
+          "precipitation": 11.0,
+          "wind": 4.8,
+          "cloud": 64.0
+        },
+        {
+          "temperature": -28.4,
+          "range": 5.3,
+          "precipitation": 7.0,
+          "wind": 6.5,
+          "cloud": 58.0
+        },
+        {
+          "temperature": -32.4,
+          "range": 4.7,
+          "precipitation": 7.0,
+          "wind": 8.0,
+          "cloud": 51.0
+        },
+        {
+          "temperature": -32.2,
+          "range": 5.0,
+          "precipitation": 6.0,
+          "wind": 8.6,
+          "cloud": 50.0
+        },
+        {
+          "temperature": -33.4,
+          "range": 5.3,
+          "precipitation": 7.0,
+          "wind": 8.9,
+          "cloud": 57.0
+        },
+        {
+          "temperature": -35.6,
+          "range": 4.9,
+          "precipitation": 4.0,
+          "wind": 9.3,
+          "cloud": 53.0
+        },
+        {
+          "temperature": -34.6,
+          "range": 5.4,
+          "precipitation": 8.0,
+          "wind": 9.2,
+          "cloud": 60.0
+        },
+        {
+          "temperature": -33.4,
+          "range": 5.5,
+          "precipitation": 6.0,
+          "wind": 9.0,
+          "cloud": 61.0
+        },
+        {
+          "temperature": -28.1,
+          "range": 6.4,
+          "precipitation": 7.0,
+          "wind": 6.9,
+          "cloud": 63.0
+        },
+        {
+          "temperature": -20.6,
+          "range": 6.8,
+          "precipitation": 5.0,
+          "wind": 5.3,
+          "cloud": 61.0
+        },
+        {
+          "temperature": -14.0,
+          "range": 5.8,
+          "precipitation": 7.0,
+          "wind": 4.0,
+          "cloud": 66.0
+        }
+      ]
+    }
+  ]
+}

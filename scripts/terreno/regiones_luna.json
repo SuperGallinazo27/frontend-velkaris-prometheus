@@ -1,0 +1,189 @@
+{
+  "fuente": "https://www.nasa.gov/wp-content/uploads/2024/10/artemis-iii-landing-region-candidates.jpg",
+  "comunicado": "https://www.nasa.gov/news-release/nasa-provides-update-on-artemis-iii-moon-landing-regions/",
+  "nota": "La NASA publicó el mapa de las nueve regiones candidatas de Artemis III (28 de octubre de 2024), pero no sus coordenadas. Los recuadros de abajo se midieron en píxeles sobre ese mapa y se convirtieron a la proyección estereográfica polar con la estrella del polo y la barra de escala del propio mapa. La conversión se comprobó dibujando encima los cráteres del nomenclátor IAU/USGS. Son ubicaciones aproximadas (del orden de 1 km), no límites oficiales.",
+  "georreferencia": {
+    "poloPx": [
+      745.8,
+      762.4
+    ],
+    "pxPorKm": 3.58,
+    "orientacion": "Longitud 0° hacia arriba y 90° E hacia la derecha"
+  },
+  "regiones": [
+    {
+      "id": "peak-near-cabeus-b",
+      "name": "Peak near Cabeus B",
+      "px": [
+        67,
+        475,
+        138,
+        547
+      ]
+    },
+    {
+      "id": "haworth",
+      "name": "Haworth",
+      "px": [
+        557,
+        383.5,
+        664.5,
+        490.5
+      ]
+    },
+    {
+      "id": "malapert-massif",
+      "name": "Malapert Massif",
+      "px": [
+        708,
+        289,
+        782.5,
+        364
+      ]
+    },
+    {
+      "id": "mons-mouton-plateau",
+      "name": "Mons Mouton Plateau",
+      "px": [
+        922,
+        128,
+        1197.5,
+        335.5
+      ]
+    },
+    {
+      "id": "mons-mouton",
+      "name": "Mons Mouton",
+      "px": [
+        979.5,
+        310.5,
+        1036.5,
+        367.5
+      ]
+    },
+    {
+      "id": "nobile-rim-1",
+      "name": "Nobile Rim 1",
+      "px": [
+        1011.5,
+        331.5,
+        1083,
+        404
+      ]
+    },
+    {
+      "id": "nobile-rim-2",
+      "name": "Nobile Rim 2",
+      "px": [
+        1273,
+        386,
+        1345,
+        457.5
+      ]
+    },
+    {
+      "id": "de-gerlache-rim-2",
+      "name": "de Gerlache Rim 2",
+      "px": [
+        537.5,
+        643.5,
+        609,
+        715
+      ]
+    },
+    {
+      "id": "slater-plain",
+      "name": "Slater Plain",
+      "px": [
+        961.5,
+        905,
+        1033.5,
+        976
+      ]
+    }
+  ],
+  "zonas": {
+    "nota": "Fuera del polo sur no hay regiones candidatas publicadas. Cada región es un recuadro de 21 km centrado en el centro de un accidente con nombre, según el nomenclátor IAU/USGS (https://planetarynames.wr.usgs.gov). Latitud y longitud en grados; longitud este de 0 a 360.",
+    "norte": [
+      {
+        "id": "peary",
+        "name": "Peary",
+        "latitude": 88.625,
+        "longitude": 24.402,
+        "sizeKm": 21
+      },
+      {
+        "id": "whipple",
+        "name": "Whipple",
+        "latitude": 89.137,
+        "longitude": 120.019,
+        "sizeKm": 21
+      },
+      {
+        "id": "byrd",
+        "name": "Byrd",
+        "latitude": 85.428,
+        "longitude": 10.07,
+        "sizeKm": 21
+      },
+      {
+        "id": "hermite",
+        "name": "Hermite",
+        "latitude": 86.166,
+        "longitude": 266.685,
+        "sizeKm": 21
+      },
+      {
+        "id": "rozhdestvenskiy",
+        "name": "Rozhdestvenskiy",
+        "latitude": 84.994,
+        "longitude": 202.108,
+        "sizeKm": 21
+      }
+    ],
+    "central": [
+      {
+        "id": "statio-tranquillitatis",
+        "name": "Statio Tranquillitatis",
+        "latitude": 0.674,
+        "longitude": 23.473,
+        "sizeKm": 21
+      },
+      {
+        "id": "mons-hadley",
+        "name": "Mons Hadley",
+        "latitude": 26.695,
+        "longitude": 4.118,
+        "sizeKm": 21
+      },
+      {
+        "id": "copernicus",
+        "name": "Copernicus",
+        "latitude": 9.621,
+        "longitude": 339.921,
+        "sizeKm": 21
+      },
+      {
+        "id": "marius",
+        "name": "Marius",
+        "latitude": 11.897,
+        "longitude": 309.165,
+        "sizeKm": 21
+      },
+      {
+        "id": "aristarchus",
+        "name": "Aristarchus",
+        "latitude": 23.73,
+        "longitude": 312.51,
+        "sizeKm": 21
+      },
+      {
+        "id": "mons-pico",
+        "name": "Mons Pico",
+        "latitude": 45.82,
+        "longitude": 351.13,
+        "sizeKm": 21
+      }
+    ]
+  }
+}

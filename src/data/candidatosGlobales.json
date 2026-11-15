@@ -1,0 +1,1418 @@
+{
+ "generatedAt": "2026-11-15",
+ "sources": {
+  "earth": {
+   "name": "ETOPO 2022, 15 segundos de arco (NOAA NCEI)",
+   "url": "https://www.ncei.noaa.gov/products/etopo-global-relief-model",
+   "doi": "10.25921/fd45-gt74"
+  },
+  "moon": {
+   "name": "LRO LOLA, LDEM_64 (PDS)",
+   "url": "https://pds-geosciences.wustl.edu/lro/lro-l-lola-3-rdr-v1/lrolol_1xxx/data/lola_gdr/cylindrical/float_img/"
+  },
+  "rain": {
+   "name": "WorldClim 2.1, 10 minutos de arco (Fick y Hijmans, 2017)",
+   "url": "https://www.worldclim.org/data/worldclim21.html"
+  },
+  "names": {
+   "name": "© colaboradores de OpenStreetMap (Nominatim)",
+   "url": "https://www.openstreetmap.org/copyright"
+  }
+ },
+ "method": "Tierra y Luna a unos 463 m por píxel. Ventanas de 7 × 7 píxeles; cada bloque de 5 × 5 ventanas (unos 16 km) se resume con la mediana. Misma distancia de terreno que la aplicación.",
+ "coverage": {
+  "latMin": -15,
+  "latMax": 45,
+  "tiles": 77,
+  "blocks": 228345,
+  "arid": 67917
+ },
+ "limits": {
+  "aridMm": 250,
+  "separationKm": 150,
+  "awayFromListKm": 60,
+  "top": 5
+ },
+ "regions": {
+  "peak-near-cabeus-b": {
+   "coarse": {
+    "relief": 1139,
+    "slope": 17.5,
+    "roughness": 44.5
+   },
+   "candidates": [
+    {
+     "latitude": 24.527,
+     "longitude": 38.39,
+     "area": "Provincia de Medina",
+     "country": "Arabia Saudita",
+     "relief": 887,
+     "slope": 16.4,
+     "roughness": 98.9,
+     "elevation": 863,
+     "rainMm": 87,
+     "distance": 0.2889
+    },
+    {
+     "latitude": 36.902,
+     "longitude": 73.348,
+     "area": "Provincia de Badajshán",
+     "country": "Afganistán",
+     "relief": 1000,
+     "slope": 20.2,
+     "roughness": 102.7,
+     "elevation": 4229,
+     "rainMm": 174,
+     "distance": 0.3004
+    },
+    {
+     "latitude": 36.027,
+     "longitude": 52.077,
+     "area": "Mazandarán",
+     "country": "Irán",
+     "relief": 843,
+     "slope": 16.2,
+     "roughness": 96.2,
+     "elevation": 3233,
+     "rainMm": 234,
+     "distance": 0.3005
+    },
+    {
+     "latitude": 39.235,
+     "longitude": 74.369,
+     "area": "Sinkiang",
+     "country": "China",
+     "relief": 818,
+     "slope": 19.0,
+     "roughness": 93.0,
+     "elevation": 4628,
+     "rainMm": 200,
+     "distance": 0.3014
+    },
+    {
+     "latitude": -12.473,
+     "longitude": -76.506,
+     "area": "Lima",
+     "country": "Perú",
+     "relief": 855,
+     "slope": 17.3,
+     "roughness": 107.4,
+     "elevation": 1088,
+     "rainMm": 44,
+     "distance": 0.3084
+    }
+   ]
+  },
+  "haworth": {
+   "coarse": {
+    "relief": 465,
+    "slope": 7.5,
+    "roughness": 33.7
+   },
+   "candidates": [
+    {
+     "latitude": 29.777,
+     "longitude": 57.765,
+     "area": "Kermán",
+     "country": "Irán",
+     "relief": 440,
+     "slope": 7.5,
+     "roughness": 39.1,
+     "elevation": 1979,
+     "rainMm": 129,
+     "distance": 0.0266
+    },
+    {
+     "latitude": 31.069,
+     "longitude": 57.181,
+     "area": "Kermán",
+     "country": "Irán",
+     "relief": 408,
+     "slope": 7.2,
+     "roughness": 34.8,
+     "elevation": 1135,
+     "rainMm": 125,
+     "distance": 0.0287
+    },
+    {
+     "latitude": 27.881,
+     "longitude": -15.485,
+     "area": "Canarias",
+     "country": "España",
+     "relief": 447,
+     "slope": 7.9,
+     "roughness": 39.2,
+     "elevation": 463,
+     "rainMm": 207,
+     "distance": 0.0337
+    },
+    {
+     "latitude": 39.673,
+     "longitude": 54.848,
+     "area": "Provincia de Balkan",
+     "country": "Turkmenistán",
+     "relief": 421,
+     "slope": 8.4,
+     "roughness": 32.4,
+     "elevation": 784,
+     "rainMm": 152,
+     "distance": 0.0387
+    },
+    {
+     "latitude": 20.006,
+     "longitude": 18.577,
+     "area": "Tibesti",
+     "country": "Chad",
+     "relief": 411,
+     "slope": 6.7,
+     "roughness": 32.3,
+     "elevation": 2143,
+     "rainMm": 71,
+     "distance": 0.0396
+    }
+   ]
+  },
+  "malapert-massif": {
+   "coarse": {
+    "relief": 1112,
+    "slope": 17.5,
+    "roughness": 32.6
+   },
+   "candidates": [
+    {
+     "latitude": 24.527,
+     "longitude": 38.39,
+     "area": "Provincia de Medina",
+     "country": "Arabia Saudita",
+     "relief": 887,
+     "slope": 16.4,
+     "roughness": 98.9,
+     "elevation": 863,
+     "rainMm": 87,
+     "distance": 0.3195
+    },
+    {
+     "latitude": 36.902,
+     "longitude": 73.348,
+     "area": "Provincia de Badajshán",
+     "country": "Afganistán",
+     "relief": 1000,
+     "slope": 20.2,
+     "roughness": 102.7,
+     "elevation": 4229,
+     "rainMm": 174,
+     "distance": 0.3311
+    },
+    {
+     "latitude": 36.027,
+     "longitude": 52.077,
+     "area": "Mazandarán",
+     "country": "Irán",
+     "relief": 843,
+     "slope": 16.2,
+     "roughness": 96.2,
+     "elevation": 3233,
+     "rainMm": 234,
+     "distance": 0.3311
+    },
+    {
+     "latitude": 39.235,
+     "longitude": 74.369,
+     "area": "Sinkiang",
+     "country": "China",
+     "relief": 818,
+     "slope": 19.0,
+     "roughness": 93.0,
+     "elevation": 4628,
+     "rainMm": 200,
+     "distance": 0.3321
+    },
+    {
+     "latitude": -12.473,
+     "longitude": -76.506,
+     "area": "Lima",
+     "country": "Perú",
+     "relief": 855,
+     "slope": 17.3,
+     "roughness": 107.4,
+     "elevation": 1088,
+     "rainMm": 44,
+     "distance": 0.3391
+    }
+   ]
+  },
+  "mons-mouton-plateau": {
+   "coarse": {
+    "relief": 282,
+    "slope": 6.1,
+    "roughness": 38.7
+   },
+   "candidates": [
+    {
+     "latitude": 31.215,
+     "longitude": 51.931,
+     "area": "Isfahán",
+     "country": "Irán",
+     "relief": 288,
+     "slope": 6.1,
+     "roughness": 38.1,
+     "elevation": 2663,
+     "rainMm": 208,
+     "distance": 0.0045
+    },
+    {
+     "latitude": 35.735,
+     "longitude": 51.64,
+     "area": "Teherán",
+     "country": "Irán",
+     "relief": 288,
+     "slope": 6.2,
+     "roughness": 38.3,
+     "elevation": 1670,
+     "rainMm": 216,
+     "distance": 0.0058
+    },
+    {
+     "latitude": 29.485,
+     "longitude": 86.015,
+     "area": "Xizang",
+     "country": "China",
+     "relief": 273,
+     "slope": 6.0,
+     "roughness": 38.3,
+     "elevation": 5067,
+     "rainMm": 232,
+     "distance": 0.0058
+    },
+    {
+     "latitude": 28.61,
+     "longitude": 54.848,
+     "area": "Fars",
+     "country": "Irán",
+     "relief": 284,
+     "slope": 6.2,
+     "roughness": 37.8,
+     "elevation": 1493,
+     "rainMm": 245,
+     "distance": 0.0066
+    },
+    {
+     "latitude": 26.569,
+     "longitude": 60.369,
+     "area": "Sistán y Baluchistán",
+     "country": "Irán",
+     "relief": 274,
+     "slope": 6.1,
+     "roughness": 39.7,
+     "elevation": 1523,
+     "rainMm": 238,
+     "distance": 0.0069
+    }
+   ]
+  },
+  "mons-mouton": {
+   "coarse": {
+    "relief": 476,
+    "slope": 8.7,
+    "roughness": 41.1
+   },
+   "candidates": [
+    {
+     "latitude": 28.756,
+     "longitude": 58.348,
+     "area": "Kermán",
+     "country": "Irán",
+     "relief": 508,
+     "slope": 8.6,
+     "roughness": 39.0,
+     "elevation": 1720,
+     "rainMm": 149,
+     "distance": 0.0206
+    },
+    {
+     "latitude": 37.485,
+     "longitude": 73.64,
+     "area": "Provincia de Alto Badajshán",
+     "country": "Tayikistán",
+     "relief": 504,
+     "slope": 8.5,
+     "roughness": 37.4,
+     "elevation": 4381,
+     "rainMm": 187,
+     "distance": 0.0252
+    },
+    {
+     "latitude": 27.881,
+     "longitude": 67.223,
+     "area": "Baluchistán",
+     "country": "Pakistán",
+     "relief": 451,
+     "slope": 8.6,
+     "roughness": 46.2,
+     "elevation": 832,
+     "rainMm": 199,
+     "distance": 0.0271
+    },
+    {
+     "latitude": 29.194,
+     "longitude": 53.535,
+     "area": "Fars",
+     "country": "Irán",
+     "relief": 528,
+     "slope": 9.0,
+     "roughness": 38.4,
+     "elevation": 1822,
+     "rainMm": 239,
+     "distance": 0.0335
+    },
+    {
+     "latitude": 27.881,
+     "longitude": -15.485,
+     "area": "Canarias",
+     "country": "España",
+     "relief": 447,
+     "slope": 7.9,
+     "roughness": 39.2,
+     "elevation": 463,
+     "rainMm": 207,
+     "distance": 0.0336
+    }
+   ]
+  },
+  "nobile-rim-1": {
+   "coarse": {
+    "relief": 903,
+    "slope": 16.1,
+    "roughness": 40.9
+   },
+   "candidates": [
+    {
+     "latitude": 36.027,
+     "longitude": 52.077,
+     "area": "Mazandarán",
+     "country": "Irán",
+     "relief": 843,
+     "slope": 16.2,
+     "roughness": 96.2,
+     "elevation": 3233,
+     "rainMm": 234,
+     "distance": 0.206
+    },
+    {
+     "latitude": 24.527,
+     "longitude": 38.39,
+     "area": "Provincia de Medina",
+     "country": "Arabia Saudita",
+     "relief": 887,
+     "slope": 16.4,
+     "roughness": 98.9,
+     "elevation": 863,
+     "rainMm": 87,
+     "distance": 0.206
+    },
+    {
+     "latitude": 39.235,
+     "longitude": 74.223,
+     "area": "Sinkiang",
+     "country": "China",
+     "relief": 681,
+     "slope": 14.4,
+     "roughness": 72.1,
+     "elevation": 4446,
+     "rainMm": 205,
+     "distance": 0.2159
+    },
+    {
+     "latitude": 37.194,
+     "longitude": 72.91,
+     "area": "Provincia de Badajshán",
+     "country": "Afganistán",
+     "relief": 789,
+     "slope": 16.0,
+     "roughness": 93.4,
+     "elevation": 4293,
+     "rainMm": 247,
+     "distance": 0.2162
+    },
+    {
+     "latitude": 23.069,
+     "longitude": 57.035,
+     "area": "Gobernación de Ad Dajilía",
+     "country": "Omán",
+     "relief": 788,
+     "slope": 12.8,
+     "roughness": 74.0,
+     "elevation": 1209,
+     "rainMm": 191,
+     "distance": 0.221
+    }
+   ]
+  },
+  "nobile-rim-2": {
+   "coarse": {
+    "relief": 491,
+    "slope": 10.4,
+    "roughness": 45.6
+   },
+   "candidates": [
+    {
+     "latitude": 29.34,
+     "longitude": 52.806,
+     "area": "Fars",
+     "country": "Irán",
+     "relief": 503,
+     "slope": 9.9,
+     "roughness": 43.9,
+     "elevation": 1756,
+     "rainMm": 204,
+     "distance": 0.0209
+    },
+    {
+     "latitude": 37.631,
+     "longitude": 66.494,
+     "area": "Provincia de Lebap",
+     "country": "Turkmenistán",
+     "relief": 502,
+     "slope": 9.9,
+     "roughness": 42.9,
+     "elevation": 1333,
+     "rainMm": 222,
+     "distance": 0.0245
+    },
+    {
+     "latitude": 28.902,
+     "longitude": 57.91,
+     "area": "Kermán",
+     "country": "Irán",
+     "relief": 458,
+     "slope": 9.6,
+     "roughness": 45.2,
+     "elevation": 2163,
+     "rainMm": 149,
+     "distance": 0.0299
+    },
+    {
+     "latitude": 38.506,
+     "longitude": 57.035,
+     "area": "Provincia de Ahal",
+     "country": "Turkmenistán",
+     "relief": 512,
+     "slope": 10.4,
+     "roughness": 56.0,
+     "elevation": 1027,
+     "rainMm": 230,
+     "distance": 0.0423
+    },
+    {
+     "latitude": 30.777,
+     "longitude": 56.744,
+     "area": "Kermán",
+     "country": "Irán",
+     "relief": 501,
+     "slope": 9.1,
+     "roughness": 49.4,
+     "elevation": 2283,
+     "rainMm": 118,
+     "distance": 0.0439
+    }
+   ]
+  },
+  "de-gerlache-rim-2": {
+   "coarse": {
+    "relief": 692,
+    "slope": 11.3,
+    "roughness": 40.2
+   },
+   "candidates": [
+    {
+     "latitude": 10.84,
+     "longitude": 47.41,
+     "area": "Sanaag",
+     "country": "Somalilandia",
+     "relief": 646,
+     "slope": 11.6,
+     "roughness": 56.8,
+     "elevation": 1691,
+     "rainMm": 122,
+     "distance": 0.0771
+    },
+    {
+     "latitude": 36.756,
+     "longitude": 55.14,
+     "area": "Semnan",
+     "country": "Irán",
+     "relief": 564,
+     "slope": 10.7,
+     "roughness": 52.1,
+     "elevation": 1772,
+     "rainMm": 216,
+     "distance": 0.0947
+    },
+    {
+     "latitude": 37.631,
+     "longitude": 66.494,
+     "area": "Provincia de Lebap",
+     "country": "Turkmenistán",
+     "relief": 502,
+     "slope": 9.9,
+     "roughness": 42.9,
+     "elevation": 1333,
+     "rainMm": 222,
+     "distance": 0.1043
+    },
+    {
+     "latitude": 29.34,
+     "longitude": 52.806,
+     "area": "Fars",
+     "country": "Irán",
+     "relief": 503,
+     "slope": 9.9,
+     "roughness": 43.9,
+     "elevation": 1756,
+     "rainMm": 204,
+     "distance": 0.1067
+    },
+    {
+     "latitude": 37.34,
+     "longitude": 74.515,
+     "area": "Provincia de Badajshán",
+     "country": "Afganistán",
+     "relief": 660,
+     "slope": 10.5,
+     "roughness": 63.9,
+     "elevation": 4276,
+     "rainMm": 121,
+     "distance": 0.1075
+    }
+   ]
+  },
+  "slater-plain": {
+   "coarse": {
+    "relief": 414,
+    "slope": 7.0,
+    "roughness": 36.1
+   },
+   "candidates": [
+    {
+     "latitude": 31.069,
+     "longitude": 57.181,
+     "area": "Kermán",
+     "country": "Irán",
+     "relief": 408,
+     "slope": 7.2,
+     "roughness": 34.8,
+     "elevation": 1135,
+     "rainMm": 125,
+     "distance": 0.0114
+    },
+    {
+     "latitude": 20.006,
+     "longitude": 18.577,
+     "area": "Tibesti",
+     "country": "Chad",
+     "relief": 411,
+     "slope": 6.7,
+     "roughness": 32.3,
+     "elevation": 2143,
+     "rainMm": 71,
+     "distance": 0.0195
+    },
+    {
+     "latitude": 13.465,
+     "longitude": 45.952,
+     "area": "Gobernación de Abyan",
+     "country": "Yemen",
+     "relief": 427,
+     "slope": 6.4,
+     "roughness": 37.3,
+     "elevation": 593,
+     "rainMm": 91,
+     "distance": 0.0216
+    },
+    {
+     "latitude": 33.11,
+     "longitude": 64.015,
+     "area": "Provincia de Farāh",
+     "country": "Afganistán",
+     "relief": 338,
+     "slope": 6.9,
+     "roughness": 36.1,
+     "elevation": 1945,
+     "rainMm": 243,
+     "distance": 0.0274
+    },
+    {
+     "latitude": 33.548,
+     "longitude": 50.181,
+     "area": "Markazi",
+     "country": "Irán",
+     "relief": 408,
+     "slope": 7.0,
+     "roughness": 43.8,
+     "elevation": 2125,
+     "rainMm": 197,
+     "distance": 0.0276
+    }
+   ]
+  },
+  "peary": {
+   "coarse": {
+    "relief": 68,
+    "slope": 1.5,
+    "roughness": 11.6
+   },
+   "candidates": [
+    {
+     "latitude": 23.798,
+     "longitude": 5.619,
+     "area": "Tamanrasset",
+     "country": "Argelia",
+     "relief": 69,
+     "slope": 1.5,
+     "roughness": 11.6,
+     "elevation": 1349,
+     "rainMm": 41,
+     "distance": 0.0003
+    },
+    {
+     "latitude": 24.235,
+     "longitude": 22.66,
+     "area": "Al Kufrah",
+     "country": "Libia",
+     "relief": 69,
+     "slope": 1.5,
+     "roughness": 11.6,
+     "elevation": 538,
+     "rainMm": 2,
+     "distance": 0.001
+    },
+    {
+     "latitude": 27.59,
+     "longitude": 6.785,
+     "area": "Provincia de Illizi",
+     "country": "Argelia",
+     "relief": 69,
+     "slope": 1.5,
+     "roughness": 11.7,
+     "elevation": 435,
+     "rainMm": 22,
+     "distance": 0.001
+    },
+    {
+     "latitude": 24.965,
+     "longitude": 46.098,
+     "area": "Provincia de Riad",
+     "country": "Arabia Saudita",
+     "relief": 67,
+     "slope": 1.5,
+     "roughness": 11.5,
+     "elevation": 865,
+     "rainMm": 149,
+     "distance": 0.0011
+    },
+    {
+     "latitude": 29.048,
+     "longitude": 36.64,
+     "area": "Provincia de Tabuk",
+     "country": "Arabia Saudita",
+     "relief": 68,
+     "slope": 1.5,
+     "roughness": 11.7,
+     "elevation": 871,
+     "rainMm": 29,
+     "distance": 0.0011
+    }
+   ]
+  },
+  "whipple": {
+   "coarse": {
+    "relief": 1067,
+    "slope": 19.0,
+    "roughness": 81.0
+   },
+   "candidates": [
+    {
+     "latitude": 36.902,
+     "longitude": 73.348,
+     "area": "Provincia de Badajshán",
+     "country": "Afganistán",
+     "relief": 1000,
+     "slope": 20.2,
+     "roughness": 102.7,
+     "elevation": 4229,
+     "rainMm": 174,
+     "distance": 0.1214
+    },
+    {
+     "latitude": 39.235,
+     "longitude": 74.369,
+     "area": "Sinkiang",
+     "country": "China",
+     "relief": 818,
+     "slope": 19.0,
+     "roughness": 93.0,
+     "elevation": 4628,
+     "rainMm": 200,
+     "distance": 0.1236
+    },
+    {
+     "latitude": 24.527,
+     "longitude": 38.244,
+     "area": "Provincia de Medina",
+     "country": "Arabia Saudita",
+     "relief": 875,
+     "slope": 19.0,
+     "roughness": 109.7,
+     "elevation": 1162,
+     "rainMm": 97,
+     "distance": 0.1599
+    },
+    {
+     "latitude": 35.881,
+     "longitude": 52.223,
+     "area": "Mazandarán",
+     "country": "Irán",
+     "relief": 861,
+     "slope": 18.0,
+     "roughness": 106.7,
+     "elevation": 2449,
+     "rainMm": 219,
+     "distance": 0.1768
+    },
+    {
+     "latitude": -12.473,
+     "longitude": -76.506,
+     "area": "Lima",
+     "country": "Perú",
+     "relief": 855,
+     "slope": 17.3,
+     "roughness": 107.4,
+     "elevation": 1088,
+     "rainMm": 44,
+     "distance": 0.1961
+    }
+   ]
+  },
+  "byrd": {
+   "coarse": {
+    "relief": 76,
+    "slope": 1.4,
+    "roughness": 12.4
+   },
+   "candidates": [
+    {
+     "latitude": 15.194,
+     "longitude": 45.369,
+     "area": "Gobernación de Mareb",
+     "country": "Yemen",
+     "relief": 75,
+     "slope": 1.4,
+     "roughness": 12.4,
+     "elevation": 1195,
+     "rainMm": 120,
+     "distance": 0.0006
+    },
+    {
+     "latitude": 25.694,
+     "longitude": 60.806,
+     "area": "Sistán y Baluchistán",
+     "country": "Irán",
+     "relief": 78,
+     "slope": 1.4,
+     "roughness": 12.5,
+     "elevation": 82,
+     "rainMm": 220,
+     "distance": 0.0017
+    },
+    {
+     "latitude": 23.944,
+     "longitude": 6.056,
+     "area": "Tamanrasset",
+     "country": "Argelia",
+     "relief": 74,
+     "slope": 1.4,
+     "roughness": 12.6,
+     "elevation": 1236,
+     "rainMm": 37,
+     "distance": 0.0017
+    },
+    {
+     "latitude": 26.277,
+     "longitude": 9.556,
+     "area": "Ghat",
+     "country": "Libia",
+     "relief": 73,
+     "slope": 1.4,
+     "roughness": 12.7,
+     "elevation": 656,
+     "rainMm": 20,
+     "distance": 0.0019
+    },
+    {
+     "latitude": 29.194,
+     "longitude": 5.473,
+     "area": "In Salah",
+     "country": "Argelia",
+     "relief": 76,
+     "slope": 1.4,
+     "roughness": 12.1,
+     "elevation": 301,
+     "rainMm": 25,
+     "distance": 0.002
+    }
+   ]
+  },
+  "hermite": {
+   "coarse": {
+    "relief": 145,
+    "slope": 3.0,
+    "roughness": 31.4
+   },
+   "candidates": [
+    {
+     "latitude": 23.944,
+     "longitude": 46.39,
+     "area": "Provincia de Riad",
+     "country": "Arabia Saudita",
+     "relief": 141,
+     "slope": 3.1,
+     "roughness": 31.1,
+     "elevation": 1095,
+     "rainMm": 140,
+     "distance": 0.0036
+    },
+    {
+     "latitude": 27.298,
+     "longitude": 36.056,
+     "area": "Provincia de Tabuk",
+     "country": "Arabia Saudita",
+     "relief": 145,
+     "slope": 3.2,
+     "roughness": 32.1,
+     "elevation": 216,
+     "rainMm": 19,
+     "distance": 0.0064
+    },
+    {
+     "latitude": 24.673,
+     "longitude": 2.556,
+     "area": "Tamanrasset",
+     "country": "Argelia",
+     "relief": 140,
+     "slope": 3.1,
+     "roughness": 30.5,
+     "elevation": 532,
+     "rainMm": 18,
+     "distance": 0.007
+    },
+    {
+     "latitude": 18.985,
+     "longitude": 36.348,
+     "area": "Mar Rojo",
+     "country": "Sudán",
+     "relief": 148,
+     "slope": 2.9,
+     "roughness": 30.5,
+     "elevation": 896,
+     "rainMm": 75,
+     "distance": 0.0071
+    },
+    {
+     "latitude": 23.069,
+     "longitude": 26.16,
+     "area": "Nuevo Valle",
+     "country": "Egipto",
+     "relief": 149,
+     "slope": 3.3,
+     "roughness": 31.4,
+     "elevation": 836,
+     "rainMm": 8,
+     "distance": 0.0079
+    }
+   ]
+  },
+  "rozhdestvenskiy": {
+   "coarse": {
+    "relief": 210,
+    "slope": 3.9,
+    "roughness": 31.7
+   },
+   "candidates": [
+    {
+     "latitude": 10.256,
+     "longitude": 46.827,
+     "area": "Sanaag",
+     "country": "Somalilandia",
+     "relief": 211,
+     "slope": 4.0,
+     "roughness": 31.4,
+     "elevation": 572,
+     "rainMm": 93,
+     "distance": 0.0035
+    },
+    {
+     "latitude": 20.735,
+     "longitude": 18.431,
+     "area": "Tibesti",
+     "country": "Chad",
+     "relief": 206,
+     "slope": 4.0,
+     "roughness": 32.2,
+     "elevation": 1866,
+     "rainMm": 56,
+     "distance": 0.0044
+    },
+    {
+     "latitude": 26.569,
+     "longitude": 58.931,
+     "area": "Kermán",
+     "country": "Irán",
+     "relief": 207,
+     "slope": 3.9,
+     "roughness": 30.9,
+     "elevation": 900,
+     "rainMm": 229,
+     "distance": 0.0047
+    },
+    {
+     "latitude": 22.194,
+     "longitude": 17.41,
+     "area": "Tibesti",
+     "country": "Chad",
+     "relief": 200,
+     "slope": 4.0,
+     "roughness": 31.6,
+     "elevation": 923,
+     "rainMm": 11,
+     "distance": 0.0049
+    },
+    {
+     "latitude": 28.756,
+     "longitude": 34.16,
+     "area": "Sinaí del Sur",
+     "country": "Egipto",
+     "relief": 202,
+     "slope": 3.9,
+     "roughness": 31.3,
+     "elevation": 1109,
+     "rainMm": 26,
+     "distance": 0.0049
+    }
+   ]
+  },
+  "statio-tranquillitatis": {
+   "coarse": {
+    "relief": 49,
+    "slope": 0.7,
+    "roughness": 2.4
+   },
+   "candidates": [
+    {
+     "latitude": 10.11,
+     "longitude": 45.952,
+     "area": "Sáhil",
+     "country": "Somalilandia",
+     "relief": 46,
+     "slope": 0.7,
+     "roughness": 2.6,
+     "elevation": 570,
+     "rainMm": 127,
+     "distance": 0.0017
+    },
+    {
+     "latitude": 28.756,
+     "longitude": -111.173,
+     "area": "Sonora",
+     "country": "México",
+     "relief": 48,
+     "slope": 0.7,
+     "roughness": 2.7,
+     "elevation": 124,
+     "rainMm": 211,
+     "distance": 0.0018
+    },
+    {
+     "latitude": 10.548,
+     "longitude": 43.494,
+     "area": "Awdal",
+     "country": "Somalilandia",
+     "relief": 48,
+     "slope": 0.7,
+     "roughness": 2.7,
+     "elevation": 274,
+     "rainMm": 164,
+     "distance": 0.0019
+    },
+    {
+     "latitude": 30.631,
+     "longitude": 56.015,
+     "area": "Kermán",
+     "country": "Irán",
+     "relief": 47,
+     "slope": 0.7,
+     "roughness": 2.6,
+     "elevation": 1500,
+     "rainMm": 127,
+     "distance": 0.002
+    },
+    {
+     "latitude": 30.777,
+     "longitude": 58.64,
+     "area": "Kermán",
+     "country": "Irán",
+     "relief": 45,
+     "slope": 0.7,
+     "roughness": 2.2,
+     "elevation": 464,
+     "rainMm": 132,
+     "distance": 0.0023
+    }
+   ]
+  },
+  "mons-hadley": {
+   "coarse": {
+    "relief": 1393,
+    "slope": 20.4,
+    "roughness": 79.0
+   },
+   "candidates": [
+    {
+     "latitude": 36.902,
+     "longitude": 73.348,
+     "area": "Provincia de Badajshán",
+     "country": "Afganistán",
+     "relief": 1000,
+     "slope": 20.2,
+     "roughness": 102.7,
+     "elevation": 4229,
+     "rainMm": 174,
+     "distance": 0.2142
+    },
+    {
+     "latitude": 39.235,
+     "longitude": 74.369,
+     "area": "Sinkiang",
+     "country": "China",
+     "relief": 818,
+     "slope": 19.0,
+     "roughness": 93.0,
+     "elevation": 4628,
+     "rainMm": 200,
+     "distance": 0.27
+    },
+    {
+     "latitude": 24.527,
+     "longitude": 38.244,
+     "area": "Provincia de Medina",
+     "country": "Arabia Saudita",
+     "relief": 875,
+     "slope": 19.0,
+     "roughness": 109.7,
+     "elevation": 1162,
+     "rainMm": 97,
+     "distance": 0.3056
+    },
+    {
+     "latitude": 35.881,
+     "longitude": 52.223,
+     "area": "Mazandarán",
+     "country": "Irán",
+     "relief": 861,
+     "slope": 18.0,
+     "roughness": 106.7,
+     "elevation": 2449,
+     "rainMm": 219,
+     "distance": 0.3233
+    },
+    {
+     "latitude": -12.035,
+     "longitude": -76.506,
+     "area": "Lima",
+     "country": "Perú",
+     "relief": 1016,
+     "slope": 19.9,
+     "roughness": 139.9,
+     "elevation": 2427,
+     "rainMm": 201,
+     "distance": 0.3399
+    }
+   ]
+  },
+  "copernicus": {
+   "coarse": {
+    "relief": 268,
+    "slope": 6.4,
+    "roughness": 51.8
+   },
+   "candidates": [
+    {
+     "latitude": 10.84,
+     "longitude": 50.035,
+     "area": "Bari",
+     "country": "Somalia",
+     "relief": 275,
+     "slope": 6.4,
+     "roughness": 51.7,
+     "elevation": 1233,
+     "rainMm": 94,
+     "distance": 0.003
+    },
+    {
+     "latitude": 26.86,
+     "longitude": 67.223,
+     "area": "Sind",
+     "country": "Pakistán",
+     "relief": 269,
+     "slope": 6.4,
+     "roughness": 53.0,
+     "elevation": 346,
+     "rainMm": 187,
+     "distance": 0.0048
+    },
+    {
+     "latitude": 28.173,
+     "longitude": 34.306,
+     "area": "Sinaí del Sur",
+     "country": "Egipto",
+     "relief": 287,
+     "slope": 6.4,
+     "roughness": 51.8,
+     "elevation": 308,
+     "rainMm": 8,
+     "distance": 0.0069
+    },
+    {
+     "latitude": 24.673,
+     "longitude": 10.285,
+     "area": "Ghat",
+     "country": "Libia",
+     "relief": 267,
+     "slope": 6.3,
+     "roughness": 50.5,
+     "elevation": 963,
+     "rainMm": 19,
+     "distance": 0.007
+    },
+    {
+     "latitude": 29.048,
+     "longitude": -9.527,
+     "area": "Egleimín-Ued Nun",
+     "country": "Marruecos",
+     "relief": 278,
+     "slope": 6.2,
+     "roughness": 52.1,
+     "elevation": 657,
+     "rainMm": 135,
+     "distance": 0.0085
+    }
+   ]
+  },
+  "marius": {
+   "coarse": {
+    "relief": 13,
+    "slope": 0.3,
+    "roughness": 1.7
+   },
+   "candidates": [
+    {
+     "latitude": 22.194,
+     "longitude": 9.556,
+     "area": "Tamanrasset",
+     "country": "Argelia",
+     "relief": 13,
+     "slope": 0.3,
+     "roughness": 1.7,
+     "elevation": 643,
+     "rainMm": 11,
+     "distance": 0.0002
+    },
+    {
+     "latitude": 30.923,
+     "longitude": 68.973,
+     "area": "Baluchistán",
+     "country": "Pakistán",
+     "relief": 13,
+     "slope": 0.3,
+     "roughness": 1.7,
+     "elevation": 1478,
+     "rainMm": 232,
+     "distance": 0.0003
+    },
+    {
+     "latitude": 42.881,
+     "longitude": 53.827,
+     "area": "Provincia de Mangystau",
+     "country": "Kazajistán",
+     "relief": 13,
+     "slope": 0.3,
+     "roughness": 1.6,
+     "elevation": 205,
+     "rainMm": 122,
+     "distance": 0.0003
+    },
+    {
+     "latitude": 3.11,
+     "longitude": 36.056,
+     "area": "Condado de Turkana",
+     "country": "Kenia",
+     "relief": 13,
+     "slope": 0.3,
+     "roughness": 1.8,
+     "elevation": 391,
+     "rainMm": 197,
+     "distance": 0.0004
+    },
+    {
+     "latitude": 44.631,
+     "longitude": 67.952,
+     "area": "Provincia de Turquestán",
+     "country": "Kazajistán",
+     "relief": 14,
+     "slope": 0.3,
+     "roughness": 1.6,
+     "elevation": 135,
+     "rainMm": 140,
+     "distance": 0.0004
+    }
+   ]
+  },
+  "aristarchus": {
+   "coarse": {
+    "relief": 160,
+    "slope": 2.8,
+    "roughness": 16.9
+   },
+   "candidates": [
+    {
+     "latitude": 27.006,
+     "longitude": 60.806,
+     "area": "Sistán y Baluchistán",
+     "country": "Irán",
+     "relief": 156,
+     "slope": 2.8,
+     "roughness": 16.6,
+     "elevation": 845,
+     "rainMm": 135,
+     "distance": 0.0024
+    },
+    {
+     "latitude": 2.673,
+     "longitude": 36.785,
+     "area": "Condado de Marsabit",
+     "country": "Kenia",
+     "relief": 161,
+     "slope": 2.8,
+     "roughness": 17.5,
+     "elevation": 675,
+     "rainMm": 214,
+     "distance": 0.0026
+    },
+    {
+     "latitude": 24.381,
+     "longitude": 32.556,
+     "area": "Asuán",
+     "country": "Egipto",
+     "relief": 154,
+     "slope": 2.8,
+     "roughness": 17.1,
+     "elevation": 239,
+     "rainMm": 0,
+     "distance": 0.0029
+    },
+    {
+     "latitude": 30.485,
+     "longitude": 54.848,
+     "area": "Kermán",
+     "country": "Irán",
+     "relief": 159,
+     "slope": 2.8,
+     "roughness": 17.7,
+     "elevation": 2439,
+     "rainMm": 152,
+     "distance": 0.0033
+    },
+    {
+     "latitude": 29.923,
+     "longitude": 60.077,
+     "area": "Sistán y Baluchistán",
+     "country": "Irán",
+     "relief": 164,
+     "slope": 2.8,
+     "roughness": 16.3,
+     "elevation": 1391,
+     "rainMm": 105,
+     "distance": 0.004
+    }
+   ]
+  },
+  "mons-pico": {
+   "coarse": {
+    "relief": 1185,
+    "slope": 18.8,
+    "roughness": 67.2
+   },
+   "candidates": [
+    {
+     "latitude": 36.902,
+     "longitude": 73.348,
+     "area": "Provincia de Badajshán",
+     "country": "Afganistán",
+     "relief": 1000,
+     "slope": 20.2,
+     "roughness": 102.7,
+     "elevation": 4229,
+     "rainMm": 174,
+     "distance": 0.2112
+    },
+    {
+     "latitude": 39.235,
+     "longitude": 74.369,
+     "area": "Sinkiang",
+     "country": "China",
+     "relief": 818,
+     "slope": 19.0,
+     "roughness": 93.0,
+     "elevation": 4628,
+     "rainMm": 200,
+     "distance": 0.2122
+    },
+    {
+     "latitude": 24.527,
+     "longitude": 38.244,
+     "area": "Provincia de Medina",
+     "country": "Arabia Saudita",
+     "relief": 875,
+     "slope": 19.0,
+     "roughness": 109.7,
+     "elevation": 1162,
+     "rainMm": 97,
+     "distance": 0.2497
+    },
+    {
+     "latitude": 35.881,
+     "longitude": 52.223,
+     "area": "Mazandarán",
+     "country": "Irán",
+     "relief": 861,
+     "slope": 18.0,
+     "roughness": 106.7,
+     "elevation": 2449,
+     "rainMm": 219,
+     "distance": 0.2577
+    },
+    {
+     "latitude": -12.473,
+     "longitude": -76.506,
+     "area": "Lima",
+     "country": "Perú",
+     "relief": 855,
+     "slope": 17.3,
+     "roughness": 107.4,
+     "elevation": 1088,
+     "rainMm": 44,
+     "distance": 0.2769
+    }
+   ]
+  }
+ }
+}

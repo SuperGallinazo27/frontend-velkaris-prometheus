@@ -1,0 +1,130 @@
+/* Tema claro de las pantallas de cuentas: ingreso, registro y administración.
+   Paleta aeroespacial: azul marino #0B1F3A, azul tecnológico #0077B6, blanco, gris claro #E8EDF2
+   y verde #16A085. Usa los mismos componentes del tema nocturno (nocturno.css) y solo cambia sus
+   colores; la portada y el mundo interactivo siguen en el tema nocturno, que es el espacio.
+   Contraste comprobado sobre blanco: texto 2 8,2:1 · texto 3 5,8:1 · azul 4,9:1 · verde texto 5,3:1. */
+
+html.modo-claro {
+  background: #e8edf2;
+  color-scheme: light;
+}
+
+.nocturno.claro {
+  --nc-bg: #e8edf2;
+  --nc-superficie: #ffffff;
+  --nc-superficie-solida: #ffffff;
+  --nc-texto: #0b1f3a;
+  --nc-texto-2: #3d5068;
+  --nc-texto-3: #56677b;
+  --nc-acento: #0077b6;
+  /* En el tema claro, el "acento claro" es el tono que se lee sobre blanco y el del botón al pasar. */
+  --nc-acento-claro: #005f92;
+  --nc-sobre-acento: #ffffff;
+  --nc-tierra: #117a65;
+  --nc-error: #c0392b;
+  --nc-linea: #d5dee8;
+  --nc-linea-fuerte: #8593a5;
+  --nc-velo: 255, 255, 255;
+  --nc-realce: rgba(11, 31, 58, 0.06);
+  --nc-pendiente: #8a5a00;
+  --nc-pendiente-punto: #e0a100;
+  --nc-activo-punto: #16a085;
+  --nc-sombra: 0 1px 2px rgba(11, 31, 58, 0.06), 0 12px 32px rgba(11, 31, 58, 0.08);
+  color-scheme: light;
+}
+
+/* Fondo de página: gris claro con un velo azul arriba. */
+.nocturno.claro.acceso,
+.nocturno.claro.registro,
+.nocturno.claro.admin {
+  background:
+    radial-gradient(1100px 520px at 100% -8%, rgba(0, 119, 182, 0.1), transparent 70%),
+    linear-gradient(180deg, #f6f9fc 0, var(--nc-bg) 460px);
+}
+
+.claro .nc-tarjeta {
+  border-color: var(--nc-linea);
+  background: var(--nc-superficie);
+  box-shadow: var(--nc-sombra);
+  backdrop-filter: none;
+}
+
+.claro :is(button, a, input, select):focus-visible {
+  outline-color: var(--nc-acento);
+}
+
+.claro .brand-symbol {
+  color: var(--nc-acento);
+}
+.claro .brand small {
+  color: var(--nc-texto-3);
+}
+
+/* ---------- Barra superior: azul marino ---------- */
+.claro .nc-barra {
+  --nc-texto: #ffffff;
+  --nc-texto-2: #c5d3e3;
+  --nc-texto-3: #9fb2c8;
+  --nc-acento: #5cb8ec;
+  --nc-acento-claro: #8fd0f5;
+  --nc-tierra: #4fd1b0;
+  --nc-linea-fuerte: rgba(255, 255, 255, 0.4);
+  --nc-velo: 11, 31, 58;
+  --nc-realce: rgba(255, 255, 255, 0.12);
+  border-bottom: 0;
+  background: #0b1f3a;
+  box-shadow: 0 1px 0 rgba(11, 31, 58, 0.4);
+  backdrop-filter: none;
+}
+.claro .nc-barra .brand-symbol {
+  color: var(--nc-acento);
+}
+
+/* ---------- Campos ---------- */
+.claro .nc-campo input,
+.claro .nc-campo select {
+  background: #ffffff;
+}
+/* El desplegable no toma el alto de línea del texto: se iguala al de los campos vecinos. */
+.claro .nc-campo select {
+  min-height: calc(1.65em + 24px);
+}
+.claro .nc-campo input:hover,
+.claro .nc-campo select:hover {
+  border-color: var(--nc-texto-2);
+}
+.claro .nc-campo select:invalid {
+  color: var(--nc-texto-3);
+}
+.claro .nc-campo select option {
+  color: var(--nc-texto);
+}
+
+/* ---------- Avisos e insignias ---------- */
+.claro .nc-aviso {
+  background: #f4f7fa;
+}
+.claro .nc-aviso.ok {
+  background: #eaf6f2;
+}
+.claro .nc-aviso.error {
+  background: #fbeeec;
+}
+.claro main .nc-insignia.acento {
+  background: #e6f2f9;
+}
+.claro main .nc-insignia.tierra {
+  background: #e8f5f1;
+}
+
+/* ---------- Tabla de usuarios ---------- */
+.claro .admin-tabla thead th {
+  background: #f1f5f9;
+  color: var(--nc-texto-2);
+}
+.claro .admin-tabla tbody tr:nth-child(even) > * {
+  background: #f8fafc;
+}
+.claro .admin-tabla tbody tr:hover > * {
+  background: #eef4f9;
+}

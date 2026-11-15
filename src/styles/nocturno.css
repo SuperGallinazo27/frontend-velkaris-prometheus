@@ -1,0 +1,281 @@
+/* Tema nocturno compartido por la portada, el ingreso, el panel del administrador y el mundo
+   interactivo: versión oscura de la paleta del explorador (verde bosque profundo y terracota). */
+
+html.modo-nocturno {
+  background: #070f0d;
+  color-scheme: dark;
+}
+
+.nocturno {
+  --nc-bg: #070f0d;
+  --nc-superficie: rgba(13, 27, 24, 0.78);
+  --nc-superficie-solida: #0e1c19;
+  --nc-texto: #eef0e6;
+  --nc-texto-2: #b9c8be;
+  --nc-texto-3: #8c9f94;
+  --nc-acento: #ec9b72;
+  --nc-acento-claro: #f6b592;
+  --nc-sobre-acento: #1b0f09;
+  --nc-tierra: #7fd6c4;
+  --nc-error: #ff9d8a;
+  --nc-linea: rgba(220, 230, 223, 0.16);
+  --nc-linea-fuerte: rgba(220, 230, 223, 0.34);
+  --nc-velo: 7, 15, 13;
+  --nc-serif: Georgia, "Times New Roman", serif;
+  --nc-mono: ui-monospace, "Cascadia Mono", "SF Mono", Menlo, Consolas, monospace;
+  --nc-margen: clamp(16px, 4vw, 44px);
+  background: var(--nc-bg);
+  color: var(--nc-texto);
+  font-size: 15px;
+  line-height: 1.65;
+}
+
+.pantalla-carga {
+  display: grid;
+  place-items: center;
+  min-height: 100vh;
+  color: var(--nc-texto-2);
+}
+
+/* ---------- Botones ---------- */
+.nc-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  padding: 13px 20px;
+  border: 1px solid transparent;
+  border-radius: 6px;
+  font-size: 14px;
+  font-weight: 600;
+  white-space: nowrap;
+}
+.nc-btn.compacto {
+  padding: 9px 14px;
+  font-size: 13px;
+}
+.nc-btn.primario {
+  background: var(--nc-acento);
+  color: var(--nc-sobre-acento);
+}
+.nc-btn.primario:hover {
+  background: var(--nc-acento-claro);
+}
+.nc-btn.secundario {
+  border-color: var(--nc-linea-fuerte);
+  background: rgba(var(--nc-velo), 0.45);
+  color: var(--nc-texto);
+}
+.nc-btn.secundario:hover {
+  background: var(--nc-realce, rgba(220, 230, 223, 0.1));
+}
+.nc-btn:disabled {
+  opacity: 0.55;
+}
+
+/* ---------- Texto ---------- */
+.nc-eyebrow {
+  display: block;
+  color: var(--nc-acento);
+  font-family: var(--nc-mono);
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+}
+.nc-titulo {
+  font-family: var(--nc-serif);
+  font-size: clamp(28px, 3vw, 38px);
+  font-weight: 400;
+  line-height: 1.12;
+  letter-spacing: -0.015em;
+  text-wrap: balance;
+}
+.nc-texto-2 {
+  color: var(--nc-texto-2);
+}
+.nc-nota {
+  color: var(--nc-texto-3);
+  font-size: 12.5px;
+  line-height: 1.6;
+}
+
+/* ---------- Superficies ---------- */
+.nc-tarjeta {
+  border: 1px solid var(--nc-linea);
+  border-radius: 10px;
+  background: var(--nc-superficie);
+  backdrop-filter: blur(12px);
+}
+
+/* ---------- Campos de formulario ---------- */
+.nc-campo {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  min-width: 0;
+}
+.nc-campo > span {
+  color: var(--nc-texto-2);
+  font-size: 12.5px;
+  font-weight: 600;
+}
+.nc-campo > span small {
+  color: var(--nc-texto-3);
+  font-weight: 400;
+}
+.nc-campo input,
+.nc-campo select {
+  width: 100%;
+  padding: 11px 12px;
+  border: 1px solid var(--nc-linea-fuerte);
+  border-radius: 6px;
+  background: rgba(var(--nc-velo), 0.6);
+  color: var(--nc-texto);
+  font-size: 15px;
+}
+.nc-campo input::placeholder {
+  color: var(--nc-texto-3);
+}
+.nc-campo input:hover,
+.nc-campo select:hover {
+  border-color: var(--nc-texto-2);
+}
+
+/* ---------- Avisos ---------- */
+.nc-aviso {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  padding: 11px 13px;
+  border: 1px solid var(--nc-linea);
+  border-radius: 6px;
+  background: rgba(var(--nc-velo), 0.5);
+  color: var(--nc-texto-2);
+  font-size: 13px;
+  line-height: 1.55;
+}
+.nc-aviso.error {
+  border-color: var(--nc-error);
+  color: var(--nc-error);
+}
+.nc-aviso.ok {
+  border-color: var(--nc-tierra);
+  color: var(--nc-texto);
+}
+.nc-aviso b {
+  flex-shrink: 0;
+  margin-top: 1px;
+  padding: 1px 6px;
+  border: 1px solid var(--nc-acento);
+  border-radius: 3px;
+  color: var(--nc-acento);
+  font-family: var(--nc-mono);
+  font-size: 10px;
+  letter-spacing: 0.12em;
+}
+
+.nc-insignia {
+  display: inline-block;
+  padding: 2px 8px;
+  border: 1px solid var(--nc-linea-fuerte);
+  border-radius: 999px;
+  color: var(--nc-texto-2);
+  font-family: var(--nc-mono);
+  font-size: 10.5px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  white-space: nowrap;
+}
+.nc-insignia.acento {
+  border-color: var(--nc-acento);
+  color: var(--nc-acento-claro);
+}
+.nc-insignia.tierra {
+  border-color: var(--nc-tierra);
+  color: var(--nc-tierra);
+}
+
+/* ---------- Barra de la cuenta ---------- */
+.nc-barra {
+  position: relative;
+  z-index: 8;
+  display: flex;
+  align-items: center;
+  gap: 18px;
+  height: 64px;
+  padding: 0 var(--nc-margen);
+  border-bottom: 1px solid var(--nc-linea);
+  background: rgba(var(--nc-velo), 0.8);
+  backdrop-filter: blur(12px);
+}
+.nc-barra .brand {
+  padding: 0;
+  color: var(--nc-texto);
+}
+.nc-barra .brand-symbol {
+  font-size: 34px;
+}
+.nc-barra .brand-symbol > span {
+  font-size: 20px;
+  top: -8px;
+  right: -7px;
+}
+.nc-barra nav {
+  display: flex;
+  gap: 4px;
+  margin-left: 8px;
+}
+.nc-barra nav a {
+  padding: 7px 12px;
+  border-radius: 6px;
+  color: var(--nc-texto-2);
+  font-size: 13px;
+}
+.nc-barra nav a:hover {
+  color: var(--nc-texto);
+}
+.nc-barra nav a[aria-current="page"] {
+  background: var(--nc-realce, rgba(220, 230, 223, 0.1));
+  color: var(--nc-texto);
+}
+.nc-cuenta {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  min-width: 0;
+  margin-left: auto;
+}
+.nc-cuenta > span:first-child {
+  overflow: hidden;
+  color: var(--nc-texto-2);
+  font-size: 13px;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+@media (max-width: 700px) {
+  .nc-barra {
+    gap: 10px;
+  }
+  .nc-barra .brand small,
+  .nc-barra .brand > div,
+  .nc-cuenta > span:first-child {
+    display: none;
+  }
+  .nc-barra nav {
+    margin-left: 0;
+  }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .nc-btn,
+  .nc-campo input,
+  .nc-campo select,
+  .nc-barra nav a {
+    transition:
+      border-color 0.15s ease,
+      background-color 0.15s ease,
+      color 0.15s ease;
+  }
+}

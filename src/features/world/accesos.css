@@ -1,0 +1,55 @@
+/* «Cómo se llega», en la pestaña Terreno de la ficha de un lugar. */
+.accesos {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  padding-top: 14px;
+  border-top: 1px solid var(--nc-linea);
+}
+.accesos > header {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 4px 12px;
+}
+.accesos h3 {
+  color: var(--nc-texto-3);
+  font-family: var(--nc-mono);
+  font-size: 10.5px;
+  font-weight: 400;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+.mundo-ficha .accesos dl {
+  display: flex;
+  flex-direction: column;
+  margin: 0;
+  border: 1px solid var(--nc-linea);
+  border-radius: 10px;
+  background: rgba(var(--nc-velo), 0.35);
+}
+.mundo-ficha .accesos dl > div {
+  display: grid;
+  grid-template-columns: 86px minmax(0, 1fr);
+  gap: 10px;
+  padding: 8px 12px;
+  border-bottom: 1px solid var(--nc-linea);
+}
+.mundo-ficha .accesos dl > div:last-child {
+  border-bottom: 0;
+}
+.mundo-ficha .accesos dt {
+  color: var(--nc-texto-3);
+  font-size: 12px;
+}
+.mundo-ficha .accesos dd {
+  margin: 0;
+  color: var(--nc-texto);
+  font-size: 13px;
+  line-height: 1.4;
+  overflow-wrap: anywhere;
+}
+.mundo-ficha .accesos .sin-dato dd {
+  color: var(--nc-texto-3);
+}

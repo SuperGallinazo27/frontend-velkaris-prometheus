@@ -1,0 +1,516 @@
+/* Centro de misión: un panel amplio sobre la pantalla del mundo. */
+.mision {
+  /* Mismos colores de estado que la temporada, comprobados sobre el fondo oscuro. */
+  --ms-bien: #0ca30c;
+  --ms-medio: #fab219;
+  --ms-mal: #d03b3b;
+  --ms-barra: #3987e5;
+  width: min(960px, calc(100vw - 24px));
+  max-height: min(88vh, 880px);
+  padding: 0;
+  border: 1px solid var(--nc-linea-fuerte);
+  border-radius: 14px;
+  background: #0c1916;
+  color: var(--nc-texto);
+  overflow: hidden;
+}
+.mision::backdrop {
+  background: rgba(3, 8, 7, 0.72);
+  backdrop-filter: blur(3px);
+}
+.mision-caja {
+  display: flex;
+  flex-direction: column;
+  max-height: min(88vh, 880px);
+}
+.mision-cabecera {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 16px;
+  padding: 20px 24px 14px;
+}
+.mision-cabecera h2 {
+  margin: 4px 0;
+  font-family: var(--nc-serif);
+  font-size: 28px;
+  font-weight: 400;
+  line-height: 1.15;
+}
+.mision-cerrar {
+  flex-shrink: 0;
+  width: 38px;
+  height: 38px;
+  border: 1px solid var(--nc-linea-fuerte);
+  border-radius: 8px;
+  background: none;
+  color: var(--nc-texto);
+  font-size: 15px;
+}
+.mision-cerrar:hover {
+  border-color: var(--nc-texto-2);
+}
+
+.mision-pestanas {
+  display: flex;
+  flex-shrink: 0;
+  gap: 4px;
+  padding: 0 24px;
+  border-bottom: 1px solid var(--nc-linea);
+}
+.mision-pestanas button {
+  margin-bottom: -1px;
+  padding: 10px 14px;
+  border: 0;
+  border-bottom: 2px solid transparent;
+  background: none;
+  color: var(--nc-texto-2);
+  font-size: 14px;
+  font-weight: 600;
+}
+.mision-pestanas button:hover {
+  color: var(--nc-texto);
+}
+.mision-pestanas button[aria-selected="true"] {
+  border-bottom-color: var(--nc-acento);
+  color: var(--nc-texto);
+}
+.mision-panel {
+  min-height: 0;
+  padding: 20px 24px 24px;
+  overflow-y: auto;
+}
+.mision a {
+  color: inherit;
+  text-decoration: underline;
+  text-decoration-color: var(--nc-linea-fuerte);
+  text-underline-offset: 3px;
+}
+.mision strong {
+  color: var(--nc-texto);
+  font-weight: 600;
+}
+.mision-botones {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+.mision fieldset {
+  min-width: 0;
+  margin: 0;
+  padding: 0;
+  border: 0;
+}
+.mision legend {
+  margin-bottom: 8px;
+  padding: 0;
+  color: var(--nc-texto-2);
+  font-size: 12.5px;
+  font-weight: 600;
+}
+
+/* ---------- Gemelo digital ---------- */
+.mision-gemelo {
+  display: grid;
+  grid-template-columns: minmax(0, 0.95fr) minmax(0, 1fr);
+  gap: 24px;
+}
+.mision-vista {
+  position: relative;
+  align-self: start;
+  aspect-ratio: 1;
+  border: 1px solid var(--nc-linea);
+  border-radius: 10px;
+  background: #060d0b;
+  overflow: hidden;
+}
+.mision-vista canvas {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+.mision-vista p {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  margin: 0;
+  padding: 16px;
+  background: rgba(6, 13, 11, 0.86);
+  color: var(--nc-texto-2);
+  font-size: 13.5px;
+  text-align: center;
+}
+.mision-vista p button {
+  border: 0;
+  background: none;
+  color: var(--nc-texto);
+  font-size: 13.5px;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+.mision-opciones {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  font-size: 14px;
+}
+.mision-radio {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 6px 0;
+  color: var(--nc-texto-2);
+  font-size: 13.5px;
+}
+.mision-radio input {
+  accent-color: var(--nc-acento);
+}
+.mision-datos {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 12px;
+  margin: 0;
+  padding: 12px 0;
+  border-block: 1px solid var(--nc-linea);
+}
+.mision-datos dt {
+  color: var(--nc-texto-3);
+  font-size: 11.5px;
+}
+.mision-datos dd {
+  margin: 2px 0 0;
+  font-family: var(--nc-mono);
+  font-size: 14px;
+  font-variant-numeric: tabular-nums;
+}
+.mision-notas {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  margin: 0;
+  padding-left: 18px;
+}
+
+/* ---------- Costo ---------- */
+.mision-costo {
+  display: grid;
+  grid-template-columns: minmax(0, 0.85fr) minmax(0, 1fr);
+  gap: 28px;
+}
+.mision-formulario {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 12px;
+}
+.mision-formulario .nc-campo {
+  width: 100%;
+}
+.mision-formulario input[type="range"] {
+  padding: 0;
+  border: 0;
+  background: none;
+  accent-color: var(--nc-acento);
+}
+.mision-par {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 12px;
+  width: 100%;
+}
+.mision-distancia {
+  margin: 0;
+  color: var(--nc-texto-2);
+  font-size: 14px;
+}
+.mision-distancia strong {
+  font-family: var(--nc-mono);
+  font-size: 17px;
+}
+.mision-desglose {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+.mision-total {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  margin: 0;
+}
+.mision-total span {
+  color: var(--nc-texto-3);
+  font-size: 12px;
+}
+/* La cifra principal va en la misma letra que el resto, sin números tabulares. */
+.mision-total strong {
+  font-size: 34px;
+  font-weight: 600;
+  line-height: 1.1;
+}
+.mision-total small {
+  color: var(--nc-texto-2);
+  font-size: 13px;
+}
+.mision-desglose ul {
+  display: flex;
+  flex-direction: column;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+.mision-desglose li {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  gap: 4px 12px;
+  align-items: baseline;
+  padding: 9px 0;
+  border-top: 1px solid var(--nc-linea);
+  color: var(--nc-texto-2);
+  font-size: 13px;
+}
+.mision-desglose li strong {
+  font-family: var(--nc-mono);
+  font-size: 13px;
+  font-variant-numeric: tabular-nums;
+}
+/* Una barra fina por partida, todas con el mismo color y la misma escala. */
+.mision-barra {
+  grid-column: 1 / -1;
+  grid-row: 2;
+  height: 6px;
+  border-radius: 3px;
+  background: rgba(220, 230, 223, 0.08);
+}
+.mision-barra i {
+  display: block;
+  height: 100%;
+  border-radius: 3px;
+  background: var(--ms-barra);
+}
+.mision-supuestos {
+  font-size: 13px;
+}
+.mision-supuestos summary {
+  color: var(--nc-texto-2);
+  cursor: pointer;
+}
+.mision-supuestos > div {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 10px 12px;
+  margin: 12px 0;
+}
+.mision-supuestos .nc-campo > span {
+  font-size: 11.5px;
+  font-weight: 400;
+}
+.mision-supuestos input {
+  padding: 8px 10px;
+  font-size: 13.5px;
+}
+.mision .nc-aviso {
+  padding: 9px 11px;
+  font-size: 12px;
+}
+
+/* ---------- Ventana y plan ---------- */
+.mision-plan {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+.mision-ventanas {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 10px;
+}
+.mision-ventanas legend {
+  grid-column: 1 / -1;
+}
+.mision-ventana {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  padding: 12px;
+  border: 1px solid var(--nc-linea);
+  border-radius: 10px;
+  color: var(--nc-texto-2);
+  font-size: 12.5px;
+  cursor: pointer;
+}
+.mision-ventana:hover {
+  border-color: var(--nc-texto-2);
+}
+.mision-ventana:has(input:checked) {
+  border-color: var(--nc-acento);
+  background: rgba(236, 155, 114, 0.1);
+}
+.mision-ventana:has(input:focus-visible) {
+  outline: 3px solid #d87a51;
+  outline-offset: 2px;
+}
+.mision-ventana input {
+  position: absolute;
+  opacity: 0;
+}
+.mision-ventana > strong {
+  font-size: 16px;
+}
+.mision-ventana small {
+  color: var(--nc-texto-3);
+  font-size: 11.5px;
+}
+.mision-estado {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  color: var(--nc-texto);
+}
+.mision-estado i {
+  display: grid;
+  place-items: center;
+  width: 16px;
+  height: 16px;
+  border-radius: 4px;
+  color: #fff;
+  font-size: 11px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 1;
+}
+.mision-ventana.optima .mision-estado i {
+  background: var(--ms-bien);
+}
+.mision-ventana.exigente .mision-estado i {
+  background: var(--ms-medio);
+  color: #0b0b0b;
+}
+.mision-ventana.restringida .mision-estado i {
+  background: var(--ms-mal);
+}
+.mision-plan-datos {
+  display: grid;
+  grid-template-columns: 110px minmax(0, 1fr) minmax(0, 1fr) auto;
+  align-items: end;
+}
+.mision-pase {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  padding: 18px;
+  border: 1px solid var(--nc-tierra);
+  border-radius: 12px;
+  background: rgba(127, 214, 196, 0.06);
+}
+.mision-pase > header {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 6px 16px;
+  color: var(--nc-texto-2);
+  font-size: 12.5px;
+}
+.mision-pase code {
+  color: var(--nc-acento-claro);
+  font-family: var(--nc-mono);
+  font-size: 22px;
+  letter-spacing: 0.06em;
+  user-select: all;
+}
+.mision-pase dl {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 10px 20px;
+  margin: 0;
+}
+.mision-pase dt {
+  color: var(--nc-texto-3);
+  font-size: 11.5px;
+}
+.mision-pase dd {
+  margin: 2px 0 0;
+  font-size: 14px;
+}
+
+/* ---------- Botón que lo abre desde la ficha ---------- */
+.mundo-ficha .ficha-mision {
+  width: 100%;
+  margin-top: 2px;
+}
+
+@media (max-width: 760px) {
+  .mision-cabecera,
+  .mision-panel {
+    padding-inline: 16px;
+  }
+  .mision-pestanas {
+    padding-inline: 8px;
+    overflow-x: auto;
+  }
+  .mision-pestanas button {
+    padding-inline: 10px;
+    font-size: 13px;
+    white-space: nowrap;
+  }
+  .mision-cabecera h2 {
+    font-size: 22px;
+  }
+  .mision-gemelo,
+  .mision-costo {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 18px;
+  }
+  .mision-ventanas {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+  .mision-plan-datos {
+    grid-template-columns: minmax(0, 1fr);
+  }
+  .mision-pase dl {
+    grid-template-columns: minmax(0, 1fr);
+  }
+}
+
+/* ---------- Prueba del robot: el panel se abre a pantalla completa ---------- */
+/* Los estilos del simulador están en simulador.css, que se carga con él. */
+.mision.mision-simulador {
+  inset: 0;
+  width: 100vw;
+  max-width: 100vw;
+  height: 100dvh;
+  max-height: 100dvh;
+  margin: 0;
+  border: 0;
+  border-radius: 0;
+}
+.mision-simulador .mision-caja {
+  height: 100%;
+  max-height: none;
+}
+.mision-simulador .mision-cabecera {
+  display: none;
+}
+.mision-simulador .mision-pestanas {
+  padding: 0 14px;
+}
+.mision-simulador .mision-pestanas button {
+  padding: 8px 12px;
+  font-size: 13px;
+}
+.mision-simulador .mision-panel {
+  position: relative;
+  flex: 1;
+  padding: 0;
+  overflow: hidden;
+}
+.mision-cargando {
+  margin: 0;
+  padding: 24px;
+}

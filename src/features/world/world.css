@@ -1,0 +1,1002 @@
+/* Mundo interactivo: globo a pantalla completa, panel de localidades y marcadores sobre el globo. */
+.mundo {
+  --mk: #e6e4dc;
+  --mk-sobre: #14181a;
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  height: 100dvh;
+  overflow: hidden;
+}
+/* El color de los marcadores recuerda al mundo de referencia: gris lunar o terracota marciano. */
+.mundo-marte {
+  --mk: #f2a078;
+  --mk-sobre: #1b0f09;
+}
+
+.mundo-escena {
+  position: relative;
+  flex: 1;
+  min-height: 0;
+}
+.mundo-lienzo,
+.mundo-marcas {
+  position: absolute;
+  inset: 0;
+  overflow: hidden;
+}
+.mundo-lienzo {
+  cursor: grab;
+  touch-action: none;
+}
+.mundo-lienzo.arrastrando {
+  cursor: grabbing;
+}
+.mundo-lienzo:focus-visible {
+  outline-offset: -5px;
+}
+.mundo-lienzo canvas {
+  display: block;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  transition: opacity 0.8s ease;
+}
+.mundo-lienzo canvas.lista {
+  opacity: 1;
+}
+.mundo-marcas {
+  pointer-events: none;
+}
+
+/* ---------- Marcadores: un punto de luz con cola y una nube con el nombre ---------- */
+.mk {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 0;
+  height: 0;
+  padding: 0;
+  border: 0;
+  background: none;
+  color: var(--nc-texto);
+  pointer-events: auto;
+  will-change: transform;
+}
+.mk:focus-visible {
+  outline: none;
+}
+.mk::before {
+  content: "";
+  position: absolute;
+  top: -1px;
+  left: 0;
+  width: 30px;
+  height: 2px;
+  rotate: -40deg;
+  transform-origin: 0 50%;
+  background: linear-gradient(90deg, var(--mk), transparent);
+}
+.mk-punto {
+  position: absolute;
+  top: -6px;
+  left: -6px;
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background: var(--mk);
+  box-shadow:
+    0 0 0 3px color-mix(in srgb, var(--mk) 28%, transparent),
+    0 0 16px var(--mk);
+}
+.mk-punto::after {
+  content: "";
+  position: absolute;
+  inset: -6px;
+  border: 1px solid var(--mk);
+  border-radius: 50%;
+  opacity: 0;
+}
+.mk-nube {
+  position: absolute;
+  bottom: 14px;
+  left: 20px;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 5px 11px;
+  border: 1px solid var(--nc-linea-fuerte);
+  border-radius: 999px;
+  background: rgba(var(--nc-velo), 0.84);
+  backdrop-filter: blur(6px);
+  font-size: 12.5px;
+  line-height: 1.3;
+  white-space: nowrap;
+}
+.mk-nube b {
+  font-weight: 600;
+}
+.mk-nube i {
+  color: var(--mk);
+  font-family: var(--nc-mono);
+  font-size: 11px;
+  font-style: normal;
+}
+.mk.izquierda::before {
+  rotate: -140deg;
+}
+.mk.abajo::before {
+  rotate: 40deg;
+}
+.mk.abajo.izquierda::before {
+  rotate: 140deg;
+}
+.mk.abajo .mk-nube {
+  top: 14px;
+  bottom: auto;
+}
+.mk.izquierda .mk-nube {
+  right: 20px;
+  left: auto;
+}
+.mk:hover .mk-nube {
+  border-color: var(--mk);
+}
+.mk:focus-visible .mk-nube {
+  outline: 3px solid #d87a51;
+  outline-offset: 3px;
+}
+.mk.activa .mk-nube {
+  border-color: var(--mk);
+  background: var(--mk);
+  color: var(--mk-sobre);
+}
+.mk.activa .mk-nube i {
+  color: inherit;
+}
+
+/* ---------- Panel ---------- */
+.mundo-panel {
+  position: absolute;
+  top: 16px;
+  bottom: 16px;
+  left: 16px;
+  display: flex;
+  flex-direction: column;
+  width: 380px;
+  overflow: hidden;
+}
+.mundo-panel > header,
+.mundo-panel > footer {
+  flex-shrink: 0;
+  padding: 18px 20px;
+}
+.mundo-panel > header {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  border-bottom: 1px solid var(--nc-linea);
+}
+.mundo-panel h1 {
+  font-family: var(--nc-serif);
+  font-size: 24px;
+  font-weight: 400;
+  line-height: 1.15;
+  letter-spacing: -0.01em;
+  text-wrap: balance;
+}
+.mundo-filtros {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 10px;
+}
+.mundo-filtros select {
+  padding: 9px 10px;
+  font-size: 14px;
+}
+.mundo-panel > footer {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  padding-top: 12px;
+  border-top: 1px solid var(--nc-linea);
+}
+.mundo-panel > footer .nc-aviso {
+  padding: 9px 11px;
+  font-size: 12px;
+}
+
+.mundo-ruta {
+  display: flex;
+  flex-shrink: 0;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 2px 6px;
+  padding: 12px 20px 0;
+  color: var(--nc-texto-3);
+  font-size: 13px;
+}
+.mundo-ruta > span {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+}
+.mundo-ruta button {
+  padding: 3px 0;
+  border: 0;
+  background: none;
+  color: var(--nc-texto-2);
+  text-decoration: underline;
+  text-decoration-color: var(--nc-linea-fuerte);
+  text-underline-offset: 3px;
+}
+.mundo-ruta button:hover {
+  color: var(--nc-texto);
+}
+.mundo-ruta button[aria-current] {
+  color: var(--nc-texto);
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.mundo-lista {
+  flex: 1;
+  min-height: 0;
+  padding: 12px 20px 18px;
+  overflow-y: auto;
+}
+.mundo-nivel {
+  margin-bottom: 6px;
+  color: var(--nc-texto-3);
+  font-family: var(--nc-mono);
+  font-size: 10.5px;
+  font-weight: 600;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+}
+.mundo-lista ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+.mundo-lista li button {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto auto;
+  align-items: center;
+  gap: 12px;
+  width: 100%;
+  padding: 11px 0;
+  border: 0;
+  border-bottom: 1px solid var(--nc-linea);
+  background: none;
+  text-align: left;
+}
+.mundo-lista li button:hover strong {
+  color: var(--mk);
+}
+.mundo-lista li button svg {
+  color: var(--nc-texto-3);
+}
+.mundo-lista strong {
+  display: block;
+  font-size: 15px;
+  font-weight: 600;
+  line-height: 1.3;
+}
+.mundo-lista small {
+  display: block;
+  overflow: hidden;
+  color: var(--nc-texto-3);
+  font-size: 12px;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.mundo .mono {
+  color: var(--mk);
+  font-family: var(--nc-mono);
+  font-size: 13px;
+  font-variant-numeric: tabular-nums;
+}
+.mundo-vacio {
+  color: var(--nc-texto-2);
+  font-size: 14px;
+}
+
+/* Ficha de una zona */
+.mundo-ficha {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 10px;
+}
+.mundo-ficha h2 {
+  font-family: var(--nc-serif);
+  font-size: 26px;
+  font-weight: 400;
+  line-height: 1.15;
+  letter-spacing: -0.01em;
+}
+.mundo-ficha > p {
+  font-size: 13.5px;
+}
+.mundo-distancia {
+  display: grid;
+  grid-template-columns: minmax(0, 1.5fr) minmax(0, 1fr);
+  gap: 12px;
+  width: 100%;
+  margin: 4px 0 0;
+  padding: 12px 0;
+  border-block: 1px solid var(--nc-linea);
+}
+.mundo-distancia dt {
+  color: var(--nc-texto-3);
+  font-size: 11.5px;
+}
+.mundo-distancia dd {
+  margin: 2px 0 0;
+  font-size: 15px;
+  font-weight: 600;
+}
+.mundo-distancia dd small {
+  display: inline;
+  color: var(--nc-texto-3);
+  font-size: 12px;
+  font-weight: 400;
+}
+.mundo-distancia dd.mono {
+  font-size: 18px;
+}
+.mundo-ficha table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 13px;
+}
+.mundo-ficha th,
+.mundo-ficha td {
+  padding: 7px 0;
+  border-bottom: 1px solid var(--nc-linea);
+  background: none;
+  color: var(--nc-texto-2);
+  font-size: inherit;
+  font-weight: 400;
+  text-align: right;
+}
+.mundo-ficha th:first-child {
+  text-align: left;
+}
+.mundo-ficha thead th {
+  color: var(--nc-texto-3);
+  font-size: 11.5px;
+}
+.mundo-ficha tbody td {
+  font-family: var(--nc-mono);
+  font-variant-numeric: tabular-nums;
+}
+.mundo-ficha tbody td:nth-child(2) {
+  color: var(--nc-texto);
+}
+
+/* ---------- Controles sobre el globo ---------- */
+.mundo-controles {
+  position: absolute;
+  right: 16px;
+  bottom: 16px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+.mundo-vista {
+  padding: 6px 11px;
+  border: 1px solid var(--nc-linea);
+  border-radius: 999px;
+  background: rgba(var(--nc-velo), 0.75);
+  color: var(--nc-texto-2);
+  font-family: var(--nc-mono);
+  font-size: 11px;
+  letter-spacing: 0.06em;
+}
+.mundo-controles > div {
+  display: flex;
+  border: 1px solid var(--nc-linea-fuerte);
+  border-radius: 8px;
+  background: rgba(var(--nc-velo), 0.8);
+  overflow: hidden;
+}
+.mundo-controles button {
+  display: grid;
+  place-items: center;
+  width: 42px;
+  height: 42px;
+  border: 0;
+  border-left: 1px solid var(--nc-linea);
+  background: none;
+  color: var(--nc-texto);
+  font-size: 20px;
+  line-height: 1;
+}
+.mundo-controles button:first-child {
+  border-left: 0;
+}
+.mundo-controles button:hover {
+  background: rgba(220, 230, 223, 0.12);
+}
+.mundo-controles button:focus-visible {
+  outline-offset: -3px;
+}
+.mundo-ayuda {
+  position: absolute;
+  bottom: 28px;
+  left: 420px;
+  color: var(--nc-texto-3);
+  font-size: 12px;
+  white-space: nowrap;
+  pointer-events: none;
+}
+
+/* ---------- Pantallas estrechas: el panel pasa abajo ---------- */
+@media (max-width: 1280px) {
+  .mundo-ayuda {
+    display: none;
+  }
+}
+@media (max-width: 899px) {
+  .mundo-panel {
+    top: auto;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    width: auto;
+    height: 47%;
+    border-width: 1px 0 0;
+    border-radius: 14px 14px 0 0;
+  }
+  .mundo-panel > header {
+    gap: 8px;
+    padding: 12px 16px;
+  }
+  .mundo-panel .nc-eyebrow,
+  .mundo-panel > header > .nc-nota {
+    display: none;
+  }
+  .mundo-panel h1 {
+    font-size: 18px;
+  }
+  .mundo-filtros .nc-campo > span {
+    font-size: 11.5px;
+  }
+  .mundo-ruta {
+    padding: 8px 16px 0;
+  }
+  .mundo-lista {
+    padding: 8px 16px 12px;
+  }
+  .mundo-panel > footer {
+    display: none;
+  }
+  /* Justo encima del panel, lejos de la zona donde aparecen los marcadores. */
+  .mundo-controles {
+    right: 12px;
+    bottom: calc(47% + 12px);
+    gap: 8px;
+  }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .mk-nube,
+  .mk-punto,
+  .mk::before {
+    animation: mk-aparece 0.35s ease backwards;
+  }
+  .mk-punto::after {
+    animation: mk-pulso 2.2s ease-out infinite;
+  }
+  .mk-nube {
+    transition:
+      border-color 0.15s ease,
+      background-color 0.15s ease;
+  }
+}
+@keyframes mk-aparece {
+  from {
+    opacity: 0;
+    scale: 0.5;
+  }
+}
+@keyframes mk-pulso {
+  0% {
+    opacity: 0.8;
+    scale: 0.6;
+  }
+  100% {
+    opacity: 0;
+    scale: 1.9;
+  }
+}
+
+/* ---------- Clima actual (Open-Meteo) ---------- */
+.mundo-clima {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  width: 100%;
+  margin-top: 6px;
+  padding: 14px;
+  border: 1px solid var(--nc-linea);
+  border-radius: 12px;
+  background: rgba(var(--nc-velo), 0.35);
+}
+.mundo-clima header {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 4px 12px;
+}
+.mundo-clima h3 {
+  color: var(--nc-texto-3);
+  font-family: var(--nc-mono);
+  font-size: 10.5px;
+  font-weight: 400;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+.mundo-clima-principal {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  margin: 0;
+}
+.mundo-clima-principal .mono {
+  color: var(--nc-texto);
+  font-size: 28px;
+  font-variant-numeric: tabular-nums;
+}
+.mundo-clima-principal > span:last-child {
+  display: flex;
+  flex-direction: column;
+  color: var(--nc-texto);
+  font-size: 14px;
+  font-weight: 600;
+}
+.mundo-clima-principal small {
+  color: var(--nc-texto-3);
+  font-size: 12px;
+  font-weight: 400;
+}
+.mundo-clima dl {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 10px 12px;
+  margin: 0;
+}
+.mundo-clima dt {
+  color: var(--nc-texto-3);
+  font-size: 11px;
+}
+.mundo-clima dd {
+  margin: 2px 0 0;
+  color: var(--nc-texto);
+  font-family: var(--nc-mono);
+  font-size: 13px;
+  font-variant-numeric: tabular-nums;
+}
+.mundo-clima a,
+.mundo-osm {
+  color: var(--nc-texto-2);
+  text-decoration: underline;
+  text-decoration-color: var(--nc-linea-fuerte);
+  text-underline-offset: 3px;
+}
+.mundo-clima-error {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 8px 12px;
+  margin: 0;
+  color: var(--nc-acento-claro);
+  font-size: 13px;
+}
+.mundo-clima-error button {
+  padding: 2px 0;
+  border: 0;
+  background: none;
+  color: var(--nc-texto);
+  font-size: 13px;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+.mundo-osm {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 13px;
+}
+.mundo-osm:hover,
+.mundo-clima a:hover {
+  color: var(--nc-texto);
+}
+@media (max-width: 420px) {
+  .mundo-clima dl {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+/* ---------- Región lunar: selector y mapa del polo sur ---------- */
+.mundo-filtros .mundo-region {
+  grid-column: 1 / -1;
+}
+.mundo-filtros .nc-campo > span i {
+  font-style: normal;
+}
+.mundo-vacio {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 12px;
+}
+.mundo-panel .nc-aviso a,
+.mundo-ficha .nc-nota a,
+.luna-mapa a {
+  color: inherit;
+  text-decoration: underline;
+  text-decoration-color: var(--nc-linea-fuerte);
+  text-underline-offset: 3px;
+}
+.mundo-panel .nc-aviso a:hover,
+.luna-mapa a:hover {
+  color: var(--nc-texto);
+}
+.mundo-ficha .nc-nota strong {
+  color: var(--nc-tierra);
+  font-weight: 600;
+}
+
+.luna-mapa {
+  position: absolute;
+  top: 16px;
+  right: 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  width: 348px;
+  max-height: calc(100% - 96px);
+  padding: 14px;
+  overflow-y: auto;
+}
+.luna-mapa > header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+}
+.luna-mapa > header strong {
+  display: block;
+  margin-top: 2px;
+  font-family: var(--nc-serif);
+  font-size: 19px;
+  font-weight: 400;
+  line-height: 1.2;
+}
+.luna-alternar {
+  flex-shrink: 0;
+  padding: 6px 10px;
+  border: 1px solid var(--nc-linea-fuerte);
+  border-radius: 6px;
+  background: none;
+  color: var(--nc-texto-2);
+  font-size: 12px;
+}
+.luna-alternar:hover {
+  border-color: var(--nc-texto-2);
+  color: var(--nc-texto);
+}
+.luna-lienzo {
+  position: relative;
+  flex-shrink: 0;
+  width: 100%;
+  border: 1px solid var(--nc-linea);
+  border-radius: 6px;
+  background: #0b0d0e;
+}
+.luna-lienzo img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  border-radius: 5px;
+  object-fit: cover;
+}
+.luna-region {
+  position: absolute;
+  padding: 0;
+  border: 1.5px solid rgba(240, 238, 228, 0.85);
+  border-radius: 2px;
+  background: rgba(240, 238, 228, 0.06);
+  box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.55);
+}
+/* El recuadro mide unos 15 px: una zona invisible alrededor lo hace más fácil de tocar. */
+.luna-region::before {
+  content: "";
+  position: absolute;
+  inset: -5px;
+}
+.luna-region:hover,
+.luna-region:focus-visible {
+  border-color: #fff;
+  background: rgba(240, 238, 228, 0.22);
+  z-index: 2;
+}
+.luna-region[aria-pressed="true"] {
+  border: 2px solid var(--nc-acento);
+  background: rgba(236, 155, 114, 0.3);
+  box-shadow:
+    0 0 0 1px rgba(0, 0, 0, 0.6),
+    0 0 14px rgba(236, 155, 114, 0.7);
+}
+.luna-region::after {
+  content: attr(data-nombre);
+  position: absolute;
+  top: calc(100% + 7px);
+  left: 50%;
+  translate: -50% 0;
+  padding: 3px 8px;
+  border: 1px solid var(--nc-linea-fuerte);
+  border-radius: 999px;
+  background: rgba(var(--nc-velo), 0.94);
+  color: var(--nc-texto);
+  font-size: 11.5px;
+  line-height: 1.3;
+  white-space: nowrap;
+  opacity: 0;
+  pointer-events: none;
+}
+.luna-region.izquierda::after {
+  left: 0;
+  translate: 0 0;
+}
+.luna-region.derecha::after {
+  right: 0;
+  left: auto;
+  translate: 0 0;
+}
+.luna-region:hover::after,
+.luna-region:focus-visible::after {
+  opacity: 1;
+}
+/* Un punto justo sobre el polo, con el texto a su derecha. */
+.luna-polo {
+  position: absolute;
+  width: 0;
+  height: 0;
+  pointer-events: none;
+}
+.luna-polo::before {
+  content: "";
+  position: absolute;
+  top: -4px;
+  left: -4px;
+  width: 8px;
+  height: 8px;
+  border: 1.5px solid #000;
+  border-radius: 50%;
+  background: var(--nc-tierra);
+}
+.luna-polo i {
+  position: absolute;
+  top: -5px;
+  left: 8px;
+  color: #fff;
+  font-size: 10px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 1;
+  text-shadow: 0 0 4px #000;
+  white-space: nowrap;
+}
+.luna-escala {
+  position: absolute;
+  bottom: 8px;
+  left: 8px;
+  padding-bottom: 3px;
+  border-bottom: 2px solid #fff;
+  color: #fff;
+  font-family: var(--nc-mono);
+  font-size: 9.5px;
+  line-height: 1;
+  text-align: center;
+  text-shadow: 0 0 4px #000;
+  pointer-events: none;
+}
+.luna-datos {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 10px;
+  margin: 0;
+}
+.luna-datos dt {
+  color: var(--nc-texto-3);
+  font-size: 11px;
+}
+.luna-datos dd {
+  margin: 2px 0 0;
+  color: var(--nc-texto);
+  font-family: var(--nc-mono);
+  font-size: 14px;
+  font-variant-numeric: tabular-nums;
+}
+.luna-mapa .nc-nota {
+  font-size: 11.5px;
+  line-height: 1.5;
+}
+
+@media (max-width: 1180px) and (min-width: 900px) {
+  .luna-mapa {
+    width: 290px;
+  }
+}
+@media (max-width: 899px) {
+  .luna-mapa {
+    top: 8px;
+    right: 8px;
+    left: 8px;
+    width: auto;
+    /* Abierto, el mapa ocupa la zona del globo y queda por encima de sus controles. */
+    z-index: 3;
+    max-height: calc(53% - 16px);
+    padding: 9px 12px;
+    background: rgba(var(--nc-velo), 0.94);
+  }
+  .luna-mapa > header strong {
+    font-size: 15px;
+  }
+  .luna-mapa .nc-eyebrow {
+    font-size: 9.5px;
+  }
+  .mundo-filtros {
+    grid-template-columns: minmax(0, 0.8fr) minmax(0, 0.8fr) minmax(0, 1.4fr);
+  }
+  .mundo-filtros .mundo-region {
+    grid-column: auto;
+  }
+  /* En pantallas estrechas las etiquetas se acortan para que las tres listas quepan en una fila. */
+  .mundo-filtros .nc-campo > span i {
+    display: none;
+  }
+}
+
+/* ---------- Mapa lunar: recuadros que se ven a simple vista y vista ampliada ---------- */
+.luna-lienzo img {
+  filter: brightness(0.7) contrast(1.08);
+}
+.luna-region {
+  border: 2px solid #ffd84a;
+  background: rgba(255, 216, 74, 0.14);
+  box-shadow:
+    0 0 0 1px rgba(0, 0, 0, 0.75),
+    0 0 9px rgba(255, 216, 74, 0.55);
+}
+.luna-region:hover,
+.luna-region:focus-visible {
+  border-color: #fff3b0;
+  background: rgba(255, 216, 74, 0.36);
+}
+.luna-region[aria-pressed="true"] {
+  border: 2px solid #fff;
+  background: rgba(236, 155, 114, 0.85);
+  box-shadow:
+    0 0 0 2px rgba(0, 0, 0, 0.75),
+    0 0 0 5px rgba(236, 155, 114, 0.5),
+    0 0 18px rgba(236, 155, 114, 0.9);
+  z-index: 1;
+}
+.luna-region.encima::after {
+  top: auto;
+  bottom: calc(100% + 7px);
+}
+.luna-region.lado-izq::after {
+  top: 50%;
+  right: calc(100% + 7px);
+  left: auto;
+  translate: 0 -50%;
+}
+.luna-region.lado-der::after {
+  top: 50%;
+  left: calc(100% + 7px);
+  translate: 0 -50%;
+}
+.luna-botones {
+  display: flex;
+  flex-shrink: 0;
+  gap: 6px;
+}
+.luna-alternar[aria-pressed="true"] {
+  border-color: var(--nc-texto-2);
+  color: var(--nc-texto);
+}
+/* Ampliado: el mapa crece sobre el globo y nombra las nueve regiones. */
+.luna-mapa.grande {
+  z-index: 4;
+  width: min(900px, calc(100% - 444px));
+  background: rgba(var(--nc-velo), 0.95);
+}
+.luna-mapa.grande .luna-region::after {
+  opacity: 1;
+}
+.luna-mapa.grande .luna-region[aria-pressed="true"]::after {
+  border-color: var(--nc-acento);
+  background: var(--nc-acento);
+  color: var(--nc-sobre-acento);
+  font-weight: 600;
+}
+.luna-mapa.grande .luna-polo i,
+.luna-mapa.grande .luna-escala {
+  font-size: 12px;
+}
+@media (prefers-reduced-motion: no-preference) {
+  .luna-region[aria-pressed="true"] {
+    animation: luna-pulso 1.8s ease-in-out infinite;
+  }
+}
+@keyframes luna-pulso {
+  50% {
+    box-shadow:
+      0 0 0 2px rgba(0, 0, 0, 0.75),
+      0 0 0 9px rgba(236, 155, 114, 0.18),
+      0 0 22px rgba(236, 155, 114, 0.9);
+  }
+}
+@media (max-width: 899px) {
+  .luna-ampliar {
+    display: none;
+  }
+}
+
+/* Con un lugar abierto, el panel cede sitio a su ficha: fuera el resumen y el aviso general. */
+.mundo-panel.con-lugar > header > .nc-nota,
+.mundo-panel.con-lugar > header > .nc-eyebrow,
+.mundo-panel.con-lugar > footer {
+  display: none;
+}
+.mundo-panel.con-lugar h1 {
+  font-size: 19px;
+}
+
+/* ---------- Zonas de la Luna ---------- */
+.luna-zonas {
+  display: flex;
+  flex-shrink: 0;
+  border: 1px solid var(--nc-linea-fuerte);
+  border-radius: 8px;
+  overflow: hidden;
+}
+.luna-zonas button {
+  flex: 1;
+  padding: 7px 6px;
+  border: 0;
+  border-left: 1px solid var(--nc-linea);
+  background: none;
+  color: var(--nc-texto-2);
+  font-size: 12.5px;
+}
+.luna-zonas button:first-child {
+  border-left: 0;
+}
+.luna-zonas button:hover {
+  color: var(--nc-texto);
+}
+.luna-zonas button[aria-pressed="true"] {
+  background: var(--nc-texto);
+  color: #10201c;
+  font-weight: 600;
+}
+.luna-zonas button:focus-visible {
+  outline-offset: -3px;
+}
+/*
+ * Cada recuadro se coloca por su centro. En la zona central el mapa abarca miles de kilómetros
+ * y una región de 21 km mediría un par de píxeles: nunca se dibuja más pequeña que un marcador.
+ */
+.luna-region {
+  min-width: 13px;
+  min-height: 13px;
+  translate: -50% -50%;
+}

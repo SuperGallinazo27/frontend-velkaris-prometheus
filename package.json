@@ -11,9 +11,11 @@
     "test": "bun test"
   },
   "dependencies": {
+    "maplibre-gl": "6.18.0",
     "react": "^19.3.1",
     "react-dom": "^19.3.1",
-    "three": "0.180.0"
+    "three": "0.180.0",
+    "world-atlas": "2.0.2"
   },
   "devDependencies": {
     "@types/node": "^24.19.2",

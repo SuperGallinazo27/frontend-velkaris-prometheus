@@ -1,10 +1,11 @@
 import { useEffect, useMemo, useRef, useState } from "react";
 import type { RefObject } from "react";
+import { Brand } from "../../components/Brand";
 import { Icon } from "../../components/Icon";
-import { candidates, regions } from "../../data/demo";
 import type { Terrain } from "../../types/analysis";
-import { rankCandidates } from "../ranking/ranking";
+import { matchPercent } from "../world/hierarchy";
 import { chapterProgress, journeyFraction } from "./journey";
+import { marsRegions, moonRegions, rankingFor, sceneCandidates, sceneRegions } from "./portada";
 import type { SceneHandle } from "./scene";
 import "./landing.css";
 
@@ -14,7 +15,7 @@ const chapters = [
   { id: "luna", name: "Luna" },
   { id: "marte", name: "Marte" },
   { id: "metodo", name: "Método" },
-  { id: "candidatos", name: "Candidatos" },
+  { id: "candidatos", name: "Lugares" },
   { id: "explorar", name: "Explorar" },
 ];
 
@@ -26,15 +27,13 @@ const stops = [
   { name: "Tierra", at: 1 },
 ];
 
+/** Lo que hay dentro, con la cuenta de una agencia. Todo se abre desde el mundo interactivo. */
 const modules = [
-  { hash: "#explorador", icon: "map", name: "Explorador", detail: "Mapa esquemático y ficha de cada candidato." },
-  { hash: "#ranking", icon: "ranking", name: "Ranking", detail: "Comparación completa y exportación CSV." },
-  { hash: "#riesgos", icon: "risks", name: "Riesgos", detail: "Matriz ilustrativa de incertidumbres." },
-  { hash: "#economia", icon: "economy", name: "Economía", detail: "Presupuesto de una campaña terrestre." },
+  { icon: "globe", name: "Mundo interactivo", detail: "37 lugares de la Tierra frente a 20 regiones reales de la Luna." },
+  { icon: "ranking", name: "Ruedas y simulador 3D", detail: "Maneja un robot sobre el relieve real, con el suelo y el clima del lugar." },
+  { icon: "map", name: "Portal de turnos", detail: "Reserva tus fechas. Las áreas protegidas se bloquean, con su motivo." },
+  { icon: "spark", name: "Copiloto IA", detail: "Explica cada lugar y redacta el resumen de tu plan de campaña." },
 ];
-
-const moonRegions = regions.filter((r) => r.world === "Luna");
-const marsRegions = regions.filter((r) => r.world === "Marte");
 
 type Mode = "cargando" | "3d" | "estatica";
 
@@ -89,6 +88,7 @@ function Referencia({
   eyebrow,
   title,
   intro,
+  note,
   options,
   selected,
   calm,
@@ -99,6 +99,8 @@ function Referencia({
   eyebrow: string;
   title: string;
   intro: string;
+  /** De dónde salen las tres cifras: mediciones o valores de ejemplo. */
+  note: string;
   options: Terrain[];
   selected: Terrain;
   calm: boolean;
@@ -140,21 +142,16 @@ function Referencia({
               </dd>
             </div>
           </dl>
-          <p className="lp-nota">{selected.context} · valores sintéticos, no son mediciones.</p>
+          <p className="lp-nota">
+            {selected.context}. {note}
+          </p>
         </div>
       </div>
     </section>
   );
 }
 
-export function Landing({
-  regionId,
-  onRegionChange,
-}: {
-  /** Región de referencia vigente: la que se compara con los candidatos terrestres. */
-  regionId: string;
-  onRegionChange: (id: string) => void;
-}) {
+export function Landing() {
   const [mode, setMode] = useState<Mode>(() => (forceStatic() ? "estatica" : "cargando"));
   const [calm, setCalm] = useState(prefersReducedMotion);
   const [active, setActive] = useState(0);
@@ -164,21 +161,24 @@ export function Landing({
   const handleRef = useRef<SceneHandle | null>(null);
   const progressRef = useRef(0);
 
-  const region = regions.find((r) => r.id === regionId) ?? moonRegions[0];
-  // Cada mundo recuerda su escenario; el último que se toca pasa a ser la referencia.
-  const [moonId, setMoonId] = useState(region.world === "Luna" ? region.id : moonRegions[0].id);
-  const [marsId, setMarsId] = useState(region.world === "Marte" ? region.id : marsRegions[0].id);
+  // Cada mundo recuerda su escenario; el último que se toca pasa a ser la referencia de los lugares.
+  const [moonId, setMoonId] = useState(moonRegions[0].id);
+  const [marsId, setMarsId] = useState(marsRegions[0].id);
+  const [world, setWorld] = useState<"Luna" | "Marte">("Luna");
   const moon = moonRegions.find((r) => r.id === moonId) ?? moonRegions[0];
   const mars = marsRegions.find((r) => r.id === marsId) ?? marsRegions[0];
-  const ranked = useMemo(() => rankCandidates(region, candidates), [region]);
+  const region = world === "Luna" ? moon : mars;
+  // Con la Luna, el ranking son mediciones; con Marte, una demostración.
+  const ranking = useMemo(() => rankingFor(region), [region]);
+  const ranked = ranking.rows;
 
   const selectMoon = (id: string) => {
     setMoonId(id);
-    onRegionChange(id);
+    setWorld("Luna");
   };
   const selectMars = (id: string) => {
     setMarsId(id);
-    onRegionChange(id);
+    setWorld("Marte");
   };
 
   // Los efectos que crean la escena leen el estado más reciente desde aquí.
@@ -207,8 +207,8 @@ export function Landing({
         handle = createScene({
           host: hostRef.current,
           labels: labelsRef.current,
-          regions,
-          candidates,
+          regions: sceneRegions,
+          candidates: sceneCandidates,
           calm: latest.current.calm,
           onContextLost: () => setMode("estatica"),
         });
@@ -283,6 +283,7 @@ export function Landing({
 
   const rootClass = [
     "landing",
+    "nocturno",
     mode === "3d" ? "con-escena" : "",
     mode === "estatica" ? "estatica" : "",
     calm ? "en-calma" : "con-movimiento",
@@ -305,22 +306,19 @@ export function Landing({
       <div className="lp-etiquetas" ref={labelsRef} aria-hidden="true" />
 
       <header className="lp-header">
-        <a className="brand" href="#inicio" aria-label="PROMETHEUS by VELKARIS, inicio">
-          <span className="brand-symbol">
-            P<span>◦</span>
-          </span>
-          <div>
-            PROMETHEUS<small>BY VELKARIS</small>
-          </div>
-        </a>
+        <Brand label="PROMETHEUS by VELKARIS, inicio" />
         <nav className="lp-nav" aria-label="Secciones de la portada">
           <a href="#luna">Luna</a>
           <a href="#marte">Marte</a>
           <a href="#metodo">Método</a>
-          <a href="#candidatos">Candidatos</a>
+          <a href="#candidatos">Lugares</a>
         </nav>
-        <a className="lp-btn primario compacto" href="#explorador">
-          Abrir explorador <Icon name="arrow" size={16} />
+        {/* El ingreso se abre en otra pestaña: la portada queda abierta detrás. */}
+        <a className="lp-ingresar" href="#ingresar" target="_blank" rel="noopener" aria-label="Ingresar (se abre en otra pestaña)">
+          Ingresar
+        </a>
+        <a className="nc-btn primario compacto lp-abrir" href="#mundo">
+          Abrir el mundo <Icon name="arrow" size={16} />
         </a>
       </header>
 
@@ -337,27 +335,29 @@ export function Landing({
         <section className="lp-cap izq vista" id="inicio" aria-labelledby="lp-t-inicio">
           <div className="lp-ancho">
             <div className="lp-panel ancho">
-              <span className="lp-eyebrow">Explorador de análogos planetarios</span>
+              <span className="lp-eyebrow">Explorador de sitios análogos</span>
               <h1 id="lp-t-inicio">
                 De otros mundos. <span>A nuestro planeta.</span>
               </h1>
               <p className="lp-lead">
-                PROMETHEUS busca en la Tierra paisajes parecidos a los de otros mundos: primero la Luna, después
-                Marte. Un punto de partida para explorar similitudes y formular mejores preguntas.
+                PROMETHEUS encuentra en la Tierra lugares con terreno parecido al de la Luna, te deja probar allí tu
+                robot en un simulador 3D con el suelo y el clima del lugar, y reservar tu turno. Primero la Luna;
+                después, Marte.
               </p>
               <div className="lp-acciones">
-                <a className="lp-btn primario" href="#explorador">
-                  Abrir el explorador <Icon name="arrow" size={18} />
+                <a className="nc-btn primario" href="#mundo">
+                  Entrar al mundo interactivo <Icon name="arrow" size={18} />
                 </a>
-                <a className="lp-btn secundario" href="#metodo">
+                <a className="nc-btn secundario" href="#metodo">
                   Cómo funciona
                 </a>
               </div>
-              <p className="lp-demo">
-                <b>DEMO</b>
+              <p className="lp-demo real">
+                <b>REAL</b>
                 <span>
-                  Datos sintéticos, sin validación científica. Los mundos de esta página se dibujan por código: no
-                  son imágenes ni datos de NASA.
+                  La comparación con la Luna usa mediciones: el láser LOLA de NASA en la Luna y el modelo de
+                  elevación Copernicus en la Tierra. Compara solo la forma del terreno. Marte es todavía una
+                  demostración con valores de ejemplo.
                 </span>
               </p>
               <a className="lp-desliza" href="#luna">
@@ -372,7 +372,8 @@ export function Landing({
           side="der"
           eyebrow="01 / Primer alcance"
           title="La Luna, el primer paso."
-          intro="Elige un escenario lunar. Sus tres descriptores de relieve son la referencia contra la que se compara cada paisaje terrestre."
+          intro="Elige una región real de la Luna. Su relieve, su pendiente y su rugosidad son la referencia contra la que se compara cada lugar de la Tierra."
+          note="Valores típicos de ventanas de 3 km, medidos con la elevación del láser LOLA de NASA."
           options={moonRegions}
           selected={moon}
           calm={calm}
@@ -383,8 +384,9 @@ export function Landing({
           id="marte"
           side="izq"
           eyebrow="02 / Siguiente alcance"
-          title="Proximamente.... Marte."
-          intro="El mismo método, un mundo más lejos. Elige un escenario marciano para usarlo como referencia."
+          title="Próximamente: Marte."
+          intro="El mismo método, un mundo más lejos. Por ahora es una demostración: elige un escenario marciano de ejemplo."
+          note="Valores sintéticos de demostración: no son mediciones."
           options={marsRegions}
           selected={mars}
           calm={calm}
@@ -395,10 +397,10 @@ export function Landing({
           <div className="lp-ancho">
             <div className="lp-panel">
               <span className="lp-eyebrow">03 / Método</span>
-              <h2 id="lp-t-metodo">Una distancia que se puede explicar.</h2>
+              <h2 id="lp-t-metodo">Una coincidencia que se puede explicar.</h2>
               <p>
-                Para cada candidato terrestre se promedian tres diferencias con la referencia lunar o marciana. Menor
-                distancia, mayor proximidad en esos descriptores.
+                Para cada lugar de la Tierra se promedian tres diferencias con la región de referencia. Esa distancia
+                se convierte en un porcentaje: 100 % es el mismo relieve, la misma pendiente y la misma rugosidad.
               </p>
               <ul className="lp-formula">
                 <li>
@@ -415,8 +417,9 @@ export function Landing({
                 </li>
               </ul>
               <p className="lp-nota">
-                Pesos iguales y escalas ilustrativas. No es un porcentaje de similitud ni una probabilidad, y no
-                compara clima, geología ni habitabilidad.
+                Coincidencia = 100 × (1 − distancia). Es alta con 85 % o más, media de 60 a 84 % y baja con menos. No
+                es una probabilidad: compara solo la forma del terreno. El suelo, el clima de ahora y las áreas
+                protegidas se revisan aparte, en la ficha de cada lugar.
               </p>
             </div>
           </div>
@@ -425,15 +428,29 @@ export function Landing({
         <section className="lp-cap der" id="candidatos" aria-labelledby="lp-t-candidatos">
           <div className="lp-ancho">
             <div className="lp-panel">
-              <span className="lp-eyebrow">04 / Candidatos terrestres</span>
+              <span className="lp-eyebrow">04 / Lugares de la Tierra</span>
               <h2 id="lp-t-candidatos">¿Qué paisaje se le parece más?</h2>
               <p>
-                La Tierra es el eje: aquí se ordenan los tres candidatos de ejemplo frente a{" "}
-                <strong>{region.name}</strong>.
+                {ranking.real ? (
+                  <>
+                    Los tres lugares con más coincidencia de terreno con <strong>{region.name}</strong>, de los{" "}
+                    {ranking.compared} medidos. Son datos reales.
+                  </>
+                ) : (
+                  <>
+                    Tres lugares de ejemplo frente a <strong>{region.name}</strong>. Con Marte todavía es una
+                    demostración con valores sintéticos.
+                  </>
+                )}
               </p>
               <div className="lp-regiones" role="group" aria-label="Mundo de referencia">
                 {[moon, mars].map((r) => (
-                  <button key={r.id} type="button" aria-pressed={r.id === region.id} onClick={() => onRegionChange(r.id)}>
+                  <button
+                    key={r.id}
+                    type="button"
+                    aria-pressed={r.id === region.id}
+                    onClick={() => setWorld(r.world === "Marte" ? "Marte" : "Luna")}
+                  >
                     {r.world} · {r.name}
                   </button>
                 ))}
@@ -447,14 +464,14 @@ export function Landing({
                       <small>{row.site.context}</small>
                     </div>
                     <span className="lp-dist">
-                      {row.distance.toFixed(3)}
-                      <small>{row.rank === 1 ? "más próximo" : "distancia"}</small>
+                      {ranking.real ? `${matchPercent(row.distance)} %` : row.distance.toFixed(3)}
+                      <small>{ranking.real ? "coincidencia" : "distancia · ejemplo"}</small>
                     </span>
                   </li>
                 ))}
               </ol>
-              <a className="lp-enlace" href="#ranking">
-                Ver el ranking completo <Icon name="arrow" size={16} />
+              <a className="lp-enlace" href="#mundo">
+                Ver todos los lugares en el mundo interactivo <Icon name="arrow" size={16} />
               </a>
             </div>
           </div>
@@ -464,11 +481,11 @@ export function Landing({
           <div className="lp-ancho">
             <div className="lp-panel">
               <span className="lp-eyebrow">05 / Explora</span>
-              <h2 id="lp-t-explorar">Sigue el viaje en el explorador.</h2>
-              <p>Cuatro módulos para mirar los mismos datos de ejemplo desde distintos ángulos.</p>
+              <h2 id="lp-t-explorar">Sigue el viaje en el mundo interactivo.</h2>
+              <p>Con la cuenta de tu agencia, todo esto sobre los mismos datos reales:</p>
               <div className="lp-modulos">
                 {modules.map((m) => (
-                  <a key={m.hash} href={m.hash}>
+                  <a key={m.name} href="#mundo">
                     <Icon name={m.icon} size={22} />
                     <strong>{m.name}</strong>
                     <span>{m.detail}</span>
@@ -481,7 +498,7 @@ export function Landing({
             <span>
               PROMETHEUS <span className="footer-dot">/</span> Una iniciativa VELKARIS
             </span>
-            <span>Datos demo · sin conexión a NASA · sin API activa</span>
+            <span>Luna: NASA LRO LOLA · Tierra: Copernicus DEM · Marte: demostración</span>
             <a href="https://github.com/SuperGallinazo27/velkaris-prometheus" target="_blank" rel="noreferrer">
               Proyecto Python ↗
             </a>

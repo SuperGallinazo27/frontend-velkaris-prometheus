@@ -1,0 +1,139 @@
+/* Copiloto del centro de misión. Usa los colores del tema de la pantalla (variables --nc-*). */
+.copiloto {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  max-width: 860px;
+}
+.copiloto-intro {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.copiloto-intro > p {
+  margin: 0;
+}
+.copiloto-acciones {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+.copiloto-sugerencias {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+.copiloto-sugerencias button {
+  padding: 6px 12px;
+  border: 1px solid var(--nc-linea-fuerte, var(--nc-linea));
+  border-radius: 999px;
+  background: transparent;
+  color: var(--nc-texto-2);
+  font: inherit;
+  font-size: 13px;
+  line-height: 1.3;
+  text-align: left;
+  cursor: pointer;
+}
+.copiloto-sugerencias button:hover:not(:disabled),
+.copiloto-sugerencias button:focus-visible {
+  border-color: var(--nc-acento);
+  color: var(--nc-texto);
+}
+.copiloto-sugerencias button:disabled {
+  opacity: 0.5;
+  cursor: default;
+}
+
+.copiloto-charla {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.copiloto-turno {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  padding: 12px 14px;
+  border: 1px solid var(--nc-linea);
+  border-left: 3px solid var(--nc-acento);
+  border-radius: 10px;
+  background: rgba(var(--nc-velo), 0.35);
+}
+.copiloto-turno.error {
+  border-left-color: var(--nc-error, #d03b3b);
+}
+.copiloto-turno h3 {
+  margin: 0;
+  color: var(--nc-texto-3);
+  font-size: 12.5px;
+  font-weight: 600;
+}
+.copiloto-turno p {
+  margin: 0;
+  color: var(--nc-texto);
+  font-size: 14.5px;
+  line-height: 1.6;
+}
+.copiloto-respuesta {
+  white-space: pre-line;
+  overflow-wrap: anywhere;
+}
+.copiloto-espera {
+  color: var(--nc-texto-3) !important;
+}
+@media (prefers-reduced-motion: no-preference) {
+  .copiloto-espera {
+    animation: copiloto-pulso 1.4s ease-in-out infinite;
+  }
+}
+@keyframes copiloto-pulso {
+  50% {
+    opacity: 0.45;
+  }
+}
+.copiloto-turno footer {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 6px 12px;
+}
+.copiloto-turno footer small {
+  flex: 1 1 260px;
+  color: var(--nc-texto-3);
+  font-size: 11.5px;
+  line-height: 1.4;
+}
+.copiloto-turno footer span {
+  display: flex;
+  gap: 6px;
+}
+.copiloto-turno footer button {
+  padding: 4px 10px;
+  border: 1px solid var(--nc-linea-fuerte, var(--nc-linea));
+  border-radius: 6px;
+  background: transparent;
+  color: var(--nc-texto-2);
+  font: inherit;
+  font-size: 12px;
+  cursor: pointer;
+}
+.copiloto-turno footer button:hover,
+.copiloto-turno footer button:focus-visible {
+  border-color: var(--nc-acento);
+  color: var(--nc-texto);
+}
+
+.copiloto-pregunta {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-end;
+  gap: 8px;
+}
+.copiloto-pregunta .nc-campo {
+  flex: 1 1 280px;
+}

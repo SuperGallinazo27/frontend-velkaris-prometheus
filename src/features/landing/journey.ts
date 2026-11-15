@@ -3,7 +3,11 @@
  * y orientación de los planetas. Funciones puras, sin Three.js, para poder probarlas.
  */
 
-export type Vec3 = readonly [number, number, number];
+import { clamp01, lerp, smoothstep } from "../../three/geo";
+import type { Vec3 } from "../../three/geo";
+
+export { clamp01, latLonToVec3, lerp, shortestAngle, smoothstep, yawFacing } from "../../three/geo";
+export type { Vec3 } from "../../three/geo";
 
 export interface Shot {
   /** Posición de la cámara. */
@@ -16,18 +20,6 @@ export interface Shot {
   fit: number;
   /** Punto por el que se curva el vuelo hacia el siguiente encuadre, para rodear un planeta en vez de atravesarlo. */
   via?: Vec3;
-}
-
-const rad = (deg: number) => (deg * Math.PI) / 180;
-
-export const clamp01 = (x: number) => Math.min(1, Math.max(0, x));
-
-/** Interpolación lineal, exacta en ambos extremos. */
-export const lerp = (a: number, b: number, t: number) => a * (1 - t) + b * t;
-
-export function smoothstep(edge0: number, edge1: number, x: number): number {
-  const t = clamp01((x - edge0) / (edge1 - edge0));
-  return t * t * (3 - 2 * t);
 }
 
 /**
@@ -65,34 +57,6 @@ export function sampleShots(shots: readonly Shot[], p: number): Shot {
     shift: lerp(a.shift, b.shift, t),
     fit: lerp(a.fit, b.fit, t),
   };
-}
-
-/**
- * Punto de una esfera para una latitud y longitud en grados.
- * Longitud 0 mira a +X y longitud -90 (oeste) mira a +Z, igual que la textura equirrectangular.
- */
-export function latLonToVec3(lat: number, lon: number, radius = 1): Vec3 {
-  const phi = rad(lat);
-  const lambda = rad(lon);
-  return [
-    radius * Math.cos(phi) * Math.cos(lambda),
-    radius * Math.sin(phi),
-    -radius * Math.cos(phi) * Math.sin(lambda),
-  ];
-}
-
-/** Giro en Y (radianes) que deja la longitud dada mirando a +Z. */
-export function yawFacing(lon: number): number {
-  return -Math.PI / 2 - rad(lon);
-}
-
-/** Diferencia angular más corta de `from` a `to`, en (-π, π]. */
-export function shortestAngle(from: number, to: number): number {
-  const tau = Math.PI * 2;
-  let d = (to - from) % tau;
-  if (d > Math.PI) d -= tau;
-  if (d <= -Math.PI) d += tau;
-  return d;
 }
 
 /** Capítulo en el que la sonda vuelve a estar en la Tierra; ahí termina el indicador del viaje. */
@@ -139,3 +103,26 @@ export const SHOTS: readonly Shot[] = [
   // Explora: la Tierra arriba, el texto centrado debajo
   { pos: [1.7, 0.26, -18.8], target: [3.5, -2.7, -26], shift: 0, fit: 1 },
 ];
+
+/**
+ * Hacia dónde encarar un planeta para que se vean a la vez varios sitios: el centro de sus
+ * direcciones. Si están repartidos por todo el globo y se anulan, se usa `fallback`.
+ */
+export function faceOf(
+  sites: readonly { latitude: number; longitude: number }[],
+  fallback: { lat: number; lon: number },
+): { lat: number; lon: number } {
+  let x = 0;
+  let y = 0;
+  let z = 0;
+  for (const site of sites) {
+    const lat = (site.latitude * Math.PI) / 180;
+    const lon = (site.longitude * Math.PI) / 180;
+    x += Math.cos(lat) * Math.cos(lon);
+    y += Math.sin(lat);
+    z += Math.cos(lat) * Math.sin(lon);
+  }
+  const length = Math.hypot(x, y, z);
+  if (length < 1e-6) return fallback;
+  return { lat: (Math.asin(y / length) * 180) / Math.PI, lon: (Math.atan2(z, x) * 180) / Math.PI };
+}

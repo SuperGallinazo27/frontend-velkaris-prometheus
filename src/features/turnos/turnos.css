@@ -1,0 +1,417 @@
+/* Portal de turnos: panel de un lugar, insignias y la pantalla «Mis turnos». */
+
+.nocturno {
+  /* Tonos de los estados. El ámbar usa el del tema claro cuando existe. */
+  --tu-bien: var(--nc-activo-punto, var(--nc-tierra));
+  --tu-medio: var(--nc-pendiente, #f0b84a);
+  --tu-mal: var(--nc-error);
+}
+
+/* ---------- Insignia de un lugar ---------- */
+.turnos-insignia {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  width: fit-content;
+  max-width: 100%;
+  margin-top: 5px;
+  padding: 1px 8px;
+  border: 1px solid currentColor;
+  border-radius: 999px;
+  font-family: var(--nc-mono);
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  line-height: 1.7;
+  text-transform: uppercase;
+  white-space: nowrap;
+}
+.turnos-insignia i {
+  font-style: normal;
+}
+.turnos-insignia.bien {
+  color: var(--tu-bien);
+}
+.turnos-insignia.medio {
+  color: var(--tu-medio);
+}
+.turnos-insignia.mal {
+  color: var(--tu-mal);
+}
+
+/* ---------- Panel de un lugar ---------- */
+.turnos {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  width: 100%;
+  min-width: 0;
+}
+.turnos h4 {
+  margin: 0 0 6px;
+  color: var(--nc-texto-3);
+  font-family: var(--nc-mono);
+  font-size: 10.5px;
+  font-weight: 600;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+}
+.turnos ul {
+  display: flex;
+  flex-direction: column;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+.turnos a {
+  color: var(--nc-acento-claro);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+.turnos a.nc-btn {
+  color: var(--nc-texto);
+  text-decoration: none;
+}
+
+.turnos-estado {
+  display: flex;
+  align-items: flex-start;
+  gap: 11px;
+  padding: 12px 13px;
+  border: 1px solid var(--nc-linea-fuerte);
+  border-left-width: 3px;
+  border-radius: 6px;
+  background: rgba(var(--nc-velo), 0.45);
+}
+.turnos-estado.bien {
+  border-left-color: var(--tu-bien);
+}
+.turnos-estado.medio {
+  border-left-color: var(--tu-medio);
+}
+.turnos-estado.mal {
+  border-left-color: var(--tu-mal);
+}
+.turnos-estado > i {
+  flex-shrink: 0;
+  display: grid;
+  place-items: center;
+  width: 22px;
+  height: 22px;
+  margin-top: 1px;
+  border: 1.5px solid currentColor;
+  border-radius: 50%;
+  font-size: 12px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 1;
+}
+.turnos-estado.bien > i {
+  color: var(--tu-bien);
+}
+.turnos-estado.medio > i {
+  color: var(--tu-medio);
+}
+.turnos-estado.mal > i {
+  color: var(--tu-mal);
+}
+.turnos-estado strong {
+  display: block;
+  color: var(--nc-texto);
+  font-size: 14px;
+  font-weight: 600;
+  line-height: 1.35;
+}
+.turnos-estado p {
+  margin: 4px 0 0;
+  color: var(--nc-texto-2);
+  font-size: 13px;
+  line-height: 1.55;
+}
+
+.turnos-areas {
+  gap: 0;
+  border-top: 1px solid var(--nc-linea);
+}
+.turnos-areas li {
+  display: flex;
+  flex-direction: column;
+  gap: 1px;
+  padding: 8px 0 8px 10px;
+  border-bottom: 1px solid var(--nc-linea);
+  border-left: 2px solid transparent;
+}
+.turnos-areas li.estricta {
+  border-left-color: var(--tu-mal);
+}
+.turnos-areas strong {
+  color: var(--nc-texto);
+  font-size: 13.5px;
+  font-weight: 600;
+}
+.turnos-areas span,
+.turnos-areas small {
+  color: var(--nc-texto-2);
+  font-size: 12.5px;
+  line-height: 1.5;
+}
+.turnos-areas small {
+  color: var(--nc-texto-3);
+}
+
+.turnos-ocupados ul {
+  gap: 0;
+  border-top: 1px solid var(--nc-linea);
+}
+.turnos-ocupados li {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 10px;
+  padding: 7px 0;
+  border-bottom: 1px solid var(--nc-linea);
+  color: var(--nc-texto);
+  font-size: 13.5px;
+}
+.turnos-ocupados em {
+  flex-shrink: 0;
+  color: var(--nc-texto-3);
+  font-family: var(--nc-mono);
+  font-size: 10.5px;
+  font-style: normal;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+.turnos-ocupados em.propio {
+  color: var(--tu-bien);
+}
+
+.turnos-form {
+  display: flex;
+  flex-direction: column;
+  gap: 11px;
+  padding-top: 14px;
+  border-top: 1px solid var(--nc-linea);
+}
+.turnos-form h4 {
+  margin-bottom: 0;
+}
+.turnos-fechas {
+  display: grid;
+  grid-template-columns: minmax(0, 1.5fr) minmax(0, 1fr);
+  gap: 10px;
+}
+.turnos-form .nc-btn {
+  align-self: flex-start;
+}
+.turnos-otro {
+  align-self: flex-start;
+}
+.turnos-rango {
+  margin: -3px 0 0;
+  color: var(--nc-texto-2);
+  font-size: 13px;
+}
+.turnos-choque {
+  flex-direction: column;
+  align-items: flex-start;
+}
+.turnos-hecho {
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+}
+.turnos-hecho strong {
+  color: var(--nc-texto);
+  font-weight: 600;
+}
+.turnos-hecho code,
+.turno-codigo {
+  font-family: var(--nc-mono);
+  letter-spacing: 0.06em;
+}
+.turnos-hecho code {
+  display: block;
+  margin-top: 4px;
+  color: var(--nc-acento-claro);
+  font-size: 16px;
+  user-select: all;
+}
+
+/* La lista de localidades tiene estilos propios para strong y small: aquí no aplican. */
+.mundo-lista .turnos strong {
+  display: inline;
+  font-size: inherit;
+  line-height: inherit;
+}
+.mundo-lista .turnos-estado strong,
+.mundo-lista .turnos-areas strong {
+  display: block;
+  font-size: 13.5px;
+}
+.mundo-lista .turnos small {
+  overflow: visible;
+  white-space: normal;
+}
+.mundo-lista .turnos-areas small {
+  font-size: 12.5px;
+}
+
+/* ---------- Pantalla «Mis turnos» ---------- */
+.mis-turnos {
+  min-height: 100vh;
+  min-height: 100svh;
+}
+.mis-turnos-caja {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  width: min(980px, 100%);
+  margin: 0 auto;
+  padding: clamp(28px, 5vw, 52px) var(--nc-margen) 72px;
+}
+.mis-turnos-caja > .nc-titulo {
+  margin-top: -12px;
+}
+.mis-turnos-intro {
+  max-width: 68ch;
+  margin-top: -10px;
+}
+.mis-turnos h2 {
+  margin-bottom: 10px;
+  font-size: 17px;
+  font-weight: 600;
+  letter-spacing: 0;
+}
+.mis-turnos-lista {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+.turno-tarjeta {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  gap: 6px 18px;
+  padding: 16px 18px;
+}
+.turno-tarjeta h3 {
+  font-size: 16px;
+  font-weight: 600;
+  letter-spacing: 0;
+}
+.turno-tarjeta .turno-codigo {
+  color: var(--nc-acento-claro);
+  font-size: 13px;
+}
+.turno-tarjeta p {
+  margin: 0;
+  color: var(--nc-texto-2);
+  font-size: 13.5px;
+  line-height: 1.55;
+}
+.turno-tarjeta strong {
+  color: var(--nc-texto);
+  font-weight: 600;
+}
+.turno-datos {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+  min-width: 0;
+}
+.turno-lado {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 8px;
+}
+.turno-fase {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  color: var(--nc-texto-2);
+  font-size: 13px;
+  white-space: nowrap;
+}
+.turno-fase::before {
+  content: "";
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: var(--nc-texto-3);
+}
+.turno-fase.proximo::before {
+  background: var(--nc-acento);
+}
+.turno-fase.en_curso::before {
+  background: var(--tu-bien);
+}
+.turno-fase.en_curso {
+  color: var(--nc-texto);
+  font-weight: 600;
+}
+.turno-fase.cancelado {
+  color: var(--tu-mal);
+}
+.turno-fase.cancelado::before {
+  background: var(--tu-mal);
+}
+.turno-cancelar {
+  grid-column: 1 / -1;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-end;
+  gap: 10px;
+  padding-top: 10px;
+  border-top: 1px solid var(--nc-linea);
+}
+.turno-cancelar .nc-campo {
+  flex: 1 1 260px;
+}
+.turno-motivo {
+  grid-column: 1 / -1;
+}
+.mis-turnos-vacio {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 12px;
+  padding: 20px;
+}
+.mis-turnos .nc-nota a,
+.mis-turnos p a {
+  color: var(--nc-acento-claro);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+@media (max-width: 640px) {
+  .turno-tarjeta {
+    grid-template-columns: minmax(0, 1fr);
+  }
+  .turno-lado {
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+  }
+}
+
+/* ---------- Turno al final de un plan de campaña (centro de misión) ---------- */
+.mision-turno {
+  padding: 18px;
+  border: 1px solid var(--nc-linea-fuerte);
+  border-radius: 12px;
+}
+.mision .turnos a {
+  color: var(--nc-acento-claro);
+}
+.mision .turnos a.nc-btn {
+  color: var(--nc-texto);
+  text-decoration: none;
+}
+.mision .turnos-estado strong {
+  display: block;
+}
