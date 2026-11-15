@@ -712,9 +712,11 @@
   .lp-nav {
     display: none;
   }
-  .lp-header .brand small,
-  .lp-header .lp-abrir {
+  .lp-header .brand small {
     display: none;
+  }
+  .lp-header .lp-abrir {
+    margin-left: auto;
   }
   .lp-ingresar {
     margin-left: auto;

@@ -316,11 +316,14 @@ export function Landing() {
         </nav>
         <LanguageSwitch />
         {/* El ingreso se abre en otra pestaña: la portada queda abierta detrás. */}
-        <a className="lp-ingresar" href="#ingresar" target="_blank" rel="noopener" aria-label="Ingresar (se abre en otra pestaña)">
-          Ingresar
-        </a>
-        <a className="nc-btn primario compacto lp-abrir" href="#mundo">
-          Abrir el mundo <Icon name="arrow" size={16} />
+        <a
+          className="nc-btn primario compacto lp-abrir"
+          href="#ingresar"
+          target="_blank"
+          rel="noopener"
+          aria-label="Ingresar (se abre en otra pestaña)"
+        >
+          Ingresar <Icon name="arrow" size={16} />
         </a>
       </header>
 
