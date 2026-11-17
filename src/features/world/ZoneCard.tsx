@@ -16,6 +16,7 @@ import type { LunarRegion } from "./lunar";
 import { PhotoReading } from "./PhotoReading";
 import { Photos } from "./Photos";
 import { seasonOf } from "./climate";
+import { useClimateNow } from "./useClimateNow";
 import { Wheels } from "./Wheels";
 import "./ficha.css";
 
@@ -53,6 +54,7 @@ export function ZoneCard({ match, region, institution }: Props) {
   const survey = surveyOf(zone.id);
   const elevation = survey?.elevation ?? null;
   const season = seasonOf(zone.id, zone.latitude, elevation);
+  const now = useClimateNow(zone.id, zone.latitude, zone.longitude, season, tab === "clima" || mission);
   const rows = [
     { name: "Relieve", here: `${decimal(zone.relief)} m`, there: `${decimal(scenario.relief)} m` },
     { name: "Pendiente", here: `${decimal(zone.slope, 1)}°`, there: `${decimal(scenario.slope, 1)}°` },
@@ -87,6 +89,7 @@ export function ZoneCard({ match, region, institution }: Props) {
           match={match}
           real={Boolean(region)}
           season={season}
+          now={now}
           institution={institution}
           onClose={() => setMission(false)}
         />
@@ -197,6 +200,7 @@ export function ZoneCard({ match, region, institution }: Props) {
             longitude={zone.longitude}
             elevation={elevation}
             season={season}
+            now={now}
             region={region ? { id: region.id, name: scenario.name } : null}
           />
         )}

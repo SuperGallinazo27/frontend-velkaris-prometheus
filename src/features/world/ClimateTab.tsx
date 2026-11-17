@@ -2,10 +2,11 @@ import type { Season as SeasonData } from "./climate";
 import { GroundTemp } from "./GroundTemp";
 import { Now } from "./Now";
 import { Season } from "./Season";
-import { useClimateNow } from "./useClimateNow";
+import type { ClimateNow } from "./useClimateNow";
 import "./clima.css";
 
 interface Props {
+  now: ClimateNow;
   zoneId: string;
   latitude: number;
   longitude: number;
@@ -28,8 +29,7 @@ interface Props {
  *
  * Se monta con `key` por lugar, así que cada lugar empieza consultando de nuevo.
  */
-export function ClimateTab({ zoneId, latitude, longitude, elevation, season, region }: Props) {
-  const now = useClimateNow(zoneId, latitude, longitude, season);
+export function ClimateTab({ zoneId, latitude, longitude, elevation, season, region, now }: Props) {
   return (
     <div className="clima">
       <Now now={now} latitude={latitude} longitude={longitude} season={season} />

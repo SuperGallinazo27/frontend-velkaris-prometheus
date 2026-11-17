@@ -133,12 +133,13 @@ export type GroundNow =
  * Estado del suelo del lugar. Cambiar de lugar vuelve a «cargando»; `retry` repite la consulta.
  * `family` solo hace falta si la rueda se calcula con otra clase de suelo que la sugerida.
  */
-export function useGroundNow(placeId: string, latitude: number, longitude: number, family?: SoilFamily): GroundNow {
+export function useGroundNow(placeId: string, latitude: number, longitude: number, family?: SoilFamily, enabled = true): GroundNow {
   const key = `${placeId}|${latitude}|${longitude}`;
   const [state, setState] = useState<{ key: string; forecast: GroundForecast | "error" } | null>(null);
   const [attempt, setAttempt] = useState(0);
 
   useEffect(() => {
+    if (!enabled) return;
     let cancelled = false;
     fetchGroundForecast(latitude, longitude)
       .then((forecast) => !cancelled && setState({ key, forecast }))
@@ -146,7 +147,7 @@ export function useGroundNow(placeId: string, latitude: number, longitude: numbe
     return () => {
       cancelled = true;
     };
-  }, [key, latitude, longitude, attempt]);
+  }, [key, latitude, longitude, attempt, enabled]);
 
   const retry = () => {
     setState(null);
