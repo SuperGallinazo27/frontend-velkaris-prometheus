@@ -2,6 +2,7 @@ import { Suspense, lazy, useEffect, useMemo, useRef, useState } from "react";
 import type { KeyboardEvent } from "react";
 import { createPortal } from "react-dom";
 import { Copilot } from "../ai/Copilot";
+import type { ClimateNow } from "../world/useClimateNow";
 import { decimal } from "../world/format";
 import type { Season } from "../world/climate";
 import { similarity } from "../world/hierarchy";
@@ -80,6 +81,7 @@ interface Props {
   /** true cuando el terreno comparado es real (Luna); con Marte es una demostración. */
   real: boolean;
   season: Season | null;
+  now: ClimateNow;
   /** Nombre de la agencia de quien tiene la sesión, para el plan. */
   institution: string;
   onClose: () => void;
@@ -89,7 +91,7 @@ interface Props {
  * Centro de misión de un lugar: descarga su gemelo digital, estima el costo de llegar desde
  * donde está el equipo y arma un plan de campaña para una temporada.
  */
-export function MissionCenter({ match, real, season, institution, onClose }: Props) {
+export function MissionCenter({ match, real, season, now, institution, onClose }: Props) {
   const { zone, scenario } = match;
   const dialogRef = useRef<HTMLDialogElement>(null);
   const tabsRef = useRef<HTMLDivElement>(null);
@@ -641,7 +643,7 @@ export function MissionCenter({ match, real, season, institution, onClose }: Pro
             </div>
           )}
 
-          {tab === "copiloto" && <Copilot match={match} real={real} season={season} robotTest={robotTest} plan={plan} />}
+          {tab === "copiloto" && <Copilot match={match} real={real} season={season} now={now} robotTest={robotTest} plan={plan} />}
         </div>
       </div>
     </dialog>,

@@ -2,15 +2,12 @@ import { useEffect, useRef, useState } from "react";
 import type { FormEvent } from "react";
 import { MAX_QUESTION, askAssistant, assistantAvailable } from "../../services/assistant";
 import type { AssistantKind } from "../../services/assistant";
-import { fetchEnso } from "../../services/enso";
-import { fetchRecentRain } from "../../services/recentRain";
-import type { RecentRain } from "../../services/recentRain";
 import { turnos } from "../../services/turnos";
 import { STATE_NAMES, rangeText } from "../../services/turnosRules";
 import type { MissionPlan, RobotTestResult } from "../mission/campaign";
 import { download, fileSlug } from "../mission/twin";
 import type { Season } from "../world/climate";
-import type { EnsoData } from "../world/enso";
+import type { ClimateNow } from "../world/useClimateNow";
 import type { Match } from "../world/hierarchy";
 import { surveyOf } from "../world/lunar";
 import { SUGGESTED_QUESTIONS, placeContext } from "./context";
@@ -37,14 +34,9 @@ interface Props {
   match: Match;
   real: boolean;
   season: Season | null;
+  now: ClimateNow;
   robotTest: RobotTestResult | null;
   plan: MissionPlan | null;
-}
-
-interface Live {
-  rain: RecentRain | null;
-  enso: EnsoData | null;
-  booking: BookingFacts | null;
 }
 
 /**
@@ -52,40 +44,38 @@ interface Live {
  * plan. La IA solo recibe los datos que ya están en pantalla (`placeContext`) y el servidor le
  * ordena no añadir cifras: explica y redacta, no calcula.
  */
-export function Copilot({ match, real, season, robotTest, plan }: Props) {
+export function Copilot({ match, real, season, now, robotTest, plan }: Props) {
   const { zone } = match;
   const [exchanges, setExchanges] = useState<Exchange[]>([]);
   const [question, setQuestion] = useState("");
   const [copied, setCopied] = useState<number | null>(null);
-  // La lluvia real, El Niño y el estado de los turnos entran en los datos si llegan a tiempo; si no,
-  // la IA no los menciona.
-  const live = useRef<Live>({ rain: null, enso: null, booking: null });
+  // Una sola instantánea para Clima y copiloto, incluida la comparación histórica.
+  const climate = useRef(now);
+  useEffect(() => { climate.current = now; }, [now]);
+  const bookingFacts = useRef<BookingFacts | null>(null);
   const nextId = useRef(1);
   const endRef = useRef<HTMLDivElement>(null);
   const busy = exchanges.some((exchange) => exchange.status === "pensando");
 
-  // Se resuelve cuando las tres consultas terminaron, bien o mal.
+  // Los turnos se consultan solo al abrir el copiloto.
   const ready = useRef<Promise<unknown>>(Promise.resolve());
 
   useEffect(() => {
     let cancelled = false;
-    const rain = fetchRecentRain(zone.latitude, zone.longitude)
-      .then((value) => !cancelled && (live.current.rain = value))
-      .catch(() => undefined);
-    const enso = fetchEnso().then((value) => !cancelled && (live.current.enso = value));
+    bookingFacts.current = null;
     const booking = turnos
       .availability(zone.id)
       .then(({ place, busy }) => {
         if (cancelled) return;
         const state = STATE_NAMES[place.status].toLowerCase();
-        live.current.booking = {
+        bookingFacts.current = {
           status: !place.bookable ? `no reservable (${state})` : place.permitRequired ? `reservable solo declarando un permiso (${state})` : "reservable",
           reason: place.reason,
           busy: busy.map((range) => rangeText(range.startDate, range.endDate)),
         };
       })
       .catch(() => undefined);
-    ready.current = Promise.all([rain, enso, booking]);
+    ready.current = booking;
     return () => {
       cancelled = true;
     };
@@ -97,9 +87,19 @@ export function Copilot({ match, real, season, robotTest, plan }: Props) {
     setExchanges((list) => [...list, { id, kind, title, status: "pensando" as const, text: "", model: "" }].slice(-KEEP));
     const settle = (patch: Partial<Exchange>) =>
       setExchanges((list) => list.map((item) => (item.id === id ? { ...item, ...patch } : item)));
-    // Si alguien pregunta nada más abrir, se espera un momento a la lluvia real y a los turnos:
-    // sin ellos la respuesta sale incompleta.
-    Promise.race([ready.current, new Promise((resolve) => setTimeout(resolve, WAIT_FACTS_MS))])
+    // Espera limitada: si una fuente falla o tarda, se envían solo los datos disponibles.
+    const climateReady = new Promise<void>((resolve) => {
+      const started = Date.now();
+      const check = () => {
+        const current = climate.current;
+        const pending = [current.rain, current.baseline, current.weather, current.ground]
+          .some((value) => value.status === "cargando");
+        if (!pending || Date.now() - started >= WAIT_FACTS_MS) resolve();
+        else setTimeout(check, 100);
+      };
+      check();
+    });
+    Promise.race([Promise.all([ready.current, climateReady]), new Promise((resolve) => setTimeout(resolve, WAIT_FACTS_MS))])
       .then(() =>
         askAssistant(
           kind,
@@ -108,10 +108,9 @@ export function Copilot({ match, real, season, robotTest, plan }: Props) {
             real,
             elevation: surveyOf(zone.id)?.elevation ?? null,
             season,
-            month: new Date().getMonth(),
-            rain: live.current.rain,
-            enso: live.current.enso,
-            booking: live.current.booking,
+            month: climate.current.month,
+            now: climate.current,
+            booking: bookingFacts.current,
             robotTest,
             plan: kind === "plan" ? plan : null,
           }),

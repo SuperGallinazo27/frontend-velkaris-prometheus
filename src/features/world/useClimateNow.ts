@@ -43,16 +43,17 @@ export interface ClimateNow {
   retry: () => void;
 }
 
-export function useClimateNow(placeId: string, latitude: number, longitude: number, season: Season | null): ClimateNow {
+export function useClimateNow(placeId: string, latitude: number, longitude: number, season: Season | null, enabled = true): ClimateNow {
   const [month] = useState(() => new Date().getMonth());
   const [weather, setWeather] = useState<Loaded<CurrentWeather>>({ status: "cargando" });
   const [rain, setRain] = useState<Loaded<RecentRain>>({ status: "cargando" });
   const [baseline, setBaseline] = useState<Loaded<RainBaseline>>({ status: "cargando" });
   const [enso, setEnso] = useState<EnsoData | null>(null);
   const [attempt, setAttempt] = useState(0);
-  const ground = useGroundNow(placeId, latitude, longitude);
+  const ground = useGroundNow(placeId, latitude, longitude, undefined, enabled);
 
   useEffect(() => {
+    if (!enabled) return;
     let cancelled = false;
     fetchCurrentWeather(latitude, longitude)
       .then((value) => !cancelled && setWeather({ status: "ok", value }))
@@ -75,7 +76,7 @@ export function useClimateNow(placeId: string, latitude: number, longitude: numb
     return () => {
       cancelled = true;
     };
-  }, [latitude, longitude, attempt]);
+  }, [latitude, longitude, attempt, enabled]);
 
   function retry() {
     setWeather({ status: "cargando" });
