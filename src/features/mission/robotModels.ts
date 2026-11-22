@@ -61,6 +61,34 @@ export interface BuiltRobot {
   dispose(): void;
 }
 
+/** Una pieza de un robot desarmado: a qué componente pertenece y el objeto que se mueve entero. */
+export interface RobotPiece {
+  /** Componente del hangar (los de `ROBOT_PARTS`). */
+  part: string;
+  object: Object3D;
+}
+
+/** Un robot separado en piezas, para el holograma del hangar. */
+export interface BuiltParts {
+  /** De aquí cuelgan todas las piezas, en el sistema del robot: mira hacia +x, +y arriba, origen en el suelo. */
+  root: Group;
+  pieces: RobotPiece[];
+  /** true si es el modelo oficial; false si es una forma simplificada. */
+  official: boolean;
+  dispose(): void;
+}
+
+/**
+ * Dónde empieza cada pieza durante el armado: lo que se añade a la raíz después de una marca le
+ * pertenece, hasta la marca siguiente. Dos marcas con el mismo nombre de pieza acaban en la misma.
+ */
+type PieceLog = { part: string; piece: string; from: number }[];
+
+/** Sin registro (el simulador) las marcas no hacen nada: el robot se arma igual que siempre. */
+const sectionMarker = (root: Group, log: PieceLog | undefined) => (part: string, piece: string = part) => {
+  log?.push({ part, piece, from: root.children.length });
+};
+
 const TEXTURE_SLOTS = ["map", "normalMap", "roughnessMap", "metalnessMap", "aoMap", "emissiveMap", "alphaMap", "clearcoatNormalMap"] as const;
 
 /** Libera geometrías, materiales y sus imágenes. */
@@ -149,6 +177,35 @@ export function bake(root: Group, keep: readonly Object3D[] = []): void {
     mesh.receiveShadow = true;
     root.add(mesh);
   }
+}
+
+/**
+ * Reparte en un grupo por pieza lo que se armó entre marca y marca, y junta las mallas de cada
+ * grupo por material. Es lo mismo que hace `bake` con el robot entero, pero pieza a pieza: así
+ * cada una se puede mover por su cuenta en el holograma.
+ */
+function gatherPieces(root: Group, log: PieceLog): RobotPiece[] {
+  const children = [...root.children];
+  const slots = new Map<string, { part: string; group: Group }>();
+  log.forEach((entry, k) => {
+    const to = k + 1 < log.length ? log[k + 1].from : children.length;
+    if (to <= entry.from) return;
+    let slot = slots.get(entry.piece);
+    if (!slot) {
+      slot = { part: entry.part, group: new Group() };
+      slot.group.name = entry.piece;
+      slots.set(entry.piece, slot);
+    }
+    // El grupo queda sin girar ni mover dentro de la raíz: cada pieza conserva su sitio.
+    for (const child of children.slice(entry.from, to)) slot.group.add(child);
+  });
+  const pieces: RobotPiece[] = [];
+  for (const { part, group } of slots.values()) {
+    root.add(group);
+    bake(group);
+    pieces.push({ part, object: group });
+  }
+  return pieces;
 }
 
 /** Ruido de valor periódico sobre una rejilla: la imagen que sale se repite sin costura. */
@@ -396,9 +453,10 @@ function grouserWheel(r: number, w: number, grousers: number, outward: number, p
  * (los dos costados y detrás), mástil con cámaras, faros y antena, taladro en el centro y cuatro
  * ruedas con suspensión y dirección independientes.
  */
-function buildViper(shape: RobotShape): BuiltRobot {
+function buildViper(shape: RobotShape, log?: PieceLog): BuiltRobot {
   const root = new Group();
   const add = builder(root);
+  const mark = sectionMarker(root, log);
   const paint = paints();
   const { body, wheelRadius: r, wheelWidth: w } = shape;
 
@@ -408,12 +466,15 @@ function buildViper(shape: RobotShape): BuiltRobot {
   const boxH = 0.64;
   const deckY = bellyY + boxH;
   // Cuerpo, con las aristas redondeadas, sobre una bandeja inferior.
+  mark("cuerpo");
   add(new RoundedBoxGeometry(boxL, boxH, boxW, 4, 0.045), paint.white, 0, bellyY + boxH / 2, 0);
   add(new RoundedBoxGeometry(boxL + 0.05, 0.24, boxW + 0.05, 3, 0.04), paint.foil, 0, bellyY + 0.1, 0);
   add(new BoxGeometry(boxL - 0.1, 0.05, boxW - 0.1), paint.dark, 0, bellyY - 0.035, 0);
   // Radiador del techo, con sus lamas, y asas de izado en las esquinas.
+  mark("radiador");
   add(new RoundedBoxGeometry(boxL + 0.08, 0.04, boxW + 0.08, 2, 0.015), paint.radiator, 0, deckY + 0.022, 0);
   for (let k = -4; k <= 4; k++) add(new BoxGeometry(boxL * 0.86, 0.012, 0.035), paint.aluminum, -0.02, deckY + 0.05, k * 0.11);
+  mark("cuerpo");
   for (const sx of [1, -1]) for (const sz of [1, -1]) add(new TorusGeometry(0.035, 0.008, 6, 14, Math.PI), paint.steel, sx * (boxL / 2 - 0.08), deckY + 0.045, sz * (boxW / 2 - 0.08));
 
   // Paneles solares en los dos costados y detrás, casi verticales: en el polo el Sol va muy bajo.
@@ -445,21 +506,26 @@ function buildViper(shape: RobotShape): BuiltRobot {
     piece.position.set(0, panelY, side * (boxW / 2 + 0.11 + (panelH / 2) * Math.sin(tilt)));
     // La cara con celdas mira hacia fuera y el panel se abre un poco por arriba.
     piece.rotation.set(side * tilt, side > 0 ? 0 : Math.PI, 0);
+    mark("paneles", side > 0 ? "panel-derecho" : "panel-izquierdo");
     root.add(piece);
     // Bisagras que lo sujetan al cuerpo.
+    mark("cuerpo");
     for (const x of [-0.42, 0.42]) add(new BoxGeometry(0.05, 0.05, 0.14), paint.steel, x, deckY - 0.04, side * (boxW / 2 + 0.07));
   }
   const rear = solar(boxW + 0.08);
   rear.position.set(-(boxL / 2 + 0.11 + (panelH / 2) * Math.sin(tilt)), panelY, 0);
   rear.rotation.set(0, -Math.PI / 2, 0);
   rear.rotateX(tilt);
+  mark("paneles", "panel-trasero");
   root.add(rear);
 
   // Frente: instrumentos envueltos en aislante, cámaras de peligro y dos faros.
+  mark("instrumentos");
   const frontX = boxL / 2;
   add(new RoundedBoxGeometry(0.16, 0.24, 0.3, 2, 0.02), paint.foil, frontX + 0.07, bellyY + 0.36, 0.28);
   add(new RoundedBoxGeometry(0.14, 0.2, 0.26, 2, 0.02), paint.foil, frontX + 0.06, bellyY + 0.34, -0.3);
   add(new CylinderGeometry(0.05, 0.05, 0.12, 16), paint.dark, frontX + 0.13, bellyY + 0.2, 0, [0, 0, Math.PI / 2]);
+  mark("cuerpo");
   for (const side of [1, -1]) {
     add(new RoundedBoxGeometry(0.05, 0.07, 0.09, 2, 0.01), paint.dark, frontX + 0.03, deckY - 0.1, side * 0.12);
     add(new CylinderGeometry(0.022, 0.022, 0.02, 14), paint.glass, frontX + 0.06, deckY - 0.1, side * 0.12, [0, 0, Math.PI / 2]);
@@ -467,6 +533,7 @@ function buildViper(shape: RobotShape): BuiltRobot {
   }
 
   // Mástil delantero: cabeza que gira con dos cámaras y dos faros, y antena de alta ganancia.
+  mark("mastil");
   const mastX = boxL / 2 - 0.18;
   const mastZ = -0.3;
   const mastTop = body.height - 0.24;
@@ -481,6 +548,7 @@ function buildViper(shape: RobotShape): BuiltRobot {
     add(new RoundedBoxGeometry(0.03, 0.09, 0.09, 2, 0.01), paint.lamp, mastX + 0.108, mastTop + 0.08, mastZ + side * 0.18);
   }
   // Antena de alta ganancia: un plato sobre un cardán, al otro lado del techo.
+  mark("antena");
   const dishProfile = Array.from({ length: 9 }, (_, k) => new Vector2((k / 8) * 0.23, ((k / 8) ** 2) * 0.07));
   const dishX = mastX - 0.08;
   const dishZ = 0.32;
@@ -494,9 +562,11 @@ function buildViper(shape: RobotShape): BuiltRobot {
   horn.position.y = 0.19;
   dish.add(horn);
   // Antenas de baja ganancia.
+  mark("antena", "antenas-baja-ganancia");
   for (const z of [0.42, -0.02]) add(new CylinderGeometry(0.008, 0.008, 0.2, 6), paint.steel, -boxL / 2 + 0.16, deckY + 0.14, z);
 
   // Taladro TRIDENT: una columna que cruza el cuerpo, con la broca hacia el suelo.
+  mark("taladro");
   add(new RoundedBoxGeometry(0.17, 0.5, 0.17, 2, 0.02), paint.aluminum, -0.1, deckY + 0.24, 0.05);
   add(new CylinderGeometry(0.035, 0.035, bellyY - 0.1, 12), paint.steel, -0.1, (bellyY + 0.1) / 2, 0.05);
   add(new ConeGeometry(0.035, 0.07, 12), paint.dark, -0.1, 0.085, 0.05, [Math.PI, 0, 0]);
@@ -510,6 +580,8 @@ function buildViper(shape: RobotShape): BuiltRobot {
       const innerZ = wz - sz * (w / 2 + 0.07);
       const shoulder = new Vector3(sx * (boxL / 2 - 0.14), bellyY + 0.2, sz * (boxW / 2 + 0.03));
       const elbow = new Vector3(wx, 2 * r + 0.16, innerZ);
+      const corner = `${sx > 0 ? "delante" : "detras"}-${sz > 0 ? "derecha" : "izquierda"}`;
+      mark("suspension", `pata-${corner}`);
       add(new CylinderGeometry(0.06, 0.06, 0.1, 16), paint.dark, shoulder.x, shoulder.y, shoulder.z, [Math.PI / 2, 0, 0]);
       strut(root, paint.aluminum, shoulder, elbow, 0.062);
       add(new CylinderGeometry(0.068, 0.068, 0.15, 18), paint.dark, elbow.x, elbow.y - 0.03, elbow.z);
@@ -519,11 +591,13 @@ function buildViper(shape: RobotShape): BuiltRobot {
       const wheel = grouserWheel(r, w, 22, sz, paint);
       wheel.position.set(wx, r, wz);
       bake(wheel);
+      mark("ruedas", `rueda-${corner}`);
       root.add(wheel);
       wheels.push(wheel);
     }
   }
-  bake(root, wheels);
+  // Para el hangar las piezas se juntan después, una a una; el simulador lo funde todo en pocas mallas.
+  if (!log) bake(root, wheels);
   return {
     root,
     spin: (angle) => wheels.forEach((wheel) => (wheel.rotation.z = -angle)),
@@ -598,9 +672,10 @@ function webbingTexture(): CanvasTexture {
  * palanca en T, baterías bajo aislante dorado, guardabarros, ruedas de malla de alambre, antena de
  * paraguas, cámara de televisión y el portaherramientas de atrás.
  */
-function buildLrv(shape: RobotShape): BuiltRobot {
+function buildLrv(shape: RobotShape, log?: PieceLog): BuiltRobot {
   const root = new Group();
   const add = builder(root);
+  const mark = sectionMarker(root, log);
   const paint = paints();
   const { body, wheelRadius: r, wheelWidth: w } = shape;
   const webbing = new MeshStandardMaterial({ map: webbingTexture(), metalness: 0, roughness: 0.92 });
@@ -609,12 +684,14 @@ function buildLrv(shape: RobotShape): BuiltRobot {
   const deckY = 0.52;
 
   // Bastidor: dos largueros, travesaños y los tres pisos (delantero, central y trasero).
+  mark("bastidor");
   for (const side of [1, -1]) add(new RoundedBoxGeometry(body.length, 0.075, 0.075, 2, 0.015), paint.aluminum, 0, deckY, side * 0.42);
   for (const x of [-1.45, -0.7, 0.1, 0.9, 1.45]) add(new BoxGeometry(0.06, 0.06, 0.9), paint.aluminum, x, deckY, 0);
   add(new BoxGeometry(1.5, 0.022, 0.92), paint.aluminum, -0.15, deckY + 0.045, 0);
   for (let k = -3; k <= 3; k++) add(new BoxGeometry(1.46, 0.008, 0.012), paint.steel, -0.15, deckY + 0.06, k * 0.12);
   // Dos asientos de tubo y cinta, con respaldo, reposabrazos y reposapiés.
   for (const side of [1, -1]) {
+    mark("asientos", side > 0 ? "asiento-derecho" : "asiento-izquierdo");
     add(new RoundedBoxGeometry(0.46, 0.05, 0.42, 2, 0.015), webbing, -0.42, deckY + 0.34, side * 0.27);
     add(new RoundedBoxGeometry(0.05, 0.52, 0.42, 2, 0.015), webbing, -0.67, deckY + 0.61, side * 0.27, [0, 0, -0.14]);
     for (const z of [0.2, -0.2]) add(new CylinderGeometry(0.014, 0.014, 0.34, 8), paint.aluminum, -0.22, deckY + 0.19, side * 0.27 + z);
@@ -622,17 +699,21 @@ function buildLrv(shape: RobotShape): BuiltRobot {
     strut(root, paint.aluminum, new Vector3(-0.66, deckY + 0.36, side * 0.5), new Vector3(-0.3, deckY + 0.56, side * 0.5), 0.022);
   }
   // Consola con la pantalla y la palanca en T, entre los asientos.
+  mark("consola");
   add(new RoundedBoxGeometry(0.2, 0.34, 0.3, 2, 0.02), paint.dark, 0.16, deckY + 0.43, 0);
   add(new BoxGeometry(0.012, 0.2, 0.24), paint.glass, 0.055, deckY + 0.47, 0);
   add(new CylinderGeometry(0.018, 0.018, 0.16, 8), paint.aluminum, -0.1, deckY + 0.42, 0);
   add(new RoundedBoxGeometry(0.045, 0.045, 0.15, 2, 0.01), paint.black, -0.1, deckY + 0.5, 0);
   // Baterías y electrónica delante, bajo aislante dorado y con radiadores blancos; herramientas detrás.
+  mark("baterias");
   add(new RoundedBoxGeometry(0.62, 0.3, 0.8, 3, 0.03), paint.foil, 1.12, deckY + 0.2, 0);
   for (const z of [0.2, -0.2]) add(new BoxGeometry(0.3, 0.012, 0.3), paint.radiator, 1.12, deckY + 0.36, z);
+  mark("herramientas");
   add(new RoundedBoxGeometry(0.5, 0.34, 0.86, 2, 0.02), paint.white, -1.2, deckY + 0.22, 0);
   add(new BoxGeometry(0.05, 0.62, 0.86), paint.aluminum, -1.48, deckY + 0.36, 0);
   for (const z of [0.3, 0, -0.3]) add(new RoundedBoxGeometry(0.16, 0.26, 0.2, 2, 0.02), paint.white, -1.4, deckY + 0.62, z);
   // Antena de alta ganancia: un paraguas de malla dorada sobre un mástil, delante.
+  mark("antena");
   add(new CylinderGeometry(0.02, 0.02, 1.25, 10), paint.aluminum, 1.22, deckY + 0.95, 0);
   const umbrella = add(new CylinderGeometry(0.46, 0.05, 0.2, 24, 1, true), goldMesh, 1.22, deckY + 1.62, 0, [0.35, 0, 0.2]);
   for (let k = 0; k < 12; k++) {
@@ -643,8 +724,10 @@ function buildLrv(shape: RobotShape): BuiltRobot {
     umbrella.add(rib);
   }
   // Antena de baja ganancia y cámara de televisión.
+  mark("antena", "antena-baja-ganancia");
   add(new CylinderGeometry(0.012, 0.012, 0.9, 6), paint.aluminum, 0.2, deckY + 0.9, 0.5);
   add(new CylinderGeometry(0.03, 0.03, 0.16, 10), paint.aluminum, 0.2, deckY + 1.38, 0.5);
+  mark("camara");
   add(new RoundedBoxGeometry(0.22, 0.14, 0.12, 2, 0.015), paint.foil, 1.3, deckY + 0.78, -0.42);
   add(new CylinderGeometry(0.035, 0.035, 0.07, 12), paint.glass, 1.43, deckY + 0.78, -0.42, [0, 0, Math.PI / 2]);
   add(new CylinderGeometry(0.015, 0.015, 0.5, 6), paint.aluminum, 1.3, deckY + 0.5, -0.42);
@@ -677,21 +760,25 @@ function buildLrv(shape: RobotShape): BuiltRobot {
       }
       wheel.position.set(wx, r, wz);
       bake(wheel);
+      const corner = `${sx > 0 ? "delante" : "detras"}-${sz > 0 ? "derecha" : "izquierda"}`;
+      mark("ruedas", `rueda-${corner}`);
       root.add(wheel);
       wheels.push(wheel);
       // Guardabarros, con su prolongación trasera, y brazos de la suspensión.
+      mark("guardabarros", `guardabarros-${corner}`);
       // Con el cilindro tumbado sobre el eje de la rueda, el ángulo π queda arriba: el arco cubre la parte alta.
       const guard = new Mesh(new CylinderGeometry(r + 0.07, r + 0.07, w + 0.1, 28, 1, true, Math.PI * 0.56, Math.PI * 0.88), fender);
       guard.rotation.x = Math.PI / 2;
       guard.position.set(wx, r, wz);
       guard.castShadow = true;
       root.add(guard);
+      mark("suspension", `brazos-${corner}`);
       const reach = Math.abs(wz) - 0.42;
       for (const y of [r + 0.12, r - 0.08]) add(new BoxGeometry(0.05, 0.035, reach), paint.aluminum, wx, y, sz * (0.42 + reach / 2));
       strut(root, paint.steel, new Vector3(wx, deckY, sz * 0.42), new Vector3(wx, r + 0.02, wz - sz * (w / 2 + 0.04)), 0.03);
     }
   }
-  bake(root, wheels);
+  if (!log) bake(root, wheels);
   return {
     root,
     spin: (angle) => wheels.forEach((wheel) => (wheel.rotation.z = -angle)),
@@ -865,8 +952,8 @@ function splitWheels(model: Object3D): Group[] {
   return wheels;
 }
 
-/** Carga el modelo oficial de NASA, lo orienta hacia +x y separa sus ruedas. */
-async function loadOfficial(shape: RobotShape): Promise<BuiltRobot> {
+/** Carga el modelo oficial de NASA y separa sus ruedas. El modelo queda mirando hacia +z, centrado entre sus ejes. */
+async function loadModel(shape: RobotShape): Promise<{ model: Object3D; wheels: Group[] }> {
   const gltf = await new GLTFLoader().loadAsync(shape.modelUrl!);
   const model = gltf.scene;
   const wheels = splitWheels(model);
@@ -884,15 +971,27 @@ async function loadOfficial(shape: RobotShape): Promise<BuiltRobot> {
       if (material && "envMapIntensity" in material) material.envMapIntensity = 1;
     }
   });
-  // El modelo mira hacia +z: se gira para que mire hacia +x y se centra entre el eje delantero y el trasero.
+  // Se centra entre el eje delantero y el trasero.
   const front = Math.max(...wheels.map((wheel) => wheel.position.z));
   const rear = Math.min(...wheels.map((wheel) => wheel.position.z));
   model.position.z = -(front + rear) / 2;
+  return { model, wheels };
+}
+
+/** El modelo mira hacia +z: se gira para que mire hacia +x, como todos los robots. */
+function facingForward(model: Object3D): Group {
   const root = new Group();
   const turned = new Group();
   turned.rotation.y = Math.PI / 2;
   turned.add(model);
   root.add(turned);
+  return root;
+}
+
+/** Carga el modelo oficial de NASA, lo orienta hacia +x y separa sus ruedas. */
+async function loadOfficial(shape: RobotShape): Promise<BuiltRobot> {
+  const { model, wheels } = await loadModel(shape);
+  const root = facingForward(model);
   return {
     root,
     // En el modelo, el eje de las ruedas es x y avanzar es rodar hacia +z.
@@ -918,6 +1017,300 @@ export async function buildRobot(shape: RobotShape): Promise<BuiltRobot> {
     }
   }
   return buildSixWheeler(shape);
+}
+
+// ---------- Robots por piezas, para el holograma del hangar ----------
+
+/**
+ * A qué componente y a qué pieza va cada nodo del modelo oficial del Perseverance. NASA nombra
+ * sus nodos por subsistema («rtg», «antenna_hg», «hazcams_front»…); el cargador de glTF quita los
+ * puntos de los nombres («arm.001» llega como «arm001»), así que se aceptan las dos formas.
+ *
+ * Lo que no es claramente de otro componente se queda en el cuerpo: no se adivina.
+ */
+const PERSEVERANCE_NODES: readonly (readonly [RegExp, string, string])[] = [
+  [/^suspension$/i, "suspension", "suspension"],
+  // El brazo, del hombro al último tramo, y sus cables. Los «arm_01» y «arm_02» de la panza son otra cosa.
+  [/^arm(\.?\d+)?$/i, "brazo", "brazo"],
+  [/^arm_cable_etc$/i, "brazo", "brazo"],
+  // La torreta con el taladro, PIXL y WATSON: cuelga del brazo y aquí se separa.
+  [/^turret_obj$/i, "torreta", "torreta"],
+  [/^rtg$/i, "rtg", "rtg"],
+  [/^antenna_hg$/i, "antenas", "antena-alta-ganancia"],
+  [/^antenna_lg$/i, "antenas", "antena-baja-ganancia"],
+  [/^antenna_uhf$/i, "antenas", "antena-uhf"],
+  [/^hazcams_front/i, "hazcams", "hazcams-delanteras"],
+  [/^hazcams_rear/i, "hazcams", "hazcams-traseras"],
+  [/^rimfax$/i, "rimfax", "rimfax"],
+  // El mástil: la cabeza con las cámaras («head»), la columna («bottom») y su pie («base»).
+  [/^(head|bottom|base)$/i, "mastil", "mastil"],
+];
+
+export function perseverancePiece(nodeName: string): { part: string; piece: string } {
+  for (const [pattern, part, piece] of PERSEVERANCE_NODES) if (pattern.test(nodeName)) return { part, piece };
+  return { part: "cuerpo", piece: "cuerpo" };
+}
+
+/** Reparte los nodos de primer nivel del modelo en un grupo por pieza. */
+function groupNodes(model: Object3D, wheels: readonly Group[], pieceOf: (name: string) => { part: string; piece: string }): RobotPiece[] {
+  const slots = new Map<string, { part: string; group: Group }>();
+  for (const child of [...model.children]) {
+    if (wheels.includes(child as Group)) continue;
+    const { part, piece } = pieceOf(child.name);
+    let slot = slots.get(piece);
+    if (!slot) {
+      slot = { part, group: new Group() };
+      slot.group.name = piece;
+      slots.set(piece, slot);
+    }
+    // El grupo no está girado ni movido dentro del modelo: el nodo conserva su sitio.
+    slot.group.add(child);
+  }
+  const pieces: RobotPiece[] = [];
+  for (const { part, group } of slots.values()) {
+    model.add(group);
+    pieces.push({ part, object: group });
+  }
+  for (const wheel of wheels) pieces.push({ part: "ruedas", object: wheel });
+  return pieces;
+}
+
+/** Las mallas que cuelgan de un objeto. */
+function meshesOf(root: Object3D): Mesh[] {
+  const meshes: Mesh[] = [];
+  root.traverse((node) => {
+    if ((node as Mesh).isMesh) meshes.push(node as Mesh);
+  });
+  return meshes;
+}
+
+type Triple = readonly [number, number, number];
+
+/**
+ * Parte unas mallas en «islas» (trozos de superficie conectados) y manda cada isla, entera, a la
+ * pieza que diga `classify` según el centro y el tamaño de su caja (en el sistema del modelo: x a
+ * los lados, y arriba, z hacia delante). Como ninguna isla se corta, ninguna pieza real se parte
+ * por la mitad. Las mallas originales se retiran; las piezas quedan colgando del modelo.
+ */
+function splitIslands(model: Object3D, sources: readonly Mesh[], classify: (center: Triple, size: Triple) => { part: string; piece: string }): RobotPiece[] {
+  model.updateMatrixWorld(true);
+  const fromWorld = new Matrix4().copy(model.matrixWorld).invert();
+  const slots = new Map<string, { part: string; group: Group }>();
+  const point = new Vector3();
+  for (const mesh of sources) {
+    const geometry = mesh.geometry;
+    const position = geometry.getAttribute("position");
+    if (!position) continue;
+    const toModel = new Matrix4().multiplyMatrices(fromWorld, mesh.matrixWorld);
+    const normalMatrix = new Matrix3().getNormalMatrix(toModel);
+    const count = position.count;
+    const positions = new Float32Array(count * 3);
+    // Vértices en el mismo sitio (al milímetro) cuentan como uno: una pieza con costuras no se parte.
+    const weld = new Int32Array(count);
+    const seen = new Map<number, number>();
+    for (let i = 0; i < count; i++) {
+      point.fromBufferAttribute(position, i).applyMatrix4(toModel);
+      positions.set([point.x, point.y, point.z], i * 3);
+      const key = ((Math.round(point.x * 1000) + 8192) * 16384 + (Math.round(point.y * 1000) + 8192)) * 16384 + (Math.round(point.z * 1000) + 8192);
+      let id = seen.get(key);
+      if (id === undefined) {
+        id = seen.size;
+        seen.set(key, id);
+      }
+      weld[i] = id;
+    }
+    const parent = new Int32Array(seen.size).map((_, i) => i);
+    const find = (x: number) => {
+      while (parent[x] !== x) {
+        parent[x] = parent[parent[x]];
+        x = parent[x];
+      }
+      return x;
+    };
+    const index = geometry.getIndex();
+    const triangles = (index ? index.count : count) / 3;
+    const corner = (triangle: number, k: number) => (index ? index.getX(triangle * 3 + k) : triangle * 3 + k);
+    for (let t = 0; t < triangles; t++) {
+      const a = find(weld[corner(t, 0)]);
+      const b = find(weld[corner(t, 1)]);
+      if (a !== b) parent[b] = a;
+      const c = find(weld[corner(t, 2)]);
+      const root = find(a);
+      if (c !== root) parent[c] = root;
+    }
+    // Caja de cada isla.
+    const boxes = new Map<number, { min: [number, number, number]; max: [number, number, number] }>();
+    for (let t = 0; t < triangles; t++) {
+      const root = find(weld[corner(t, 0)]);
+      let box = boxes.get(root);
+      if (!box) {
+        box = { min: [Infinity, Infinity, Infinity], max: [-Infinity, -Infinity, -Infinity] };
+        boxes.set(root, box);
+      }
+      for (let k = 0; k < 3; k++) {
+        const vertex = corner(t, k) * 3;
+        for (let axis = 0; axis < 3; axis++) {
+          const value = positions[vertex + axis];
+          if (value < box.min[axis]) box.min[axis] = value;
+          if (value > box.max[axis]) box.max[axis] = value;
+        }
+      }
+    }
+    const pieceOf = new Map<number, { part: string; piece: string }>();
+    for (const [root, box] of boxes) {
+      pieceOf.set(
+        root,
+        classify(
+          [(box.min[0] + box.max[0]) / 2, (box.min[1] + box.max[1]) / 2, (box.min[2] + box.max[2]) / 2],
+          [box.max[0] - box.min[0], box.max[1] - box.min[1], box.max[2] - box.min[2]],
+        ),
+      );
+    }
+    // Por pieza: los vértices que usa (renumerados) y sus triángulos.
+    const buckets = new Map<string, { part: string; remap: Map<number, number>; faces: number[] }>();
+    for (let t = 0; t < triangles; t++) {
+      const target = pieceOf.get(find(weld[corner(t, 0)]))!;
+      let bucket = buckets.get(target.piece);
+      if (!bucket) {
+        bucket = { part: target.part, remap: new Map(), faces: [] };
+        buckets.set(target.piece, bucket);
+      }
+      for (let k = 0; k < 3; k++) {
+        const vertex = corner(t, k);
+        let mapped = bucket.remap.get(vertex);
+        if (mapped === undefined) {
+          mapped = bucket.remap.size;
+          bucket.remap.set(vertex, mapped);
+        }
+        bucket.faces.push(mapped);
+      }
+    }
+    for (const [piece, bucket] of buckets) {
+      const part = new BufferGeometry();
+      for (const [name, attribute] of Object.entries(geometry.attributes)) {
+        const size = attribute.itemSize;
+        const values = new Float32Array(bucket.remap.size * size);
+        for (const [vertex, mapped] of bucket.remap) {
+          if (name === "position") values.set([positions[vertex * 3], positions[vertex * 3 + 1], positions[vertex * 3 + 2]], mapped * 3);
+          else if (name === "normal") {
+            point.fromBufferAttribute(attribute, vertex).applyNormalMatrix(normalMatrix);
+            values.set([point.x, point.y, point.z], mapped * 3);
+          } else {
+            // El resto (coordenadas de textura y demás) pasa tal cual, ya sin comprimir.
+            for (let k = 0; k < size; k++) values[mapped * size + k] = attribute.getComponent(vertex, k);
+          }
+        }
+        part.setAttribute(name, new BufferAttribute(values, size));
+      }
+      part.setIndex(bucket.faces);
+      const piece3d = new Mesh(part, mesh.material);
+      piece3d.castShadow = true;
+      piece3d.receiveShadow = true;
+      let slot = slots.get(piece);
+      if (!slot) {
+        slot = { part: bucket.part, group: new Group() };
+        slot.group.name = piece;
+        slots.set(piece, slot);
+      }
+      slot.group.add(piece3d);
+    }
+    mesh.removeFromParent();
+    geometry.dispose();
+  }
+  const pieces: RobotPiece[] = [];
+  for (const { part, group } of slots.values()) {
+    model.add(group);
+    pieces.push({ part, object: group });
+  }
+  return pieces;
+}
+
+/**
+ * Lado de la suspensión del Perseverance al que va cada isla. Lo que cruza de un lado a otro
+ * (la barra del diferencial) se queda en el centro; en el modelo, +x es la izquierda del robot.
+ */
+export function suspensionSide(center: Triple, size: Triple): { part: string; piece: string } {
+  const crosses = center[0] - size[0] / 2 < -0.08 && center[0] + size[0] / 2 > 0.08;
+  if (crosses) return { part: "suspension", piece: "suspension-centro" };
+  return { part: "suspension", piece: center[0] > 0 ? "suspension-izquierda" : "suspension-derecha" };
+}
+
+function perseverancePieces(model: Object3D, wheels: readonly Group[]): RobotPiece[] {
+  model.updateMatrixWorld(true);
+  // La torreta cuelga del último tramo del brazo: se saca de la cadena para que se mueva sola.
+  const turret = model.getObjectByName("turret_obj");
+  if (turret) model.attach(turret);
+  const pieces = groupNodes(model, wheels, perseverancePiece);
+  // La suspensión llega en una malla con los dos lados: se separa por islas, lado a lado.
+  const whole = pieces.findIndex((piece) => piece.part === "suspension");
+  if (whole >= 0) {
+    const [suspension] = pieces.splice(whole, 1);
+    pieces.push(...splitIslands(model, meshesOf(suspension.object), suspensionSide));
+    suspension.object.removeFromParent();
+  }
+  return pieces;
+}
+
+const BODY = { part: "cuerpo", piece: "cuerpo" } as const;
+
+/**
+ * A qué componente va cada isla del modelo oficial del Curiosity, que llega en una sola malla sin
+ * nombres. Se decide por la zona en la que está el centro de la isla (sistema del modelo, m: x a
+ * los lados con +x a la izquierda del robot, y arriba, z hacia delante). Solo se separa lo que
+ * ocupa una zona propia y sin vecinos: el mástil, el brazo con su torreta, el generador, las tres
+ * antenas y la suspensión. Lo demás, y todo lo dudoso, se queda en el cuerpo.
+ */
+export function curiosityPiece(center: Triple, size: Triple): { part: string; piece: string } {
+  const [x, y, z] = center;
+  // Mástil: columna y cabeza con las cámaras, sobre la cubierta, delante y a la derecha.
+  if (y > 1.17 && Math.abs(x + 0.55) < 0.33 && Math.abs(z - 0.75) < 0.24) return { part: "mastil", piece: "mastil" };
+  // Torreta: el racimo de instrumentos del final del brazo, que el modelo trae levantado.
+  if (z > 1.72 && y > 1.72) return { part: "torreta", piece: "torreta" };
+  // Brazo: lo que asoma por delante del cuerpo, a la izquierda, y su hombro.
+  if (z > 1.24 && x > 0.1) return { part: "brazo", piece: "brazo" };
+  if (z > 1.02 && x > 0.28 && x < 0.62 && y > 0.6 && y < 1.1) return { part: "brazo", piece: "brazo" };
+  // Generador: detrás, en el centro, inclinado hacia arriba.
+  if (z < -0.86 && Math.abs(x) < 0.42 && y > 0.88) return { part: "rtg", piece: "rtg" };
+  // Antenas, las tres sobre la cubierta: UHF detrás a la derecha, baja ganancia detrás a la izquierda y alta ganancia a la izquierda.
+  if (y > 1.19) {
+    if (x < -0.36 && z < -0.9) return { part: "antenas", piece: "antena-uhf" };
+    if (x > 0.36 && z < -0.78) return { part: "antenas", piece: "antena-baja-ganancia" };
+    if (x > 0.24 && x < 0.7 && z > -0.74 && z < -0.08) return { part: "antenas", piece: "antena-alta-ganancia" };
+  }
+  // Suspensión: balancines, pivotes y actuadores de las ruedas, a cada lado y por debajo de la cubierta.
+  if ((Math.abs(x) > 0.8 && y < 1.2) || (Math.abs(x) > 0.68 && y < 1.05 && size[0] < 0.6)) {
+    return { part: "suspension", piece: x > 0 ? "suspension-izquierda" : "suspension-derecha" };
+  }
+  return BODY;
+}
+
+/** Curiosity llega en una sola malla: se reparte por islas, según la zona de cada una. */
+function curiosityPieces(model: Object3D, wheels: readonly Group[]): RobotPiece[] {
+  const sources = meshesOf(model).filter((mesh) => !wheels.some((wheel) => wheel === mesh.parent));
+  const pieces = splitIslands(model, sources, curiosityPiece);
+  for (const wheel of wheels) pieces.push({ part: "ruedas", object: wheel });
+  return pieces;
+}
+
+/**
+ * El robot separado en piezas por componente, para el holograma. No tiene forma de reserva: si el
+ * modelo oficial no carga, falla y el hangar lo dice.
+ */
+export async function buildRobotParts(shape: RobotShape): Promise<BuiltParts> {
+  if (shape.kind === "viper" || shape.kind === "lrv") {
+    const log: PieceLog = [];
+    const built = shape.kind === "viper" ? buildViper(shape, log) : buildLrv(shape, log);
+    return { root: built.root, pieces: gatherPieces(built.root, log), official: false, dispose: built.dispose };
+  }
+  if (!shape.modelUrl) throw new Error("Este robot no tiene modelo 3D oficial");
+  const { model, wheels } = await loadModel(shape);
+  const pieces = shape.kind === "perseverance" ? perseverancePieces(model, wheels) : curiosityPieces(model, wheels);
+  const root = facingForward(model);
+  root.updateMatrixWorld(true);
+  // Cada pieza pasa a colgar de la raíz, ya en el sistema del robot: así se mueve en línea recta.
+  for (const piece of pieces) root.attach(piece.object);
+  for (const holder of [...root.children]) if (!pieces.some((piece) => piece.object === holder)) root.remove(holder);
+  return { root, pieces, official: true, dispose: () => disposeTree(root) };
 }
 
 /**

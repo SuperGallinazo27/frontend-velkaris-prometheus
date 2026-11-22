@@ -10,3 +10,6 @@ coverage/
 .vscode/*
 !.vscode/extensions.json
 __pycache__/
+
+# Motor de MediaPipe: se copia desde node_modules al arrancar Vite (ver vite.config.ts).
+public/mediapipe/wasm/

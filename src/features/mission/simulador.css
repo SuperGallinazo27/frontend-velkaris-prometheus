@@ -987,3 +987,44 @@
     backdrop-filter: none;
   }
 }
+
+/* ---------- Conducir con la mano: cámara y leyenda, bajo el minimapa ---------- */
+.sim-gestos {
+  position: absolute;
+  top: 196px;
+  right: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  width: 184px;
+  padding: 8px;
+  border: 1px solid var(--sim-borde);
+  border-radius: 12px;
+  background: var(--sim-fondo);
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.28);
+  pointer-events: auto;
+}
+.sim-gestos .gestos-leyenda {
+  color: var(--sim-texto-3);
+  font-size: 11.5px;
+}
+.sim-anotada {
+  color: var(--sim-texto-3);
+  font-size: 11.5px;
+}
+/* Con poca altura no cabe la leyenda: quedan la cámara y lo que entiende. */
+@media (max-height: 700px) {
+  .sim-gestos .gestos-leyenda {
+    display: none;
+  }
+}
+@media (max-width: 760px) {
+  .sim-gestos {
+    display: none;
+  }
+}
+
+/* Acceso al holograma del robot en el hangar. */
+.sim-holo {
+  margin-bottom: 6px;
+}

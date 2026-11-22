@@ -1,0 +1,1978 @@
+{
+ "description": "Componentes, herencia de vuelo e historial de misiones de los robots del hangar. Cada dato tiene su fuente; las citas textuales están en scripts/hangar/investigacion/.",
+ "checked": "2026-11-22",
+ "robots": {
+  "perseverance": {
+   "components": {
+    "ruedas": {
+     "name": "Ruedas",
+     "what": "Seis ruedas de aluminio, cada una con su propio motor. Llevan el rover sobre arena y rocas filosas. Son más resistentes que las de Curiosity.",
+     "facts": [
+      {
+       "label": "Diámetro",
+       "value": "52,5 cm",
+       "source": {
+        "title": "Perseverance Rover Components - NASA Science",
+        "url": "https://science.nasa.gov/mission/mars-2020-perseverance/rover-components/"
+       }
+      },
+      {
+       "label": "Motores",
+       "value": "Uno por rueda (6)",
+       "source": {
+        "title": "Perseverance Rover Components - NASA Science",
+        "url": "https://science.nasa.gov/mission/mars-2020-perseverance/rover-components/"
+       }
+      },
+      {
+       "label": "Tacos de tracción",
+       "value": "48 por rueda",
+       "source": {
+        "title": "Perseverance Rover Components - NASA Science",
+        "url": "https://science.nasa.gov/mission/mars-2020-perseverance/rover-components/"
+       }
+      }
+     ],
+     "heritage": [
+      {
+       "mission": "Mars Science Laboratory (Curiosity)",
+       "year": 2011,
+       "note": "Las ruedas se rediseñaron a partir de las de Curiosity, que se desgastaron con rocas filosas: son más angostas, más grandes y de aluminio más grueso.",
+       "source": {
+        "title": "Perseverance Rover Components - NASA Science",
+        "url": "https://science.nasa.gov/mission/mars-2020-perseverance/rover-components/"
+       }
+      }
+     ]
+    },
+    "suspension": {
+     "name": "Suspensión rocker-bogie",
+     "what": "Sistema de brazos articulados que une las ruedas al cuerpo. Mantiene todas las ruedas en el suelo y deja pasar sobre rocas sin volcarse.",
+     "facts": [
+      {
+       "label": "Inclinación máxima de diseño",
+       "value": "45° en cualquier dirección",
+       "source": {
+        "title": "Perseverance Rover Components - NASA Science",
+        "url": "https://science.nasa.gov/mission/mars-2020-perseverance/rover-components/"
+       }
+      },
+      {
+       "label": "Velocidad máxima",
+       "value": "152 m por hora",
+       "source": {
+        "title": "Perseverance Rover Components - NASA Science",
+        "url": "https://science.nasa.gov/mission/mars-2020-perseverance/rover-components/"
+       }
+      },
+      {
+       "label": "Obstáculos que supera",
+       "value": "Tan grandes como una rueda (52,5 cm)",
+       "source": {
+        "title": "Perseverance Rover Components - NASA Science",
+        "url": "https://science.nasa.gov/mission/mars-2020-perseverance/rover-components/"
+       }
+      }
+     ],
+     "heritage": [
+      {
+       "mission": "Mars Pathfinder (Sojourner)",
+       "year": 1996,
+       "note": "El rocker-bogie voló por primera vez en Marte en el pequeño rover Sojourner.",
+       "source": {
+        "title": "NSSDCA: Mars Pathfinder Rover",
+        "url": "https://nssdc.gsfc.nasa.gov/nmc/spacecraft/display.action?id=MESURPR"
+       }
+      },
+      {
+       "mission": "Mars Exploration Rovers (Spirit y Opportunity)",
+       "year": 2003,
+       "note": "Se eligió de nuevo el rocker-bogie por su larga trayectoria, con una versión más ligera.",
+       "source": {
+        "title": "NTRS: The Challenges of Designing the Rocker-Bogie Suspension for the Mars Exploration Rover",
+        "url": "https://ntrs.nasa.gov/citations/20040084284"
+       }
+      },
+      {
+       "mission": "Mars Science Laboratory (Curiosity)",
+       "year": 2011,
+       "note": "Curiosity también usa suspensión rocker-bogie.",
+       "source": {
+        "title": "Curiosity Rover - NASA Science",
+        "url": "https://science.nasa.gov/mission/msl-curiosity/"
+       }
+      }
+     ]
+    },
+    "cuerpo": {
+     "name": "Cuerpo y computadores",
+     "what": "La caja caliente de electrónica (WEB) protege y mantiene a temperatura los computadores del rover. Hay dos computadores idénticos, para tener siempre uno de repuesto.",
+     "facts": [
+      {
+       "label": "Tamaño del rover",
+       "value": "3 m de largo, 2,7 m de ancho, 2,2 m de alto",
+       "source": {
+        "title": "Perseverance Rover Components - NASA Science",
+        "url": "https://science.nasa.gov/mission/mars-2020-perseverance/rover-components/"
+       }
+      },
+      {
+       "label": "Masa del rover",
+       "value": "1.025 kg",
+       "source": {
+        "title": "Perseverance Rover Components - NASA Science",
+        "url": "https://science.nasa.gov/mission/mars-2020-perseverance/rover-components/"
+       }
+      },
+      {
+       "label": "Procesador",
+       "value": "BAE RAD750, hasta 200 MHz",
+       "source": {
+        "title": "Perseverance Rover Components - NASA Science",
+        "url": "https://science.nasa.gov/mission/mars-2020-perseverance/rover-components/"
+       }
+      }
+     ],
+     "heritage": [
+      {
+       "mission": "Mars Science Laboratory (Curiosity)",
+       "year": 2011,
+       "note": "Perseverance parte de la configuración de Curiosity, con una caja de herramientas científicas y tecnológicas añadida.",
+       "source": {
+        "title": "Perseverance Rover Components - NASA Science",
+        "url": "https://science.nasa.gov/mission/mars-2020-perseverance/rover-components/"
+       }
+      }
+     ]
+    },
+    "mastil": {
+     "name": "Mástil de cámaras",
+     "what": "Mástil que da al rover una vista a escala humana. En la cabeza lleva SuperCam y las dos Mastcam-Z; las cámaras de navegación van a los lados.",
+     "facts": [
+      {
+       "label": "Mastcam-Z",
+       "value": "Dos cámaras con zoom 4:1",
+       "source": {
+        "title": "Bell et al. 2021, Space Science Reviews (PMC)",
+        "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC7883548/"
+       }
+      },
+      {
+       "label": "Alcance de SuperCam",
+       "value": "Más de 7 m",
+       "source": {
+        "title": "Perseverance Science Instruments - NASA Science",
+        "url": "https://science.nasa.gov/mission/mars-2020-perseverance/science-instruments/"
+       }
+      },
+      {
+       "label": "Navcams",
+       "value": "Ven una pelota de golf a 25 m",
+       "source": {
+        "title": "Perseverance Rover Components - NASA Science",
+        "url": "https://science.nasa.gov/mission/mars-2020-perseverance/rover-components/"
+       }
+      }
+     ],
+     "heritage": [
+      {
+       "mission": "Mars Science Laboratory (Curiosity)",
+       "year": 2011,
+       "note": "Mastcam-Z se basa directamente en las Mastcam de Curiosity y suma zoom 4:1.",
+       "source": {
+        "title": "Bell et al. 2021, Space Science Reviews (PMC)",
+        "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC7883548/"
+       }
+      },
+      {
+       "mission": "Mars Science Laboratory (Curiosity, ChemCam)",
+       "year": 2011,
+       "note": "SuperCam es el sucesor de ChemCam: dos de sus espectrómetros son casi idénticos a los de ChemCam, y suma técnicas nuevas.",
+       "source": {
+        "title": "Wiens et al. 2021, Space Science Reviews (Springer)",
+        "url": "https://link.springer.com/article/10.1007/s11214-020-00777-5"
+       }
+      }
+     ]
+    },
+    "brazo": {
+     "name": "Brazo robótico",
+     "what": "Brazo que se mueve como el tuyo, con hombro, codo y muñeca. Sostiene las herramientas de la torreta para sacar muestras y analizar rocas.",
+     "facts": [
+      {
+       "label": "Largo",
+       "value": "2,1 m",
+       "source": {
+        "title": "Perseverance Rover Components - NASA Science",
+        "url": "https://science.nasa.gov/mission/mars-2020-perseverance/rover-components/"
+       }
+      },
+      {
+       "label": "Grados de libertad",
+       "value": "5",
+       "source": {
+        "title": "Perseverance Rover Components - NASA Science",
+        "url": "https://science.nasa.gov/mission/mars-2020-perseverance/rover-components/"
+       }
+      }
+     ],
+     "heritage": []
+    },
+    "torreta": {
+     "name": "Torreta del brazo",
+     "what": "La \"mano\" del brazo. Lleva el taladro de muestras y los instrumentos PIXL, SHERLOC y WATSON para ver y analizar rocas muy de cerca.",
+     "facts": [
+      {
+       "label": "Herramientas",
+       "value": "SHERLOC, WATSON, PIXL, GDRT, sensor de contacto, taladro",
+       "source": {
+        "title": "Perseverance Rover Components - NASA Science",
+        "url": "https://science.nasa.gov/mission/mars-2020-perseverance/rover-components/"
+       }
+      },
+      {
+       "label": "Diámetro de los orificios",
+       "value": "27 mm",
+       "source": {
+        "title": "Perseverance Rover Components - NASA Science",
+        "url": "https://science.nasa.gov/mission/mars-2020-perseverance/rover-components/"
+       }
+      },
+      {
+       "label": "Brocas",
+       "value": "Brocas de núcleo, de regolito y un abrasivo",
+       "source": {
+        "title": "Perseverance Rover Components - NASA Science",
+        "url": "https://science.nasa.gov/mission/mars-2020-perseverance/rover-components/"
+       }
+      }
+     ],
+     "heritage": [
+      {
+       "mission": "Mars Science Laboratory (Curiosity)",
+       "year": 2011,
+       "note": "La torreta de Perseverance es más grande que la de Curiosity, para llevar el taladro de núcleos y más instrumentos.",
+       "source": {
+        "title": "Perseverance Rover Components - NASA Science",
+        "url": "https://science.nasa.gov/mission/mars-2020-perseverance/rover-components/"
+       }
+      }
+     ]
+    },
+    "rtg": {
+     "name": "Generador MMRTG",
+     "what": "Una batería nuclear. Convierte en electricidad el calor de la desintegración natural del plutonio. También da calor para mantener tibias las herramientas del rover.",
+     "facts": [
+      {
+       "label": "Combustible",
+       "value": "4,8 kg de dióxido de plutonio",
+       "source": {
+        "title": "Perseverance Rover Components - NASA Science",
+        "url": "https://science.nasa.gov/mission/mars-2020-perseverance/rover-components/"
+       }
+      },
+      {
+       "label": "Potencia",
+       "value": "Unos 110 W al lanzamiento, baja unos pocos por ciento al año",
+       "source": {
+        "title": "Perseverance Rover Components - NASA Science",
+        "url": "https://science.nasa.gov/mission/mars-2020-perseverance/rover-components/"
+       }
+      },
+      {
+       "label": "Vida útil",
+       "value": "14 años",
+       "source": {
+        "title": "Perseverance Rover Components - NASA Science",
+        "url": "https://science.nasa.gov/mission/mars-2020-perseverance/rover-components/"
+       }
+      }
+     ],
+     "heritage": [
+      {
+       "mission": "Mars Science Laboratory (Curiosity)",
+       "year": 2011,
+       "note": "Curiosity fue el primer uso del MMRTG.",
+       "source": {
+        "title": "NASA RPS FAQ",
+        "url": "https://science.nasa.gov/planetary-science/programs/radioisotope-power-systems/faq/"
+       }
+      },
+      {
+       "mission": "Dragonfly (Titán)",
+       "year": 2028,
+       "note": "Dragonfly usará un MMRTG, del mismo tipo que los de Curiosity y Perseverance (lanzamiento previsto, no antes de julio de 2028).",
+       "source": {
+        "title": "Dragonfly: Spacecraft and Instruments - NASA Science",
+        "url": "https://science.nasa.gov/mission/dragonfly/spacecraft-and-instruments"
+       }
+      }
+     ]
+    },
+    "antenas": {
+     "name": "Antenas",
+     "what": "Tres antenas en la cubierta del rover. Una habla con la Tierra a mayor velocidad, otra recibe órdenes y otra envía datos a orbitadores de Marte.",
+     "facts": [
+      {
+       "label": "Antena UHF",
+       "value": "Hasta 2 megabits por segundo",
+       "source": {
+        "title": "Perseverance Rover Components - NASA Science",
+        "url": "https://science.nasa.gov/mission/mars-2020-perseverance/rover-components/"
+       }
+      },
+      {
+       "label": "Antena de alta ganancia",
+       "value": "Hexagonal, 0,3 m de diámetro",
+       "source": {
+        "title": "Perseverance Rover Components - NASA Science",
+        "url": "https://science.nasa.gov/mission/mars-2020-perseverance/rover-components/"
+       }
+      },
+      {
+       "label": "Antena de baja ganancia",
+       "value": "Unos 10 bits por segundo",
+       "source": {
+        "title": "Perseverance Rover Components - NASA Science",
+        "url": "https://science.nasa.gov/mission/mars-2020-perseverance/rover-components/"
+       }
+      }
+     ],
+     "heritage": []
+    },
+    "hazcams": {
+     "name": "Cámaras de peligro (HazCams)",
+     "what": "Seis cámaras que vigilan el camino adelante y atrás. Detectan rocas grandes, zanjas y dunas para que el rover decida por dónde ir.",
+     "facts": [
+      {
+       "label": "Cantidad",
+       "value": "6: cuatro al frente y dos atrás",
+       "source": {
+        "title": "Perseverance Rover Components - NASA Science",
+        "url": "https://science.nasa.gov/mission/mars-2020-perseverance/rover-components/"
+       }
+      },
+      {
+       "label": "Qué detectan",
+       "value": "Rocas grandes, zanjas y dunas",
+       "source": {
+        "title": "Perseverance Rover Components - NASA Science",
+        "url": "https://science.nasa.gov/mission/mars-2020-perseverance/rover-components/"
+       }
+      }
+     ],
+     "heritage": []
+    },
+    "rimfax": {
+     "name": "Radar de subsuelo RIMFAX",
+     "what": "Un radar que usa ondas de radio para mirar bajo el suelo, debajo del rover. Muestra capas de roca y suelo que no se ven en la superficie.",
+     "facts": [
+      {
+       "label": "Masa",
+       "value": "Menos de 3 kg",
+       "source": {
+        "title": "Perseverance Science Instruments - NASA Science",
+        "url": "https://science.nasa.gov/mission/mars-2020-perseverance/science-instruments/"
+       }
+      },
+      {
+       "label": "Consumo",
+       "value": "5 a 10 W",
+       "source": {
+        "title": "Perseverance Science Instruments - NASA Science",
+        "url": "https://science.nasa.gov/mission/mars-2020-perseverance/science-instruments/"
+       }
+      },
+      {
+       "label": "Rango de frecuencias",
+       "value": "150 a 1.200 MHz",
+       "source": {
+        "title": "Hamran et al. 2020, Space Science Reviews (Springer)",
+        "url": "https://link.springer.com/10.1007/s11214-020-00740-4"
+       }
+      }
+     ],
+     "heritage": [
+      {
+       "mission": "ExoMars Rosalind Franklin (ESA)",
+       "year": 2028,
+       "note": "Una versión de banda ultraancha de este radar fue prototipo del radar WISDOM del rover europeo ExoMars (lanzamiento previsto a fines de 2028).",
+       "source": {
+        "title": "Hamran et al. 2020, Space Science Reviews (Springer)",
+        "url": "https://link.springer.com/10.1007/s11214-020-00740-4"
+       }
+      }
+     ]
+    }
+   },
+   "missions": [
+    {
+     "name": "Mars 2020 (Perseverance)",
+     "agency": "NASA / JPL",
+     "start": "2020-07-30",
+     "end": null,
+     "where": "Cráter Jezero, Marte",
+     "summary": "Rover de NASA que busca señales de vida antigua en Marte. Recoge núcleos de roca y regolito para una posible misión futura que los traiga a la Tierra.",
+     "milestones": [
+      {
+       "date": "2020-07-30",
+       "text": "Lanzamiento de Perseverance.",
+       "source": {
+        "title": "Mars 2020 Perseverance Rover - NASA Science",
+        "url": "https://science.nasa.gov/mission/mars-2020-perseverance/"
+       }
+      },
+      {
+       "date": "2021-02-18",
+       "text": "Aterrizaje en el cráter Jezero, Marte.",
+       "source": {
+        "title": "Mars 2020 Perseverance Rover - NASA Science",
+        "url": "https://science.nasa.gov/mission/mars-2020-perseverance/"
+       }
+      },
+      {
+       "date": "2021-04-19",
+       "text": "Primer vuelo de Ingenuity: el primer vuelo controlado y con motor en otro planeta.",
+       "source": {
+        "title": "Ingenuity Mars Helicopter - NASA Science",
+        "url": "https://science.nasa.gov/mission/mars-2020-perseverance/ingenuity-mars-helicopter/"
+       }
+      },
+      {
+       "date": "2021-09-06",
+       "text": "Se sella la primera muestra de núcleo de roca (muestra n.º 2; la n.º 1 fue de atmósfera, sellada el 6 de agosto de 2021).",
+       "source": {
+        "title": "Mars Rock Samples - NASA Science",
+        "url": "https://science.nasa.gov/mission/mars-2020-perseverance/mars-rock-samples/"
+       }
+      },
+      {
+       "date": "2024-01-18",
+       "text": "Último vuelo de Ingenuity (72 vuelos en total); su misión terminó el 25 de enero de 2024.",
+       "source": {
+        "title": "Ingenuity Mars Helicopter - NASA Science",
+        "url": "https://science.nasa.gov/mission/mars-2020-perseverance/ingenuity-mars-helicopter/"
+       }
+      },
+      {
+       "date": "2026-11-22",
+       "text": "Estado actual: la página de NASA la clasifica como misión activa (consultada el 22 de noviembre de 2026).",
+       "source": {
+        "title": "Mars 2020 Perseverance Rover - NASA Science",
+        "url": "https://science.nasa.gov/mission/mars-2020-perseverance/"
+       }
+      }
+     ],
+     "source": {
+      "title": "Mars 2020 Perseverance Rover - NASA Science",
+      "url": "https://science.nasa.gov/mission/mars-2020-perseverance/"
+     }
+    }
+   ]
+  },
+  "curiosity": {
+   "components": {
+    "ruedas": {
+     "name": "Ruedas",
+     "what": "Seis ruedas de aluminio con garras para agarrarse. Cada una tiene su propio motor y las cuatro de las esquinas también giran. Llevan al rover sobre rocas y arena.",
+     "facts": [
+      {
+       "label": "Material y tamaño",
+       "value": "Aluminio, 0,5 m (20 pulgadas) de diámetro: el doble que las de Spirit y Opportunity",
+       "source": {
+        "title": "NASA/JPL, Mars Science Laboratory Landing Press Kit (July 2012)",
+        "url": "https://www.jpl.nasa.gov/news/press_kits/MSLLanding.pdf"
+       }
+      },
+      {
+       "label": "Motores",
+       "value": "Las seis ruedas tienen motor de tracción; las cuatro de las esquinas, también de dirección",
+       "source": {
+        "title": "NASA/JPL, Mars Science Laboratory Landing Press Kit (July 2012)",
+        "url": "https://www.jpl.nasa.gov/news/press_kits/MSLLanding.pdf"
+       }
+      },
+      {
+       "label": "Garras y rayos",
+       "value": "Garras para tracción y rayos de titanio curvos que dan soporte elástico",
+       "source": {
+        "title": "NASA/JPL, Mars Science Laboratory Landing Press Kit (July 2012)",
+        "url": "https://www.jpl.nasa.gov/news/press_kits/MSLLanding.pdf"
+       }
+      }
+     ],
+     "heritage": [
+      {
+       "mission": "Mars 2020 (Perseverance)",
+       "year": 2020,
+       "note": "Perseverance rediseñó las ruedas para hacerlas más resistentes, por el desgaste que sufrieron las de Curiosity en rocas filosas.",
+       "source": {
+        "title": "NASA Science, Perseverance Rover Components",
+        "url": "https://science.nasa.gov/mission/mars-2020-perseverance/rover-components/"
+       }
+      }
+     ]
+    },
+    "suspension": {
+     "name": "Suspensión rocker-bogie",
+     "what": "Un sistema de brazos articulados que une las ruedas al cuerpo. Mantiene las seis ruedas en contacto con el suelo aunque el terreno sea desigual, y permite pasar sobre rocas.",
+     "facts": [
+      {
+       "label": "Cómo funciona",
+       "value": "Mantiene las seis ruedas en contacto con el suelo, incluso al pasar sobre una roca grande como la rueda",
+       "source": {
+        "title": "NASA/JPL, Mars Science Laboratory Landing Press Kit (July 2012)",
+        "url": "https://www.jpl.nasa.gov/news/press_kits/MSLLanding.pdf"
+       }
+      },
+      {
+       "label": "Velocidad máxima",
+       "value": "Unos 4 cm por segundo en suelo plano y duro",
+       "source": {
+        "title": "NASA/JPL, Mars Science Laboratory Landing Press Kit (July 2012)",
+        "url": "https://www.jpl.nasa.gov/news/press_kits/MSLLanding.pdf"
+       }
+      },
+      {
+       "label": "Diseñado para recorrer",
+       "value": "Más de 20 km durante la misión principal",
+       "source": {
+        "title": "NASA/JPL, Mars Science Laboratory Landing Press Kit (July 2012)",
+        "url": "https://www.jpl.nasa.gov/news/press_kits/MSLLanding.pdf"
+       }
+      }
+     ],
+     "heritage": [
+      {
+       "mission": "Mars Exploration Rovers (Spirit y Opportunity)",
+       "year": 2003,
+       "note": "Spirit y su gemelo Opportunity ya usaban suspensión rocker-bogie, con un motor por rueda.",
+       "source": {
+        "title": "NASA NSSDCA, Spirit (2003-027A)",
+        "url": "https://nssdc.gsfc.nasa.gov/nmc/spacecraft/display.action?id=2003-027A"
+       }
+      },
+      {
+       "mission": "Mars 2020 (Perseverance)",
+       "year": 2020,
+       "note": "Perseverance también rueda sobre seis ruedas con suspensión rocker-bogie.",
+       "source": {
+        "title": "NASA NSSDCA, Mars 2020 (2020-052A)",
+        "url": "https://nssdc.gsfc.nasa.gov/nmc/spacecraft/display.action?id=2020-052A"
+       }
+      }
+     ]
+    },
+    "cuerpo": {
+     "name": "Cuerpo (WEB)",
+     "what": "La caja caliente del rover. Protege los dos computadores redundantes y los laboratorios internos SAM y CheMin, que analizan las muestras de roca y suelo.",
+     "facts": [
+      {
+       "label": "Tamaño",
+       "value": "Unos 3 m de largo, 2,7 m de ancho y 2,1 m de alto (10 x 9 x 7 pies), sin contar el brazo",
+       "source": {
+        "title": "NASA Science, Mars Science Laboratory: Curiosity Rover",
+        "url": "https://science.nasa.gov/mission/msl-curiosity/"
+       }
+      },
+      {
+       "label": "Cerebro",
+       "value": "Procesador RAD750 de hasta 200 MHz en cada computador",
+       "source": {
+        "title": "NASA/JPL, Mars Science Laboratory Landing Press Kit (July 2012)",
+        "url": "https://www.jpl.nasa.gov/news/press_kits/MSLLanding.pdf"
+       }
+      },
+      {
+       "label": "Laboratorio SAM",
+       "value": "Detecta menos de una parte por mil millones de un compuesto orgánico",
+       "source": {
+        "title": "NASA Science, Curiosity Science Instruments",
+        "url": "https://science.nasa.gov/mission/msl-curiosity/science-instruments/"
+       }
+      }
+     ],
+     "heritage": [
+      {
+       "mission": "Mars Exploration Rovers (Spirit y Opportunity)",
+       "year": 2003,
+       "note": "Los rovers anteriores también guardaban su electrónica en una caja caliente (WEB) dentro del chasis.",
+       "source": {
+        "title": "NASA NSSDCA, Spirit (2003-027A)",
+        "url": "https://nssdc.gsfc.nasa.gov/nmc/spacecraft/display.action?id=2003-027A"
+       }
+      },
+      {
+       "mission": "Mars 2020 (Perseverance)",
+       "year": 2020,
+       "note": "Perseverance se basa en la configuración de Curiosity y también usa un cuerpo WEB.",
+       "source": {
+        "title": "NASA Science, Perseverance Rover Components",
+        "url": "https://science.nasa.gov/mission/mars-2020-perseverance/rover-components/"
+       }
+      }
+     ]
+    },
+    "mastil": {
+     "name": "Mástil y cámaras",
+     "what": "La cabeza del rover, a la altura de los ojos de una persona. Lleva Mastcam (fotos y video a color), ChemCam (un láser que vaporiza roca para analizarla) y las cámaras de navegación Navcam.",
+     "facts": [
+      {
+       "label": "Mastcam",
+       "value": "Dos cámaras a color de 2 megapíxeles",
+       "source": {
+        "title": "NASA Science, Curiosity Science Instruments",
+        "url": "https://science.nasa.gov/mission/msl-curiosity/science-instruments/"
+       }
+      },
+      {
+       "label": "ChemCam",
+       "value": "Usa un láser para vaporizar material y analiza su composición con un espectrógrafo",
+       "source": {
+        "title": "NASA Science, Curiosity Science Instruments",
+        "url": "https://science.nasa.gov/mission/msl-curiosity/science-instruments/"
+       }
+      },
+      {
+       "label": "Navcams",
+       "value": "Dos pares estéreo de cámaras de navegación",
+       "source": {
+        "title": "NASA/JPL, Mars Science Laboratory Landing Press Kit (July 2012)",
+        "url": "https://www.jpl.nasa.gov/news/press_kits/MSLLanding.pdf"
+       }
+      }
+     ],
+     "heritage": [
+      {
+       "mission": "Mars Exploration Rovers (Spirit y Opportunity)",
+       "year": 2003,
+       "note": "Las Navcams son casi idénticas a las cámaras de ingeniería de Spirit y Opportunity.",
+       "source": {
+        "title": "NASA/JPL, Mars Science Laboratory Landing Press Kit (July 2012)",
+        "url": "https://www.jpl.nasa.gov/news/press_kits/MSLLanding.pdf"
+       }
+      },
+      {
+       "mission": "Mars 2020 (Mastcam-Z)",
+       "year": 2020,
+       "note": "Mastcam-Z de Perseverance se basa directamente en Mastcam y añade zoom 4:1.",
+       "source": {
+        "title": "Bell et al., Space Science Reviews (2021), Mastcam-Z",
+        "url": "https://link.springer.com/article/10.1007/s11214-020-00755-x"
+       }
+      },
+      {
+       "mission": "Mars 2020 (SuperCam)",
+       "year": 2020,
+       "note": "SuperCam de Perseverance es muy parecida a su antecesora ChemCam, con un telescopio distinto.",
+       "source": {
+        "title": "Maurice et al., Space Science Reviews (2021), SuperCam",
+        "url": "https://link.springer.com/article/10.1007/s11214-020-00777-5"
+       }
+      }
+     ]
+    },
+    "brazo": {
+     "name": "Brazo robótico",
+     "what": "Un brazo con cinco articulaciones que lleva la torreta de herramientas hasta las rocas y el suelo elegidos por los científicos, y maneja los mecanismos de procesamiento de muestras.",
+     "facts": [
+      {
+       "label": "Alcance",
+       "value": "Unos 2,2 m (7 pies)",
+       "source": {
+        "title": "NASA Science, Mars Science Laboratory: Curiosity Rover",
+        "url": "https://science.nasa.gov/mission/msl-curiosity/"
+       }
+      },
+      {
+       "label": "Articulaciones",
+       "value": "Cinco grados de libertad: hombro (2), codo, muñeca y torreta",
+       "source": {
+        "title": "NASA/JPL, Mars Science Laboratory Landing Press Kit (July 2012)",
+        "url": "https://www.jpl.nasa.gov/news/press_kits/MSLLanding.pdf"
+       }
+      },
+      {
+       "label": "Fuerza",
+       "value": "Puede sostener la torreta de 33 kg con el brazo extendido",
+       "source": {
+        "title": "NASA/JPL, Mars Science Laboratory Landing Press Kit (July 2012)",
+        "url": "https://www.jpl.nasa.gov/news/press_kits/MSLLanding.pdf"
+       }
+      }
+     ],
+     "heritage": [
+      {
+       "mission": "Mars 2020 (Perseverance)",
+       "year": 2020,
+       "note": "El brazo de Perseverance parte del diseño de Curiosity, con ajustes en los motores y su electrónica para tomar núcleos de roca.",
+       "source": {
+        "title": "NASA Science, Perseverance Rover Components",
+        "url": "https://science.nasa.gov/mission/mars-2020-perseverance/rover-components/"
+       }
+      }
+     ]
+    },
+    "torreta": {
+     "name": "Torreta de herramientas",
+     "what": "La mano del brazo. Reúne el taladro, el espectrómetro APXS, la cámara MAHLI, el sistema CHIMRA que procesa muestras y un cepillo (DRT) que limpia el polvo de la roca.",
+     "facts": [
+      {
+       "label": "Herramientas",
+       "value": "Dos instrumentos científicos y tres dispositivos más",
+       "source": {
+        "title": "NASA/JPL, Mars Science Laboratory Landing Press Kit (July 2012)",
+        "url": "https://www.jpl.nasa.gov/news/press_kits/MSLLanding.pdf"
+       }
+      },
+      {
+       "label": "Taladro",
+       "value": "Toma muestras hasta 5 cm bajo la superficie de la roca",
+       "source": {
+        "title": "NASA/JPL, Mars Science Laboratory Landing Press Kit (July 2012)",
+        "url": "https://www.jpl.nasa.gov/news/press_kits/MSLLanding.pdf"
+       }
+      },
+      {
+       "label": "Agujero",
+       "value": "Diámetro de 1,6 cm",
+       "source": {
+        "title": "NASA/JPL, Mars Science Laboratory Landing Press Kit (July 2012)",
+        "url": "https://www.jpl.nasa.gov/news/press_kits/MSLLanding.pdf"
+       }
+      }
+     ],
+     "heritage": [
+      {
+       "mission": "Mars 2020 (Perseverance)",
+       "year": 2020,
+       "note": "Perseverance usa una torreta más grande, con taladro de núcleos, dos instrumentos y una cámara a color.",
+       "source": {
+        "title": "NASA Science, Perseverance Rover Components",
+        "url": "https://science.nasa.gov/mission/mars-2020-perseverance/rover-components/"
+       }
+      }
+     ]
+    },
+    "rtg": {
+     "name": "Generador de radioisótopos (MMRTG)",
+     "what": "Una batería nuclear. Convierte el calor del plutonio-238 en electricidad, sin partes móviles, y también calienta los sistemas del rover en las noches frías de Marte.",
+     "facts": [
+      {
+       "label": "Combustible",
+       "value": "4,8 kg de dióxido de plutonio",
+       "source": {
+        "title": "NASA/JPL, Mars Science Laboratory Landing Press Kit (July 2012)",
+        "url": "https://www.jpl.nasa.gov/news/press_kits/MSLLanding.pdf"
+       }
+      },
+      {
+       "label": "Potencia",
+       "value": "Poco más de 110 vatios",
+       "source": {
+        "title": "NASA/JPL, Mars Science Laboratory Landing Press Kit (July 2012)",
+        "url": "https://www.jpl.nasa.gov/news/press_kits/MSLLanding.pdf"
+       }
+      },
+      {
+       "label": "Tamaño y masa",
+       "value": "64 cm de diámetro, 66 cm de largo y unos 45 kg",
+       "source": {
+        "title": "NASA/JPL, Mars Science Laboratory Landing Press Kit (July 2012)",
+        "url": "https://www.jpl.nasa.gov/news/press_kits/MSLLanding.pdf"
+       }
+      }
+     ],
+     "heritage": [
+      {
+       "mission": "Mars 2020 (Perseverance)",
+       "year": 2020,
+       "note": "El sistema de energía de Perseverance es idéntico al de Curiosity.",
+       "source": {
+        "title": "NASA/JPL, Mars 2020 press kit, Power",
+        "url": "https://www.jpl.nasa.gov/news/press_kits/mars_2020/launch/mission/spacecraft/power/"
+       }
+      },
+      {
+       "mission": "Dragonfly (Titán)",
+       "year": 2028,
+       "note": "Dragonfly, la misión a Titán, usará un MMRTG, un tipo de fuente similar al de Curiosity y Perseverance.",
+       "source": {
+        "title": "NASA Science, Dragonfly Spacecraft and Instruments",
+        "url": "https://science.nasa.gov/mission/dragonfly/spacecraft-and-instruments/"
+       }
+      }
+     ]
+    },
+    "antenas": {
+     "name": "Antenas",
+     "what": "Tres antenas para comunicarse. Dos hablan directo con la Tierra (alta y baja ganancia, banda X) y una, la UHF, envía datos a satélites que orbitan Marte.",
+     "facts": [
+      {
+       "label": "Cantidad",
+       "value": "Tres antenas de telecomunicación",
+       "source": {
+        "title": "NASA/JPL, Mars Science Laboratory Landing Press Kit (July 2012)",
+        "url": "https://www.jpl.nasa.gov/news/press_kits/MSLLanding.pdf"
+       }
+      },
+      {
+       "label": "Alta ganancia",
+       "value": "Hexagonal, casi 0,3 m (1 pie) de diámetro; hay que apuntarla",
+       "source": {
+        "title": "NASA/JPL, Mars Science Laboratory Landing Press Kit (July 2012)",
+        "url": "https://www.jpl.nasa.gov/news/press_kits/MSLLanding.pdf"
+       }
+      },
+      {
+       "label": "UHF",
+       "value": "Banda de unos 400 MHz para enviar datos a orbitadores",
+       "source": {
+        "title": "NASA/JPL, Mars Science Laboratory Landing Press Kit (July 2012)",
+        "url": "https://www.jpl.nasa.gov/news/press_kits/MSLLanding.pdf"
+       }
+      }
+     ],
+     "heritage": [
+      {
+       "mission": "Mars Exploration Rovers (Spirit y Opportunity)",
+       "year": 2003,
+       "note": "Spirit y Opportunity también llevaban antenas de alta ganancia, baja ganancia y UHF.",
+       "source": {
+        "title": "NASA NSSDCA, Spirit (2003-027A)",
+        "url": "https://nssdc.gsfc.nasa.gov/nmc/spacecraft/display.action?id=2003-027A"
+       }
+      }
+     ]
+    },
+    "hazcams": {
+     "name": "Cámaras de peligro (Hazcams)",
+     "what": "Cámaras con lente ojo de pez, abajo en el frente y atrás del rover. Detectan rocas y zanjas, ayudan a conducir solo y a ubicar el brazo.",
+     "facts": [
+      {
+       "label": "Campo de visión",
+       "value": "124 grados de ancho y de alto (lente ojo de pez)",
+       "source": {
+        "title": "NASA/JPL, Mars Science Laboratory Landing Press Kit (July 2012)",
+        "url": "https://www.jpl.nasa.gov/news/press_kits/MSLLanding.pdf"
+       }
+      },
+      {
+       "label": "Imágenes",
+       "value": "Blanco y negro, en luz roja de unos 650 nm",
+       "source": {
+        "title": "NASA/JPL, Mars Science Laboratory Landing Press Kit (July 2012)",
+        "url": "https://www.jpl.nasa.gov/news/press_kits/MSLLanding.pdf"
+       }
+      },
+      {
+       "label": "Cámaras de ingeniería",
+       "value": "12 en total, de unos 250 g cada una",
+       "source": {
+        "title": "NASA/JPL, Mars Science Laboratory Landing Press Kit (July 2012)",
+        "url": "https://www.jpl.nasa.gov/news/press_kits/MSLLanding.pdf"
+       }
+      }
+     ],
+     "heritage": [
+      {
+       "mission": "Mars Exploration Rovers (Spirit y Opportunity)",
+       "year": 2003,
+       "note": "Las Hazcams son prácticamente idénticas a las cámaras de ingeniería de Spirit y Opportunity, con redundancia y calentadores más potentes.",
+       "source": {
+        "title": "NASA/JPL, Mars Science Laboratory Landing Press Kit (July 2012)",
+        "url": "https://www.jpl.nasa.gov/news/press_kits/MSLLanding.pdf"
+       }
+      },
+      {
+       "mission": "Mars 2020 (Perseverance)",
+       "year": 2020,
+       "note": "Perseverance cambió el diseño: lleva seis Hazcams nuevas, cuatro adelante y dos atrás.",
+       "source": {
+        "title": "NASA Science, Perseverance Rover Components",
+        "url": "https://science.nasa.gov/mission/mars-2020-perseverance/rover-components/"
+       }
+      }
+     ]
+    }
+   },
+   "missions": [
+    {
+     "name": "Mars Science Laboratory (Curiosity)",
+     "agency": "NASA / JPL",
+     "start": "2011-11-26",
+     "end": null,
+     "where": "Cráter Gale, Marte; hoy asciende por el monte Sharp",
+     "summary": "Rover de NASA lanzado el 26 de noviembre de 2011. Aterrizó en el cráter Gale en 2012, halló un antiguo entorno habitable y sube el monte Sharp. NASA lo lista como misión activa.",
+     "milestones": [
+      {
+       "date": "2011-11-26",
+       "text": "Lanzamiento en un cohete Atlas V 541.",
+       "source": {
+        "title": "NASA NSSDCA, Mars Science Laboratory (2011-070A)",
+        "url": "https://nssdc.gsfc.nasa.gov/nmc/spacecraft/display.action?id=2011-070A"
+       }
+      },
+      {
+       "date": "2012-08-06",
+       "text": "Aterrizaje en el cráter Gale: la etapa de descenso bajó el rover con cables (sky crane).",
+       "source": {
+        "title": "NASA NSSDCA, Mars Science Laboratory (2011-070A)",
+        "url": "https://nssdc.gsfc.nasa.gov/nmc/spacecraft/display.action?id=2011-070A"
+       }
+      },
+      {
+       "date": "2013-02-08",
+       "text": "Primera muestra perforada en roca marciana (roca John Klein, sol 182).",
+       "source": {
+        "title": "NASA/JPL, Curiosity collects first Martian bedrock sample",
+        "url": "https://www.jpl.nasa.gov/news/nasa-curiosity-rover-collects-first-martian-bedrock-sample/"
+       }
+      },
+      {
+       "date": "2013-03-12",
+       "text": "NASA anuncia que el análisis de la roca muestra un antiguo entorno que pudo sostener microbios.",
+       "source": {
+        "title": "NASA/JPL, Rover finds conditions once suited for ancient life on Mars",
+        "url": "https://www.jpl.nasa.gov/news/nasa-rover-finds-conditions-once-suited-for-ancient-life-on-mars/"
+       }
+      },
+      {
+       "date": "2014-09-11",
+       "text": "Curiosity llega al monte Sharp, su destino principal de largo plazo.",
+       "source": {
+        "title": "NASA, Mars Curiosity Rover Arrives at Martian Mountain (release 14-245)",
+        "url": "https://www.nasa.gov/news-release/nasas-mars-curiosity-rover-arrives-at-martian-mountain/"
+       }
+      },
+      {
+       "date": "2026-11-22",
+       "text": "Estado actual en la página de NASA (consultada hoy): misión activa; sigue explorando el registro de rocas de Marte.",
+       "source": {
+        "title": "NASA Science, Mars Science Laboratory: Curiosity Rover",
+        "url": "https://science.nasa.gov/mission/msl-curiosity/"
+       }
+      }
+     ],
+     "source": {
+      "title": "NASA Science, Mars Science Laboratory: Curiosity Rover",
+      "url": "https://science.nasa.gov/mission/msl-curiosity/"
+     }
+    }
+   ]
+  },
+  "viper": {
+   "components": {
+    "ruedas": {
+     "name": "Ruedas",
+     "what": "VIPER tiene cuatro ruedas de metal con rebordes. Cada una va en su propio módulo con motor. Están hechas para rodar sobre polvo lunar suelto y subir pendientes.",
+     "facts": [
+      {
+       "label": "Tamaño de rueda",
+       "value": "50 cm de diámetro y 20 cm de ancho",
+       "source": {
+        "title": "Rover Design and Mission Operations, T. Fong, NASA, Apr 2025",
+        "url": "https://ntrs.nasa.gov/api/citations/20250004148/downloads/viper-2025-04-24.pdf"
+       }
+      },
+      {
+       "label": "Velocidad",
+       "value": "Máxima 20 cm/s; normal 10 cm/s",
+       "source": {
+        "title": "VIPER Rover Overview and Mobility and Hardware, B. Bluethmann, NASA, 14 Nov 2024",
+        "url": "https://ntrs.nasa.gov/api/citations/20240013903/downloads/LSIC_2024-Tech%20Infusion_Panel-VIPER_Mob-HW.pdf"
+       }
+      },
+      {
+       "label": "Pendiente máxima",
+       "value": "15 grados",
+       "source": {
+        "title": "Rover and instruments (NASA Science)",
+        "url": "https://science.nasa.gov/mission/viper/rover-and-instruments/"
+       }
+      }
+     ],
+     "heritage": []
+    },
+    "suspension": {
+     "name": "Suspensión y dirección",
+     "what": "Cada rueda tiene suspensión activa y dirección propia. El rover puede avanzar de lado o en diagonal, girar sobre sí mismo y levantar ruedas para salir de suelo blando.",
+     "facts": [
+      {
+       "label": "Diseño",
+       "value": "Suspensión activa y dirección independiente en cada módulo de rueda",
+       "source": {
+        "title": "Rover and instruments (NASA Science)",
+        "url": "https://science.nasa.gov/mission/viper/rover-and-instruments/"
+       }
+      },
+      {
+       "label": "Altura sobre el suelo",
+       "value": "Ajustable de 7 a 43 cm",
+       "source": {
+        "title": "VIPER Rover Overview and Mobility and Hardware, B. Bluethmann, NASA, 14 Nov 2024",
+        "url": "https://ntrs.nasa.gov/api/citations/20240013903/downloads/LSIC_2024-Tech%20Infusion_Panel-VIPER_Mob-HW.pdf"
+       }
+      },
+      {
+       "label": "Modo de “nado”",
+       "value": "Puede levantar cada rueda por separado, casi como pies",
+       "source": {
+        "title": "Rover and instruments (NASA Science)",
+        "url": "https://science.nasa.gov/mission/viper/rover-and-instruments/"
+       }
+      }
+     ],
+     "heritage": []
+    },
+    "cuerpo": {
+     "name": "Cuerpo del rover",
+     "what": "Es la estructura central que sostiene todo lo demás. Por dentro lleva las baterías y una “caja tibia” que mantiene la electrónica a temperatura segura.",
+     "facts": [
+      {
+       "label": "Tamaño",
+       "value": "2,5 m de alto; 1,5 m de largo y de ancho",
+       "source": {
+        "title": "Rover and instruments (NASA Science)",
+        "url": "https://science.nasa.gov/mission/viper/rover-and-instruments/"
+       }
+      },
+      {
+       "label": "Masa",
+       "value": "490 kg al lanzamiento (con la interfaz del módulo de aterrizaje); 447 kg en movimiento",
+       "source": {
+        "title": "VIPER Rover Overview and Mobility and Hardware, B. Bluethmann, NASA, 14 Nov 2024",
+        "url": "https://ntrs.nasa.gov/api/citations/20240013903/downloads/LSIC_2024-Tech%20Infusion_Panel-VIPER_Mob-HW.pdf"
+       }
+      },
+      {
+       "label": "Comparación",
+       "value": "Del tamaño de un carrito de golf",
+       "source": {
+        "title": "Rover and instruments (NASA Science)",
+        "url": "https://science.nasa.gov/mission/viper/rover-and-instruments/"
+       }
+      }
+     ],
+     "heritage": [
+      {
+       "mission": "LADEE",
+       "year": 2013,
+       "note": "La unidad de aviónica y de distribución de energía de VIPER se derivó de la de la misión lunar LADEE (lanzada el 6 de septiembre de 2013, según la página de NASA de LADEE).",
+       "source": {
+        "title": "VIPER Rover Overview and Mobility and Hardware, B. Bluethmann, NASA, 14 Nov 2024",
+        "url": "https://ntrs.nasa.gov/api/citations/20240013903/downloads/LSIC_2024-Tech%20Infusion_Panel-VIPER_Mob-HW.pdf"
+       }
+      }
+     ]
+    },
+    "radiador": {
+     "name": "Radiador y control térmico",
+     "what": "Los radiadores del techo sueltan el calor cuando hay Sol. En el frío, el rover se envuelve en aislante y guarda su calor. Así resiste de 30 K a 300 K.",
+     "facts": [
+      {
+       "label": "Ubicación",
+       "value": "Radiadores en la parte superior del rover",
+       "source": {
+        "title": "VIPER Rover Overview and Mobility and Hardware, B. Bluethmann, NASA, 14 Nov 2024",
+        "url": "https://ntrs.nasa.gov/api/citations/20240013903/downloads/LSIC_2024-Tech%20Infusion_Panel-VIPER_Mob-HW.pdf"
+       }
+      },
+      {
+       "label": "Transporte de calor",
+       "value": "Del cuerpo a los radiadores por tubos de calor en bucle",
+       "source": {
+        "title": "VIPER Rover Overview and Mobility and Hardware, B. Bluethmann, NASA, 14 Nov 2024",
+        "url": "https://ntrs.nasa.gov/api/citations/20240013903/downloads/LSIC_2024-Tech%20Infusion_Panel-VIPER_Mob-HW.pdf"
+       }
+      },
+      {
+       "label": "Rango de temperatura",
+       "value": "De 30 K a 300 K",
+       "source": {
+        "title": "VIPER Rover: Flight Build and Environmental Test Status, IAC-24 (NASA)",
+        "url": "https://ntrs.nasa.gov/api/citations/20240010794/downloads/20240818%20VIPER%20Manuscript%20IAC%202024.pdf"
+       }
+      }
+     ],
+     "heritage": []
+    },
+    "paneles": {
+     "name": "Paneles solares y batería",
+     "what": "Tres paneles solares en los costados dan la energía. Dos baterías internas guardan carga para trabajar en las sombras, donde no llega el Sol.",
+     "facts": [
+      {
+       "label": "Potencia solar",
+       "value": "320 W por panel (450 W con el Sol en una esquina)",
+       "source": {
+        "title": "VIPER Rover Overview and Mobility and Hardware, B. Bluethmann, NASA, 14 Nov 2024",
+        "url": "https://ntrs.nasa.gov/api/citations/20240013903/downloads/LSIC_2024-Tech%20Infusion_Panel-VIPER_Mob-HW.pdf"
+       }
+      },
+      {
+       "label": "Batería",
+       "value": "5,42 kWh al inicio de su vida, a 0 °C",
+       "source": {
+        "title": "VIPER Rover Overview and Mobility and Hardware, B. Bluethmann, NASA, 14 Nov 2024",
+        "url": "https://ntrs.nasa.gov/api/citations/20240013903/downloads/LSIC_2024-Tech%20Infusion_Panel-VIPER_Mob-HW.pdf"
+       }
+      },
+      {
+       "label": "Trabajo en sombra",
+       "value": "Batería dimensionada para 9 horas de operación en sombra",
+       "source": {
+        "title": "Rover Design and Mission Operations, T. Fong, NASA, Apr 2025",
+        "url": "https://ntrs.nasa.gov/api/citations/20250004148/downloads/viper-2025-04-24.pdf"
+       }
+      }
+     ],
+     "heritage": [
+      {
+       "mission": "Orion (Artemis I)",
+       "year": 2022,
+       "note": "El rover usa las mismas celdas base de batería que la nave Orion. Orion voló en Artemis I en 2022 (fecha según la página de NASA de Artemis I).",
+       "source": {
+        "title": "VIPER Rover Overview and Mobility and Hardware, B. Bluethmann, NASA, 14 Nov 2024",
+        "url": "https://ntrs.nasa.gov/api/citations/20240013903/downloads/LSIC_2024-Tech%20Infusion_Panel-VIPER_Mob-HW.pdf"
+       }
+      }
+     ]
+    },
+    "mastil": {
+     "name": "Mástil, cámaras y faros",
+     "what": "El mástil lleva las cámaras de navegación y las luces LED. Es el primer rover de NASA con faros, pensado para ver dentro de cráteres oscuros y guiar a los operadores en la Tierra.",
+     "facts": [
+      {
+       "label": "Primicia",
+       "value": "Primer rover de NASA con faros",
+       "source": {
+        "title": "Rover and instruments (NASA Science)",
+        "url": "https://science.nasa.gov/mission/viper/rover-and-instruments/"
+       }
+      },
+      {
+       "label": "Iluminación",
+       "value": "8 luces LED, calificadas para el polo lunar",
+       "source": {
+        "title": "VIPER Rover Overview and Mobility and Hardware, B. Bluethmann, NASA, 14 Nov 2024",
+        "url": "https://ntrs.nasa.gov/api/citations/20240013903/downloads/LSIC_2024-Tech%20Infusion_Panel-VIPER_Mob-HW.pdf"
+       }
+      },
+      {
+       "label": "Cámaras",
+       "value": "Las cámaras de navegación van en el mástil",
+       "source": {
+        "title": "VIPER Technical Information (NASA, AFPP draft)",
+        "url": "https://assets.science.nasa.gov/content/dam/science/psd/lunar-science/documents/VIPER_Technical_Information_AFPP.pdf"
+       }
+      }
+     ],
+     "heritage": []
+    },
+    "antena": {
+     "name": "Antena de alta ganancia",
+     "what": "Es la antena que apunta a la Tierra para enviar datos y recibir órdenes sin satélites de relevo. Se mueve sola para seguir a la Tierra mientras el rover avanza.",
+     "facts": [
+      {
+       "label": "Enlace",
+       "value": "Banda X, directo a la Tierra por la Red del Espacio Profundo",
+       "source": {
+        "title": "Rover and instruments (NASA Science)",
+        "url": "https://science.nasa.gov/mission/viper/rover-and-instruments/"
+       }
+      },
+      {
+       "label": "Antenas",
+       "value": "Alta ganancia con movimiento y baja ganancia fija",
+       "source": {
+        "title": "VIPER Rover Overview and Mobility and Hardware, B. Bluethmann, NASA, 14 Nov 2024",
+        "url": "https://ntrs.nasa.gov/api/citations/20240013903/downloads/LSIC_2024-Tech%20Infusion_Panel-VIPER_Mob-HW.pdf"
+       }
+      },
+      {
+       "label": "Velocidad de envío",
+       "value": "De 250 sps a 8 Msps (mínimo y máximo)",
+       "source": {
+        "title": "VIPER Rover Overview and Mobility and Hardware, B. Bluethmann, NASA, 14 Nov 2024",
+        "url": "https://ntrs.nasa.gov/api/citations/20240013903/downloads/LSIC_2024-Tech%20Infusion_Panel-VIPER_Mob-HW.pdf"
+       }
+      }
+     ],
+     "heritage": []
+    },
+    "taladro": {
+     "name": "Taladro TRIDENT",
+     "what": "TRIDENT es un taladro de 1 m que gira y golpea a la vez. Saca tierra lunar de hasta 3 pies de profundidad y la deja en la superficie para que los instrumentos la analicen.",
+     "facts": [
+      {
+       "label": "Longitud",
+       "value": "1 m",
+       "source": {
+        "title": "Rover and instruments (NASA Science)",
+        "url": "https://science.nasa.gov/mission/viper/rover-and-instruments/"
+       }
+      },
+      {
+       "label": "Tipo",
+       "value": "Taladro rotativo y percutor: gira y golpea",
+       "source": {
+        "title": "Rover and instruments (NASA Science)",
+        "url": "https://science.nasa.gov/mission/viper/rover-and-instruments/"
+       }
+      },
+      {
+       "label": "Profundidad",
+       "value": "Hasta 3 pies (unos 0,9 m)",
+       "source": {
+        "title": "Rover and instruments (NASA Science)",
+        "url": "https://science.nasa.gov/mission/viper/rover-and-instruments/"
+       }
+      }
+     ],
+     "heritage": [
+      {
+       "mission": "PRIME-1 (Intuitive Machines IM-2)",
+       "year": 2025,
+       "note": "TRIDENT voló en el experimento PRIME-1 del módulo IM-2. Funcionó bien, pero el módulo quedó de costado y no pudo cumplir todas sus metas científicas.",
+       "source": {
+        "title": "NASA's Lunar Drill Technology Passes Tests on the Moon, 29 Apr 2025",
+        "url": "https://www.nasa.gov/missions/artemis/nasas-lunar-drill-technology-passes-tests-on-the-moon/"
+       }
+      }
+     ]
+    },
+    "instrumentos": {
+     "name": "Instrumentos de ciencia",
+     "what": "Tres instrumentos buscan agua. NSS detecta hidrógeno bajo el suelo con neutrones. NIRVSS distingue agua de otras formas de hidrógeno. MSolo mide los gases de la tierra extraída.",
+     "facts": [
+      {
+       "label": "NSS (neutrones)",
+       "value": "Detecta indirectamente agua hasta 3 pies bajo la superficie",
+       "source": {
+        "title": "Rover and instruments (NASA Science)",
+        "url": "https://science.nasa.gov/mission/viper/rover-and-instruments/"
+       }
+      },
+      {
+       "label": "NIRVSS (infrarrojo)",
+       "value": "Distingue agua de hidroxilo",
+       "source": {
+        "title": "Rover and instruments (NASA Science)",
+        "url": "https://science.nasa.gov/mission/viper/rover-and-instruments/"
+       }
+      },
+      {
+       "label": "MSolo (masas)",
+       "value": "Instrumento comercial modificado por el Centro Espacial Kennedy",
+       "source": {
+        "title": "Rover and instruments (NASA Science)",
+        "url": "https://science.nasa.gov/mission/viper/rover-and-instruments/"
+       }
+      }
+     ],
+     "heritage": [
+      {
+       "mission": "Peregrine Mission One (Astrobotic)",
+       "year": 2024,
+       "note": "Versiones de NSS y NIRVSS volaron en Peregrine. Se encendieron y tomaron datos en vuelo, pero el módulo no llegó a la Luna.",
+       "source": {
+        "title": "NASA Science, Astrobotic Peregrine Mission One Concludes, 19 Jan 2024",
+        "url": "https://www.nasa.gov/news-release/nasa-science-astrobotic-peregrine-mission-one-concludes/"
+       }
+      },
+      {
+       "mission": "PRIME-1 (Intuitive Machines IM-2)",
+       "year": 2025,
+       "note": "MSolo voló en PRIME-1 junto a TRIDENT. Hizo varias lecturas de gases, pero el módulo quedó de costado.",
+       "source": {
+        "title": "NASA's Lunar Drill Technology Passes Tests on the Moon, 29 Apr 2025",
+        "url": "https://www.nasa.gov/missions/artemis/nasas-lunar-drill-technology-passes-tests-on-the-moon/"
+       }
+      }
+     ]
+    }
+   },
+   "missions": [
+    {
+     "name": "VIPER",
+     "agency": "NASA",
+     "start": null,
+     "end": null,
+     "where": "Mons Mouton, polo sur de la Luna (región del cráter Nobile)",
+     "summary": "VIPER ya está construido y no ha volado. NASA lo canceló en julio de 2024 y lo retomó en 2025. Hoy el plan es llevarlo en 2027 en un módulo Blue Moon MK1 de Blue Origin.",
+     "milestones": [
+      {
+       "date": "2020-06-11",
+       "text": "NASA adjudica a Astrobotic la entrega de VIPER al polo sur de la Luna.",
+       "source": {
+        "title": "NASA Selects Astrobotic to Fly Water-Hunting Rover to the Moon (release, 11 Jun 2020)",
+        "url": "https://www.nasa.gov/news-release/nasa-selects-astrobotic-to-fly-water-hunting-rover-to-the-moon/"
+       }
+      },
+      {
+       "date": "2021-09-20",
+       "text": "El equipo anuncia que VIPER irá a la región de Nobile, cerca del polo sur lunar.",
+       "source": {
+        "title": "The VIPER Landing Site (NASA SVS, released 20 Sep 2021)",
+        "url": "https://svs.gsfc.nasa.gov/4937/"
+       }
+      },
+      {
+       "date": "2024-06-04",
+       "text": "Termina el armado del rover de vuelo.",
+       "source": {
+        "title": "VIPER Rover: Flight Build and Environmental Test Status, IAC-24 (NASA)",
+        "url": "https://ntrs.nasa.gov/api/citations/20240010794/downloads/20240818%20VIPER%20Manuscript%20IAC%202024.pdf"
+       }
+      },
+      {
+       "date": "2024-07-17",
+       "text": "NASA cancela la misión científica original de VIPER, con el hardware ya terminado.",
+       "source": {
+        "title": "Rover Design and Mission Operations, T. Fong, NASA, Apr 2025",
+        "url": "https://ntrs.nasa.gov/api/citations/20250004148/downloads/viper-2025-04-24.pdf"
+       }
+      },
+      {
+       "date": "2024-11",
+       "text": "En la prueba de vacío térmico el rover funcionó 57 horas solo con batería.",
+       "source": {
+        "title": "VIPER Rover Overview and Mobility and Hardware, B. Bluethmann, NASA, 14 Nov 2024",
+        "url": "https://ntrs.nasa.gov/api/citations/20240013903/downloads/LSIC_2024-Tech%20Infusion_Panel-VIPER_Mob-HW.pdf"
+       }
+      },
+      {
+       "date": "2025-09-19",
+       "text": "NASA elige a Blue Origin para entregar VIPER en la Luna a fines de 2027, con un segundo módulo Blue Moon MK1 (orden CS-7).",
+       "source": {
+        "title": "NASA Selects Blue Origin to Deliver VIPER Rover to Moon’s South Pole (release 25-064, 19 Sep 2025)",
+        "url": "https://www.nasa.gov/news-release/nasa-selects-blue-origin-to-deliver-viper-rover-to-moons-south-pole/"
+       }
+      },
+      {
+       "date": "2026-10-20",
+       "text": "NASA informa que VIPER está completamente armado en el Centro Espacial Johnson, en pruebas finales antes de viajar al Kennedy.",
+       "source": {
+        "title": "NASA Provides Progress Update on Moon Base Rovers (20 Oct 2026)",
+        "url": "https://www.nasa.gov/missions/moon-base/nasa-provides-progress-update-on-moon-base-rovers/"
+       }
+      },
+      {
+       "date": "2026-10-20",
+       "text": "Plan vigente: misión al polo sur lunar en 2027, entregado por un módulo Blue Moon Mark 1.",
+       "source": {
+        "title": "NASA Provides Progress Update on Moon Base Rovers (20 Oct 2026)",
+        "url": "https://www.nasa.gov/missions/moon-base/nasa-provides-progress-update-on-moon-base-rovers/"
+       }
+      }
+     ],
+     "source": {
+      "title": "VIPER - NASA Science (page last updated Sep 21, 2026)",
+      "url": "https://science.nasa.gov/mission/viper/"
+     }
+    }
+   ]
+  },
+  "cadre": {
+   "components": {},
+   "missions": [
+    {
+     "name": "CADRE",
+     "agency": "NASA / JPL",
+     "start": null,
+     "end": null,
+     "where": "",
+     "summary": "Aún no ha volado. Son tres rovers pequeños de JPL que irán en el módulo IM-3 de Intuitive Machines a Reiner Gamma. NASA fija IM-3 para inicios de 2027.",
+     "milestones": [
+      {
+       "date": "2024-02",
+       "text": "Terminan la construcción del hardware de CADRE y sus pruebas de preparación para el viaje.",
+       "source": {
+        "title": "NASA’s Mini Rover Team Is Packed for Lunar Journey (11 Feb 2025)",
+        "url": "https://www.nasa.gov/missions/tech-demonstration/cadre/nasas-mini-rover-team-is-packed-for-lunar-journey/"
+       }
+      },
+      {
+       "date": "2025-02-09",
+       "text": "Los tres rovers y su estación base llegan a las instalaciones de Intuitive Machines en Houston.",
+       "source": {
+        "title": "NASA’s Mini Rover Team Is Packed for Lunar Journey (11 Feb 2025)",
+        "url": "https://www.nasa.gov/missions/tech-demonstration/cadre/nasas-mini-rover-team-is-packed-for-lunar-journey/"
+       }
+      },
+      {
+       "date": "2025-02-11",
+       "text": "NASA informa que irán en IM-3 a la región de Reiner Gamma y operarán un día lunar (unos 14 días terrestres).",
+       "source": {
+        "title": "NASA’s Mini Rover Team Is Packed for Lunar Journey (11 Feb 2025)",
+        "url": "https://www.nasa.gov/missions/tech-demonstration/cadre/nasas-mini-rover-team-is-packed-for-lunar-journey/"
+       }
+      },
+      {
+       "date": "2026-10-21",
+       "text": "La página de NASA para la misión IM-3 la programa para inicios de 2027.",
+       "source": {
+        "title": "Moon Base: Intuitive Machines IM-3 (NASA, updated 21 Oct 2026)",
+        "url": "https://www.nasa.gov/event/clps-flight-intuitive-machines-im-3/"
+       }
+      }
+     ],
+     "source": {
+      "title": "NASA’s Mini Rover Team Is Packed for Lunar Journey (11 Feb 2025)",
+      "url": "https://www.nasa.gov/missions/tech-demonstration/cadre/nasas-mini-rover-team-is-packed-for-lunar-journey/"
+     }
+    }
+   ]
+  },
+  "duaxel": {
+   "components": {},
+   "missions": [
+    {
+     "name": "DuAxel",
+     "agency": "NASA / JPL",
+     "start": null,
+     "end": null,
+     "where": "",
+     "summary": "Es un prototipo de JPL de dos vehículos de dos ruedas unidos por un cable. Probó en el desierto de Mojave. Sigue como demostración, sin destino asignado.",
+     "milestones": [
+      {
+       "date": "2020-10-13",
+       "text": "NASA describe a DuAxel, diseñado para bajar por paredes de cráteres y acantilados casi verticales.",
+       "source": {
+        "title": "This Transforming Rover Can Explore the Toughest Terrain (NASA, 13 Oct 2020)",
+        "url": "https://www.nasa.gov/centers-and-facilities/jpl/this-transforming-rover-can-explore-the-toughest-terrain/"
+       }
+      },
+      {
+       "date": "2020-10-13",
+       "text": "Informe de la prueba de campo en el desierto de Mojave: ancló, soltó su Axel con cable y este bajó por pendientes empinadas.",
+       "source": {
+        "title": "This Transforming Rover Can Explore the Toughest Terrain (NASA, 13 Oct 2020)",
+        "url": "https://www.nasa.gov/centers-and-facilities/jpl/this-transforming-rover-can-explore-the-toughest-terrain/"
+       }
+      },
+      {
+       "date": "2020-10-13",
+       "text": "Sigue como demostración de tecnología, a la espera de un destino.",
+       "source": {
+        "title": "This Transforming Rover Can Explore the Toughest Terrain (NASA, 13 Oct 2020)",
+        "url": "https://www.nasa.gov/centers-and-facilities/jpl/this-transforming-rover-can-explore-the-toughest-terrain/"
+       }
+      }
+     ],
+     "source": {
+      "title": "This Transforming Rover Can Explore the Toughest Terrain (NASA, 13 Oct 2020)",
+      "url": "https://www.nasa.gov/centers-and-facilities/jpl/this-transforming-rover-can-explore-the-toughest-terrain/"
+     }
+    }
+   ]
+  },
+  "eels": {
+   "components": {},
+   "missions": [
+    {
+     "name": "EELS",
+     "agency": "NASA / JPL",
+     "start": null,
+     "end": null,
+     "where": "",
+     "summary": "Robot serpiente de JPL en desarrollo, pensado para bajar por grietas de la luna Encélado. Se prueba en el glaciar Athabasca. No forma parte de una misión asignada.",
+     "milestones": [
+      {
+       "date": "2022-07",
+       "text": "Primer prototipo, EELS 1.0, probado en una pista de hielo en Pasadena.",
+       "source": {
+        "title": "EELS: A Snake-like Robot for Enabling Enceladus Ocean Access (NASA/JPL abstract)",
+        "url": "https://science.nasa.gov/wp-content/uploads/2023/11/eels.pdf"
+       }
+      },
+      {
+       "date": "2022-09",
+       "text": "Primera prueba de campo en el glaciar Athabasca, con la cabeza de sensores de EELS 1.0.",
+       "source": {
+        "title": "EELS: A Snake-like Robot for Enabling Enceladus Ocean Access (NASA/JPL abstract)",
+        "url": "https://science.nasa.gov/wp-content/uploads/2023/11/eels.pdf"
+       }
+      },
+      {
+       "date": "2023-09",
+       "text": "Se prueba la versión 1.5 en un pozo de hielo del glaciar Athabasca.",
+       "source": {
+        "title": "EELS (JPL Robotics at JPL)",
+        "url": "https://www.jpl.nasa.gov/robotics-at-jpl/eels/"
+       }
+      }
+     ],
+     "source": {
+      "title": "EELS: A Snake-like Robot for Enabling Enceladus Ocean Access (NASA/JPL abstract)",
+      "url": "https://science.nasa.gov/wp-content/uploads/2023/11/eels.pdf"
+     }
+    }
+   ]
+  },
+  "lrv": {
+   "components": {
+    "ruedas": {
+     "name": "Ruedas de malla",
+     "what": "Cada rueda es una malla tejida de alambre de acero con bandas de titanio. Es flexible, no se pincha y agarra bien el polvo lunar. Cada una tiene su propio motor.",
+     "facts": [
+      {
+       "label": "Tamaño del neumático",
+       "value": "81,8 cm de diámetro y 23 cm de ancho",
+       "source": {
+        "title": "NSSDCA: The Apollo Lunar Roving Vehicle",
+        "url": "https://nssdc.gsfc.nasa.gov/planetary/lunar/apollo_lrv.html"
+       }
+      },
+      {
+       "label": "Tracción",
+       "value": "Las bandas de titanio cubren el 50 % de la zona de contacto",
+       "source": {
+        "title": "NSSDCA: The Apollo Lunar Roving Vehicle",
+        "url": "https://nssdc.gsfc.nasa.gov/planetary/lunar/apollo_lrv.html"
+       }
+      },
+      {
+       "label": "Diseño elegido",
+       "value": "Se eligió la malla de alambre de General Motors frente a la rueda de aros de Bendix",
+       "source": {
+        "title": "NASA NTRS: The Development of Wheels for the Lunar Roving Vehicle (NASA/TM-2009-215798)",
+        "url": "https://ntrs.nasa.gov/citations/20100000019"
+       }
+      }
+     ],
+     "heritage": [
+      {
+       "mission": "NASA Glenn / Goodyear Spring Tire",
+       "year": 2023,
+       "note": "El neumático de resortes de NASA Glenn y Goodyear se inspiró en las ruedas de malla de alambre del LRV.",
+       "source": {
+        "title": "NASA NTRS: Design and Analysis of Shape Memory Spring Tires for Martian and Lunar Rover Vehicles",
+        "url": "https://ntrs.nasa.gov/citations/20230008382"
+       }
+      }
+     ]
+    },
+    "suspension": {
+     "name": "Suspensión y dirección",
+     "what": "Cada rueda cuelga de una doble horquilla con barras de torsión que absorbe los golpes. Hay dirección adelante y atrás, así que el rover gira en espacios muy cerrados.",
+     "facts": [
+      {
+       "label": "Suspensión",
+       "value": "Doble horquilla horizontal con barras de torsión y amortiguador",
+       "source": {
+        "title": "NSSDCA: The Apollo Lunar Roving Vehicle",
+        "url": "https://nssdc.gsfc.nasa.gov/planetary/lunar/apollo_lrv.html"
+       }
+      },
+      {
+       "label": "Dirección",
+       "value": "Radio de giro de 3,1 m; se puede usar solo un eje",
+       "source": {
+        "title": "NSSDCA: The Apollo Lunar Roving Vehicle",
+        "url": "https://nssdc.gsfc.nasa.gov/planetary/lunar/apollo_lrv.html"
+       }
+      },
+      {
+       "label": "Velocidad máxima reportada",
+       "value": "Unos 18 km/h (récord que se atribuye a Cernan, Apolo 17)",
+       "source": {
+        "title": "NASA Marshall Star, December 12, 2012 (PDF)",
+        "url": "https://www.nasa.gov/wp-content/uploads/2015/05/713568main_star121212.pdf"
+       }
+      }
+     ],
+     "heritage": []
+    },
+    "bastidor": {
+     "name": "Bastidor plegable",
+     "what": "Es el esqueleto de aluminio, en tres partes unidas por bisagras. Se doblaba para caber en el costado del módulo lunar y se abría al bajarlo a la superficie.",
+     "facts": [
+      {
+       "label": "Plegado",
+       "value": "Tres partes con bisagra central, plegadas en el compartimento 1 del módulo lunar",
+       "source": {
+        "title": "NSSDCA: The Apollo Lunar Roving Vehicle",
+        "url": "https://nssdc.gsfc.nasa.gov/planetary/lunar/apollo_lrv.html"
+       }
+      },
+      {
+       "label": "Material y tamaño",
+       "value": "Aluminio 2219; 3,1 m de largo y 2,3 m entre ejes",
+       "source": {
+        "title": "NSSDCA: The Apollo Lunar Roving Vehicle",
+        "url": "https://nssdc.gsfc.nasa.gov/planetary/lunar/apollo_lrv.html"
+       }
+      },
+      {
+       "label": "Masa y carga",
+       "value": "210 kg de masa; carga prevista de 490 kg",
+       "source": {
+        "title": "NSSDCA: The Apollo Lunar Roving Vehicle",
+        "url": "https://nssdc.gsfc.nasa.gov/planetary/lunar/apollo_lrv.html"
+       }
+      }
+     ],
+     "heritage": []
+    },
+    "asientos": {
+     "name": "Asientos",
+     "what": "Dos asientos plegables lado a lado, de tubo de aluminio y correas de nailon. Cada uno tiene cinturón con velcro y reposapiés ajustable.",
+     "facts": [
+      {
+       "label": "Construcción",
+       "value": "Dos asientos plegables de tubo de aluminio con correas de nailon",
+       "source": {
+        "title": "NSSDCA: The Apollo Lunar Roving Vehicle",
+        "url": "https://nssdc.gsfc.nasa.gov/planetary/lunar/apollo_lrv.html"
+       }
+      },
+      {
+       "label": "Cinturón y reposapiés",
+       "value": "Cada asiento tiene reposapiés ajustable y cinturón de velcro",
+       "source": {
+        "title": "NSSDCA: The Apollo Lunar Roving Vehicle",
+        "url": "https://nssdc.gsfc.nasa.gov/planetary/lunar/apollo_lrv.html"
+       }
+      },
+      {
+       "label": "Apoyos para los pies",
+       "value": "Se añadieron apoyos para los pies tras vuelos de gravedad reducida en el KC-135",
+       "source": {
+        "title": "NASA NTRS: The Lunar Roving Vehicle: Historical perspective (S. Morea, NASA MSFC, 1992)",
+        "url": "https://ntrs.nasa.gov/citations/19930004820"
+       }
+      }
+     ],
+     "heritage": []
+    },
+    "consola": {
+     "name": "Consola de mando",
+     "what": "Una palanca en T entre los asientos acelera, gira y frena las cuatro ruedas. Delante, la pantalla muestra velocidad, rumbo y energía, y el sistema de navegación indica el camino de vuelta al módulo.",
+     "facts": [
+      {
+       "label": "Palanca",
+       "value": "Palanca en T entre los asientos: cuatro motores de tracción, dos de dirección y frenos",
+       "source": {
+        "title": "NSSDCA: The Apollo Lunar Roving Vehicle",
+        "url": "https://nssdc.gsfc.nasa.gov/planetary/lunar/apollo_lrv.html"
+       }
+      },
+      {
+       "label": "Pantalla",
+       "value": "Velocidad, rumbo, inclinación, energía y temperatura",
+       "source": {
+        "title": "NSSDCA: The Apollo Lunar Roving Vehicle",
+        "url": "https://nssdc.gsfc.nasa.gov/planetary/lunar/apollo_lrv.html"
+       }
+      },
+      {
+       "label": "Navegación",
+       "value": "Giroscopio direccional y odómetro alimentan una computadora que calcula el regreso",
+       "source": {
+        "title": "NSSDCA: The Apollo Lunar Roving Vehicle",
+        "url": "https://nssdc.gsfc.nasa.gov/planetary/lunar/apollo_lrv.html"
+       }
+      }
+     ],
+     "heritage": []
+    },
+    "baterias": {
+     "name": "Baterías y motores",
+     "what": "Dos baterías de plata y zinc, no recargables, dan la energía. Cada rueda tiene su propio motor eléctrico, así que el rover sigue andando si uno falla.",
+     "facts": [
+      {
+       "label": "Baterías",
+       "value": "Dos de 36 V, plata y zinc, no recargables, de 121 Ah",
+       "source": {
+        "title": "NSSDCA: The Apollo Lunar Roving Vehicle",
+        "url": "https://nssdc.gsfc.nasa.gov/planetary/lunar/apollo_lrv.html"
+       }
+      },
+      {
+       "label": "Motor por rueda",
+       "value": "Motor de 0,25 hp y 10 000 rpm con reductor armónico 80:1",
+       "source": {
+        "title": "NSSDCA: The Apollo Lunar Roving Vehicle",
+        "url": "https://nssdc.gsfc.nasa.gov/planetary/lunar/apollo_lrv.html"
+       }
+      },
+      {
+       "label": "Control térmico",
+       "value": "Control térmico pasivo mantiene las baterías en su rango",
+       "source": {
+        "title": "NSSDCA: The Apollo Lunar Roving Vehicle",
+        "url": "https://nssdc.gsfc.nasa.gov/planetary/lunar/apollo_lrv.html"
+       }
+      }
+     ],
+     "heritage": []
+    },
+    "antena": {
+     "name": "Antenas",
+     "what": "Una antena de malla en forma de plato, al frente, apunta a la Tierra y lleva la señal de televisión. Una antena de voz en el centro permite hablar con Houston.",
+     "facts": [
+      {
+       "label": "Antena de malla",
+       "value": "Montada en un mástil al frente, en el centro",
+       "source": {
+        "title": "NSSDCA: The Apollo Lunar Roving Vehicle",
+        "url": "https://nssdc.gsfc.nasa.gov/planetary/lunar/apollo_lrv.html"
+       }
+      },
+      {
+       "label": "Función",
+       "value": "Envía la señal de televisión a la Tierra",
+       "source": {
+        "title": "NASA NTRS: Development and Application of Color Television for Apollo XV and Beyond (S. Russell, RCA)",
+        "url": "https://ntrs.nasa.gov/api/citations/19730005128/downloads/19730005128.pdf"
+       }
+      },
+      {
+       "label": "Antena de voz",
+       "value": "Va en el chasis central",
+       "source": {
+        "title": "NASA NTRS: The Lunar Roving Vehicle: Historical perspective (S. Morea, NASA MSFC, 1992)",
+        "url": "https://ntrs.nasa.gov/citations/19930004820"
+       }
+      }
+     ],
+     "heritage": []
+    },
+    "camara": {
+     "name": "Cámara de televisión",
+     "what": "Cámara a color montada al frente del rover. Desde Houston, un operador la movía y le cambiaba el zoom por radio, así el mundo veía la Luna casi en vivo.",
+     "facts": [
+      {
+       "label": "Tipo",
+       "value": "Cámara de televisión a color, autónoma",
+       "source": {
+        "title": "NASA NTRS: Development and Application of Color Television for Apollo XV and Beyond (S. Russell, RCA)",
+        "url": "https://ntrs.nasa.gov/api/citations/19730005128/downloads/19730005128.pdf"
+       }
+      },
+      {
+       "label": "Control desde la Tierra",
+       "value": "Giro, inclinación, zoom y apertura se mandan desde Houston",
+       "source": {
+        "title": "NASA NTRS: Development and Application of Color Television for Apollo XV and Beyond (S. Russell, RCA)",
+        "url": "https://ntrs.nasa.gov/api/citations/19730005128/downloads/19730005128.pdf"
+       }
+      },
+      {
+       "label": "Retraso",
+       "value": "Pasaban 3,5 s entre pulsar un botón y ver el efecto",
+       "source": {
+        "title": "NASA NTRS: Development and Application of Color Television for Apollo XV and Beyond (S. Russell, RCA)",
+        "url": "https://ntrs.nasa.gov/api/citations/19730005128/downloads/19730005128.pdf"
+       }
+      }
+     ],
+     "heritage": []
+    },
+    "herramientas": {
+     "name": "Portaherramientas y muestras",
+     "what": "Atrás, una plataforma lleva las herramientas y los instrumentos científicos. También sirve para guardar las rocas y el suelo que los astronautas recogen.",
+     "facts": [
+      {
+       "label": "Ubicación",
+       "value": "El portaherramientas va atrás",
+       "source": {
+        "title": "NASA ALSJ: Apollo 16 onboard briefing, Lunar Roving Vehicle pages (PDF)",
+        "url": "https://www.nasa.gov/wp-content/uploads/static/history/alsj/a16/A16OTM15-42.pdf"
+       }
+      },
+      {
+       "label": "Chasis trasero",
+       "value": "Herramientas y equipo científico van sobre el chasis trasero",
+       "source": {
+        "title": "NASA NTRS: The Lunar Roving Vehicle: Historical perspective (S. Morea, NASA MSFC, 1992)",
+        "url": "https://ntrs.nasa.gov/citations/19930004820"
+       }
+      },
+      {
+       "label": "Muestras Apolo 17",
+       "value": "110,52 kg de muestras lunares",
+       "source": {
+        "title": "NSSDCA: Apollo 17 Command and Service Module",
+        "url": "https://nssdc.gsfc.nasa.gov/nmc/spacecraft/display.action?id=1972-096A"
+       }
+      }
+     ],
+     "heritage": []
+    },
+    "guardabarros": {
+     "name": "Guardabarros",
+     "what": "Cubren cada rueda para frenar el polvo lunar que levanta. Son de fibra de vidrio. En el Apolo 17 se rompió uno y se arregló con mapas y cinta.",
+     "facts": [
+      {
+       "label": "Función",
+       "value": "Protectores de polvo sobre las ruedas",
+       "source": {
+        "title": "NSSDCA: The Apollo Lunar Roving Vehicle",
+        "url": "https://nssdc.gsfc.nasa.gov/planetary/lunar/apollo_lrv.html"
+       }
+      },
+      {
+       "label": "Material",
+       "value": "Fibra de vidrio con resina epoxi",
+       "source": {
+        "title": "Smithsonian NASM: Wheel, Lunar Rover (A19750830000)",
+        "url": "https://airandspace.si.edu/collection-objects/wheel-lunar-rover/nasm_A19750830000"
+       }
+      },
+      {
+       "label": "Reparación Apolo 17",
+       "value": "Cuatro de los 28 mapas lunares, cinta y dos pinzas",
+       "source": {
+        "title": "Smithsonian NASM: Duct Tape Auto Repair on the Moon",
+        "url": "https://airandspace.si.edu/stories/editorial/duct-tape-auto-repair-moon"
+       }
+      }
+     ],
+     "heritage": []
+    }
+   },
+   "missions": [
+    {
+     "name": "Apolo 15",
+     "agency": "NASA",
+     "start": "1971-07-26",
+     "end": "1971-08-07",
+     "where": "Hadley-Apeninos, región del mar de las Lluvias (Mare Imbrium), 26,1 N, 3,6 E",
+     "summary": "David Scott y James Irwin estrenaron el rover en la Luna. Lo condujeron 27,8 km en 3 h 2 min. Llegaron a unos 5 km del módulo lunar, la mayor distancia hasta entonces.",
+     "milestones": [
+      {
+       "date": "1971-07-31",
+       "text": "Primera conducción en la Luna: Scott prueba el rover tras desplegarlo.",
+       "source": {
+        "title": "NASA: 50 Years Ago: Apollo 15 on the Moon at Hadley-Apennine",
+        "url": "https://www.nasa.gov/history/50-years-ago-apollo-15-on-the-moon-at-hadley-apennine/"
+       }
+      },
+      {
+       "date": "1971-07-31",
+       "text": "Primera salida: el rover se descarga, se despliega y se conduce.",
+       "source": {
+        "title": "NSSDCA: Apollo 15 Lunar Module/ALSEP",
+        "url": "https://nssdc.gsfc.nasa.gov/nmc/spacecraft/display.action?id=1971-063C"
+       }
+      },
+      {
+       "date": "1971-08-01",
+       "text": "Segunda salida: unos 5 km del módulo, lo más lejos que habían ido astronautas hasta entonces.",
+       "source": {
+        "title": "NASA: 50 Years Ago: Apollo 15 on the Moon at Hadley-Apennine",
+        "url": "https://www.nasa.gov/history/50-years-ago-apollo-15-on-the-moon-at-hadley-apennine/"
+       }
+      },
+      {
+       "date": "1971-08-02",
+       "text": "Total del rover: 27,8 km en 3 h 2 min; mayor alcance 5,0 km; tramo más largo 12,5 km.",
+       "source": {
+        "title": "NSSDCA: The Apollo Lunar Roving Vehicle",
+        "url": "https://nssdc.gsfc.nasa.gov/planetary/lunar/apollo_lrv.html"
+       }
+      }
+     ],
+     "source": {
+      "title": "NSSDCA: Apollo 15 Command and Service Module",
+      "url": "https://nssdc.gsfc.nasa.gov/nmc/spacecraft/display.action?id=1971-063A"
+     }
+    },
+    {
+     "name": "Apolo 16",
+     "agency": "NASA",
+     "start": "1972-04-16",
+     "end": "1972-04-27",
+     "where": "Tierras altas de Descartes, 9,0 S, 15,5 E",
+     "summary": "John Young y Charles Duke recorrieron 26,7 km en 3 h 26 min. Probaron la velocidad del rover en su \"Gran Premio\". Un guardabarros se rompió, pero siguieron adelante.",
+     "milestones": [
+      {
+       "date": "1972-04-21",
+       "text": "\"Gran Premio\": Young maneja el rover a toda marcha en la primera salida.",
+       "source": {
+        "title": "NASA: John Young Driving the Lunar Rover",
+        "url": "https://www.nasa.gov/image-article/john-young-driving-lunar-rover/"
+       }
+      },
+      {
+       "date": "1972-04-22",
+       "text": "Segunda salida: el traje de Young engancha y arranca el guardabarros trasero derecho.",
+       "source": {
+        "title": "NASA: 50 Years Ago: Apollo 16 on the Moon at Descartes",
+        "url": "https://www.nasa.gov/history/50-years-ago-apollo-16-on-the-moon-at-descartes/"
+       }
+      },
+      {
+       "date": "1972-04-23",
+       "text": "Tercera salida: viajan al cráter North Ray, 11,4 km de recorrido.",
+       "source": {
+        "title": "NSSDCA: Apollo 16 Lunar Module/ALSEP",
+        "url": "https://nssdc.gsfc.nasa.gov/nmc/spacecraft/display.action?id=1972-031C"
+       }
+      },
+      {
+       "date": "1972-04-23",
+       "text": "Total del rover: 26,7 km en 3 h 26 min; mayor alcance 4,5 km; tramo más largo 11,6 km.",
+       "source": {
+        "title": "NSSDCA: The Apollo Lunar Roving Vehicle",
+        "url": "https://nssdc.gsfc.nasa.gov/planetary/lunar/apollo_lrv.html"
+       }
+      }
+     ],
+     "source": {
+      "title": "NSSDCA: Apollo 16 Command and Service Module",
+      "url": "https://nssdc.gsfc.nasa.gov/nmc/spacecraft/display.action?id=1972-031A"
+     }
+    },
+    {
+     "name": "Apolo 17",
+     "agency": "NASA",
+     "start": "1972-12-07",
+     "end": "1972-12-19",
+     "where": "Valle Taurus-Littrow, borde sureste del mar de la Serenidad, 20,2 N, 30,8 E",
+     "summary": "Gene Cernan y Harrison Schmitt condujeron 35,9 km en 4 h 26 min, la mayor distancia de las tres misiones. Llegaron a 7,6 km del módulo. Repararon un guardabarros con mapas y cinta.",
+     "milestones": [
+      {
+       "date": "1972-12-11",
+       "text": "Primera salida: Cernan prueba el rover alrededor del módulo lunar.",
+       "source": {
+        "title": "NASA: 50 Years Ago: Apollo 17 Lands at Taurus-Littrow",
+        "url": "https://www.nasa.gov/history/50-years-ago-apollo-17-lands-at-taurus-littrow/"
+       }
+      },
+      {
+       "date": "1972-12-11",
+       "text": "Cernan golpea con un martillo el guardabarros trasero derecho y lo arranca.",
+       "source": {
+        "title": "NASA: 50 Years Ago: Apollo 17 Lands at Taurus-Littrow",
+        "url": "https://www.nasa.gov/history/50-years-ago-apollo-17-lands-at-taurus-littrow/"
+       }
+      },
+      {
+       "date": "1972-12-12",
+       "text": "Segunda salida: reparan el guardabarros con cuatro mapas, cinta y pinzas.",
+       "source": {
+        "title": "Smithsonian NASM: Duct Tape Auto Repair on the Moon",
+        "url": "https://airandspace.si.edu/stories/editorial/duct-tape-auto-repair-moon"
+       }
+      },
+      {
+       "date": "1972-12-14",
+       "text": "Total del rover: 35,9 km en 4 h 26 min; mayor alcance 7,6 km; tramo más largo 20,1 km.",
+       "source": {
+        "title": "NSSDCA: The Apollo Lunar Roving Vehicle",
+        "url": "https://nssdc.gsfc.nasa.gov/planetary/lunar/apollo_lrv.html"
+       }
+      }
+     ],
+     "source": {
+      "title": "NSSDCA: Apollo 17 Command and Service Module",
+      "url": "https://nssdc.gsfc.nasa.gov/nmc/spacecraft/display.action?id=1972-096A"
+     }
+    }
+   ]
+  }
+ }
+}

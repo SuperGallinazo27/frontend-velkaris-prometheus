@@ -10,6 +10,8 @@ import { guard, hashOf, parseHash } from "./routes";
 
 // El mundo interactivo trae Three.js y el mapa de países: se descarga solo al abrirlo.
 const World = lazy(() => import("../features/world/World"));
+// El hangar trae Three.js y los modelos 3D de los robots: también se descarga solo al abrirlo.
+const Hangar = lazy(() => import("../features/hangar/Hangar"));
 
 export default function Root() {
   const [requested, setRequested] = useState(() => parseHash(window.location.hash));
@@ -67,6 +69,12 @@ export default function Root() {
       return (
         <Suspense fallback={<div className="nocturno pantalla-carga">Cargando el mundo interactivo…</div>}>
           <World user={user!} />
+        </Suspense>
+      );
+    case "hangar":
+      return (
+        <Suspense fallback={<div className="nocturno pantalla-carga">Abriendo el hangar…</div>}>
+          <Hangar user={user!} />
         </Suspense>
       );
   }

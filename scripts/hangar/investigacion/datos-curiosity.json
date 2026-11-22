@@ -1,0 +1,637 @@
+{
+ "robot": "curiosity",
+ "checked": "2026-11-22",
+ "components": {
+  "ruedas": {
+   "name_es": "Ruedas",
+   "name_en": "Wheels",
+   "what_es": "Seis ruedas de aluminio con garras para agarrarse. Cada una tiene su propio motor y las cuatro de las esquinas también giran. Llevan al rover sobre rocas y arena.",
+   "what_en": "Six aluminum wheels with cleats for grip. Each has its own drive motor, and the four corner wheels also steer. They carry the rover across rock and sand.",
+   "facts": [
+    {
+     "label_es": "Material y tamaño",
+     "label_en": "Material and size",
+     "value_es": "Aluminio, 0,5 m (20 pulgadas) de diámetro: el doble que las de Spirit y Opportunity",
+     "value_en": "Aluminum, 0.5 m (20 inches) across, twice the size of Spirit and Opportunity wheels",
+     "source": {
+      "title": "NASA/JPL, Mars Science Laboratory Landing Press Kit (July 2012)",
+      "url": "https://www.jpl.nasa.gov/news/press_kits/MSLLanding.pdf"
+     },
+     "quote": "wheels are aluminum, 20 inches (0.5 meter) in diameter, which is twice the size of the wheels on Spirit and Opportunity"
+    },
+    {
+     "label_es": "Motores",
+     "label_en": "Motors",
+     "value_es": "Las seis ruedas tienen motor de tracción; las cuatro de las esquinas, también de dirección",
+     "value_en": "All six wheels have drive motors; the four corner wheels also have steering motors",
+     "source": {
+      "title": "NASA/JPL, Mars Science Laboratory Landing Press Kit (July 2012)",
+      "url": "https://www.jpl.nasa.gov/news/press_kits/MSLLanding.pdf"
+     },
+     "quote": "Six wheels all have driver motors. The four corner wheels all have steering motors."
+    },
+    {
+     "label_es": "Garras y rayos",
+     "label_en": "Cleats and spokes",
+     "value_es": "Garras para tracción y rayos de titanio curvos que dan soporte elástico",
+     "value_en": "Cleats for traction and curved titanium spokes for springy support",
+     "source": {
+      "title": "NASA/JPL, Mars Science Laboratory Landing Press Kit (July 2012)",
+      "url": "https://www.jpl.nasa.gov/news/press_kits/MSLLanding.pdf"
+     },
+     "quote": "They have cleats for traction and for structural support. Curving titanium spokes give springy support."
+    }
+   ],
+   "heritage": [
+    {
+     "mission": "Mars 2020 (Perseverance)",
+     "year": 2020,
+     "note_es": "Perseverance rediseñó las ruedas para hacerlas más resistentes, por el desgaste que sufrieron las de Curiosity en rocas filosas.",
+     "note_en": "Perseverance redesigned its wheels to be tougher, because of the wear Curiosity's wheels took on sharp rocks.",
+     "source": {
+      "title": "NASA Science, Perseverance Rover Components",
+      "url": "https://science.nasa.gov/mission/mars-2020-perseverance/rover-components/"
+     },
+     "quote": "Engineers redesigned the Mars 2020 Perseverance rover's wheels to be more robust, due to wear and tear the Curiosity rover wheels endured"
+    }
+   ]
+  },
+  "suspension": {
+   "name_es": "Suspensión rocker-bogie",
+   "name_en": "Rocker-bogie suspension",
+   "what_es": "Un sistema de brazos articulados que une las ruedas al cuerpo. Mantiene las seis ruedas en contacto con el suelo aunque el terreno sea desigual, y permite pasar sobre rocas.",
+   "what_en": "A system of pivoting arms that links the wheels to the body. It keeps all six wheels on the ground over uneven terrain, so the rover can roll over rocks.",
+   "facts": [
+    {
+     "label_es": "Cómo funciona",
+     "label_en": "How it works",
+     "value_es": "Mantiene las seis ruedas en contacto con el suelo, incluso al pasar sobre una roca grande como la rueda",
+     "value_en": "Keeps all six wheels in contact with the ground, even over a rock as big as a wheel",
+     "source": {
+      "title": "NASA/JPL, Mars Science Laboratory Landing Press Kit (July 2012)",
+      "url": "https://www.jpl.nasa.gov/news/press_kits/MSLLanding.pdf"
+     },
+     "quote": "the rocker-bogie design enables a six-wheel vehicle to keep all its wheels in contact with the ground even on uneven terrain"
+    },
+    {
+     "label_es": "Velocidad máxima",
+     "label_en": "Top speed",
+     "value_es": "Unos 4 cm por segundo en suelo plano y duro",
+     "value_en": "About 4 cm per second on flat, hard ground",
+     "source": {
+      "title": "NASA/JPL, Mars Science Laboratory Landing Press Kit (July 2012)",
+      "url": "https://www.jpl.nasa.gov/news/press_kits/MSLLanding.pdf"
+     },
+     "quote": "The rover has a top speed on flat, hard ground of about 1.5 inches (4 centimeters) per second."
+    },
+    {
+     "label_es": "Diseñado para recorrer",
+     "label_en": "Designed to drive",
+     "value_es": "Más de 20 km durante la misión principal",
+     "value_en": "More than 20 km during the prime mission",
+     "source": {
+      "title": "NASA/JPL, Mars Science Laboratory Landing Press Kit (July 2012)",
+      "url": "https://www.jpl.nasa.gov/news/press_kits/MSLLanding.pdf"
+     },
+     "quote": "capable of driving more than 12 miles (more than 20 kilometers) during the prime mission"
+    }
+   ],
+   "heritage": [
+    {
+     "mission": "Mars Exploration Rovers (Spirit y Opportunity)",
+     "year": 2003,
+     "note_es": "Spirit y su gemelo Opportunity ya usaban suspensión rocker-bogie, con un motor por rueda.",
+     "note_en": "Spirit and its twin Opportunity already used a rocker-bogie suspension, with a motor on each wheel.",
+     "source": {
+      "title": "NASA NSSDCA, Spirit (2003-027A)",
+      "url": "https://nssdc.gsfc.nasa.gov/nmc/spacecraft/display.action?id=2003-027A"
+     },
+     "quote": "The wheels are attached to a rocker-bogie suspension system. Each wheel has its own motor"
+    },
+    {
+     "mission": "Mars 2020 (Perseverance)",
+     "year": 2020,
+     "note_es": "Perseverance también rueda sobre seis ruedas con suspensión rocker-bogie.",
+     "note_en": "Perseverance also rolls on six wheels with a rocker-bogie suspension.",
+     "source": {
+      "title": "NASA NSSDCA, Mars 2020 (2020-052A)",
+      "url": "https://nssdc.gsfc.nasa.gov/nmc/spacecraft/display.action?id=2020-052A"
+     },
+     "quote": "Mobility is provided by the six wheels in a rocker-bogie suspension"
+    }
+   ]
+  },
+  "cuerpo": {
+   "name_es": "Cuerpo (WEB)",
+   "name_en": "Body (WEB)",
+   "what_es": "La caja caliente del rover. Protege los dos computadores redundantes y los laboratorios internos SAM y CheMin, que analizan las muestras de roca y suelo.",
+   "what_en": "The rover's warm electronics box. It protects the two redundant computers and the internal SAM and CheMin labs that analyze rock and soil samples.",
+   "facts": [
+    {
+     "label_es": "Tamaño",
+     "label_en": "Size",
+     "value_es": "Unos 3 m de largo, 2,7 m de ancho y 2,1 m de alto (10 x 9 x 7 pies), sin contar el brazo",
+     "value_en": "About 3 m long, 2.7 m wide and 2.1 m tall (10 x 9 x 7 feet), not counting the arm",
+     "source": {
+      "title": "NASA Science, Mars Science Laboratory: Curiosity Rover",
+      "url": "https://science.nasa.gov/mission/msl-curiosity/"
+     },
+     "quote": "10 feet long, 9 feet wide and 7 feet tall"
+    },
+    {
+     "label_es": "Cerebro",
+     "label_en": "Brain",
+     "value_es": "Procesador RAD750 de hasta 200 MHz en cada computador",
+     "value_en": "RAD750 processor of up to 200 MHz in each computer",
+     "source": {
+      "title": "NASA/JPL, Mars Science Laboratory Landing Press Kit (July 2012)",
+      "url": "https://www.jpl.nasa.gov/news/press_kits/MSLLanding.pdf"
+     },
+     "quote": "This processor operates at up to 200 megahertz speed"
+    },
+    {
+     "label_es": "Laboratorio SAM",
+     "label_en": "SAM lab",
+     "value_es": "Detecta menos de una parte por mil millones de un compuesto orgánico",
+     "value_en": "Detects less than one part per billion of an organic compound",
+     "source": {
+      "title": "NASA Science, Curiosity Science Instruments",
+      "url": "https://science.nasa.gov/mission/msl-curiosity/science-instruments/"
+     },
+     "quote": "Detects less than one part-per-billion of an organic compound"
+    }
+   ],
+   "heritage": [
+    {
+     "mission": "Mars Exploration Rovers (Spirit y Opportunity)",
+     "year": 2003,
+     "note_es": "Los rovers anteriores también guardaban su electrónica en una caja caliente (WEB) dentro del chasis.",
+     "note_en": "Earlier rovers also kept their electronics in a warm electronics box (WEB) inside the chassis.",
+     "source": {
+      "title": "NASA NSSDCA, Spirit (2003-027A)",
+      "url": "https://nssdc.gsfc.nasa.gov/nmc/spacecraft/display.action?id=2003-027A"
+     },
+     "quote": "The chassis contains the warm electronics box (WEB)."
+    },
+    {
+     "mission": "Mars 2020 (Perseverance)",
+     "year": 2020,
+     "note_es": "Perseverance se basa en la configuración de Curiosity y también usa un cuerpo WEB.",
+     "note_en": "Perseverance is based on Curiosity's configuration and also uses a WEB body.",
+     "source": {
+      "title": "NASA Science, Perseverance Rover Components",
+      "url": "https://science.nasa.gov/mission/mars-2020-perseverance/rover-components/"
+     },
+     "quote": "The Mars 2020 rover, Perseverance, is based on the Mars Science Laboratory's Curiosity rover configuration"
+    }
+   ]
+  },
+  "mastil": {
+   "name_es": "Mástil y cámaras",
+   "name_en": "Mast and cameras",
+   "what_es": "La cabeza del rover, a la altura de los ojos de una persona. Lleva Mastcam (fotos y video a color), ChemCam (un láser que vaporiza roca para analizarla) y las cámaras de navegación Navcam.",
+   "what_en": "The rover's head, at human eye height. It carries Mastcam (color photos and video), ChemCam (a laser that vaporizes rock to analyze it) and the Navcam navigation cameras.",
+   "facts": [
+    {
+     "label_es": "Mastcam",
+     "label_en": "Mastcam",
+     "value_es": "Dos cámaras a color de 2 megapíxeles",
+     "value_en": "Two color cameras, 2 megapixels",
+     "source": {
+      "title": "NASA Science, Curiosity Science Instruments",
+      "url": "https://science.nasa.gov/mission/msl-curiosity/science-instruments/"
+     },
+     "quote": "Similar to that of consumer digital cameras; 2 megapixels."
+    },
+    {
+     "label_es": "ChemCam",
+     "label_en": "ChemCam",
+     "value_es": "Usa un láser para vaporizar material y analiza su composición con un espectrógrafo",
+     "value_en": "Uses a laser to vaporize material, then analyzes its composition with a spectrograph",
+     "source": {
+      "title": "NASA Science, Curiosity Science Instruments",
+      "url": "https://science.nasa.gov/mission/msl-curiosity/science-instruments/"
+     },
+     "quote": "An instrument that first uses a laser to vaporize materials then later analyzes their elemental composition using an on-board spectrograph."
+    },
+    {
+     "label_es": "Navcams",
+     "label_en": "Navcams",
+     "value_es": "Dos pares estéreo de cámaras de navegación",
+     "value_en": "Two stereo pairs of navigation cameras",
+     "source": {
+      "title": "NASA/JPL, Mars Science Laboratory Landing Press Kit (July 2012)",
+      "url": "https://www.jpl.nasa.gov/news/press_kits/MSLLanding.pdf"
+     },
+     "quote": "Curiosity carries two stereo pairs of Navcams, one pair each connected to the rover"
+    }
+   ],
+   "heritage": [
+    {
+     "mission": "Mars 2020 (Mastcam-Z)",
+     "year": 2020,
+     "note_es": "Mastcam-Z de Perseverance se basa directamente en Mastcam y añade zoom 4:1.",
+     "note_en": "Perseverance's Mastcam-Z is based directly on Mastcam and adds a 4:1 zoom.",
+     "source": {
+      "title": "Bell et al., Space Science Reviews (2021), Mastcam-Z",
+      "url": "https://link.springer.com/article/10.1007/s11214-020-00755-x"
+     },
+     "quote": "Mastcam-Z is a high-heritage imaging system based directly on the successful MSL Mastcam investigation"
+    },
+    {
+     "mission": "Mars 2020 (SuperCam)",
+     "year": 2020,
+     "note_es": "SuperCam de Perseverance es muy parecida a su antecesora ChemCam, con un telescopio distinto.",
+     "note_en": "Perseverance's SuperCam looks very similar to its predecessor ChemCam, with a different telescope.",
+     "source": {
+      "title": "Maurice et al., Space Science Reviews (2021), SuperCam",
+      "url": "https://link.springer.com/article/10.1007/s11214-020-00777-5"
+     },
+     "quote": "SuperCam looks very similar to its predecessor"
+    },
+    {
+     "mission": "Mars Exploration Rovers (Spirit y Opportunity)",
+     "year": 2003,
+     "note_es": "Las Navcams son casi idénticas a las cámaras de ingeniería de Spirit y Opportunity.",
+     "note_en": "The Navcams are virtually identical to the engineering cameras on Spirit and Opportunity.",
+     "source": {
+      "title": "NASA/JPL, Mars Science Laboratory Landing Press Kit (July 2012)",
+      "url": "https://www.jpl.nasa.gov/news/press_kits/MSLLanding.pdf"
+     },
+     "quote": "The cameras themselves are virtually identical to the engineering cameras on Spirit and Opportunity"
+    }
+   ]
+  },
+  "brazo": {
+   "name_es": "Brazo robótico",
+   "name_en": "Robotic arm",
+   "what_es": "Un brazo con cinco articulaciones que lleva la torreta de herramientas hasta las rocas y el suelo elegidos por los científicos, y maneja los mecanismos de procesamiento de muestras.",
+   "what_en": "A five-joint arm that moves the tool turret to the rocks and soil chosen by scientists and operates the sample-processing mechanisms.",
+   "facts": [
+    {
+     "label_es": "Alcance",
+     "label_en": "Reach",
+     "value_es": "Unos 2,2 m (7 pies)",
+     "value_en": "About 2.2 m (7 feet)",
+     "source": {
+      "title": "NASA Science, Mars Science Laboratory: Curiosity Rover",
+      "url": "https://science.nasa.gov/mission/msl-curiosity/"
+     },
+     "quote": "Arm reach About 7 feet (2.2 meters)"
+    },
+    {
+     "label_es": "Articulaciones",
+     "label_en": "Joints",
+     "value_es": "Cinco grados de libertad: hombro (2), codo, muñeca y torreta",
+     "value_en": "Five degrees of freedom: shoulder (2), elbow, wrist and turret",
+     "source": {
+      "title": "NASA/JPL, Mars Science Laboratory Landing Press Kit (July 2012)",
+      "url": "https://www.jpl.nasa.gov/news/press_kits/MSLLanding.pdf"
+     },
+     "quote": "The arm has five degrees of freedom of movement provided by rotary actuators"
+    },
+    {
+     "label_es": "Fuerza",
+     "label_en": "Strength",
+     "value_es": "Puede sostener la torreta de 33 kg con el brazo extendido",
+     "value_en": "Can hold the 33 kg turret with the arm fully extended",
+     "source": {
+      "title": "NASA/JPL, Mars Science Laboratory Landing Press Kit (July 2012)",
+      "url": "https://www.jpl.nasa.gov/news/press_kits/MSLLanding.pdf"
+     },
+     "quote": "It is strong enough to hold the 73-pound (33-kilogram) turret at full extension of the arm."
+    }
+   ],
+   "heritage": [
+    {
+     "mission": "Mars 2020 (Perseverance)",
+     "year": 2020,
+     "note_es": "El brazo de Perseverance parte del diseño de Curiosity, con ajustes en los motores y su electrónica para tomar núcleos de roca.",
+     "note_en": "Perseverance's arm builds on the Curiosity design, modified in motor controller electronics for coring samples.",
+     "source": {
+      "title": "NASA Science, Perseverance Rover Components",
+      "url": "https://science.nasa.gov/mission/mars-2020-perseverance/rover-components/"
+     },
+     "quote": "so the Curiosity design was modified to handle the new Perseverance rover motor controller electronics"
+    }
+   ]
+  },
+  "torreta": {
+   "name_es": "Torreta de herramientas",
+   "name_en": "Tool turret",
+   "what_es": "La mano del brazo. Reúne el taladro, el espectrómetro APXS, la cámara MAHLI, el sistema CHIMRA que procesa muestras y un cepillo (DRT) que limpia el polvo de la roca.",
+   "what_en": "The arm's hand. It holds the drill, the APXS spectrometer, the MAHLI camera, the CHIMRA sample processor and a brush (DRT) that sweeps dust off rock.",
+   "facts": [
+    {
+     "label_es": "Herramientas",
+     "label_en": "Tools",
+     "value_es": "Dos instrumentos científicos y tres dispositivos más",
+     "value_en": "Two science instruments and three other devices",
+     "source": {
+      "title": "NASA/JPL, Mars Science Laboratory Landing Press Kit (July 2012)",
+      "url": "https://www.jpl.nasa.gov/news/press_kits/MSLLanding.pdf"
+     },
+     "quote": "holds two science instruments and three other devices"
+    },
+    {
+     "label_es": "Taladro",
+     "label_en": "Drill",
+     "value_es": "Toma muestras hasta 5 cm bajo la superficie de la roca",
+     "value_en": "Collects samples up to 5 cm beneath the rock surface",
+     "source": {
+      "title": "NASA/JPL, Mars Science Laboratory Landing Press Kit (July 2012)",
+      "url": "https://www.jpl.nasa.gov/news/press_kits/MSLLanding.pdf"
+     },
+     "quote": "It can collect a sample from up to 2 inches (5 centimeters) beneath a rock"
+    },
+    {
+     "label_es": "Agujero",
+     "label_en": "Drill hole",
+     "value_es": "Diámetro de 1,6 cm",
+     "value_en": "Diameter 1.6 cm",
+     "source": {
+      "title": "NASA/JPL, Mars Science Laboratory Landing Press Kit (July 2012)",
+      "url": "https://www.jpl.nasa.gov/news/press_kits/MSLLanding.pdf"
+     },
+     "quote": "The diameter of the drilled hole is 0.63 inch (1.6 centimeters)."
+    }
+   ],
+   "heritage": [
+    {
+     "mission": "Mars 2020 (Perseverance)",
+     "year": 2020,
+     "note_es": "Perseverance usa una torreta más grande, con taladro de núcleos, dos instrumentos y una cámara a color.",
+     "note_en": "Perseverance uses a larger turret with a coring drill, two instruments and a color camera.",
+     "source": {
+      "title": "NASA Science, Perseverance Rover Components",
+      "url": "https://science.nasa.gov/mission/mars-2020-perseverance/rover-components/"
+     },
+     "quote": "the rover has a larger \"hand,\" or turret at the end of the robot arm"
+    }
+   ]
+  },
+  "rtg": {
+   "name_es": "Generador de radioisótopos (MMRTG)",
+   "name_en": "Radioisotope generator (MMRTG)",
+   "what_es": "Una batería nuclear. Convierte el calor del plutonio-238 en electricidad, sin partes móviles, y también calienta los sistemas del rover en las noches frías de Marte.",
+   "what_en": "A nuclear battery. It turns the heat of plutonium-238 into electricity and also warms the rover's systems during cold Martian nights.",
+   "facts": [
+    {
+     "label_es": "Combustible",
+     "label_en": "Fuel",
+     "value_es": "4,8 kg de dióxido de plutonio",
+     "value_en": "4.8 kg of plutonium dioxide",
+     "source": {
+      "title": "NASA/JPL, Mars Science Laboratory Landing Press Kit (July 2012)",
+      "url": "https://www.jpl.nasa.gov/news/press_kits/MSLLanding.pdf"
+     },
+     "quote": "It contains 10.6 pounds (4.8 kilograms) of plutonium dioxide"
+    },
+    {
+     "label_es": "Potencia",
+     "label_en": "Power",
+     "value_es": "Poco más de 110 vatios",
+     "value_en": "Slightly more than 110 watts",
+     "source": {
+      "title": "NASA/JPL, Mars Science Laboratory Landing Press Kit (July 2012)",
+      "url": "https://www.jpl.nasa.gov/news/press_kits/MSLLanding.pdf"
+     },
+     "quote": "as it generates electrical power in smaller increments, slightly more than 110 watts"
+    },
+    {
+     "label_es": "Tamaño y masa",
+     "label_en": "Size and mass",
+     "value_es": "64 cm de diámetro, 66 cm de largo y unos 45 kg",
+     "value_en": "64 cm across, 66 cm long, about 45 kg",
+     "source": {
+      "title": "NASA/JPL, Mars Science Laboratory Landing Press Kit (July 2012)",
+      "url": "https://www.jpl.nasa.gov/news/press_kits/MSLLanding.pdf"
+     },
+     "quote": "It is about 25 inches (64 centimeters) in diameter by 26 inches (66 centimeters) long and weighs about 99 pounds (45 kilograms)."
+    }
+   ],
+   "heritage": [
+    {
+     "mission": "Mars 2020 (Perseverance)",
+     "year": 2020,
+     "note_es": "El sistema de energía de Perseverance es idéntico al de Curiosity.",
+     "note_en": "Perseverance's power system is identical to Curiosity's.",
+     "source": {
+      "title": "NASA/JPL, Mars 2020 press kit, Power",
+      "url": "https://www.jpl.nasa.gov/news/press_kits/mars_2020/launch/mission/spacecraft/power/"
+     },
+     "quote": "Perseverance's power system is identical to the one that the Curiosity rover has been using successfully since its launch in 2011."
+    },
+    {
+     "mission": "Dragonfly",
+     "year": 2028,
+     "note_es": "Dragonfly, la misión a Titán, usará un MMRTG, un tipo de fuente similar al de Curiosity y Perseverance.",
+     "note_en": "Dragonfly, the Titan mission, will use an MMRTG, a similar type of power source to Curiosity's and Perseverance's.",
+     "source": {
+      "title": "NASA Science, Dragonfly Spacecraft and Instruments",
+      "url": "https://science.nasa.gov/mission/dragonfly/spacecraft-and-instruments/"
+     },
+     "quote": "Dragonfly will use an MMRTG (Multi-Mission Radioisotope Thermoelectric Generator)"
+    }
+   ]
+  },
+  "antenas": {
+   "name_es": "Antenas",
+   "name_en": "Antennas",
+   "what_es": "Tres antenas para comunicarse. Dos hablan directo con la Tierra (alta y baja ganancia, banda X) y una, la UHF, envía datos a satélites que orbitan Marte.",
+   "what_en": "Three antennas for communication. Two talk directly to Earth (high and low gain, X band) and the UHF one sends data to orbiters around Mars.",
+   "facts": [
+    {
+     "label_es": "Cantidad",
+     "label_en": "Count",
+     "value_es": "Tres antenas de telecomunicación",
+     "value_en": "Three telecommunication antennas",
+     "source": {
+      "title": "NASA/JPL, Mars Science Laboratory Landing Press Kit (July 2012)",
+      "url": "https://www.jpl.nasa.gov/news/press_kits/MSLLanding.pdf"
+     },
+     "quote": "Curiosity has three antennas for telecommunication."
+    },
+    {
+     "label_es": "Alta ganancia",
+     "label_en": "High gain",
+     "value_es": "Hexagonal, casi 0,3 m (1 pie) de diámetro; hay que apuntarla",
+     "value_en": "Hexagonal, nearly 0.3 m (1 foot) across; it must be pointed",
+     "source": {
+      "title": "NASA/JPL, Mars Science Laboratory Landing Press Kit (July 2012)",
+      "url": "https://www.jpl.nasa.gov/news/press_kits/MSLLanding.pdf"
+     },
+     "quote": "which is hexagonally shaped, nearly 1 foot (0.3 meter) in diameter"
+    },
+    {
+     "label_es": "UHF",
+     "label_en": "UHF",
+     "value_es": "Banda de unos 400 MHz para enviar datos a orbitadores",
+     "value_en": "About 400 MHz band for relaying data via orbiters",
+     "source": {
+      "title": "NASA/JPL, Mars Science Laboratory Landing Press Kit (July 2012)",
+      "url": "https://www.jpl.nasa.gov/news/press_kits/MSLLanding.pdf"
+     },
+     "quote": "using the ultra-high frequency (UHF) band (about 400 megahertz)"
+    }
+   ],
+   "heritage": [
+    {
+     "mission": "Mars Exploration Rovers (Spirit y Opportunity)",
+     "year": 2003,
+     "note_es": "Spirit y Opportunity también llevaban antenas de alta ganancia, baja ganancia y UHF.",
+     "note_en": "Spirit and Opportunity also carried high-gain, low-gain and UHF antennas.",
+     "source": {
+      "title": "NASA NSSDCA, Spirit (2003-027A)",
+      "url": "https://nssdc.gsfc.nasa.gov/nmc/spacecraft/display.action?id=2003-027A"
+     },
+     "quote": "high gain, low gain, and UHF antennas"
+    }
+   ]
+  },
+  "hazcams": {
+   "name_es": "Cámaras de peligro (Hazcams)",
+   "name_en": "Hazard cameras (Hazcams)",
+   "what_es": "Cámaras con lente ojo de pez, abajo en el frente y atrás del rover. Detectan rocas y zanjas, ayudan a conducir solo y a ubicar el brazo.",
+   "what_en": "Fisheye cameras low on the front and rear of the rover. They spot rocks and trenches, help it drive on its own and help place the arm.",
+   "facts": [
+    {
+     "label_es": "Campo de visión",
+     "label_en": "Field of view",
+     "value_es": "124 grados de ancho y de alto (lente ojo de pez)",
+     "value_en": "124 degrees wide and tall (fisheye lens)",
+     "source": {
+      "title": "NASA/JPL, Mars Science Laboratory Landing Press Kit (July 2012)",
+      "url": "https://www.jpl.nasa.gov/news/press_kits/MSLLanding.pdf"
+     },
+     "quote": "Each Hazcam has a fisheye lens providing a square field of view 124 degrees wide and tall."
+    },
+    {
+     "label_es": "Imágenes",
+     "label_en": "Images",
+     "value_es": "Blanco y negro, en luz roja de unos 650 nm",
+     "value_en": "Grayscale, in red light near 650 nm",
+     "source": {
+      "title": "NASA/JPL, Mars Science Laboratory Landing Press Kit (July 2012)",
+      "url": "https://www.jpl.nasa.gov/news/press_kits/MSLLanding.pdf"
+     },
+     "quote": "generate grayscale images that cover red wavelengths centered at about 650 nanometers"
+    },
+    {
+     "label_es": "Cámaras de ingeniería",
+     "label_en": "Engineering cameras",
+     "value_es": "12 en total, de unos 250 g cada una",
+     "value_en": "12 in total, about 250 g each",
+     "source": {
+      "title": "NASA/JPL, Mars Science Laboratory Landing Press Kit (July 2012)",
+      "url": "https://www.jpl.nasa.gov/news/press_kits/MSLLanding.pdf"
+     },
+     "quote": "Curiosity has a total of 12 engineering cameras, each weighing about 9 ounces (250 grams)."
+    }
+   ],
+   "heritage": [
+    {
+     "mission": "Mars Exploration Rovers (Spirit y Opportunity)",
+     "year": 2003,
+     "note_es": "Las Hazcams son prácticamente idénticas a las cámaras de ingeniería de Spirit y Opportunity, con redundancia y calentadores más potentes.",
+     "note_en": "Hazcams are virtually identical to the engineering cameras of Spirit and Opportunity, with redundancy and stronger heaters added.",
+     "source": {
+      "title": "NASA/JPL, Mars Science Laboratory Landing Press Kit (July 2012)",
+      "url": "https://www.jpl.nasa.gov/news/press_kits/MSLLanding.pdf"
+     },
+     "quote": "The cameras themselves are virtually identical to the engineering cameras on Spirit and Opportunity"
+    },
+    {
+     "mission": "Mars 2020 (Perseverance)",
+     "year": 2020,
+     "note_es": "Perseverance cambió el diseño: lleva seis Hazcams nuevas, cuatro adelante y dos atrás.",
+     "note_en": "Perseverance changed the design: six newly developed Hazcams, four in front and two at the rear.",
+     "source": {
+      "title": "NASA Science, Perseverance Rover Components",
+      "url": "https://science.nasa.gov/mission/mars-2020-perseverance/rover-components/"
+     },
+     "quote": "Perseverance carries six newly developed Hazard Detection Cameras (HazCams): four in front and two on the rear."
+    }
+   ]
+  }
+ },
+ "missions": [
+  {
+   "name": "Mars Science Laboratory (Curiosity)",
+   "agency": "NASA / JPL",
+   "start": "2011-11-26",
+   "end": null,
+   "where_es": "Cráter Gale, Marte; hoy asciende por el monte Sharp",
+   "where_en": "Gale Crater, Mars; now climbing Mount Sharp",
+   "summary_es": "Rover de NASA lanzado el 26 de noviembre de 2011. Aterrizó en el cráter Gale en 2012, halló un antiguo entorno habitable y sube el monte Sharp. NASA lo lista como misión activa.",
+   "summary_en": "NASA rover launched on 26 November 2011. It landed in Gale Crater in 2012, found an ancient habitable environment and climbs Mount Sharp. NASA lists the mission as active.",
+   "milestones": [
+    {
+     "date": "2011-11-26",
+     "text_es": "Lanzamiento en un cohete Atlas V 541.",
+     "text_en": "Launch on an Atlas V 541 rocket.",
+     "source": {
+      "title": "NASA NSSDCA, Mars Science Laboratory (2011-070A)",
+      "url": "https://nssdc.gsfc.nasa.gov/nmc/spacecraft/display.action?id=2011-070A"
+     },
+     "quote": "launched on 26 November 2011 at 15:02 UT"
+    },
+    {
+     "date": "2012-08-06",
+     "text_es": "Aterrizaje en el cráter Gale: la etapa de descenso bajó el rover con cables (sky crane).",
+     "text_en": "Landing in Gale Crater: the descent stage lowered the rover on a tether (sky crane).",
+     "source": {
+      "title": "NASA NSSDCA, Mars Science Laboratory (2011-070A)",
+      "url": "https://nssdc.gsfc.nasa.gov/nmc/spacecraft/display.action?id=2011-070A"
+     },
+     "quote": "the rover being lowered to the surface from the descent stage on a tether. Touchdown occured at 05:32 UTC (1:32 EDT) on 6 August."
+    },
+    {
+     "date": "2013-02-08",
+     "text_es": "Primera muestra perforada en roca marciana (roca John Klein, sol 182).",
+     "text_en": "First rock sample drilled on Mars (John Klein rock, sol 182).",
+     "source": {
+      "title": "NASA/JPL, Curiosity collects first Martian bedrock sample",
+      "url": "https://www.jpl.nasa.gov/news/nasa-curiosity-rover-collects-first-martian-bedrock-sample/"
+     },
+     "quote": "The drilling took place on Feb. 8, 2013, or Sol 182, Curiosity's 182nd Martian day of operations."
+    },
+    {
+     "date": "2013-03-12",
+     "text_es": "NASA anuncia que el análisis de la roca muestra un antiguo entorno que pudo sostener microbios.",
+     "text_en": "NASA announces rock analysis shows an ancient environment that could have supported microbes.",
+     "source": {
+      "title": "NASA/JPL, Rover finds conditions once suited for ancient life on Mars",
+      "url": "https://www.jpl.nasa.gov/news/nasa-rover-finds-conditions-once-suited-for-ancient-life-on-mars/"
+     },
+     "quote": "An analysis of a rock sample collected by NASA's Curiosity rover shows ancient Mars could have supported living microbes."
+    },
+    {
+     "date": "2014-09-11",
+     "text_es": "Curiosity llega al monte Sharp, su destino principal de largo plazo.",
+     "text_en": "Curiosity reaches Mount Sharp, its long-term prime destination.",
+     "source": {
+      "title": "NASA, Mars Curiosity Rover Arrives at Martian Mountain (release 14-245)",
+      "url": "https://www.nasa.gov/news-release/nasas-mars-curiosity-rover-arrives-at-martian-mountain/"
+     },
+     "quote": "NASA's Mars Curiosity rover has reached the Red Planet's Mount Sharp"
+    },
+    {
+     "date": "2026-11-22",
+     "text_es": "Estado actual en la página de NASA (consultada hoy): misión activa; sigue explorando el registro de rocas de Marte.",
+     "text_en": "Current status on NASA's page (checked today): active mission; it continues exploring Mars's rock record.",
+     "source": {
+      "title": "NASA Science, Mars Science Laboratory: Curiosity Rover",
+      "url": "https://science.nasa.gov/mission/msl-curiosity/"
+     },
+     "quote": "It continues to explore the rock record from a time when Mars could have been home to microbial life."
+    }
+   ],
+   "source": {
+    "title": "NASA Science, Mars Science Laboratory: Curiosity Rover",
+    "url": "https://science.nasa.gov/mission/msl-curiosity/"
+   }
+  }
+ ],
+ "notes": "Odometer omitted on purpose: NASA mission page states elevation gain, not driven distance. Elevation: page says Curiosity 'reached the pinnacle - so far - of its 14-year-old mission on Aug. 26, 2026, when it marked an elevation gain of 1 kilometer' up Mount Sharp; page is labeled 'Active Mission' (read 2026-11-22). The three jpl.nasa.gov pages (first drill, habitability announcement, Mars 2020 power) return 403 to curl, so they were read with the WebFetch tool; their quotes could not be string-checked against local text and should be eyeballed once. Dragonfly year 2028 comes from NASA's Dragonfly fact sheet ('launch scheduled no earlier than 2028', https://science.nasa.gov/wp-content/uploads/2026/09/dragonfly-factsheet-09102026a.pdf), not from the quoted page. Years for Mars Exploration Rovers (2003) and Mars 2020 (2020) are launch years from NSSDCA pages (Spirit 10 June 2003, Opportunity 8 July 2003, Mars 2020 30 July 2020); the press-kit quotes used for Navcam/Hazcam heritage do not themselves give the year. Sojourner/Mars Pathfinder rocker-bogie: press kit says Curiosity's mobility is 'a scaled-up version of what was used on the three earlier Mars rovers: Sojourner, Spirit and Opportunity' but no opened page tied Sojourner to rocker-bogie with a year, so only MER and Perseverance are listed. Antenna heritage is only 'same antenna types on MER'; no source states design inheritance. Mastcam-Z and SuperCam heritage come from peer-reviewed Space Science Reviews papers. Quotes with curly apostrophes in the source were normalized to straight ones in 'Mount Sharp' and Curiosity's lines. MMRTG first use on Curiosity: NASA RPS FAQ says 'MMRTG, which saw its first use on the Curiosity Mars rover' (https://science.nasa.gov/planetary-science/programs/radioisotope-power-systems/faq/). Body size in metres is converted from NASA's feet figures. NASA's Perseverance wheels article gives Curiosity wheels as 20 inches (50.8 cm)."
+}

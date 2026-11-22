@@ -1,0 +1,712 @@
+{
+ "robot": "viper",
+ "checked": "2026-11-22",
+ "components": {
+  "ruedas": {
+   "name_es": "Ruedas",
+   "name_en": "Wheels",
+   "what_es": "VIPER tiene cuatro ruedas de metal con rebordes. Cada una va en su propio módulo con motor. Están hechas para rodar sobre polvo lunar suelto y subir pendientes.",
+   "what_en": "VIPER has four metal wheels with raised ridges. Each sits in its own motorized module. They are built to roll over loose lunar dust and climb slopes.",
+   "facts": [
+    {
+     "label_es": "Tamaño de rueda",
+     "label_en": "Wheel size",
+     "value_es": "50 cm de diámetro y 20 cm de ancho",
+     "value_en": "50 cm in diameter, 20 cm wide",
+     "source": {
+      "title": "Rover Design and Mission Operations, T. Fong, NASA, Apr 2025",
+      "url": "https://ntrs.nasa.gov/api/citations/20250004148/downloads/viper-2025-04-24.pdf"
+     },
+     "quote": "50 cm diameter, 20 cm wide"
+    },
+    {
+     "label_es": "Velocidad",
+     "label_en": "Speed",
+     "value_es": "Máxima 20 cm/s; normal 10 cm/s",
+     "value_en": "Top 20 cm/s; nominal 10 cm/s",
+     "source": {
+      "title": "VIPER Rover Overview and Mobility and Hardware, B. Bluethmann, NASA, 14 Nov 2024",
+      "url": "https://ntrs.nasa.gov/api/citations/20240013903/downloads/LSIC_2024-Tech%20Infusion_Panel-VIPER_Mob-HW.pdf"
+     },
+     "quote": "Drive: top speed 20cm/s, nominal speed 10 cm/s"
+    },
+    {
+     "label_es": "Pendiente máxima",
+     "label_en": "Maximum slope",
+     "value_es": "15 grados",
+     "value_en": "15 degrees",
+     "source": {
+      "title": "Rover and instruments (NASA Science)",
+      "url": "https://science.nasa.gov/mission/viper/rover-and-instruments/"
+     },
+     "quote": "Capable of traversing an incline of as much as 15 degrees"
+    }
+   ],
+   "heritage": []
+  },
+  "suspension": {
+   "name_es": "Suspensión y dirección",
+   "name_en": "Suspension and steering",
+   "what_es": "Cada rueda tiene suspensión activa y dirección propia. El rover puede avanzar de lado o en diagonal, girar sobre sí mismo y levantar ruedas para salir de suelo blando.",
+   "what_en": "Each wheel has active suspension and its own steering. The rover can drive sideways or diagonally, spin in place, and lift wheels to escape soft soil.",
+   "facts": [
+    {
+     "label_es": "Diseño",
+     "label_en": "Design",
+     "value_es": "Suspensión activa y dirección independiente en cada módulo de rueda",
+     "value_en": "Active suspension and independent steering on each wheel module",
+     "source": {
+      "title": "Rover and instruments (NASA Science)",
+      "url": "https://science.nasa.gov/mission/viper/rover-and-instruments/"
+     },
+     "quote": "the rover’s four wheel modules are designed with both an active suspension and independent steering"
+    },
+    {
+     "label_es": "Altura sobre el suelo",
+     "label_en": "Ground clearance",
+     "value_es": "Ajustable de 7 a 43 cm",
+     "value_en": "Adjustable from 7 to 43 cm",
+     "source": {
+      "title": "VIPER Rover Overview and Mobility and Hardware, B. Bluethmann, NASA, 14 Nov 2024",
+      "url": "https://ntrs.nasa.gov/api/citations/20240013903/downloads/LSIC_2024-Tech%20Infusion_Panel-VIPER_Mob-HW.pdf"
+     },
+     "quote": "Adjustable ground clearance from 7-43cm"
+    },
+    {
+     "label_es": "Modo de “nado”",
+     "label_en": "“Swimming” mode",
+     "value_es": "Puede levantar cada rueda por separado, casi como pies",
+     "value_en": "Can lift each wheel independently, almost like feet",
+     "source": {
+      "title": "Rover and instruments (NASA Science)",
+      "url": "https://science.nasa.gov/mission/viper/rover-and-instruments/"
+     },
+     "quote": "VIPER can lift each of its wheels independently, almost like feet"
+    }
+   ],
+   "heritage": []
+  },
+  "cuerpo": {
+   "name_es": "Cuerpo del rover",
+   "name_en": "Rover body",
+   "what_es": "Es la estructura central que sostiene todo lo demás. Por dentro lleva las baterías y una “caja tibia” que mantiene la electrónica a temperatura segura.",
+   "what_en": "This is the central structure that holds everything else. Inside it carries the batteries and a “warm box” that keeps the electronics at a safe temperature.",
+   "facts": [
+    {
+     "label_es": "Tamaño",
+     "label_en": "Size",
+     "value_es": "2,5 m de alto; 1,5 m de largo y de ancho",
+     "value_en": "2.5 m tall; 1.5 m long and wide",
+     "source": {
+      "title": "Rover and instruments (NASA Science)",
+      "url": "https://science.nasa.gov/mission/viper/rover-and-instruments/"
+     },
+     "quote": "Measuring 8 feet (2.5 meters) tall and 5 feet (1.5 meters) in length and width"
+    },
+    {
+     "label_es": "Masa",
+     "label_en": "Mass",
+     "value_es": "490 kg al lanzamiento (con la interfaz del módulo de aterrizaje); 447 kg en movimiento",
+     "value_en": "490 kg at launch (with lander interface); 447 kg roving",
+     "source": {
+      "title": "VIPER Rover Overview and Mobility and Hardware, B. Bluethmann, NASA, 14 Nov 2024",
+      "url": "https://ntrs.nasa.gov/api/citations/20240013903/downloads/LSIC_2024-Tech%20Infusion_Panel-VIPER_Mob-HW.pdf"
+     },
+     "quote": "Launch: 490 kg (with lander I/F), roving: 447 kg"
+    },
+    {
+     "label_es": "Comparación",
+     "label_en": "Comparison",
+     "value_es": "Del tamaño de un carrito de golf",
+     "value_en": "About the size of a golf cart",
+     "source": {
+      "title": "Rover and instruments (NASA Science)",
+      "url": "https://science.nasa.gov/mission/viper/rover-and-instruments/"
+     },
+     "quote": "About the size of a golf cart"
+    }
+   ],
+   "heritage": [
+    {
+     "mission": "LADEE",
+     "year": 2013,
+     "note_es": "La unidad de aviónica y de distribución de energía de VIPER se derivó de la de la misión lunar LADEE (lanzada el 6 de septiembre de 2013, según la página de NASA de LADEE).",
+     "note_en": "VIPER's avionics and power distribution units are derived from those of the LADEE lunar orbiter (launched Sep. 6, 2013, per NASA's LADEE page).",
+     "source": {
+      "title": "VIPER Rover Overview and Mobility and Hardware, B. Bluethmann, NASA, 14 Nov 2024",
+      "url": "https://ntrs.nasa.gov/api/citations/20240013903/downloads/LSIC_2024-Tech%20Infusion_Panel-VIPER_Mob-HW.pdf"
+     },
+     "quote": "Example: IAU/PDU derived from LADEE mission's IAU/PDU"
+    }
+   ]
+  },
+  "radiador": {
+   "name_es": "Radiador y control térmico",
+   "name_en": "Radiator and thermal control",
+   "what_es": "Los radiadores del techo sueltan el calor cuando hay Sol. En el frío, el rover se envuelve en aislante y guarda su calor. Así resiste de 30 K a 300 K.",
+   "what_en": "Roof radiators shed heat in sunlight. In the cold, the rover is wrapped in insulation and keeps its heat. This lets it handle swings from 30 K to 300 K.",
+   "facts": [
+    {
+     "label_es": "Ubicación",
+     "label_en": "Location",
+     "value_es": "Radiadores en la parte superior del rover",
+     "value_en": "Radiators on top of the rover",
+     "source": {
+      "title": "VIPER Rover Overview and Mobility and Hardware, B. Bluethmann, NASA, 14 Nov 2024",
+      "url": "https://ntrs.nasa.gov/api/citations/20240013903/downloads/LSIC_2024-Tech%20Infusion_Panel-VIPER_Mob-HW.pdf"
+     },
+     "quote": "Radiators (on top)"
+    },
+    {
+     "label_es": "Transporte de calor",
+     "label_en": "Heat transport",
+     "value_es": "Del cuerpo a los radiadores por tubos de calor en bucle",
+     "value_en": "From the warm box to the radiators by looped heat pipes",
+     "source": {
+      "title": "VIPER Rover Overview and Mobility and Hardware, B. Bluethmann, NASA, 14 Nov 2024",
+      "url": "https://ntrs.nasa.gov/api/citations/20240013903/downloads/LSIC_2024-Tech%20Infusion_Panel-VIPER_Mob-HW.pdf"
+     },
+     "quote": "warm box->radiator using looped heat pipes"
+    },
+    {
+     "label_es": "Rango de temperatura",
+     "label_en": "Temperature range",
+     "value_es": "De 30 K a 300 K",
+     "value_en": "From 30 K to 300 K",
+     "source": {
+      "title": "VIPER Rover: Flight Build and Environmental Test Status, IAC-24 (NASA)",
+      "url": "https://ntrs.nasa.gov/api/citations/20240010794/downloads/20240818%20VIPER%20Manuscript%20IAC%202024.pdf"
+     },
+     "quote": "temperature swings as low as 30 degK, all the way to 300 degK"
+    }
+   ],
+   "heritage": []
+  },
+  "paneles": {
+   "name_es": "Paneles solares y batería",
+   "name_en": "Solar panels and battery",
+   "what_es": "Tres paneles solares en los costados dan la energía. Dos baterías internas guardan carga para trabajar en las sombras, donde no llega el Sol.",
+   "what_en": "Three solar panels on the sides provide power. Two internal batteries store charge so the rover can work in shadows where sunlight never reaches.",
+   "facts": [
+    {
+     "label_es": "Potencia solar",
+     "label_en": "Solar power",
+     "value_es": "320 W por panel (450 W con el Sol en una esquina)",
+     "value_en": "320 W per panel (450 W on a corner)",
+     "source": {
+      "title": "VIPER Rover Overview and Mobility and Hardware, B. Bluethmann, NASA, 14 Nov 2024",
+      "url": "https://ntrs.nasa.gov/api/citations/20240013903/downloads/LSIC_2024-Tech%20Infusion_Panel-VIPER_Mob-HW.pdf"
+     },
+     "quote": "Solar arrays: 320W per panel (450W on corner)"
+    },
+    {
+     "label_es": "Batería",
+     "label_en": "Battery",
+     "value_es": "5,42 kWh al inicio de su vida, a 0 °C",
+     "value_en": "5.42 kWh at start of life, at 0 °C",
+     "source": {
+      "title": "VIPER Rover Overview and Mobility and Hardware, B. Bluethmann, NASA, 14 Nov 2024",
+      "url": "https://ntrs.nasa.gov/api/citations/20240013903/downloads/LSIC_2024-Tech%20Infusion_Panel-VIPER_Mob-HW.pdf"
+     },
+     "quote": "Battery capacity (start of life @ 0C): 5,420 W-hr"
+    },
+    {
+     "label_es": "Trabajo en sombra",
+     "label_en": "Shadow operation",
+     "value_es": "Batería dimensionada para 9 horas de operación en sombra",
+     "value_en": "Battery sized for 9 hours of shadowed operations",
+     "source": {
+      "title": "Rover Design and Mission Operations, T. Fong, NASA, Apr 2025",
+      "url": "https://ntrs.nasa.gov/api/citations/20250004148/downloads/viper-2025-04-24.pdf"
+     },
+     "quote": "Batteries sized to allow for 9 hours of shadowed operations"
+    }
+   ],
+   "heritage": [
+    {
+     "mission": "Orion (Artemis I)",
+     "year": 2022,
+     "note_es": "El rover usa las mismas celdas base de batería que la nave Orion. Orion voló en Artemis I en 2022 (fecha según la página de NASA de Artemis I).",
+     "note_en": "VIPER uses the same core battery components as the Orion spacecraft, which flew on Artemis I in 2022 (date per NASA's Artemis I page).",
+     "source": {
+      "title": "VIPER Rover Overview and Mobility and Hardware, B. Bluethmann, NASA, 14 Nov 2024",
+      "url": "https://ntrs.nasa.gov/api/citations/20240013903/downloads/LSIC_2024-Tech%20Infusion_Panel-VIPER_Mob-HW.pdf"
+     },
+     "quote": "Example: same core battery components as Orion"
+    }
+   ]
+  },
+  "mastil": {
+   "name_es": "Mástil, cámaras y faros",
+   "name_en": "Mast, cameras and headlights",
+   "what_es": "El mástil lleva las cámaras de navegación y las luces LED. Es el primer rover de NASA con faros, pensado para ver dentro de cráteres oscuros y guiar a los operadores en la Tierra.",
+   "what_en": "The mast carries the navigation cameras and LED lights. It is NASA's first rover with headlights, made to see inside dark craters and guide operators on Earth.",
+   "facts": [
+    {
+     "label_es": "Primicia",
+     "label_en": "First",
+     "value_es": "Primer rover de NASA con faros",
+     "value_en": "NASA's first rover with headlights",
+     "source": {
+      "title": "Rover and instruments (NASA Science)",
+      "url": "https://science.nasa.gov/mission/viper/rover-and-instruments/"
+     },
+     "quote": "VIPER is NASA's first rover with headlights"
+    },
+    {
+     "label_es": "Iluminación",
+     "label_en": "Lighting",
+     "value_es": "8 luces LED, calificadas para el polo lunar",
+     "value_en": "8 LED-array lights, qualified for lunar polar conditions",
+     "source": {
+      "title": "VIPER Rover Overview and Mobility and Hardware, B. Bluethmann, NASA, 14 Nov 2024",
+      "url": "https://ntrs.nasa.gov/api/citations/20240013903/downloads/LSIC_2024-Tech%20Infusion_Panel-VIPER_Mob-HW.pdf"
+     },
+     "quote": "8x LED-array lights and avionics qualified for Lunar polar conditions"
+    },
+    {
+     "label_es": "Cámaras",
+     "label_en": "Cameras",
+     "value_es": "Las cámaras de navegación van en el mástil",
+     "value_en": "Navigation cameras are mounted on the mast",
+     "source": {
+      "title": "VIPER Technical Information (NASA, AFPP draft)",
+      "url": "https://assets.science.nasa.gov/content/dam/science/psd/lunar-science/documents/VIPER_Technical_Information_AFPP.pdf"
+     },
+     "quote": "Navigation cameras are located on the mast."
+    }
+   ],
+   "heritage": []
+  },
+  "antena": {
+   "name_es": "Antena de alta ganancia",
+   "name_en": "High-gain antenna",
+   "what_es": "Es la antena que apunta a la Tierra para enviar datos y recibir órdenes sin satélites de relevo. Se mueve sola para seguir a la Tierra mientras el rover avanza.",
+   "what_en": "This antenna points at Earth to send data and receive commands without relay satellites. It moves on its own to keep tracking Earth while the rover drives.",
+   "facts": [
+    {
+     "label_es": "Enlace",
+     "label_en": "Link",
+     "value_es": "Banda X, directo a la Tierra por la Red del Espacio Profundo",
+     "value_en": "X-band, direct to Earth via the Deep Space Network",
+     "source": {
+      "title": "Rover and instruments (NASA Science)",
+      "url": "https://science.nasa.gov/mission/viper/rover-and-instruments/"
+     },
+     "quote": "X-band communications system that connects directly with Earth over the Deep Space Network"
+    },
+    {
+     "label_es": "Antenas",
+     "label_en": "Antennas",
+     "value_es": "Alta ganancia con movimiento y baja ganancia fija",
+     "value_en": "Gimballed high-gain plus fixed low-gain antennas",
+     "source": {
+      "title": "VIPER Rover Overview and Mobility and Hardware, B. Bluethmann, NASA, 14 Nov 2024",
+      "url": "https://ntrs.nasa.gov/api/citations/20240013903/downloads/LSIC_2024-Tech%20Infusion_Panel-VIPER_Mob-HW.pdf"
+     },
+     "quote": "Gimballed high gain + fixed low-gain antennas"
+    },
+    {
+     "label_es": "Velocidad de envío",
+     "label_en": "Transmit rate",
+     "value_es": "De 250 sps a 8 Msps (mínimo y máximo)",
+     "value_en": "From 250 sps to 8 Msps (min and max)",
+     "source": {
+      "title": "VIPER Rover Overview and Mobility and Hardware, B. Bluethmann, NASA, 14 Nov 2024",
+      "url": "https://ntrs.nasa.gov/api/citations/20240013903/downloads/LSIC_2024-Tech%20Infusion_Panel-VIPER_Mob-HW.pdf"
+     },
+     "quote": "Transmit: 250 sps / 8 Msps (min/max)"
+    }
+   ],
+   "heritage": []
+  },
+  "taladro": {
+   "name_es": "Taladro TRIDENT",
+   "name_en": "TRIDENT drill",
+   "what_es": "TRIDENT es un taladro de 1 m que gira y golpea a la vez. Saca tierra lunar de hasta 3 pies de profundidad y la deja en la superficie para que los instrumentos la analicen.",
+   "what_en": "TRIDENT is a 1 m drill that spins and hammers at once. It brings up lunar soil from as deep as 3 feet and leaves it on the surface for instruments to analyze.",
+   "facts": [
+    {
+     "label_es": "Longitud",
+     "label_en": "Length",
+     "value_es": "1 m",
+     "value_en": "1 meter (3.28 ft)",
+     "source": {
+      "title": "Rover and instruments (NASA Science)",
+      "url": "https://science.nasa.gov/mission/viper/rover-and-instruments/"
+     },
+     "quote": "the rover will deploy its 3.28-foot (1-meter) drill"
+    },
+    {
+     "label_es": "Tipo",
+     "label_en": "Type",
+     "value_es": "Taladro rotativo y percutor: gira y golpea",
+     "value_en": "Rotary percussive drill: it spins and hammers",
+     "source": {
+      "title": "Rover and instruments (NASA Science)",
+      "url": "https://science.nasa.gov/mission/viper/rover-and-instruments/"
+     },
+     "quote": "TRIDENT is a rotary percussive drill"
+    },
+    {
+     "label_es": "Profundidad",
+     "label_en": "Depth",
+     "value_es": "Hasta 3 pies (unos 0,9 m)",
+     "value_en": "Up to 3 feet (about 0.9 m)",
+     "source": {
+      "title": "Rover and instruments (NASA Science)",
+      "url": "https://science.nasa.gov/mission/viper/rover-and-instruments/"
+     },
+     "quote": "will dig up soil cuttings from as much as 3 feet below the lunar surface"
+    }
+   ],
+   "heritage": [
+    {
+     "mission": "PRIME-1 (Intuitive Machines IM-2)",
+     "year": 2025,
+     "note_es": "TRIDENT voló en el experimento PRIME-1 del módulo IM-2. Funcionó bien, pero el módulo quedó de costado y no pudo cumplir todas sus metas científicas.",
+     "note_en": "TRIDENT flew in the PRIME-1 experiment on IM-2. It worked well, but the lander ended up on its side and the experiment could not meet all its science goals.",
+     "source": {
+      "title": "NASA's Lunar Drill Technology Passes Tests on the Moon, 29 Apr 2025",
+      "url": "https://www.nasa.gov/missions/artemis/nasas-lunar-drill-technology-passes-tests-on-the-moon/"
+     },
+     "quote": "TRIDENT and MSOLO both started right up, and performed perfectly."
+    }
+   ]
+  },
+  "instrumentos": {
+   "name_es": "Instrumentos de ciencia",
+   "name_en": "Science instruments",
+   "what_es": "Tres instrumentos buscan agua. NSS detecta hidrógeno bajo el suelo con neutrones. NIRVSS distingue agua de otras formas de hidrógeno. MSolo mide los gases de la tierra extraída.",
+   "what_en": "Three instruments hunt for water. NSS detects hydrogen underground using neutrons. NIRVSS tells water apart from other forms of hydrogen. MSolo measures gases from the drilled soil.",
+   "facts": [
+    {
+     "label_es": "NSS (neutrones)",
+     "label_en": "NSS (neutrons)",
+     "value_es": "Detecta indirectamente agua hasta 3 pies bajo la superficie",
+     "value_en": "Indirectly detects water up to 3 feet below the surface",
+     "source": {
+      "title": "Rover and instruments (NASA Science)",
+      "url": "https://science.nasa.gov/mission/viper/rover-and-instruments/"
+     },
+     "quote": "indirectly detect potential water present in the soil, up to 3 feet below the surface"
+    },
+    {
+     "label_es": "NIRVSS (infrarrojo)",
+     "label_en": "NIRVSS (infrared)",
+     "value_es": "Distingue agua de hidroxilo",
+     "value_en": "Differentiates water from hydroxyl",
+     "source": {
+      "title": "Rover and instruments (NASA Science)",
+      "url": "https://science.nasa.gov/mission/viper/rover-and-instruments/"
+     },
+     "quote": "NIRVSS will use its spectrometer to differentiate between water and hydroxyl"
+    },
+    {
+     "label_es": "MSolo (masas)",
+     "label_en": "MSolo (mass spec.)",
+     "value_es": "Instrumento comercial modificado por el Centro Espacial Kennedy",
+     "value_en": "A modified commercial instrument, adapted by NASA Kennedy",
+     "source": {
+      "title": "Rover and instruments (NASA Science)",
+      "url": "https://science.nasa.gov/mission/viper/rover-and-instruments/"
+     },
+     "quote": "MSolo is a modified commercial instrument"
+    }
+   ],
+   "heritage": [
+    {
+     "mission": "Peregrine Mission One (Astrobotic)",
+     "year": 2024,
+     "note_es": "Versiones de NSS y NIRVSS volaron en Peregrine. Se encendieron y tomaron datos en vuelo, pero el módulo no llegó a la Luna.",
+     "note_en": "Versions of NSS and NIRVSS flew on Peregrine. They powered on and collected data in flight, but the lander never reached the Moon.",
+     "source": {
+      "title": "NASA Science, Astrobotic Peregrine Mission One Concludes, 19 Jan 2024",
+      "url": "https://www.nasa.gov/news-release/nasa-science-astrobotic-peregrine-mission-one-concludes/"
+     },
+     "quote": "Four out five NASA payloads on Peregrine successfully powered on and collected data while in flight"
+    },
+    {
+     "mission": "PRIME-1 (Intuitive Machines IM-2)",
+     "year": 2025,
+     "note_es": "MSolo voló en PRIME-1 junto a TRIDENT. Hizo varias lecturas de gases, pero el módulo quedó de costado.",
+     "note_en": "MSolo flew on PRIME-1 together with TRIDENT. It performed several gas scans, but the lander ended up on its side.",
+     "source": {
+      "title": "NASA's Lunar Drill Technology Passes Tests on the Moon, 29 Apr 2025",
+      "url": "https://www.nasa.gov/missions/artemis/nasas-lunar-drill-technology-passes-tests-on-the-moon/"
+     },
+     "quote": "TRIDENT and MSOLO both started right up, and performed perfectly."
+    }
+   ]
+  }
+ },
+ "missions": [
+  {
+   "name": "VIPER",
+   "agency": "NASA",
+   "start": null,
+   "end": null,
+   "where_es": "Mons Mouton, polo sur de la Luna (región del cráter Nobile)",
+   "where_en": "Mons Mouton, Moon's South Pole (Nobile crater region)",
+   "summary_es": "VIPER ya está construido y no ha volado. NASA lo canceló en julio de 2024 y lo retomó en 2025. Hoy el plan es llevarlo en 2027 en un módulo Blue Moon MK1 de Blue Origin.",
+   "summary_en": "VIPER is fully built and has not flown. NASA canceled it in July 2024 and revived it in 2025. The current plan is to deliver it in 2027 on a Blue Origin Blue Moon MK1 lander.",
+   "milestones": [
+    {
+     "date": "2020-06-11",
+     "text_es": "NASA adjudica a Astrobotic la entrega de VIPER al polo sur de la Luna.",
+     "text_en": "NASA awards Astrobotic the delivery of VIPER to the Moon's South Pole.",
+     "source": {
+      "title": "NASA Selects Astrobotic to Fly Water-Hunting Rover to the Moon (release, 11 Jun 2020)",
+      "url": "https://www.nasa.gov/news-release/nasa-selects-astrobotic-to-fly-water-hunting-rover-to-the-moon/"
+     },
+     "quote": "NASA has awarded Astrobotic of Pittsburgh $199.5 million to deliver NASA’s Volatiles Investigating Polar Exploration Rover (VIPER)"
+    },
+    {
+     "date": "2021-09-20",
+     "text_es": "El equipo anuncia que VIPER irá a la región de Nobile, cerca del polo sur lunar.",
+     "text_en": "The team announces VIPER will go to the Nobile region near the lunar South Pole.",
+     "source": {
+      "title": "The VIPER Landing Site (NASA SVS, released 20 Sep 2021)",
+      "url": "https://svs.gsfc.nasa.gov/4937/"
+     },
+     "quote": "The VIPER team announces that its rover will be sent to the Nobile region near the Moon's South Pole"
+    },
+    {
+     "date": "2023-02-15",
+     "text_es": "Se nombra Mons Mouton, la montaña donde VIPER debía aterrizar, junto al borde del cráter Nobile.",
+     "text_en": "Mons Mouton, the mountain where VIPER is to land near Nobile crater's rim, receives its name.",
+     "source": {
+      "title": "Mons Mouton, a Newly Named Lunar Mountain (NASA SVS, released 15 Feb 2023)",
+      "url": "https://svs.gsfc.nasa.gov/5074/"
+     },
+     "quote": "VIPER is scheduled to land on Mons Mouton, near the western rim of Nobile crater"
+    },
+    {
+     "date": "2023-03-14",
+     "text_es": "Empieza el armado del rover: ya está el chasis inferior en la sala limpia.",
+     "text_en": "Rover assembly begins: the lower chassis sits in the clean room.",
+     "source": {
+      "title": "NASA Begins Building its First Robotic Moon Rover (14 Mar 2023)",
+      "url": "https://www.nasa.gov/image-article/nasa-begins-building-first-robotic-moon-rover/"
+     },
+     "quote": "Engineers have affixed the rover’s lower chassis plate"
+    },
+    {
+     "date": "2024-02-28",
+     "text_es": "Todos los instrumentos de vuelo están instalados y el rover está armado en más de 80 %.",
+     "text_en": "All flight instruments are installed and the rover is more than 80% built.",
+     "source": {
+      "title": "Mission Manager Update: All VIPER Flight Instruments Installed! (28 Feb 2024)",
+      "url": "https://www.nasa.gov/missions/artemis/clps/viper/all-viper-flight-instruments-installed/"
+     },
+     "quote": "all of VIPER’s flight instruments are installed, and the rover is more than 80% built!"
+    },
+    {
+     "date": "2024-06-04",
+     "text_es": "Termina el armado del rover de vuelo.",
+     "text_en": "The flight rover build is completed.",
+     "source": {
+      "title": "VIPER Rover: Flight Build and Environmental Test Status, IAC-24 (NASA)",
+      "url": "https://ntrs.nasa.gov/api/citations/20240010794/downloads/20240818%20VIPER%20Manuscript%20IAC%202024.pdf"
+     },
+     "quote": "The VIPER rover flight build completed on June 4, 2024."
+    },
+    {
+     "date": "2024-07-17",
+     "text_es": "NASA cancela la misión científica original de VIPER, con el hardware ya terminado.",
+     "text_en": "NASA cancels the original VIPER science mission, with the hardware already complete.",
+     "source": {
+      "title": "Rover Design and Mission Operations, T. Fong, NASA, Apr 2025",
+      "url": "https://ntrs.nasa.gov/api/citations/20250004148/downloads/viper-2025-04-24.pdf"
+     },
+     "quote": "Original NASA Science (SMD) mission canceled on July 17, 2024"
+    },
+    {
+     "date": "2024-08",
+     "text_es": "Pruebas ambientales: el rover ya pasó las pruebas de vibración y las de funcionamiento posteriores.",
+     "text_en": "Environmental tests: the rover has completed vibration testing and the follow-up performance checks.",
+     "source": {
+      "title": "VIPER Rover: Flight Build and Environmental Test Status, IAC-24 (NASA)",
+      "url": "https://ntrs.nasa.gov/api/citations/20240010794/downloads/20240818%20VIPER%20Manuscript%20IAC%202024.pdf"
+     },
+     "quote": "the VIPER rover has completed Sine-vibration and random-vibration testing"
+    },
+    {
+     "date": "2024-11",
+     "text_es": "En la prueba de vacío térmico el rover funcionó 57 horas solo con batería.",
+     "text_en": "In thermal-vacuum testing the rover ran 57 hours on battery.",
+     "source": {
+      "title": "VIPER Rover Overview and Mobility and Hardware, B. Bluethmann, NASA, 14 Nov 2024",
+      "url": "https://ntrs.nasa.gov/api/citations/20240013903/downloads/LSIC_2024-Tech%20Infusion_Panel-VIPER_Mob-HW.pdf"
+     },
+     "quote": "VIPER ran 57 hours on battery during TVAC"
+    },
+    {
+     "date": "2025-05-07",
+     "text_es": "NASA cancela la convocatoria de socios y dice que buscará otras formas de llevar a VIPER a la Luna.",
+     "text_en": "NASA cancels the partnership call and says it will explore other ways to send VIPER to the Moon.",
+     "source": {
+      "title": "NASA to Explore Additional Methods to Send VIPER to Moon (7 May 2025)",
+      "url": "https://www.nasa.gov/blogs/missions/2025/05/07/nasa-to-explore-additional-methods-to-send-viper-to-moon/"
+     },
+     "quote": "NASA is instead opting to explore alternative approaches to deliver its VIPER"
+    },
+    {
+     "date": "2025-09-19",
+     "text_es": "NASA elige a Blue Origin para entregar VIPER en la Luna a fines de 2027, con un segundo módulo Blue Moon MK1 (orden CS-7).",
+     "text_en": "NASA selects Blue Origin to deliver VIPER in late 2027 on a second Blue Moon MK1 lander (task order CS-7).",
+     "source": {
+      "title": "NASA Selects Blue Origin to Deliver VIPER Rover to Moon’s South Pole (release 25-064, 19 Sep 2025)",
+      "url": "https://www.nasa.gov/news-release/nasa-selects-blue-origin-to-deliver-viper-rover-to-moons-south-pole/"
+     },
+     "quote": "Blue Origin will deliver VIPER to the lunar surface in late 2027, using a second Blue Moon MK1 lander"
+    },
+    {
+     "date": "2026-10-20",
+     "text_es": "NASA informa que VIPER está completamente armado en el Centro Espacial Johnson, en pruebas finales antes de viajar al Kennedy.",
+     "text_en": "NASA reports VIPER is fully built at Johnson Space Center in final testing before moving to Kennedy.",
+     "source": {
+      "title": "NASA Provides Progress Update on Moon Base Rovers (20 Oct 2026)",
+      "url": "https://www.nasa.gov/missions/moon-base/nasa-provides-progress-update-on-moon-base-rovers/"
+     },
+     "quote": "The VIPER rover is currently at NASA’s Johnson Space Center in Houston where it is fully built and undergoing final testing"
+    },
+    {
+     "date": "2026-10-20",
+     "text_es": "Plan vigente: misión al polo sur lunar en 2027, entregado por un módulo Blue Moon Mark 1.",
+     "text_en": "Current plan: mission to the lunar South Pole region in 2027, delivered by a Blue Moon Mark 1 lander.",
+     "source": {
+      "title": "NASA Provides Progress Update on Moon Base Rovers (20 Oct 2026)",
+      "url": "https://www.nasa.gov/missions/moon-base/nasa-provides-progress-update-on-moon-base-rovers/"
+     },
+     "quote": "will embark on a mission to the lunar South Pole region in 2027"
+    }
+   ],
+   "source": {
+    "title": "VIPER - NASA Science (page last updated Sep 21, 2026)",
+    "url": "https://science.nasa.gov/mission/viper/"
+   }
+  }
+ ],
+ "others": {
+  "cadre": {
+   "status_es": "Aún no ha volado. Son tres rovers pequeños de JPL que irán en el módulo IM-3 de Intuitive Machines a Reiner Gamma. NASA fija IM-3 para inicios de 2027.",
+   "status_en": "Not flown yet. Three small JPL rovers will ride Intuitive Machines' IM-3 lander to Reiner Gamma. NASA lists IM-3 for early 2027.",
+   "milestones": [
+    {
+     "date": "2024-02",
+     "text_es": "Terminan la construcción del hardware de CADRE y sus pruebas de preparación para el viaje.",
+     "text_en": "CADRE hardware construction and readiness testing are completed.",
+     "source": {
+      "title": "NASA’s Mini Rover Team Is Packed for Lunar Journey (11 Feb 2025)",
+      "url": "https://www.nasa.gov/missions/tech-demonstration/cadre/nasas-mini-rover-team-is-packed-for-lunar-journey/"
+     },
+     "quote": "to prove readiness for the journey through space — was completed in February 2024."
+    },
+    {
+     "date": "2025-02-09",
+     "text_es": "Los tres rovers y su estación base llegan a las instalaciones de Intuitive Machines en Houston.",
+     "text_en": "The three rovers and base station arrive at Intuitive Machines' Houston facility.",
+     "source": {
+      "title": "NASA’s Mini Rover Team Is Packed for Lunar Journey (11 Feb 2025)",
+      "url": "https://www.nasa.gov/missions/tech-demonstration/cadre/nasas-mini-rover-team-is-packed-for-lunar-journey/"
+     },
+     "quote": "The hardware arrived safely on Sunday, Feb. 9."
+    },
+    {
+     "date": "2025-02-11",
+     "text_es": "NASA informa que irán en IM-3 a la región de Reiner Gamma y operarán un día lunar (unos 14 días terrestres).",
+     "text_en": "NASA states they will fly on IM-3 to the Reiner Gamma region and operate for one lunar day (about 14 Earth days).",
+     "source": {
+      "title": "NASA’s Mini Rover Team Is Packed for Lunar Journey (11 Feb 2025)",
+      "url": "https://www.nasa.gov/missions/tech-demonstration/cadre/nasas-mini-rover-team-is-packed-for-lunar-journey/"
+     },
+     "quote": "they’ll head to the Reiner Gamma region on the western edge of the Moon’s near side"
+    },
+    {
+     "date": "2026-10-21",
+     "text_es": "La página de NASA para la misión IM-3 la programa para inicios de 2027.",
+     "text_en": "NASA's IM-3 mission page schedules the launch for early 2027.",
+     "source": {
+      "title": "Moon Base: Intuitive Machines IM-3 (NASA, updated 21 Oct 2026)",
+      "url": "https://www.nasa.gov/event/clps-flight-intuitive-machines-im-3/"
+     },
+     "quote": "Early 2027"
+    }
+   ]
+  },
+  "duaxel": {
+   "status_es": "Es un prototipo de JPL de dos vehículos de dos ruedas unidos por un cable. Probó en el desierto de Mojave. Sigue como demostración, sin destino asignado.",
+   "status_en": "A JPL prototype of two two-wheeled vehicles joined by a tether. Field-tested in the Mojave Desert. Still a technology demonstration with no assigned destination.",
+   "milestones": [
+    {
+     "date": "2020-10-13",
+     "text_es": "NASA describe a DuAxel, diseñado para bajar por paredes de cráteres y acantilados casi verticales.",
+     "text_en": "NASA describes DuAxel, designed to descend crater sides and near-vertical cliffs.",
+     "source": {
+      "title": "This Transforming Rover Can Explore the Toughest Terrain (NASA, 13 Oct 2020)",
+      "url": "https://www.nasa.gov/centers-and-facilities/jpl/this-transforming-rover-can-explore-the-toughest-terrain/"
+     },
+     "quote": "NASA’s DuAxel is designed to descend crater sides and near-vertical cliffs on the Moon, Mars, and beyond."
+    },
+    {
+     "date": "2020-10-13",
+     "text_es": "Informe de la prueba de campo en el desierto de Mojave: ancló, soltó su Axel con cable y este bajó por pendientes empinadas.",
+     "text_en": "Report on the Mojave Desert field test: it anchored, released its tethered Axel, and Axel descended steep slopes.",
+     "source": {
+      "title": "This Transforming Rover Can Explore the Toughest Terrain (NASA, 13 Oct 2020)",
+      "url": "https://www.nasa.gov/centers-and-facilities/jpl/this-transforming-rover-can-explore-the-toughest-terrain/"
+     },
+     "quote": "DuAxel performed extremely well in the field, successfully demonstrating its ability to approach a challenging terrain"
+    },
+    {
+     "date": "2020-10-13",
+     "text_es": "Sigue como demostración de tecnología, a la espera de un destino.",
+     "text_en": "It remains a technology demonstration, waiting for a destination.",
+     "source": {
+      "title": "This Transforming Rover Can Explore the Toughest Terrain (NASA, 13 Oct 2020)",
+      "url": "https://www.nasa.gov/centers-and-facilities/jpl/this-transforming-rover-can-explore-the-toughest-terrain/"
+     },
+     "quote": "While DuAxel remains a technology demonstration and is waiting to be assigned a destination"
+    }
+   ]
+  },
+  "eels": {
+   "status_es": "Robot serpiente de JPL en desarrollo, pensado para bajar por grietas de la luna Encélado. Se prueba en el glaciar Athabasca. No forma parte de una misión asignada.",
+   "status_en": "JPL snake-like robot in development, aimed at descending vents on Saturn's moon Enceladus. Tested on Athabasca Glacier. Not assigned to a specific mission.",
+   "milestones": [
+    {
+     "date": "2022-07",
+     "text_es": "Primer prototipo, EELS 1.0, probado en una pista de hielo en Pasadena.",
+     "text_en": "First prototype, EELS 1.0, tested on an ice rink in Pasadena.",
+     "source": {
+      "title": "EELS: A Snake-like Robot for Enabling Enceladus Ocean Access (NASA/JPL abstract)",
+      "url": "https://science.nasa.gov/wp-content/uploads/2023/11/eels.pdf"
+     },
+     "quote": "EELS 1.0 Robot tested on the Pasadena Ice Rink in July, 2022"
+    },
+    {
+     "date": "2022-09",
+     "text_es": "Primera prueba de campo en el glaciar Athabasca, con la cabeza de sensores de EELS 1.0.",
+     "text_en": "First field test on Athabasca Glacier, using EELS 1.0's sensor head.",
+     "source": {
+      "title": "EELS: A Snake-like Robot for Enabling Enceladus Ocean Access (NASA/JPL abstract)",
+      "url": "https://science.nasa.gov/wp-content/uploads/2023/11/eels.pdf"
+     },
+     "quote": "In September 2022, we conducted the first field test in Athabasca Glacier"
+    },
+    {
+     "date": "2023-09",
+     "text_es": "Se prueba la versión 1.5 en un pozo de hielo del glaciar Athabasca.",
+     "text_en": "Version 1.5 is tested in an ice shaft on Athabasca Glacier.",
+     "source": {
+      "title": "EELS (JPL Robotics at JPL)",
+      "url": "https://www.jpl.nasa.gov/robotics-at-jpl/eels/"
+     },
+     "quote": "during a field test in September 2023"
+    }
+   ]
+  }
+ },
+ "notes": "Verified by reading pages in this session. VIPER STATUS: NASA's Oct 20, 2026 article says VIPER is fully built at JSC and will fly to the South Pole in 2027 on a Blue Moon Mark 1 lander; the Sep 19, 2025 release (CS-7) says delivery is by late 2027 and that the contract has an OPTION NASA would exercise after Blue Moon MK1's first flight. I did NOT find a NASA page stating the option was exercised or whether MK1's first flight has occurred, so say 'planned', not 'confirmed'. science.nasa.gov/mission/viper/ (updated Sep 21, 2026) still shows 'Occurred 2 years ago' and past-tense text; the /in-depth/ page is stale (Astrobotic Griffin, 2023). CADRE: not flown. NASA's IM-3 page (updated Oct 21, 2026) says 'Early 2027' but does not mention CADRE; the CADRE-on-IM-3 link comes from NASA's Feb 11, 2025 article, which also says 'mission window that extends into early 2026' (outdated). JPL's CADRE page (read via WebFetch only, curl is blocked by CloudFront) says 'in 2026' and 'Future' (stale); I could not confirm from NASA that CADRE is still manifested on IM-3 in 2027. DuAxel: JPL's own DuAxel/CADRE/EELS pages block curl; DuAxel facts come from the NASA mirror article of Oct 13, 2020 (field test 'last fall', year not dated by the page). EELS 2023-09 milestone comes from the jpl.nasa.gov EELS page read through WebFetch (summarized by a tool, quote not machine-checked). The NASA/JPL abstract gives the ice rink test as July 2022 while the JPL page captions say August 2022; I used the abstract. CONFLICTS: size 2,5 x 1,5 x 1,5 m (NASA rover page, 2023) vs 1.7 x 1.7 x 2.5 m (Bluethmann, Nov 2024); mass 447 kg roving (Bluethmann) vs 455 kg surface segment (NASA technical information doc). Panels: page text does not say 'nearly vertical'; left out. Battery: 5,420 W-hr = 5,42 kWh start of life. HERITAGE: Orion year 2022 comes from NASA's Artemis I page (launch Nov 16, 2022), but the slide only says 'same core battery components as Orion'; it does not say the Artemis I flight battery is identical. LADEE year 2013 from NASA's LADEE page. PRIME-1 (IM-2, landed on its side Mar 6, 2025) and Peregrine (propulsion failure, re-entered Jan 18, 2024) did not fully achieve goals; notes say so. NOT verified/left out: antenna, wheels, mast, radiator heritage; the selection/announcement date of VIPER itself (2019); NASA 'July 2024 announcement' wording: Fong slides say 'canceled on July 17, 2024', the AFPP document says 'proposed for cancellation in July, 2024'. The science.nasa.gov rover page footer reads Last Updated Sep 21, 2023."
+}

@@ -1,0 +1,609 @@
+{
+ "robot": "lrv",
+ "checked": "2026-11-22",
+ "components": {
+  "ruedas": {
+   "name_es": "Ruedas de malla",
+   "name_en": "Wire-mesh wheels",
+   "what_es": "Cada rueda es una malla tejida de alambre de acero con bandas de titanio. Es flexible, no se pincha y agarra bien el polvo lunar. Cada una tiene su propio motor.",
+   "what_en": "Each wheel is a woven mesh of steel wire with titanium treads. It is flexible, cannot go flat and grips lunar dust well. Each wheel has its own motor.",
+   "facts": [
+    {
+     "label_es": "Tamaño del neumático",
+     "label_en": "Tire size",
+     "value_es": "81,8 cm de diámetro y 23 cm de ancho",
+     "value_en": "81.8 cm diameter, 23 cm wide",
+     "source": {
+      "title": "NSSDCA: The Apollo Lunar Roving Vehicle",
+      "url": "https://nssdc.gsfc.nasa.gov/planetary/lunar/apollo_lrv.html"
+     },
+     "quote": "an 81.8 cm diameter, 23 cm wide tire made of zinc coated woven 0.083 cm diameter steel strands"
+    },
+    {
+     "label_es": "Tracción",
+     "label_en": "Traction",
+     "value_es": "Las bandas de titanio cubren el 50 % de la zona de contacto",
+     "value_en": "Titanium chevrons cover 50% of the contact area",
+     "source": {
+      "title": "NSSDCA: The Apollo Lunar Roving Vehicle",
+      "url": "https://nssdc.gsfc.nasa.gov/planetary/lunar/apollo_lrv.html"
+     },
+     "quote": "Titanium chevrons covered 50% of the contact area to provide traction."
+    },
+    {
+     "label_es": "Diseño elegido",
+     "label_en": "Design chosen",
+     "value_es": "Se eligió la malla de alambre de General Motors frente a la rueda de aros de Bendix",
+     "value_en": "The General Motors wire mesh wheel was chosen over Bendix's hoop spring wheel",
+     "source": {
+      "title": "NASA NTRS: The Development of Wheels for the Lunar Roving Vehicle (NASA/TM-2009-215798)",
+      "url": "https://ntrs.nasa.gov/citations/20100000019"
+     },
+     "quote": "in the end, the wire mesh wheel was chosen for the LRV"
+    }
+   ],
+   "heritage": [
+    {
+     "mission": "NASA Glenn / Goodyear Spring Tire",
+     "year": 2023,
+     "note_es": "El neumático de resortes de NASA Glenn y Goodyear se inspiró en las ruedas de malla de alambre del LRV.",
+     "note_en": "NASA Glenn and Goodyear's Spring Tire was inspired by the LRV wire-mesh wheels.",
+     "source": {
+      "title": "NASA NTRS: Design and Analysis of Shape Memory Spring Tires for Martian and Lunar Rover Vehicles",
+      "url": "https://ntrs.nasa.gov/citations/20230008382"
+     },
+     "quote": "Inspired by the flexible wire mesh tires used on three Lunar Roving Vehicle (LRV) missions to the Moon on Apollo 15, 16, and 17"
+    }
+   ]
+  },
+  "suspension": {
+   "name_es": "Suspensión y dirección",
+   "name_en": "Suspension and steering",
+   "what_es": "Cada rueda cuelga de una doble horquilla con barras de torsión que absorbe los golpes. Hay dirección adelante y atrás, así que el rover gira en espacios muy cerrados.",
+   "what_en": "Each wheel hangs from a double wishbone with torsion bars that soaks up bumps. Steering works on both axles, so the rover can turn in very tight spaces.",
+   "facts": [
+    {
+     "label_es": "Suspensión",
+     "label_en": "Suspension",
+     "value_es": "Doble horquilla horizontal con barras de torsión y amortiguador",
+     "value_en": "Double horizontal wishbone, upper and lower torsion bars, and a damper",
+     "source": {
+      "title": "NSSDCA: The Apollo Lunar Roving Vehicle",
+      "url": "https://nssdc.gsfc.nasa.gov/planetary/lunar/apollo_lrv.html"
+     },
+     "quote": "The suspension consisted of a double horizontal wishbone with upper and lower torsion bars and a damper unit between the chassis and upper wishbone."
+    },
+    {
+     "label_es": "Dirección",
+     "label_en": "Steering",
+     "value_es": "Radio de giro de 3,1 m; se puede usar solo un eje",
+     "value_en": "Turning radius of 3.1 m; one axle can be used alone",
+     "source": {
+      "title": "NSSDCA: The Apollo Lunar Roving Vehicle",
+      "url": "https://nssdc.gsfc.nasa.gov/planetary/lunar/apollo_lrv.html"
+     },
+     "quote": "giving a steering radius of 3.1 meters, or could be decoupled so only one set would be used for steering"
+    },
+    {
+     "label_es": "Velocidad máxima reportada",
+     "label_en": "Reported top speed",
+     "value_es": "Unos 18 km/h (récord que se atribuye a Cernan, Apolo 17)",
+     "value_en": "About 18 km/h (record credited to Cernan, Apollo 17)",
+     "source": {
+      "title": "NASA Marshall Star, December 12, 2012 (PDF)",
+      "url": "https://www.nasa.gov/wp-content/uploads/2015/05/713568main_star121212.pdf"
+     },
+     "quote": "Cernan also holds the speed record of about 18 kilometers per hour."
+    }
+   ],
+   "heritage": []
+  },
+  "bastidor": {
+   "name_es": "Bastidor plegable",
+   "name_en": "Folding chassis",
+   "what_es": "Es el esqueleto de aluminio, en tres partes unidas por bisagras. Se doblaba para caber en el costado del módulo lunar y se abría al bajarlo a la superficie.",
+   "what_en": "The aluminum skeleton, in three parts joined by hinges. It folded to fit on the side of the lunar module and unfolded as it was lowered to the surface.",
+   "facts": [
+    {
+     "label_es": "Plegado",
+     "label_en": "Folding",
+     "value_es": "Tres partes con bisagra central, plegadas en el compartimento 1 del módulo lunar",
+     "value_en": "Three parts hinged in the center, folded into the Lunar Module quad 1 bay",
+     "source": {
+      "title": "NSSDCA: The Apollo Lunar Roving Vehicle",
+      "url": "https://nssdc.gsfc.nasa.gov/planetary/lunar/apollo_lrv.html"
+     },
+     "quote": "hinged in the center so it could be folded up and hung in the Lunar Module quad 1 bay"
+    },
+    {
+     "label_es": "Material y tamaño",
+     "label_en": "Material and size",
+     "value_es": "Aluminio 2219; 3,1 m de largo y 2,3 m entre ejes",
+     "value_en": "Aluminum alloy 2219; 3.1 m long with a 2.3 m wheelbase",
+     "source": {
+      "title": "NSSDCA: The Apollo Lunar Roving Vehicle",
+      "url": "https://nssdc.gsfc.nasa.gov/planetary/lunar/apollo_lrv.html"
+     },
+     "quote": "The frame was 3.1 meters long with a wheelbase of 2.3 meters."
+    },
+    {
+     "label_es": "Masa y carga",
+     "label_en": "Mass and payload",
+     "value_es": "210 kg de masa; carga prevista de 490 kg",
+     "value_en": "210 kg mass; 490 kg designed payload",
+     "source": {
+      "title": "NSSDCA: The Apollo Lunar Roving Vehicle",
+      "url": "https://nssdc.gsfc.nasa.gov/planetary/lunar/apollo_lrv.html"
+     },
+     "quote": "The Lunar Roving Vehicle had a mass of 210 kg and was designed to hold a payload of an additional 490 kg"
+    }
+   ],
+   "heritage": []
+  },
+  "asientos": {
+   "name_es": "Asientos",
+   "name_en": "Seats",
+   "what_es": "Dos asientos plegables lado a lado, de tubo de aluminio y correas de nailon. Cada uno tiene cinturón con velcro y reposapiés ajustable.",
+   "what_en": "Two foldable side-by-side seats made of aluminum tube and nylon straps. Each has a Velcro seatbelt and adjustable footrests.",
+   "facts": [
+    {
+     "label_es": "Construcción",
+     "label_en": "Construction",
+     "value_es": "Dos asientos plegables de tubo de aluminio con correas de nailon",
+     "value_en": "Two foldable seats of tubular aluminum with nylon webbing",
+     "source": {
+      "title": "NSSDCA: The Apollo Lunar Roving Vehicle",
+      "url": "https://nssdc.gsfc.nasa.gov/planetary/lunar/apollo_lrv.html"
+     },
+     "quote": "two side-by-side foldable seats made of tubular aluminum with nylon webbing"
+    },
+    {
+     "label_es": "Cinturón y reposapiés",
+     "label_en": "Belt and footrests",
+     "value_es": "Cada asiento tiene reposapiés ajustable y cinturón de velcro",
+     "value_en": "Each seat has adjustable footrests and a Velcro seatbelt",
+     "source": {
+      "title": "NSSDCA: The Apollo Lunar Roving Vehicle",
+      "url": "https://nssdc.gsfc.nasa.gov/planetary/lunar/apollo_lrv.html"
+     },
+     "quote": "each seat had adjustable footrests and a velcro seatbelt"
+    },
+    {
+     "label_es": "Apoyos para los pies",
+     "label_en": "Toe holds",
+     "value_es": "Se añadieron apoyos para los pies tras vuelos de gravedad reducida en el KC-135",
+     "value_en": "Toe holds were added after reduced-gravity KC-135 flights",
+     "source": {
+      "title": "NASA NTRS: The Lunar Roving Vehicle: Historical perspective (S. Morea, NASA MSFC, 1992)",
+      "url": "https://ntrs.nasa.gov/citations/19930004820"
+     },
+     "quote": "Toe holds were incorporated as the result of early KC-135 flights simulating the 1/6-g environment of the Moon."
+    }
+   ],
+   "heritage": []
+  },
+  "consola": {
+   "name_es": "Consola de mando",
+   "name_en": "Control console",
+   "what_es": "Una palanca en T entre los asientos acelera, gira y frena las cuatro ruedas. Delante, la pantalla muestra velocidad, rumbo y energía, y el sistema de navegación indica el camino de vuelta al módulo.",
+   "what_en": "A T-shaped stick between the seats drives, steers and brakes. In front, the display shows speed, heading and power, and the navigation system points the way back to the lunar module.",
+   "facts": [
+    {
+     "label_es": "Palanca",
+     "label_en": "Hand controller",
+     "value_es": "Palanca en T entre los asientos: cuatro motores de tracción, dos de dirección y frenos",
+     "value_en": "T-shaped hand controller between the seats: four drive motors, two steering motors and brakes",
+     "source": {
+      "title": "NSSDCA: The Apollo Lunar Roving Vehicle",
+      "url": "https://nssdc.gsfc.nasa.gov/planetary/lunar/apollo_lrv.html"
+     },
+     "quote": "A T-shaped hand controller situated between the two seats controlled the four drive motors, two steering motors and brakes."
+    },
+    {
+     "label_es": "Pantalla",
+     "label_en": "Display",
+     "value_es": "Velocidad, rumbo, inclinación, energía y temperatura",
+     "value_en": "Speed, heading, pitch, power and temperature",
+     "source": {
+      "title": "NSSDCA: The Apollo Lunar Roving Vehicle",
+      "url": "https://nssdc.gsfc.nasa.gov/planetary/lunar/apollo_lrv.html"
+     },
+     "quote": "gave information on the speed, heading, pitch, and power and temperature levels"
+    },
+    {
+     "label_es": "Navegación",
+     "label_en": "Navigation",
+     "value_es": "Giroscopio direccional y odómetro alimentan una computadora que calcula el regreso",
+     "value_en": "A directional gyro and odometer feed a computer that tracks the way back",
+     "source": {
+      "title": "NSSDCA: The Apollo Lunar Roving Vehicle",
+      "url": "https://nssdc.gsfc.nasa.gov/planetary/lunar/apollo_lrv.html"
+     },
+     "quote": "Navigation was based on continuously recording direction and distance through use of a directional gyro and odometer"
+    }
+   ],
+   "heritage": []
+  },
+  "baterias": {
+   "name_es": "Baterías y motores",
+   "name_en": "Batteries and motors",
+   "what_es": "Dos baterías de plata y zinc, no recargables, dan la energía. Cada rueda tiene su propio motor eléctrico, así que el rover sigue andando si uno falla.",
+   "what_en": "Two non-rechargeable silver-zinc batteries supply the power. Each wheel has its own electric motor, so the rover can keep going if one fails.",
+   "facts": [
+    {
+     "label_es": "Baterías",
+     "label_en": "Batteries",
+     "value_es": "Dos de 36 V, plata y zinc, no recargables, de 121 Ah",
+     "value_en": "Two 36 V silver-zinc, non-rechargeable, 121 amp-hr",
+     "source": {
+      "title": "NSSDCA: The Apollo Lunar Roving Vehicle",
+      "url": "https://nssdc.gsfc.nasa.gov/planetary/lunar/apollo_lrv.html"
+     },
+     "quote": "two 36-volt silver-zinc potassium hydroxide non-rechargeable batteries with a capacity of 121 amp-hr"
+    },
+    {
+     "label_es": "Motor por rueda",
+     "label_en": "Motor per wheel",
+     "value_es": "Motor de 0,25 hp y 10 000 rpm con reductor armónico 80:1",
+     "value_en": "0.25 hp motor, 10,000 rpm, with 80:1 harmonic drive",
+     "source": {
+      "title": "NSSDCA: The Apollo Lunar Roving Vehicle",
+      "url": "https://nssdc.gsfc.nasa.gov/planetary/lunar/apollo_lrv.html"
+     },
+     "quote": "a DC series wound 0.25 hp motor capable of 10,000 rpm, attached to the wheel via an 80:1 harmonic drive"
+    },
+    {
+     "label_es": "Control térmico",
+     "label_en": "Thermal control",
+     "value_es": "Control térmico pasivo mantiene las baterías en su rango",
+     "value_en": "Passive thermal control keeps the batteries in range",
+     "source": {
+      "title": "NSSDCA: The Apollo Lunar Roving Vehicle",
+      "url": "https://nssdc.gsfc.nasa.gov/planetary/lunar/apollo_lrv.html"
+     },
+     "quote": "Passive thermal controls kept the batteries within an optimal temperature range."
+    }
+   ],
+   "heritage": []
+  },
+  "antena": {
+   "name_es": "Antenas",
+   "name_en": "Antennas",
+   "what_es": "Una antena de malla en forma de plato, al frente, apunta a la Tierra y lleva la señal de televisión. Una antena de voz en el centro permite hablar con Houston.",
+   "what_en": "A mesh dish antenna at the front points at Earth and carries the TV signal. A voice antenna on the center chassis allows talking with Houston.",
+   "facts": [
+    {
+     "label_es": "Antena de malla",
+     "label_en": "Mesh dish",
+     "value_es": "Montada en un mástil al frente, en el centro",
+     "value_en": "Mounted on a mast at the front center",
+     "source": {
+      "title": "NSSDCA: The Apollo Lunar Roving Vehicle",
+      "url": "https://nssdc.gsfc.nasa.gov/planetary/lunar/apollo_lrv.html"
+     },
+     "quote": "A large mesh dish antenna was mounted on a mast on the front center of the rover."
+    },
+    {
+     "label_es": "Función",
+     "label_en": "Role",
+     "value_es": "Envía la señal de televisión a la Tierra",
+     "value_en": "Beams the television signal to Earth",
+     "source": {
+      "title": "NASA NTRS: Development and Application of Color Television for Apollo XV and Beyond (S. Russell, RCA)",
+      "url": "https://ntrs.nasa.gov/api/citations/19730005128/downloads/19730005128.pdf"
+     },
+     "quote": "The high-gain antenna beamed the television signal to earth."
+    },
+    {
+     "label_es": "Antena de voz",
+     "label_en": "Voice antenna",
+     "value_es": "Va en el chasis central",
+     "value_en": "Sits on the center chassis",
+     "source": {
+      "title": "NASA NTRS: The Lunar Roving Vehicle: Historical perspective (S. Morea, NASA MSFC, 1992)",
+      "url": "https://ntrs.nasa.gov/citations/19930004820"
+     },
+     "quote": "the voice antenna on the center chassis"
+    }
+   ],
+   "heritage": []
+  },
+  "camara": {
+   "name_es": "Cámara de televisión",
+   "name_en": "TV camera",
+   "what_es": "Cámara a color montada al frente del rover. Desde Houston, un operador la movía y le cambiaba el zoom por radio, así el mundo veía la Luna casi en vivo.",
+   "what_en": "A color camera mounted at the front of the rover. In Houston an operator panned it and changed the zoom by radio, so the world watched the Moon almost live.",
+   "facts": [
+    {
+     "label_es": "Tipo",
+     "label_en": "Type",
+     "value_es": "Cámara de televisión a color, autónoma",
+     "value_en": "Self-contained color television camera",
+     "source": {
+      "title": "NASA NTRS: Development and Application of Color Television for Apollo XV and Beyond (S. Russell, RCA)",
+      "url": "https://ntrs.nasa.gov/api/citations/19730005128/downloads/19730005128.pdf"
+     },
+     "quote": "completely self-contained color camera unit"
+    },
+    {
+     "label_es": "Control desde la Tierra",
+     "label_en": "Earth control",
+     "value_es": "Giro, inclinación, zoom y apertura se mandan desde Houston",
+     "value_en": "Pan, tilt, zoom and aperture commanded from Houston",
+     "source": {
+      "title": "NASA NTRS: Development and Application of Color Television for Apollo XV and Beyond (S. Russell, RCA)",
+      "url": "https://ntrs.nasa.gov/api/citations/19730005128/downloads/19730005128.pdf"
+     },
+     "quote": "Motorized drives in the lens assembly allow changes in the lens focal length and aperture."
+    },
+    {
+     "label_es": "Retraso",
+     "label_en": "Delay",
+     "value_es": "Pasaban 3,5 s entre pulsar un botón y ver el efecto",
+     "value_en": "3.5 s passed between a button press and the visible response",
+     "source": {
+      "title": "NASA NTRS: Development and Application of Color Television for Apollo XV and Beyond (S. Russell, RCA)",
+      "url": "https://ntrs.nasa.gov/api/citations/19730005128/downloads/19730005128.pdf"
+     },
+     "quote": "When a pushbutton was pressed, 3.5 sec passed before any response was seen on the television screen."
+    }
+   ],
+   "heritage": []
+  },
+  "herramientas": {
+   "name_es": "Portaherramientas y muestras",
+   "name_en": "Tool carrier and samples",
+   "what_es": "Atrás, una plataforma lleva las herramientas y los instrumentos científicos. También sirve para guardar las rocas y el suelo que los astronautas recogen.",
+   "what_en": "At the back, a platform carries the tools and science instruments. It also holds the rocks and soil the astronauts collect.",
+   "facts": [
+    {
+     "label_es": "Ubicación",
+     "label_en": "Location",
+     "value_es": "El portaherramientas va atrás",
+     "value_en": "The tool carrier sits at the rear",
+     "source": {
+      "title": "NASA ALSJ: Apollo 16 onboard briefing, Lunar Roving Vehicle pages (PDF)",
+      "url": "https://www.nasa.gov/wp-content/uploads/static/history/alsj/a16/A16OTM15-42.pdf"
+     },
+     "quote": "note the high gain antenna and the television camera in the front and the tool carrier in the rear"
+    },
+    {
+     "label_es": "Chasis trasero",
+     "label_en": "Aft chassis",
+     "value_es": "Herramientas y equipo científico van sobre el chasis trasero",
+     "value_en": "Tools and science equipment ride on the aft chassis",
+     "source": {
+      "title": "NASA NTRS: The Lunar Roving Vehicle: Historical perspective (S. Morea, NASA MSFC, 1992)",
+      "url": "https://ntrs.nasa.gov/citations/19930004820"
+     },
+     "quote": "scientific equipment and tools on the aft chassis"
+    },
+    {
+     "label_es": "Muestras Apolo 17",
+     "label_en": "Apollo 17 samples",
+     "value_es": "110,52 kg de muestras lunares",
+     "value_en": "110.52 kg of lunar samples",
+     "source": {
+      "title": "NSSDCA: Apollo 17 Command and Service Module",
+      "url": "https://nssdc.gsfc.nasa.gov/nmc/spacecraft/display.action?id=1972-096A"
+     },
+     "quote": "collected 110.52 kg of lunar samples"
+    }
+   ],
+   "heritage": []
+  },
+  "guardabarros": {
+   "name_es": "Guardabarros",
+   "name_en": "Fenders",
+   "what_es": "Cubren cada rueda para frenar el polvo lunar que levanta. Son de fibra de vidrio. En el Apolo 17 se rompió uno y se arregló con mapas y cinta.",
+   "what_en": "They cover each wheel to stop the lunar dust it kicks up. They are fiberglass. On Apollo 17 one broke and was fixed with maps and tape.",
+   "facts": [
+    {
+     "label_es": "Función",
+     "label_en": "Purpose",
+     "value_es": "Protectores de polvo sobre las ruedas",
+     "value_en": "Dust guards above the wheels",
+     "source": {
+      "title": "NSSDCA: The Apollo Lunar Roving Vehicle",
+      "url": "https://nssdc.gsfc.nasa.gov/planetary/lunar/apollo_lrv.html"
+     },
+     "quote": "Dust guards were mounted above the wheels."
+    },
+    {
+     "label_es": "Material",
+     "label_en": "Material",
+     "value_es": "Fibra de vidrio con resina epoxi",
+     "value_en": "Epoxy-impregnated fiberglass",
+     "source": {
+      "title": "Smithsonian NASM: Wheel, Lunar Rover (A19750830000)",
+      "url": "https://airandspace.si.edu/collection-objects/wheel-lunar-rover/nasm_A19750830000"
+     },
+     "quote": "Fender: Epoxy-impregnated fiberglass"
+    },
+    {
+     "label_es": "Reparación Apolo 17",
+     "label_en": "Apollo 17 repair",
+     "value_es": "Cuatro de los 28 mapas lunares, cinta y dos pinzas",
+     "value_en": "Four of the 28 lunar maps, tape and two clamps",
+     "source": {
+      "title": "Smithsonian NASM: Duct Tape Auto Repair on the Moon",
+      "url": "https://airandspace.si.edu/stories/editorial/duct-tape-auto-repair-moon"
+     },
+     "quote": "Their solution was to attach four of the 28 lunar maps with what Cernan would later call"
+    }
+   ],
+   "heritage": []
+  }
+ },
+ "missions": [
+  {
+   "name": "Apollo 15",
+   "agency": "NASA",
+   "start": "1971-07-26",
+   "end": "1971-08-07",
+   "where_es": "Hadley-Apeninos, región del mar de las Lluvias (Mare Imbrium), 26,1 N, 3,6 E",
+   "where_en": "Hadley-Apennine, Mare Imbrium region, 26.1 N, 3.6 E",
+   "summary_es": "David Scott y James Irwin estrenaron el rover en la Luna. Lo condujeron 27,8 km en 3 h 2 min. Llegaron a unos 5 km del módulo lunar, la mayor distancia hasta entonces.",
+   "summary_en": "David Scott and James Irwin were the first to use the rover on the Moon. They drove 27.8 km in 3 h 2 min and got about 5 km from the lunar module, a record at the time.",
+   "milestones": [
+    {
+     "date": "1971-07-31",
+     "text_es": "Primera conducción en la Luna: Scott prueba el rover tras desplegarlo.",
+     "text_en": "First drive on the Moon: Scott test-drives the rover after deploying it.",
+     "source": {
+      "title": "NASA: 50 Years Ago: Apollo 15 on the Moon at Hadley-Apennine",
+      "url": "https://www.nasa.gov/history/50-years-ago-apollo-15-on-the-moon-at-hadley-apennine/"
+     },
+     "quote": "Scott took it for a brief test drive, becoming the first human to drive on the Moon."
+    },
+    {
+     "date": "1971-07-31",
+     "text_es": "Primera salida: el rover se descarga, se despliega y se conduce.",
+     "text_en": "First moonwalk: the rover is unloaded, deployed and driven.",
+     "source": {
+      "title": "NSSDCA: Apollo 15 Lunar Module/ALSEP",
+      "url": "https://nssdc.gsfc.nasa.gov/nmc/spacecraft/display.action?id=1971-063C"
+     },
+     "quote": "on 31 July from 13:13:10 UT to 19:45:59 UT, during which time the LRV was unloaded, deployed, and driven"
+    },
+    {
+     "date": "1971-08-01",
+     "text_es": "Segunda salida: unos 5 km del módulo, lo más lejos que habían ido astronautas hasta entonces.",
+     "text_en": "Second moonwalk: about 5 km from the module, farther than any astronauts had gone to that time.",
+     "source": {
+      "title": "NASA: 50 Years Ago: Apollo 15 on the Moon at Hadley-Apennine",
+      "url": "https://www.nasa.gov/history/50-years-ago-apollo-15-on-the-moon-at-hadley-apennine/"
+     },
+     "quote": "about 5 km from Falcon, the furthest any astronauts had traveled from their spacecraft up to that time"
+    },
+    {
+     "date": "1971-08-02",
+     "text_es": "Total del rover: 27,8 km en 3 h 2 min; mayor alcance 5,0 km; tramo más largo 12,5 km.",
+     "text_en": "Rover total: 27.8 km in 3 h 2 min; maximum range 5.0 km; longest traverse 12.5 km.",
+     "source": {
+      "title": "NSSDCA: The Apollo Lunar Roving Vehicle",
+      "url": "https://nssdc.gsfc.nasa.gov/planetary/lunar/apollo_lrv.html"
+     },
+     "quote": "the LRV was driven a total of 27.8 km in 3 hours, 2 minutes of driving time."
+    }
+   ],
+   "source": {
+    "title": "NSSDCA: Apollo 15 Command and Service Module",
+    "url": "https://nssdc.gsfc.nasa.gov/nmc/spacecraft/display.action?id=1971-063A"
+   }
+  },
+  {
+   "name": "Apollo 16",
+   "agency": "NASA",
+   "start": "1972-04-16",
+   "end": "1972-04-27",
+   "where_es": "Tierras altas de Descartes, 9,0 S, 15,5 E",
+   "where_en": "Descartes highlands, 9.0 S, 15.5 E",
+   "summary_es": "John Young y Charles Duke recorrieron 26,7 km en 3 h 26 min. Probaron la velocidad del rover en su \"Gran Premio\". Un guardabarros se rompió, pero siguieron adelante.",
+   "summary_en": "John Young and Charles Duke drove 26.7 km in 3 h 26 min. They tested the rover's speed in their \"Grand Prix\". A fender tore off, but they carried on.",
+   "milestones": [
+    {
+     "date": "1972-04-21",
+     "text_es": "\"Gran Premio\": Young maneja el rover a toda marcha en la primera salida.",
+     "text_en": "\"Grand Prix\": Young puts the rover through a speed run on the first moonwalk.",
+     "source": {
+      "title": "NASA: John Young Driving the Lunar Rover",
+      "url": "https://www.nasa.gov/image-article/john-young-driving-lunar-rover/"
+     },
+     "quote": "John W. Young in the \"Grand Prix\" run during the first Apollo 16 spacewalk at the Descartes landing site on April 21, 1972"
+    },
+    {
+     "date": "1972-04-22",
+     "text_es": "Segunda salida: el traje de Young engancha y arranca el guardabarros trasero derecho.",
+     "text_en": "Second moonwalk: Young's suit catches and tears off the right rear fender.",
+     "source": {
+      "title": "NASA: 50 Years Ago: Apollo 16 on the Moon at Descartes",
+      "url": "https://www.nasa.gov/history/50-years-ago-apollo-16-on-the-moon-at-descartes/"
+     },
+     "quote": "Young's suit caught on the right rear fender of the Rover, tearing it off"
+    },
+    {
+     "date": "1972-04-23",
+     "text_es": "Tercera salida: viajan al cráter North Ray, 11,4 km de recorrido.",
+     "text_en": "Third moonwalk: they travel to North Ray Crater, an 11.4 km traverse.",
+     "source": {
+      "title": "NSSDCA: Apollo 16 Lunar Module/ALSEP",
+      "url": "https://nssdc.gsfc.nasa.gov/nmc/spacecraft/display.action?id=1972-031C"
+     },
+     "quote": "on the third, of 11.4 km, on 23 April from 15:25:28 UT to 21:05:31 UT they travelled to North Ray Crater"
+    },
+    {
+     "date": "1972-04-23",
+     "text_es": "Total del rover: 26,7 km en 3 h 26 min; mayor alcance 4,5 km; tramo más largo 11,6 km.",
+     "text_en": "Rover total: 26.7 km in 3 h 26 min; maximum range 4.5 km; longest traverse 11.6 km.",
+     "source": {
+      "title": "NSSDCA: The Apollo Lunar Roving Vehicle",
+      "url": "https://nssdc.gsfc.nasa.gov/planetary/lunar/apollo_lrv.html"
+     },
+     "quote": "the vehicle traversed 26.7 km in 3 hours 26 minutes of driving."
+    }
+   ],
+   "source": {
+    "title": "NSSDCA: Apollo 16 Command and Service Module",
+    "url": "https://nssdc.gsfc.nasa.gov/nmc/spacecraft/display.action?id=1972-031A"
+   }
+  },
+  {
+   "name": "Apollo 17",
+   "agency": "NASA",
+   "start": "1972-12-07",
+   "end": "1972-12-19",
+   "where_es": "Valle Taurus-Littrow, borde sureste del mar de la Serenidad, 20,2 N, 30,8 E",
+   "where_en": "Taurus-Littrow valley, southeastern rim of Mare Serenitatis, 20.2 N, 30.8 E",
+   "summary_es": "Gene Cernan y Harrison Schmitt condujeron 35,9 km en 4 h 26 min, la mayor distancia de las tres misiones. Llegaron a 7,6 km del módulo. Repararon un guardabarros con mapas y cinta.",
+   "summary_en": "Gene Cernan and Harrison Schmitt drove 35.9 km in 4 h 26 min, the longest of the three missions. They got 7.6 km from the module. They fixed a fender with maps and tape.",
+   "milestones": [
+    {
+     "date": "1972-12-11",
+     "text_es": "Primera salida: Cernan prueba el rover alrededor del módulo lunar.",
+     "text_en": "First moonwalk: Cernan test-drives the rover around the lunar module.",
+     "source": {
+      "title": "NASA: 50 Years Ago: Apollo 17 Lands at Taurus-Littrow",
+      "url": "https://www.nasa.gov/history/50-years-ago-apollo-17-lands-at-taurus-littrow/"
+     },
+     "quote": "Cernan took it for a test drive around the LM"
+    },
+    {
+     "date": "1972-12-11",
+     "text_es": "Cernan golpea con un martillo el guardabarros trasero derecho y lo arranca.",
+     "text_en": "Cernan knocks off the right rear fender with a hammer.",
+     "source": {
+      "title": "NASA: 50 Years Ago: Apollo 17 Lands at Taurus-Littrow",
+      "url": "https://www.nasa.gov/history/50-years-ago-apollo-17-lands-at-taurus-littrow/"
+     },
+     "quote": "Cernan inadvertently knocked off the Rover's right rear fender with a hammer sticking out of his suit pocket"
+    },
+    {
+     "date": "1972-12-12",
+     "text_es": "Segunda salida: reparan el guardabarros con cuatro mapas, cinta y pinzas.",
+     "text_en": "Second moonwalk: they repair the fender with four maps, tape and clamps.",
+     "source": {
+      "title": "Smithsonian NASM: Duct Tape Auto Repair on the Moon",
+      "url": "https://airandspace.si.edu/stories/editorial/duct-tape-auto-repair-moon"
+     },
+     "quote": "Their solution was to attach four of the 28 lunar maps with what Cernan would later call"
+    },
+    {
+     "date": "1972-12-14",
+     "text_es": "Total del rover: 35,9 km en 4 h 26 min; mayor alcance 7,6 km; tramo más largo 20,1 km.",
+     "text_en": "Rover total: 35.9 km in 4 h 26 min; maximum range 7.6 km; longest traverse 20.1 km.",
+     "source": {
+      "title": "NSSDCA: The Apollo Lunar Roving Vehicle",
+      "url": "https://nssdc.gsfc.nasa.gov/planetary/lunar/apollo_lrv.html"
+     },
+     "quote": "the rover went 35.9 km in 4 hours 26 minutes total drive time."
+    }
+   ],
+   "source": {
+    "title": "NSSDCA: Apollo 17 Command and Service Module",
+    "url": "https://nssdc.gsfc.nasa.gov/nmc/spacecraft/display.action?id=1972-096A"
+   }
+  }
+ ],
+ "notes": "Verified 2026-11-22 by opening each page. ALSJ HTML pages (nasa.gov/history/alsj/...) redirected to the ALSJ landing page and the ALSJ Lunar Rover Operations Handbook PDFs returned 404 in this session, so the handbook and ALSJ transcripts were NOT used; the Apollo 16 onboard briefing PDF hosted by the ALSJ was readable and used. NTRS PDFs (tv, morea) are OCR text: quotes were chosen from clean passages and matched after whitespace normalisation by script.\nDISTANCES: the data uses the NSSDC LRV page figures (A15 27.8 km, A16 26.7 km, A17 35.9 km). Disagreements: NSSDC mission pages give EVA totals of 27.9 km (A15), 27 km (A16, 'using the Lunar Roving Vehicle') and 30 km (A17); the NASA Marshall Star (2012) says Apollo 17 drove 21.7 miles (34.9 km) while Morea (NTRS) gives 17.3 mi (A15), 16.6 mi (A16) and 22.3 mi (A17).\nTOP SPEED: NSSDC gives no top speed. NASA Marshall Star says Cernan 'holds the speed record of about 18 kilometers per hour'. Smithsonian says 'The LRV could reach speeds of up to 12 miles per hour' (https://airandspace.si.edu/collection-objects/lunar-roving-vehicle-4/nasm_A19750842000); NASA APOD says estimated top speed 8 mph (https://science.nasa.gov/image-article/apod-2001-june-9-apollo-17s-lunar-rover/). A search snippet said the ALSJ calls the 18 km/h figure an unverifiable claim, but that ALSJ page could not be opened, so treat that caveat as unverified. Present 18 km/h as a reported record, not a spec.\nLOW-GAIN ANTENNA: not confirmed by any page I could quote, so it is not in the data. The antenna entry covers the high-gain mesh dish (NSSDC) and the 'voice antenna on the center chassis' (Morea). The mesh dish is described as a plate (what_*), not as an umbrella, because only a NASA APOD page says 'umbrella-shaped' (not used as a quoted fact).\nDATES: milestone dates are UT calendar dates from the NSSDC Lunar Module pages. Apollo 17 EVA-1 ran 23:54 UT 11 Dec to 07:06 UT 12 Dec, so the fender knock-off is dated 1972-12-11 (EVA start); the map repair is dated 1972-12-12 (EVA-2 began 23:28 UT on 12 Dec and NASA says Cernan implemented the fix once on the surface); the A17 total is dated 1972-12-14 (EVA-3 ended 05:40 UT 14 Dec). Apollo 16 fender loss happened on EVA-2 (22 April) by the order of events in the NASA article, which does not print the date beside it. Apollo 15 first drive dated 1971-07-31 from the NSSDC EVA-1 entry. Apollo 16 Grand Prix dated 21 April from the NASA image article (some other sources place it on EVA-3; not used). Launch and splashdown dates are from the NSSDC CSM pages.\nHERITAGE: only one verified entry (wheel -> Spring Tire; year 2023 is the NTRS record year). Camera, antennas, batteries, chassis, seats, console, tools and fenders: no NASA or Smithsonian page found that states later reuse, so left empty. Morea says the harmonic drive came from the shoe machinery business: that is prior art, not heritage, so not included.\nSMALL ITEMS: 'Fenders are fiberglass' is from the Smithsonian wheel/fender object record. 'Tool carrier at rear' is from the Apollo 16 onboard briefing PDF. The Spanish name \"Gran Premio\" is a translation of the astronauts' nickname 'Grand Prix' (NASA Apollo 16 article). The Apollo 17 fender repair quote is cut at 'call' because the next word in the Smithsonian page has a broken character.\n"
+}

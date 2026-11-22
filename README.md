@@ -210,6 +210,8 @@ Si necesitas ayuda, comparte el comando que ejecutaste, el mensaje de error y tu
 - **Portal de turnos:** una agencia reserva un lugar para unos días; si otra ya lo tiene, sale «ocupado»; dentro de un área de protección estricta no se puede reservar y se explica por qué, con la base mundial de áreas protegidas.
 - Centro de misión por lugar: gemelo digital descargable, prueba del robot en 3D, costo desde tu ubicación, plan de campaña con su turno y un copiloto de IA que explica el lugar y redacta el resumen del plan.
 - Búsqueda amplia: para cada región lunar, zonas nuevas de la Tierra por explorar, fuera de la lista.
+- **Hangar:** cada robot como un holograma que se gira y se desarma pieza a pieza, con los datos publicados de cada componente, en qué otras misiones voló («herencia de vuelo»), su historial real y tus pruebas en el simulador.
+- **Control por gestos:** con la cámara, la mano conduce el robot en el simulador y mueve el holograma del hangar. La imagen se analiza en el navegador y no sale del equipo.
 - Marte es todavía una demostración con valores sintéticos, y cada pantalla lo dice.
 - Navegación por teclado, etiquetas accesibles y diseño adaptable a móvil.
 
@@ -226,6 +228,41 @@ La aplicación está escrita en español. El modo inglés traduce lo que ya se v
 - El copiloto responde en inglés cuando la interfaz está en inglés (el servidor lo lee del contexto).
 - Lo que no esté en el diccionario se queda en español: para traducir un texto nuevo, añádelo a `en.json`. Las pruebas están en `tests/idioma.test.ts`.
 
+## Hangar y control por gestos
+
+### Hangar (`#hangar`)
+
+Está en la barra de toda cuenta activa, junto al Mundo. Muestra los siete robots del catálogo:
+
+- **Holograma.** Perseverance y Curiosity usan el modelo 3D oficial de NASA; VIPER y el carro lunar del Apolo, formas simplificadas con sus medidas publicadas. Se gira arrastrando, se acerca con la rueda y se **desarma** con el control «Desarmar»: cada pieza se separa del robot. «Holograma / Real» cambia entre la vista de luz y los materiales del modelo.
+- **Componentes.** Cada pieza numerada tiene su ficha: qué es, dos o tres datos publicados con su fuente y su **herencia de vuelo**, es decir, las otras misiones en las que voló (o volará, marcado como «previsto») esa misma pieza o su diseño. Por ejemplo, la suspensión rocker-bogie del Perseverance viene de Sojourner, Spirit y Opportunity y Curiosity.
+- **Historial.** Las misiones reales de cada robot, con sus hitos fechados y su fuente, y **tus pruebas en PROMETHEUS**: cada prueba terminada en el simulador queda anotada (lugar, metros, patinaje, pendiente, si se atascó). Con ellas, algunas piezas cuentan cómo les fue: «en tus pruebas, sus ruedas patinaron como máximo un 34 %».
+- **Probar en el simulador.** El botón lleva al Mundo; al abrir «Prueba del robot» en un lugar, el simulador arranca con ese robot.
+- CADRE, DuAxel y EELS no tienen modelo 3D publicado: se muestran sin holograma, con su ficha y su historial.
+
+Qué es real: los datos de los componentes, la herencia y los hitos salen de NASA, JPL, NSSDC, ESA y el Smithsonian, cada uno con su fuente; la cita textual que respalda cada dato está en [scripts/hangar/](scripts/hangar/README.md). La bitácora de pruebas se guarda en el navegador, por cuenta, y son resultados del simulador, no pruebas de campo. En el Curiosity, cuyo modelo oficial viene en una sola pieza, los componentes se separaron por su posición.
+
+### Control por gestos
+
+Con el botón «Con la mano» (en el simulador y en el hangar) se enciende la cámara y un detector de manos lee los gestos:
+
+| Dónde | Gesto | Qué hace |
+|---|---|---|
+| Simulador | Mano abierta | Avanza |
+| Simulador | Inclinar la mano | Gira, como un volante |
+| Simulador | Dos dedos | Marcha atrás |
+| Simulador | Puño, o ninguna mano a la vista | Frena: el robot nunca sigue solo |
+| Hangar | Una mano abierta que se mueve | Gira el holograma |
+| Hangar | Dos manos que se separan o se juntan | Lo desarma o lo arma |
+| Hangar | Puño | Lo suelta, para recolocar la mano |
+| Hangar | Señalar un momento con el índice | Pasa al componente siguiente |
+
+- **Privacidad.** El detector es [MediaPipe](https://ai.google.dev/edge/mediapipe/solutions/vision/gesture_recognizer) (Google, licencia Apache 2.0) y corre entero en el navegador: la imagen de la cámara no se graba ni se envía a ningún servidor.
+- **Requisitos.** Una cámara y una dirección segura (`https`) o `localhost`; el navegador pide permiso la primera vez. La mano debe verse entera, a unos 40 a 80 cm, con buena luz.
+- **Archivos.** El modelo (`public/mediapipe/gesture_recognizer.task`, 8 MB) está en el repositorio. El motor WebAssembly viene en el paquete `@mediapipe/tasks-vision` y Vite lo copia a `public/mediapipe/wasm/` al arrancar (ver `vite.config.ts`); todo se descarga solo cuando alguien enciende los gestos.
+- **Código.** `src/features/gestos/gestures.ts` tiene las reglas (qué gesto es y qué orden da), sin tocar la cámara, y se prueba en `tests/gestos.test.ts`; `GestureCamera.tsx` enciende la cámara y dibuja la mano que entiende el detector.
+- **Comprobado** con fotos reales de manos como cámara simulada en un navegador automático. Los umbrales (cuánto inclinar para girar, cuánto separar las manos) están en `gestures.ts` por si hace falta ajustarlos a otra cámara.
+
 ## Estructura editable
 
 ```text
@@ -240,6 +277,8 @@ src/
     admin/              # Panel del administrador
     world/              # Mundo interactivo: globo, mapa del lugar, clima, temperatura del suelo y fotos
     mission/            # Centro de misión: gemelo digital, prueba del robot en 3D, costos y plan
+    hangar/             # Hangar: holograma de cada robot, componentes, herencia de vuelo y bitácora de pruebas
+    gestos/             # Control por gestos: cámara, detector de manos y reglas de cada gesto
     turnos/             # Portal de turnos: reservar, «Mis turnos» y estado de cada lugar
     ai/                 # Copiloto: qué datos recibe la IA y su pantalla
     ranking/            # Distancia entre descriptores
@@ -248,7 +287,7 @@ src/
   styles/               # Diseño adaptable
   types/                # Contratos TypeScript
 tests/                  # Pruebas del dominio
-scripts/                # Datos calculados en Python: terreno, clima, suelo, temperatura, áreas protegidas, accesos, lectura de fotos y búsqueda amplia
+scripts/                # Datos calculados en Python: terreno, clima, suelo, temperatura, áreas protegidas, accesos, lectura de fotos, búsqueda amplia y hangar
 docs/                   # Integración con el backend
 public/                 # Recursos públicos
 ```

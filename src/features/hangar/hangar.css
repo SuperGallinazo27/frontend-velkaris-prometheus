@@ -1,0 +1,864 @@
+/* Hangar: robots a la izquierda, holograma en el centro y componentes e historial a la derecha. */
+.hangar {
+  --holo: #7fd6c4;
+  --holo-suave: rgba(127, 214, 196, 0.16);
+  --holo-linea: rgba(127, 214, 196, 0.38);
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  height: 100dvh;
+  overflow: hidden;
+  background: #050b0a;
+}
+.hangar-cuerpo {
+  display: grid;
+  flex: 1;
+  grid-template-columns: 236px minmax(0, 1fr) minmax(340px, 410px);
+  min-height: 0;
+}
+
+/* ---------- Robots ---------- */
+.hangar-robots {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  padding: 18px 14px 20px;
+  overflow-y: auto;
+  border-right: 1px solid var(--nc-linea);
+  background: rgba(var(--nc-velo), 0.6);
+}
+.hangar-intro p {
+  margin: 6px 0 0;
+  color: var(--nc-texto-3);
+  font-size: 12.5px;
+  line-height: 1.5;
+}
+.hangar-robots section {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+.hangar-robots h2 {
+  margin: 0;
+  color: var(--nc-texto-3);
+  font-family: var(--nc-mono);
+  font-size: 10.5px;
+  font-weight: 400;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+}
+.hangar-robots button {
+  display: flex;
+  flex-direction: column;
+  gap: 1px;
+  padding: 9px 11px;
+  border: 1px solid var(--nc-linea);
+  border-radius: 9px;
+  background: transparent;
+  color: var(--nc-texto-2);
+  font: inherit;
+  line-height: 1.3;
+  text-align: left;
+  cursor: pointer;
+}
+.hangar-robots button:hover {
+  border-color: var(--holo-linea);
+  color: var(--nc-texto);
+}
+.hangar-robots button[aria-current="true"] {
+  border-color: var(--holo);
+  background: var(--holo-suave);
+  color: var(--nc-texto);
+  box-shadow: 0 0 18px rgba(127, 214, 196, 0.12);
+}
+.hangar-robots button strong {
+  font-size: 14px;
+}
+.hangar-robots button span {
+  color: var(--nc-texto-3);
+  font-size: 12px;
+}
+.hangar-robots button small {
+  margin-top: 3px;
+  color: var(--nc-acento-claro);
+  font-family: var(--nc-mono);
+  font-size: 10px;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+
+/* ---------- Escenario del holograma ---------- */
+.hangar-escenario {
+  position: relative;
+  min-width: 0;
+  min-height: 0;
+  overflow: hidden;
+  background:
+    radial-gradient(ellipse 60% 46% at 50% 82%, rgba(127, 214, 196, 0.13), transparent 70%),
+    radial-gradient(ellipse 90% 70% at 50% 40%, rgba(22, 48, 44, 0.55), transparent 75%),
+    #050b0a;
+}
+/* Esquinas de visor, como las de un instrumento. */
+.hangar-escenario::before,
+.hangar-escenario::after {
+  position: absolute;
+  z-index: 1;
+  width: 26px;
+  height: 26px;
+  border: 1px solid var(--holo-linea);
+  content: "";
+  pointer-events: none;
+}
+.hangar-escenario::before {
+  top: 12px;
+  left: 12px;
+  border-right: 0;
+  border-bottom: 0;
+}
+.hangar-escenario::after {
+  right: 12px;
+  bottom: 12px;
+  border-top: 0;
+  border-left: 0;
+}
+.hangar-lienzo {
+  position: absolute;
+  inset: 0;
+}
+.hangar-lienzo canvas {
+  display: block;
+  outline: none;
+  touch-action: none;
+}
+.hangar-titulo {
+  position: absolute;
+  top: 22px;
+  left: 30px;
+  z-index: 2;
+  max-width: 46%;
+  pointer-events: none;
+}
+.hangar-titulo .nc-eyebrow {
+  color: var(--holo);
+}
+.hangar-titulo h1 {
+  margin: 4px 0 2px;
+  font-family: var(--nc-serif);
+  font-size: clamp(26px, 3.2vw, 40px);
+  font-weight: 400;
+  line-height: 1.08;
+  text-shadow: 0 0 26px rgba(127, 214, 196, 0.35);
+}
+.hangar-titulo p {
+  margin: 0;
+  color: var(--nc-texto-2);
+  font-size: 13px;
+}
+/* Ficha técnica, a la derecha: datos del catálogo. */
+.hangar-ficha {
+  position: absolute;
+  top: 24px;
+  right: 26px;
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  gap: 7px;
+  width: min(250px, 34%);
+  margin: 0;
+  pointer-events: none;
+}
+.hangar-ficha div {
+  padding: 0 0 6px 10px;
+  border-bottom: 1px solid var(--holo-suave);
+  border-left: 2px solid var(--holo-linea);
+}
+.hangar-ficha {
+  transition: opacity 0.35s ease;
+}
+/* Desarmado o con una pieza elegida, el holograma necesita el sitio: la ficha se aparta. */
+.hangar-escenario.despejado .hangar-ficha {
+  opacity: 0;
+}
+.hangar-ficha dt {
+  color: var(--holo);
+  font-family: var(--nc-mono);
+  font-size: 9.5px;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+}
+.hangar-ficha dd {
+  margin: 0;
+  color: var(--nc-texto);
+  font-size: 12.5px;
+  line-height: 1.35;
+}
+
+/* Etiquetas numeradas sobre las piezas. */
+.hangar-etiquetas {
+  position: absolute;
+  inset: 0;
+  z-index: 2;
+  overflow: hidden;
+  pointer-events: none;
+}
+.hangar-etiquetas button {
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  margin: -11px 0 0 -11px;
+  padding: 0;
+  border: 0;
+  background: none;
+  color: var(--nc-texto);
+  font: inherit;
+  font-size: 12px;
+  visibility: hidden;
+  cursor: pointer;
+  pointer-events: auto;
+  will-change: transform;
+}
+.hangar-etiquetas b {
+  display: grid;
+  flex: none;
+  place-items: center;
+  width: 22px;
+  height: 22px;
+  border: 1px solid var(--holo);
+  border-radius: 50%;
+  background: rgba(5, 11, 10, 0.78);
+  color: var(--holo);
+  font-family: var(--nc-mono);
+  font-size: 11px;
+  font-weight: 600;
+  box-shadow: 0 0 10px rgba(127, 214, 196, 0.35);
+}
+.hangar-etiquetas span {
+  display: none;
+  padding: 2px 8px;
+  border: 1px solid var(--holo-linea);
+  border-radius: 6px;
+  background: rgba(5, 11, 10, 0.86);
+  white-space: nowrap;
+}
+.hangar-etiquetas button.al-reves {
+  flex-direction: row-reverse;
+  margin-left: 11px;
+}
+.hangar-etiquetas button:hover span,
+.hangar-etiquetas button.elegida span {
+  display: block;
+}
+.hangar-etiquetas button.elegida b {
+  border-color: var(--nc-acento);
+  background: var(--nc-acento);
+  color: var(--nc-sobre-acento);
+  box-shadow: 0 0 14px rgba(236, 155, 114, 0.55);
+}
+.hangar-etiquetas button.elegida span {
+  border-color: var(--nc-acento);
+}
+
+.hangar-aviso {
+  position: absolute;
+  top: 46%;
+  left: 50%;
+  z-index: 2;
+  margin: 0;
+  padding: 8px 16px;
+  border: 1px solid var(--holo-linea);
+  border-radius: 999px;
+  background: rgba(5, 11, 10, 0.8);
+  color: var(--holo);
+  font-family: var(--nc-mono);
+  font-size: 12px;
+  letter-spacing: 0.08em;
+  transform: translate(-50%, -50%);
+}
+.hangar-aviso.error {
+  border-color: var(--nc-error);
+  color: var(--nc-error);
+}
+.hangar-sin-modelo {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  z-index: 2;
+  width: min(420px, 80%);
+  padding: 20px 22px;
+  border: 1px dashed var(--holo-linea);
+  border-radius: 14px;
+  background: rgba(5, 11, 10, 0.7);
+  text-align: center;
+  transform: translate(-50%, -50%);
+}
+.hangar-sin-modelo strong {
+  color: var(--holo);
+  font-family: var(--nc-mono);
+  font-size: 12px;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+}
+.hangar-sin-modelo p {
+  margin: 8px 0 0;
+  color: var(--nc-texto-2);
+  font-size: 13.5px;
+}
+
+/* Mandos del holograma y crédito del modelo, abajo: en columna, para que nunca se pisen. */
+.hangar-abajo {
+  position: absolute;
+  right: 16px;
+  bottom: 10px;
+  left: 16px;
+  z-index: 3;
+  display: flex;
+  flex-direction: column;
+  gap: 7px;
+  pointer-events: none;
+}
+.hangar-mandos {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  gap: 8px 10px;
+  pointer-events: none;
+}
+.hangar-mandos > * {
+  pointer-events: auto;
+}
+.hangar-desarmar {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 7px 14px;
+  border: 1px solid var(--holo-linea);
+  border-radius: 999px;
+  background: rgba(5, 11, 10, 0.82);
+  color: var(--holo);
+  font-family: var(--nc-mono);
+  font-size: 11px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+.hangar-desarmar input {
+  width: clamp(90px, 11vw, 170px);
+  accent-color: var(--holo);
+}
+.hangar-grupo {
+  display: inline-flex;
+  padding: 2px;
+  border: 1px solid var(--holo-linea);
+  border-radius: 999px;
+  background: rgba(5, 11, 10, 0.82);
+}
+.hangar-grupo button,
+.hangar-boton {
+  padding: 6px 13px;
+  border: 0;
+  border-radius: 999px;
+  background: transparent;
+  color: var(--nc-texto-2);
+  font: inherit;
+  font-size: 12.5px;
+  white-space: nowrap;
+  cursor: pointer;
+}
+.hangar-boton {
+  border: 1px solid var(--holo-linea);
+  background: rgba(5, 11, 10, 0.82);
+}
+.hangar-grupo button:hover,
+.hangar-boton:hover {
+  color: var(--nc-texto);
+}
+.hangar-grupo button[aria-pressed="true"] {
+  background: var(--holo);
+  color: #06201b;
+  font-weight: 600;
+}
+.hangar-boton[aria-pressed="true"] {
+  border-color: var(--holo);
+  background: var(--holo-suave);
+  color: var(--holo);
+}
+.hangar-grupo button:focus-visible,
+.hangar-boton:focus-visible,
+.hangar-robots button:focus-visible,
+.hangar-piezas > li > button:focus-visible,
+.hangar-pestanas button:focus-visible {
+  outline: 2px solid var(--holo);
+  outline-offset: 2px;
+}
+.hangar-credito {
+  margin: 0;
+  color: var(--nc-texto-3);
+  font-size: 11.5px;
+  text-align: center;
+  pointer-events: none;
+}
+
+/* Cámara para mover el holograma con la mano: arriba de la columna de robots. */
+.hangar-gestos {
+  display: flex;
+  flex: none;
+  flex-direction: column;
+  gap: 8px;
+  padding: 9px;
+  border: 1px solid var(--holo-linea);
+  border-radius: 12px;
+  background: rgba(5, 11, 10, 0.88);
+  box-shadow: 0 0 24px rgba(127, 214, 196, 0.12);
+}
+.hangar-gestos .gestos-leyenda {
+  color: var(--nc-texto-3);
+  font-size: 11.5px;
+}
+
+/* ---------- Componentes e historial ---------- */
+.hangar-panel {
+  display: flex;
+  flex-direction: column;
+  min-height: 0;
+  border-left: 1px solid var(--nc-linea);
+  background: rgba(var(--nc-velo), 0.72);
+}
+.hangar-pestanas {
+  display: flex;
+  flex: none;
+  gap: 4px;
+  padding: 12px 16px 0;
+  border-bottom: 1px solid var(--nc-linea);
+}
+.hangar-pestanas button {
+  padding: 9px 12px;
+  border: 0;
+  border-bottom: 2px solid transparent;
+  background: none;
+  color: var(--nc-texto-3);
+  font: inherit;
+  font-size: 13.5px;
+  font-weight: 600;
+  cursor: pointer;
+}
+.hangar-pestanas button[aria-selected="true"] {
+  border-bottom-color: var(--holo);
+  color: var(--nc-texto);
+}
+.hangar-pestanas button:disabled {
+  opacity: 0.4;
+  cursor: default;
+}
+.hangar-contenido {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  gap: 12px;
+  min-height: 0;
+  padding: 14px 16px 18px;
+  overflow-y: auto;
+}
+.hangar-contenido > .nc-nota {
+  margin: 0;
+}
+.hangar-piezas {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+.hangar-piezas > li {
+  border: 1px solid var(--nc-linea);
+  border-radius: 10px;
+}
+.hangar-piezas > li:hover {
+  border-color: var(--holo-linea);
+}
+.hangar-piezas > li.abierta {
+  border-color: var(--nc-acento);
+  background: rgba(236, 155, 114, 0.06);
+}
+.hangar-piezas > li > button {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  width: 100%;
+  padding: 9px 12px;
+  border: 0;
+  background: none;
+  color: var(--nc-texto);
+  font: inherit;
+  font-size: 14px;
+  text-align: left;
+  cursor: pointer;
+}
+.hangar-piezas > li > button b {
+  display: grid;
+  flex: none;
+  place-items: center;
+  width: 22px;
+  height: 22px;
+  border: 1px solid var(--holo-linea);
+  border-radius: 50%;
+  color: var(--holo);
+  font-family: var(--nc-mono);
+  font-size: 11px;
+}
+.hangar-piezas > li.abierta > button b {
+  border-color: var(--nc-acento);
+  background: var(--nc-acento);
+  color: var(--nc-sobre-acento);
+}
+.hangar-piezas > li > button span {
+  flex: 1;
+  min-width: 0;
+}
+.hangar-piezas > li > button small {
+  flex: none;
+  color: var(--nc-texto-3);
+  font-family: var(--nc-mono);
+  font-size: 10.5px;
+  letter-spacing: 0.04em;
+}
+.hangar-pieza {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  padding: 2px 12px 14px;
+  font-size: 13.5px;
+  line-height: 1.55;
+}
+.hangar-pieza p {
+  margin: 0;
+}
+.hangar-pieza dl {
+  display: flex;
+  flex-direction: column;
+  margin: 0;
+  border: 1px solid var(--nc-linea);
+  border-radius: 8px;
+}
+.hangar-pieza dl > div {
+  display: grid;
+  grid-template-columns: 104px minmax(0, 1fr);
+  gap: 10px;
+  padding: 6px 10px;
+  border-bottom: 1px solid var(--nc-linea);
+}
+.hangar-pieza dl > div:last-child {
+  border-bottom: 0;
+}
+.hangar-pieza dt {
+  color: var(--nc-texto-3);
+  font-size: 12px;
+}
+.hangar-pieza dd {
+  margin: 0;
+  font-size: 13px;
+}
+.hangar-pieza a,
+.hangar-hitos a,
+.hangar-pie a {
+  color: var(--holo);
+  font-size: 12px;
+  text-decoration: none;
+  white-space: nowrap;
+}
+.hangar-pieza a:hover,
+.hangar-hitos a:hover,
+.hangar-pie a:hover {
+  text-decoration: underline;
+}
+.hangar-pieza h4,
+.hangar-seccion h3 {
+  margin: 4px 0 0;
+  color: var(--holo);
+  font-family: var(--nc-mono);
+  font-size: 10.5px;
+  font-weight: 400;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+}
+/* Línea de tiempo: herencia de vuelo e hitos de una misión. */
+.hangar-herencia,
+.hangar-hitos {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin: 0;
+  padding: 0 0 0 2px;
+  list-style: none;
+}
+.hangar-herencia li,
+.hangar-hitos li {
+  position: relative;
+  display: grid;
+  grid-template-columns: 46px minmax(0, 1fr);
+  gap: 12px;
+  padding-left: 14px;
+}
+.hangar-hitos li {
+  grid-template-columns: minmax(0, 1fr);
+  gap: 1px;
+}
+.hangar-herencia li::before,
+.hangar-hitos li::before {
+  position: absolute;
+  top: 7px;
+  left: 0;
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: var(--holo);
+  box-shadow: 0 0 8px rgba(127, 214, 196, 0.6);
+  content: "";
+}
+.hangar-herencia li::after,
+.hangar-hitos li::after {
+  position: absolute;
+  top: 16px;
+  bottom: -12px;
+  left: 3px;
+  width: 1px;
+  background: var(--holo-linea);
+  content: "";
+}
+.hangar-herencia li:last-child::after,
+.hangar-hitos li:last-child::after {
+  display: none;
+}
+.hangar-herencia time,
+.hangar-hitos time {
+  color: var(--holo);
+  font-family: var(--nc-mono);
+  font-size: 12px;
+}
+.hangar-herencia strong {
+  font-size: 13px;
+}
+.hangar-herencia em {
+  margin-left: 6px;
+  padding: 1px 6px;
+  border: 1px solid var(--nc-acento);
+  border-radius: 999px;
+  color: var(--nc-acento-claro);
+  font-family: var(--nc-mono);
+  font-size: 9.5px;
+  font-style: normal;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+.hangar-herencia p,
+.hangar-hitos p {
+  margin: 1px 0 0;
+  color: var(--nc-texto-2);
+  font-size: 12.5px;
+  line-height: 1.5;
+}
+.hangar-uso {
+  padding: 8px 10px;
+  border-left: 2px solid var(--nc-acento);
+  background: rgba(236, 155, 114, 0.08);
+  color: var(--nc-texto-2);
+  font-size: 12.5px;
+}
+
+.hangar-seccion {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.hangar-seccion + .hangar-seccion {
+  padding-top: 14px;
+  border-top: 1px solid var(--nc-linea);
+}
+.hangar-seccion > p {
+  margin: 0;
+}
+.hangar-seccion .nc-btn {
+  align-self: flex-start;
+}
+.hangar-mision {
+  display: flex;
+  flex-direction: column;
+  gap: 7px;
+  padding: 12px;
+  border: 1px solid var(--nc-linea);
+  border-radius: 10px;
+  font-size: 13.5px;
+  line-height: 1.55;
+}
+.hangar-mision header {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 10px;
+}
+.hangar-mision header strong {
+  font-family: var(--nc-serif);
+  font-size: 17px;
+  font-weight: 400;
+}
+.hangar-mision header span {
+  color: var(--nc-texto-3);
+  font-family: var(--nc-mono);
+  font-size: 10.5px;
+  letter-spacing: 0.08em;
+  white-space: nowrap;
+}
+.hangar-mision > p {
+  margin: 0;
+}
+.hangar-periodo {
+  color: var(--nc-texto-3);
+  font-size: 12.5px;
+}
+.hangar-resumen {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 6px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+.hangar-resumen li {
+  display: flex;
+  flex-direction: column;
+  padding: 8px 6px;
+  border: 1px solid var(--nc-linea);
+  border-radius: 8px;
+  text-align: center;
+}
+.hangar-resumen b {
+  color: var(--holo);
+  font-family: var(--nc-mono);
+  font-size: 15px;
+}
+.hangar-resumen span {
+  color: var(--nc-texto-3);
+  font-size: 11px;
+}
+.hangar-pruebas {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+.hangar-pruebas li {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  gap: 2px 10px;
+  padding: 8px 10px;
+  border: 1px solid var(--nc-linea);
+  border-left: 2px solid var(--holo);
+  border-radius: 8px;
+  font-size: 13px;
+}
+.hangar-pruebas li.atascado {
+  border-left-color: var(--nc-error);
+}
+.hangar-pruebas span {
+  color: var(--nc-texto-2);
+  font-size: 12px;
+}
+.hangar-pruebas p {
+  grid-column: 1 / -1;
+  margin: 0;
+  color: var(--nc-texto-3);
+  font-size: 12px;
+}
+.hangar-pie {
+  flex: none;
+  margin: 0;
+  padding: 9px 16px 11px;
+  border-top: 1px solid var(--nc-linea);
+  color: var(--nc-texto-3);
+  font-size: 11.5px;
+  line-height: 1.5;
+}
+/* Solo para lectores de pantalla: anuncia el componente elegido. */
+.hangar-lector {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip-path: inset(50%);
+  white-space: nowrap;
+}
+
+/* ---------- Pantallas medianas y teléfono ---------- */
+@media (max-width: 1180px) {
+  .hangar-cuerpo {
+    grid-template-columns: 200px minmax(0, 1fr) 340px;
+  }
+  .hangar-ficha {
+    display: none;
+  }
+  .hangar-titulo {
+    max-width: 80%;
+  }
+}
+@media (max-width: 900px) {
+  .hangar {
+    height: auto;
+    min-height: 100dvh;
+    overflow: visible;
+  }
+  .hangar-cuerpo {
+    display: flex;
+    flex-direction: column;
+  }
+  .hangar-robots {
+    flex-direction: row;
+    gap: 8px;
+    padding: 10px 12px;
+    overflow-x: auto;
+    border-right: 0;
+    border-bottom: 1px solid var(--nc-linea);
+  }
+  .hangar-intro,
+  .hangar-robots h2 {
+    display: none;
+  }
+  .hangar-robots section {
+    flex-direction: row;
+  }
+  .hangar-robots button {
+    flex: none;
+  }
+  .hangar-robots button span {
+    display: none;
+  }
+  .hangar-escenario {
+    height: 66vh;
+    min-height: 420px;
+  }
+  .hangar-titulo {
+    top: 16px;
+    left: 20px;
+  }
+  .hangar-gestos {
+    position: fixed;
+    bottom: 12px;
+    left: 12px;
+    z-index: 9;
+    width: 156px;
+  }
+  .hangar-gestos .gestos-leyenda {
+    display: none;
+  }
+  .hangar-panel {
+    border-top: 1px solid var(--nc-linea);
+    border-left: 0;
+  }
+  .hangar-contenido {
+    overflow: visible;
+  }
+}

@@ -1,0 +1,157 @@
+{
+ "description": "Textos de la interfaz del hangar y del control por gestos, con su traducción al inglés. `armar.py` los añade al diccionario `src/i18n/en.json`.",
+ "exact": {
+  "Abriendo el hangar…": "Opening the hangar…",
+  "Con la mano": "Hand control",
+  "Conduce con gestos de la mano ante la cámara. La imagen no sale de tu equipo.": "Drive with hand gestures in front of the camera. The image never leaves your device.",
+  "No veo tu mano: el robot espera": "I can't see your hand: the robot waits",
+  "Avanza": "Forward",
+  "Marcha atrás": "Reverse",
+  "Frena": "Brake",
+  "Gesto sin reconocer: el robot espera": "Unrecognized gesture: the robot waits",
+  "gira a la izquierda": "turning left",
+  "gira a la derecha": "turning right",
+  "Conducir con la mano": "Drive by hand",
+  "Mano abierta: avanza": "Open hand: forward",
+  "Inclínala: gira, como un volante": "Tilt it: steer, like a steering wheel",
+  "Dos dedos: marcha atrás": "Two fingers: reverse",
+  "Puño: frena": "Fist: brake",
+  "Conduces con la mano: ábrela para avanzar, inclínala para girar y ciérrala para frenar. El teclado sigue funcionando.": "You are driving by hand: open it to go forward, tilt it to steer and close it to brake. The keyboard still works.",
+  "Anotada en tu bitácora del hangar.": "Saved to your Hangar logbook.",
+  "Con la mano: el botón «Con la mano» enciende la cámara. Mano abierta, avanza; inclinada, gira como un volante; dos dedos, marcha atrás; puño, frena. Si la cámara deja de ver tu mano, el robot se detiene. La imagen se analiza en tu equipo: no se graba ni se envía.": "By hand: the «Hand control» button turns on the camera. Open hand, forward; tilted, it steers like a wheel; two fingers, reverse; fist, brake. If the camera stops seeing your hand, the robot stops. The image is analyzed on your device: it is not recorded or sent.",
+  "Imagen de tu cámara, como en un espejo": "Your camera image, like a mirror",
+  "Encendiendo la cámara…": "Turning on the camera…",
+  "Cargando el detector de manos…": "Loading the hand detector…",
+  "La imagen se analiza en tu equipo: no se graba ni se envía.": "The image is analyzed on your device: it is not recorded or sent.",
+  "Falta el permiso de la cámara. Pulsa el candado de la barra de direcciones, permite la cámara y vuelve a encenderla.": "Camera permission is missing. Click the padlock in the address bar, allow the camera and turn it on again.",
+  "No se encontró ninguna cámara conectada.": "No connected camera was found.",
+  "Otra aplicación está usando la cámara. Ciérrala y vuelve a intentarlo.": "Another app is using the camera. Close it and try again.",
+  "La cámara no admite la imagen pedida.": "The camera does not support the requested image.",
+  "La cámara solo funciona en una dirección segura (https) o en localhost.": "The camera only works on a secure address (https) or on localhost.",
+  "No se pudo encender la cámara o cargar el detector de manos. Revisa la conexión y vuelve a intentarlo.": "The camera could not be turned on or the hand detector could not be loaded. Check your connection and try again.",
+  "Muestra una mano a la cámara": "Show a hand to the camera",
+  "Lo giras: mueve la mano": "Rotating: move your hand",
+  "Dos manos: sepáralas o júntalas": "Two hands: spread them or bring them together",
+  "Suelto: recoloca la mano": "Released: reposition your hand",
+  "Señalando: siguiente componente": "Pointing: next component",
+  "Gesto sin reconocer": "Unrecognized gesture",
+  "Se atascó": "Got stuck",
+  "Llegó al destino": "Reached the target",
+  "Prueba terminada": "Test finished",
+  "Robots del hangar": "Hangar robots",
+  "Cada robot, pieza a pieza: qué lleva, en qué misiones voló y cómo le fue en tus pruebas.": "Each robot, piece by piece: what it carries, which missions it flew on and how it did in your tests.",
+  "Sin modelo 3D": "No 3D model",
+  "Proyectando el holograma…": "Projecting the hologram…",
+  "No se pudo cargar el modelo 3D. Revisa la conexión y vuelve a elegir el robot.": "The 3D model could not be loaded. Check your connection and pick the robot again.",
+  "Sin holograma": "No hologram",
+  "No hay un modelo 3D publicado de este robot ni medidas para dibujarlo, así que aquí no se inventa su forma.": "There is no published 3D model of this robot, nor measurements to draw it, so its shape is not made up here.",
+  "Su ficha y su historial sí están: míralos a la derecha.": "Its data sheet and history are here: see them on the right.",
+  "Mover el holograma con la mano": "Move the hologram by hand",
+  "Una mano abierta: muévela para girarlo": "One open hand: move it to rotate the robot",
+  "Dos manos: sepáralas para desarmarlo y júntalas para armarlo": "Two hands: spread them to take it apart, bring them together to assemble it",
+  "Puño: lo sueltas": "Fist: you let go",
+  "Señala un momento: siguiente componente": "Point for a moment: next component",
+  "Desarmar": "Take apart",
+  "Aspecto del robot": "Robot look",
+  "Holograma": "Hologram",
+  "Girar solo": "Auto-rotate",
+  "Centrar": "Center",
+  "Mueve el holograma con las manos ante la cámara. La imagen no sale de tu equipo.": "Move the hologram with your hands in front of the camera. The image never leaves your device.",
+  "Arrastra para girar, usa la rueda para acercar y haz clic en una pieza.": "Drag to rotate, use the wheel to zoom and click a piece.",
+  "Qué ver del robot": "What to see about the robot",
+  "Componentes": "Components",
+  "Historial": "History",
+  "Elige una pieza, aquí o en el holograma. «Herencia de vuelo» son las otras misiones en las que voló, o volará, esa misma pieza o su diseño.": "Pick a piece, here or on the hologram. «Flight heritage» means the other missions on which that same piece or its design flew, or will fly.",
+  "Otras misiones con esta misma pieza o diseño": "Other missions with this same piece or design",
+  "Misiones reales": "Real missions",
+  "Sin historial comprobado para este robot.": "No verified history for this robot.",
+  "sigue en curso": "still ongoing",
+  "Todavía no ha volado": "Has not flown yet",
+  "Tus pruebas en PROMETHEUS": "Your tests in PROMETHEUS",
+  "prueba": "test",
+  "pruebas": "tests",
+  "recorridos": "driven",
+  "atasco": "stuck run",
+  "atascos": "stuck runs",
+  "con la mano": "by hand",
+  "Todavía no has probado este robot en el simulador.": "You have not tested this robot in the simulator yet.",
+  "Probar este robot en el simulador": "Test this robot in the simulator",
+  "Elige un lugar en el Mundo y abre «Prueba del robot»: el simulador arrancará con este robot. Tus pruebas se guardan en este navegador y son resultados del simulador, no pruebas de campo.": "Pick a place in the World and open «Robot test»: the simulator will start with this robot. Your tests are saved in this browser and are simulator results, not field tests.",
+  "Datos de NASA, JPL, NSSDC, ESA y el Smithsonian, comprobados el": "Data from NASA, JPL, NSSDC, ESA and the Smithsonian, checked on",
+  "En este modelo 3D esta pieza no viene separada del resto: no se resalta sola.": "In this 3D model this piece is not separate from the rest: it is not highlighted on its own.",
+  "Herencia de vuelo": "Flight heritage",
+  "previsto": "planned",
+  "No encontramos una fuente que confirme esta pieza en otra misión.": "We found no source confirming this piece on another mission.",
+  "Modelo 3D oficial. Cortesía de NASA/JPL-Caltech.": "Official 3D model. Courtesy of NASA/JPL-Caltech.",
+  "Ver sus piezas en holograma ↗": "See its parts as a hologram ↗",
+  "Piezas del robot ↗": "Robot parts ↗",
+  "Abre el hangar en otra pestaña: el robot desarmado pieza a pieza, con sus datos y misiones": "Opens the hangar in another tab: the robot taken apart piece by piece, with its data and missions",
+  "Elegir otro robot del catálogo": "Choose another robot from the catalog"
+ },
+ "templates": [
+  [
+   "Holograma de {0}",
+   "Hologram of {0}"
+  ],
+  [
+   "Componentes e historial de {0}",
+   "Components and history of {0}"
+  ],
+  [
+   "Componente elegido: {0}",
+   "Selected component: {0}"
+  ],
+  [
+   "{0} misiones",
+   "{0} missions"
+  ],
+  [
+   "{0} misión",
+   "{0} mission"
+  ],
+  [
+   "Del {0} al {1}",
+   "From {0} to {1}"
+  ],
+  [
+   "Lanzada el {0}",
+   "Launched {0}"
+  ],
+  [
+   "patinaje máx. {0} %",
+   "max slip {0} %"
+  ],
+  [
+   "pendiente máx. {0}°",
+   "max slope {0}°"
+  ],
+  [
+   "Se muestran las 8 más recientes de {0}.",
+   "Showing the 8 most recent of {0}."
+  ],
+  [
+   "Fuente: {0}",
+   "Source: {0}"
+  ],
+  [
+   "En tus pruebas, sus ruedas patinaron como máximo un {0} % ({1}).",
+   "In your tests, its wheels slipped at most {0} % ({1})."
+  ],
+  [
+   "En tus pruebas, la pendiente más fuerte que enfrentó fue de {0}° ({1}).",
+   "In your tests, the steepest slope it faced was {0}° ({1})."
+  ],
+  [
+   "En tus pruebas gastó {0} Wh en total.",
+   "In your tests it used {0} Wh in total."
+  ],
+  [
+   "En tus pruebas se topó {0} veces con obstáculos.",
+   "In your tests it bumped into obstacles {0} times."
+  ],
+  [
+   "En tus pruebas se topó {0} vez con obstáculos.",
+   "In your tests it bumped into obstacles {0} time."
+  ]
+ ]
+}

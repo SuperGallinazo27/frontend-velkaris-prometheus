@@ -246,7 +246,7 @@ html.modo-nocturno {
   min-width: 0;
   margin-left: auto;
 }
-.nc-cuenta > span:first-child {
+.nc-cuenta > span:first-of-type {
   overflow: hidden;
   color: var(--nc-texto-2);
   font-size: 13px;
@@ -260,11 +260,24 @@ html.modo-nocturno {
   }
   .nc-barra .brand small,
   .nc-barra .brand > div,
-  .nc-cuenta > span:first-child {
+  .nc-cuenta > span:first-of-type,
+  .nc-cuenta .nc-insignia {
     display: none;
   }
+  /* Con tres secciones no cabe todo: los enlaces se aprietan y, si hace falta, se deslizan. */
   .nc-barra nav {
+    min-width: 0;
     margin-left: 0;
+    overflow-x: auto;
+    scrollbar-width: none;
+  }
+  .nc-barra nav a {
+    padding: 7px 8px;
+    white-space: nowrap;
+  }
+  .nc-cuenta {
+    flex: none;
+    gap: 8px;
   }
 }
 

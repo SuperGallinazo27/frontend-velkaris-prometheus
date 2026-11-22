@@ -1,5 +1,6 @@
 {
  "exact": {
+  "\"Gran Premio\": Young maneja el rover a toda marcha en la primera salida.": "\"Grand Prix\": Young puts the rover through a speed run on the first moonwalk.",
   "% de arena y $": "% sand and $",
   "% de coincidencia": "% match",
   "% de coincidencia a 470 m · relieve": "% match at 470 m · relief",
@@ -62,11 +63,26 @@
   "03 / Método": "03 / Method",
   "04 / Lugares de la Tierra": "04 / Places on Earth",
   "05 / Explora": "05 / Explore",
+  "1 m": "1 meter (3.28 ft)",
+  "1.025 kg": "1,025 kg (2,260 lb)",
   "10 cm/s, su velocidad de prospección (NASA, 2025); la máxima es 20 cm/s": "10 cm/s, its prospecting speed (NASA, 2025); the maximum is 20 cm/s",
+  "110,52 kg de muestras lunares": "110.52 kg of lunar samples",
+  "12 en total, de unos 250 g cada una": "12 in total, about 250 g each",
+  "124 grados de ancho y de alto (lente ojo de pez)": "124 degrees wide and tall (fisheye lens)",
+  "14 años": "14 years",
   "144 m/h como máximo": "144 m/h maximum",
+  "15 grados": "15 degrees",
+  "150 a 1.200 MHz": "150 to 1,200 MHz",
+  "152 m por hora": "152 meters per hour",
   "152 m/h como máximo": "152 m/h maximum",
   "19 a 23° registradas en el Apolo 15": "19 to 23° recorded on Apollo 15",
+  "2,1 m": "7 ft (2.1 m)",
+  "2,5 m de alto; 1,5 m de largo y de ancho": "2.5 m tall; 1.5 m long and wide",
+  "210 kg de masa; carga prevista de 490 kg": "210 kg mass; 490 kg designed payload",
+  "27 mm": "27 mm (1 in)",
+  "3 m de largo, 2,7 m de ancho, 2,2 m de alto": "10 ft (3 m) long, 9 ft (2.7 m) wide, 7 ft (2.2 m) tall",
   "3 rovers, cada uno con 4 ruedas": "3 rovers, each with 4 wheels",
+  "320 W por panel (450 W con el Sol en una esquina)": "320 W per panel (450 W on a corner)",
   "37 lugares de la Tierra frente a 20 regiones reales de la Luna.": "37 places on Earth compared against 20 real regions of the Moon.",
   "4 cm/s (144 m/h), su velocidad máxima en suelo llano y duro (NASA JPL, 2012)": "4 cm/s (144 m/h), its maximum speed on flat, hard ground (NASA JPL, 2012)",
   "4 ruedas acopladas; 2 por cada módulo Axel": "4 coupled wheels; 2 per Axel module",
@@ -74,12 +90,24 @@
   "4 ruedas, suspensión activa independiente": "4 wheels, independent active suspension",
   "4,2 cm/s (152 m/h), su velocidad máxima en suelo llano y duro (NASA)": "4.2 cm/s (152 m/h), its maximum speed on flat, hard ground (NASA)",
   "4,4 m de largo": "4.4 m long",
+  "4,8 kg de dióxido de plutonio": "10.6 lb (4.8 kg) of plutonium dioxide",
+  "45° en cualquier dirección": "45 degrees in any direction",
+  "48 por rueda": "48 per wheel",
+  "490 kg al lanzamiento (con la interfaz del módulo de aterrizaje); 447 kg en movimiento": "490 kg at launch (with lander interface); 447 kg roving",
+  "5 a 10 W": "5 to 10 watts",
+  "5,42 kWh al inicio de su vida, a 0 °C": "5.42 kWh at start of life, at 0 °C",
+  "50 cm de diámetro y 20 cm de ancho": "50 cm in diameter, 20 cm wide",
+  "52,5 cm": "52.5 cm (20.7 in)",
   "6 a 7 km/h de crucero; unos 13 km/h como máximo": "6 to 7 km/h cruising; about 13 km/h at most",
   "6 a 7 km/h, su velocidad normal de crucero (Lunar Sourcebook); la máxima era unos 13 km/h": "6 to 7 km/h, its normal cruising speed (Lunar Sourcebook); the maximum was about 13 km/h",
   "6 ruedas, suspensión rocker-bogie": "6 wheels, rocker-bogie suspension",
+  "64 cm de diámetro, 66 cm de largo y unos 45 kg": "64 cm across, 66 cm long, about 45 kg",
+  "6: cuatro al frente y dos atrás": "6: four in front, two at the rear",
   "7 días ·": "7 days ·",
   "708 kg con dos astronautas y carga (210 kg vacío)": "708 kg with two astronauts and cargo (210 kg empty)",
   "720 m/h; 400 m/h al prospectar": "720 m/h; 400 m/h when prospecting",
+  "8 luces LED, calificadas para el polo lunar": "8 LED-array lights, qualified for lunar polar conditions",
+  "81,8 cm de diámetro y 23 cm de ancho": "81.8 cm diameter, 23 cm wide",
   ": avanzar, marcha atrás y girar. Sin acelerar, los robots que pueden giran sobre sí mismos.": ": move forward, reverse and turn. Without accelerating, robots that can will spin in place.",
   ": de": ": from",
   ": llueve ahora": ": raining now",
@@ -90,6 +118,8 @@
   "A nuestro planeta.": "To our planet.",
   "Abajo queda el lado visible desde la Tierra.": "The side visible from Earth is at the bottom.",
   "Abre el acceso de una agencia con su correo y una clave temporal. La agencia entra con esa clave, completa su registro y desde entonces ingresa con su propia clave.": "Opens access for an agency with its email and a temporary password. The agency signs in with that password, completes its registration, and from then on signs in with its own password.",
+  "Abre el hangar en otra pestaña: el robot desarmado pieza a pieza, con sus datos y misiones": "Opens the hangar in another tab: the robot taken apart piece by piece, with its data and missions",
+  "Abriendo el hangar…": "Opening the hangar…",
   "Abriendo el simulador…": "Opening the simulator…",
   "Abril": "April",
   "Abrir el mundo": "Open the world",
@@ -121,9 +151,13 @@
   "Agosto": "August",
   "Agua": "Water",
   "Agua, barro o nieve": "Water, mud or snow",
+  "Agujero": "Drill hole",
   "Ahora": "Now",
   "Ahora allí": "Right now there",
+  "Ajustable de 7 a 43 cm": "Adjustable from 7 to 43 cm",
   "Al cancelar, esos días quedan libres para otra agencia.": "If you cancel, those days become free for another agency.",
+  "Alcance": "Reach",
+  "Alcance de SuperCam": "SuperCam range",
   "Alejar": "Zoom out",
   "Alejar el minimapa": "Zoom out the minimap",
   "Alemania": "Germany",
@@ -132,17 +166,33 @@
   "Allí son las": "It is now",
   "Alrededor del robot: arrastra para girar y usa la rueda para acercarte": "Around the robot: drag to rotate and use the wheel to zoom in",
   "Alta": "High",
+  "Alta ganancia": "High gain",
+  "Alta ganancia con movimiento y baja ganancia fija": "Gimballed high-gain plus fixed low-gain antennas",
   "Altera las lluvias en muchas regiones: este año, el clima típico puede no cumplirse. Fuente:": "It alters rainfall in many regions: this year, the typical climate may not hold. Source:",
   "Altitud": "Altitude",
   "Altitud del modelo": "Model elevation",
+  "Altura sobre el suelo": "Ground clearance",
+  "Aluminio 2219; 3,1 m de largo y 2,3 m entre ejes": "Aluminum alloy 2219; 3.1 m long with a 2.3 m wheelbase",
+  "Aluminio, 0,5 m (20 pulgadas) de diámetro: el doble que las de Spirit y Opportunity": "Aluminum, 0.5 m (20 inches) across, twice the size of Spirit and Opportunity wheels",
   "Ampliar": "Zoom in",
   "América del Norte": "North America",
   "América del Sur": "South America",
+  "Anotada en tu bitácora del hangar.": "Saved to your Hangar logbook.",
+  "Antena UHF": "UHF antenna",
+  "Antena de alta ganancia": "High-gain antenna",
+  "Antena de baja ganancia": "Low-gain antenna",
+  "Antena de malla": "Mesh dish",
+  "Antena de voz": "Voice antenna",
+  "Antenas": "Antennas",
   "Antártida": "Antarctica",
   "Análogo de Marte": "Mars analog",
   "Análogo de la Luna": "Moon analog",
   "Análogo de la Luna y de Marte": "Moon and Mars analog",
+  "Apolo 15": "Apollo 15",
   "Apolo 15, 16 y 17 · 708 kg con dos astronautas y carga · 4 ruedas de 81,8 × 23 cm": "Apollo 15, 16 and 17 · 708 kg with two astronauts and cargo · 4 wheels of 81.8 × 23 cm",
+  "Apolo 16": "Apollo 16",
+  "Apolo 17": "Apollo 17",
+  "Apoyos para los pies": "Toe holds",
   "Aquí": "Here",
   "Aquí el suelo llega a": "Here the ground reaches",
   "Aquí la rueda se hunde más de un tercio de su radio: el modelo clásico pierde precisión con hundimientos tan grandes.": "Here the wheel sinks more than a third of its radius: the classic model loses accuracy with such large sinkage.",
@@ -153,34 +203,61 @@
   "Arena seca": "Dry sand",
   "Arena suelta sin humedad (Wong, 2001)": "Loose sand without moisture (Wong, 2001)",
   "Arrastra para girar · rueda o pellizco para acercar · elige un marcador para desglosarlo": "Drag to rotate · wheel or pinch to zoom · pick a marker to break it down",
+  "Arrastra para girar, usa la rueda para acercar y haz clic en una pieza.": "Drag to rotate, use the wheel to zoom and click a piece.",
   "Arriba queda el lado visible desde la Tierra.": "The side visible from Earth is at the top.",
+  "Articulaciones": "Joints",
+  "Asientos": "Seats",
+  "Aspecto del robot": "Robot look",
   "Atascado": "Stuck",
+  "Aterrizaje en el cráter Gale: la etapa de descenso bajó el rover con cables (sky crane).": "Landing in Gale Crater: the descent stage lowered the rover on a tether (sky crane).",
+  "Aterrizaje en el cráter Jezero, Marte.": "Landing in Jezero Crater, Mars.",
+  "Atrás, una plataforma lleva las herramientas y los instrumentos científicos. También sirve para guardar las rocas y el suelo que los astronautas recogen.": "At the back, a platform carries the tools and science instruments. It also holds the rocks and soil the astronauts collect.",
   "Autoridad:": "Authority:",
+  "Avanza": "Forward",
   "Avanzando": "Moving forward",
   "Avanzar": "Move forward",
   "Ayuda: cómo se conduce y qué es real": "Help: how to drive and what is real",
   "Añadida al plan": "Added to the plan",
   "Añadir al plan de campaña": "Add to the field plan",
   "Año": "Year",
+  "Aún no ha volado. Son tres rovers pequeños de JPL que irán en el módulo IM-3 de Intuitive Machines a Reiner Gamma. NASA fija IM-3 para inicios de 2027.": "Not flown yet. Three small JPL rovers will ride Intuitive Machines' IM-3 lander to Reiner Gamma. NASA lists IM-3 for early 2027.",
   "Aún no tienes turnos reservados.": "You have no bookings yet.",
   "Aún sin consultar": "Not yet checked",
+  "BAE RAD750, hasta 200 MHz": "BAE RAD750, up to 200 MHz",
   "Baja": "Low",
   "Bajando no se calcula el frenado: se usan los valores del llano.": "Braking is not calculated when going downhill: flat-ground values are used.",
   "Bajar con un cable a terrenos inaccesibles": "Descend on a tether into inaccessible terrain",
+  "Banda X, directo a la Tierra por la Red del Espacio Profundo": "X-band, direct to Earth via the Deep Space Network",
+  "Banda de unos 400 MHz para enviar datos a orbitadores": "About 400 MHz band for relaying data via orbiters",
   "Base de la Tranquilidad, donde alunizó el Apolo 11": "Tranquility Base, where Apollo 11 landed",
+  "Bastidor plegable": "Folding chassis",
+  "Batería": "Battery",
+  "Batería dimensionada para 9 horas de operación en sombra": "Battery sized for 9 hours of shadowed operations",
+  "Baterías": "Batteries",
+  "Baterías y motores": "Batteries and motors",
   "Bekker y Wong, citados en Politecnico di Torino (2020), p. 24: hundimiento moderado, hasta r/3": "Bekker and Wong, cited in Politecnico di Torino (2020), p. 24: moderate sinkage, up to r/3",
+  "Blanco y negro, en luz roja de unos 650 nm": "Grayscale, in red light near 650 nm",
   "Borde del cráter Nobile, zona 1": "Nobile crater rim, zone 1",
   "Borde del cráter Nobile, zona 2": "Nobile crater rim, zone 2",
   "Borde del cráter de Gerlache, zona 2": "de Gerlache crater rim, zone 2",
   "Brasil": "Brazil",
+  "Brazo que se mueve como el tuyo, con hombro, codo y muñeca. Sostiene las herramientas de la torreta para sacar muestras y analizar rocas.": "An arm that moves much like yours, with shoulder, elbow and wrist. It holds the turret tools that drill cores and analyze rocks.",
+  "Brazo robótico": "Robotic arm",
+  "Brocas": "Drill bits",
+  "Brocas de núcleo, de regolito y un abrasivo": "Coring bits, regolith bits and an abrader",
   "Buscando fotos…": "Searching for photos…",
   "Buscando los cuadros de 3 km que más se parecen a": "Searching for the 3 km squares that most resemble",
   "Buscando…": "Searching…",
   "Buscar hielo de agua y volátiles en el suelo lunar": "Search for water ice and volatiles in the lunar soil",
   "COSTO ESTIMADO (tarifas de ejemplo)": "ESTIMATED COST (sample rates)",
   "Cada agencia puede tener hasta": "Each agency can have up to",
+  "Cada asiento tiene reposapiés ajustable y cinturón de velcro": "Each seat has adjustable footrests and a Velcro seatbelt",
   "Cada día se toma la humedad del suelo que prevé el modelo meteorológico (": "Each day uses the soil moisture predicted by the weather model (",
+  "Cada robot, pieza a pieza: qué lleva, en qué misiones voló y cómo le fue en tus pruebas.": "Each robot, piece by piece: what it carries, which missions it flew on and how it did in your tests.",
+  "Cada rueda cuelga de una doble horquilla con barras de torsión que absorbe los golpes. Hay dirección adelante y atrás, así que el rover gira en espacios muy cerrados.": "Each wheel hangs from a double wishbone with torsion bars that soaks up bumps. Steering works on both axles, so the rover can turn in very tight spaces.",
+  "Cada rueda es una malla tejida de alambre de acero con bandas de titanio. Es flexible, no se pincha y agarra bien el polvo lunar. Cada una tiene su propio motor.": "Each wheel is a woven mesh of steel wire with titanium treads. It is flexible, cannot go flat and grips lunar dust well. Each wheel has its own motor.",
   "Cada rueda se orienta por separado: gira sobre sí mismo": "Each wheel steers independently: it turns in place",
+  "Cada rueda tiene suspensión activa y dirección propia. El rover puede avanzar de lado o en diagonal, girar sobre sí mismo y levantar ruedas para salir de suelo blando.": "Each wheel has active suspension and its own steering. The rover can drive sideways or diagonally, spin in place, and lift wheels to escape soft soil.",
   "Calculando la rueda en el suelo de cada día…": "Calculating the wheel on each day's soil…",
   "Calculando la rueda en los dos suelos…": "Calculating the wheel on both soils…",
   "Calidad": "Quality",
@@ -188,10 +265,12 @@
   "Cambiar": "Change",
   "Campamento y comida por persona y día": "Camp and food per person per day",
   "Campaña análoga": "Analog campaign",
+  "Campo de visión": "Field of view",
   "Cancelado": "Canceled",
   "Cancelados": "Cancelled",
   "Cancelar": "Cancel",
   "Cancelar turno": "Cancel booking",
+  "Cantidad": "Number",
   "Capítulos": "Chapters",
   "Cara visible, con el norte arriba. Los recuadros están ampliados: cada región mide 21 km.": "Near side, with north at the top. The tiles are enlarged: each region measures 21 km.",
   "Carga del robot (kg)": "Robot payload (kg)",
@@ -199,6 +278,7 @@
   "Carga, parte fija por kg y trayecto": "Cargo, fixed part per kg and trip",
   "Carga: robot, baterías e instrumentos": "Cargo: robot, batteries and instruments",
   "Cargando": "Loading",
+  "Cargando el detector de manos…": "Loading the hand detector…",
   "Cargando el mapa del lugar…": "Loading the place map…",
   "Cargando el modelo 3D…": "Loading the 3D model…",
   "Cargando el mundo interactivo…": "Loading the interactive world…",
@@ -214,8 +294,11 @@
   "Catálogo de robots": "Robot catalog",
   "Celdas de 0,5° dentro de un círculo de la misma área que el recuadro de cada región. De cada celda, la temperatura más alta y la más baja del ciclo día-noche; de la región, la mediana de sus celdas. Solo cuentan las celdas con al menos 48 de las 96 horas locales observadas.": "Cells of 0.5° inside a circle with the same area as each region's box. For each cell, the highest and lowest temperature of the day-night cycle; for the region, the median of its cells. Only cells with at least 48 of the 96 local hours observed count.",
   "Cenital": "Top-down",
+  "Centrar": "Center",
   "Centro de misión": "Mission center",
   "Centro del área": "Center of the area",
+  "Cerebro": "Brain",
+  "Cernan golpea con un martillo el guardabarros trasero derecho y lo arranca.": "Cernan knocks off the right rear fender with a hammer.",
   "Cerrado": "Closed",
   "Cerrado · no reservable": "Closed · not bookable",
   "Cerrar": "Close",
@@ -223,12 +306,15 @@
   "Cerrar el centro de misión": "Close the mission center",
   "Cerrar la ayuda": "Close help",
   "Cerrar sesión": "Sign out",
+  "Chasis trasero": "Aft chassis",
   "Chile · Tierra": "Chile · Earth",
   "Chubascos": "Showers",
   "Chubascos de nieve": "Snow showers",
   "Chubascos de nieve fuertes": "Heavy snow showers",
   "Chubascos fuertes": "Heavy showers",
   "Chubascos ligeros": "Light showers",
+  "Cinco grados de libertad: hombro (2), codo, muñeca y torreta": "Five degrees of freedom: shoulder (2), elbow, wrist and turret",
+  "Cinturón y reposapiés": "Belt and footrests",
   "Ciudad de México": "Mexico City",
   "Clasificación y datos del catálogo técnico del equipo, con fuentes de NASA y JPL. Solo se simulan los robots con masa y ruedas publicadas: lo que falta no se inventa.": "Classification and data from the team's technical catalog, with NASA and JPL sources. Only robots with published mass and wheels are simulated: what is missing is not made up.",
   "Clave": "Password",
@@ -241,13 +327,18 @@
   "Coincidencia = 100 × (1 − distancia). Es alta con 85 % o más, media de 60 a 84 % y baja con menos. No es una probabilidad: compara solo la forma del terreno. El suelo, el clima de ahora y las áreas protegidas se revisan aparte, en la ficha de cada lugar.": "Match = 100 × (1 − distance). It is high at 85 % or more, medium from 60 to 84 %, and low below that. It is not a probability: it compares only the shape of the terrain. Soil, current climate and protected areas are checked separately, on each place's card.",
   "Coincidencia de terreno": "Terrain match",
   "Coincidencia ilustrativa": "Illustrative match",
+  "Combustible": "Fuel",
   "Como administrador no reservas turnos: los gestionas, y cierras o habilitas lugares, en": "As an administrator you do not book slots: you manage them, and close or enable places, in",
   "Como una maleta de mano": "About the size of a carry-on suitcase",
+  "Comparación": "Comparison",
   "Completa tu nombre, la agencia y el país.": "Enter your name, agency and country.",
   "Completa tu registro": "Complete your registration",
   "Completa tu registro para usar el portal de turnos.": "Complete your registration to use the bookings portal.",
+  "Componentes": "Components",
   "Con cuidado": "With care",
   "Con la cuenta de tu agencia, todo esto sobre los mismos datos reales:": "With your agency account, all of this on the same real data:",
+  "Con la mano": "Hand control",
+  "Con la mano: el botón «Con la mano» enciende la cámara. Mano abierta, avanza; inclinada, gira como un volante; dos dedos, marcha atrás; puño, frena. Si la cámara deja de ver tu mano, el robot se detiene. La imagen se analiza en tu equipo: no se graba ni se envía.": "By hand: the «Hand control» button turns on the camera. Open hand, forward; tilted, it steers like a wheel; two fingers, reverse; fist, brake. If the camera stops seeing your hand, the robot stops. The image is analyzed on your device: it is not recorded or sent.",
   "Con nieve": "Snow-covered",
   "Con permiso": "With permit",
   "Con tu correo y tu clave, o con la clave temporal que te dio el administrador.": "With your email and password, or with the temporary password the administrator gave you.",
@@ -255,8 +346,13 @@
   "Condado de Turkana": "Turkana County",
   "Condicionado a permiso": "Subject to permit",
   "Condicionados a permiso": "Subject to permit",
+  "Conduce con gestos de la mano ante la cámara. La imagen no sale de tu equipo.": "Drive with hand gestures in front of the camera. The image never leaves your device.",
+  "Conduces con la mano: ábrela para avanzar, inclínala para girar y ciérrala para frenar. El teclado sigue funcionando.": "You are driving by hand: open it to go forward, tilt it to steer and close it to brake. The keyboard still works.",
   "Conducir": "Drive",
+  "Conducir con la mano": "Drive by hand",
   "Confianza": "Confidence",
+  "Consola de mando": "Control console",
+  "Construcción": "Construction",
   "Construido y probado; misión prevista para 2027": "Built and tested; mission planned for 2027",
   "Construidos o en preparación, con misión prevista": "Built or in preparation, with a planned mission",
   "Consultando el tiempo de ahora…": "Checking the current weather…",
@@ -267,8 +363,12 @@
   "Consultando la humedad del suelo…": "Fetching soil moisture…",
   "Consultando los datos de hoy…": "Fetching today's data…",
   "Consultando los turnos de este lugar…": "Checking the bookings for this place…",
+  "Consumo": "Power",
   "Continente": "Continent",
   "Continentes": "Continents",
+  "Control desde la Tierra": "Earth control",
+  "Control térmico": "Thermal control",
+  "Control térmico pasivo mantiene las baterías en su rango": "Passive thermal control keeps the batteries in range",
   "Coordinación": "Coordination",
   "Copiada": "Copied",
   "Copiado": "Copied",
@@ -287,8 +387,10 @@
   "Cráter Byrd": "Byrd crater",
   "Cráter Copérnico": "Copernicus crater",
   "Cráter Gale": "Gale Crater",
+  "Cráter Gale, Marte; hoy asciende por el monte Sharp": "Gale Crater, Mars; now climbing Mount Sharp",
   "Cráter Hermite": "Hermite crater",
   "Cráter Jezero": "Jezero Crater",
+  "Cráter Jezero, Marte": "Jezero Crater, Mars",
   "Cráter Marius, junto a las colinas de Marius": "Marius crater, next to the Marius Hills",
   "Cráter Peary": "Peary crater",
   "Cráter Rozhdestvenskiy": "Rozhdestvenskiy crater",
@@ -298,12 +400,28 @@
   "Cráter del polo norte lunar": "Lunar north pole crater",
   "Cráteres cercanos al polo": "Craters near the pole",
   "Créditos del mapa": "Map credits",
+  "Cuatro de los 28 mapas lunares, cinta y dos pinzas": "Four of the 28 lunar maps, tape and two clamps",
   "Cuatro ruedas directrices en las esquinas: gira sobre sí mismo": "Four steerable wheels at the corners: it turns in place",
   "Cubierto": "Overcast",
+  "Cubren cada rueda para frenar el polvo lunar que levanta. Son de fibra de vidrio. En el Apolo 17 se rompió uno y se arregló con mapas y cinta.": "They cover each wheel to stop the lunar dust it kicks up. They are fiberglass. On Apollo 17 one broke and was fixed with maps and tape.",
   "Cuentas": "Accounts",
+  "Cuerpo (WEB)": "Body (WEB)",
+  "Cuerpo del rover": "Rover body",
+  "Cuerpo y computadores": "Body and computers",
+  "Curiosity fue el primer uso del MMRTG.": "Curiosity was the first use of the MMRTG.",
+  "Curiosity llega al monte Sharp, su destino principal de largo plazo.": "Curiosity reaches Mount Sharp, its long-term prime destination.",
+  "Curiosity también usa suspensión rocker-bogie.": "Curiosity also uses a rocker-bogie suspension.",
   "Curvas de nivel": "Contour lines",
   "Cámara": "Camera",
+  "Cámara a color montada al frente del rover. Desde Houston, un operador la movía y le cambiaba el zoom por radio, así el mundo veía la Luna casi en vivo.": "A color camera mounted at the front of the rover. In Houston an operator panned it and changed the zoom by radio, so the world watched the Moon almost live.",
+  "Cámara de televisión": "TV camera",
+  "Cámara de televisión a color, autónoma": "Self-contained color television camera",
   "Cámara del robot": "Robot camera",
+  "Cámaras": "Cameras",
+  "Cámaras con lente ojo de pez, abajo en el frente y atrás del rover. Detectan rocas y zanjas, ayudan a conducir solo y a ubicar el brazo.": "Fisheye cameras low on the front and rear of the rover. They spot rocks and trenches, help it drive on its own and help place the arm.",
+  "Cámaras de ingeniería": "Engineering cameras",
+  "Cámaras de peligro (HazCams)": "Hazard cameras (HazCams)",
+  "Cámaras de peligro (Hazcams)": "Hazard cameras (Hazcams)",
   "Cámaras: «Seguir» va detrás del robot y mira el terreno que tiene delante; «Cámara del robot» es lo que ve desde su mástil (arrastra para mirar a los lados); «Libre» gira a su alrededor. La rueda del ratón acerca y aleja. En el móvil hay mandos en pantalla.": "Cameras: «Follow» goes behind the robot and looks at the terrain ahead of it; «Robot camera» is what it sees from its mast (drag to look to the sides); «Free» orbits around it. The mouse wheel zooms in and out. On mobile there are on-screen controls.",
   "Círculo de la misma área que el recuadro de cada región; mediana y cuartiles de sus píxeles. Toda la Luna: mediana pesada por el área de cada píxel.": "Circle with the same area as each region's box; median and quartiles of its pixels. Whole Moon: median weighted by the area of each pixel.",
   "Cómo funciona": "How it works",
@@ -313,17 +431,24 @@
   "Cómo se pinta el terreno": "How the terrain is painted",
   "Cómo se pintan las huellas": "How the tracks are painted",
   "Dato del modelo de las": "Model data from",
+  "Datos de NASA, JPL, NSSDC, ESA y el Smithsonian, comprobados el": "Data from NASA, JPL, NSSDC, ESA and the Smithsonian, checked on",
   "Datos estáticos de ejemplo. Los lugares existen; su parecido con Marte es sintético, no una evaluación científica.": "Static sample data. The places exist; their similarity to Mars is synthetic, not a scientific assessment.",
   "Datos reales de hoy": "Real data from today",
   "Datos reales.": "Real data.",
   "Datos y mandos de la prueba": "Test data and controls",
+  "David Scott y James Irwin estrenaron el rover en la Luna. Lo condujeron 27,8 km en 3 h 2 min. Llegaron a unos 5 km del módulo lunar, la mayor distancia hasta entonces.": "David Scott and James Irwin were the first to use the rover on the Moon. They drove 27.8 km in 3 h 2 min and got about 5 km from the lunar module, a record at the time.",
+  "De 250 sps a 8 Msps (mínimo y máximo)": "From 250 sps to 8 Msps (min and max)",
+  "De 30 K a 300 K": "From 30 K to 300 K",
   "De cerca, el suelo se dibuja como": "Up close, the ground is drawn as",
   "De este lugar no hay fotos que muestren el suelo: las rocas son de práctica y el suelo se dibuja de cerca como": "There are no photos of this place that show the ground: the rocks are for practice and the ground is drawn up close as",
   "De otros mundos.": "From other worlds.",
   "Decisión del": "Decision of",
   "Del": "From",
+  "Del cuerpo a los radiadores por tubos de calor en bucle": "From the warm box to the radiators by looped heat pipes",
+  "Del tamaño de un carrito de golf": "About the size of a golf cart",
   "Demostración tecnológica futura (NASA/JPL)": "Future technology demonstration (NASA/JPL)",
   "Dentro de lo habitual": "Within the usual range",
+  "Desarmar": "Take apart",
   "Descargar (.txt)": "Download (.txt)",
   "Descargar malla 3D (.obj)": "Download 3D mesh (.obj)",
   "Descargar paquete de simulación (.json)": "Download simulation package (.json)",
@@ -334,19 +459,44 @@
   "Desierto hiperárido propuesto como nuevo análogo de suelos marcianos (zona 'Mar de Cuarzo').": "Hyperarid desert proposed as a new analog of Martian soils ('Mar de Cuarzo' area).",
   "Desliza para iniciar el viaje": "Scroll to start the journey",
   "Despejado": "Clear",
+  "Detecta indirectamente agua hasta 3 pies bajo la superficie": "Indirectly detects water up to 3 feet below the surface",
+  "Detecta menos de una parte por mil millones de un compuesto orgánico": "Detects less than one part per billion of an organic compound",
   "Detrás del robot, mirando el terreno que tiene delante": "Behind the robot, looking at the terrain ahead of it",
   "Diciembre": "December",
   "Difícil": "Difficult",
   "Dimitrios Savva y Rico Cilliers": "Dimitrios Savva and Rico Cilliers",
+  "Dirección": "Steering",
   "Dirección en los dos ejes: radio de giro de 3,1 m (NASA NSSDC)": "Steering on both axles: turning radius of 3.1 m (NASA NSSDC)",
   "Diseñado para no volcar hasta 45°; se evita pasar de 30°": "Designed not to tip over up to 45°; going past 30° is avoided",
+  "Diseñado para recorrer": "Designed to drive",
+  "Diseño": "Design",
+  "Diseño elegido": "Design chosen",
   "Disponible": "Available",
   "Disponible para reservar": "Available to book",
   "Disponibles": "Available",
   "Distancias en línea recta desde el punto del lugar, no por carretera. Datos de": "Straight-line distances from the place's point, not by road. Data from",
   "Distancias en línea recta desde el punto del lugar. Aeropuerto: el más cercano con código IATA. Carretera: de autopista a terciaria. Poblado: ciudad, pueblo o aldea con nombre.": "Straight-line distances from the site point. Airport: the nearest one with an IATA code. Road: from motorway to tertiary. Settlement: named city, town or village.",
+  "Distingue agua de hidroxilo": "Differentiates water from hydroxyl",
+  "Diámetro": "Diameter",
+  "Diámetro de 1,6 cm": "Diameter 1.6 cm",
+  "Diámetro de los orificios": "Drilled hole diameter",
+  "Doble horquilla horizontal con barras de torsión y amortiguador": "Double horizontal wishbone, upper and lower torsion bars, and a damper",
   "Documento de planificación generado por PROMETHEUS. No es una reserva, un permiso ni una cotización.": "Planning document generated by PROMETHEUS. It is not a booking, a permit or a quote.",
+  "Dos asientos plegables de tubo de aluminio con correas de nailon": "Two foldable seats of tubular aluminum with nylon webbing",
+  "Dos asientos plegables lado a lado, de tubo de aluminio y correas de nailon. Cada uno tiene cinturón con velcro y reposapiés ajustable.": "Two foldable side-by-side seats made of aluminum tube and nylon straps. Each has a Velcro seatbelt and adjustable footrests.",
   "Dos baterías de plata y zinc de 36 V": "Two 36 V silver-zinc batteries",
+  "Dos baterías de plata y zinc, no recargables, dan la energía. Cada rueda tiene su propio motor eléctrico, así que el rover sigue andando si uno falla.": "Two non-rechargeable silver-zinc batteries supply the power. Each wheel has its own electric motor, so the rover can keep going if one fails.",
+  "Dos cámaras a color de 2 megapíxeles": "Two color cameras, 2 megapixels",
+  "Dos cámaras con zoom 4:1": "Twin cameras with 4:1 zoom",
+  "Dos de 36 V, plata y zinc, no recargables, de 121 Ah": "Two 36 V silver-zinc, non-rechargeable, 121 amp-hr",
+  "Dos dedos: marcha atrás": "Two fingers: reverse",
+  "Dos instrumentos científicos y tres dispositivos más": "Two science instruments and three other devices",
+  "Dos manos: sepáralas o júntalas": "Two hands: spread them or bring them together",
+  "Dos manos: sepáralas para desarmarlo y júntalas para armarlo": "Two hands: spread them to take it apart, bring them together to assemble it",
+  "Dos pares estéreo de cámaras de navegación": "Two stereo pairs of navigation cameras",
+  "Dragonfly (Titán)": "Dragonfly (Titan)",
+  "Dragonfly usará un MMRTG, del mismo tipo que los de Curiosity y Perseverance (lanzamiento previsto, no antes de julio de 2028).": "Dragonfly will use an MMRTG, a similar type to those on Curiosity and Perseverance (planned launch, no earlier than July 2028).",
+  "Dragonfly, la misión a Titán, usará un MMRTG, un tipo de fuente similar al de Curiosity y Perseverance.": "Dragonfly, the Titan mission, will use an MMRTG, a similar type of power source to Curiosity's and Perseverance's.",
   "Día": "Day",
   "Días": "Days",
   "Días en campo": "Days in the field",
@@ -365,6 +515,7 @@
   "El USGS lo describe como sitio análogo terrestre donde se entrenaron los astronautas del Apolo.": "The USGS describes it as a terrestrial analog site where the Apollo astronauts trained.",
   "El acceso se comprueba en el servidor de PROMETHEUS. Si lleva un rato sin uso, la primera respuesta puede tardar hasta un minuto.": "Access is checked on the PROMETHEUS server. If it has been idle for a while, the first response can take up to a minute.",
   "El agua del suelo está congelada: el suelo está duro.": "The water in the soil is frozen: the ground is hard.",
+  "El brazo de Perseverance parte del diseño de Curiosity, con ajustes en los motores y su electrónica para tomar núcleos de roca.": "Perseverance's arm builds on the Curiosity design, modified in motor controller electronics for coring samples.",
   "El color del suelo: imagen de satélite de 10 m por píxel (": "Ground color: satellite imagery at 10 m per pixel (",
   "El copiloto devolvió una respuesta vacía. Inténtalo de nuevo.": "The copilot returned an empty response. Try again.",
   "El copiloto necesita el servidor de PROMETHEUS: ahí vive la clave de IA.": "The copilot needs the PROMETHEUS server: the AI key lives there.",
@@ -374,6 +525,7 @@
   "El cráter Ramon se eligió por su geología similar a la marciana y su clima hiperárido; alberga la estación análoga D-MARS (también con motivación lunar).": "Ramon Crater was chosen for its Mars-like geology and hyperarid climate; it hosts the D-MARS analog station (also with a lunar motivation).",
   "El dato climático es de una celda de unos 50 km que queda": "The climate data comes from a cell of about 50 km that lies",
   "El dibujo de los surcos; su hondura sí sale del hundimiento que calcula el modelo.": "The pattern of the ruts; their depth does come from the sinkage the model calculates.",
+  "El equipo anuncia que VIPER irá a la región de Nobile, cerca del polo sur lunar.": "The team announces VIPER will go to the Nobile region near the lunar South Pole.",
   "El estado de la temporada sale del clima típico (NASA POWER, 2001–2025), no de un pronóstico.": "The season status comes from the typical climate (NASA POWER, 2001–2025), not from a forecast.",
   "El flujo de lava de 1961 en Askja tiene una de las composiciones más cercanas a los basaltos marcianos y el entorno glaciovolcánico es análogo al de Marte.": "The 1961 Askja lava flow has one of the compositions closest to Martian basalts, and its glaciovolcanic setting is analogous to Mars.",
   "El grano del suelo visto de cerca (": "The grain of the ground seen up close (",
@@ -387,15 +539,21 @@
   "El modelo no da la humedad del suelo aquí: solo se mira la lluvia reciente.": "The model gives no soil moisture here: only recent rain is considered.",
   "El modelo no tiene las ruedas donde se esperaba": "The model does not have the wheels where expected",
   "El mosaico satelital no cubre la Antártida": "The satellite mosaic does not cover Antarctica",
+  "El mástil lleva las cámaras de navegación y las luces LED. Es el primer rover de NASA con faros, pensado para ver dentro de cráteres oscuros y guiar a los operadores en la Tierra.": "The mast carries the navigation cameras and LED lights. It is NASA's first rover with headlights, made to see inside dark craters and guide operators on Earth.",
   "El navegador no compartió la ubicación. Elige una ciudad de la lista.": "The browser did not share the location. Choose a city from the list.",
+  "El neumático de resortes de NASA Glenn y Goodyear se inspiró en las ruedas de malla de alambre del LRV.": "NASA Glenn and Goodyear's Spring Tire was inspired by the LRV wire-mesh wheels.",
   "El paquete trae el mapa de alturas, las pendientes y la gravedad lunar (": "The package includes the height map, the slopes and lunar gravity (",
   "El parque se describe como un sitio análogo planetario ideal que imita condiciones de lugares como Marte y la NASA lo estudia desde hace décadas.": "The park is described as an ideal planetary analog site that mimics conditions of places like Mars, and NASA has studied it for decades.",
+  "El portaherramientas va atrás": "The tool carrier sits at the rear",
   "El punto del lugar queda fuera, pero el área de 18 km que se analiza toca": "The place's point is outside, but the 18 km area being analyzed touches",
   "El relieve real de los": "The real relief of the",
   "El relieve: la elevación real de los 18 km del lugar, con un dato cada 30 m y la altura sin exagerar (": "The relief: the real elevation of the place's 18 km, with one data point every 30 m and the height not exaggerated (",
   "El resumen describe el Namib, el desierto más antiguo del mundo, como análogo viable de las condiciones secas de los desiertos de Marte para detectar sistemas biológicos crípticos (hipolitos).": "The abstract describes the Namib, the world's oldest desert, as a viable analog of the dry conditions of Martian deserts for detecting cryptic biological systems (hypoliths).",
+  "El rocker-bogie voló por primera vez en Marte en el pequeño rover Sojourner.": "The rocker-bogie first flew on Mars on the small Sojourner rover.",
+  "El rover usa las mismas celdas base de batería que la nave Orion. Orion voló en Artemis I en 2022 (fecha según la página de NASA de Artemis I).": "VIPER uses the same core battery components as the Orion spacecraft, which flew on Artemis I in 2022 (date per NASA's Artemis I page).",
   "El servidor guarda tu clave cifrada: nadie puede verla, tampoco el administrador.": "The server stores your password encrypted: no one can see it, not even the administrator.",
   "El servidor no pudo completar la acción. Inténtalo de nuevo.": "The server could not complete the action. Try again.",
+  "El sistema de energía de Perseverance es idéntico al de Curiosity.": "Perseverance's power system is identical to Curiosity's.",
   "El suelo tiene agua, pero todavía la absorbe.": "The soil has water, but it is still absorbing it.",
   "El suelo tiene más agua de la que retiene: cede bajo las ruedas y los pies.": "The soil has more water than it holds: it gives way under wheels and feet.",
   "El suelo tiene poca agua: está firme.": "The soil has little water: it is firm.",
@@ -410,8 +568,10 @@
   "Elegir un lugar": "Choose a place",
   "Elevación de la Luna (": "Elevation of the Moon (",
   "Elevación:": "Elevation:",
+  "Elige un lugar en el Mundo y abre «Prueba del robot»: el simulador arrancará con este robot. Tus pruebas se guardan en este navegador y son resultados del simulador, no pruebas de campo.": "Pick a place in the World and open «Robot test»: the simulator will start with this robot. Your tests are saved in this browser and are simulator results, not field tests.",
   "Elige un país": "Choose a country",
   "Elige una fecha de inicio y una de fin válidas.": "Choose a valid start date and end date.",
+  "Elige una pieza, aquí o en el holograma. «Herencia de vuelo» son las otras misiones en las que voló, o volará, esa misma pieza o su diseño.": "Pick a piece, here or on the hologram. «Flight heritage» means the other missions on which that same piece or its design flew, or will fly.",
   "Elige una región real de la Luna. Su relieve, su pendiente y su rugosidad son la referencia contra la que se compara cada lugar de la Tierra.": "Choose a real region of the Moon. Its relief, slope and roughness are the reference against which every place on Earth is compared.",
   "Eliminar": "Delete",
   "Embarrado": "Muddy",
@@ -421,15 +581,24 @@
   "En desarrollo, sin misión asignada": "In development, no mission assigned",
   "En el simulador": "In the simulator",
   "En estas mismas fechas, de": "On these same dates, from",
+  "En este modelo 3D esta pieza no viene separada del resto: no se resalta sola.": "In this 3D model this piece is not separate from the rest: it is not highlighted on its own.",
+  "En la prueba de vacío térmico el rover funcionó 57 horas solo con batería.": "In thermal-vacuum testing the rover ran 57 hours on battery.",
+  "Encendiendo la cámara…": "Turning on the camera…",
   "Energía": "Energy",
   "Enero": "January",
+  "Enlace": "Link",
   "Entrando…": "Signing in…",
   "Entrar": "Sign in",
   "Entrar al mundo interactivo": "Enter the interactive world",
   "Entraste con la clave temporal de": "You signed in with the temporary password of",
+  "Envía la señal de televisión a la Tierra": "Beams the television signal to Earth",
   "Equipo": "Team",
+  "Es el esqueleto de aluminio, en tres partes unidas por bisagras. Se doblaba para caber en el costado del módulo lunar y se abría al bajarlo a la superficie.": "The aluminum skeleton, in three parts joined by hinges. It folded to fit on the side of the lunar module and unfolded as it was lowered to the surface.",
+  "Es la antena que apunta a la Tierra para enviar datos y recibir órdenes sin satélites de relevo. Se mueve sola para seguir a la Tierra mientras el rover avanza.": "This antenna points at Earth to send data and receive commands without relay satellites. It moves on its own to keep tracking Earth while the rover drives.",
+  "Es la estructura central que sostiene todo lo demás. Por dentro lleva las baterías y una “caja tibia” que mantiene la electrónica a temperatura segura.": "This is the central structure that holds everything else. Inside it carries the batteries and a “warm box” that keeps the electronics at a safe temperature.",
   "Es un documento de planificación y no equivale a un permiso. Para apartar el lugar, reserva el turno aquí abajo. El equipo, la carga y los días se ajustan en «Costo desde tu ubicación».": "This is a planning document and is not equivalent to a permit. To hold the place, book the slot below. Team, cargo and days are adjusted in “Cost from your location”.",
   "Es un modelo empírico: no recoge cómo la gravedad baja debilita el suelo granular, por eso la columna «Luna» es una estimación.": "It is an empirical model: it does not capture how low gravity weakens granular soil, so the \"Moon\" column is an estimate.",
+  "Es un prototipo de JPL de dos vehículos de dos ruedas unidos por un cable. Probó en el desierto de Mojave. Sigue como demostración, sin destino asignado.": "A JPL prototype of two two-wheeled vehicles joined by a tether. Field-tested in the Mojave Desert. Still a technology demonstration with no assigned destination.",
   "Es un robot para Marte: aquí se prueba con su masa real sobre el suelo y la gravedad de la Tierra.": "It is a robot for Mars: here it is tested with its real mass on Earth's soil and gravity.",
   "Es una": "It is an",
   "Es una demostración: la clave se guarda en este navegador. No uses una que utilices en otros sitios.": "This is a demo: the password is stored in this browser. Do not use one you use on other sites.",
@@ -449,6 +618,8 @@
   "Esta cuenta ya completó su registro.": "This account has already completed registration.",
   "Esta pendiente no la sube: retrocede o cambia de rumbo.": "It cannot climb this slope: reverse or change direction.",
   "Estado": "Status",
+  "Estado actual en la página de NASA (consultada hoy): misión activa; sigue explorando el registro de rocas de Marte.": "Current status on NASA's page (checked today): active mission; it continues exploring Mars's rock record.",
+  "Estado actual: la página de NASA la clasifica como misión activa (consultada el 22 de noviembre de 2026).": "Current status: NASA's page lists it as an active mission (checked Nov. 22, 2026).",
   "Estado desconocido": "Unknown status",
   "Estados Unidos": "United States",
   "Estados Unidos · Tierra": "United States · Earth",
@@ -482,8 +653,10 @@
   "Explorar terrenos confinados de forma autónoma": "Explore confined terrain autonomously",
   "Explícame este lugar": "Explain this place to me",
   "FAO, manual de riego, capítulo 2 «Soil and water»: qué es la capacidad de campo y cuánto tarda un suelo en drenar": "FAO, irrigation manual, chapter 2 \"Soil and water\": what field capacity is and how long a soil takes to drain",
+  "Falta el permiso de la cámara. Pulsa el candado de la barra de direcciones, permite la cámara y vuelve a encenderla.": "Camera permission is missing. Click the padlock in the address bar, allow the camera and turn it on again.",
   "Febrero": "February",
   "Fechas": "Dates",
+  "Fibra de vidrio con resina epoxi": "Epoxy-impregnated fiberglass",
   "Flechas o W A S D para conducir · clic en el terreno para ir a un punto": "Arrow keys or W A S D to drive · click the terrain to go to a point",
   "Forma simplificada con las medidas publicadas. No está en el Excel del equipo: se añade como referencia.": "Simplified shape with the published dimensions. It is not in the team's Excel file: it is added as a reference.",
   "Fotos": "Photos",
@@ -494,41 +667,65 @@
   "Franco arenoso, 22 % de humedad": "Sandy loam, 22 % moisture",
   "Franco arenoso, 26 % de humedad": "Sandy loam, 26 % moisture",
   "Franco arenoso, 32 % de humedad": "Sandy loam, 32 % moisture",
+  "Frena": "Brake",
   "Fricción, cohesión y densidad del suelo van vacías: no hay ensayos de campo y no se inventan.": "Soil friction, cohesion and density are left empty: there are no field tests and they are not made up.",
   "Fuente de la Mars Society Australia, no de una agencia espacial.": "Source from the Mars Society Australia, not a space agency.",
   "Fuente ↗": "Source ↗",
   "Fuente:": "Source:",
+  "Fuerza": "Strength",
+  "Función": "Role",
+  "Garras para tracción y rayos de titanio curvos que dan soporte elástico": "Cleats for traction and curved titanium spokes for springy support",
+  "Garras y rayos": "Cleats and spokes",
   "Gemelo digital": "Digital twin",
+  "Gene Cernan y Harrison Schmitt condujeron 35,9 km en 4 h 26 min, la mayor distancia de las tres misiones. Llegaron a 7,6 km del módulo. Repararon un guardabarros con mapas y cinta.": "Gene Cernan and Harrison Schmitt drove 35.9 km in 4 h 26 min, the longest of the three missions. They got 7.6 km from the module. They fixed a fender with maps and tape.",
+  "Generador MMRTG": "MMRTG power source",
+  "Generador de radioisótopos (MMRTG)": "Radioisotope generator (MMRTG)",
   "Generador de radioisótopos (MMRTG), unos 110 W al inicio": "Radioisotope generator (MMRTG), about 110 W at the start",
   "Generar otra": "Generate another",
   "Generar plan de campaña": "Generate campaign plan",
   "Geología, habitabilidad pasada y recogida de muestras": "Geology, past habitability and sample collection",
   "Geoparque Mundial de la UNESCO": "UNESCO Global Geopark",
   "Geoquímica, atmósfera y habitabilidad de Marte": "Geochemistry, atmosphere and habitability of Mars",
+  "Gesto sin reconocer": "Unrecognized gesture",
+  "Gesto sin reconocer: el robot espera": "Unrecognized gesture: the robot waits",
   "Girando": "Turning",
   "Girar a la derecha": "Turn right",
   "Girar a la izquierda": "Turn left",
+  "Girar solo": "Auto-rotate",
+  "Giro, inclinación, zoom y apertura se mandan desde Houston": "Pan, tilt, zoom and aperture commanded from Houston",
+  "Giroscopio direccional y odómetro alimentan una computadora que calcula el regreso": "A directional gyro and odometer feed a computer that tracks the way back",
   "Globo terrestre interactivo. Flechas para girar, más y menos para acercar o alejar, Inicio para ver el globo completo.": "Interactive globe. Arrow keys to rotate, plus and minus to zoom in or out, Home to see the whole globe.",
   "Gobernación de Abyan": "Abyan Governorate",
   "Gobernación de Ad Dajilía": "Ad Dakhiliyah Governorate",
   "Gobernación de Mareb": "Marib Governorate",
+  "Grados de libertad": "Degrees of freedom",
   "Granos de nieve": "Snow grains",
+  "Guardabarros": "Fenders",
   "Guardando…": "Saving…",
   "Guardar cambios": "Save changes",
   "Guardar registro": "Save registration",
   "Habilitado con permiso": "Enabled with permit",
   "Habilitado por el administrador, con permiso": "Enabled by the administrator, with permit",
   "Habilitar con permiso": "Enable with permit",
+  "Hadley-Apeninos, región del mar de las Lluvias (Mare Imbrium), 26,1 N, 3,6 E": "Hadley-Apennine, Mare Imbrium region, 26.1 N, 3.6 E",
   "Hasta 15°": "Up to 15°",
+  "Hasta 2 megabits por segundo": "Up to 2 megabits per second",
+  "Hasta 3 pies (unos 0,9 m)": "Up to 3 feet (about 0.9 m)",
   "Hay nieve sobre el suelo.": "There is snow on the ground.",
   "Hay que usar el robot con su masa real. Un estudio con científicos de NASA (Hu y otros, 2025) muestra que las versiones aligeradas a un sexto, pensadas para imitar la gravedad lunar, dan resultados demasiado optimistas: en su simulación, la versión aligerada patinaba un 18 % en 10° y VIPER en la Luna, cerca de un 75 %. Medir el suelo del lugar (con un bevámetro) cambiaría estos valores típicos por datos reales.": "The robot must be used at its real mass. A study with NASA scientists (Hu et al., 2025) shows that versions lightened to one sixth, meant to imitate lunar gravity, give overly optimistic results: in their simulation, the lightened version slipped 18 % on 10° and VIPER on the Moon, close to 75 %. Measuring the soil on site (with a bevameter) would replace these typical values with real data.",
   "Hay un obstáculo en el camino: rodéalo con las flechas.": "There is an obstacle in the way: go around it with the arrow keys.",
   "Haz clic en el terreno donde quieras poner el robot.": "Click on the terrain where you want to place the robot.",
   "Haz clic en el terreno…": "Click on the terrain…",
   "Helado": "Frozen",
+  "Herencia de vuelo": "Flight heritage",
+  "Herramientas": "Tools",
+  "Herramientas y equipo científico van sobre el chasis trasero": "Tools and science equipment ride on the aft chassis",
+  "Hexagonal, 0,3 m de diámetro": "Hexagonal, 1 ft (0.3 m) in diameter",
+  "Hexagonal, casi 0,3 m (1 pie) de diámetro; hay que apuntarla": "Hexagonal, nearly 0.3 m (1 foot) across; it must be pointed",
   "Hielo, nieve, arena, grietas y conductos": "Ice, snow, sand, crevasses and conduits",
   "Historial": "History",
   "Histórico": "Historic",
+  "Holograma": "Hologram",
   "Hospital sin nombre en el mapa": "Hospital unnamed on the map",
   "Hoy": "Today",
   "Hoy desde el espacio": "Today from space",
@@ -544,12 +741,18 @@
   "Hundimiento en llano": "Sinkage on flat ground",
   "Húmedo": "Moist",
   "ISRO eligió el valle de Tso Kar por sus paralelismos ambientales con el Marte temprano (UV alta, baja presión, frío, permafrost salino) para su misión análoga HOPE.": "ISRO chose the Tso Kar valley for its environmental parallels with early Mars (high UV, low pressure, cold, saline permafrost) for its HOPE analog mission.",
+  "Iluminación": "Lighting",
   "Ilustrativo": "Illustrative",
+  "Imagen de tu cámara, como en un espejo": "Your camera image, like a mirror",
   "Imagen del": "Image from",
   "Imagen y huellas": "Image and tracks",
   "Imprevistos": "Contingencies",
   "Imprevistos (%)": "Contingencies (%)",
+  "Imágenes": "Images",
+  "Inclinación máxima de diseño": "Designed tilt limit",
+  "Inclínala: gira, como un volante": "Tilt it: steer, like a steering wheel",
   "Información del lugar": "Place information",
+  "Informe de la prueba de campo en el desierto de Mojave: ancló, soltó su Axel con cable y este bajó por pendientes empinadas.": "Report on the Mojave Desert field test: it anchored, released its tethered Axel, and Axel descended steep slopes.",
   "Ingresar": "Sign in",
   "Ingresar (se abre en otra pestaña)": "Sign in (opens in a new tab)",
   "Inicia sesión": "Sign in",
@@ -558,10 +761,13 @@
   "Inicia sesión para continuar.": "Sign in to continue.",
   "Inicio": "Home",
   "Institución": "Institution",
+  "Instrumento comercial modificado por el Centro Espacial Kennedy": "A modified commercial instrument, adapted by NASA Kennedy",
+  "Instrumentos de ciencia": "Science instruments",
   "Inversión total estimada": "Estimated total investment",
   "Invierno": "Winter",
   "Islandia · Tierra": "Iceland · Earth",
   "Japón": "Japan",
+  "John Young y Charles Duke recorrieron 26,7 km en 3 h 26 min. Probaron la velocidad del rover en su \"Gran Premio\". Un guardabarros se rompió, pero siguieron adelante.": "John Young and Charles Duke drove 26.7 km in 3 h 26 min. They tested the rover's speed in their \"Grand Prix\". A fender tore off, but they carried on.",
   "Julio": "July",
   "Junio": "June",
   "Junto a área protegida": "Next to a protected area",
@@ -569,15 +775,21 @@
   "LOLA Gridded Data Record, polo norte, 30 m/px (NASA PDS Geosciences)": "LOLA Gridded Data Record, north pole, 30 m/px (NASA PDS Geosciences)",
   "LRO Diviner, productos globales acumulados (GCP): temperatura bolométrica de brillo": "LRO Diviner, global cumulative products (GCP): bolometric brightness temperature",
   "LRO LOLA, LDRM_32_50: rugosidad mediana por píxel, 32 píxeles por grado": "LRO LOLA, LDRM_32_50: median roughness per pixel, 32 pixels per degree",
+  "La \"mano\" del brazo. Lleva el taladro de muestras y los instrumentos PIXL, SHERLOC y WATSON para ver y analizar rocas muy de cerca.": "The arm's \"hand\". It carries the sample drill plus the PIXL, SHERLOC and WATSON instruments for close-up views and analysis of rocks.",
   "La Luna, el primer paso.": "The Moon, the first step.",
   "La Mars Desert Research Station (Utah) se usa como hábitat análogo de Marte para misiones simuladas.": "The Mars Desert Research Station (Utah) is used as a Mars analog habitat for simulated missions.",
   "La Tierra y posibles mundos helados": "Earth and possible icy worlds",
   "La base de áreas protegidas no registra ninguna en este punto.": "The protected areas database lists none at this point.",
+  "La cabeza del rover, a la altura de los ojos de una persona. Lleva Mastcam (fotos y video a color), ChemCam (un láser que vaporiza roca para analizarla) y las cámaras de navegación Navcam.": "The rover's head, at human eye height. It carries Mastcam (color photos and video), ChemCam (a laser that vaporizes rock to analyze it) and the Navcam navigation cameras.",
+  "La caja caliente de electrónica (WEB) protege y mantiene a temperatura los computadores del rover. Hay dos computadores idénticos, para tener siempre uno de repuesto.": "The warm electronics box (WEB) protects the rover's computers and keeps them at a safe temperature. There are two identical computers so one is always a spare.",
+  "La caja caliente del rover. Protege los dos computadores redundantes y los laboratorios internos SAM y CheMin, que analizan las muestras de roca y suelo.": "The rover's warm electronics box. It protects the two redundant computers and the internal SAM and CheMin labs that analyze rock and soil samples.",
   "La clave temporal es solo para cuentas de agencia.": "The temporary password is only for agency accounts.",
   "La clave temporal vence el": "The temporary password expires on",
   "La comparación con la Luna cubre solo la forma del terreno.": "The comparison with the Moon covers only the shape of the terrain.",
   "La comparación con la Luna usa mediciones: el láser LOLA de NASA en la Luna y el modelo de elevación Copernicus en la Tierra. Compara solo la forma del terreno. Marte es todavía una demostración con valores de ejemplo.": "The comparison with the Moon uses measurements: NASA's LOLA laser on the Moon and the Copernicus elevation model on Earth. It compares only the shape of the terrain. Mars is still a demo with sample values.",
   "La cuenta de administrador no tiene datos de agencia.": "The administrator account has no agency data.",
+  "La cámara no admite la imagen pedida.": "The camera does not support the requested image.",
+  "La cámara solo funciona en una dirección segura (https) o en localhost.": "The camera only works on a secure address (https) or on localhost.",
   "La erupción de 2012-2013 del Tolbachik produjo un campo de lava probablemente el más parecido a los de la región marciana de Tharsis, usado como sitio análogo terrestre.": "The 2012-2013 Tolbachik eruption produced a lava field probably the most similar to those of the Martian Tharsis region, used as a terrestrial analog site.",
   "La escena ya se cerró": "The scene has already been closed",
   "La estación HI-SEAS en Mauna Loa se usa para simular vivir y trabajar en la Luna o Marte, en terreno parecido al marciano.": "The HI-SEAS station on Mauna Loa is used to simulate living and working on the Moon or Mars, on Mars-like terrain.",
@@ -590,22 +802,37 @@
   "La imagen iba a trompicones y se bajó a Media.": "The image was stuttering and was lowered to Medium.",
   "La imagen iba lenta: se bajó la calidad a Media.": "The image was running slowly: quality was lowered to Medium.",
   "La imagen satelital no está disponible": "The satellite image is not available",
+  "La imagen se analiza en tu equipo: no se graba ni se envía.": "The image is analyzed on your device: it is not recorded or sent.",
   "La luz y el tiempo: la posición del Sol calculada para este lugar y el tiempo de ahora de": "The light and the weather: the Sun's position calculated for this place and the current weather from",
+  "La mano del brazo. Reúne el taladro, el espectrómetro APXS, la cámara MAHLI, el sistema CHIMRA que procesa muestras y un cepillo (DRT) que limpia el polvo de la roca.": "The arm's hand. It holds the drill, the APXS spectrometer, the MAHLI camera, the CHIMRA sample processor and a brush (DRT) that sweeps dust off rock.",
   "La misión AMADEE-18 se hizo en Dhofar, la región de Marmul.": "The AMADEE-18 mission took place in Dhofar, the region of Marmul.",
   "La nueva clave debe ser distinta de la temporal.": "The new password must be different from the temporary one.",
   "La pendiente se mide sobre 10 m: no ve rocas ni zanjas pequeñas del terreno real.": "Slope is measured over 10 m: it does not see rocks or small ditches of the real terrain.",
   "La playa salina de Dalangtan, en la cuenca de Qaidam, es un análogo marciano en mineralogía y geoquímica (sulfatos de Mg, cloruros y percloratos).": "The Dalangtan salt playa, in the Qaidam Basin, is a Mars analog in mineralogy and geochemistry (Mg sulfates, chlorides and perchlorates).",
+  "La página de NASA para la misión IM-3 la programa para inicios de 2027.": "NASA's IM-3 mission page schedules the launch for early 2027.",
   "La región de la Puna de Atacama (con Laguna Verde y Ojos del Salado) se caracteriza como posible análogo de Marte temprano.": "The Puna de Atacama region (with Laguna Verde and Ojos del Salado) is characterized as a possible analog of early Mars.",
   "La región volcánica de Pinacate está repleta de análogos lunares y allí se entrenó a astronautas Apolo en geología lunar.": "The Pinacate volcanic region is full of lunar analogs, and Apollo astronauts were trained there in lunar geology.",
   "La regla.": "The rule.",
   "La rueda sobre el suelo se calcula con la Luna, que tiene terreno y suelo con datos publicados. Marte es por ahora una demostración.": "The wheel-on-soil calculation is done for the Moon, which has terrain and soil with published data. Mars is a demonstration for now.",
+  "La torreta de Perseverance es más grande que la de Curiosity, para llevar el taladro de núcleos y más instrumentos.": "Perseverance's turret is larger than Curiosity's, to hold the coring drill and more instruments.",
+  "La unidad de aviónica y de distribución de energía de VIPER se derivó de la de la misión lunar LADEE (lanzada el 6 de septiembre de 2013, según la página de NASA de LADEE).": "VIPER's avionics and power distribution units are derived from those of the LADEE lunar orbiter (launched Sep. 6, 2013, per NASA's LADEE page).",
+  "Laboratorio SAM": "SAM lab",
   "Laboratorio de NASA en el cráter Gale de Marte · 899 kg · 6 ruedas de 50 × 40 cm": "NASA laboratory in Mars's Gale crater · 899 kg · 6 wheels of 50 × 40 cm",
+  "Lanzamiento de Perseverance.": "Perseverance launches.",
+  "Lanzamiento en un cohete Atlas V 541.": "Launch on an Atlas V 541 rocket.",
+  "Largo": "Length",
+  "Las Hazcams son prácticamente idénticas a las cámaras de ingeniería de Spirit y Opportunity, con redundancia y calentadores más potentes.": "Hazcams are virtually identical to the engineering cameras of Spirit and Opportunity, with redundancy and stronger heaters added.",
+  "Las Navcams son casi idénticas a las cámaras de ingeniería de Spirit y Opportunity.": "The Navcams are virtually identical to the engineering cameras on Spirit and Opportunity.",
+  "Las bandas de titanio cubren el 50 % de la zona de contacto": "Titanium chevrons cover 50% of the contact area",
   "Las cuentas se guardan en la base de datos del servidor. Las claves se guardan cifradas: nadie, tampoco el administrador, puede verlas después de crearlas.": "Accounts are stored in the server database. Passwords are stored encrypted: no one, not even the administrator, can see them after they are created.",
+  "Las cámaras de navegación van en el mástil": "Navigation cameras are mounted on the mast",
   "Las dos claves no coinciden.": "The two passwords do not match.",
   "Las horas de luz se calculan con la latitud. La valoración típica es un criterio orientativo de PROMETHEUS (lluvia, frío, calor, viento y luz); no es un requisito oficial ni un pronóstico. Estas cantidades de lluvia no se pueden comparar con las de «Ahora», que vienen de otro modelo, de celda más pequeña: por eso allí lo que llovió se compara con otros años del mismo modelo y no con esta tabla.": "Daylight hours are calculated from the latitude. The typical rating is a guideline criterion from PROMETHEUS (rain, cold, heat, wind and light); it is not an official requirement or a forecast. These rainfall amounts cannot be compared with those in «Now», which come from another model with a smaller cell: that is why there the rain that fell is compared with other years of the same model and not with this table.",
   "Las respuestas las redacta un modelo de IA de Google (Gemini) a través del servidor de PROMETHEUS. Solo recibe datos del lugar y del plan; no se envían tu correo, tu nombre ni el de tu institución. La IA explica y redacta: no calcula la coincidencia, el clima ni las ruedas, y no decide si un lugar está protegido.": "Answers are written by a Google AI model (Gemini) through the PROMETHEUS server. It only receives data about the place and the plan; your email, your name and your institution's name are not sent. The AI explains and writes: it does not calculate the match, the climate or the wheels, and it does not decide whether a place is protected.",
   "Las rocas y la base de campaña son de práctica, para maniobrar: los datos del lugar (30 m) no ven rocas.": "The rocks and the field base are for practice, for maneuvering: the place's data (30 m) cannot see rocks.",
   "Las rocas, según la lectura de": "The rocks, according to the reading by",
+  "Las ruedas se rediseñaron a partir de las de Curiosity, que se desgastaron con rocas filosas: son más angostas, más grandes y de aluminio más grueso.": "The wheels were redesigned from Curiosity's, which wore down on sharp rocks: narrower, larger in diameter and thicker aluminum.",
+  "Las seis ruedas tienen motor de tracción; las cuatro de las esquinas, también de dirección": "All six wheels have drive motors; the four corner wheels also have steering motors",
   "Lectura del terreno con IA": "AI terrain reading",
   "Leyendo el relieve real de los 18 km…": "Reading the real relief of the 18 km…",
   "Leyendo el relieve real del lugar…": "Reading the real relief of the place…",
@@ -615,6 +842,7 @@
   "Lines y otros (2021): c1 y c2 supuestos para nieve": "Lines et al. (2021): c1 and c2 assumed for snow",
   "Listo": "Ready",
   "Llanura de Slater": "Slater plain",
+  "Llegó al destino": "Reached the target",
   "Llevar a los astronautas; es la única rueda medida en la Luna": "Carry the astronauts; it is the only wheel measured on the Moon",
   "Llovizna": "Drizzle",
   "Llovizna helada": "Freezing drizzle",
@@ -629,9 +857,11 @@
   "Lluvias moderadas": "Moderate rainfall",
   "Lo cancelaste": "You canceled it",
   "Lo canceló el administrador": "Canceled by the administrator",
+  "Lo giras: mueve la mano": "Rotating: move your hand",
   "Lo que el robot tiene delante queda arriba. Clic para cambiar el alcance.": "What is ahead of the robot points up. Click to change the range.",
   "Lo que ve el robot desde su mástil; arrastra para mirar a los lados": "What the robot sees from its mast; drag to look to the sides",
   "Localidades": "Localities",
+  "Longitud": "Length",
   "Los 18 km del lugar": "The place's full 18 km",
   "Los 50 cm de diámetro llegan hasta la punta de sus 24 tacos de 26 mm; el cálculo trata la rueda como lisa.": "The 50 cm diameter reaches the tip of its 24 grousers of 26 mm; the calculation treats the wheel as smooth.",
   "Los Valles Secos de McMurdo son el mejor análogo terrestre conocido de las llanuras del norte de Marte donde aterrizó Phoenix.": "The McMurdo Dry Valleys are the best known terrestrial analog of the northern plains of Mars where Phoenix landed.",
@@ -642,8 +872,11 @@
   "Los estromatolitos de 3.4 Ga de la Formación Strelley Pool son un análogo importante para buscar vida fósil en sedimentos noaquianos de Marte.": "The 3.4-billion-year-old stromatolites of the Strelley Pool Formation are an important analog for searching for fossil life in Noachian sediments on Mars.",
   "Los números: pendiente, patinaje, hundimiento, velocidad, tiempo y energía salen del modelo de rueda y suelo de la pestaña «Ruedas», con la masa real del robot y el suelo elegido.": "The numbers: slope, wheel slip, sinkage, speed, time and energy come from the wheel and soil model in the \"Wheels\" tab, with the robot's real mass and the chosen soil.",
   "Los puntos marcan la pendiente típica de cada lugar. El límite del": "The dots mark the typical slope of each place. The limit of",
+  "Los radiadores del techo sueltan el calor cuando hay Sol. En el frío, el rover se envuelve en aislante y guarda su calor. Así resiste de 30 K a 300 K.": "Roof radiators shed heat in sunlight. In the cold, the rover is wrapped in insulation and keeps its heat. This lets it handle swings from 30 K to 300 K.",
+  "Los rovers anteriores también guardaban su electrónica en una caja caliente (WEB) dentro del chasis.": "Earlier rovers also kept their electronics in a warm electronics box (WEB) inside the chassis.",
   "Los salares chilenos, incluido el Salar de Atacama, se estudian como análogo de depósitos evaporíticos marcianos.": "Chilean salt flats, including the Salar de Atacama, are studied as analogs of Martian evaporite deposits.",
   "Los tres lugares con más coincidencia de terreno con": "The three places with the highest terrain match with",
+  "Los tres rovers y su estación base llegan a las instalaciones de Intuitive Machines en Houston.": "The three rovers and base station arrive at Intuitive Machines' Houston facility.",
   "Los turnos de": "Bookings of",
   "Los turnos los reservan las agencias; el administrador los gestiona.": "Bookings are made by agencies; the administrator manages them.",
   "Lugar": "Place",
@@ -667,14 +900,19 @@
   "Límites del cálculo": "Limits of the calculation",
   "MODIS, satélite, 1 km": "MODIS, satellite, 1 km",
   "MODIS, temperatura de la superficie del suelo (LST) a 1 km": "MODIS, land surface temperature (LST) at 1 km",
+  "MSolo (masas)": "MSolo (mass spec.)",
+  "MSolo voló en PRIME-1 junto a TRIDENT. Hizo varias lecturas de gases, pero el módulo quedó de costado.": "MSolo flew on PRIME-1 together with TRIDENT. It performed several gas scans, but the lander ended up on its side.",
   "Macizo Malapert": "Malapert Massif",
   "Malla en metros, con Z hacia arriba y sin exagerar: se importa en Gazebo, Isaac Sim, Unity o Blender.": "Mesh in meters, Z up and with no exaggeration: import it into Gazebo, Isaac Sim, Unity or Blender.",
   "Mandos en pantalla · toca el terreno para ir a un punto": "On-screen controls · tap the terrain to go to a point",
   "Mandos táctiles": "Touch controls",
   "Maneja un robot sobre el relieve real, con el suelo y el clima del lugar.": "Drive a robot over real relief, with the site's soil and climate.",
+  "Mano abierta: avanza": "Open hand: forward",
+  "Mantiene las seis ruedas en contacto con el suelo, incluso al pasar sobre una roca grande como la rueda": "Keeps all six wheels in contact with the ground, even over a rock as big as a wheel",
   "Mapa": "Map",
   "Mar Rojo": "Red Sea",
   "Marcha atrás": "Reversing",
+  "Mars Exploration Rovers (Spirit y Opportunity)": "Mars Exploration Rovers (Spirit and Opportunity)",
   "Mars Society Australia seleccionó la zona de Arkaroola como región análoga de Marte por su geología marciana, extremófilos en Paralana y sistemas hidrotermales fósiles.": "Mars Society Australia selected the Arkaroola area as a Mars analog region for its Mars-like geology, extremophiles at Paralana and fossil hydrothermal systems.",
   "Marte": "Mars",
   "Marte (cráter Gale)": "Mars (Gale crater)",
@@ -685,6 +923,11 @@
   "Marte · escenario C": "Mars · scenario C",
   "Marzo": "March",
   "Masa": "Mass",
+  "Masa del rover": "Rover mass",
+  "Masa y carga": "Mass and payload",
+  "Mastcam-Z de Perseverance se basa directamente en Mastcam y añade zoom 4:1.": "Perseverance's Mastcam-Z is based directly on Mastcam and adds a 4:1 zoom.",
+  "Mastcam-Z se basa directamente en las Mastcam de Curiosity y suma zoom 4:1.": "Mastcam-Z is based directly on Curiosity's Mastcam and adds a 4:1 zoom.",
+  "Material y tamaño": "Material and size",
   "Mayo": "May",
   "Mayormente despejado": "Mostly clear",
   "Mañana": "Tomorrow",
@@ -693,6 +936,7 @@
   "Media dibuja menos piedras pequeñas y matas, y sombras más sencillas, para equipos lentos. Las rocas que detienen al robot y los números de la prueba son los mismos.": "Medium draws fewer small stones and shrubs, and simpler shadows, for slow devices. The rocks that stop the robot and the test numbers are the same.",
   "Mediana de ventanas de 3 km a 30 m (LOLA). Sirve para comparar la forma del terreno, no para fijar la física.": "Median of 3 km windows at 30 m (LOLA). It is useful for comparing the shape of the terrain, not for fixing the physics.",
   "Mejor época para ir, en un año típico": "Best time to go, in a typical year",
+  "Menos de 3 kg": "Less than 6.6 lb (3 kg)",
   "Menos de lo habitual": "Less than usual",
   "Mes típico": "Typical month",
   "Meseta de Colorado": "Colorado Plateau",
@@ -700,22 +944,41 @@
   "Mi ubicación": "My location",
   "Minimapa: el robot visto desde arriba, con las rocas, la base, el destino y el camino recorrido. Lo que tiene delante queda arriba.": "Minimap: the robot seen from above, with the rocks, the base, the destination and the path traveled. What is ahead of it points up.",
   "Mis turnos": "My bookings",
+  "Misiones reales": "Real missions",
   "Misión": "Mission",
   "Modelo 3D oficial. Cortesía de NASA/JPL-Caltech": "Official 3D model. Courtesy of NASA/JPL-Caltech",
+  "Modelo 3D oficial. Cortesía de NASA/JPL-Caltech.": "Official 3D model. Courtesy of NASA/JPL-Caltech.",
   "Modelo clásico de rueda rígida (Bekker, Janosi y Hanamoto, Wong y Reece): la rueda se trata como lisa, el peso se reparte por igual y todas las ruedas traccionan.": "Classic rigid-wheel model (Bekker, Janosi and Hanamoto, Wong and Reece): the wheel is treated as smooth, the weight is shared equally and all wheels provide traction.",
+  "Modo de “nado”": "“Swimming” mode",
+  "Mons Mouton, polo sur de la Luna (región del cráter Nobile)": "Mons Mouton, Moon's South Pole (Nobile crater region)",
+  "Montada en un mástil al frente, en el centro": "Mounted on a mast at the front center",
   "Monte Hadley, junto al alunizaje del Apolo 15": "Mount Hadley, next to the Apollo 15 landing site",
   "Monte Pico, en el Mare Imbrium": "Mons Pico, in Mare Imbrium",
   "Mostrar": "Show",
   "Motivo": "Reason",
   "Motivo (la agencia lo verá)": "Reason (the agency will see it)",
   "Motivo del cierre (las agencias lo verán)": "Reason for closure (agencies will see it)",
+  "Motor de 0,25 hp y 10 000 rpm con reductor armónico 80:1": "0.25 hp motor, 10,000 rpm, with 80:1 harmonic drive",
+  "Motor por rueda": "Motor per wheel",
+  "Motores": "Motors",
+  "Mover el holograma con la mano": "Move the hologram by hand",
   "Movilidad": "Mobility",
   "Mucho más de lo habitual": "Much more than usual",
+  "Muestra una mano a la cámara": "Show a hand to the camera",
+  "Muestras Apolo 17": "Apollo 17 samples",
+  "Mueve el holograma con las manos ante la cámara. La imagen no sale de tu equipo.": "Move the hologram with your hands in front of the camera. The image never leaves your device.",
   "Mundo": "World",
   "Mundo de referencia": "Reference world",
   "Mundo interactivo": "Interactive world",
   "Más allá de la lista:": "Beyond the list:",
+  "Más de 20 km durante la misión principal": "More than 20 km during the prime mission",
+  "Más de 7 m": "More than 20 ft (7 m)",
   "Más de lo habitual": "More than usual",
+  "Mástil de cámaras": "Remote sensing mast",
+  "Mástil que da al rover una vista a escala humana. En la cabeza lleva SuperCam y las dos Mastcam-Z; las cámaras de navegación van a los lados.": "A mast that gives the rover a human-scale view. The head carries SuperCam and two Mastcam-Z cameras, with the Navcams on the sides.",
+  "Mástil y cámaras": "Mast and cameras",
+  "Mástil, cámaras y faros": "Mast, cameras and headlights",
+  "Máxima 20 cm/s; normal 10 cm/s": "Top 20 cm/s; nominal 10 cm/s",
   "Método": "Method",
   "México": "Mexico",
   "NASA (2020), simulante GRC-3: parámetros medidos con bevámetro (tabla 3)": "NASA (2020), GRC-3 simulant: parameters measured with a bevameter (table 3)",
@@ -727,6 +990,13 @@
   "NASA POWER, climatología mensual": "NASA POWER, monthly climatology",
   "NASA POWER, promedio 2001-2025": "NASA POWER, 2001-2025 average",
   "NASA TM-20250006958, tablas 1 y 2 (parámetros de Wong, 2001, y de Wong y Reece, 1967)": "NASA TM-20250006958, tables 1 and 2 (parameters from Wong, 2001, and from Wong and Reece, 1967)",
+  "NASA adjudica a Astrobotic la entrega de VIPER al polo sur de la Luna.": "NASA awards Astrobotic the delivery of VIPER to the Moon's South Pole.",
+  "NASA anuncia que el análisis de la roca muestra un antiguo entorno que pudo sostener microbios.": "NASA announces rock analysis shows an ancient environment that could have supported microbes.",
+  "NASA cancela la misión científica original de VIPER, con el hardware ya terminado.": "NASA cancels the original VIPER science mission, with the hardware already complete.",
+  "NASA describe a DuAxel, diseñado para bajar por paredes de cráteres y acantilados casi verticales.": "NASA describes DuAxel, designed to descend crater sides and near-vertical cliffs.",
+  "NASA elige a Blue Origin para entregar VIPER en la Luna a fines de 2027, con un segundo módulo Blue Moon MK1 (orden CS-7).": "NASA selects Blue Origin to deliver VIPER in late 2027 on a second Blue Moon MK1 lander (task order CS-7).",
+  "NASA informa que VIPER está completamente armado en el Centro Espacial Johnson, en pruebas finales antes de viajar al Kennedy.": "NASA reports VIPER is fully built at Johnson Space Center in final testing before moving to Kennedy.",
+  "NASA informa que irán en IM-3 a la región de Reiner Gamma y operarán un día lunar (unos 14 días terrestres).": "NASA states they will fly on IM-3 to the Reiner Gamma region and operate for one lunar day (about 14 Earth days).",
   "NASA no publica un modelo 3D de VIPER: forma simplificada con sus medidas publicadas.": "NASA does not publish a 3D model of VIPER: simplified shape with its published dimensions.",
   "NASA publica el diámetro de la rueda (52,5 cm); el ancho (33,6 cm) está medido en su modelo 3D oficial.": "NASA publishes the wheel diameter (52.5 cm); the width (33.6 cm) is measured on its official 3D model.",
   "NASA, Curiosity (MSL): 899 kg, del tamaño de un todoterreno pequeño": "NASA, Curiosity (MSL): 899 kg, about the size of a small SUV",
@@ -734,8 +1004,11 @@
   "NASA, VIPER Technical Briefing (13 feb 2025), diapositivas 46-47": "NASA, VIPER Technical Briefing (13 Feb 2025), slides 46-47",
   "NASA/JPL-Caltech, modelo 3D oficial de Curiosity: posición de las ruedas, medida en el modelo": "NASA/JPL-Caltech, official 3D model of Curiosity: wheel positions, measured on the model",
   "NASA/JPL-Caltech, modelo 3D oficial de Perseverance: ancho de rueda (33,6 cm) y posición de las ruedas, medidos en el modelo": "NASA/JPL-Caltech, official 3D model of Perseverance: wheel width (33.6 cm) and wheel positions, measured on the model",
+  "NIRVSS (infrarrojo)": "NIRVSS (infrared)",
   "NOTAS": "NOTES",
+  "NSS (neutrones)": "NSS (neutrons)",
   "Nadie ha reservado todavía: todas las fechas están libres.": "No one has booked yet: all dates are free.",
+  "Navegación": "Navigation",
   "Nevada": "Snowfall",
   "Nevada intensa": "Heavy snowfall",
   "Nevada ligera": "Light snowfall",
@@ -751,10 +1024,12 @@
   "Ningún lugar coincide con el filtro.": "No place matches the filter.",
   "Ningún mes": "No month",
   "Ningún turno coincide con el filtro.": "No booking matches the filter.",
+  "No encontramos una fuente que confirme esta pieza en otra misión.": "We found no source confirming this piece on another mission.",
   "No encontramos una publicación que lo documente como sitio análogo. Está en la lista como candidato por su terreno, y su similitud la calcula PROMETHEUS con el relieve real.": "We found no publication that documents it as an analog site. It is on the list as a candidate for its terrain, and PROMETHEUS calculates its similarity from the real relief.",
   "No hay deslizamiento lateral, vuelco ni suspensión. Los parámetros del suelo son valores publicados, no ensayos de este lugar.": "There is no lateral sliding, rollover or suspension. The soil parameters are published values, not tests of this place.",
   "No hay fotos con ubicación cerca de este punto en Wikimedia Commons.": "There are no geotagged photos near this point on Wikimedia Commons.",
   "No hay turnos reservados.": "There are no booked slots.",
+  "No hay un modelo 3D publicado de este robot ni medidas para dibujarlo, así que aquí no se inventa su forma.": "There is no published 3D model of this robot, nor measurements to draw it, so its shape is not made up here.",
   "No muestra el suelo": "Does not show the ground",
   "No publicada": "Not published",
   "No publicada como límite de operación": "Not published as an operating limit",
@@ -764,10 +1039,12 @@
   "No requiere": "Not required",
   "No reservables": "Not bookable",
   "No se distinguen: ninguna foto muestra el suelo de cerca": "Cannot be distinguished: no photo shows the ground up close",
+  "No se encontró ninguna cámara conectada.": "No connected camera was found.",
   "No se hizo la prueba del robot.": "The robot test was not done.",
   "No se pudieron cargar las fotos. Revisa la conexión.": "The photos could not be loaded. Check your connection.",
   "No se pudieron consultar los datos de hoy. Revisa la conexión.": "Today's data could not be retrieved. Check your connection.",
   "No se pudo cargar el mapa de países. Recarga la página para intentarlo de nuevo.": "The country map could not be loaded. Reload the page to try again.",
+  "No se pudo cargar el modelo 3D. Revisa la conexión y vuelve a elegir el robot.": "The 3D model could not be loaded. Check your connection and pick the robot again.",
   "No se pudo cargar el modelo oficial: se muestra una forma simplificada.": "The official model could not be loaded: a simplified shape is shown.",
   "No se pudo completar la acción. Inténtalo de nuevo.": "The action could not be completed. Please try again.",
   "No se pudo conectar con el servidor de turnos. Revisa que esté encendido y tu conexión, e inténtalo de nuevo.": "Could not connect to the bookings server. Check that it is running and check your connection, then try again.",
@@ -778,6 +1055,7 @@
   "No se pudo consultar la": "Could not retrieve the",
   "No se pudo consultar la humedad del suelo.": "Soil moisture could not be retrieved.",
   "No se pudo consultar la humedad del suelo. Revisa la conexión.": "Soil moisture could not be retrieved. Check your connection.",
+  "No se pudo encender la cámara o cargar el detector de manos. Revisa la conexión y vuelve a intentarlo.": "The camera could not be turned on or the hand detector could not be loaded. Check your connection and try again.",
   "No se pudo guardar el registro. Inténtalo de nuevo.": "The registration could not be saved. Please try again.",
   "No se pudo iniciar sesión. Inténtalo de nuevo.": "Could not sign in. Please try again.",
   "No se pudo leer la elevación del lugar.": "The elevation of the place could not be read.",
@@ -789,6 +1067,7 @@
   "No se puede simular: no hay masa ni medidas publicadas, y baja colgado de un cable.": "Cannot be simulated: no mass or dimensions are published, and it descends hanging from a tether.",
   "No se puede simular: no tiene ruedas; avanza con tornillos.": "It cannot be simulated: it has no wheels; it moves with screws.",
   "No se ven en las fotos": "Not visible in the photos",
+  "No veo tu mano: el robot espera": "I can't see your hand: the robot waits",
   "Noche": "Night",
   "Noche polar: luz de referencia, no es la real": "Polar night: reference light, not the real one",
   "Noche real del lugar": "Real night at the place",
@@ -802,6 +1081,7 @@
   "Núcleo hiperárido del Atacama propuesto como buen modelo análogo de Marte.": "Hyperarid core of the Atacama, proposed as a good analog model of Mars.",
   "Número o referencia del permiso": "Permit number or reference",
   "Obstáculo": "Obstacle",
+  "Obstáculos que supera": "Obstacle size",
   "Oceanía": "Oceania",
   "Octubre": "October",
   "Ocultar ajustes": "Hide settings",
@@ -816,6 +1096,8 @@
   "Operativo en Marte": "Operational on Mars",
   "Otoño": "Autumn",
   "Otra agencia": "Another agency",
+  "Otra aplicación está usando la cámara. Ciérrala y vuelve a intentarlo.": "Another app is using the camera. Close it and try again.",
+  "Otras misiones con esta misma pieza o diseño": "Other missions with this same piece or design",
   "PROMETHEUS busca en la Tierra paisajes con características similares a los de otros mundos: comenzando por la Luna y próximamente: Marte. Un punto de partida para explorar similitudes y formular mejores preguntas.": "PROMETHEUS searches Earth for landscapes with features similar to those of other worlds: starting with the Moon and, soon, Mars. A starting point to explore similarities and ask better questions.",
   "PROMETHEUS by VELKARIS, inicio": "PROMETHEUS by VELKARIS, home",
   "PROMETHEUS by VELKARIS, volver a la portada": "PROMETHEUS by VELKARIS, back to the landing page",
@@ -823,8 +1105,12 @@
   "PROMETHEUS no verifica el permiso: lo guarda con el turno y el administrador lo ve como «condicionado a permiso».": "PROMETHEUS does not verify the permit: it saves it with the booking and the administrator sees it as \"permit-conditional\".",
   "PROMETHEUS · PLAN DE CAMPAÑA ANÁLOGA": "PROMETHEUS · ANALOG CAMPAIGN PLAN",
   "PRUEBA DEL ROBOT (simulación antes de viajar)": "ROBOT TEST (simulation before travel)",
+  "Palanca": "Hand controller",
+  "Palanca en T entre los asientos: cuatro motores de tracción, dos de dirección y frenos": "T-shaped hand controller between the seats: four drive motors, two steering motors and brakes",
   "Paneles solares": "Solar panels",
+  "Paneles solares y batería": "Solar panels and battery",
   "Paneles solares y batería de 5420 Wh": "Solar panels and a 5420 Wh battery",
+  "Pantalla": "Display",
   "Para cada lugar de la Tierra se promedian tres diferencias con la región de referencia. Esa distancia se convierte en un porcentaje: 100 % es el mismo relieve, la misma pendiente y la misma rugosidad.": "For each place on Earth, three differences from the reference region are averaged. That distance is turned into a percentage: 100 % means the same relief, the same slope and the same roughness.",
   "Para el resumen, genera antes el plan en «Ventana y plan».": "For the summary, first generate the plan in “Window and plan”.",
   "Para esta clase de suelo la tabla publicada solo trae una fila: el estado del suelo se muestra, pero el cálculo solo cambia si hay nieve.": "For this soil class the published table has only one row: the soil state is shown, but the calculation only changes if there is snow.",
@@ -832,6 +1118,7 @@
   "Para reservar": "For booking",
   "Parcialmente nublado": "Partly cloudy",
   "París": "Paris",
+  "Pasaban 3,5 s entre pulsar un botón y ver el efecto": "3.5 s passed between a button press and the visible response",
   "Pasaje por persona y km": "Ticket per person and km",
   "Pasaje, parte fija por persona y trayecto": "Ticket, fixed part per person and trip",
   "Pasajes del equipo, ida y vuelta": "Team round-trip tickets",
@@ -849,22 +1136,33 @@
   "Pendiente de registro": "Pending registration",
   "Pendiente del 95 %": "95th-percentile slope",
   "Pendiente media": "Mean slope",
+  "Pendiente máxima": "Maximum slope",
   "Pendiente máxima con hasta": "Maximum slope with up to",
   "Permiso": "Permit",
   "Permiso de la autoridad del área": "Permit from the area's authority",
   "Permiso declarado:": "Declared permit:",
   "Permiso y autoridad que lo dio (las agencias lo verán)": "Permit and the authority that issued it (agencies will see it)",
   "Permisos y seguros": "Permits and insurance",
+  "Perseverance cambió el diseño: lleva seis Hazcams nuevas, cuatro adelante y dos atrás.": "Perseverance changed the design: six newly developed Hazcams, four in front and two at the rear.",
+  "Perseverance parte de la configuración de Curiosity, con una caja de herramientas científicas y tecnológicas añadida.": "Perseverance starts from Curiosity's configuration, with an added science and technology toolbox.",
+  "Perseverance rediseñó las ruedas para hacerlas más resistentes, por el desgaste que sufrieron las de Curiosity en rocas filosas.": "Perseverance redesigned its wheels to be tougher, because of the wear Curiosity's wheels took on sharp rocks.",
+  "Perseverance se basa en la configuración de Curiosity y también usa un cuerpo WEB.": "Perseverance is based on Curiosity's configuration and also uses a WEB body.",
+  "Perseverance también rueda sobre seis ruedas con suspensión rocker-bogie.": "Perseverance also rolls on six wheels with a rocker-bogie suspension.",
+  "Perseverance usa una torreta más grande, con taladro de núcleos, dos instrumentos y una cámara a color.": "Perseverance uses a larger turret with a coring drill, two instruments and a color camera.",
   "Perseverance y Curiosity: modelos 3D oficiales. Cortesía de NASA/JPL-Caltech; NASA no respalda este proyecto.": "Perseverance and Curiosity: official 3D models. Courtesy of NASA/JPL-Caltech; NASA does not endorse this project.",
   "Persona responsable": "Contact person",
   "Personas en el equipo:": "People on the team:",
   "Perú": "Peru",
   "Pico junto a Cabeus B": "Peak next to Cabeus B",
+  "Piezas del robot ↗": "Robot parts ↗",
   "Piloto automático": "Autopilot",
   "Plan de campaña": "Campaign plan",
+  "Plan vigente: misión al polo sur lunar en 2027, entregado por un módulo Blue Moon Mark 1.": "Current plan: mission to the lunar South Pole region in 2027, delivered by a Blue Moon Mark 1 lander.",
   "Planificado": "Planned",
   "Planificar una campaña aquí": "Plan a campaign here",
+  "Plegado": "Folding",
   "Poblado": "Settlement",
+  "Poco más de 110 vatios": "Slightly more than 110 watts",
   "Poggio y otros (2021), SOIL 7, 217-240": "Poggio et al. (2021), SOIL 7, 217-240",
   "Polo norte": "North pole",
   "Polo norte · fondo del cráter Peary": "North pole · floor of Peary crater",
@@ -875,7 +1173,10 @@
   "Por el administrador": "By the administrator",
   "Por la agencia": "By the agency",
   "Por qué es un sitio análogo": "Why it is an analog site",
+  "Portaherramientas y muestras": "Tool carrier and samples",
   "Portal de turnos": "Booking portal",
+  "Potencia": "Power",
+  "Potencia solar": "Solar power",
   "Precipitación": "Precipitation",
   "Precipitación típica, mm al mes": "Typical precipitation, mm per month",
   "Pregunta en tus palabras. El copiloto responde con los datos de": "Ask in your own words. The copilot answers with the data for",
@@ -884,13 +1185,27 @@
   "Presión": "Pressure",
   "Primavera": "Spring",
   "Primer día": "First day",
+  "Primer prototipo, EELS 1.0, probado en una pista de hielo en Pasadena.": "First prototype, EELS 1.0, tested on an ice rink in Pasadena.",
+  "Primer rover de NASA con faros": "NASA's first rover with headlights",
+  "Primer vuelo de Ingenuity: el primer vuelo controlado y con motor en otro planeta.": "Ingenuity's first flight: the first powered, controlled flight on another planet.",
+  "Primera conducción en la Luna: Scott prueba el rover tras desplegarlo.": "First drive on the Moon: Scott test-drives the rover after deploying it.",
+  "Primera muestra perforada en roca marciana (roca John Klein, sol 182).": "First rock sample drilled on Mars (John Klein rock, sol 182).",
+  "Primera prueba de campo en el glaciar Athabasca, con la cabeza de sensores de EELS 1.0.": "First field test on Athabasca Glacier, using EELS 1.0's sensor head.",
+  "Primera salida: Cernan prueba el rover alrededor del módulo lunar.": "First moonwalk: Cernan test-drives the rover around the lunar module.",
+  "Primera salida: el rover se descarga, se despliega y se conduce.": "First moonwalk: the rover is unloaded, deployed and driven.",
   "Primero genera el plan en «Ventana y plan»": "First generate the plan in “Window and plan”",
+  "Primicia": "First",
+  "Probar este robot en el simulador": "Test this robot in the simulator",
+  "Procesador": "Processor",
+  "Procesador RAD750 de hasta 200 MHz en cada computador": "RAD750 processor of up to 200 MHz in each computer",
+  "Profundidad": "Depth",
   "Promedio de": "Average of",
   "Promedios de una celda de unos 50 km (MERRA-2). No son mediciones de una estación en el lugar.": "Averages over a cell of about 50 km (MERRA-2). They are not measurements from a station at the site.",
   "Promedios mensuales de": "Monthly averages of",
   "Promedios por trimestre exportados con Google Earth Engine. Los archivos no indican de qué años son ni si el satélite es Terra o Aqua.": "Quarterly averages exported with Google Earth Engine. The files do not state which years they cover or whether the satellite is Terra or Aqua.",
   "Pronóstico de rodadura": "Driving forecast",
   "Protección estricta": "Strict protection",
+  "Protectores de polvo sobre las ruedas": "Dust guards above the wheels",
   "Prototipo": "Prototype",
   "Prototipo de investigación": "Research prototype",
   "Prototipo en desarrollo": "Prototype under development",
@@ -908,6 +1223,7 @@
   "Provincia de Tabuk": "Tabuk Province",
   "Provincia de Turquestán": "Turkistan Province",
   "Provincias": "Provinces",
+  "Proyectando el holograma…": "Projecting the hologram…",
   "Proyecto Python ↗": "Python project ↗",
   "Prueba de movilidad del rover": "Rover mobility test",
   "Prueba del robot": "Robot test",
@@ -917,12 +1233,24 @@
   "Próximo": "Upcoming",
   "Próximos": "Upcoming",
   "Próximos y en curso": "Upcoming and in progress",
+  "Puede levantar cada rueda por separado, casi como pies": "Can lift each wheel independently, almost like feet",
+  "Puede sostener la torreta de 33 kg con el brazo extendido": "Can hold the 33 kg turret with the arm fully extended",
   "Punto": "Point",
   "Punto de salida del equipo": "Team departure point",
+  "Puño: frena": "Fist: brake",
+  "Puño: lo sueltas": "Fist: you let go",
   "Quitar la habilitación": "Remove the enablement",
+  "Qué detectan": "What they detect",
   "Qué dice de cada lugar la base mundial de áreas protegidas y si se puede reservar. Puedes cerrar un lugar (por ejemplo, por una erupción) o habilitar uno bloqueado cuando una agencia presenta el permiso de la autoridad del área. La agencia siempre ve el motivo.": "What the world database of protected areas says about each place, and whether it can be booked. You can close a place (for example, because of an eruption) or enable a blocked one when an agency presents the permit from the area's authority. The agency always sees the reason.",
   "Qué es real": "What is real",
+  "Qué ver del robot": "What to see about the robot",
+  "Radar de subsuelo RIMFAX": "RIMFAX ground-penetrating radar",
+  "Radiador y control térmico": "Radiator and thermal control",
+  "Radiadores en la parte superior del rover": "Radiators on top of the rover",
+  "Radio de giro de 3,1 m; se puede usar solo un eje": "Turning radius of 3.1 m; one axle can be used alone",
   "Ramon es un cráter de erosión, no de impacto.": "Ramon is an erosion crater, not an impact crater.",
+  "Rango de frecuencias": "Frequency range",
+  "Rango de temperatura": "Temperature range",
   "Rankin y otros (2021), Journal of Field Robotics 38: límites de patinaje de Curiosity": "Rankin et al. (2021), Journal of Field Robotics 38: Curiosity wheel-slip limits",
   "Reabrir": "Reopen",
   "Reanudar movimiento": "Resume motion",
@@ -952,6 +1280,7 @@
   "Relieve 3D": "3D relief",
   "Relieve exagerado ×": "Exaggerated relief ×",
   "Relieve: teselas Terrarium de Mapzen (AWS Open Data)": "Relief: Mapzen Terrarium tiles (AWS Open Data)",
+  "Reparación Apolo 17": "Apollo 17 repair",
   "Repetir desde el inicio": "Repeat from the start",
   "Repite la clave": "Repeat the password",
   "Requiere permiso": "Permit required",
@@ -979,16 +1308,22 @@
   "Resumen de congreso; trata del desierto del Namib en conjunto.": "Conference abstract; it covers the Namib Desert as a whole.",
   "Resumen de lugares": "Places summary",
   "Resumen de turnos": "Bookings summary",
+  "Retraso": "Delay",
   "Robot articulado tipo serpiente": "Snake-like articulated robot",
   "Robot de NASA en el cráter Jezero de Marte · 1025 kg · 6 ruedas de 52,5 × 33,6 cm": "NASA robot in Mars's Jezero crater · 1025 kg · 6 wheels of 52.5 × 33.6 cm",
   "Robot de NASA para el polo sur lunar · 447 kg · 4 ruedas de 50 × 20 cm": "NASA robot for the lunar south pole · 447 kg · 4 wheels of 50 × 20 cm",
+  "Robot serpiente de JPL en desarrollo, pensado para bajar por grietas de la luna Encélado. Se prueba en el glaciar Athabasca. No forma parte de una misión asignada.": "JPL snake-like robot in development, aimed at descending vents on Saturn's moon Enceladus. Tested on Athabasca Glacier. Not assigned to a specific mission.",
+  "Robots del hangar": "Hangar robots",
   "Roca, sedimentos, arenas y laderas": "Rock, sediments, sands and slopes",
   "Rocas": "Rocks",
   "Rocas de práctica": "Practice rocks",
+  "Rocas grandes, zanjas y dunas": "Large rocks, trenches and sand dunes",
   "Rocas sueltas": "Loose rocks",
   "Rocas y base: de práctica, no son del lugar": "Rocks and base: for practice, not from the place",
   "Rocas, gravas, arena y depósitos sedimentarios": "Rocks, gravel, sand and sedimentary deposits",
   "Rol": "Role",
+  "Rover de NASA lanzado el 26 de noviembre de 2011. Aterrizó en el cráter Gale en 2012, halló un antiguo entorno habitable y sube el monte Sharp. NASA lo lista como misión activa.": "NASA rover launched on 26 November 2011. It landed in Gale Crater in 2012, found an ancient habitable environment and climbs Mount Sharp. NASA lists the mission as active.",
+  "Rover de NASA que busca señales de vida antigua en Marte. Recoge núcleos de roca y regolito para una posible misión futura que los traiga a la Tierra.": "NASA rover searching for signs of ancient life on Mars. It collects rock and regolith cores for a possible future mission to bring them to Earth.",
   "Rover marciano": "Mars rover",
   "Rover modular con cable": "Modular rover with tether",
   "Rover polar lunar": "Lunar polar rover",
@@ -997,11 +1332,13 @@
   "Rueda bien": "Drives well",
   "Ruedas": "Wheels",
   "Ruedas de aluminio de 50 cm de diámetro y 40 cm de ancho (NASA JPL); el cálculo las trata como lisas.": "Aluminum wheels 50 cm in diameter and 40 cm wide (NASA JPL); the calculation treats them as smooth.",
+  "Ruedas de malla": "Wire-mesh wheels",
   "Ruedas y simulador 3D": "Wheels and 3D simulator",
   "Rugosidad": "Roughness",
   "Rugosidad a 3 km": "Roughness at 3 km",
   "Rugosidad fina, medida por el láser": "Fine roughness, measured by the laser",
   "Ruta": "Route",
+  "SHERLOC, WATSON, PIXL, GDRT, sensor de contacto, taladro": "SHERLOC, WATSON, PIXL, GDRT, ground contact sensor, drill",
   "SITIO": "SITE",
   "SLDEM2015, LOLA + cámara de Kaguya, 512 píxeles por grado (NASA PDS Geosciences)": "SLDEM2015, LOLA + Kaguya camera, 512 pixels per degree (NASA PDS Geosciences)",
   "Sale de la distancia de terreno (": "It comes from the terrain distance (",
@@ -1014,13 +1351,19 @@
   "Schepelmann y otros (2025), Planetary Science Journal: rueda de VIPER y requisito de patinaje": "Schepelmann et al. (2025), Planetary Science Journal: VIPER wheel and wheel-slip requirement",
   "Se atasca": "Gets stuck",
   "Se atasca (desde": "Gets stuck (from",
+  "Se atascó": "Got stuck",
+  "Se añadieron apoyos para los pies tras vuelos de gravedad reducida en el KC-135": "Toe holds were added after reduced-gravity KC-135 flights",
   "Se borrarán las cuentas creadas y quedarán solo las iniciales.": "Accounts you created will be deleted, leaving only the initial ones.",
   "Se compara con": "Compared with",
+  "Se eligió de nuevo el rocker-bogie por su larga trayectoria, con una versión más ligera.": "Chosen again for its long track record, in a lighter version.",
+  "Se eligió la malla de alambre de General Motors frente a la rueda de aros de Bendix": "The General Motors wire mesh wheel was chosen over Bendix's hoop spring wheel",
   "Se hunde": "Sinks",
   "Se parece más a": "Most similar to",
+  "Se prueba la versión 1.5 en un pozo de hielo del glaciar Athabasca.": "Version 1.5 is tested in an ice shaft on Athabasca Glacier.",
   "Se puede trabajar con más preparación. Útil para pruebas de estrés del equipo.": "Work is possible with more preparation. Useful for team stress tests.",
   "Se recorrió el relieve de la Tierra entre": "Earth's relief was scanned within",
   "Se reserva declarando el permiso": "Bookable by declaring the permit",
+  "Se sella la primera muestra de núcleo de roca (muestra n.º 2; la n.º 1 fue de atmósfera, sellada el 6 de agosto de 2021).": "First rock-core sample sealed (sample No. 2; sample No. 1 was atmospheric, sealed Aug. 6, 2021).",
   "Se topó con un obstáculo: gira o retrocede para rodearlo.": "It ran into an obstacle: turn or reverse to go around it.",
   "Se ven en alguna foto": "Visible in some photo",
   "Secciones": "Sections",
@@ -1029,12 +1372,21 @@
   "Segmentos con tornillos helicoidales; sin ruedas": "Segments with screw drives; no wheels",
   "Seguir": "Follow",
   "Seguir conduciendo": "Keep driving",
+  "Segunda salida: el traje de Young engancha y arranca el guardabarros trasero derecho.": "Second moonwalk: Young's suit catches and tears off the right rear fender.",
+  "Segunda salida: reparan el guardabarros con cuatro mapas, cinta y pinzas.": "Second moonwalk: they repair the fender with four maps, tape and clamps.",
+  "Segunda salida: unos 5 km del módulo, lo más lejos que habían ido astronautas hasta entonces.": "Second moonwalk: about 5 km from the module, farther than any astronauts had gone to that time.",
   "Según la base de áreas protegidas": "According to the protected areas database",
+  "Seis cámaras que vigilan el camino adelante y atrás. Detectan rocas grandes, zanjas y dunas para que el rover decida por dónde ir.": "Six cameras that watch the path ahead and behind. They spot large rocks, trenches and dunes so the rover can decide where to drive.",
+  "Seis ruedas de aluminio con garras para agarrarse. Cada una tiene su propio motor y las cuatro de las esquinas también giran. Llevan al rover sobre rocas y arena.": "Six aluminum wheels with cleats for grip. Each has its own drive motor, and the four corner wheels also steer. They carry the rover across rock and sand.",
+  "Seis ruedas de aluminio, cada una con su propio motor. Llevan el rover sobre arena y rocas filosas. Son más resistentes que las de Curiosity.": "Six aluminum wheels, each with its own motor. They carry the rover over sand and sharp rocks, and are tougher than Curiosity's wheels.",
   "Sensación": "Feels like",
   "Septiembre": "September",
+  "Señala un momento: siguiente componente": "Point for a moment: next component",
+  "Señalando: siguiente componente": "Pointing: next component",
   "Si el punto del lugar cae dentro de un área de protección estricta (categorías UICN": "If the place's point falls inside a strictly protected area (IUCN categories",
   "Siglas": "Acronym",
   "Significado de la valoración": "Meaning of the rating",
+  "Sigue como demostración de tecnología, a la espera de un destino.": "It remains a technology demonstration, waiting for a destination.",
   "Sigue el viaje en el mundo interactivo.": "Continue the journey in the interactive world.",
   "Similitud": "Similarity",
   "Simulación de campo análoga a Marte (MARS2013, Österreichisches Weltraum Forum) realizada cerca de la ciudad de Erfoud, en el Sahara marroquí.": "Mars analog field simulation (MARS2013, Austrian Space Forum) held near the town of Erfoud, in the Moroccan Sahara.",
@@ -1046,9 +1398,12 @@
   "Sin consultar": "Not checked",
   "Sin consultar · no reservable": "Not checked · not bookable",
   "Sin dato del tiempo: cielo despejado de referencia": "No weather data: reference clear sky",
+  "Sin historial comprobado para este robot.": "No verified history for this robot.",
+  "Sin holograma": "No hologram",
   "Sin imagen satelital: el terreno se ve sin color.": "No satellite image: the terrain is shown without color.",
   "Sin institución": "No institution",
   "Sin medición de campo. Definir con ensayos geotécnicos del sitio antes de simular tracción o hundimiento.": "No field measurement. Define with geotechnical tests of the site before simulating traction or sinkage.",
+  "Sin modelo 3D": "No 3D model",
   "Sin nombre": "Unnamed",
   "Sin prueba: hazla en «Prueba del robot» y añádela al plan.": "No test: run it in “Robot test” and add it to the plan.",
   "Sin servidor: estas cuentas viven solo en este navegador y cualquiera con acceso a él puede modificarlas. Sirve para probar el flujo, no para proteger información.": "No server: these accounts live only in this browser, and anyone with access to it can modify them. It is for trying out the flow, not for protecting information.",
@@ -1058,6 +1413,7 @@
   "Sin área protegida en el punto": "No protected area at the point",
   "Sinaí del Sur": "South Sinai",
   "Sistema de 3 microrrovers": "System of 3 micro-rovers",
+  "Sistema de brazos articulados que une las ruedas al cuerpo. Mantiene todas las ruedas en el suelo y deja pasar sobre rocas sin volcarse.": "A system of pivoting arms linking the wheels to the body. It keeps all wheels on the ground and lets the rover roll over rocks without tipping.",
   "Sistán y Baluchistán": "Sistan and Baluchestan",
   "Sitio análogo terrestre donde Eugene Shoemaker entrenó astronautas NASA para las misiones Apolo a la Luna.": "Terrestrial analog site where Eugene Shoemaker trained NASA astronauts for the Apollo missions to the Moon.",
   "Sitio del Patrimonio Mundial natural o mixto": "Natural or mixed World Heritage Site",
@@ -1069,7 +1425,10 @@
   "Solo se reserva con hasta 24 meses de anticipación.": "Bookings can only be made up to 24 months in advance.",
   "Son estimaciones previas al Apolo: en la Luna nunca se midieron con un bevámetro.": "These are pre-Apollo estimates: they were never measured on the Moon with a bevameter.",
   "Son zonas por explorar, no lugares listos.": "These are zones to explore, not ready-to-use places.",
+  "Spirit y Opportunity también llevaban antenas de alta ganancia, baja ganancia y UHF.": "Spirit and Opportunity also carried high-gain, low-gain and UHF antennas.",
+  "Spirit y su gemelo Opportunity ya usaban suspensión rocker-bogie, con un motor por rueda.": "Spirit and its twin Opportunity already used a rocker-bogie suspension, with a motor on each wheel.",
   "Su estado decide con qué fila de la tabla publicada se calcula: embarrado, la más húmeda de su clase; seco o húmedo, la de humedad más parecida entre las demás. Son valores publicados para suelos de esa clase, no medidos aquí.": "Its condition decides which row of the published table is used for the calculation: muddy, the wettest of its class; dry or damp, the one with the most similar moisture among the others. These are published values for soils of that class, not measured here.",
+  "Su ficha y su historial sí están: míralos a la derecha.": "Its data sheet and history are here: see them on the right.",
   "Su volcanismo activo, hidrotermalismo difuso y vastos depósitos sulfatados ácidos se asemejan a la actividad hidrotermal pasada de Marte.": "Its active volcanism, diffuse hydrothermalism and vast acidic sulfate deposits resemble past hydrothermal activity on Mars.",
   "Sube con poco patinaje (menos de": "Climbs with little slip (less than",
   "Sube hasta": "Climbs up to",
@@ -1089,6 +1448,9 @@
   "Suelo del lugar": "Soil of the place",
   "Suelo mojado": "Wet ground",
   "Suelo y obstáculos": "Soil and obstacles",
+  "Suelto: recoloca la mano": "Released: reposition your hand",
+  "SuperCam de Perseverance es muy parecida a su antecesora ChemCam, con un telescopio distinto.": "Perseverance's SuperCam looks very similar to its predecessor ChemCam, with a different telescope.",
+  "SuperCam es el sucesor de ChemCam: dos de sus espectrómetros son casi idénticos a los de ChemCam, y suma técnicas nuevas.": "SuperCam builds on ChemCam: two of its spectrometers are nearly identical to ChemCam's, and it adds new techniques.",
   "Superficie": "Surface",
   "Supuestos y fuentes": "Assumptions and sources",
   "Surcos": "Ruts",
@@ -1099,13 +1461,28 @@
   "Sus megarizaduras, yardangs y ventifactos se estudian como análogo eólico de Marte.": "Its megaripples, yardangs and ventifacts are studied as a wind-driven analog of Mars.",
   "Sus ruedas eran de malla de acero flexible; el cálculo las trata como rígidas.": "Its wheels were made of flexible steel mesh; the calculation treats them as rigid.",
   "Sus salmueras y arcillas son comparables a las marcianas; NASA lo describe como laboratorio natural para estudiar Marte.": "Its brines and clays are comparable to Martian ones; NASA describes it as a natural laboratory for studying Mars.",
+  "Suspensión": "Suspension",
+  "Suspensión activa y dirección independiente en cada módulo de rueda": "Active suspension and independent steering on each wheel module",
+  "Suspensión rocker-bogie": "Rocker-bogie suspension",
+  "Suspensión y dirección": "Suspension and steering",
   "Sí, cancelar el turno": "Yes, cancel the booking",
   "Sí, cerrar el lugar": "Yes, close the place",
   "Sí, eliminar": "Yes, delete",
   "Sí, habilitar con permiso": "Yes, enable with permit",
   "Sí, restablecer": "Yes, reset",
   "Sídney": "Sydney",
+  "TRIDENT es un taladro de 1 m que gira y golpea a la vez. Saca tierra lunar de hasta 3 pies de profundidad y la deja en la superficie para que los instrumentos la analicen.": "TRIDENT is a 1 m drill that spins and hammers at once. It brings up lunar soil from as deep as 3 feet and leaves it on the surface for instruments to analyze.",
+  "TRIDENT voló en el experimento PRIME-1 del módulo IM-2. Funcionó bien, pero el módulo quedó de costado y no pudo cumplir todas sus metas científicas.": "TRIDENT flew in the PRIME-1 experiment on IM-2. It worked well, but the lander ended up on its side and the experiment could not meet all its science goals.",
+  "Tacos de tracción": "Grousers",
+  "Taladro": "Drill",
+  "Taladro TRIDENT": "TRIDENT drill",
+  "Taladro rotativo y percutor: gira y golpea": "Rotary percussive drill: it spins and hammers",
   "Tamaño": "Size",
+  "Tamaño de rueda": "Wheel size",
+  "Tamaño del neumático": "Tire size",
+  "Tamaño del rover": "Rover size",
+  "Tamaño y masa": "Size and mass",
+  "Tan grandes como una rueda (52,5 cm)": "As large as a wheel (52.5 cm)",
   "Tarifas de ejemplo (se pueden cambiar)": "Sample rates (can be changed)",
   "Temperatura del suelo": "Ground temperature",
   "Temperatura del suelo, medida por el radiómetro": "Ground temperature, measured by the radiometer",
@@ -1113,8 +1490,11 @@
   "Temporada de lluvias": "Rainy season",
   "Temporada seca": "Dry season",
   "Tendrá que registrarse de nuevo con una clave temporal.": "They will have to register again with a temporary password.",
+  "Tercera salida: viajan al cráter North Ray, 11,4 km de recorrido.": "Third moonwalk: they travel to North Ray Crater, an 11.4 km traverse.",
+  "Termina el armado del rover de vuelo.": "The flight rover build is completed.",
   "Terminado": "Ended",
   "Terminados": "Completed",
+  "Terminan la construcción del hardware de CADRE y sus pruebas de preparación para el viaje.": "CADRE hardware construction and readiness testing are completed.",
   "Terminar prueba": "Finish test",
   "Terreno": "Terrain",
   "Terrenos": "Terrains",
@@ -1128,25 +1508,44 @@
   "Tiene que quedar al menos un administrador.": "At least one administrator must remain.",
   "Tierra": "Earth",
   "Tierra y Luna a unos 463 m por píxel. Ventanas de 7 × 7 píxeles; cada bloque de 5 × 5 ventanas (unos 16 km) se resume con la mediana. Misma distancia de terreno que la aplicación.": "Earth and Moon at about 463 m per pixel. Windows of 7 × 7 pixels; each block of 5 × 5 windows (about 16 km) is summarized with the median. Same terrain distance as the app.",
+  "Tierras altas de Descartes, 9,0 S, 15,5 E": "Descartes highlands, 9.0 S, 15.5 E",
   "Tierras altas de Islandia": "Icelandic Highlands",
+  "Tipo": "Type",
   "Tipo de mapa": "Map type",
   "Todas las agencias": "All agencies",
+  "Todavía no ha volado": "Has not flown yet",
+  "Todavía no has probado este robot en el simulador.": "You have not tested this robot in the simulator yet.",
   "Todo el año": "All year",
   "Todo el año es difícil": "The whole year is difficult",
   "Todos": "All",
   "Todos los lugares": "All places",
   "Todos los turnos que han reservado las agencias. Un lugar solo puede tenerlo una agencia a la vez; si cancelas un turno, la agencia verá el motivo en «Mis turnos» y esos días quedan libres.": "All the bookings agencies have made. A place can only be held by one agency at a time; if you cancel a booking, the agency will see the reason in «My bookings» and those days become free.",
   "Tokio": "Tokyo",
+  "Toma muestras hasta 5 cm bajo la superficie de la roca": "Collects samples up to 5 cm beneath the rock surface",
   "Topes": "Collisions",
   "Tormenta": "Thunderstorm",
   "Tormenta con granizo": "Thunderstorm with hail",
   "Tormenta con granizo fuerte": "Thunderstorm with heavy hail",
+  "Torreta de herramientas": "Tool turret",
+  "Torreta del brazo": "Arm turret",
+  "Total del rover: 26,7 km en 3 h 26 min; mayor alcance 4,5 km; tramo más largo 11,6 km.": "Rover total: 26.7 km in 3 h 26 min; maximum range 4.5 km; longest traverse 11.6 km.",
+  "Total del rover: 27,8 km en 3 h 2 min; mayor alcance 5,0 km; tramo más largo 12,5 km.": "Rover total: 27.8 km in 3 h 2 min; maximum range 5.0 km; longest traverse 12.5 km.",
+  "Total del rover: 35,9 km en 4 h 26 min; mayor alcance 7,6 km; tramo más largo 20,1 km.": "Rover total: 35.9 km in 4 h 26 min; maximum range 7.6 km; longest traverse 20.1 km.",
   "Trabajando hoy en otro mundo": "Working today on another world",
   "Trabajo de campo: campamento, comida, vehículos": "Fieldwork: camp, food, vehicles",
+  "Trabajo en sombra": "Shadow operation",
+  "Tracción": "Traction",
+  "Transporte de calor": "Heat transport",
   "Trata de la estación HI-SEAS, en la ladera de Mauna Loa.": "It covers the HI-SEAS station, on the slope of Mauna Loa.",
   "Trata de la estación MDRS, junto a Hanksville.": "It covers the MDRS station, next to Hanksville.",
   "Trata de la zona de Strelley Pool, en el Pilbara.": "It covers the Strelley Pool area, in the Pilbara.",
+  "Tres antenas de telecomunicación": "Three telecommunication antennas",
+  "Tres antenas en la cubierta del rover. Una habla con la Tierra a mayor velocidad, otra recibe órdenes y otra envía datos a orbitadores de Marte.": "Three antennas on the rover's deck. One talks to Earth at higher speed, one receives commands, and one sends data through Mars orbiters.",
+  "Tres antenas para comunicarse. Dos hablan directo con la Tierra (alta y baja ganancia, banda X) y una, la UHF, envía datos a satélites que orbitan Marte.": "Three antennas for communication. Two talk directly to Earth (high and low gain, X band) and the UHF one sends data to orbiters around Mars.",
+  "Tres instrumentos buscan agua. NSS detecta hidrógeno bajo el suelo con neutrones. NIRVSS distingue agua de otras formas de hidrógeno. MSolo mide los gases de la tierra extraída.": "Three instruments hunt for water. NSS detects hydrogen underground using neutrons. NIRVSS tells water apart from other forms of hydrogen. MSolo measures gases from the drilled soil.",
   "Tres lugares de ejemplo frente a": "Three sample places compared against",
+  "Tres paneles solares en los costados dan la energía. Dos baterías internas guardan carga para trabajar en las sombras, donde no llega el Sol.": "Three solar panels on the sides provide power. Two internal batteries store charge so the rover can work in shadows where sunlight never reaches.",
+  "Tres partes con bisagra central, plegadas en el compartimento 1 del módulo lunar": "Three parts hinged in the center, folded into the Lunar Module quad 1 bay",
   "Tu agencia": "Your agency",
   "Tu agencia ya tiene este lugar": "Your agency already has this place",
   "Tu clave": "Your password",
@@ -1158,12 +1557,31 @@
   "Turno reservado.": "Slot booked.",
   "Turnos": "Bookings",
   "Turnos activos": "Active bookings",
+  "Tus pruebas en PROMETHEUS": "Your tests in PROMETHEUS",
   "USDA-ARS, modelo WEPP (saxpar.for): las mismas ecuaciones, con las que se comprobaron los coeficientes": "USDA-ARS, WEPP model (saxpar.for): the same equations, used to check the coefficients",
+  "Ubicación": "Location",
   "Ubicación aproximada, medida sobre el mapa publicado; la NASA no publicó coordenadas.": "Approximate location, measured on the published map; NASA did not publish coordinates.",
+  "Un brazo con cinco articulaciones que lleva la torreta de herramientas hasta las rocas y el suelo elegidos por los científicos, y maneja los mecanismos de procesamiento de muestras.": "A five-joint arm that moves the tool turret to the rocks and soil chosen by scientists and operates the sample-processing mechanisms.",
   "Un clic en el terreno marca un destino y el robot va solo. Cualquier flecha te devuelve el mando.": "A click on the terrain sets a destination and the robot goes there on its own. Any arrow key gives you back control.",
+  "Un radar que usa ondas de radio para mirar bajo el suelo, debajo del rover. Muestra capas de roca y suelo que no se ven en la superficie.": "A radar that uses radio waves to look into the ground beneath the rover. It reveals rock and soil layers you cannot see on the surface.",
+  "Un sistema de brazos articulados que une las ruedas al cuerpo. Mantiene las seis ruedas en contacto con el suelo aunque el terreno sea desigual, y permite pasar sobre rocas.": "A system of pivoting arms that links the wheels to the body. It keeps all six wheels on the ground over uneven terrain, so the rover can roll over rocks.",
   "Una IA miró": "An AI looked at",
+  "Una antena de malla en forma de plato, al frente, apunta a la Tierra y lleva la señal de televisión. Una antena de voz en el centro permite hablar con Houston.": "A mesh dish antenna at the front points at Earth and carries the TV signal. A voice antenna on the center chassis allows talking with Houston.",
+  "Una batería nuclear. Convierte el calor del plutonio-238 en electricidad, sin partes móviles, y también calienta los sistemas del rover en las noches frías de Marte.": "A nuclear battery. It turns the heat of plutonium-238 into electricity and also warms the rover's systems during cold Martian nights.",
+  "Una batería nuclear. Convierte en electricidad el calor de la desintegración natural del plutonio. También da calor para mantener tibias las herramientas del rover.": "A nuclear battery. It turns the heat of plutonium's natural radioactive decay into electricity, and its heat keeps the rover's tools at working temperature.",
   "Una coincidencia que se puede explicar.": "A match you can explain.",
   "Una iniciativa VELKARIS": "A VELKARIS initiative",
+  "Una mano abierta: muévela para girarlo": "One open hand: move it to rotate the robot",
+  "Una palanca en T entre los asientos acelera, gira y frena las cuatro ruedas. Delante, la pantalla muestra velocidad, rumbo y energía, y el sistema de navegación indica el camino de vuelta al módulo.": "A T-shaped stick between the seats drives, steers and brakes. In front, the display shows speed, heading and power, and the navigation system points the way back to the lunar module.",
+  "Una versión de banda ultraancha de este radar fue prototipo del radar WISDOM del rover europeo ExoMars (lanzamiento previsto a fines de 2028).": "An ultra-wideband version of this radar was a prototype for the WISDOM radar on ESA's ExoMars rover (launch planned late 2028).",
+  "Uno por rueda (6)": "One per wheel (6)",
+  "Unos 10 bits por segundo": "About 10 bits per second",
+  "Unos 110 W al lanzamiento, baja unos pocos por ciento al año": "About 110 W at launch, declining a few percent per year",
+  "Unos 18 km/h (récord que se atribuye a Cernan, Apolo 17)": "About 18 km/h (record credited to Cernan, Apollo 17)",
+  "Unos 2,2 m (7 pies)": "About 2.2 m (7 feet)",
+  "Unos 3 m de largo, 2,7 m de ancho y 2,1 m de alto (10 x 9 x 7 pies), sin contar el brazo": "About 3 m long, 2.7 m wide and 2.1 m tall (10 x 9 x 7 feet), not counting the arm",
+  "Unos 4 cm por segundo en suelo plano y duro": "About 4 cm per second on flat, hard ground",
+  "Usa un láser para vaporizar material y analiza su composición con un espectrógrafo": "Uses a laser to vaporize material, then analyzes its composition with a spectrograph",
   "Usado en la Luna en 1971 y 1972 (Apolo 15, 16 y 17)": "Used on the Moon in 1971 and 1972 (Apollo 15, 16 and 17)",
   "Usar esa fecha": "Use that date",
   "Usar este robot": "Use this robot",
@@ -1171,8 +1589,12 @@
   "Usuarios": "Users",
   "Usuarios registrados": "Registered users",
   "VENTANA": "WINDOW",
+  "VIPER tiene cuatro ruedas de metal con rebordes. Cada una va en su propio módulo con motor. Están hechas para rodar sobre polvo lunar suelto y subir pendientes.": "VIPER has four metal wheels with raised ridges. Each sits in its own motorized module. They are built to roll over loose lunar dust and climb slopes.",
   "VIPER y el carro lunar: formas simplificadas con sus medidas publicadas; NASA no publica su modelo 3D.": "VIPER and the lunar rover: simplified shapes with their published dimensions; NASA does not publish their 3D model.",
+  "VIPER ya está construido y no ha volado. NASA lo canceló en julio de 2024 y lo retomó en 2025. Hoy el plan es llevarlo en 2027 en un módulo Blue Moon MK1 de Blue Origin.": "VIPER is fully built and has not flown. NASA canceled it in July 2024 and revived it in 2025. The current plan is to deliver it in 2027 on a Blue Origin Blue Moon MK1 lander.",
+  "Va en el chasis central": "Sits on the center chassis",
   "Va solo hacia la bandera. Cualquier mando te devuelve el control.": "It is heading to the flag on its own. Any control gives you back control.",
+  "Valle Taurus-Littrow, borde sureste del mar de la Serenidad, 20,2 N, 30,8 E": "Taurus-Littrow valley, southeastern rim of Mare Serenitatis, 20.2 N, 30.8 E",
   "Valor típico (mediana) de": "Typical value (median) of",
   "Valoración": "Rating",
   "Valoración típica de cada mes para trabajo de campo": "Typical rating of each month for fieldwork",
@@ -1184,7 +1606,12 @@
   "Vehículo tripulado (LRV)": "Crewed vehicle (LRV)",
   "Vehículos y apoyo local por día": "Vehicles and local support per day",
   "Velocidad": "Speed",
+  "Velocidad de envío": "Transmit rate",
+  "Velocidad máxima": "Top speed",
+  "Velocidad máxima reportada": "Reported top speed",
   "Velocidad real": "Actual speed",
+  "Velocidad, rumbo, inclinación, energía y temperatura": "Speed, heading, pitch, power and temperature",
+  "Ven una pelota de golf a 25 m": "See a golf ball from 25 m (82 ft)",
   "Ventana": "Window",
   "Ventana de campaña, según el clima típico del lugar": "Campaign window, based on the place's typical climate",
   "Ventana y plan": "Window and plan",
@@ -1198,10 +1625,13 @@
   "Ver mapa": "Show map",
   "Ver mis turnos": "View my bookings",
   "Ver similitud": "See similarity",
+  "Ver sus piezas en holograma ↗": "See its parts as a hologram ↗",
   "Ver todos los lugares en el mundo interactivo": "See all places in the interactive world",
   "Verano": "Summer",
   "Veredicto": "Verdict",
+  "Versiones de NSS y NIRVSS volaron en Peregrine. Se encendieron y tomaron datos en vuelo, pero el módulo no llegó a la Luna.": "Versions of NSS and NIRVSS flew on Peregrine. They powered on and collected data in flight, but the lander never reached the Moon.",
   "Versión aligerada de VIPER en el laboratorio de pendientes de NASA, en la Tierra:": "Lightened VIPER version in NASA's slope lab, on Earth:",
+  "Vida útil": "Operational lifetime",
   "Viento": "Wind",
   "Vista desde el mástil del robot · arrastra para mirar a los lados · C cambia de cámara": "View from the robot's mast · drag to look around · C switches camera",
   "Vista desde el mástil del robot · desliza para mirar a los lados": "View from the robot's mast · swipe to look around",
@@ -1236,6 +1666,8 @@
   "alta": "high",
   "archivo histórico": "historical archive",
   "arena, limo y arcilla en %; densidad aparente en g/cm³": "sand, silt and clay in %; bulk density in g/cm³",
+  "atasco": "stuck run",
+  "atascos": "stuck runs",
   "avanza, pero con cuidado,": "moves forward, but with care,",
   "baja": "low",
   "bloques de 30 cm a 1 m": "blocks of 30 cm to 1 m",
@@ -1258,6 +1690,7 @@
   "con $": "with $",
   "con datos.$": "with data.$",
   "con el piloto automático": "with the autopilot",
+  "con la mano": "by hand",
   "con los datos de esta pantalla. Puede equivocarse: las cifras de las pestañas mandan.": "with the data on this screen. It can make mistakes: the figures in the tabs take precedence.",
   "con los mandos": "with the controls",
   "con los mandos y el piloto automático": "with the controls and the autopilot",
@@ -1321,6 +1754,8 @@
   "frío": "cold",
   "frío extremo": "extreme cold",
   "fuerte": "strong",
+  "gira a la derecha": "turning right",
+  "gira a la izquierda": "turning left",
   "grava y piedras": "gravel and stones",
   "guijarros de menos de 10 cm": "pebbles under 10 cm",
   "hasta 5 a 7 cm en bordes de cráteres pequeños": "up to 5 to 7 cm on the edges of small craters",
@@ -1403,11 +1838,15 @@
   "poco parecido": "not very similar",
   "por día de ensayo": "per test day",
   "precipitación": "precipitation",
+  "previsto": "planned",
+  "prueba": "test",
+  "pruebas": "tests",
   "que este lugar. En montañas e islas, la lluvia y el viento reales pueden ser muy distintos.": "than this place. In mountains and islands, actual rain and wind can be very different.",
   "que muestran el suelo de cerca:": "that show the ground up close:",
   "que ya ves en el portal: terreno, clima de ahora, suelo, temperatura, turnos y tu prueba del robot.": "that you already see in the portal: terrain, current climate, soil, temperature, bookings and your robot test.",
   "reales: Copernicus en la Tierra, LOLA en la Luna": "real: Copernicus on Earth, LOLA on the Moon",
   "recorrido libre, sin atascarse": "free drive, without getting stuck",
+  "recorridos": "driven",
   "reserva natural estricta": "strict nature reserve",
   "roca firme": "bedrock",
   "role=\"img\" aria-label=\"Patinaje de la rueda según la pendiente. Usa las flechas para recorrer los valores; también están en la tabla de abajo.\" tabIndex=": "role=\"img\" aria-label=\"Wheel slip by slope. Use the arrow keys to move through the values; they are also in the table below.\" tabIndex=",
@@ -1418,6 +1857,7 @@
   "se hundió unos": "sank about",
   "seco": "dry",
   "septiembre a noviembre": "September to November",
+  "sigue en curso": "still ongoing",
   "simulación con un modelo de rueda y suelo, no un ensayo": "simulation with a wheel and soil model, not a test",
   "sin calcular": "not calculated",
   "sin categoría UICN informada": "no IUCN category reported",
@@ -1502,6 +1942,7 @@
   "Áreas protegidas que contienen este punto": "Protected areas containing this point",
   "Áreas protegidas: UNEP-WCMC y UICN, Protected Planet, base mundial WDPCA, versión de": "Protected areas: UNEP-WCMC and IUCN, Protected Planet, WDPCA world database, version of",
   "Óptima": "Optimal",
+  "Último vuelo de Ingenuity (72 vuelos en total); su misión terminó el 25 de enero de 2024.": "Ingenuity's last flight (72 flights in total); its mission ended Jan. 25, 2024.",
   "área de manejo de hábitats o especies": "habitat or species management area",
   "área protegida con uso sostenible de los recursos": "protected area with sustainable use of resources",
   "área silvestre": "wilderness area",
@@ -1510,16 +1951,32 @@
  },
  "templates": [
   [
+   "# Area: {0} m x {1} m, {2} x {3} celdas de {4} m",
+   "# Area: {0} m x {1} m, {2} x {3} cells of {4} m"
+  ],
+  [
+   "# Elevacion: {0}, {1}",
+   "# Elevation: {0}, {1}"
+  ],
+  [
+   "# Lugar: {0} ({1}, {2})",
+   "# Place: {0} ({1}, {2})"
+  ],
+  [
+   "(un {0} % de agua respecto a su peso seco, según el modelo meteorológico)",
+   "({0} % water relative to its dry weight, according to the weather model)"
+  ],
+  [
    ", a {0} m por píxel",
    ", at {0} m per pixel"
   ],
   [
-   ", con {0}",
-   ", with {0}"
-  ],
-  [
    ", con la temperatura ajustada a la altitud del lugar ({0} °C por km).",
    ", with the temperature adjusted to the elevation of the place ({0} °C per km)."
+  ],
+  [
+   ", con {0}",
+   ", with {0}"
   ],
   [
    ", frente a los {0} °C de aquí",
@@ -1534,172 +1991,16 @@
    ", mostly {0}"
   ],
   [
-   "· {0} m de altitud",
-   "· {0} m elevation"
-  ],
-  [
-   "· {0} pendiente{1} de registro",
-   "· {0} pending registration{1}"
-  ],
-  [
-   "· desde {0}",
-   "· from {0}"
-  ],
-  [
-   "(un {0} % de agua respecto a su peso seco, según el modelo meteorológico)",
-   "({0} % water relative to its dry weight, according to the weather model)"
-  ],
-  [
-   "{0} · {1} °C · viento de {2} km/h del {3}",
-   "{0} · {1} °C · wind from the {3} at {2} km/h"
-  ],
-  [
-   "{0} · {1} mm de {2} · viento {3} km/h · {4} h de luz",
-   "{0} · {1} mm of {2} · wind {3} km/h · {4} h of daylight"
-  ],
-  [
-   "{0} · {1}\\nResumen redactado con IA a partir del plan {2}. Revísalo antes de enviarlo.\\n\\n{3}\\n",
-   "{0} · {1}\\nSummary written with AI from plan {2}. Review it before sending it.\\n\\n{3}\\n"
-  ],
-  [
-   "{0} · algo de {1}",
-   "{0} · some {1}"
-  ],
-  [
-   "{0} · la más parecida: {1}",
-   "{0} · most similar: {1}"
-  ],
-  [
-   "{0} · mucha {1}",
-   "{0} · heavy {1}"
-  ],
-  [
-   "{0} · seco",
-   "{0} · dry"
-  ],
-  [
-   "{0} ({1} a {2} del suelo)",
-   "{0} ({1} to {2} of the ground)"
-  ],
-  [
-   "{0} (protección estricta)",
-   "{0} (strict protection)"
-  ],
-  [
-   "{0} {1} {2}: el Pacífico ecuatorial está {3} °C {4} de lo normal ({5}).",
-   "{0} {1} {2}: the equatorial Pacific is {3} °C {4} than normal ({5})."
-  ],
-  [
-   "{0} % o más",
-   "{0} % or more"
-  ],
-  [
-   "{0} con terreno {1} al de {2}, de {3} con datos.",
-   "{0} with terrain {1} to {2}, out of {3} with data."
-  ],
-  [
-   "{0} de {1} fotos servían",
-   "{0} of {1} photos were usable"
-  ],
-  [
-   "{0} de ejemplo con similitud {1} con {2}, de {3} en total.",
-   "{0} example with {1} similarity to {2}, out of {3} in total."
-  ],
-  [
-   "{0} El mejor día es {1}: {2}, {3}.",
-   "{0} The best day is {1}: {2}, {3}."
-  ],
-  [
-   "{0} Es el mejor día de la semana.",
-   "{0} It is the best day of the week."
-  ],
-  [
-   "{0} Es un suelo arenoso, que drena: mojado, sigue firme.",
-   "{0} It is a sandy soil that drains: even wet, it stays firm."
-  ],
-  [
-   "{0} fotos revisadas",
-   "{0} photos reviewed"
-  ],
-  [
-   "{0} localidad",
-   "{0} place"
-  ],
-  [
-   "{0} localidades",
-   "{0} places"
-  ],
-  [
-   "{0} mm de lluvia",
-   "{0} mm of rain"
-  ],
-  [
-   "{0} no está bloqueado por un área protegida: no hace falta habilitarlo.",
-   "{0} is not blocked by a protected area: there is no need to enable it."
-  ],
-  [
-   "{0} no se puede reservar. {1}",
-   "{0} cannot be booked. {1}"
-  ],
-  [
-   "{0} rocas sueltas",
-   "{0} loose rocks"
-  ],
-  [
-   "{0} típico: {1}. {2}",
-   "Typical {0}: {1}. {2}"
-  ],
-  [
-   "{0} Toda la semana sigue igual.",
-   "{0} The whole week stays the same."
-  ],
-  [
-   "{0}, {1} % de coincidencia. Ver detalle",
-   "{0}, {1} % match. See details"
-  ],
-  [
-   "{0}, {1}. Acercar para desglosar",
-   "{0}, {1}. Zoom in to break down"
-  ],
-  [
-   "{0}, pero el administrador lo habilitó: {1} Para reservar hay que declarar el permiso.",
-   "{0}, but the administrator enabled it: {1} To book, the permit must be declared."
-  ],
-  [
-   "{0}: protección estricta. PROMETHEUS no asigna turnos en áreas de protección estricta (categorías UICN Ia a IV).{1}",
-   "{0}: strict protection. PROMETHEUS does not assign bookings in strictly protected areas (IUCN categories Ia to IV).{1}"
-  ],
-  [
-   "{0}. Solo se puede reservar declarando el permiso de la autoridad del área.{1}",
-   "{0}. It can only be booked by declaring the permit from the area's authority.{1}"
-  ],
-  [
-   "{0}\\nExplicación redactada con IA. Revísala antes de usarla.\\n\\n{1}\\n",
-   "{0}\\nExplanation written with AI. Review it before using it.\\n\\n{1}\\n"
-  ],
-  [
-   "# Area: {0} m x {1} m, {2} x {3} celdas de {4} m",
-   "# Area: {0} m x {1} m, {2} x {3} cells of {4} m"
-  ],
-  [
-   "# Elevacion: {0}, {1}",
-   "# Elevation: {0}, {1}"
-  ],
-  [
-   "# Lugar: {0} ({1}, {2})",
-   "# Place: {0} ({1}, {2})"
-  ],
-  [
-   "Aquí {0} sube {1} más que en la Luna: una prueba aquí sería más fácil que la misión real.",
-   "Here {0} climbs {1} more than on the Moon: a test here would be easier than the real mission."
+   "Aquí {0} sube casi lo mismo que en la Luna ({1} de diferencia): para esta rueda, este suelo se comporta parecido al regolito estimado.",
+   "Here {0} climbs almost the same as on the Moon ({1} difference): for this wheel, this soil behaves similarly to the estimated regolith."
   ],
   [
    "Aquí {0} sube {1} menos que en la Luna: para esta rueda, este suelo es más exigente que el regolito estimado.",
    "Here {0} climbs {1} less than on the Moon: for this wheel, this soil is more demanding than the estimated regolith."
   ],
   [
-   "Aquí {0} sube casi lo mismo que en la Luna ({1} de diferencia): para esta rueda, este suelo se comporta parecido al regolito estimado.",
-   "Here {0} climbs almost the same as on the Moon ({1} difference): for this wheel, this soil behaves similarly to the estimated regolith."
+   "Aquí {0} sube {1} más que en la Luna: una prueba aquí sería más fácil que la misión real.",
+   "Here {0} climbs {1} more than on the Moon: a test here would be easier than the real mission."
   ],
   [
    "Autoridad que la base informa: {0}.",
@@ -1710,32 +2011,36 @@
    "Round-trip cargo: {0}"
   ],
   [
-   "categoría UICN {0}",
-   "IUCN category {0}"
-  ],
-  [
    "Cerrado por el administrador: {0}",
    "Closed by the administrator: {0}"
   ],
   [
-   "Código: {0}",
-   "Code: {0}"
+   "Componente elegido: {0}",
+   "Selected component: {0}"
+  ],
+  [
+   "Componentes e historial de {0}",
+   "Components and history of {0}"
   ],
   [
    "Coordenadas: {0}, {1}",
    "Coordinates: {0}, {1}"
   ],
   [
-   "costo estimado {0}",
-   "estimated cost {0}"
+   "Código: {0}",
+   "Code: {0}"
   ],
   [
-   "El {0} de los píxeles tiene medición directa y el resto es interpolado.",
-   "{0} of the pixels have a direct measurement and the rest is interpolated."
+   "Del {0} al {1}",
+   "From {0} to {1}"
   ],
   [
-   "El {0} del área es agua y no entra en el cálculo.",
-   "{0} of the area is water and is not included in the calculation."
+   "El Niño {0} activo: el Pacífico ecuatorial está {1} °C {2} de lo normal ({3}).",
+   "{0} El Niño active: the equatorial Pacific is {1} °C {2} than normal ({3})."
+  ],
+  [
+   "El Niño {0} en desarrollo: el Pacífico ecuatorial está {1} °C {2} de lo normal ({3}).",
+   "{0} El Niño developing: the equatorial Pacific is {1} °C {2} than normal ({3})."
   ],
   [
    "El mapa mundial de suelos SoilGrids (una predicción a 250 m, no una medición) estima aquí {0} % de arena y {1} % de arcilla.",
@@ -1748,14 +2053,6 @@
   [
    "El modelo da el suelo con mucha agua ({0} % de su saturación), pero en 7 días solo han caído {1} mm: ya ha drenado y cuenta como húmedo, no embarrado.",
    "The model shows the soil with a lot of water ({0} % of its saturation), but only {1} mm have fallen in 7 days: it has already drained and counts as moist, not muddy."
-  ],
-  [
-   "El Niño {0} activo: el Pacífico ecuatorial está {1} °C {2} de lo normal ({3}).",
-   "{0} El Niño active: the equatorial Pacific is {1} °C {2} than normal ({3})."
-  ],
-  [
-   "El Niño {0} en desarrollo: el Pacífico ecuatorial está {1} °C {2} de lo normal ({3}).",
-   "{0} El Niño developing: the equatorial Pacific is {1} °C {2} than normal ({3})."
   ],
   [
    "El primer hueco para {0} {1} empieza {2}.",
@@ -1782,6 +2079,34 @@
    "The soil has little water (it is at {0} % of its saturation): it is firm."
   ],
   [
+   "El {0} de los píxeles tiene medición directa y el resto es interpolado.",
+   "{0} of the pixels have a direct measurement and the rest is interpolated."
+  ],
+  [
+   "El {0} del área es agua y no entra en el cálculo.",
+   "{0} of the area is water and is not included in the calculation."
+  ],
+  [
+   "En tus pruebas gastó {0} Wh en total.",
+   "In your tests it used {0} Wh in total."
+  ],
+  [
+   "En tus pruebas se topó {0} veces con obstáculos.",
+   "In your tests it bumped into obstacles {0} times."
+  ],
+  [
+   "En tus pruebas se topó {0} vez con obstáculos.",
+   "In your tests it bumped into obstacles {0} time."
+  ],
+  [
+   "En tus pruebas, la pendiente más fuerte que enfrentó fue de {0}° ({1}).",
+   "In your tests, the steepest slope it faced was {0}° ({1})."
+  ],
+  [
+   "En tus pruebas, sus ruedas patinaron como máximo un {0} % ({1}).",
+   "In your tests, its wheels slipped at most {0} % ({1})."
+  ],
+  [
    "Energía: {0}. Pendiente: {1}.",
    "Power: {0}. Slope: {1}."
   ],
@@ -1802,24 +2127,16 @@
    "Off Ecuador and Peru, the sea is {0} °C {1} than normal (week of {2})."
   ],
   [
-   "hasta {0}°",
-   "up to {0}°"
+   "Fuente: {0}",
+   "Source: {0}"
   ],
   [
    "Hay unos {0} cm de nieve sobre el suelo.",
    "There are about {0} cm of snow on the ground."
   ],
   [
-   "hora de {0}",
-   "{0} time"
-  ],
-  [
-   "hora de verano de {0}",
-   "{0} summer time"
-  ],
-  [
-   "hora estándar de {0}",
-   "{0} standard time"
+   "Holograma de {0}",
+   "Hologram of {0}"
   ],
   [
    "Hoy {0} avanza, pero con cuidado, en la pendiente típica de aquí ({1}).",
@@ -1854,18 +2171,6 @@
    "Institution: {0}"
   ],
   [
-   "La clave necesita al menos {0} caracteres.",
-   "The password needs at least {0} characters."
-  ],
-  [
-   "La más parecida es {0}, con un {1} % de coincidencia.",
-   "The most similar is {0}, with a {1} % match."
-  ],
-  [
-   "la más parecida: {0}",
-   "most similar: {0}"
-  ],
-  [
    "La Niña {0} activo: el Pacífico ecuatorial está {1} °C {2} de lo normal ({3}).",
    "{0} La Niña active: the equatorial Pacific is {1} °C {2} than normal ({3})."
   ],
@@ -1874,8 +2179,20 @@
    "{0} La Niña developing: the equatorial Pacific is {1} °C {2} than normal ({3})."
   ],
   [
+   "La clave necesita al menos {0} caracteres.",
+   "The password needs at least {0} characters."
+  ],
+  [
+   "La más parecida es {0}, con un {1} % de coincidencia.",
+   "The most similar is {0}, with a {1} % match."
+  ],
+  [
    "La tabla publicada no trae suelo helado: se calcula con {0}, la fila más seca de su clase.",
    "The published table has no frozen soil: it is calculated with {0}, the driest row of its class."
+  ],
+  [
+   "Lanzada el {0}",
+   "Launched {0}"
   ],
   [
    "Llegó al destino: {0} m en {1}",
@@ -1902,20 +2219,12 @@
    "Map of {0}. Drag to move it, use the wheel to zoom and the right button to rotate."
   ],
   [
-   "menos de {0} %",
-   "less than {0} %"
-  ],
-  [
    "Misión: {0}",
    "Mission: {0}"
   ],
   [
    "Ninguno con vuelos a menos de {0} km en el mapa",
    "None with flights within {0} km on the map"
-  ],
-  [
-   "no reservable ({0})",
-   "not bookable ({0})"
   ],
   [
    "No se pudo conectar con el servidor de cuentas ({0}). Revisa que esté encendido y tu conexión, e inténtalo de nuevo.",
@@ -1950,10 +2259,6 @@
    "Reference: {0} ({1}), {2} terrain match (distance {3}){4}"
   ],
   [
-   "Relieve {0} m · pendiente {1}°",
-   "Relief {0} m · slope {1}°"
-  ],
-  [
    "Relieve de la Luna, {0}, con sus regiones de referencia",
    "Relief of the Moon, {0}, with its reference regions"
   ],
@@ -1962,8 +2267,8 @@
    "Shaded relief of {0}, with north up"
   ],
   [
-   "reservable solo declarando un permiso ({0})",
-   "bookable only by declaring a permit ({0})"
+   "Relieve {0} m · pendiente {1}°",
+   "Relief {0} m · slope {1}°"
   ],
   [
    "Respuesta sin {0}",
@@ -1974,16 +2279,16 @@
    "Robot: {0} Assumed soil: {1}"
   ],
   [
-   "Rocas según la lectura de {0} {1} · base de ejemplo",
-   "Rocks as read by {0} {1} · example base"
-  ],
-  [
    "Rocas según la lectura de {0} foto · base de ejemplo",
    "Rocks from the reading of {0} photo · example base"
   ],
   [
    "Rocas según la lectura de {0} fotos · base de ejemplo",
    "Rocks from the reading of {0} photos · example base"
+  ],
+  [
+   "Rocas según la lectura de {0} {1} · base de ejemplo",
+   "Rocks as read by {0} {1} · example base"
   ],
   [
    "Salida: {0} ({1} km)",
@@ -2010,8 +2315,8 @@
    "Calculated with {0}."
   ],
   [
-   "similitud {0} · {1} % de coincidencia",
-   "{0} similarity · {1} % match"
+   "Se muestran las 8 más recientes de {0}.",
+   "Showing the 8 most recent of {0}."
   ],
   [
    "Similitud {0} · {1} % de coincidencia",
@@ -2042,16 +2347,16 @@
    "Elevation tile {0}"
   ],
   [
-   "Típico {0}: {1}. {2}",
-   "Typical {0}: {1}. {2}"
-  ],
-  [
    "Tu agencia ya tiene {0} turnos activos. Cancela uno o espera a que termine para reservar otro.",
    "Your agency already has {0} active bookings. Cancel one or wait for one to end to book another."
   ],
   [
    "Turnos de {0}",
    "Bookings for {0}"
+  ],
+  [
+   "Típico {0}: {1}. {2}",
+   "Typical {0}: {1}. {2}"
   ],
   [
    "UICN {0}, {1}",
@@ -2066,8 +2371,208 @@
    "Wikimedia Commons responded {0}"
   ],
   [
+   "categoría UICN {0}",
+   "IUCN category {0}"
+  ],
+  [
+   "costo estimado {0}",
+   "estimated cost {0}"
+  ],
+  [
+   "hasta {0}°",
+   "up to {0}°"
+  ],
+  [
+   "hora de verano de {0}",
+   "{0} summer time"
+  ],
+  [
+   "hora de {0}",
+   "{0} time"
+  ],
+  [
+   "hora estándar de {0}",
+   "{0} standard time"
+  ],
+  [
+   "la más parecida: {0}",
+   "most similar: {0}"
+  ],
+  [
+   "menos de {0} %",
+   "less than {0} %"
+  ],
+  [
+   "no reservable ({0})",
+   "not bookable ({0})"
+  ],
+  [
+   "patinaje máx. {0} %",
+   "max slip {0} %"
+  ],
+  [
+   "pendiente máx. {0}°",
+   "max slope {0}°"
+  ],
+  [
+   "reservable solo declarando un permiso ({0})",
+   "bookable only by declaring a permit ({0})"
+  ],
+  [
+   "similitud {0} · {1} % de coincidencia",
+   "{0} similarity · {1} % match"
+  ],
+  [
    "y {0} más",
    "and {0} more"
+  ],
+  [
+   "{0} % o más",
+   "{0} % or more"
+  ],
+  [
+   "{0} (protección estricta)",
+   "{0} (strict protection)"
+  ],
+  [
+   "{0} ({1} a {2} del suelo)",
+   "{0} ({1} to {2} of the ground)"
+  ],
+  [
+   "{0} El mejor día es {1}: {2}, {3}.",
+   "{0} The best day is {1}: {2}, {3}."
+  ],
+  [
+   "{0} Es el mejor día de la semana.",
+   "{0} It is the best day of the week."
+  ],
+  [
+   "{0} Es un suelo arenoso, que drena: mojado, sigue firme.",
+   "{0} It is a sandy soil that drains: even wet, it stays firm."
+  ],
+  [
+   "{0} Toda la semana sigue igual.",
+   "{0} The whole week stays the same."
+  ],
+  [
+   "{0} con terreno {1} al de {2}, de {3} con datos.",
+   "{0} with terrain {1} to {2}, out of {3} with data."
+  ],
+  [
+   "{0} de ejemplo con similitud {1} con {2}, de {3} en total.",
+   "{0} example with {1} similarity to {2}, out of {3} in total."
+  ],
+  [
+   "{0} de {1} fotos servían",
+   "{0} of {1} photos were usable"
+  ],
+  [
+   "{0} fotos revisadas",
+   "{0} photos reviewed"
+  ],
+  [
+   "{0} localidad",
+   "{0} place"
+  ],
+  [
+   "{0} localidades",
+   "{0} places"
+  ],
+  [
+   "{0} misiones",
+   "{0} missions"
+  ],
+  [
+   "{0} misión",
+   "{0} mission"
+  ],
+  [
+   "{0} mm de lluvia",
+   "{0} mm of rain"
+  ],
+  [
+   "{0} no está bloqueado por un área protegida: no hace falta habilitarlo.",
+   "{0} is not blocked by a protected area: there is no need to enable it."
+  ],
+  [
+   "{0} no se puede reservar. {1}",
+   "{0} cannot be booked. {1}"
+  ],
+  [
+   "{0} rocas sueltas",
+   "{0} loose rocks"
+  ],
+  [
+   "{0} típico: {1}. {2}",
+   "Typical {0}: {1}. {2}"
+  ],
+  [
+   "{0} {1} {2}: el Pacífico ecuatorial está {3} °C {4} de lo normal ({5}).",
+   "{0} {1} {2}: the equatorial Pacific is {3} °C {4} than normal ({5})."
+  ],
+  [
+   "{0} · algo de {1}",
+   "{0} · some {1}"
+  ],
+  [
+   "{0} · la más parecida: {1}",
+   "{0} · most similar: {1}"
+  ],
+  [
+   "{0} · mucha {1}",
+   "{0} · heavy {1}"
+  ],
+  [
+   "{0} · seco",
+   "{0} · dry"
+  ],
+  [
+   "{0} · {1} mm de {2} · viento {3} km/h · {4} h de luz",
+   "{0} · {1} mm of {2} · wind {3} km/h · {4} h of daylight"
+  ],
+  [
+   "{0} · {1} °C · viento de {2} km/h del {3}",
+   "{0} · {1} °C · wind from the {3} at {2} km/h"
+  ],
+  [
+   "{0} · {1}\\nResumen redactado con IA a partir del plan {2}. Revísalo antes de enviarlo.\\n\\n{3}\\n",
+   "{0} · {1}\\nSummary written with AI from plan {2}. Review it before sending it.\\n\\n{3}\\n"
+  ],
+  [
+   "{0}, pero el administrador lo habilitó: {1} Para reservar hay que declarar el permiso.",
+   "{0}, but the administrator enabled it: {1} To book, the permit must be declared."
+  ],
+  [
+   "{0}, {1} % de coincidencia. Ver detalle",
+   "{0}, {1} % match. See details"
+  ],
+  [
+   "{0}, {1}. Acercar para desglosar",
+   "{0}, {1}. Zoom in to break down"
+  ],
+  [
+   "{0}. Solo se puede reservar declarando el permiso de la autoridad del área.{1}",
+   "{0}. It can only be booked by declaring the permit from the area's authority.{1}"
+  ],
+  [
+   "{0}: protección estricta. PROMETHEUS no asigna turnos en áreas de protección estricta (categorías UICN Ia a IV).{1}",
+   "{0}: strict protection. PROMETHEUS does not assign bookings in strictly protected areas (IUCN categories Ia to IV).{1}"
+  ],
+  [
+   "{0}\\nExplicación redactada con IA. Revísala antes de usarla.\\n\\n{1}\\n",
+   "{0}\\nExplanation written with AI. Review it before using it.\\n\\n{1}\\n"
+  ],
+  [
+   "· desde {0}",
+   "· from {0}"
+  ],
+  [
+   "· {0} m de altitud",
+   "· {0} m elevation"
+  ],
+  [
+   "· {0} pendiente{1} de registro",
+   "· {0} pending registration{1}"
   ]
  ],
  "phrases": [

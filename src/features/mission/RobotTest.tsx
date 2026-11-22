@@ -1,8 +1,13 @@
-import { useEffect, useMemo, useRef, useState } from "react";
+import { useCallback, useEffect, useMemo, useRef, useState } from "react";
 import type { MouseEvent as ReactMouseEvent, PointerEvent as ReactPointerEvent } from "react";
 import suelos from "../../data/sueloReal.json";
+import { useSession } from "../../services/session";
 import { compassOf, fetchCurrentWeather } from "../../services/weather";
 import type { CurrentWeather } from "../../services/weather";
+import { GestureCamera } from "../gestos/GestureCamera";
+import { Steady, driveDelay, driveFromHand, mainHand } from "../gestos/gestures";
+import type { DriveGesture, HandPose, HandReading } from "../gestos/gestures";
+import { preferredRobot, saveLogEntry, setPreferredRobot } from "../hangar/logbook";
 import { decimal } from "../world/format";
 import { matchPercent } from "../world/hierarchy";
 import { ROCK_COVER, ROCK_SIZE, SURFACES, VEGETATION, readingOf } from "../world/terrainReading";
@@ -18,7 +23,7 @@ import { MINI_RANGES, drawMini } from "./minimap";
 import { RobotCatalog } from "./RobotCatalog";
 import { buildRobot } from "./robotModels";
 import type { RobotShape } from "./robotModels";
-import { robotOfVehicle } from "./robots";
+import { ROBOTS, robotOfVehicle } from "./robots";
 import type { RobotEntry } from "./robots";
 import { CAMERA_MODES, createRobotScene, defaultQuality } from "./robotScene";
 import type { CameraMode, Quality, RobotScene, ScenePose, TerrainLayer, TrackStyle } from "./robotScene";
@@ -96,6 +101,20 @@ const KEYS: Record<string, DriveKey> = {
   arrowright: "right",
   d: "right",
 };
+
+/** Si la cámara deja de leer la mano este tiempo, su orden caduca y el robot se detiene. */
+const GESTURE_STALE_MS = 800;
+/** Lo que se enseña por cada orden de la mano. */
+const GESTURE_TEXT: Record<DriveGesture["state"], { icon: string; text: string }> = {
+  "sin-mano": { icon: "…", text: "No veo tu mano: el robot espera" },
+  avanza: { icon: "✋", text: "Avanza" },
+  atras: { icon: "✌️", text: "Marcha atrás" },
+  frena: { icon: "✊", text: "Frena" },
+  espera: { icon: "?", text: "Gesto sin reconocer: el robot espera" },
+};
+
+/** El robot que se pidió probar desde el hangar, si se puede simular; si no, VIPER. */
+const initialVehicle = (): VehicleId => ROBOTS.find((robot) => robot.id === preferredRobot())?.vehicle ?? "viper";
 
 const CAMERA_NAMES: Record<CameraMode, string> = { seguir: "Seguir", robot: "Cámara del robot", libre: "Libre", cenital: "Cenital", area: "Área" };
 /** Qué hace cada cámara, para quien deja el ratón encima. */
@@ -184,7 +203,7 @@ export function RobotTest({ site, reference, added, onAdd, onClose, wet = false 
   const [imagery, setImagery] = useState<"cargando" | "listo" | "error">("cargando");
   const [weather, setWeather] = useState<CurrentWeather | null | "error">(null);
   const [realNight, setRealNight] = useState(false);
-  const [vehicleId, setVehicleId] = useState<VehicleId>("viper");
+  const [vehicleId, setVehicleId] = useState<VehicleId>(initialVehicle);
   /** true: modelo oficial de NASA; false: forma simplificada; null: aún cargando. */
   const [official, setOfficial] = useState<boolean | null>(null);
   const [soilId, setSoilId] = useState<SoilId>(suggestion.id);
@@ -197,7 +216,7 @@ export function RobotTest({ site, reference, added, onAdd, onClose, wet = false 
   const [trackStyle, setTrackStyle] = useState<TrackStyle>("surco");
   const [miniRange, setMiniRange] = useState(0);
   const [cameraMode, setCameraMode] = useState<CameraMode>("seguir");
-  const [speed, setSpeed] = useState<number>(() => defaultSpeed(vehicleById("viper")));
+  const [speed, setSpeed] = useState<number>(() => defaultSpeed(vehicleById(initialVehicle())));
   const [section, setSection] = useState<Section | null>("lugar");
   const [panelOpen, setPanelOpen] = useState(() => !isSmallScreen());
   const [catalog, setCatalog] = useState(false);
@@ -211,6 +230,10 @@ export function RobotTest({ site, reference, added, onAdd, onClose, wet = false 
   const [now] = useState(() => new Date());
   /** Pantalla táctil o pequeña: se conduce con los mandos de la pantalla. */
   const [touch] = useState(() => typeof window !== "undefined" && window.matchMedia("(pointer: coarse), (max-width: 760px)").matches);
+  /** Conducir con gestos de la mano ante la cámara, y lo que la cámara entiende ahora. */
+  const [gestures, setGestures] = useState(false);
+  const [gestureNow, setGestureNow] = useState<{ state: DriveGesture["state"]; steer: number }>({ state: "sin-mano", steer: 0 });
+  const user = useSession();
 
   const vehicle = vehicleById(vehicleId);
   const robotEntry = robotOfVehicle(vehicleId);
@@ -258,8 +281,15 @@ export function RobotTest({ site, reference, added, onAdd, onClose, wet = false 
   const miniStaleRef = useRef(true);
   const keysRef = useRef<Record<DriveKey, boolean>>({ up: false, down: false, left: false, right: false });
   const smoothRef = useRef<DriveControls>({ throttle: 0, steer: 0 });
+  /** Última orden de la mano y cuándo llegó; null con los gestos apagados. */
+  const gestureRef = useRef<(DriveControls & { at: number }) | null>(null);
+  const poseFilterRef = useRef(new Steady<HandPose | null>(null, driveDelay));
+  const tiltRef = useRef(0);
   /** Cómo se condujo la prueba, para decirlo en el resultado. */
-  const usedRef = useRef({ manual: false, auto: false });
+  const usedRef = useRef({ manual: false, auto: false, gestures: false });
+  /** La cuenta que prueba y la anotación de esta prueba en la bitácora, si ya se hizo. */
+  const accountRef = useRef<string | null>(null);
+  const logIdRef = useRef<string | null>(null);
   const lastTrackRef = useRef(0);
 
   useEffect(() => {
@@ -272,6 +302,7 @@ export function RobotTest({ site, reference, added, onAdd, onClose, wet = false 
     overlayRef.current = catalog || help;
     rocksRef.current = rocksOn;
     qualityRef.current = quality;
+    accountRef.current = user?.email ?? null;
     if (miniRangeRef.current !== miniRange || layerRef.current !== layer) miniStaleRef.current = true;
     miniRangeRef.current = miniRange;
     layerRef.current = layer;
@@ -307,7 +338,8 @@ export function RobotTest({ site, reference, added, onAdd, onClose, wet = false 
     driveRef.current = state;
     finishedRef.current = false;
     autoRef.current = false;
-    usedRef.current = { manual: false, auto: false };
+    usedRef.current = { manual: false, auto: false, gestures: false };
+    logIdRef.current = null;
     smoothRef.current = { throttle: 0, steer: 0 };
     lastTrackRef.current = 0;
     trailRef.current = [start.east, start.north];
@@ -345,23 +377,43 @@ export function RobotTest({ site, reference, added, onAdd, onClose, wet = false 
       return { latitude: Number(at.latitude.toFixed(6)), longitude: Number(at.longitude.toFixed(6)) };
     };
     const used = usedRef.current;
-    setHud({ state, speed: 0 });
-    setResult({
-      vehicle: vehicleRef.current.name,
-      soil: soilRef.current.name,
-      start: point(startRef.current.east, startRef.current.north),
-      end: point(state.east, state.north),
+    const mode = used.manual && used.auto ? "mixto" : used.auto ? "piloto" : "manual";
+    const measured = {
       outcome,
       distanceM: Math.round(state.distance * 10) / 10,
       timeS: Math.round(state.time),
       energyWh: Math.round((state.energy / 3600) * 10) / 10,
       maxSlopeDeg: Math.round(state.maxSlope * 10) / 10,
       maxSlipPercent: Math.round(state.maxSlip * 100),
-      mode: used.manual && used.auto ? "mixto" : used.auto ? "piloto" : "manual",
+      mode,
       reachedTarget,
       collisions: state.collisions,
       stuckTimes: state.stuckTimes,
+    } as const;
+    setHud({ state, speed: 0 });
+    setResult({
+      vehicle: vehicleRef.current.name,
+      soil: soilRef.current.name,
+      start: point(startRef.current.east, startRef.current.north),
+      end: point(state.east, state.north),
+      ...measured,
     });
+    // La misma prueba queda en la bitácora del hangar, robot por robot.
+    if (accountRef.current) {
+      logIdRef.current = saveLogEntry(
+        accountRef.current,
+        {
+          at: new Date().toISOString(),
+          robot: robotOfVehicle(vehicleRef.current.id).id,
+          siteId: site.id,
+          siteName: site.name,
+          soil: soilRef.current.name,
+          gestures: used.gestures,
+          ...measured,
+        },
+        logIdRef.current,
+      );
+    }
   }
 
   // ---------- La escena: se crea una vez ----------
@@ -445,10 +497,17 @@ export function RobotTest({ site, reference, added, onAdd, onClose, wet = false 
       const height = heightRef.current;
       if (!state || !table || !height || finishedRef.current) return;
       const keys = keysRef.current;
-      const wanted = { throttle: (keys.up ? 1 : 0) - (keys.down ? 1 : 0), steer: (keys.left ? 1 : 0) - (keys.right ? 1 : 0) };
+      const byKeys = { throttle: (keys.up ? 1 : 0) - (keys.down ? 1 : 0), steer: (keys.left ? 1 : 0) - (keys.right ? 1 : 0) };
+      // La mano manda mientras la cámara la siga leyendo: si deja de hacerlo, su orden caduca y el
+      // robot se detiene. El teclado siempre puede más que la mano.
+      const gesture = gestureRef.current;
+      const byHand = gesture && performance.now() - gesture.at < GESTURE_STALE_MS ? gesture : null;
+      const keyed = byKeys.throttle !== 0 || byKeys.steer !== 0;
+      const wanted = keyed || !byHand ? byKeys : { throttle: byHand.throttle, steer: byHand.steer };
       const driving = wanted.throttle !== 0 || wanted.steer !== 0;
       if (driving) {
         usedRef.current.manual = true;
+        if (!keyed) usedRef.current.gestures = true;
         if (autoRef.current) {
           // Cualquier mando devuelve el control a quien conduce.
           autoRef.current = false;
@@ -760,6 +819,34 @@ export function RobotTest({ site, reference, added, onAdd, onClose, wet = false 
     setResult(null);
   }
 
+  /** Cada lectura de la cámara: la forma de la mano, ya sin gestos de paso, da la orden de conducción. */
+  const onHands = useCallback((hands: HandReading[], at: number) => {
+    const hand = mainHand(hands);
+    if (hand) tiltRef.current = hand.tilt;
+    const pose = poseFilterRef.current.update(hand ? hand.pose : null, at);
+    const command = driveFromHand(pose ? { pose, tilt: tiltRef.current, x: 0.5, y: 0.5, size: 0 } : null);
+    // La orden vale desde que llega, no desde que se tomó la imagen: en un equipo lento el análisis
+    // tarda, y una orden recién leída no puede nacer caducada.
+    gestureRef.current = { throttle: command.throttle, steer: command.steer, at: performance.now() };
+    // La pantalla solo se redibuja cuando cambia lo que enseña.
+    const steer = Math.round(command.steer * 10) / 10;
+    setGestureNow((shown) => (shown.state === command.state && shown.steer === steer ? shown : { state: command.state, steer }));
+  }, []);
+
+  /** Abre el hangar con este robot en otra pestaña: la prueba sigue aquí. */
+  function openHangar() {
+    setPreferredRobot(robotEntry.id);
+    window.open(`${window.location.pathname}${window.location.search}#hangar`, "_blank", "noopener");
+  }
+
+  function toggleGestures() {
+    // Al encender o apagar, la mano empieza de cero: ninguna orden vieja mueve el robot.
+    gestureRef.current = null;
+    poseFilterRef.current = new Steady<HandPose | null>(null, driveDelay);
+    setGestureNow({ state: "sin-mano", steer: 0 });
+    setGestures((on) => !on);
+  }
+
   const hold = (key: DriveKey) => ({
     onPointerDown: (event: ReactPointerEvent) => {
       event.preventDefault();
@@ -818,13 +905,19 @@ export function RobotTest({ site, reference, added, onAdd, onClose, wet = false 
             ? "Esta pendiente no la sube: retrocede o cambia de rumbo."
             : auto
               ? "Va solo hacia la bandera. Cualquier mando te devuelve el control."
-              : touch
+              : gestures
+                ? "Conduces con la mano: ábrela para avanzar, inclínala para girar y ciérrala para frenar. El teclado sigue funcionando."
+                : touch
                 ? cameraMode === "robot"
                   ? "Vista desde el mástil del robot · desliza para mirar a los lados"
                   : "Mandos en pantalla · toca el terreno para ir a un punto"
                 : cameraMode === "robot"
                   ? "Vista desde el mástil del robot · arrastra para mirar a los lados · C cambia de cámara"
                   : "Flechas o W A S D para conducir · clic en el terreno para ir a un punto"));
+  const gestureText =
+    gestureNow.state === "avanza" || gestureNow.state === "atras"
+      ? `${GESTURE_TEXT[gestureNow.state].text}${gestureNow.steer > 0 ? " · gira a la izquierda" : gestureNow.steer < 0 ? " · gira a la derecha" : ""}`
+      : GESTURE_TEXT[gestureNow.state].text;
   const cover = reading?.rockCover ?? null;
   const groundText = `${SURFACES[ground.surface]}${ground.secondary ? ` con ${SURFACES[ground.secondary]}` : ""}`;
   const clockThere = currentWeather?.time.slice(11, 16) || clock(solarHour(now, site.longitude));
@@ -863,6 +956,20 @@ export function RobotTest({ site, reference, added, onAdd, onClose, wet = false 
             </button>
           ))}
         </div>
+        <button type="button" className="sim-boton" title="Abre el hangar en otra pestaña: el robot desarmado pieza a pieza, con sus datos y misiones" onClick={openHangar}>
+          Piezas del robot ↗
+        </button>
+        {!touch && (
+          <button
+            type="button"
+            className="sim-boton"
+            aria-pressed={gestures}
+            title="Conduce con gestos de la mano ante la cámara. La imagen no sale de tu equipo."
+            onClick={toggleGestures}
+          >
+            <span aria-hidden="true">✋</span> Con la mano
+          </button>
+        )}
         <button type="button" className="sim-icono" aria-label="Ayuda: cómo se conduce y qué es real" onClick={() => setHelp(true)}>
           ?
         </button>
@@ -966,6 +1073,37 @@ export function RobotTest({ site, reference, added, onAdd, onClose, wet = false 
           </div>
         </div>
       </div>
+      {gestures && (
+        <div className="sim-gestos" role="group" aria-label="Conducir con la mano">
+          <GestureCamera onHands={onHands}>
+            <p className={`gestos-estado${gestureNow.state === "sin-mano" || gestureNow.state === "espera" ? " alerta" : ""}`} role="status">
+              <b aria-hidden="true">{GESTURE_TEXT[gestureNow.state].icon}</b>
+              {gestureText}
+            </p>
+            <div className="gestos-volante" aria-hidden="true">
+              <span style={{ left: `${50 - gestureNow.steer * 50}%` }} />
+            </div>
+          </GestureCamera>
+          <ul className="gestos-leyenda">
+            <li className={gestureNow.state === "avanza" ? "activo" : undefined}>
+              <span aria-hidden="true">✋</span>
+              <span>Mano abierta: avanza</span>
+            </li>
+            <li className={gestureNow.steer !== 0 ? "activo" : undefined}>
+              <span aria-hidden="true">↺</span>
+              <span>Inclínala: gira, como un volante</span>
+            </li>
+            <li className={gestureNow.state === "atras" ? "activo" : undefined}>
+              <span aria-hidden="true">✌️</span>
+              <span>Dos dedos: marcha atrás</span>
+            </li>
+            <li className={gestureNow.state === "frena" ? "activo" : undefined}>
+              <span aria-hidden="true">✊</span>
+              <span>Puño: frena</span>
+            </li>
+          </ul>
+        </div>
+      )}
       {panelOpen && (
         <aside className="sim-panel" aria-label="Lugar, robot y suelo">
           <section className={section === "lugar" ? "abierta" : undefined}>
@@ -1051,7 +1189,10 @@ export function RobotTest({ site, reference, added, onAdd, onClose, wet = false 
                         ? "No se pudo cargar el modelo oficial: se muestra una forma simplificada."
                         : robotEntry.model?.note}
                 </p>
-                <button type="button" className="nc-btn primario compacto" onClick={() => setCatalog(true)}>
+                <button type="button" className="nc-btn primario compacto sim-holo" onClick={openHangar}>
+                  Ver sus piezas en holograma ↗
+                </button>
+                <button type="button" className="sim-boton" onClick={() => setCatalog(true)}>
                   Elegir otro robot del catálogo
                 </button>
               </div>
@@ -1167,6 +1308,7 @@ export function RobotTest({ site, reference, added, onAdd, onClose, wet = false 
             Patinaje máximo {result.maxSlipPercent} % · pendiente máxima {decimal(result.maxSlopeDeg, 1)}° · energía{" "}
             {decimal(result.energyWh, 1)} Wh · {result.collisions} {result.collisions === 1 ? "tope" : "topes"} con obstáculos
           </span>
+          {user && <small className="sim-anotada">Anotada en tu bitácora del hangar.</small>}
           <div>
             <button type="button" className="nc-btn primario compacto" onClick={() => onAdd(result)}>
               {added === result ? "Añadida al plan" : "Añadir al plan de campaña"}
@@ -1326,6 +1468,11 @@ function SimHelp({ speed, reading, groundText, groundFromReading, onClose }: Hel
               girar. Sin acelerar, los robots que pueden giran sobre sí mismos.
             </li>
             <li>Un clic en el terreno marca un destino y el robot va solo. Cualquier flecha te devuelve el mando.</li>
+            <li>
+              Con la mano: el botón «Con la mano» enciende la cámara. Mano abierta, avanza; inclinada, gira como un
+              volante; dos dedos, marcha atrás; puño, frena. Si la cámara deja de ver tu mano, el robot se detiene. La
+              imagen se analiza en tu equipo: no se graba ni se envía.
+            </li>
             <li>
               <kbd>C</kbd> cambia la cámara, <kbd>R</kbd> vuelve al inicio y <kbd>Espacio</kbd> detiene el piloto automático.
             </li>

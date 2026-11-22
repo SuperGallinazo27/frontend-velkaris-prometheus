@@ -7,6 +7,7 @@ export type Route =
   | { screen: "registro" }
   | { screen: "admin" }
   | { screen: "mundo" }
+  | { screen: "hangar" }
   | { screen: "turnos" };
 
 const hashByScreen = {
@@ -14,6 +15,7 @@ const hashByScreen = {
   registro: "#registro",
   admin: "#admin",
   mundo: "#mundo",
+  hangar: "#hangar",
   turnos: "#turnos",
 } as const;
 
@@ -52,6 +54,8 @@ export function guard(route: Route, user: User | null): Route {
       if (!user) return { screen: "login" };
       return user.role === "admin" ? route : homeFor(user);
     case "mundo":
+    case "hangar":
+      // El mundo y el hangar de robots son de toda cuenta activa: agencias y administrador.
       if (!user) return { screen: "login" };
       return user.status === "pendiente" ? homeFor(user) : route;
     case "turnos":

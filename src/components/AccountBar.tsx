@@ -4,7 +4,7 @@ import { Brand } from "./Brand";
 import { LanguageSwitch } from "./LanguageSwitch";
 
 /** Barra superior de las pantallas con sesión: marca, secciones según el rol y salida. */
-export function AccountBar({ user, current }: { user: User; current: "admin" | "mundo" | "registro" | "turnos" }) {
+export function AccountBar({ user, current }: { user: User; current: "admin" | "mundo" | "hangar" | "registro" | "turnos" }) {
   return (
     <header className="nc-barra">
       <Brand label="PROMETHEUS by VELKARIS, volver a la portada" />
@@ -16,12 +16,18 @@ export function AccountBar({ user, current }: { user: User; current: "admin" | "
           <a href="#mundo" aria-current={current === "mundo" ? "page" : undefined}>
             Mundo
           </a>
+          <a href="#hangar" aria-current={current === "hangar" ? "page" : undefined}>
+            Hangar
+          </a>
         </nav>
       )}
       {user.role === "agencia" && user.status === "activo" && (
         <nav aria-label="Secciones">
           <a href="#mundo" aria-current={current === "mundo" ? "page" : undefined}>
             Mundo
+          </a>
+          <a href="#hangar" aria-current={current === "hangar" ? "page" : undefined}>
+            Hangar
           </a>
           <a href="#turnos" aria-current={current === "turnos" ? "page" : undefined}>
             Mis turnos
