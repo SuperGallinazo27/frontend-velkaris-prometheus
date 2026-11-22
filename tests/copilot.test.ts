@@ -2,6 +2,7 @@ import { describe, expect, test } from "bun:test";
 import { placeContext } from "../src/features/ai/context";
 import type { CopilotFacts } from "../src/features/ai/context";
 import type { MissionPlan } from "../src/features/mission/campaign";
+import type { ClimateNow } from "../src/features/world/useClimateNow";
 import { seasonOf } from "../src/features/world/climate";
 import { matchZones } from "../src/features/world/hierarchy";
 import { lunarRegions, zonesFor } from "../src/features/world/lunar";
@@ -11,14 +12,25 @@ import { AssistantError, askAssistant } from "../src/services/assistant";
 const region = lunarRegions.find((r) => r.id === "mons-mouton-plateau")!;
 const match = matchZones(zonesFor(region), [region]).find((m) => m.zone.id === "sierra-negra")!;
 
+const now: ClimateNow = {
+  month: 10,
+  rain: { status: "ok", value: { totalMm: 426, days: 30, from: "2026-10-16", to: "2026-11-14", wettestMm: 75.8 } },
+  baseline: { status: "ok", value: { meanMm: 30, minMm: 10, maxMm: 50, years: [{ year: 2025, totalMm: 30 }] } },
+  rainCheck: "mucho-mas",
+  today: { rating: "dificil", reasons: ["Lluvia abundante"] },
+  weather: { status: "error" },
+  ground: { status: "error", result: null, summary: null, retry: () => {} },
+  enso: ENSO_SNAPSHOT,
+  retry: () => {},
+};
+
 const facts = (overrides: Partial<CopilotFacts> = {}): CopilotFacts => ({
   match,
   real: true,
   elevation: 1050,
   season: seasonOf("sierra-negra", match.zone.latitude, 1050),
   month: 10,
-  rain: { totalMm: 426, days: 30, from: "2026-10-16", to: "2026-11-14", wettestMm: 75.8 },
-  enso: ENSO_SNAPSHOT,
+  now,
   booking: { status: "no reservable", reason: "Dentro del Parque Nacional Galápagos (UICN II)." },
   robotTest: null,
   plan: null,
@@ -46,7 +58,7 @@ describe("datos que recibe el copiloto", () => {
     expect(context.comparacion_de_terreno.con).toBe(`${region.name} (Luna)`);
     expect(context.comparacion_de_terreno.coincidencia_pct).toBeGreaterThan(0);
     expect(context.comparacion_de_terreno.datos).toContain("reales");
-    expect(context.clima.ultimos_30_dias).toMatchObject({ lluvia_mm: 426, estado: "llueve mucho más de lo típico", valoracion_ahora: "difícil" });
+    expect(context.clima.ultimos_30_dias).toMatchObject({ lluvia_mm: 426, estado: "mucho más de lo habitual" });
     expect(context.clima.tipico_del_mes.valoracion_para_trabajo_de_campo).toBe("favorable");
     expect(context.clima.el_nino).toContain("El Niño muy fuerte activo");
     expect(context.temperatura_del_suelo.aqui_c.de_dia).toHaveLength(4);
@@ -61,12 +73,43 @@ describe("datos que recibe el copiloto", () => {
   });
 
   test("lo que no se sabe no se envía ni se rellena", () => {
-    const context = placeContext(facts({ rain: null, enso: null, booking: null, season: null })) as Record<string, any>;
+    const context = placeContext(facts({ now: null, booking: null, season: null })) as Record<string, any>;
     expect(context.clima).toBeUndefined();
     expect(context.turnos).toBeUndefined();
     const demo = placeContext(facts({ real: false })) as Record<string, any>;
     expect(demo.comparacion_de_terreno.datos).toContain("sintéticos");
     expect(demo.temperatura_del_suelo.en_la_region_lunar_c).toBeNull();
+  });
+
+  test("Laguna Verde usa la misma comparación histórica y valoración que Clima", () => {
+    const laguna = matchZones(zonesFor(region), [region]).find((m) => m.zone.id === "laguna-verde")!;
+    expect(laguna).toBeDefined();
+    const snapshot: ClimateNow = {
+      ...now,
+      rain: { status: "ok", value: { totalMm: 25, days: 30, from: "2026-10-18", to: "2026-11-16", wettestMm: 5 } },
+      baseline: { status: "ok", value: { meanMm: 1, minMm: 0, maxMm: 2, years: [{ year: 2025, totalMm: 1 }] } },
+      today: { rating: "dificil", reasons: ["Suelo con nieve", "Temperaturas bajo cero"] },
+    };
+    const context = placeContext(facts({ match: laguna, now: snapshot,
+      season: seasonOf(laguna.zone.id, laguna.zone.latitude, 3900) })) as Record<string, any>;
+    expect(context.clima.ultimos_30_dias).toMatchObject({ lluvia_mm: 25,
+      lluvia_media_de_esas_fechas_mm: 1, rango_historico_mm: [0, 2], estado: "mucho más de lo habitual" });
+    expect(context.clima.valoracion_ahora).toEqual({ estado: "difícil", motivos: snapshot.today!.reasons });
+  });
+
+  test("si falla el histórico no inventa una comparación con NASA POWER", () => {
+    const context = placeContext(facts({ now: { ...now, baseline: { status: "error" }, rainCheck: null } })) as Record<string, any>;
+    expect(context.clima.ultimos_30_dias.lluvia_mm).toBe(426);
+    expect(context.clima.ultimos_30_dias.estado).toBeUndefined();
+    expect(context.clima.ultimos_30_dias.lluvia_media_de_esas_fechas_mm).toBeUndefined();
+    expect(context.clima.ultimos_30_dias.comparacion_historica).toContain("no disponible");
+  });
+
+  test("sin clima típico conserva los datos actuales disponibles", () => {
+    const context = placeContext(facts({ season: null })) as Record<string, any>;
+    expect(context.clima.ultimos_30_dias.lluvia_mm).toBe(426);
+    expect(context.clima.valoracion_ahora.estado).toBe("difícil");
+    expect(context.clima.tipico_del_mes).toBeUndefined();
   });
 
   test("el plan viaja sin el nombre de la institución y todo cabe en el límite del servidor", () => {

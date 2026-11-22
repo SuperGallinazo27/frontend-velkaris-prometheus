@@ -13,16 +13,15 @@ import type { MissionPlan, RobotTestResult } from "../mission/campaign";
 import { soilById, suggestSoil } from "../mission/wheelData";
 import type { Texture } from "../mission/wheelData";
 import { accessOf, accessRows } from "../world/access";
-import { MONTHS, RATINGS, compareRain, describeMonth, rateNow, typicalRain } from "../world/climate";
+import { MONTHS, RATINGS, describeMonth } from "../world/climate";
 import type { RainCheck, Season } from "../world/climate";
 import { ensoSentence, ensoStatus } from "../world/enso";
-import type { EnsoData } from "../world/enso";
+import type { ClimateNow } from "../world/useClimateNow";
 import { QUARTER_NAMES, groundOf, moonGroundOf } from "../world/ground";
 import { similarity } from "../world/hierarchy";
 import type { Match } from "../world/hierarchy";
 import { ROCK_COVER, ROCK_SIZE, SURFACES, VEGETATION, readingOf } from "../world/terrainReading";
 import type { TerrainReading } from "../world/terrainReading";
-import type { RecentRain } from "../../services/recentRain";
 
 /** Estado del lugar en el portal de turnos, ya en palabras. */
 export interface BookingFacts {
@@ -42,18 +41,17 @@ export interface CopilotFacts {
   season: Season | null;
   /** Mes de ahora, de 0 a 11. */
   month: number;
-  rain: RecentRain | null;
-  enso: EnsoData | null;
+  now: ClimateNow | null;
   booking: BookingFacts | null;
   robotTest: RobotTestResult | null;
   plan: MissionPlan | null;
 }
 
 const RAIN_WORDS: Record<RainCheck, string> = {
-  "mucho-mas": "llueve mucho más de lo típico",
-  mas: "llueve más de lo típico",
-  normal: "dentro de lo típico",
-  menos: "más seco de lo típico",
+  "mucho-mas": "mucho más de lo habitual",
+  mas: "más de lo habitual",
+  normal: "dentro de lo habitual",
+  menos: "menos de lo habitual",
 };
 
 const round = (value: number, digits = 1) => Math.round(value * 10 ** digits) / 10 ** digits;
@@ -62,38 +60,63 @@ const regionIds = new Map(terreno.regions.map((region) => [region.name, region.i
 const fineRoughness = rugosidad.regions as Record<string, { median: number } | null>;
 const textures = suelos.sites as Record<string, Texture | null>;
 
-function climateFacts({ season, month, rain, enso, match }: CopilotFacts) {
-  if (!season) return null;
-  const now = season.year[month];
-  const facts: Record<string, unknown> = {
-    mes_actual: MONTHS[month],
-    tipico_del_mes: {
-      descripcion: describeMonth(now, match.zone.latitude),
-      lluvia_mm: round(now.precipitation, 0),
-      temperatura_c: `${round(now.temperatureMin, 0)} a ${round(now.temperatureMax, 0)}`,
-      viento_kmh: round(now.wind, 0),
-      valoracion_para_trabajo_de_campo: RATINGS[now.rating].name.toLowerCase(),
-    },
-    mejor_epoca_tipica: season.window
-      ? season.window.length === 12
-        ? "todo el año"
-        : `de ${MONTHS[season.window.start]} a ${MONTHS[season.window.end]}`
-      : "ningún mes es bueno",
-    fuente: "NASA POWER, promedio 2001-2025",
-  };
-  if (rain) {
-    const typical = typicalRain(season.year, rain.from, rain.to);
-    const real = rateNow(now, rain.totalMm);
+function climateFacts({ season, month, now, match }: CopilotFacts) {
+  if (!season && !now) return null;
+  const typical = season?.year[month];
+  const facts: Record<string, unknown> = { mes_actual: MONTHS[month] };
+  if (season && typical) {
+    facts.tipico_del_mes = {
+      descripcion: describeMonth(typical, match.zone.latitude),
+      lluvia_mm: round(typical.precipitation, 0),
+      temperatura_c: `${round(typical.temperatureMin, 0)} a ${round(typical.temperatureMax, 0)}`,
+      viento_kmh: round(typical.wind, 0),
+      valoracion_para_trabajo_de_campo: RATINGS[typical.rating].name.toLowerCase(),
+      fuente: "NASA POWER, promedio 2001-2025; clima típico, no condiciones actuales",
+    };
+    facts.mejor_epoca_tipica = season.window
+      ? season.window.length === 12 ? "todo el año" : `de ${MONTHS[season.window.start]} a ${MONTHS[season.window.end]}`
+      : "ningún mes es bueno";
+  }
+  if (now?.rain.status === "ok") {
+    const rain = now.rain.value;
+    const baseline = now.baseline.status === "ok" ? now.baseline.value : null;
     facts.ultimos_30_dias = {
+      desde: rain.from,
+      hasta: rain.to,
       lluvia_mm: round(rain.totalMm, 0),
-      lluvia_tipica_de_esas_fechas_mm: round(typical, 0),
-      estado: RAIN_WORDS[compareRain(rain.totalMm, typical)],
-      valoracion_ahora: RATINGS[real.rating].name.toLowerCase(),
-      motivos: real.reasons,
+      ...(baseline && {
+        lluvia_media_de_esas_fechas_mm: round(baseline.meanMm, 0),
+        rango_historico_mm: [round(baseline.minMm, 0), round(baseline.maxMm, 0)],
+        anios_comparados: baseline.years.map(({ year }) => year),
+        ...(now.rainCheck && { estado: RAIN_WORDS[now.rainCheck] }),
+      }),
+      ...(!baseline && { comparacion_historica: "no disponible; no se puede clasificar la lluvia frente a lo habitual" }),
+      fuente: "Open-Meteo, mismo modelo y mismas fechas en años anteriores",
+    };
+  }
+  if (now?.today) {
+    facts.valoracion_ahora = {
+      estado: RATINGS[now.today.rating].name.toLowerCase(),
+      motivos: now.today.reasons,
+    };
+  }
+  if (now?.weather.status === "ok") {
+    const weather = now.weather.value;
+    facts.tiempo_actual = {
+      hora_local: weather.time, zona_horaria: weather.timezone,
+      descripcion: weather.description, temperatura_c: round(weather.temperature),
+      sensacion_termica_c: round(weather.apparentTemperature), viento_kmh: round(weather.windSpeed),
       fuente: "Open-Meteo, modelo para estas coordenadas",
     };
   }
-  const status = enso ? ensoStatus(enso) : null;
+  if (now?.ground.status === "listo") {
+    facts.suelo_actual = {
+      estado: now.ground.summary.stateName,
+      motivo: now.ground.summary.reason,
+      fuente: "Open-Meteo, estimación del modelo, no medición de campo",
+    };
+  }
+  const status = now?.enso ? ensoStatus(now.enso) : null;
   const sentence = status ? ensoSentence(status) : null;
   if (sentence) facts.el_nino = `${sentence} Fuente: NOAA.`;
   return facts;
